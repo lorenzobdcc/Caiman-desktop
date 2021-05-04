@@ -31,7 +31,6 @@ namespace Caiman
         {
             this.btn_pannel_1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.testUserControl1 = new Caiman.interfaceG.usercontrol.TestUserControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btm_pannel_2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -53,14 +52,6 @@ namespace Caiman
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(508, 487);
             this.panel1.TabIndex = 2;
-            // 
-            // testUserControl1
-            // 
-            this.testUserControl1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.testUserControl1.Location = new System.Drawing.Point(45, 545);
-            this.testUserControl1.Name = "testUserControl1";
-            this.testUserControl1.Size = new System.Drawing.Size(239, 164);
-            this.testUserControl1.TabIndex = 1;
             // 
             // panel2
             // 
@@ -89,7 +80,6 @@ namespace Caiman
             this.Controls.Add(this.btm_pannel_2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.testUserControl1);
             this.Controls.Add(this.btn_pannel_1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -100,7 +90,6 @@ namespace Caiman
         #endregion
 
         private System.Windows.Forms.Button btn_pannel_1;
-        private interfaceG.usercontrol.TestUserControl testUserControl1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btm_pannel_2;

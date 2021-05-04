@@ -16,6 +16,7 @@ namespace Caiman
     {
         List<UserControl> lstuser = new List<UserControl>();
         Random rnd = new Random();
+
         public Form1()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace Caiman
         {
 
 
-            XboxForm tuc = new XboxForm();
+            XboxMainForm tuc = new XboxMainForm();
             tuc.Left = 15;
             tuc.Top = 15;
             this.panel1.Controls.Add(tuc);
@@ -38,7 +39,7 @@ namespace Caiman
         {
 
 
-            XboxForm tuc = new XboxForm();
+            XboxMainForm tuc = new XboxMainForm();
             tuc.Left = 15;
             tuc.Top = 15;
             this.panel2.Controls.Add(tuc);

@@ -59,16 +59,19 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="interfaceG\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaceG\usercontrol\TestSideBarXboxUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="interfaceG\usercontrol\TestUserControl.cs">
+    <Compile Include="interfaceG\usercontrol\TestXboxUserControl.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="interfaceG\usercontrol\TestUserControl.Designer.cs">
-      <DependentUpon>TestUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="interfaceG\XboxController.cs" />
-    <Compile Include="interfaceG\XboxForm.cs">
+    <Compile Include="interfaceG\XboxMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaceG\XboxUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -76,11 +79,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="interfaceG\usercontrol\TestUserControl.resx">
-      <DependentUpon>TestUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="interfaceG\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="interfaceG\XboxForm.resx">
-      <DependentUpon>XboxForm.cs</DependentUpon>
+    <EmbeddedResource Include="interfaceG\usercontrol\TestXboxUserControl.resx">
+      <DependentUpon>TestXboxUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaceG\XboxMainForm.resx">
+      <DependentUpon>XboxMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaceG\XboxUserControl.resx">
+      <DependentUpon>XboxUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
