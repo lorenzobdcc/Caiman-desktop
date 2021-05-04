@@ -30,7 +30,7 @@ namespace Caiman.interfaceG.usercontrol
 
             for (int i = 0; i < 5; i++)
             {
-                lstControls[0].Add(new Button());
+                lstControls[0].Add(new XboxButton());
             }
             List<string> lst_navbar = new List<string>();
             lst_navbar.Add("Zelda");
@@ -45,12 +45,10 @@ namespace Caiman.interfaceG.usercontrol
 
 
                 lstControls[0][a_row].Text = lst_navbar[a_row];
-                lstControls[0][a_row].Location = new System.Drawing.Point(a_row * 100 + 15, 0 * 60 + 15);
+                lstControls[0][a_row].Location = new System.Drawing.Point(a_row * 200 + (Screen.PrimaryScreen.Bounds.Width/4), 0 * 60 + 50);
                 lstControls[0][a_row].Height = HEIGHT_BUTTON;
                 lstControls[0][a_row].Width = 100;
-                lstControls[0][a_row].BackColor = Color.White;
                 lstControls[0][a_row].Name = "btn_" + lst_navbar[a_row];
-                lstControls[0][a_row].ForeColor = Color.Black;
                 lstControls[0][a_row].Tag = a_row;
                 Controls.Add(lstControls[0][a_row]);
                 lstControls[0][a_row].Click += new System.EventHandler(bouton_Click);

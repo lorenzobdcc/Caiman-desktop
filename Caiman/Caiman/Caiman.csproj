@@ -73,6 +73,9 @@
     <Compile Include="interfaceG\usercontrol\TestXboxUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="interfaceG\usercontrol\XboxButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="interfaceG\XboxController.cs" />
     <Compile Include="interfaceG\XboxMainForm.cs">
       <SubType>Form</SubType>

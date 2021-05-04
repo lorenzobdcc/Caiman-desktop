@@ -19,6 +19,10 @@ namespace Caiman.interfaceG.usercontrol
         {
             InitializeComponent();
         }
+        public TestXboxUserControl()
+        {
+            InitializeComponent();
+        }
 
         private void InitializeComponent()
         {
@@ -27,7 +31,7 @@ namespace Caiman.interfaceG.usercontrol
             // 
             // TestXboxUserControl
             // 
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(17)))), ((int)(((byte)(23)))));
             this.Name = "TestXboxUserControl";
             this.Size = new System.Drawing.Size(1000, 1000);
             this.ResumeLayout(false);
@@ -44,7 +48,7 @@ namespace Caiman.interfaceG.usercontrol
             {
                 for (int y = 0; y < column; y++)
                 {
-                    lstControls[x].Add(new Button());
+                    lstControls[x].Add(new XboxButton());
                 }
             }
 
@@ -57,9 +61,7 @@ namespace Caiman.interfaceG.usercontrol
                     lstControls[a_row][b_column].Location = new System.Drawing.Point(b_column * 100 + 15, a_row * 60 + 15);
                     lstControls[a_row][b_column].Height = HEIGHT_BUTTON;
                     lstControls[a_row][b_column].Width = WIDTH_BUTTON;
-                    lstControls[a_row][b_column].BackColor = Color.White;
                     lstControls[a_row][b_column].Name = a_row + " " + b_column;
-                    lstControls[a_row][b_column].ForeColor = Color.Black;
                     Controls.Add(lstControls[a_row][b_column]);
                 }
             }

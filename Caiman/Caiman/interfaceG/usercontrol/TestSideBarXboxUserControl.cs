@@ -18,47 +18,18 @@ namespace Caiman.interfaceG.usercontrol
             //CreateListButton(10,1);
             CreateListNavButton();
             base.Size = new Size(200, 800);
+            Width = 250;
             Height = (Screen.PrimaryScreen.Bounds.Height-100);
         }
 
 
-        public void CreateListButton(int row, int column)
-        {
-            for (int i = 0; i < row; i++)
-            {
-                lstControls.Add(new List<Control>());
-            }
-            for (int x = 0; x < row; x++)
-            {
-                for (int y = 0; y < column; y++)
-                {
-                    lstControls[x].Add(new Button());
-                }
-            }
-
-            for (int a_row = 0; a_row <= (row - 1); a_row++)
-            {
-                for (int b_column = 0; b_column <= (column - 1); b_column++)
-                {
-
-                    lstControls[a_row][b_column].Text = (a_row + 1) + " " + (b_column + 1);
-                    lstControls[a_row][b_column].Location = new System.Drawing.Point(b_column * 100 + 15, a_row * 60 + 15);
-                    lstControls[a_row][b_column].Height = HEIGHT_BUTTON;
-                    lstControls[a_row][b_column].Width = WIDTH_BUTTON;
-                    lstControls[a_row][b_column].BackColor = Color.White;
-                    lstControls[a_row][b_column].Name = a_row + " " + b_column;
-                    lstControls[a_row][b_column].ForeColor = Color.Black;
-                    Controls.Add(lstControls[a_row][b_column]);
-                }
-            }
-        }
 
         public void CreateListNavButton()
         {
             for (int i = 0; i < 5; i++)
             {
                 lstControls.Add(new List<Control>());
-                lstControls[i].Add(new Button());
+                lstControls[i].Add(new XboxButton());
             }
             List<string> lst_navbar = new List<string>();
             lst_navbar.Add("Zelda");
@@ -73,12 +44,10 @@ namespace Caiman.interfaceG.usercontrol
 
 
                 lstControls[a_row][0].Text = lst_navbar[a_row];
-                lstControls[a_row][0].Location = new System.Drawing.Point(0 * 100 + 15, a_row * 60 + 15);
+                lstControls[a_row][0].Location = new System.Drawing.Point(0 * 100 + 15, a_row * 120 + 15);
                 lstControls[a_row][0].Height = HEIGHT_BUTTON;
-                lstControls[a_row][0].Width = 100;
-                lstControls[a_row][0].BackColor = Color.White;
+                lstControls[a_row][0].Width = 200;
                 lstControls[a_row][0].Name =  "btn_"+ lst_navbar[a_row];
-                lstControls[a_row][0].ForeColor = Color.Black;
                 lstControls[a_row][0].Tag = a_row;
                 Controls.Add(lstControls[a_row][0]);
                 lstControls[a_row][0].Click += new System.EventHandler(bouton_Click);

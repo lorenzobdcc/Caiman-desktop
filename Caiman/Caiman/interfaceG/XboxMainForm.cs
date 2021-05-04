@@ -77,7 +77,7 @@ namespace Caiman.interfaceG
             timer.Tick += new EventHandler(ScanInput);
 
 
-            timer.Interval = 1;
+            timer.Interval = 5;
             timer.Start();
         }
 
@@ -134,6 +134,7 @@ namespace Caiman.interfaceG
         public void MoveActivateControl()
         {
             activeControl.lstControls[position_x-1][position_y].Focus();
+            
         }
 
 
@@ -158,6 +159,7 @@ namespace Caiman.interfaceG
             this.Name = "XboxMainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.XboxMainForm_Load);
+            this.BackColor = Color.FromArgb(13, 17, 23);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,7 +176,7 @@ namespace Caiman.interfaceG
 
             TestXboxUserControl mainPannel = new TestXboxUserControl(this, topPannel, null, null, sidePannel);
             sidePannel.right_form = mainPannel;
-            mainPannel.Location = new Point(220, 120);
+            mainPannel.Location = new Point(270, 120);
 
             mainPannel.top_form = topPannel;
             sidePannel.top_form = topPannel;

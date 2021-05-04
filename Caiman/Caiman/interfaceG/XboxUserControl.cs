@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Caiman.interfaceG.usercontrol;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace Caiman.interfaceG
         public XboxUserControl right_form;
         public XboxUserControl left_form;
 
-        public Control activeContol;
+        public XboxButton activebutton;
 
 
         public int position_x;
@@ -76,6 +77,11 @@ namespace Caiman.interfaceG
             }
         }
 
+        public XboxUserControl()
+        {
+
+        }
+
         public XboxUserControl(XboxMainForm xboxMain , XboxUserControl top, XboxUserControl bottom, XboxUserControl right, XboxUserControl left)
         {
             InitializeComponent();
@@ -100,7 +106,7 @@ namespace Caiman.interfaceG
             // 
             // XboxUserControl
             // 
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
             this.Name = "XboxUserControl";
             this.Size = new System.Drawing.Size(418, 401);
             this.ResumeLayout(false);
