@@ -61,7 +61,13 @@
     <Compile Include="interfaceG\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="interfaceG\usercontrol\testContextUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="interfaceG\usercontrol\TestSideBarXboxUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="interfaceG\usercontrol\TestTopPannelXbox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="interfaceG\usercontrol\TestXboxUserControl.cs">

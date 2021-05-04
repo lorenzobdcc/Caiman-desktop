@@ -18,7 +18,6 @@ namespace Caiman.interfaceG.usercontrol
         public TestXboxUserControl(XboxMainForm xboxMain): base(xboxMain)
         {
             InitializeComponent();
-            
         }
 
         private void InitializeComponent()

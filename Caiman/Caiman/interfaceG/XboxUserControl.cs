@@ -18,6 +18,7 @@ namespace Caiman.interfaceG
         public XboxUserControl right_form;
         public XboxUserControl left_form;
 
+        public Control activeContol;
 
 
         public int position_x;
@@ -39,7 +40,7 @@ namespace Caiman.interfaceG
                         xboxMainForm.activeControl = left_form;
                     }
                 }
-                if (position_x >= (lstControls[position_x].Count))
+                if (position_x >= (lstControls[(position_y)].Count))
                 {
                     position_x = (lstControls[position_x].Count -1);
                     if (right_form != null)
@@ -78,6 +79,7 @@ namespace Caiman.interfaceG
         public XboxUserControl(XboxMainForm xboxMain , XboxUserControl top, XboxUserControl bottom, XboxUserControl right, XboxUserControl left)
         {
             InitializeComponent();
+            
             xboxMainForm = xboxMain;
             top_form = top;
             bottom_form = bottom;

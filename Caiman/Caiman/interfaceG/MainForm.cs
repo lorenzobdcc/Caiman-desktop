@@ -14,9 +14,11 @@ namespace Caiman.interfaceG
             // 
             // MainForm
             // 
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Name = "MainForm";
-            this.Size = new System.Drawing.Size(868, 678);
+            this.Controls.SetChildIndex(this.activeControl, 0);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
     }

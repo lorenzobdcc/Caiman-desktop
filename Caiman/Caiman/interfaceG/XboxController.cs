@@ -94,7 +94,7 @@ namespace Caiman.interfaceG
                 }
                 if (input != "A" && old_input == "A")
                 {
-
+                    
                 }
 
 

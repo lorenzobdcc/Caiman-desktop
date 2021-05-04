@@ -25,8 +25,7 @@ namespace Caiman.interfaceG
         private int position_x;
         private int position_y;
 
-        public const int WIDTH_BUTTON = 75;
-        public const int HEIGHT_BUTTON = 23;
+
         private TextBox tbx_console;
         Timer timer = new Timer();
 
@@ -127,7 +126,7 @@ namespace Caiman.interfaceG
                 }
                 if (input != "A" && old_input == "A")
                 {
-
+                    SendKeys.Send("{ENTER}");
                 }
                 old_input = input;
             }
@@ -146,15 +145,15 @@ namespace Caiman.interfaceG
             // 
             // tbx_console
             // 
-            this.tbx_console.Location = new System.Drawing.Point(13, 13);
+            this.tbx_console.Location = new System.Drawing.Point(12, 510);
             this.tbx_console.Multiline = true;
             this.tbx_console.Name = "tbx_console";
-            this.tbx_console.Size = new System.Drawing.Size(119, 461);
+            this.tbx_console.Size = new System.Drawing.Size(799, 80);
             this.tbx_console.TabIndex = 0;
             // 
             // XboxMainForm
             // 
-            this.ClientSize = new System.Drawing.Size(853, 602);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.tbx_console);
             this.Name = "XboxMainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -167,58 +166,39 @@ namespace Caiman.interfaceG
         public void CreateTestControls()
         {
 
-            TestSideBarXboxUserControl test1 = new TestSideBarXboxUserControl(this);
-            test1.Location = new Point(150, 50);
+            TestSideBarXboxUserControl sidePannel = new TestSideBarXboxUserControl(this);
+            sidePannel.Location = new Point(0,100);
 
-            TestXboxUserControl test2 = new TestXboxUserControl(this, null, null, null, test1);
-            test1.right_form = test2;
-            test2.Location = new Point(700, 50);
+            TestTopPannelXbox topPannel = new TestTopPannelXbox(this);
+            topPannel.Location = new Point(0,0);
 
-            
+            TestXboxUserControl mainPannel = new TestXboxUserControl(this, topPannel, null, null, sidePannel);
+            sidePannel.right_form = mainPannel;
+            mainPannel.Location = new Point(220, 120);
 
-            lstControls[0].Add(test1);
-            lstControls[0].Add(test2);
-            test1.BringToFront();
-            test2.BringToFront();
-            Controls.Add(test1);
-            Controls.Add(test2);
+            mainPannel.top_form = topPannel;
+            sidePannel.top_form = topPannel;
+            topPannel.bottom_form = mainPannel;
+
+
+            lstControls[0].Add(sidePannel);
+            lstControls[0].Add(mainPannel);
+            lstControls[0].Add(topPannel);
+            sidePannel.BringToFront();
+            mainPannel.BringToFront();
+            topPannel.BringToFront();
+            Controls.Add(sidePannel);
+            Controls.Add(mainPannel);
+            Controls.Add(topPannel);
 
         }
 
-        public void CreateListButton(int row, int column)
-        {
-            for (int i = 0; i < row; i++)
-            {
-                lstControls.Add(new List<Control>());
-            }
-            for (int x = 0; x < column; x++)
-            {
-                for (int y = 0; y < row; y++)
-                {
-                    lstControls[x].Add(new Button());
-                }
-            }
-
-            for (int a = 0; a < column; a++)
-            {
-                for (int b = 0; b < row; b++)
-                {
-
-                    lstControls[a][b].Text = a + " " + b;
-                    lstControls[a][b].Location = new System.Drawing.Point(a * 100 + 15, b * 60 + 15);
-                    lstControls[a][b].Height = HEIGHT_BUTTON;
-                    lstControls[a][b].Width = WIDTH_BUTTON;
-                    lstControls[a][b].BackColor = Color.White;
-                    lstControls[a][b].Name = a + " " + b;
-                    lstControls[a][b].ForeColor = Color.Black;
-                    Controls.Add(lstControls[a][b]);
-                }
-            }
-        }
+       
 
         private void XboxMainForm_Load(object sender, EventArgs e)
         {
             activeControl.MoveActivateControl();
+            tbx_console.SetBounds((300), (this.Height - 250), 400, 150);
         }
     }
 }
