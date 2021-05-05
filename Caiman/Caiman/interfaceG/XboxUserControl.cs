@@ -38,14 +38,25 @@ namespace Caiman.interfaceG
                     position_x = 0;
                     if (left_form != null)
                     {
+                        if ((left_form.lstControls[left_form.position_y].Count - 1) > -1)
+                        {
+                            left_form.position_x = (left_form.lstControls[left_form.position_y].Count - 1);
+                        }
+                        else
+                        {
+                            left_form.position_x = 1;
+                        }
+                        
                         xboxMainForm.activeControl = left_form;
                     }
                 }
                 if (position_x >= (lstControls[(position_y)].Count))
                 {
-                    position_x = (lstControls[position_x].Count -1);
+                    position_x = (lstControls[position_y].Count -1);
                     if (right_form != null)
                     {
+
+                        right_form.position_x = 0;
                         xboxMainForm.activeControl = right_form;
                     }
                 }
@@ -62,7 +73,9 @@ namespace Caiman.interfaceG
                     position_y = 0;
                     if (top_form != null)
                     {
+                        top_form.position_y = (top_form.lstControls.Count()-1);
                         xboxMainForm.activeControl = top_form;
+                        
                     }
                 }
                 if (position_y >= (lstControls.Count))
@@ -70,7 +83,9 @@ namespace Caiman.interfaceG
                     position_y = ((lstControls.Count -1));
                     if (bottom_form != null)
                     {
+                        bottom_form.position_y = 0;
                         xboxMainForm.activeControl = bottom_form;
+                        
                     }
                 }
 

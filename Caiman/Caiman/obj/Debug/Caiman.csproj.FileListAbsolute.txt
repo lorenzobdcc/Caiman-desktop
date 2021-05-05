@@ -12,10 +12,8 @@ C:\Users\BDCC\source\repos\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.csproj.
 C:\Users\BDCC\source\repos\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.csproj.CopyComplete
 C:\Users\BDCC\source\repos\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.exe
 C:\Users\BDCC\source\repos\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.pdb
-C:\Users\BDCC\source\repos\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.interfaceG.usercontrol.TestUserControl.resources
 C:\Users\BDCC\source\repos\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.Form1.resources
 C:\Users\BDCC\source\repos\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.csprojAssemblyReference.cache
-C:\Users\BDCC\source\repos\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.interfaceG.XboxForm.resources
 D:\Caiman-desktop\Caiman\Caiman\bin\Debug\Caiman.exe.config
 D:\Caiman-desktop\Caiman\Caiman\bin\Debug\Caiman.exe
 D:\Caiman-desktop\Caiman\Caiman\bin\Debug\Caiman.pdb
@@ -35,3 +33,8 @@ D:\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.csproj.CoreCompileInputs.cache
 D:\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.csproj.CopyComplete
 D:\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.exe
 D:\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.pdb
+C:\Users\BDCC\source\repos\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.interfaceG.MainForm.resources
+C:\Users\BDCC\source\repos\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.interfaceG.usercontrol.TestXboxUserControl.resources
+C:\Users\BDCC\source\repos\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.interfaceG.XboxMainForm.resources
+C:\Users\BDCC\source\repos\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.interfaceG.XboxUserControl.resources
+C:\Users\BDCC\source\repos\Caiman-desktop\Caiman\Caiman\obj\Debug\Caiman.interfaceG.usercontrol.testContextUC.resources

@@ -26,29 +26,34 @@ namespace Caiman.interfaceG.usercontrol
 
         public void CreateListNavButton()
         {
-            for (int i = 0; i < 5; i++)
-            {
-                lstControls.Add(new List<Control>());
-                lstControls[i].Add(new XboxButton());
-            }
             List<string> lst_navbar = new List<string>();
             lst_navbar.Add("Zelda");
             lst_navbar.Add("Mario");
             lst_navbar.Add("Super_Smash");
             lst_navbar.Add("Kingdom_Hearts");
             lst_navbar.Add("Dragon_Ball");
+            lst_navbar.Add("Metroid");
+            for (int i = 0; i < lst_navbar.Count; i++)
+            {
+                lstControls.Add(new List<Control>());
+                lstControls[i].Add(new XboxButton());
+            }
 
 
-            for (int a_row = 0; a_row <= 4; a_row++)
+
+            for (int a_row = 0; a_row <= (lst_navbar.Count -1); a_row++)
             {
 
-
+                List<string> lstString = new List<string>();
+                XboxButton tempButton = new XboxButton(("btn_" + lst_navbar[a_row]), a_row, a_row, 0);
+                lstControls[a_row][0] = tempButton;
                 lstControls[a_row][0].Text = lst_navbar[a_row];
                 lstControls[a_row][0].Location = new System.Drawing.Point(0 * 100 + 15, a_row * 120 + 15);
-                lstControls[a_row][0].Height = HEIGHT_BUTTON;
                 lstControls[a_row][0].Width = 200;
                 lstControls[a_row][0].Name =  "btn_"+ lst_navbar[a_row];
-                lstControls[a_row][0].Tag = a_row;
+                lstControls[a_row][0].Font = new Font("French Script MT", 14);
+
+
                 Controls.Add(lstControls[a_row][0]);
                 lstControls[a_row][0].Click += new System.EventHandler(bouton_Click);
 
@@ -57,8 +62,7 @@ namespace Caiman.interfaceG.usercontrol
 
         protected void bouton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(sender.ToString());
-            Button btn_sender = (Button)sender;
+            xboxMainForm.ButtonHandler(sender, e);
         }
     }
 }

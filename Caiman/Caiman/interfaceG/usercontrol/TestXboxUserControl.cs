@@ -56,10 +56,10 @@ namespace Caiman.interfaceG.usercontrol
             {
                 for (int b_column = 0; b_column <= (column - 1); b_column++)
                 {
-
+                    XboxButton tempButton = new XboxButton(("btn_" + a_row), a_row, a_row, b_column);
+                    lstControls[a_row][b_column] = tempButton;
                     lstControls[a_row][b_column].Text = (a_row + 1) + " " + (b_column + 1);
                     lstControls[a_row][b_column].Location = new System.Drawing.Point(b_column * 100 + 15, a_row * 60 + 15);
-                    lstControls[a_row][b_column].Height = HEIGHT_BUTTON;
                     lstControls[a_row][b_column].Width = WIDTH_BUTTON;
                     lstControls[a_row][b_column].Name = a_row + " " + b_column;
                     Controls.Add(lstControls[a_row][b_column]);

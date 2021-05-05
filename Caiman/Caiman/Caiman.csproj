@@ -58,6 +58,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="interfaceG\ButtonContext.cs" />
     <Compile Include="interfaceG\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,7 +74,7 @@
     <Compile Include="interfaceG\usercontrol\TestXboxUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="interfaceG\usercontrol\XboxButton.cs">
+    <Compile Include="interfaceG\XboxControl\XboxButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="interfaceG\XboxController.cs" />
@@ -90,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="interfaceG\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaceG\usercontrol\testContextUC.resx">
+      <DependentUpon>testContextUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="interfaceG\usercontrol\TestXboxUserControl.resx">
       <DependentUpon>TestXboxUserControl.cs</DependentUpon>

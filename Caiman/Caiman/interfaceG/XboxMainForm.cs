@@ -20,7 +20,9 @@ namespace Caiman.interfaceG
 
         public string old_input;
 
-
+        XboxUserControl mainPanel;
+        XboxUserControl topPanel;
+        XboxUserControl sidePanel;
 
         private int position_x;
         private int position_y;
@@ -77,7 +79,7 @@ namespace Caiman.interfaceG
             timer.Tick += new EventHandler(ScanInput);
 
 
-            timer.Interval = 5;
+            timer.Interval = 2;
             timer.Start();
         }
 
@@ -154,44 +156,63 @@ namespace Caiman.interfaceG
             // 
             // XboxMainForm
             // 
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(17)))), ((int)(((byte)(23)))));
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ControlBox = false;
             this.Controls.Add(this.tbx_console);
             this.Name = "XboxMainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.XboxMainForm_Load);
-            this.BackColor = Color.FromArgb(13, 17, 23);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+        public void ButtonHandler(object sender, EventArgs e)
+        {
+            mainPanel.Dispose();
+            
+            XboxButton button = (XboxButton)sender;
+            List<string> tag = (List<string>)button.Tag;
+            testContextUC temp = new testContextUC(this, topPanel, null, null, sidePanel);
+            temp.CreateListButton(5,5);
+            mainPanel = temp;
+            mainPanel.Location = new Point(270, 120);
+
+            Controls.Add(mainPanel);
+
+            sidePanel.right_form = mainPanel;
+            topPanel.bottom_form = mainPanel;
+        }
+
         public void CreateTestControls()
         {
 
-            TestSideBarXboxUserControl sidePannel = new TestSideBarXboxUserControl(this);
-            sidePannel.Location = new Point(0,100);
+            sidePanel = new TestSideBarXboxUserControl(this);
+            sidePanel.Location = new Point(0,100);
 
-            TestTopPannelXbox topPannel = new TestTopPannelXbox(this);
-            topPannel.Location = new Point(0,0);
+            topPanel = new TestTopPannelXbox(this);
+            topPanel.Location = new Point(0,0);
 
-            TestXboxUserControl mainPannel = new TestXboxUserControl(this, topPannel, null, null, sidePannel);
-            sidePannel.right_form = mainPannel;
-            mainPannel.Location = new Point(270, 120);
+            mainPanel = new TestXboxUserControl(this, topPanel, null, null, sidePanel);
+            sidePanel.right_form = mainPanel;
+            mainPanel.Location = new Point(270, 120);
 
-            mainPannel.top_form = topPannel;
-            sidePannel.top_form = topPannel;
-            topPannel.bottom_form = mainPannel;
+            mainPanel.top_form = topPanel;
+            sidePanel.top_form = topPanel;
+            topPanel.bottom_form = mainPanel;
+            topPanel.left_form = sidePanel;
 
 
-            lstControls[0].Add(sidePannel);
-            lstControls[0].Add(mainPannel);
-            lstControls[0].Add(topPannel);
-            sidePannel.BringToFront();
-            mainPannel.BringToFront();
-            topPannel.BringToFront();
-            Controls.Add(sidePannel);
-            Controls.Add(mainPannel);
-            Controls.Add(topPannel);
+            lstControls[0].Add(sidePanel);
+            lstControls[0].Add(mainPanel);
+            lstControls[0].Add(topPanel);
+            sidePanel.BringToFront();
+            mainPanel.BringToFront();
+            topPanel.BringToFront();
+            Controls.Add(sidePanel);
+            Controls.Add(mainPanel);
+            Controls.Add(topPanel);
 
         }
 

@@ -43,10 +43,10 @@ namespace Caiman.interfaceG.usercontrol
             for (int a_row = 0; a_row <= 4; a_row++)
             {
 
-
+                XboxButton tempButton = new XboxButton(("btn_" + a_row), a_row, 0, a_row);
+                lstControls[0][a_row] = tempButton;
                 lstControls[0][a_row].Text = lst_navbar[a_row];
                 lstControls[0][a_row].Location = new System.Drawing.Point(a_row * 200 + (Screen.PrimaryScreen.Bounds.Width/4), 0 * 60 + 50);
-                lstControls[0][a_row].Height = HEIGHT_BUTTON;
                 lstControls[0][a_row].Width = 100;
                 lstControls[0][a_row].Name = "btn_" + lst_navbar[a_row];
                 lstControls[0][a_row].Tag = a_row;
