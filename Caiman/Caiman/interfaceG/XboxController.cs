@@ -40,71 +40,7 @@ namespace Caiman.interfaceG
         }
 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void ScanInput(object sender, EventArgs e)
-        {
-            for (int i = 0; i < lstController.Count; i++)
-            {
-                if (lstController[i].IsConnected)
-                {
-                    lstInput[i] = lstController[i].GetState().Gamepad.Buttons.ToString();
-                }
-            }
-
-            if (lstController[0].IsConnected)
-            {
-                string input = lstController[0].GetState().Gamepad.Buttons.ToString();
-
-
-
-
-
-                if (input != "Y" && old_input == "Y")
-                {
-
-                }
-                if (input != "Start" && old_input == "Start")
-                {
-
-                }
-                if (input != "DPadLeft" && old_input == "DPadLeft")
-                {
-
-                    valueXboxController--;
-
-                }
-                if (input != "DPadRight" && old_input == "DPadRight")
-                {
-                    valueXboxController++;
-
-                }
-                if (input != "DPadUp" && old_input == "DPadUp")
-                {
-
-                    valueXboxController -= 10;
-                }
-                if (input != "DPadDown" && old_input == "DPadDown")
-                {
-                    valueXboxController += 10;
-
-                }
-                if (input != "A" && old_input == "A")
-                {
-                    
-                }
-
-
-
-
-                old_input = input;
-            }
-
-
-        }
+        
 
 
 

@@ -1,8 +1,10 @@
 ﻿using Caiman.interfaceG.usercontrol;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +22,11 @@ namespace Caiman.interfaceG
 
         public string old_input;
 
+        bool old_leftAnalogUp = false;
+        bool old_leftAnalogDown = false;
+        bool old_leftAnalogLeft = false;
+        bool old_leftAnalogRight = false;
+
         XboxUserControl mainPanel;
         XboxUserControl topPanel;
         XboxUserControl sidePanel;
@@ -30,6 +37,12 @@ namespace Caiman.interfaceG
 
         private TextBox tbx_console;
         Timer timer = new Timer();
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        private static extern IntPtr GetForegroundWindow();
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern int GetWindowThreadProcessId(IntPtr handle, out int processId);
 
         public int Position_x { get => position_x; set
             {
@@ -89,7 +102,25 @@ namespace Caiman.interfaceG
             txt += xboxController.GetInput();
             txt += "\r\nposition X: " +activeControl.Position_x;
             txt += "\r\nposition Y: " +activeControl.Position_y;
+            txt += "\r\nLeft Analog: ";
+            txt += "\r\nposition X: " + (int)(xboxController.lstController[0].GetState().Gamepad.LeftThumbX /100);
+            txt += "\r\nposition Y: " + (int)(xboxController.lstController[0].GetState().Gamepad.LeftThumbY /100);
             tbx_console.Text = txt;
+        }
+
+        public static bool ApplicationIsActivated()
+        {
+            var activatedHandle = GetForegroundWindow();
+            if (activatedHandle == IntPtr.Zero)
+            {
+                return false;       // No window is currently activated
+            }
+
+            var procId = Process.GetCurrentProcess().Id;
+            int activeProcId;
+            GetWindowThreadProcessId(activatedHandle, out activeProcId);
+
+            return activeProcId == procId;
         }
 
         public void ScanInput(object sender, EventArgs e)
@@ -99,38 +130,99 @@ namespace Caiman.interfaceG
             if (xboxController.lstController[0].IsConnected)
             {
                 string input = xboxController.lstController[0].GetState().Gamepad.Buttons.ToString();
+                int inputAnalogLeftX = xboxController.lstController[0].GetState().Gamepad.LeftThumbX;
+                int inputAnalogLeftY = xboxController.lstController[0].GetState().Gamepad.LeftThumbY;
 
+                bool leftAnalogUp = false;
+                bool leftAnalogDown = false;
+                bool leftAnalogLeft = false;
+                bool leftAnalogRight = false;
 
-                if (input != "DPadLeft" && old_input == "DPadLeft")
+                if (inputAnalogLeftX > 20000)
                 {
-
-                   activeControl.Position_x--;
-                   activeControl.MoveActivateControl();
-
+                    leftAnalogRight = true;
                 }
-                if (input != "DPadRight" && old_input == "DPadRight")
+
+                if (inputAnalogLeftX < -20000)
                 {
-                    activeControl.Position_x++;
-                    activeControl.MoveActivateControl();
+                    leftAnalogLeft = true;
+                }
 
-                }
-                if (input != "DPadUp" && old_input == "DPadUp")
+                if (inputAnalogLeftY > 20000)
                 {
+                    leftAnalogUp = true;
+                }
 
-                    activeControl.Position_y--;
-                    activeControl.MoveActivateControl();
-                }
-                if (input != "DPadDown" && old_input == "DPadDown")
+                if (inputAnalogLeftY < -20000)
                 {
-                    activeControl.Position_y++;
-                    activeControl.MoveActivateControl();
+                    leftAnalogDown = true;
+                }
 
-                }
-                if (input != "A" && old_input == "A")
+                if (ApplicationIsActivated())
                 {
-                    SendKeys.Send("{ENTER}");
+                    if (leftAnalogLeft == true && old_leftAnalogLeft == false)
+                    {
+                        activeControl.Position_x--;
+                        activeControl.MoveActivateControl();
+                    }
+
+                    if (leftAnalogRight == true && old_leftAnalogRight == false)
+                    {
+                        activeControl.Position_x++;
+                        activeControl.MoveActivateControl();
+                    }
+
+                    if (leftAnalogDown == true && old_leftAnalogDown == false)
+                    {
+                        activeControl.Position_y++;
+                        activeControl.MoveActivateControl();
+                    }
+
+                    if (leftAnalogUp == true && old_leftAnalogUp == false)
+                    {
+                        activeControl.Position_y--;
+                        activeControl.MoveActivateControl();
+                    }
+
+
+                    if (input == "DPadLeft" && old_input != "DPadLeft")
+                    {
+
+                        activeControl.Position_x--;
+                        activeControl.MoveActivateControl();
+
+                    }
+                    if (input == "DPadRight" && old_input != "DPadRight")
+                    {
+                        activeControl.Position_x++;
+                        activeControl.MoveActivateControl();
+
+                    }
+                    if (input == "DPadUp" && old_input != "DPadUp")
+                    {
+
+                        activeControl.Position_y--;
+
+                        activeControl.MoveActivateControl();
+                    }
+                    if (input == "DPadDown" && old_input != "DPadDown")
+                    {
+                        activeControl.Position_y++;
+                        activeControl.MoveActivateControl();
+
+                    }
+                    if (input == "A" && old_input != "A")
+                    {
+                        //SendKeys.Send("{ENTER}");
+                    }
+
+                    old_leftAnalogUp = leftAnalogUp;
+                    old_leftAnalogDown = leftAnalogDown;
+                    old_leftAnalogLeft = leftAnalogLeft;
+                    old_leftAnalogRight = leftAnalogRight;
+
+                    old_input = input;
                 }
-                old_input = input;
             }
         }
         public void MoveActivateControl()
@@ -151,7 +243,7 @@ namespace Caiman.interfaceG
             this.tbx_console.Location = new System.Drawing.Point(12, 510);
             this.tbx_console.Multiline = true;
             this.tbx_console.Name = "tbx_console";
-            this.tbx_console.Size = new System.Drawing.Size(799, 80);
+            this.tbx_console.Size = new System.Drawing.Size(500, 80);
             this.tbx_console.TabIndex = 0;
             // 
             // XboxMainForm
@@ -221,7 +313,7 @@ namespace Caiman.interfaceG
         private void XboxMainForm_Load(object sender, EventArgs e)
         {
             activeControl.MoveActivateControl();
-            tbx_console.SetBounds((300), (this.Height - 250), 400, 150);
+            tbx_console.SetBounds((50), (this.Height - 200), 150, 150);
         }
     }
 }

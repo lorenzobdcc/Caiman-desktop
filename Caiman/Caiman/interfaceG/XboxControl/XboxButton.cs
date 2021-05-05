@@ -53,7 +53,7 @@ namespace Caiman.interfaceG.usercontrol
         {
             base.OnClick(e);
 
-            this.FlatAppearance.BorderSize = 2;
+            //this.FlatAppearance.BorderSize = 2;
 
             //tell to the topMainForm which control is active
             XboxUserControl xboxUserControl = (XboxUserControl)this.Parent;
