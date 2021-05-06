@@ -51,7 +51,7 @@ namespace Caiman.interfaceG.usercontrol
                 lstControls[a_row][0].Location = new System.Drawing.Point(0 * 100 + 15, a_row * 120 + 15);
                 lstControls[a_row][0].Width = 200;
                 lstControls[a_row][0].Name =  "btn_"+ lst_navbar[a_row];
-                lstControls[a_row][0].Font = new Font("French Script MT", 14);
+     
 
 
                 Controls.Add(lstControls[a_row][0]);

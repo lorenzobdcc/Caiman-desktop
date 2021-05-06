@@ -12,23 +12,11 @@ namespace Caiman.interfaceG.XboxControl
     {
 
         public ButtonContext btn_contexte;
-        public XboxImage(string contexte, Image img, int id_contexte, int position_y, int position_x)
+        public XboxImage(string contexte, Image img, int id_contexte, int position_y, int position_x): this()
         {
             this.btn_contexte = new ButtonContext(contexte, id_contexte, position_y, position_x);
-            this.TabStop = false;
-            this.FlatStyle = FlatStyle.Flat;
-            this.ForeColor = Color.White;
-            this.BackColor = Color.FromArgb(48, 51, 56);
-            this.FlatAppearance.BorderSize = 0;
-            this.FlatAppearance.BorderColor = Color.FromArgb(40, 167, 69);
-            this.Height = 400;
-            this.Width = 270;
-            this.Tag = new List<string>();
             this.BackgroundImage = img;
-            this.BackgroundImageLayout = ImageLayout.Stretch;
 
-            this.Font = new Font("French Script MT", 14);
-            this.AutoSize = true;
         }
 
         public XboxImage()
@@ -43,10 +31,10 @@ namespace Caiman.interfaceG.XboxControl
             this.Height = 400;
             this.Width = 270;
             this.Tag = new List<string>();
+            this.BackgroundImageLayout = ImageLayout.Stretch;
 
 
-
-            this.Font = new Font("French Script MT", 14);
+            this.Font = new Font("Arial", 14);
             this.AutoSize = true;
         }
 
