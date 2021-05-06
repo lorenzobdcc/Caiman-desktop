@@ -56,7 +56,9 @@ namespace Caiman.interfaceG.usercontrol
 
                 Controls.Add(lstControls[a_row][0]);
                 lstControls[a_row][0].Click += new System.EventHandler(bouton_Click);
-
+                XboxButton zeldaButton = (XboxButton)lstControls[0][0];
+                zeldaButton.btn_contexte.contexte = "testNavigation";
+                
             }
         }
 

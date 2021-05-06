@@ -161,7 +161,7 @@ namespace Caiman.interfaceG
                     if (leftAnalogRight == true && old_leftAnalogRight == false)
                     {
                         ActiveControl1.Position_x++;
-                        ActiveControl1.MoveActivateControl();
+                        ActiveControl1.MoveActivateControl(3);
                     }
 
                     if (leftAnalogDown == true && old_leftAnalogDown == false)
@@ -187,7 +187,7 @@ namespace Caiman.interfaceG
                     if (input == "DPadRight" && old_input != "DPadRight")
                     {
                         ActiveControl1.Position_x++;
-                        ActiveControl1.MoveActivateControl();
+                        ActiveControl1.MoveActivateControl(3);
 
                     }
                     if (input == "DPadUp" && old_input != "DPadUp")
@@ -225,6 +225,16 @@ namespace Caiman.interfaceG
         public void MoveActivateControl()
         {
             ActiveControl1.lstControls[position_x-1][position_y].Focus();
+            if (ActiveControl1.lstControls[position_x - 1][position_y] == null)
+            {
+                int x = position_x-1;
+                int y = position_y ;
+                while (ActiveControl1.lstControls[position_x - 1][position_y] == null)
+                {
+                    x--;
+                }
+
+            }
             
         }
 
@@ -277,6 +287,10 @@ namespace Caiman.interfaceG
                     LoadNewHomePanel();
                     FocusToMainPanel();
                     break;
+                case "testNavigation":
+                    LoadNewTestPanel();
+                    FocusToMainPanel();
+                    break;
                 default:
                     break;
             }
@@ -287,6 +301,23 @@ namespace Caiman.interfaceG
         {
             testContextUC temp = new testContextUC(this, topPanel, null, null, sidePanel);
             temp.CreateListButton(5, 5);
+            Controls.Remove(mainPanel);
+            mainPanel.Dispose();
+            MainPanel = temp;
+
+            MainPanel.Location = new Point(270, 120);
+            Controls.Add(MainPanel);
+
+            sidePanel.right_form = MainPanel;
+            topPanel.bottom_form = MainPanel;
+
+
+        }
+
+        public void LoadNewTestPanel()
+        {
+            testNavigationUserControl temp = new testNavigationUserControl(this, topPanel, null, null, sidePanel);
+            temp.CreateListBrokenButton(6, 6);
             Controls.Remove(mainPanel);
             mainPanel.Dispose();
             MainPanel = temp;

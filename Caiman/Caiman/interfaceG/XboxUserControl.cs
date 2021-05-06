@@ -126,9 +126,57 @@ namespace Caiman.interfaceG
 
         }
 
-        public void MoveActivateControl()
+        public void MoveActivateControl(int destination = 0)
         {
-            lstControls[(position_y)][position_x].Focus();
+            //top = 1
+            //right = 2
+            //down = 3
+            //left = 4
+            if (destination == 3)
+            {
+                if (lstControls[position_y][position_x] == null)
+                {
+                    int x = position_x;
+                    int y = position_y;
+                    while (lstControls[position_y][x] == null)
+                    {
+                        if (x > lstControls[position_x-1].Count())
+                        {
+                            break;
+                        }
+                        x++;
+                    }
+                    lstControls[(position_y)][x].Focus();
+                    Position_x = x;
+                }
+                else
+                {
+                    lstControls[(position_y)][position_x].Focus();
+                }
+            }
+            else
+            {
+                if (lstControls[position_y][position_x] == null)
+                {
+                    int x = position_x - 1;
+                    int y = position_y;
+                    while (lstControls[position_x - 1][position_y] == null)
+                    {
+                        if (x < 0)
+                        {
+                            
+                            break;
+                        }
+                        x--;
+                    }
+                    lstControls[(position_y)][x].Focus();
+                    Position_x = x;
+                }
+                else
+                {
+                    lstControls[(position_y)][position_x].Focus();
+                }
+            }
         }
     }
 }
