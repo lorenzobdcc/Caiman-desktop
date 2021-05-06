@@ -222,21 +222,6 @@ namespace Caiman.interfaceG
                 }
             }
         }
-        public void MoveActivateControl()
-        {
-            ActiveControl1.lstControls[position_x-1][position_y].Focus();
-            if (ActiveControl1.lstControls[position_x - 1][position_y] == null)
-            {
-                int x = position_x-1;
-                int y = position_y ;
-                while (ActiveControl1.lstControls[position_x - 1][position_y] == null)
-                {
-                    x--;
-                }
-
-            }
-            
-        }
 
 
 
@@ -291,6 +276,10 @@ namespace Caiman.interfaceG
                     LoadNewTestPanel();
                     FocusToMainPanel();
                     break;
+                case "testImages":
+                    LoadNewImagesPanel();
+                    FocusToMainPanel();
+                    break;
                 default:
                     break;
             }
@@ -318,6 +307,23 @@ namespace Caiman.interfaceG
         {
             testNavigationUserControl temp = new testNavigationUserControl(this, topPanel, null, null, sidePanel);
             temp.CreateListBrokenButton(6, 6);
+            Controls.Remove(mainPanel);
+            mainPanel.Dispose();
+            MainPanel = temp;
+
+            MainPanel.Location = new Point(270, 120);
+            Controls.Add(MainPanel);
+
+            sidePanel.right_form = MainPanel;
+            topPanel.bottom_form = MainPanel;
+
+
+        }
+
+        public void LoadNewImagesPanel()
+        {
+            TestImageUserControl temp = new TestImageUserControl(this, topPanel, null, null, sidePanel);
+            temp.CreateListImages(1, 2);
             Controls.Remove(mainPanel);
             mainPanel.Dispose();
             MainPanel = temp;

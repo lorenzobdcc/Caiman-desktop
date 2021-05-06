@@ -160,7 +160,7 @@ namespace Caiman.interfaceG
                 {
                     int x = position_x - 1;
                     int y = position_y;
-                    while (lstControls[position_x - 1][position_y] == null)
+                    while (lstControls[position_y][x] == null)
                     {
                         if (x < 0)
                         {

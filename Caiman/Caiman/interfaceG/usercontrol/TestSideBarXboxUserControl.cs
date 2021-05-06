@@ -27,8 +27,8 @@ namespace Caiman.interfaceG.usercontrol
         public void CreateListNavButton()
         {
             List<string> lst_navbar = new List<string>();
-            lst_navbar.Add("Zelda");
-            lst_navbar.Add("Mario");
+            lst_navbar.Add("Brocken navigation");
+            lst_navbar.Add("Images");
             lst_navbar.Add("Super_Smash");
             lst_navbar.Add("Kingdom_Hearts");
             lst_navbar.Add("Dragon_Ball");
@@ -56,10 +56,14 @@ namespace Caiman.interfaceG.usercontrol
 
                 Controls.Add(lstControls[a_row][0]);
                 lstControls[a_row][0].Click += new System.EventHandler(bouton_Click);
-                XboxButton zeldaButton = (XboxButton)lstControls[0][0];
-                zeldaButton.btn_contexte.contexte = "testNavigation";
                 
+
+
             }
+            XboxButton Brocken = (XboxButton)lstControls[0][0];
+            Brocken.btn_contexte.contexte = "testNavigation";
+            XboxButton Images = (XboxButton)lstControls[1][0];
+            Images.btn_contexte.contexte = "testImages";
         }
 
         protected void bouton_Click(object sender, EventArgs e)
