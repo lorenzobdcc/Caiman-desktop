@@ -138,13 +138,22 @@ namespace Caiman.interfaceG
                 {
                     int x = position_x;
                     int y = position_y;
-                    while (lstControls[position_y][x] == null)
+
+                    int x_right_not_disponible;
+                    while (x < lstControls[position_y].Count() && lstControls[position_y][x] == null)
                     {
                         if (x > lstControls[position_x-1].Count())
                         {
                             break;
                         }
                         x++;
+                    }
+                    if (x == lstControls[position_y].Count())
+                    {
+                        while (y < lstControls[position_y].Count() && lstControls[position_y][x] == null)
+                        {
+
+                        }
                     }
                     lstControls[(position_y)][x].Focus();
                     Position_x = x;

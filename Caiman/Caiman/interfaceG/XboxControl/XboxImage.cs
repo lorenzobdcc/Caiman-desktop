@@ -22,7 +22,7 @@ namespace Caiman.interfaceG.XboxControl
             this.FlatAppearance.BorderSize = 0;
             this.FlatAppearance.BorderColor = Color.FromArgb(40, 167, 69);
             this.Height = 400;
-            this.Width = 300;
+            this.Width = 270;
             this.Tag = new List<string>();
             this.BackgroundImage = img;
             this.BackgroundImageLayout = ImageLayout.Stretch;
@@ -41,7 +41,7 @@ namespace Caiman.interfaceG.XboxControl
             this.FlatAppearance.BorderSize = 0;
             this.FlatAppearance.BorderColor = Color.FromArgb(40, 167, 69);
             this.Height = 400;
-            this.Width = 300;
+            this.Width = 270;
             this.Tag = new List<string>();
 
 

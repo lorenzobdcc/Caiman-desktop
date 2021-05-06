@@ -78,6 +78,9 @@ namespace Caiman.interfaceG.usercontrol
                     lstControls[0][2] = null;
                     lstControls[0][3] = null;
 
+                    lstControls[1][5] = null;
+                    lstControls[2][5] = null;
+
                     lstControls[4][2] = null;
                     Controls.Add(lstControls[a_row][b_column]);
                 }
