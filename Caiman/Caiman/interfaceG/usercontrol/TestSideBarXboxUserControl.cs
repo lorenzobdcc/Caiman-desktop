@@ -45,7 +45,7 @@ namespace Caiman.interfaceG.usercontrol
             {
 
                 List<string> lstString = new List<string>();
-                XboxButton tempButton = new XboxButton(("btn_" + lst_navbar[a_row]), a_row, a_row, 0);
+                XboxButton tempButton = new XboxButton("side", a_row, a_row, 0);
                 lstControls[a_row][0] = tempButton;
                 lstControls[a_row][0].Text = lst_navbar[a_row];
                 lstControls[a_row][0].Location = new System.Drawing.Point(0 * 100 + 15, a_row * 120 + 15);
@@ -62,7 +62,9 @@ namespace Caiman.interfaceG.usercontrol
 
         protected void bouton_Click(object sender, EventArgs e)
         {
-            xboxMainForm.ButtonHandler(sender, e);
+            XboxButton tempXboxButton = (XboxButton)sender;
+            ButtonContext tempButtonContext = tempXboxButton.btn_contexte;
+            xboxMainForm.ButtonHandler(tempButtonContext, e , true);
         }
     }
 }

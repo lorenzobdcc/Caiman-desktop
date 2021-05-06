@@ -25,8 +25,6 @@ namespace Caiman.interfaceG
         public int position_x;
         public int position_y;
 
-        public const int WIDTH_BUTTON = 75;
-        public const int HEIGHT_BUTTON = 23;
 
         public int Position_x
         {
@@ -47,7 +45,7 @@ namespace Caiman.interfaceG
                             left_form.position_x = 1;
                         }
                         
-                        xboxMainForm.activeControl = left_form;
+                        xboxMainForm.ActiveControl1 = left_form;
                     }
                 }
                 if (position_x >= (lstControls[(position_y)].Count))
@@ -57,7 +55,7 @@ namespace Caiman.interfaceG
                     {
 
                         right_form.position_x = 0;
-                        xboxMainForm.activeControl = right_form;
+                        xboxMainForm.ActiveControl1 = right_form;
                     }
                 }
 
@@ -74,7 +72,7 @@ namespace Caiman.interfaceG
                     if (top_form != null)
                     {
                         top_form.position_y = (top_form.lstControls.Count()-1);
-                        xboxMainForm.activeControl = top_form;
+                        xboxMainForm.ActiveControl1 = top_form;
                         
                     }
                 }
@@ -84,7 +82,7 @@ namespace Caiman.interfaceG
                     if (bottom_form != null)
                     {
                         bottom_form.position_y = 0;
-                        xboxMainForm.activeControl = bottom_form;
+                        xboxMainForm.ActiveControl1 = bottom_form;
                         
                     }
                 }

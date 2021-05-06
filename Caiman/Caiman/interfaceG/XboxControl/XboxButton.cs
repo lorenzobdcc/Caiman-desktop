@@ -45,10 +45,7 @@ namespace Caiman.interfaceG.usercontrol
             this.Font = new Font("French Script MT", 14);
             this.AutoSize = true;
         }
-        private void XboxButton_GotFocus( EventArgs e)
-        {
 
-        }
         protected override void OnClick(EventArgs e)
         {
             base.OnClick(e);
@@ -61,7 +58,7 @@ namespace Caiman.interfaceG.usercontrol
             xboxUserControl.position_y = this.btn_contexte.position_y;
 
             XboxMainForm topMainForm = (XboxMainForm)this.TopLevelControl;
-            topMainForm.activeControl = xboxUserControl;
+            topMainForm.ActiveControl1 = xboxUserControl;
         }
 
 

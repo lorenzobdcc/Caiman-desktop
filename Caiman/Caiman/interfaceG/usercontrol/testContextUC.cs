@@ -73,7 +73,6 @@ namespace Caiman.interfaceG.usercontrol
                     lstControls[a_row][b_column] = tempButton;
                     lstControls[a_row][b_column].Text = (a_row + 1) + " " + (b_column + 1);
                     lstControls[a_row][b_column].Location = new System.Drawing.Point(b_column * 100 + 15, a_row * 60 + 15);
-                    lstControls[a_row][b_column].Width = WIDTH_BUTTON;
                     lstControls[a_row][b_column].Name = a_row + " " + b_column;
                     Controls.Add(lstControls[a_row][b_column]);
                 }

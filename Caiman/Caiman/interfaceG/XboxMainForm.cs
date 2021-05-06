@@ -17,8 +17,12 @@ namespace Caiman.interfaceG
         List<List<Control>> lstControls = new List<List<Control>>();
         XboxController xboxController;
 
-        public XboxUserControl activeControl;
+        private XboxUserControl activeControl1;
+        public XboxUserControl old_activeControl;
 
+        public List<ButtonContext> lstOldContexte = new List<ButtonContext>();
+        public ButtonContext activeContexte;
+        
 
         public string old_input;
 
@@ -28,15 +32,32 @@ namespace Caiman.interfaceG
         bool old_leftAnalogRight = false;
 
         XboxUserControl mainPanel;
+        XboxUserControl old_mainPanel;
         XboxUserControl topPanel;
         XboxUserControl sidePanel;
 
         private int position_x;
         private int position_y;
 
+        
+
 
         private TextBox tbx_console;
         Timer timer = new Timer();
+
+        public XboxUserControl ActiveControl1 { get => activeControl1;set
+            {
+                old_activeControl = ActiveControl1;
+                activeControl1 = value;
+            }
+        }
+
+        public XboxUserControl MainPanel { get => mainPanel; set
+            {
+                old_mainPanel = mainPanel;
+                mainPanel = value;
+            }
+        }
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
         private static extern IntPtr GetForegroundWindow();
@@ -44,34 +65,7 @@ namespace Caiman.interfaceG
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern int GetWindowThreadProcessId(IntPtr handle, out int processId);
 
-        public int Position_x { get => position_x; set
-            {
-                position_x = value;
-                if (position_x <= 0)
-                {
-                    position_x = 0;
-                }
-                if (position_x >= lstControls.Count)
-                {
-                    position_x = (lstControls[position_y].Count - 1);
-                }
-
-            }
-        }
-        public int Position_y { get => position_y; set
-            {
-                position_y = value;
-                if (position_y <= 0)
-                {
-                    position_y = 0;
-                }
-                if (position_y >= lstControls.Count)
-                {
-                    position_y = (lstControls[position_y].Count - 1);
-                }
-
-            }
-        }
+        
 
         public XboxMainForm()
         {
@@ -80,8 +74,9 @@ namespace Caiman.interfaceG
             lstControls.Add(new List<Control>());
             lstControls.Add(new List<Control>());
             CreateTestControls();
-            activeControl = (XboxUserControl)lstControls[0][0];
-            
+            ActiveControl1 = (XboxUserControl)lstControls[0][0];
+
+            lstOldContexte.Add(new ButtonContext("home", 0, 0, 0));
             InitTimer();
         }
 
@@ -100,11 +95,8 @@ namespace Caiman.interfaceG
         {
             string txt = "";
             txt += xboxController.GetInput();
-            txt += "\r\nposition X: " +activeControl.Position_x;
-            txt += "\r\nposition Y: " +activeControl.Position_y;
-            txt += "\r\nLeft Analog: ";
-            txt += "\r\nposition X: " + (int)(xboxController.lstController[0].GetState().Gamepad.LeftThumbX /100);
-            txt += "\r\nposition Y: " + (int)(xboxController.lstController[0].GetState().Gamepad.LeftThumbY /100);
+            txt += "\r\nposition X: " +ActiveControl1.Position_x;
+            txt += "\r\nposition Y: " +ActiveControl1.Position_y;
             tbx_console.Text = txt;
         }
 
@@ -162,58 +154,63 @@ namespace Caiman.interfaceG
                 {
                     if (leftAnalogLeft == true && old_leftAnalogLeft == false)
                     {
-                        activeControl.Position_x--;
-                        activeControl.MoveActivateControl();
+                        ActiveControl1.Position_x--;
+                        ActiveControl1.MoveActivateControl();
                     }
 
                     if (leftAnalogRight == true && old_leftAnalogRight == false)
                     {
-                        activeControl.Position_x++;
-                        activeControl.MoveActivateControl();
+                        ActiveControl1.Position_x++;
+                        ActiveControl1.MoveActivateControl();
                     }
 
                     if (leftAnalogDown == true && old_leftAnalogDown == false)
                     {
-                        activeControl.Position_y++;
-                        activeControl.MoveActivateControl();
+                        ActiveControl1.Position_y++;
+                        ActiveControl1.MoveActivateControl();
                     }
 
                     if (leftAnalogUp == true && old_leftAnalogUp == false)
                     {
-                        activeControl.Position_y--;
-                        activeControl.MoveActivateControl();
+                        ActiveControl1.Position_y--;
+                        ActiveControl1.MoveActivateControl();
                     }
 
 
                     if (input == "DPadLeft" && old_input != "DPadLeft")
                     {
 
-                        activeControl.Position_x--;
-                        activeControl.MoveActivateControl();
+                        ActiveControl1.Position_x--;
+                        ActiveControl1.MoveActivateControl();
 
                     }
                     if (input == "DPadRight" && old_input != "DPadRight")
                     {
-                        activeControl.Position_x++;
-                        activeControl.MoveActivateControl();
+                        ActiveControl1.Position_x++;
+                        ActiveControl1.MoveActivateControl();
 
                     }
                     if (input == "DPadUp" && old_input != "DPadUp")
                     {
 
-                        activeControl.Position_y--;
+                        ActiveControl1.Position_y--;
 
-                        activeControl.MoveActivateControl();
+                        ActiveControl1.MoveActivateControl();
                     }
                     if (input == "DPadDown" && old_input != "DPadDown")
                     {
-                        activeControl.Position_y++;
-                        activeControl.MoveActivateControl();
+                        ActiveControl1.Position_y++;
+                        ActiveControl1.MoveActivateControl();
 
                     }
                     if (input == "A" && old_input != "A")
                     {
-                        //SendKeys.Send("{ENTER}");
+                        SendKeys.Send("{ENTER}");
+                    }
+                    if (input == "B" && old_input != "B")
+                    {
+
+                        LoadOldMainPanel();
                     }
 
                     old_leftAnalogUp = leftAnalogUp;
@@ -227,7 +224,7 @@ namespace Caiman.interfaceG
         }
         public void MoveActivateControl()
         {
-            activeControl.lstControls[position_x-1][position_y].Focus();
+            ActiveControl1.lstControls[position_x-1][position_y].Focus();
             
         }
 
@@ -260,21 +257,92 @@ namespace Caiman.interfaceG
 
         }
 
-        public void ButtonHandler(object sender, EventArgs e)
+        public void ButtonHandler(object sender, EventArgs e, bool addToLst = false)
         {
-            mainPanel.Dispose();
-            
-            XboxButton button = (XboxButton)sender;
-            List<string> tag = (List<string>)button.Tag;
+
+            ButtonContext contexte = (ButtonContext)sender;
+            activeContexte = contexte;
+            if (addToLst)
+            {
+                lstOldContexte.Add(contexte);
+            }
+
+            switch (contexte.contexte)
+            {
+                case "side":
+                    LoadNewCategoriePanel(contexte);
+                    FocusToMainPanel();
+                    break;
+                case "home":
+                    LoadNewHomePanel();
+                    FocusToMainPanel();
+                    break;
+                default:
+                    break;
+            }
+           
+        }
+
+        public void LoadNewCategoriePanel(ButtonContext btn_context)
+        {
             testContextUC temp = new testContextUC(this, topPanel, null, null, sidePanel);
-            temp.CreateListButton(5,5);
-            mainPanel = temp;
-            mainPanel.Location = new Point(270, 120);
+            temp.CreateListButton(5, 5);
+            Controls.Remove(mainPanel);
+            mainPanel.Dispose();
+            MainPanel = temp;
 
-            Controls.Add(mainPanel);
+            MainPanel.Location = new Point(270, 120);
+            Controls.Add(MainPanel);
 
-            sidePanel.right_form = mainPanel;
-            topPanel.bottom_form = mainPanel;
+            sidePanel.right_form = MainPanel;
+            topPanel.bottom_form = MainPanel;
+
+
+        }
+
+        public void LoadNewHomePanel()
+        {
+            TestXboxUserControl temp = new TestXboxUserControl(this, topPanel, null, null, sidePanel);
+            Controls.Remove(mainPanel);
+            mainPanel.Dispose();
+            MainPanel = temp;
+
+            MainPanel.Location = new Point(270, 120);
+            Controls.Add(MainPanel);
+
+            sidePanel.right_form = MainPanel;
+            topPanel.bottom_form = MainPanel;
+        }
+
+        public void FocusToMainPanel()
+        {
+            activeControl1 = this.mainPanel;
+            activeControl1.position_y = 0;
+            activeControl1.position_x = 0;
+
+            XboxMainForm topMainForm = this;
+        }
+
+
+
+        public void LoadOldMainPanel()
+        {
+
+            if (lstOldContexte.Count > 0)
+            {
+                int lastContext = (lstOldContexte.Count() - 2);
+                if (activeContexte.contexte != "home")
+                {
+
+                    ButtonHandler(lstOldContexte[lastContext], new EventArgs());
+                    lstOldContexte.RemoveAt((lastContext +1));
+                    activeControl1.position_x = 0;
+                    activeControl1.position_y = 0;
+                    ActiveControl1.MoveActivateControl();
+
+                }
+            }
+
         }
 
         public void CreateTestControls()
@@ -286,24 +354,24 @@ namespace Caiman.interfaceG
             topPanel = new TestTopPannelXbox(this);
             topPanel.Location = new Point(0,0);
 
-            mainPanel = new TestXboxUserControl(this, topPanel, null, null, sidePanel);
-            sidePanel.right_form = mainPanel;
-            mainPanel.Location = new Point(270, 120);
+            MainPanel = new TestXboxUserControl(this, topPanel, null, null, sidePanel);
+            sidePanel.right_form = MainPanel;
+            MainPanel.Location = new Point(270, 120);
 
-            mainPanel.top_form = topPanel;
+            MainPanel.top_form = topPanel;
             sidePanel.top_form = topPanel;
-            topPanel.bottom_form = mainPanel;
+            topPanel.bottom_form = MainPanel;
             topPanel.left_form = sidePanel;
 
 
             lstControls[0].Add(sidePanel);
-            lstControls[0].Add(mainPanel);
+            lstControls[0].Add(MainPanel);
             lstControls[0].Add(topPanel);
             sidePanel.BringToFront();
-            mainPanel.BringToFront();
+            MainPanel.BringToFront();
             topPanel.BringToFront();
             Controls.Add(sidePanel);
-            Controls.Add(mainPanel);
+            Controls.Add(MainPanel);
             Controls.Add(topPanel);
 
         }
@@ -312,7 +380,7 @@ namespace Caiman.interfaceG
 
         private void XboxMainForm_Load(object sender, EventArgs e)
         {
-            activeControl.MoveActivateControl();
+            ActiveControl1.MoveActivateControl();
             tbx_console.SetBounds((50), (this.Height - 200), 150, 150);
         }
     }

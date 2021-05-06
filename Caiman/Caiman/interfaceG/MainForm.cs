@@ -18,7 +18,7 @@ namespace Caiman.interfaceG
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(17)))), ((int)(((byte)(23)))));
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Name = "MainForm";
-            this.Controls.SetChildIndex(this.activeControl, 0);
+            this.Controls.SetChildIndex(this.ActiveControl1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
