@@ -1,0 +1,217 @@
+\hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form}{}\doxysection{Caiman.\+interface\+G.\+Xbox\+Main\+Form Class Reference}
+\label{class_caiman_1_1interface_g_1_1_xbox_main_form}\index{Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}}
+Inheritance diagram for Caiman.\+interface\+G.\+Xbox\+Main\+Form\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_caiman_1_1interface_g_1_1_xbox_main_form}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_caiman_1_1interface_g_1_1_xbox_main_form_a9b07bcc117e26bfde4caf9a80274e226}{Xbox\+Main\+Form}} ()
+\begin{DoxyCompactList}\small\item\em Default contructor used to chreate the test form \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1interface_g_1_1_xbox_main_form_aa125de82399676cd223c853e871bd8b4}{Init\+Timer}} ()
+\begin{DoxyCompactList}\small\item\em Initialise a timer who is gonna call the function used to upade tehe interface and scan the user input \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1interface_g_1_1_xbox_main_form_a474fc4d27e0efe196d28278d29592fb2}{Scan\+Input}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Used to know what input is pressed by the user The function will alsa trigger event depend on the user input \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1interface_g_1_1_xbox_main_form_a553d9d5f0592af69334f32a3033aa5c3}{Contexte\+Handler}} (object sender, Event\+Args e, bool add\+To\+Lst=false)
+\begin{DoxyCompactList}\small\item\em Used to modifiy the content of the application by getting the button input values This function will load diferent windows updated for the right contexte \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1interface_g_1_1_xbox_main_form_a216c5d14b1843c70196740d80c8d122a}{Load\+New\+Categorie\+Panel}} (\mbox{\hyperlink{class_caiman_1_1interface_g_1_1_context_informations}{Context\+Informations}} btn\+\_\+context)
+\begin{DoxyCompactList}\small\item\em Load a spécific categorie \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1interface_g_1_1_xbox_main_form_af83f4468517788bb3746c06498170b85}{Load\+New\+Test\+Panel}} ()
+\begin{DoxyCompactList}\small\item\em Load a spécific categorie \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1interface_g_1_1_xbox_main_form_a4aefcd1161d0b3599e9a62ac021e6663}{Load\+New\+Images\+Panel}} ()
+\begin{DoxyCompactList}\small\item\em Load a spécific categorie \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1interface_g_1_1_xbox_main_form_a9d53d92650994f6c8758ae045f9622c5}{Load\+New\+Home\+Panel}} ()
+\begin{DoxyCompactList}\small\item\em Load a spécific categorie \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1interface_g_1_1_xbox_main_form_a45115b41b26e939fd37223a07af33f62}{Focus\+To\+Main\+Panel}} ()
+\begin{DoxyCompactList}\small\item\em Used to focus the main panel at position 0,0 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1interface_g_1_1_xbox_main_form_a873211ed73574ab46cb8389d6d0f2401}{Load\+Old\+Main\+Panel}} ()
+\begin{DoxyCompactList}\small\item\em load the previous panel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1interface_g_1_1_xbox_main_form_a4299ef1bbc163f41269dccf1bef87730}{Create\+Test\+Controls}} ()
+\begin{DoxyCompactList}\small\item\em Used to create the main form content and set the position of each panel \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_caiman_1_1interface_g_1_1_xbox_main_form_aa2ebc9ce7eb4cacf7d26dd096d2ecd39}{Application\+Is\+Activated}} ()
+\begin{DoxyCompactList}\small\item\em Used to know if the application is focused by the user or not \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_a59a017b59577f9f48706249e5fbf8fa3}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_a59a017b59577f9f48706249e5fbf8fa3}} 
+\mbox{\hyperlink{class_caiman_1_1interface_g_1_1_xbox_user_control}{Xbox\+User\+Control}} {\bfseries old\+\_\+active\+Control}
+\item 
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_a652e1e2cacbfddacb8a2cfe1f8f36ff8}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_a652e1e2cacbfddacb8a2cfe1f8f36ff8}} 
+List$<$ \mbox{\hyperlink{class_caiman_1_1interface_g_1_1_context_informations}{Context\+Informations}} $>$ {\bfseries lst\+Old\+Contexte} = new List$<$\mbox{\hyperlink{class_caiman_1_1interface_g_1_1_context_informations}{Context\+Informations}}$>$()
+\item 
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_ab5fe5c629371a411554b2b7b5dd38517}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_ab5fe5c629371a411554b2b7b5dd38517}} 
+\mbox{\hyperlink{class_caiman_1_1interface_g_1_1_context_informations}{Context\+Informations}} {\bfseries active\+Contexte}
+\item 
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_a967324e397e1c09631117b7e29994f59}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_a967324e397e1c09631117b7e29994f59}} 
+string {\bfseries old\+\_\+input}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_a7b87e6f2f80146240e4a1f0520b3d1b9}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_a7b87e6f2f80146240e4a1f0520b3d1b9}} 
+\mbox{\hyperlink{class_caiman_1_1interface_g_1_1_xbox_user_control}{Xbox\+User\+Control}} {\bfseries Active\+Control1}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_aba76f13cff0b8d59d35200955fe6c72a}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_aba76f13cff0b8d59d35200955fe6c72a}} 
+\mbox{\hyperlink{class_caiman_1_1interface_g_1_1_xbox_user_control}{Xbox\+User\+Control}} {\bfseries Main\+Panel}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_a9b07bcc117e26bfde4caf9a80274e226}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_a9b07bcc117e26bfde4caf9a80274e226}} 
+\index{Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}!XboxMainForm@{XboxMainForm}}
+\index{XboxMainForm@{XboxMainForm}!Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}}
+\doxysubsubsection{\texorpdfstring{XboxMainForm()}{XboxMainForm()}}
+{\footnotesize\ttfamily Caiman.\+interface\+G.\+Xbox\+Main\+Form.\+Xbox\+Main\+Form (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default contructor used to chreate the test form 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_aa2ebc9ce7eb4cacf7d26dd096d2ecd39}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_aa2ebc9ce7eb4cacf7d26dd096d2ecd39}} 
+\index{Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}!ApplicationIsActivated@{ApplicationIsActivated}}
+\index{ApplicationIsActivated@{ApplicationIsActivated}!Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}}
+\doxysubsubsection{\texorpdfstring{ApplicationIsActivated()}{ApplicationIsActivated()}}
+{\footnotesize\ttfamily static bool Caiman.\+interface\+G.\+Xbox\+Main\+Form.\+Application\+Is\+Activated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Used to know if the application is focused by the user or not 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_a553d9d5f0592af69334f32a3033aa5c3}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_a553d9d5f0592af69334f32a3033aa5c3}} 
+\index{Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}!ContexteHandler@{ContexteHandler}}
+\index{ContexteHandler@{ContexteHandler}!Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}}
+\doxysubsubsection{\texorpdfstring{ContexteHandler()}{ContexteHandler()}}
+{\footnotesize\ttfamily void Caiman.\+interface\+G.\+Xbox\+Main\+Form.\+Contexte\+Handler (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e,  }\item[{bool}]{add\+To\+Lst = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Used to modifiy the content of the application by getting the button input values This function will load diferent windows updated for the right contexte 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+{\em add\+To\+Lst} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_a4299ef1bbc163f41269dccf1bef87730}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_a4299ef1bbc163f41269dccf1bef87730}} 
+\index{Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}!CreateTestControls@{CreateTestControls}}
+\index{CreateTestControls@{CreateTestControls}!Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}}
+\doxysubsubsection{\texorpdfstring{CreateTestControls()}{CreateTestControls()}}
+{\footnotesize\ttfamily void Caiman.\+interface\+G.\+Xbox\+Main\+Form.\+Create\+Test\+Controls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Used to create the main form content and set the position of each panel 
+
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_a45115b41b26e939fd37223a07af33f62}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_a45115b41b26e939fd37223a07af33f62}} 
+\index{Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}!FocusToMainPanel@{FocusToMainPanel}}
+\index{FocusToMainPanel@{FocusToMainPanel}!Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}}
+\doxysubsubsection{\texorpdfstring{FocusToMainPanel()}{FocusToMainPanel()}}
+{\footnotesize\ttfamily void Caiman.\+interface\+G.\+Xbox\+Main\+Form.\+Focus\+To\+Main\+Panel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Used to focus the main panel at position 0,0 
+
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_aa125de82399676cd223c853e871bd8b4}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_aa125de82399676cd223c853e871bd8b4}} 
+\index{Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}!InitTimer@{InitTimer}}
+\index{InitTimer@{InitTimer}!Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}}
+\doxysubsubsection{\texorpdfstring{InitTimer()}{InitTimer()}}
+{\footnotesize\ttfamily void Caiman.\+interface\+G.\+Xbox\+Main\+Form.\+Init\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialise a timer who is gonna call the function used to upade tehe interface and scan the user input 
+
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_a216c5d14b1843c70196740d80c8d122a}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_a216c5d14b1843c70196740d80c8d122a}} 
+\index{Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}!LoadNewCategoriePanel@{LoadNewCategoriePanel}}
+\index{LoadNewCategoriePanel@{LoadNewCategoriePanel}!Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}}
+\doxysubsubsection{\texorpdfstring{LoadNewCategoriePanel()}{LoadNewCategoriePanel()}}
+{\footnotesize\ttfamily void Caiman.\+interface\+G.\+Xbox\+Main\+Form.\+Load\+New\+Categorie\+Panel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_caiman_1_1interface_g_1_1_context_informations}{Context\+Informations}}}]{btn\+\_\+context }\end{DoxyParamCaption})}
+
+
+
+Load a spécific categorie 
+
+
+\begin{DoxyParams}{Parameters}
+{\em btn\+\_\+context} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_a9d53d92650994f6c8758ae045f9622c5}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_a9d53d92650994f6c8758ae045f9622c5}} 
+\index{Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}!LoadNewHomePanel@{LoadNewHomePanel}}
+\index{LoadNewHomePanel@{LoadNewHomePanel}!Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}}
+\doxysubsubsection{\texorpdfstring{LoadNewHomePanel()}{LoadNewHomePanel()}}
+{\footnotesize\ttfamily void Caiman.\+interface\+G.\+Xbox\+Main\+Form.\+Load\+New\+Home\+Panel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Load a spécific categorie 
+
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_a4aefcd1161d0b3599e9a62ac021e6663}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_a4aefcd1161d0b3599e9a62ac021e6663}} 
+\index{Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}!LoadNewImagesPanel@{LoadNewImagesPanel}}
+\index{LoadNewImagesPanel@{LoadNewImagesPanel}!Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}}
+\doxysubsubsection{\texorpdfstring{LoadNewImagesPanel()}{LoadNewImagesPanel()}}
+{\footnotesize\ttfamily void Caiman.\+interface\+G.\+Xbox\+Main\+Form.\+Load\+New\+Images\+Panel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Load a spécific categorie 
+
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_af83f4468517788bb3746c06498170b85}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_af83f4468517788bb3746c06498170b85}} 
+\index{Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}!LoadNewTestPanel@{LoadNewTestPanel}}
+\index{LoadNewTestPanel@{LoadNewTestPanel}!Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}}
+\doxysubsubsection{\texorpdfstring{LoadNewTestPanel()}{LoadNewTestPanel()}}
+{\footnotesize\ttfamily void Caiman.\+interface\+G.\+Xbox\+Main\+Form.\+Load\+New\+Test\+Panel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Load a spécific categorie 
+
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_a873211ed73574ab46cb8389d6d0f2401}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_a873211ed73574ab46cb8389d6d0f2401}} 
+\index{Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}!LoadOldMainPanel@{LoadOldMainPanel}}
+\index{LoadOldMainPanel@{LoadOldMainPanel}!Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}}
+\doxysubsubsection{\texorpdfstring{LoadOldMainPanel()}{LoadOldMainPanel()}}
+{\footnotesize\ttfamily void Caiman.\+interface\+G.\+Xbox\+Main\+Form.\+Load\+Old\+Main\+Panel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+load the previous panel 
+
+\mbox{\Hypertarget{class_caiman_1_1interface_g_1_1_xbox_main_form_a474fc4d27e0efe196d28278d29592fb2}\label{class_caiman_1_1interface_g_1_1_xbox_main_form_a474fc4d27e0efe196d28278d29592fb2}} 
+\index{Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}!ScanInput@{ScanInput}}
+\index{ScanInput@{ScanInput}!Caiman.interfaceG.XboxMainForm@{Caiman.interfaceG.XboxMainForm}}
+\doxysubsubsection{\texorpdfstring{ScanInput()}{ScanInput()}}
+{\footnotesize\ttfamily void Caiman.\+interface\+G.\+Xbox\+Main\+Form.\+Scan\+Input (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})}
+
+
+
+Used to know what input is pressed by the user The function will alsa trigger event depend on the user input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Caiman/interface\+G/\mbox{\hyperlink{_xbox_main_form_8cs}{Xbox\+Main\+Form.\+cs}}\end{DoxyCompactItemize}

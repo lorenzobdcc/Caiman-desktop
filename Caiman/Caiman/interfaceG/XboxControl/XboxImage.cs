@@ -1,4 +1,11 @@
-﻿using System;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Used to create a button with an image in backGround
+ */
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -11,14 +18,17 @@ namespace Caiman.interfaceG.XboxControl
     class XboxImage: Button
     {
 
-        public ButtonContext btn_contexte;
+        public ContextInformations btn_contexte;
         public XboxImage(string contexte, Image img, int id_contexte, int position_y, int position_x): this()
         {
-            this.btn_contexte = new ButtonContext(contexte, id_contexte, position_y, position_x);
+            this.btn_contexte = new ContextInformations(contexte, id_contexte, position_y, position_x);
             this.BackgroundImage = img;
 
         }
 
+        /// <summary>
+        /// Create a button with specific design and an image in background
+        /// </summary>
         public XboxImage()
         {
             this.btn_contexte = null;
@@ -26,7 +36,7 @@ namespace Caiman.interfaceG.XboxControl
             this.FlatStyle = FlatStyle.Flat;
             this.ForeColor = Color.White;
             this.BackColor = Color.FromArgb(48, 51, 56);
-            this.FlatAppearance.BorderSize = 0;
+            this.FlatAppearance.BorderSize = 2;
             this.FlatAppearance.BorderColor = Color.FromArgb(40, 167, 69);
             this.Height = 400;
             this.Width = 270;
@@ -38,6 +48,10 @@ namespace Caiman.interfaceG.XboxControl
             this.AutoSize = true;
         }
 
+        /// <summary>
+        /// Updated onclick event where xou tel to the main form which button has clicked in a list of button
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnClick(EventArgs e)
         {
             base.OnClick(e);
@@ -54,22 +68,25 @@ namespace Caiman.interfaceG.XboxControl
         }
 
 
+        /// <summary>
+        /// event when the button has focus
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnGotFocus(EventArgs e)
         {
             base.OnGotFocus(e);
-            this.FlatAppearance.BorderSize = 2;
+            this.FlatAppearance.BorderSize = 3;
 
         }
 
-        public void OnClickXbox()
-        {
-            this.PerformClick();
-        }
-
+        /// <summary>
+        /// Change the button disign when the button is not focused anymore
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnLostFocus(EventArgs e)
         {
             base.OnLostFocus(e);
-            this.FlatAppearance.BorderSize = 0;
+            this.FlatAppearance.BorderSize = 2;
         }
     }
 }

@@ -1,4 +1,11 @@
-﻿using Caiman.interfaceG.XboxControl;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Used to test if i can load an image from the web
+ */
+using Caiman.interfaceG.XboxControl;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -15,19 +22,23 @@ namespace Caiman.interfaceG.usercontrol
     {
         private System.Windows.Forms.Label label1;
 
-        public TestImageUserControl(XboxMainForm xboxMain) : base(xboxMain)
-        {
-        }
 
+        /// <summary>
+        /// contrucot with next panel specify
+        /// </summary>
+        /// <param name="xboxMain"></param>
+        /// <param name="top"></param>
+        /// <param name="bottom"></param>
+        /// <param name="right"></param>
+        /// <param name="left"></param>
         public TestImageUserControl(XboxMainForm xboxMain, XboxUserControl top, XboxUserControl bottom, XboxUserControl right, XboxUserControl left) : base(xboxMain, top, bottom, right, left)
         {
             InitializeComponent();
         }
-        public TestImageUserControl(string contexte)
-        {
-            InitializeComponent();
-        }
 
+        /// <summary>
+        /// Initialise the panel
+        /// </summary>
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
@@ -53,6 +64,13 @@ namespace Caiman.interfaceG.usercontrol
             this.PerformLayout();
 
         }
+
+        /// <summary>
+        /// Used to cheate a list of images
+        /// The images comme from the website caiman.cfpt.info
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="column"></param>
         public void CreateListImages(int row, int column)
         {
             using (WebClient client = new WebClient())

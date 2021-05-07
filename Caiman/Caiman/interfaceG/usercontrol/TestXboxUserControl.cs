@@ -1,4 +1,11 @@
-﻿using System;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Used to create a basic userc control usable with a controller
+ */
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -15,15 +22,9 @@ namespace Caiman.interfaceG.usercontrol
             InitializeComponent();
         }
 
-        public TestXboxUserControl(XboxMainForm xboxMain): base(xboxMain)
-        {
-            InitializeComponent();
-        }
-        public TestXboxUserControl()
-        {
-            InitializeComponent();
-        }
-
+        /// <summary>
+        /// create the panel with  49 button in it
+        /// </summary>
         private void InitializeComponent()
         {
             CreateListButton(7, 7);
@@ -37,7 +38,11 @@ namespace Caiman.interfaceG.usercontrol
             this.ResumeLayout(false);
 
         }
-
+        /// <summary>
+        /// create a basic list of buttons
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="column"></param>
         public void CreateListButton(int row, int column)
         {
             for (int i = 0; i < row; i++)

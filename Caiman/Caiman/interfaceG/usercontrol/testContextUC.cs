@@ -1,4 +1,11 @@
-﻿using System;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Used to test to load a specific context in the main page
+ */
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -10,40 +17,29 @@ namespace Caiman.interfaceG.usercontrol
 {
     class testContextUC : XboxUserControl
     {
-        private System.Windows.Forms.Label label1;
-
-        public testContextUC(XboxMainForm xboxMain) : base(xboxMain)
-        {
-        }
-
+        /// <summary>
+        /// contructor where you specify the panel next to this panel
+        /// </summary>
+        /// <param name="xboxMain"></param>
+        /// <param name="top"></param>
+        /// <param name="bottom"></param>
+        /// <param name="right"></param>
+        /// <param name="left"></param>
         public testContextUC(XboxMainForm xboxMain, XboxUserControl top, XboxUserControl bottom, XboxUserControl right, XboxUserControl left) : base(xboxMain, top, bottom, right, left)
         {
             InitializeComponent();
         }
-        public testContextUC(string contexte)
-        {
-            InitializeComponent();
-            label1.Text = contexte;
-        }
 
+        /// <summary>
+        /// Initialise the panel
+        /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(76, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+
             // 
             // testContextUC
             // 
-            this.Controls.Add(this.label1);
             this.Name = "testContextUC";
             this.Size = new System.Drawing.Size(1000, 1000);
             this.BackColor = Color.Transparent;
@@ -51,6 +47,11 @@ namespace Caiman.interfaceG.usercontrol
             this.PerformLayout();
 
         }
+        /// <summary>
+        /// create a list of buttons
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="column"></param>
         public void CreateListButton(int row, int column)
         {
             for (int i = 0; i < row; i++)

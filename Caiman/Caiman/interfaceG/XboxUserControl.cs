@@ -1,4 +1,11 @@
-﻿using Caiman.interfaceG.usercontrol;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class main class to create component for the interface
+ */
+using Caiman.interfaceG.usercontrol;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +32,9 @@ namespace Caiman.interfaceG
         public int position_x;
         public int position_y;
 
-
+        /// <summary>
+        /// Check if the position where the user want to go is valid
+        /// </summary>
         public int Position_x
         {
             get => position_x; set
@@ -61,6 +70,10 @@ namespace Caiman.interfaceG
 
             }
         }
+
+        /// <summary>
+        /// Check if the position where the user want to go is valid
+        /// </summary>
         public int Position_y
         {
             get => position_y; set
@@ -90,11 +103,22 @@ namespace Caiman.interfaceG
             }
         }
 
+        /// <summary>
+        /// default contructor
+        /// </summary>
         public XboxUserControl()
         {
 
         }
 
+        /// <summary>
+        /// constructor used to specify the contexte who is need to be load
+        /// </summary>
+        /// <param name="xboxMain"></param>
+        /// <param name="top"></param>
+        /// <param name="bottom"></param>
+        /// <param name="right"></param>
+        /// <param name="left"></param>
         public XboxUserControl(XboxMainForm xboxMain , XboxUserControl top, XboxUserControl bottom, XboxUserControl right, XboxUserControl left)
         {
             InitializeComponent();
@@ -106,6 +130,10 @@ namespace Caiman.interfaceG
             left_form = left;
         }
 
+        /// <summary>
+        /// consctructor where you specified the main form of the application
+        /// </summary>
+        /// <param name="xboxMain"></param>
         public XboxUserControl(XboxMainForm xboxMain)
         {
             InitializeComponent();
@@ -126,13 +154,19 @@ namespace Caiman.interfaceG
 
         }
 
-        public void MoveActivateControl(int destination = 0)
+        /// <summary>
+        /// move the user cursor to the position required by the user
+        /// 
+        /// if the position required is not valid the user cursor will be moved to the next valid position
+        /// </summary>
+        /// <param name="destination"></param>
+        public void MoveActivateControl(string destination = "")
         {
             //top = 1
             //right = 2
             //down = 3
             //left = 4
-            if (destination == 3)
+            if (destination == "down")
             {
                 if (lstControls[position_y][position_x] == null)
                 {

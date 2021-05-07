@@ -1,4 +1,11 @@
-﻿using System;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Used to test to move the user cursor in a list of button where some buttons are missing
+ */
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -10,39 +17,20 @@ namespace Caiman.interfaceG.usercontrol
 {
     class testNavigationUserControl : XboxUserControl
     {
-        private System.Windows.Forms.Label label1;
-
-        public testNavigationUserControl(XboxMainForm xboxMain) : base(xboxMain)
-        {
-        }
 
         public testNavigationUserControl(XboxMainForm xboxMain, XboxUserControl top, XboxUserControl bottom, XboxUserControl right, XboxUserControl left) : base(xboxMain, top, bottom, right, left)
         {
             InitializeComponent();
         }
-        public testNavigationUserControl(string contexte)
-        {
-            InitializeComponent();
-        }
+
 
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(76, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+
             // 
             // testContextUC
             // 
-            this.Controls.Add(this.label1);
             this.Name = "testContextUC";
             this.Size = new System.Drawing.Size(1000, 1000);
             this.BackColor = Color.Transparent;
@@ -50,6 +38,11 @@ namespace Caiman.interfaceG.usercontrol
             this.PerformLayout();
 
         }
+        /// <summary>
+        /// Create a list of button witch hole in it to test the comportement of the user's cursor
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="column"></param>
         public void CreateListBrokenButton(int row, int column)
         {
             for (int i = 0; i < row; i++)

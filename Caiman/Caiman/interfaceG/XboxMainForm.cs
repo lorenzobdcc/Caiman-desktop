@@ -1,4 +1,11 @@
-﻿using Caiman.interfaceG.usercontrol;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Main classe of the project
+ */
+using Caiman.interfaceG.usercontrol;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -20,8 +27,8 @@ namespace Caiman.interfaceG
         private XboxUserControl activeControl1;
         public XboxUserControl old_activeControl;
 
-        public List<ButtonContext> lstOldContexte = new List<ButtonContext>();
-        public ButtonContext activeContexte;
+        public List<ContextInformations> lstOldContexte = new List<ContextInformations>();
+        public ContextInformations activeContexte;
         
 
         public string old_input;
@@ -32,17 +39,10 @@ namespace Caiman.interfaceG
         bool old_leftAnalogRight = false;
 
         XboxUserControl mainPanel;
-        XboxUserControl old_mainPanel;
         XboxUserControl topPanel;
         XboxUserControl sidePanel;
 
-        private int position_x;
-        private int position_y;
 
-        
-
-
-        private TextBox tbx_console;
         Timer timer = new Timer();
 
         public XboxUserControl ActiveControl1 { get => activeControl1;set
@@ -54,7 +54,6 @@ namespace Caiman.interfaceG
 
         public XboxUserControl MainPanel { get => mainPanel; set
             {
-                old_mainPanel = mainPanel;
                 mainPanel = value;
             }
         }
@@ -66,7 +65,9 @@ namespace Caiman.interfaceG
         private static extern int GetWindowThreadProcessId(IntPtr handle, out int processId);
 
         
-
+        /// <summary>
+        /// Default contructor used to chreate the test form
+        /// </summary>
         public XboxMainForm()
         {
             InitializeComponent();
@@ -76,10 +77,13 @@ namespace Caiman.interfaceG
             CreateTestControls();
             ActiveControl1 = (XboxUserControl)lstControls[0][0];
 
-            lstOldContexte.Add(new ButtonContext("home", 0, 0, 0));
+            lstOldContexte.Add(new ContextInformations("home", 0, 0, 0));
             InitTimer();
         }
 
+        /// <summary>
+        /// Initialise a timer who is gonna call the function used to upade tehe interface and scan the user input
+        /// </summary>
         public void InitTimer()
         {
             timer = new Timer();
@@ -91,15 +95,23 @@ namespace Caiman.interfaceG
             timer.Start();
         }
 
+        /// <summary>
+        /// update the "tbx_console" content 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateInterface(object sender, EventArgs e)
         {
             string txt = "";
             txt += xboxController.GetInput();
             txt += "\r\nposition X: " +ActiveControl1.Position_x;
             txt += "\r\nposition Y: " +ActiveControl1.Position_y;
-            tbx_console.Text = txt;
         }
 
+        /// <summary>
+        /// Used to know if the application is focused by the user or not
+        /// </summary>
+        /// <returns></returns>
         public static bool ApplicationIsActivated()
         {
             var activatedHandle = GetForegroundWindow();
@@ -115,10 +127,16 @@ namespace Caiman.interfaceG
             return activeProcId == procId;
         }
 
+        /// <summary>
+        /// Used to know what input is pressed by the user
+        /// The function will alsa trigger event depend on the user input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ScanInput(object sender, EventArgs e)
         {
 
-
+            // if the user 1 controller is connected
             if (xboxController.lstController[0].IsConnected)
             {
                 string input = xboxController.lstController[0].GetState().Gamepad.Buttons.ToString();
@@ -161,7 +179,7 @@ namespace Caiman.interfaceG
                     if (leftAnalogRight == true && old_leftAnalogRight == false)
                     {
                         ActiveControl1.Position_x++;
-                        ActiveControl1.MoveActivateControl(3);
+                        ActiveControl1.MoveActivateControl("down");
                     }
 
                     if (leftAnalogDown == true && old_leftAnalogDown == false)
@@ -187,7 +205,7 @@ namespace Caiman.interfaceG
                     if (input == "DPadRight" && old_input != "DPadRight")
                     {
                         ActiveControl1.Position_x++;
-                        ActiveControl1.MoveActivateControl(3);
+                        ActiveControl1.MoveActivateControl("down");
 
                     }
                     if (input == "DPadUp" && old_input != "DPadUp")
@@ -224,26 +242,21 @@ namespace Caiman.interfaceG
         }
 
 
-
+        /// <summary>
+        /// Initialise the main form
+        /// </summary>
         private void InitializeComponent()
         {
-            this.tbx_console = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XboxMainForm));
             this.SuspendLayout();
-            // 
-            // tbx_console
-            // 
-            this.tbx_console.Location = new System.Drawing.Point(12, 510);
-            this.tbx_console.Multiline = true;
-            this.tbx_console.Name = "tbx_console";
-            this.tbx_console.Size = new System.Drawing.Size(500, 80);
-            this.tbx_console.TabIndex = 0;
+
             // 
             // XboxMainForm
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(17)))), ((int)(((byte)(23)))));
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.ControlBox = false;
-            this.Controls.Add(this.tbx_console);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "XboxMainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.XboxMainForm_Load);
@@ -252,10 +265,18 @@ namespace Caiman.interfaceG
 
         }
 
-        public void ButtonHandler(object sender, EventArgs e, bool addToLst = false)
+
+        /// <summary>
+        /// Used to modifiy the content of the application by getting the button input values
+        /// This function will load diferent windows updated for the right contexte
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <param name="addToLst"></param>
+        public void ContexteHandler(object sender, EventArgs e, bool addToLst = false)
         {
 
-            ButtonContext contexte = (ButtonContext)sender;
+            ContextInformations contexte = (ContextInformations)sender;
             activeContexte = contexte;
             if (addToLst)
             {
@@ -280,13 +301,20 @@ namespace Caiman.interfaceG
                     LoadNewImagesPanel();
                     FocusToMainPanel();
                     break;
+                case "quit":
+                    Application.Exit();
+                    break;
                 default:
                     break;
             }
            
         }
 
-        public void LoadNewCategoriePanel(ButtonContext btn_context)
+        /// <summary>
+        /// Load a spécific categorie
+        /// </summary>
+        /// <param name="btn_context"></param>
+        public void LoadNewCategoriePanel(ContextInformations btn_context)
         {
             testContextUC temp = new testContextUC(this, topPanel, null, null, sidePanel);
             temp.CreateListButton(5, 5);
@@ -303,6 +331,9 @@ namespace Caiman.interfaceG
 
         }
 
+        /// <summary>
+        /// Load a spécific categorie
+        /// </summary>
         public void LoadNewTestPanel()
         {
             testNavigationUserControl temp = new testNavigationUserControl(this, topPanel, null, null, sidePanel);
@@ -320,6 +351,9 @@ namespace Caiman.interfaceG
 
         }
 
+        /// <summary>
+        /// Load a spécific categorie
+        /// </summary>
         public void LoadNewImagesPanel()
         {
             TestImageUserControl temp = new TestImageUserControl(this, topPanel, null, null, sidePanel);
@@ -337,6 +371,9 @@ namespace Caiman.interfaceG
 
         }
 
+        /// <summary>
+        /// Load a spécific categorie
+        /// </summary>
         public void LoadNewHomePanel()
         {
             TestXboxUserControl temp = new TestXboxUserControl(this, topPanel, null, null, sidePanel);
@@ -351,6 +388,9 @@ namespace Caiman.interfaceG
             topPanel.bottom_form = MainPanel;
         }
 
+        /// <summary>
+        /// Used to focus the main panel at position 0,0
+        /// </summary>
         public void FocusToMainPanel()
         {
             activeControl1 = this.mainPanel;
@@ -361,7 +401,9 @@ namespace Caiman.interfaceG
         }
 
 
-
+        /// <summary>
+        /// load the previous panel
+        /// </summary>
         public void LoadOldMainPanel()
         {
 
@@ -371,7 +413,7 @@ namespace Caiman.interfaceG
                 if (activeContexte.contexte != "home")
                 {
 
-                    ButtonHandler(lstOldContexte[lastContext], new EventArgs());
+                    ContexteHandler(lstOldContexte[lastContext], new EventArgs());
                     lstOldContexte.RemoveAt((lastContext +1));
                     activeControl1.position_x = 0;
                     activeControl1.position_y = 0;
@@ -382,6 +424,9 @@ namespace Caiman.interfaceG
 
         }
 
+        /// <summary>
+        /// Used to create the main form content and set the position of each panel
+        /// </summary>
         public void CreateTestControls()
         {
 
@@ -414,11 +459,14 @@ namespace Caiman.interfaceG
         }
 
        
-
+        /// <summary>
+        /// Event call when the main form is loaded
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void XboxMainForm_Load(object sender, EventArgs e)
         {
             ActiveControl1.MoveActivateControl();
-            tbx_console.SetBounds((50), (this.Height - 200), 150, 150);
         }
     }
 }

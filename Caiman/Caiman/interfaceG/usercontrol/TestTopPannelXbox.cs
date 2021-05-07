@@ -1,4 +1,11 @@
-﻿using System;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Test class used to create a top panel
+ */
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -17,11 +24,22 @@ namespace Caiman.interfaceG.usercontrol
             CreateListNavButton();
         }
 
+        /// <summary>
+        /// Contructor to spécifiy border panel
+        /// </summary>
+        /// <param name="xboxMain"></param>
+        /// <param name="top"></param>
+        /// <param name="bottom"></param>
+        /// <param name="right"></param>
+        /// <param name="left"></param>
         public TestTopPannelXbox(XboxMainForm xboxMain, XboxUserControl top, XboxUserControl bottom, XboxUserControl right, XboxUserControl left) : base(xboxMain, top, bottom, right, left)
         {
 
         }
 
+        /// <summary>
+        /// Create a list of button to test the deplacement of the cursor
+        /// </summary>
         public void CreateListNavButton()
         {
 
@@ -33,14 +51,13 @@ namespace Caiman.interfaceG.usercontrol
                 lstControls[0].Add(new XboxButton());
             }
             List<string> lst_navbar = new List<string>();
-            lst_navbar.Add("Zelda");
-            lst_navbar.Add("Mario");
-            lst_navbar.Add("Super_Smash");
-            lst_navbar.Add("Kingdom_Hearts");
-            lst_navbar.Add("Dragon_Ball");
+            lst_navbar.Add("Nav 1");
+            lst_navbar.Add("Nav 2");
+            lst_navbar.Add("Nav 3");
 
 
-            for (int a_row = 0; a_row <= 4; a_row++)
+
+            for (int a_row = 0; a_row < lst_navbar.Count(); a_row++)
             {
 
                 XboxButton tempButton = new XboxButton(("btn_" + a_row), a_row, 0, a_row);

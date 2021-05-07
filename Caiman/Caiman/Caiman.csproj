@@ -27,7 +27,7 @@
     <PublisherName>BDCC</PublisherName>
     <WebPage>publish.htm</WebPage>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -67,6 +67,12 @@
   <PropertyGroup>
     <ApplicationIcon>img\caiman.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Caiman_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="SharpDX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpDX.4.2.0\lib\net45\SharpDX.dll</HintPath>
@@ -88,9 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="interfaceG\ButtonContext.cs" />
-    <Compile Include="interfaceG\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="interfaceG\usercontrol\testContextUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -124,9 +127,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="interfaceG\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="interfaceG\usercontrol\testContextUC.resx">
       <DependentUpon>testContextUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,7 +175,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Emulators\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="img\caiman.ico" />
   </ItemGroup>

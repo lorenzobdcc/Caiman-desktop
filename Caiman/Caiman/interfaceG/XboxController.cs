@@ -1,4 +1,11 @@
-﻿using SharpDX.XInput;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Used to comunicate with all the DirectX input controller connected to the user pc
+ */
+using SharpDX.XInput;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,16 +18,8 @@ namespace Caiman.interfaceG
 {
     class XboxController
     {
-        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
-        private static extern IntPtr GetForegroundWindow();
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern int GetWindowThreadProcessId(IntPtr handle, out int processId);
-
-
         public List<Controller> lstController = new List<Controller>();
         public List<String> lstInput = new List<String>();
-        string old_input = "";
         private string controllers;
 
         public int valueXboxController;
@@ -29,21 +28,23 @@ namespace Caiman.interfaceG
 
         public string Controllers { get => controllers; set => controllers = value; }
 
+        /// <summary>
+        /// Contructor where you specify the main form of your program
+        /// </summary>
+        /// <param name="mainFormp"></param>
         public XboxController(Control mainFormp)
         {
             overlay = mainFormp;
             valueXboxController = 0;
             lstController.Add(new Controller(UserIndex.One));
-
             lstInput.Add("");
 
         }
 
-
-        
-
-
-
+        /// <summary>
+        /// send input pressed by the users
+        /// </summary>
+        /// <returns></returns>
         public string GetInput()
         {
             string txt = "";
@@ -60,6 +61,11 @@ namespace Caiman.interfaceG
             return txt;
         }
 
+        /// <summary>
+        /// scan the controller connected to the user pc
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ScanController(object sender, EventArgs e)
         {
             Controllers = "";
