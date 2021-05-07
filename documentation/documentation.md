@@ -71,8 +71,10 @@ Table des matières
     - [Gestion des manettes](#gestion-des-manettes)
   - [interface utilisateur utilisable à la manette](#interface-utilisateur-utilisable-à-la-manette)
     - [Réception des input des manettes connecté](#réception-des-input-des-manettes-connecté)
-    - [Envoie des input a la form active dans l’application](#envoie-des-input-a-la-form-active-dans-lapplication)
     - [Transformation des input de la manette en événement](#transformation-des-input-de-la-manette-en-événement)
+    - [Structure de l’affichage](#structure-de-laffichage)
+    - [Déplacement dans un panel de l’application](#déplacement-dans-un-panel-de-lapplication)
+    - [Déplacement de panel en panel](#déplacement-de-panel-en-panel)
 - [Analyse organique](#analyse-organique)
   - [Technologies utilisées](#technologies-utilisées)
     - [PHP](#php)
@@ -81,6 +83,7 @@ Table des matières
   - [Description technique: Site web](#description-technique-site-web)
   - [Description technique: Application Caiman](#description-technique-application-caiman)
   - [Tests](#tests)
+    - [Test de l’interface graphique](#test-de-linterface-graphique)
   - [Estimation de l’apport personnel](#estimation-de-lapport-personnel)
   - [Conclusion et perspectives](#conclusion-et-perspectives)
     - [Problème rencontrés](#problème-rencontrés)
@@ -515,12 +518,59 @@ L’un des intérêts du site est de pouvoir télécharger l'application Caiman.
 
 ### Réception des input des manettes connecté
 
+L’utilisateur de Caiman a la possibilité de pouvoir utiliser l’application au clavier souris mais aussi à la manette. Pour ce faire j’ai utilisé le paquet nuGet “SharpDX.XInput”, ce paquet me permet de connaître les manettes connecté au pc ainsi que les touches appuyées par l’utilisateur.
 
-### Envoie des input a la form active dans l’application
+La seule manette qui peut se déplacer dans l'application est la manette 1. Pour connaître les boutons de la manette j’utilise la fonction getInput() qui me permet de connaître les touches qui sont pressées à un instant T.  Je vais chercher les inputs toutes les 2ms pour être sûr de ne pas louper d’inputs. 
 
+Les inputs sont ensuite traité par l’interface de l’application qui décide quoi en faire selon le contexte.
 
 ### Transformation des input de la manette en événement 
 
+Les input de la manette sont analysés par la form principale de Caiman selon la ou les touches qui sont pressé l’application exécute des actions différente, par exemple quand la touche “A” est pressé alors le programme envoie la touche ENTER a l'application ce qui me permet de cliquer des boutons. 
+
+Pour gérer les événements je fais un test pour savoir si l'utilisateur utilise l’application ou non . Si l’application n’est pas focus par l’utilisateur seul une partie des actions sont possible pour éviter que des actions inattendu puisse arriver alors que l’application n’est plus visible.
+
+### Structure de l’affichage
+
+L’affichage est constitué d’un “XboxMainForm” il sert à contenir tous les autres panels il est aussi en charge de la gestion des inputs de la manette de l’utilisateur 1.
+
+un “XboxMainForm” contient une liste de XboxUserController qui eux contiennent différentes choses comme des boutons des images ou des labels.
+
+Le XboxMainForm est aussi responsable de la gestion des demandes de l'utilisateur, par exemple si l’utilisateur veut afficher l’accueil du Caiman il va lui passer un objet contenant sa demande. Il va donc traiter les demandes et afficher les panels selon les besoins de l'utilisateur.
+
+
+### Déplacement dans un panel de l’application
+
+L’application est conçue avec des “panel” c'est-à-dire une liste de listes de controls. Cette liste de controls est propre à chaque panel. Les panel contient aussi une variable position_x et position_y qui permet de connaître le controls actuellement sélectionné par l’utilisateur. Quand l’utilisateur décide de se déplacer il demande au panel de modifier sa variables x et y, mais avant de valider ce changement le panel regarde si le déplacement demandé par l’utilisateur est possible ou non.
+
+Il existe 3 possibilités:
+
+
+
+1. Le déplacement est possible et alors la position sur l’axe x,y est modifiée.
+2. Le déplacement est impossible car il n’y a rien à l'emplacement demandé. Dans ce cas, le panel va décider de bouger le curseur sur un des emplacements possibles.
+3. L’utilisateur est à la fin du panel et “sors du panel” dans ce cas il va se diriger dans un autre panel si il y en a un dans la direction demandée.
+
+
+### Déplacement de panel en panel
+
+Chaque “panel” possède un pointeur sur le panel du haut, du bas, de droite et de gauche.
+
+Ces pointer ne sont pas forcément utilisés, ils ont le droit d'être nul.
+
+Si l’on prend par l'exemple suivant: 
+
+
+![alt_text](images_documentation/exemple_3_panel.jpeg "3 panel image")
+
+
+Nous avons 3 panels différents qui contiennent chacun plusieurs controls.
+
+Le panel 1 possède donc deux pointeur différents, un sur le panel 2 et un autre sur le panel 3.
+
+Si l’utilisateur est positionné sur le bas du panel 1 et qu’il appuie sur la touche “bas” il devrait sortir sur panel mais le panel l’en empêche mais le panel va donc vérifier si un panel n’est pas indiqué comme panel “down”. Si tel est le cas il va donc transmettre à la form principale qu’il doit changer de form “active”. Le focus va donc passer le panel 3.
+
+Un autre cas et que l’utilisateur va peut être décider de retourner sur le panel 1 mais là un problème se pose ou doit pointer le panel haut du panel 3. Actuellement un seul panel peut être défini par côté  mais la solution est de créer de petits panel pour éviter que ces situation arrivent.
 
 # Analyse organique
 
@@ -544,6 +594,19 @@ L’un des intérêts du site est de pouvoir télécharger l'application Caiman.
 
 
 ## Tests
+
+### Test de l’interface graphique
+
+Pour pouvoir tester mon interface graphique j’ai créé un projet contenant des différentes vue pour pouvoir essayer le déplacement et et le changement de vue.
+
+![alt_text](images_documentation/test_caiman_interface_1.png "test interface")
+
+![alt_text](images_documentation/test_caiman_interface_2.png "test interface")
+
+
+Ce programme de test m'a permis de me rendre compte des différents soucis que j’ai pu avoir et de et pouvoir les corriger avant de passer à la partie développement de l’application.
+
+Le but de ces tests étaient de ne pas avoir à me soucier de l’interface pendant que je devais développer la gestion des jeux et des émulateurs.
 
 
 ## Estimation de l’apport personnel

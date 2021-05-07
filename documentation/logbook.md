@@ -476,3 +476,17 @@ Je commente les classe que j’ai créé et je supprimer les fonctions qui ne so
 ### 12h40
 
 documentation + Création d’une release pour pouvoir essayer l’interface
+Je déplace la documentation du projet web au projet desktop la seul documentation qui reste dans le projet web est celle qui concern son propre code (doxygen)
+
+documentation + Création d’une release pour pouvoir essayer l’interface
+
+Je déplace la documentation du projet web au projet desktop la seul documentation qui reste dans le projet web est celle qui concern son propre code (doxygen)
+
+### notes personnelles
+Je dois modifier la connexion a la base de données  pour passer des fonctions de cryptographie de PHP au mds. Le problème ce que je ne peux pas me connecter depuis le c# avec les fonctions de cryptographie de php.
+
+### 15h30
+
+J’ai mis à jour ma documentation du projet.
+
+J’ai essayé d’ajouter des tâche à mon git mais j’ai eu des soucis pour la signature du projet donc je remet ca a plus tard.

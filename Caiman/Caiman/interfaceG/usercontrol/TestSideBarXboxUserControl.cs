@@ -37,7 +37,7 @@ namespace Caiman.interfaceG.usercontrol
         public void CreateListNavButton()
         {
             List<string> lst_navbar = new List<string>();
-            lst_navbar.Add("Brocken navigation");
+            lst_navbar.Add("Broken navigation");
             lst_navbar.Add("Images");
             lst_navbar.Add("5 5");
             lst_navbar.Add("Quit App");
