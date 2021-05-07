@@ -93,7 +93,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="interfaceG\ButtonContext.cs" />
+    <Compile Include="interfaceG\ContextInformations.cs" />
     <Compile Include="interfaceG\usercontrol\testContextUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
