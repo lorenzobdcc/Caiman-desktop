@@ -3,7 +3,7 @@
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
  *  @file
  *  @copyright Copyright (c) 2021 BDCC
- *  @brief Used to create a button witch is useable with a controller
+ *  @brief Used to create a button for the navbar witch is useable with a controller
  */
 using System;
 using System.Collections.Generic;
@@ -15,31 +15,40 @@ using System.Windows.Forms;
 
 namespace Caiman.interfaceG.usercontrol
 {
-    public class XboxButton : Button
+    public class XboxNavabrButton : Button
     {
 
         public ContextInformations contextInfos;
-        public XboxButton(string contexte,int id_contexte, int position_y, int position_x): this()
+        public XboxNavabrButton(string contexte ,Image img,int id_contexte, int position_y, int position_x): this()
         {
             this.contextInfos = new ContextInformations(contexte, id_contexte, position_y, position_x);
-          
+            this.BackgroundImage = img;
+            
+        }
+
+        public XboxNavabrButton(Image img): this()
+        {
+            this.BackgroundImage = img;
         }
 
         /// <summary>
         /// Create a button with specific design
         /// </summary>
-        public XboxButton()
+        public XboxNavabrButton()
         {
             this.contextInfos = null;
             this.TabStop = false;
             this.FlatStyle = FlatStyle.Flat;
             this.ForeColor = Color.White;
-            this.BackColor = Color.FromArgb(48, 51, 56);
+            this.BackColor = Color.FromArgb(33, 38, 46);
             this.FlatAppearance.BorderSize = 0;
             this.FlatAppearance.BorderColor = Color.FromArgb(40, 167, 69);
-            this.Height = 30;
+            this.Height = 35;
+            this.Width = 35;
             this.Font = new Font("Arial", 14);
-            this.AutoSize = true;
+            this.AutoSize = false;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+
         }
 
         /// <summary>

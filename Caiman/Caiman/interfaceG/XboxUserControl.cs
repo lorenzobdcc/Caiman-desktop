@@ -147,7 +147,7 @@ namespace Caiman.interfaceG
             // 
             // XboxUserControl
             // 
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.BackColor = System.Drawing.Color.FromArgb(33,38,46);
             this.Name = "XboxUserControl";
             this.Size = new System.Drawing.Size(418, 401);
             this.ResumeLayout(false);

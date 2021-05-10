@@ -71,7 +71,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Caiman_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SharpDX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
@@ -93,8 +94,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="database\AccessDatabase.cs" />
     <Compile Include="interfaceG\ContextInformations.cs" />
+    <Compile Include="interfaceG\usercontrol\NavbarXbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="interfaceG\usercontrol\ConfigurationMenuXbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="interfaceG\usercontrol\testContextUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="interfaceG\usercontrol\QuitMenuXbox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="interfaceG\usercontrol\TestImageUserControl.cs">
@@ -111,6 +122,9 @@
     </Compile>
     <Compile Include="interfaceG\usercontrol\TestXboxUserControl.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="interfaceG\XboxControl\XboxNavbarButton.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="interfaceG\XboxControl\XboxButton.cs">
       <SubType>Component</SubType>
@@ -147,8 +161,8 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Caiman_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -180,6 +194,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="img\caiman.ico" />
+    <Content Include="img\gear.png" />
+    <None Include="img\green_onoff.png" />
+    <None Include="img\green_home.png" />
+    <None Include="img\green_gear.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

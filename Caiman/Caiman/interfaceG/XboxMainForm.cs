@@ -5,6 +5,7 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief Main classe of the project
  */
+using Caiman.database;
 using Caiman.interfaceG.usercontrol;
 using System;
 using System.Collections.Generic;
@@ -45,6 +46,9 @@ namespace Caiman.interfaceG
 
         Timer timer = new Timer();
 
+        public AccessDatabase testDatabase = new AccessDatabase();
+        
+
         public XboxUserControl ActiveControl1 { get => activeControl1;set
             {
                 old_activeControl = ActiveControl1;
@@ -74,11 +78,13 @@ namespace Caiman.interfaceG
             xboxController = new XboxController(this);
             lstControls.Add(new List<Control>());
             lstControls.Add(new List<Control>());
-            CreateTestControls();
+            CreateBaseControl();
             ActiveControl1 = (XboxUserControl)lstControls[0][0];
 
             lstOldContexte.Add(new ContextInformations("home", 0, 0, 0));
+            
             InitTimer();
+            //testDatabase.Select("SELECT * FROM user");
         }
 
         /// <summary>
@@ -301,8 +307,19 @@ namespace Caiman.interfaceG
                     LoadNewImagesPanel();
                     FocusToMainPanel();
                     break;
+                case "quitMenu":
+                    LoadNewQuitMenu();
+                    FocusToMainPanel();
+                    break;
+                case "configurationMenu":
+                    LoadNewConfigurationMenu();
+                    FocusToMainPanel();
+                    break;
                 case "quit":
                     Application.Exit();
+                    break;
+                case "minimize":
+                    this.WindowState = FormWindowState.Minimized;
                     break;
                 default:
                     break;
@@ -318,6 +335,44 @@ namespace Caiman.interfaceG
         {
             testContextUC temp = new testContextUC(this, topPanel, null, null, sidePanel);
             temp.CreateListButton(5, 5);
+            Controls.Remove(mainPanel);
+            mainPanel.Dispose();
+            MainPanel = temp;
+
+            MainPanel.Location = new Point(270, 120);
+            Controls.Add(MainPanel);
+
+            sidePanel.right_form = MainPanel;
+            topPanel.bottom_form = MainPanel;
+
+
+        }
+
+        /// <summary>
+        /// Load the quit menu
+        /// </summary>
+        public void LoadNewQuitMenu()
+        {
+            QuitMenuXbox temp = new QuitMenuXbox(this, topPanel, null, null, sidePanel);
+            Controls.Remove(mainPanel);
+            mainPanel.Dispose();
+            MainPanel = temp;
+
+            MainPanel.Location = new Point(270, 120);
+            Controls.Add(MainPanel);
+
+            sidePanel.right_form = MainPanel;
+            topPanel.bottom_form = MainPanel;
+
+
+        }
+
+        /// <summary>
+        /// Load the configuration menu
+        /// </summary>
+        public void LoadNewConfigurationMenu()
+        {
+            ConfigurationMenuXbox temp = new ConfigurationMenuXbox(this, topPanel, null, null, sidePanel);
             Controls.Remove(mainPanel);
             mainPanel.Dispose();
             MainPanel = temp;
@@ -456,6 +511,35 @@ namespace Caiman.interfaceG
             Controls.Add(MainPanel);
             Controls.Add(topPanel);
 
+        }
+
+        public void CreateBaseControl()
+        {
+            sidePanel = new TestSideBarXboxUserControl(this);
+            sidePanel.Location = new Point(0, 100);
+
+            topPanel = new NavbarXbox(this);
+            topPanel.Location = new Point(0, 0);
+
+            MainPanel = new TestXboxUserControl(this, topPanel, null, null, sidePanel);
+            sidePanel.right_form = MainPanel;
+            MainPanel.Location = new Point(270, 120);
+
+            MainPanel.top_form = topPanel;
+            sidePanel.top_form = topPanel;
+            topPanel.bottom_form = MainPanel;
+            topPanel.left_form = sidePanel;
+
+
+            lstControls[0].Add(sidePanel);
+            lstControls[0].Add(MainPanel);
+            lstControls[0].Add(topPanel);
+            sidePanel.BringToFront();
+            MainPanel.BringToFront();
+            topPanel.BringToFront();
+            Controls.Add(sidePanel);
+            Controls.Add(MainPanel);
+            Controls.Add(topPanel);
         }
 
        
