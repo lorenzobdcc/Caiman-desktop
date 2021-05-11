@@ -5,6 +5,7 @@
  *  @copyright Copyright (c) 2021 BDCC
  *  @brief Used to test if i can load an image from the web
  */
+using Caiman.database;
 using Caiman.interfaceG.XboxControl;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace Caiman.interfaceG.usercontrol
 {
@@ -89,27 +91,31 @@ namespace Caiman.interfaceG.usercontrol
                         lstControls[x].Add(new XboxImage());
                     }
                 }
-
-                for (int a_row = 0; a_row <= (row - 1); a_row++)
-                {
-                    if (!File.Exists(@"C:\image" + a_row + ".jpg"))
-                    {
-                        client.DownloadFile(new Uri("http://caiman.cfpt.info/img/games/THE_LEGEND_OF_ZELDA_THE_WIND_WAKER.jpg"), @"C:\image" + a_row + ".jpg");
-                    }
+                
+                label1.Text = "lol";
+                CallAPI test = new CallAPI();
+                label1.Text= JsonConvert.ToString(test.Call()) ;
+                
+                //for (int a_row = 0; a_row <= (row - 1); a_row++)
+                //{
+                //    if (!File.Exists(@"C:\image" + a_row + ".jpg"))
+                //    {
+                //        client.DownloadFile(new Uri("http://caiman.cfpt.info/img/games/THE_LEGEND_OF_ZELDA_THE_WIND_WAKER.jpg"), @"C:\image" + a_row + ".jpg");
+                //    }
                     
-                    for (int b_column = 0; b_column <= (column - 1); b_column++)
-                    {
+                //    for (int b_column = 0; b_column <= (column - 1); b_column++)
+                //    {
                         
-                        Image img = new Bitmap(@"C:\image" + a_row + ".jpg");
-                        XboxImage tempButton = new XboxImage(("btn_" + a_row),img, a_row, a_row, b_column);
-                        lstControls[a_row][b_column] = tempButton;
-                        lstControls[a_row][b_column].Text = (a_row + 1) + " " + (b_column + 1);
-                        lstControls[a_row][b_column].Location = new System.Drawing.Point(b_column * 350 + 15, a_row * 150 + 15);
-                        lstControls[a_row][b_column].Name = a_row + " " + b_column;
+                //        Image img = new Bitmap(@"C:\image" + a_row + ".jpg");
+                //        XboxImage tempButton = new XboxImage(("btn_" + a_row),img, a_row, a_row, b_column);
+                //        lstControls[a_row][b_column] = tempButton;
+                //        lstControls[a_row][b_column].Text = (a_row + 1) + " " + (b_column + 1);
+                //        lstControls[a_row][b_column].Location = new System.Drawing.Point(b_column * 350 + 15, a_row * 150 + 15);
+                //        lstControls[a_row][b_column].Name = a_row + " " + b_column;
 
-                        Controls.Add(lstControls[a_row][b_column]);
-                    }
-                }
+                //        Controls.Add(lstControls[a_row][b_column]);
+                //    }
+                //}
             }
 
 
