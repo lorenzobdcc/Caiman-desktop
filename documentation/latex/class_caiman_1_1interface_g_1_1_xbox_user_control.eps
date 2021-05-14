@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 27.700830
+%%BoundingBox: 0 0 500 304.709137
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,13 +19,13 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 18.049999 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 1.640909 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 3 def
-/cols 6 def
+/rows 11 def
+/cols 2 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
 
@@ -175,6 +175,9 @@ boxfont setfont
 1 boundaspect scale
 (Caiman.interfaceG.XboxUserControl) cw
 (UserControl) cw
+(Caiman.interfaceG.usercontrol.ConfigurationMenuXbox) cw
+(Caiman.interfaceG.usercontrol.NavbarXbox) cw
+(Caiman.interfaceG.usercontrol.QuitMenuXbox) cw
 (Caiman.interfaceG.usercontrol.TestImageUserControl) cw
 (Caiman.interfaceG.usercontrol.TestSideBarXboxUserControl) cw
 (Caiman.interfaceG.usercontrol.TestTopPannelXbox) cw
@@ -192,34 +195,43 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (Caiman.interfaceG.XboxUserControl) 2.500000 1.000000 box
- (UserControl) 2.500000 2.000000 box
- (Caiman.interfaceG.usercontrol.TestImageUserControl) 0.000000 0.000000 box
- (Caiman.interfaceG.usercontrol.TestSideBarXboxUserControl) 1.000000 0.000000 box
- (Caiman.interfaceG.usercontrol.TestTopPannelXbox) 2.000000 0.000000 box
- (Caiman.interfaceG.usercontrol.TestXboxUserControl) 3.000000 0.000000 box
- (Caiman.interfaceG.usercontrol.testContextUC) 4.000000 0.000000 box
- (Caiman.interfaceG.usercontrol.testNavigationUserControl) 5.000000 0.000000 box
+ (Caiman.interfaceG.XboxUserControl) 0.000000 9.000000 box
+ (UserControl) 0.000000 10.000000 box
+ (Caiman.interfaceG.usercontrol.ConfigurationMenuXbox) 1.000000 8.000000 box
+ (Caiman.interfaceG.usercontrol.NavbarXbox) 1.000000 7.000000 box
+ (Caiman.interfaceG.usercontrol.QuitMenuXbox) 1.000000 6.000000 box
+ (Caiman.interfaceG.usercontrol.TestImageUserControl) 1.000000 5.000000 box
+ (Caiman.interfaceG.usercontrol.TestSideBarXboxUserControl) 1.000000 4.000000 box
+ (Caiman.interfaceG.usercontrol.TestTopPannelXbox) 1.000000 3.000000 box
+ (Caiman.interfaceG.usercontrol.TestXboxUserControl) 1.000000 2.000000 box
+ (Caiman.interfaceG.usercontrol.testContextUC) 1.000000 1.000000 box
+ (Caiman.interfaceG.usercontrol.testNavigationUserControl) 1.000000 0.000000 box
 
 % ----- relations -----
 
 solid
-0 2.500000 1.000000 out
+0 0.000000 9.000000 out
 solid
-1 2.500000 2.000000 in
+1 0.000000 10.000000 in
 solid
-1 2.500000 0.250000 out
+1 0.000000 8.250000 out
 solid
-0.000000 5.000000 1.000000 conn
+0 0.000000 8.500000 hedge
 solid
-0 0.000000 0.750000 in
+0 0.000000 7.500000 hedge
 solid
-0 1.000000 0.750000 in
+0 0.000000 6.500000 hedge
 solid
-0 2.000000 0.750000 in
+0 0.000000 5.500000 hedge
 solid
-0 3.000000 0.750000 in
+0 0.000000 4.500000 hedge
 solid
-0 4.000000 0.750000 in
+0 0.000000 3.500000 hedge
 solid
-0 5.000000 0.750000 in
+0 0.000000 2.500000 hedge
+solid
+0 0.000000 1.500000 hedge
+solid
+0 0.000000 0.500000 hedge
+solid
+0.000000 9.000000 0.500000 vedge

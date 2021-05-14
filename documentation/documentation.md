@@ -60,7 +60,22 @@ Table des matières
     - [modification d’un jeu](#modification-dun-jeu)
     - [Administration](#administration)
     - [Téléchargement](#téléchargement)
-  - [Application  Caiman C](#application--caiman-c)
+  - [API Caiman](#api-caiman)
+    - [Structure de l’API](#structure-de-lapi)
+    - [Categories](#categories)
+      - [GET](#get)
+    - [Games](#games)
+      - [GET](#get-1)
+      - [GET(?byName)](#getbyname)
+      - [GET(?byCategory)](#getbycategory)
+      - [GET(?byFavoriteUser)](#getbyfavoriteuser)
+      - [GET(?byUserTime)](#getbyusertime)
+    - [Users](#users)
+      - [GET(sans paramétres)](#getsans-paramétres)
+      - [POST(avec apitoken)](#postavec-apitoken)
+    - [User/connection](#userconnection)
+      - [POST](#post)
+  - [Application Caiman C](#application-caiman-c)
     - [Connexion](#connexion-1)
     - [Inscription](#inscription)
     - [Téléchargement de jeu](#téléchargement-de-jeu)
@@ -486,7 +501,183 @@ Les administrateurs ont la possibilité de faire plusieurs choses je vais donc l
 
 L’un des intérêts du site est de pouvoir télécharger l'application Caiman. Le téléchargement de Caiman nécessite d'être authentifié sur le site. Si un invité se rend sur la page de téléchargement sans être authentifié une invitation lui sera faite de s’authentifier ou de créer un compte.
 
-## Application  Caiman C#
+## API Caiman
+
+L’api de Caiman sert a pouvoir accéder à la base de données depuis l’application Caiman. Je vais détailler les endpoint de l’API et la structure de l’API.
+
+
+### Structure de l’API
+
+
+
+
+![alt_text](images_documentation/schema-API.png "3 panel image")
+
+
+Pour expliquer la structure de l’API je vais expliquer étapes par étapes comment un appel se passe.
+
+
+
+1. L'utilisateur envoie une requête à la page index.php de api.caiman.cfpt.info.
+2. La requête est réceptionnée par index.php. L’url est ensuite traité par le .htaccess pour savoir ou doit envoyer à quelle controller.
+3. Le contrôleur décide selon les informations reçues quelle méthode il doit exécuter.
+4. Le DAO est appelé et va rechercher dans la base de données les données demandé
+5. Le DAO créé la réponse grâce au model.
+6. La réponse est envoyé à l'utilisateur par l’intermédiaire de la page index.php
+
+
+### Categories
+
+
+#### GET
+
+Permet de recevoir la liste des catégories disponibles.
+
+Les information reçu sont les suivante:
+
+
+
+*   id
+*   nom
+
+
+### Games
+
+
+#### GET
+
+Retourne la liste des jeux.
+
+Les information reçu sont les suivante:
+
+
+
+*   id
+*   description
+*   nom de l’image
+*   id de la console
+*   id du fichier du jeu
+
+
+#### GET(?byName)
+
+Retourne la liste des jeux qui dans le nom contient ce que l’utilisateur a demandé.
+
+Les information reçu sont les suivante:
+
+
+
+*   id
+*   description
+*   nom de l’image
+*   id de la console
+*   id du fichier du jeu
+
+
+#### GET(?byCategory)
+
+Retourne la liste des jeux qui appartiennent à une catégorie.
+
+Il faut spécifier l’id de la catégorie qui est demandée.
+
+Les information reçu sont les suivante:
+
+
+
+*   id
+*   description
+*   nom de l’image
+*   id de la console
+*   id du fichier du jeu
+
+
+#### GET(?byFavoriteUser)
+
+Retourne la liste des jeux favoris d’un utilisateur.
+
+Il faut spécifier l’id de l’utilisateur.
+
+Les information reçu sont les suivante:
+
+
+
+*   id
+*   description
+*   nom de l’image
+*   id de la console
+*   id du fichier du jeu
+
+
+#### GET(?byUserTime)
+
+Retourne la liste des jeux auquel un joueur a joué
+
+Il faut spécifier l’id de l’utilisateur.
+
+Les information reçu sont les suivante:
+
+
+
+*   id
+*   description
+*   nom de l’image
+*   id de la console
+*   id du fichier du jeu
+*   nombre de minutes en jeu
+
+
+### Users
+
+
+#### GET(sans paramétres)
+
+Retourne la liste des utilisateurs.
+
+Les information reçu sont les suivante:
+
+
+
+*   id
+*   username
+
+
+#### POST(avec apitoken)
+
+Retourne un utilisateur en particulier
+
+Les information reçu sont les suivante:
+
+
+
+*   id
+*   username
+*   password
+*   salt
+*   apitoken
+*   email
+*   idRole
+
+
+### User/connection
+
+
+#### POST
+
+Permet de vérifier les informations de connexion d’un utilisateur
+
+Les information reçu sont les suivante:
+
+
+
+*   id
+*   username
+*   password
+*   salt
+*   apitoken
+*   email
+*   idRole
+
+## Application Caiman C#
 
 
 ### Connexion

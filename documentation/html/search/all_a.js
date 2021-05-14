@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['scancontroller_29',['ScanController',['../class_caiman_1_1interface_g_1_1_xbox_controller.html#a662faad2a4bb95c7cfcc2a1bcc66bd20',1,'Caiman::interfaceG::XboxController']]],
-  ['scaninput_30',['ScanInput',['../class_caiman_1_1interface_g_1_1_xbox_main_form.html#a474fc4d27e0efe196d28278d29592fb2',1,'Caiman::interfaceG::XboxMainForm']]]
+  ['navbarxbox_34',['NavbarXbox',['../class_caiman_1_1interface_g_1_1usercontrol_1_1_navbar_xbox.html',1,'Caiman::interfaceG::usercontrol']]],
+  ['navbarxbox_2ecs_35',['NavbarXbox.cs',['../_navbar_xbox_8cs.html',1,'']]]
 ];

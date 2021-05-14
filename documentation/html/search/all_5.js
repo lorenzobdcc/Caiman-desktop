@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inittimer_17',['InitTimer',['../class_caiman_1_1interface_g_1_1_xbox_main_form.html#aa125de82399676cd223c853e871bd8b4',1,'Caiman::interfaceG::XboxMainForm']]]
+  ['getinput_23',['GetInput',['../class_caiman_1_1interface_g_1_1_xbox_controller.html#a228420a9d63a85d19ad0ab8373d93013',1,'Caiman::interfaceG::XboxController']]]
 ];

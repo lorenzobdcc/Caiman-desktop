@@ -490,3 +490,151 @@ Je dois modifier la connexion a la base de données  pour passer des fonctions d
 J’ai mis à jour ma documentation du projet.
 
 J’ai essayé d’ajouter des tâche à mon git mais j’ai eu des soucis pour la signature du projet donc je remet ca a plus tard.
+
+## 10.05.2021
+
+### 8h05
+
+Je modifie la création de mot de passe et la connexion pour qu'un utilisateur puisse se connecter depuis le site web et Caiman.
+
+J'utilisais les fonctions de php (password_hash et password_verify) mais je passe a du md5 + salt. La raison est que je ne pouvais pas utiliser ces fonctions pour me connecter depuis l’application c#.
+
+### 10h10
+
+je vais essayer de créer un login en C#
+
+Pour ce faire, je commence par créer une classe “AccessDatabase.cs” pour communiquer avec la base. Pour stocker la la connexionString je l’ai mise dans les settings de l’application.
+
+### 10h45
+
+Pour pouvoir me connecter a la base de donnée je dois passer par le port 1433 mais il est fermé dans le firewall du coup je dois essayer de me connecter par le port 433
+
+### 13h30
+
+Je commence à créer la “vrai” interface je commence par les menu de configurations et le menu pour quitter l’application.
+
+### 14h00 
+
+Après une discussion avec M. Scmid j’ai décidé de faire une api.
+
+### 14h30
+
+J’ai demandé à M.Borel de l’aide pour la structure de mon api, il a pu m’indiquer une structure correcte mais elle est très verbeuse donc je vais surement avoir pour minimum 3 jours a faire mon API. 
+
+--------
+
+## 11.05.2021
+
+### 8h00
+
+Je continue mon api, je commence par essayer la structure de M.Borel sur une seule table pour essayer puis je vais faire les autres.
+
+### 11h40
+
+Je peux maintenant faire des requêtes mais j’ai un souci avec les headers.
+Le hearder Autorization n’est pas correctement recu
+Je pense que vu le temps que faire une API prend je fais faire en sorte que l’API ne soit que faite pour Caiman. Je vais donc seulement créer les requêtes nécessaires
+
+### 13h00
+
+Je vais lister les requêtes qui me seront potentiellement utile pour Caiman
+
+liste des jeux
+recherche de jeu
+affichage des informations d’un jeu
+recherche des informations d’un utilisateur
+recherche des jeux avec un nombre qui ont été joué par un utilisateur particulier
+recherche d’un jeu selon sa catégorie
+jeux favoris d’un utilisateur
+recherche des jeux qui ont été joué
+connexion d’un utilisateur
+Création de compte
+réception d’un fichier de sauvegarde
+réception d’un fichier de configuration
+
+### 13h40
+
+Je fais un test d’appel a l’API depuis Caiman
+
+### 14h20
+
+Pour pouvoir utiliser correctement les appels à l'api je dois utiliser des objets que je je rempli avec chaque appel.
+
+Par exemple, si je veux recevoir les informations d’un jeu je créer un objet jeu a qui je vais attribuer les données que je viens de recevoir.
+
+Il me faut donc créer une classe pour l'utilisateur et une classe pour les jeux.
+
+### 15h50
+
+je dois aussi pouvoir connaître la liste des catégories grâce à l’API
+
+### 16h00
+
+Il est maintenant possible de récupérer les catégories
+
+------
+
+## 12.05.2021
+
+### 8h05
+
+Documentation et suppression de code inutile
+
+### 13h00
+
+J’ai discuté avec M.Smid il m’a donner des conseil sur pour mon api
+
+### 14h30
+
+J’ai changé les routes de mon api
+exemple:
+/games/userFavorites/8  => /games/?byUserFavorites=8
+
+### 15h30
+
+J’ai essayé de mettre l’api en ligne mais quand j’arrive sur une page j’ai une erreur 500.
+
+------
+
+## 13.05.2021
+
+### 11h00
+
+L’erreur 500 que j’avais était liée à une version de PHP, le serveur avait une version de php 7.3 alors que mon API a besoin d’une version PHP minimum en 7.4.
+J’ai donc mis à jour la version présente sur le serveur.
+
+### 12h00
+
+J’ai corrigé différentes erreurs liées à l’api par exemple quand on envoyait que le username et pas de password pour se connecter une erreur apparaissait.
+
+### 13h00
+
+J’ai une erreur sur le serveur quand je veux faire une requête d'utilisateur avec sa clé d’API j’ai une erreur 404.
+
+Je vais peut etre passer la recherche d’api en POST et non en GET
+
+## 14.05.2021
+
+### 8h00
+
+J’ai toujours une erreur quand je veux récupérer les informations d’un utilisateur grâce à son apitoken, l’erreur n’est présente que sur le caiman.cfpt.info.
+Pour corriger l’erreur je vais passer par du post pour éviter de perdre trop de temps.
+
+### 09h22
+
+j’ai push sur le serveur une version de l’API qui fonctionne bien, je vais maintenant continuer ma documentation
+
+### 09h30
+
+je me rend compte qu j'ai une requête qui ne marche pas
+
+### 11h30
+
+J’ai dû modifier le .htaccess pour pouvoir appliquer les rewriteRules. Le fichier n'était pas pris en compte sur le serveur je l’ai donc mis dans le dossier ou point le virtual host.
+
+### 12h00
+
+documentation
+
+
+
