@@ -17,6 +17,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Caiman.logique;
+using Caiman.models;
 
 namespace Caiman.interfaceG
 {
@@ -308,8 +309,9 @@ namespace Caiman.interfaceG
                     LoadNewTestPanel();
                     FocusToMainPanel();
                     break;
-                case "testImages":
+                case "category":
                     LoadNewImagesPanel();
+                    LoadNewListGamesFromCategory(contexte.id_contexte);
                     FocusToMainPanel();
                     break;
                 case "quitMenu":
@@ -431,6 +433,27 @@ namespace Caiman.interfaceG
         {
             TestImageUserControl temp = new TestImageUserControl(this, topPanel, null, null, sidePanel);
             temp.CreateListImages(1, 2);
+            Controls.Remove(mainPanel);
+            mainPanel.Dispose();
+            MainPanel = temp;
+
+            MainPanel.Location = new Point(270, 120);
+            Controls.Add(MainPanel);
+
+            sidePanel.right_form = MainPanel;
+            topPanel.bottom_form = MainPanel;
+
+
+        }
+
+        /// <summary>
+        /// Load a spécific categorie
+        /// </summary>
+        public void LoadNewListGamesFromCategory(int idCategory)
+        {
+            ListGameXbox temp = new ListGameXbox(this, topPanel, null, null, sidePanel);
+            temp.lst_games = callAPI.CallGamesFromCategory(idCategory);
+            temp.CreateListGames();
             Controls.Remove(mainPanel);
             mainPanel.Dispose();
             MainPanel = temp;

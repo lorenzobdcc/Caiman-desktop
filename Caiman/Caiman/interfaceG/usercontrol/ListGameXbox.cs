@@ -17,13 +17,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using Caiman.models;
 
 namespace Caiman.interfaceG.usercontrol
 {
-    class TestImageUserControl : XboxUserControl
+    class ListGameXbox : XboxUserControl
     {
 
-
+        private const string PATH_IMG_CAIMAN = @"Caiman\img\";
+        public List<Game> lst_games;
         /// <summary>
         /// contrucot with next panel specify
         /// </summary>
@@ -32,7 +34,7 @@ namespace Caiman.interfaceG.usercontrol
         /// <param name="bottom"></param>
         /// <param name="right"></param>
         /// <param name="left"></param>
-        public TestImageUserControl(XboxMainForm xboxMain, XboxUserControl top, XboxUserControl bottom, XboxUserControl right, XboxUserControl left) : base(xboxMain, top, bottom, right, left)
+        public ListGameXbox(XboxMainForm xboxMain, XboxUserControl top, XboxUserControl bottom, XboxUserControl right, XboxUserControl left) : base(xboxMain, top, bottom, right, left)
         {
             InitializeComponent();
         }
@@ -52,7 +54,39 @@ namespace Caiman.interfaceG.usercontrol
             this.BackColor = Color.Transparent;
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.AutoScroll = true;
 
+        }
+
+        public void CreateListGames()
+        {
+
+            string imgPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), PATH_IMG_CAIMAN);
+            XboxImage tempXboxImage = new XboxImage();
+            int maxWidth = Width;
+            int max_rank = Width / tempXboxImage.Width;
+            int tempPos_x = 0;
+            int tempPos_y = 0;
+            lstControls.Add(new List<Control>());
+            foreach (var game in lst_games)
+            {
+                lstControls[tempPos_y].Add(new XboxImage());
+                Image img = new Bitmap((imgPath+ game.imageName));
+                XboxImage tempButton = new XboxImage("game", img, game.id, 0, 0);
+                lstControls[tempPos_y][tempPos_x] = tempButton;
+                lstControls[tempPos_y][tempPos_x].Location = new System.Drawing.Point(tempPos_x * 350 + 15, tempPos_y * 150 + 15);
+
+                Controls.Add(lstControls[tempPos_y][tempPos_x]);
+
+
+                if (tempPos_x == max_rank)
+                {
+                    lstControls.Add(new List<Control>());
+                    tempPos_y ++;
+                    tempPos_x = 0;
+                }
+                tempPos_x++;
+            }
         }
 
         /// <summary>

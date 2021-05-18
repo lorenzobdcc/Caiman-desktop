@@ -12,13 +12,13 @@ namespace Caiman.models
         private const string DEFAULT_PATH = "defaultpath.jpg";
         private const string PATH_IMG_CAIMAN = @"Caiman\img\";
         private const string URL_IMAGES_CAIMAN = "http://caiman.cfpt.info/img/games/";
-        int id;
-        string name;
-        string description;
-        string imageName;
-        int idConsole;
-        int idFile;
-        string imgPath;
+        public int id;
+        public string name;
+        public string description;
+        public string imageName;
+        public int idConsole;
+        public int idFile;
+        public string imgPath;
 
         public Game(int idp, string namep, string descriptionp, string imageNamep, int idConsolep, int idFilep) : base()
         {
