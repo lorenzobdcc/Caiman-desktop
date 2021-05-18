@@ -16,6 +16,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Caiman.logique;
 
 namespace Caiman.interfaceG
 {
@@ -25,12 +26,15 @@ namespace Caiman.interfaceG
         List<List<Control>> lstControls = new List<List<Control>>();
         XboxController xboxController;
 
+        public EmulatorsManager  emulatorsManager = new EmulatorsManager();
+
         private XboxUserControl activeControl1;
         public XboxUserControl old_activeControl;
 
         public List<ContextInformations> lstOldContexte = new List<ContextInformations>();
         public ContextInformations activeContexte;
-        
+
+        public CallAPI callAPI = new CallAPI();
 
         public string old_input;
 
@@ -78,7 +82,8 @@ namespace Caiman.interfaceG
             xboxController = new XboxController(this);
             lstControls.Add(new List<Control>());
             lstControls.Add(new List<Control>());
-            CreateBaseControl();
+            //CreateBaseControl();
+            CreateLoginControls();
             ActiveControl1 = (XboxUserControl)lstControls[0][0];
 
             lstOldContexte.Add(new ContextInformations("home", 0, 0, 0));
@@ -315,6 +320,19 @@ namespace Caiman.interfaceG
                     LoadNewConfigurationMenu();
                     FocusToMainPanel();
                     break;
+                case "login":
+                    emulatorsManager.user.Login(contexte.optionalString1, contexte.optionalString2);
+
+                    if (emulatorsManager.user.id == 0)
+                    {
+                        LoginControlXbox tempLogin = (LoginControlXbox)mainPanel;
+                        tempLogin.lbl_error.Text = "Invalid login";
+                    }else
+                    {
+                        CreateBaseControl();
+                        FocusToMainPanel();
+                    }
+                    break;
                 case "quit":
                     Application.Exit();
                     break;
@@ -513,14 +531,35 @@ namespace Caiman.interfaceG
 
         }
 
+        /// <summary>
+        /// Used to create the main form content and set the position of each panel
+        /// </summary>
+        public void CreateLoginControls()
+        {
+
+
+
+            MainPanel = new LoginControlXbox(this, null, null, null, null);
+            MainPanel.Location = new Point(0, 0);
+
+
+            lstControls[0].Add(MainPanel);
+
+            MainPanel.BringToFront();
+            Controls.Add(MainPanel);
+
+        }
+
         public void CreateBaseControl()
         {
-            sidePanel = new TestSideBarXboxUserControl(this);
+            
+            sidePanel = new SideBarXbox(this);
             sidePanel.Location = new Point(0, 100);
 
             topPanel = new NavbarXbox(this);
             topPanel.Location = new Point(0, 0);
 
+            Controls.Remove(mainPanel);
             MainPanel = new TestXboxUserControl(this, topPanel, null, null, sidePanel);
             sidePanel.right_form = MainPanel;
             MainPanel.Location = new Point(270, 120);

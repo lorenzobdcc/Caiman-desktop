@@ -55,8 +55,11 @@ namespace Caiman.interfaceG.usercontrol
             xboxUserControl.position_x = this.contextInfos.position_x;
             xboxUserControl.position_y = this.contextInfos.position_y;
 
-            XboxMainForm topMainForm = (XboxMainForm)this.TopLevelControl;
-            topMainForm.ActiveControl1 = xboxUserControl;
+            if ((XboxMainForm)this.TopLevelControl != null)
+            {
+                XboxMainForm topMainForm = (XboxMainForm)this.TopLevelControl;
+                topMainForm.ActiveControl1 = xboxUserControl;
+            }
         }
 
         /// <summary>

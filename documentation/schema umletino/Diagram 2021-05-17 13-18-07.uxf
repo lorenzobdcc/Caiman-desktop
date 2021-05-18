@@ -1,0 +1,122 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>240</x><y>350</y><w>210</w><h>110</h></coordinates><panel_attributes>_PCSX2 : IEmulator_
+--
+configFileGSdx : ConfigFileEditor
+configFilePCSX2_ui : ConfigFileEditor
+--
+PCSX2()
+Execute()
+UpdateConfigurationFile()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>540</y><w>210</w><h>110</h></coordinates><panel_attributes>_DOLPHIN : IEmulator_
+--
+configFileDolphin : ConfigFileEditor
+configFileGFX : ConfigFileEditor
+--
+Dolphin()
+Execute()
+UpdateConfigurationFile()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>570</x><y>310</y><w>210</w><h>220</h></coordinates><panel_attributes>_Emulator_
+--
+actualGame : Game
+definition : int
+filtrageAnisotropique : int
+folderGames : string
+seizeNeuvieme : bool
+fullScreen : bool
+noGui : bool
+processEmulator : Process</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>570</x><y>550</y><w>210</w><h>140</h></coordinates><panel_attributes>_IEmulator_
+--
+--
+Close()
+Execute()
+GetEmulatorProcessLife()
+ScanGames()
+SetConfiguration()
+UpdateConfigurationFile()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>570</x><y>0</y><w>210</w><h>140</h></coordinates><panel_attributes>_Game_
+--
+gameType : int
+name : string
+--
+Game(gameType, name)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>170</y><w>210</w><h>140</h></coordinates><panel_attributes>_FolderISO_
+--
+gameType : int
+lstGame : list&lt;Game&gt;
+pathFolder : string
+--
+DetectISO()
+FolderISO()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>840</x><y>80</y><w>210</w><h>160</h></coordinates><panel_attributes>_ConfigFileEditor_
+--
+filename : string
+path : string
+--
+ConfigFileEditor()
+ReadProperties()
+UpdateProperties()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>870</x><y>310</y><w>210</w><h>380</h></coordinates><panel_attributes>_EmulatorManager_
+--
+actualEmulator : Emulator
+actualGame : Game
+configFile : configFileEditor
+defaultEmulator : Emulator
+definition : int
+Dolphin : Emulator
+emulatorState : int
+filtrageAnisotropique : int
+seizeNeuviemme : bool
+fullScreen : bool
+noGui : bool
+PCSX2 : emulator
+timer : timer
+user : User
+--
+Close()
+EmulatorsManager()
+GetInfosGlobal()
+InitTimer()
+ScanConfiguration()
+ScanEmulatorProcess()
+SetActualGame()
+StartGame()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>400</y><w>150</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>130;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>750</y><w>210</w><h>70</h></coordinates><panel_attributes>_APICaller_
+--
+URL : string
+--
+APICaller(URL)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>870</x><y>750</y><w>210</w><h>80</h></coordinates><panel_attributes>_Save_
+--
+game : Game
+filename : string
+--
+Save()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>570</x><y>900</y><w>210</w><h>70</h></coordinates><panel_attributes>_DownloadManager_
+--
+lstDownload : list&lt;Download&gt;
+--
+DownloadManager()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>570</x><y>750</y><w>210</w><h>70</h></coordinates><panel_attributes>_Download_
+--
+--
+Download()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>870</x><y>900</y><w>210</w><h>70</h></coordinates><panel_attributes>_SaveManager_
+--
+lstSave: Save
+--
+Save()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>420</y><w>150</w><h>200</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>130;10;10;180</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>610</y><w>150</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>130;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>420</y><w>150</w><h>190</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>130;170;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>810</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>970</x><y>820</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>420</y><w>120</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>100;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>230</y><w>150</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>130;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>130</y><w>30</w><h>200</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;180;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1180</x><y>390</y><w>210</w><h>100</h></coordinates><panel_attributes>_User_
+--
+username : string
+apikey : string
+idUser : int
+--
+GetUserFavoritesGames(apikey)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1070</x><y>430</y><w>130</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>170</y><w>210</w><h>90</h></coordinates><panel_attributes>_UserModel_
+--
+id : string
+username : string
+apitocken : string
+email : string
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>280</y><w>210</w><h>90</h></coordinates><panel_attributes>_GameModel_
+--
+id : string
+name : string
+description : string
+imageName : string
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>390</y><w>210</w><h>70</h></coordinates><panel_attributes>_CategoryModel_
+--
+id : string
+name : string
+
+
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>

@@ -18,6 +18,7 @@ namespace Caiman.interfaceG
         public string contexte;
         public int id_contexte;
         public string optionalString1;
+        public string optionalString2;
         public int optionalInt1;
 
         public int position_y;

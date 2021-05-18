@@ -107,6 +107,9 @@
     <Compile Include="database\AccessDatabase.cs" />
     <Compile Include="database\CallAPI.cs" />
     <Compile Include="interfaceG\ContextInformations.cs" />
+    <Compile Include="interfaceG\usercontrol\LoginControlXbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="interfaceG\usercontrol\NavbarXbox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,6 +126,9 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="interfaceG\usercontrol\testNavigationUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="interfaceG\usercontrol\SideBarXbox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="interfaceG\usercontrol\TestSideBarXboxUserControl.cs">
@@ -150,6 +156,10 @@
     <Compile Include="interfaceG\XboxUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="logique\EmulatorsManager.cs" />
+    <Compile Include="models\Category.cs" />
+    <Compile Include="models\Game.cs" />
+    <Compile Include="models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="interfaceG\usercontrol\testContextUC.resx">
