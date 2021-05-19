@@ -297,10 +297,7 @@ namespace Caiman.interfaceG
 
             switch (contexte.contexte)
             {
-                case "side":
-                    LoadNewCategoriePanel(contexte);
-                    FocusToMainPanel();
-                    break;
+
                 case "home":
                     LoadNewHomePanel();
                     FocusToMainPanel();
@@ -346,26 +343,7 @@ namespace Caiman.interfaceG
            
         }
 
-        /// <summary>
-        /// Load a spécific categorie
-        /// </summary>
-        /// <param name="btn_context"></param>
-        public void LoadNewCategoriePanel(ContextInformations btn_context)
-        {
-            testContextUC temp = new testContextUC(this, topPanel, null, null, sidePanel);
-            temp.CreateListButton(5, 5);
-            Controls.Remove(mainPanel);
-            mainPanel.Dispose();
-            MainPanel = temp;
 
-            MainPanel.Location = new Point(270, 120);
-            Controls.Add(MainPanel);
-
-            sidePanel.right_form = MainPanel;
-            topPanel.bottom_form = MainPanel;
-
-
-        }
 
         /// <summary>
         /// Load the quit menu
@@ -405,45 +383,9 @@ namespace Caiman.interfaceG
 
         }
 
-        /// <summary>
-        /// Load a spécific categorie
-        /// </summary>
-        public void LoadNewTestPanel()
-        {
-            testNavigationUserControl temp = new testNavigationUserControl(this, topPanel, null, null, sidePanel);
-            temp.CreateListBrokenButton(6, 6);
-            Controls.Remove(mainPanel);
-            mainPanel.Dispose();
-            MainPanel = temp;
-
-            MainPanel.Location = new Point(270, 120);
-            Controls.Add(MainPanel);
-
-            sidePanel.right_form = MainPanel;
-            topPanel.bottom_form = MainPanel;
 
 
-        }
 
-        /// <summary>
-        /// Load a spécific categorie
-        /// </summary>
-        public void LoadNewImagesPanel()
-        {
-            TestImageUserControl temp = new TestImageUserControl(this, topPanel, null, null, sidePanel);
-            temp.CreateListImages(1, 2);
-            Controls.Remove(mainPanel);
-            mainPanel.Dispose();
-            MainPanel = temp;
-
-            MainPanel.Location = new Point(270, 120);
-            Controls.Add(MainPanel);
-
-            sidePanel.right_form = MainPanel;
-            topPanel.bottom_form = MainPanel;
-
-
-        }
 
         /// <summary>
         /// Load a spécific categorie

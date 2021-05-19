@@ -47,16 +47,15 @@ namespace Caiman.interfaceG.usercontrol
             this.SuspendLayout();
 
             // 
-            // testContextUC
+            // ListGameXbox
             // 
-            this.Name = "testContextUC";
-            this.Size = new System.Drawing.Size(1000, 1000);
+            this.Name = "ListGameXbox";
             this.BackColor = Color.Transparent;
             this.ResumeLayout(false);
             this.PerformLayout();
             this.AutoScroll = true;
 
-            Width = (Screen.PrimaryScreen.Bounds.Width - 270);
+            Width = (Screen.PrimaryScreen.Bounds.Width - 250);
             Height = (Screen.PrimaryScreen.Bounds.Height - 120);
 
         }

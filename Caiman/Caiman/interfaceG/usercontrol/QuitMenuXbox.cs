@@ -20,7 +20,6 @@ namespace Caiman.interfaceG.usercontrol
 {
     class QuitMenuXbox : XboxUserControl
     {
-        private System.Windows.Forms.Label label1;
 
 
         /// <summary>
@@ -47,7 +46,6 @@ namespace Caiman.interfaceG.usercontrol
             // 
             // testContextUC
             // 
-            this.Controls.Add(this.label1);
             this.Name = "testContextUC";
             this.Size = new System.Drawing.Size(Screen.PrimaryScreen.Bounds.Width -200,Screen.PrimaryScreen.Bounds.Height-200);
             this.BackColor = Color.Transparent;
@@ -90,13 +88,7 @@ namespace Caiman.interfaceG.usercontrol
             lstControls[1].Add(quit);
             lstControls[2].Add(logOut);
 
+        }
 
-        }
-        private void bouton_Click(object sender, EventArgs e)
-        {
-            XboxButton tempXboxButton = (XboxButton)sender;
-            ContextInformations tempButtonContext = tempXboxButton.contextInfos;
-            xboxMainForm.ContexteHandler(tempButtonContext, e, true);
-        }
     }
 }

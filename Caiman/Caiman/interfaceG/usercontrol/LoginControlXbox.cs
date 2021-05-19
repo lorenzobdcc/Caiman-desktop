@@ -120,7 +120,7 @@ namespace Caiman.interfaceG.usercontrol
 
 
         }
-        private void bouton_Click(object sender, EventArgs e)
+        private new void  bouton_Click(object sender, EventArgs e)
         {
             
             XboxButton tempXboxButton = (XboxButton)sender;

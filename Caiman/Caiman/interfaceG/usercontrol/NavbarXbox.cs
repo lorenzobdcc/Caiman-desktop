@@ -49,7 +49,7 @@ namespace Caiman.interfaceG.usercontrol
 
 
         }
-        private void bouton_Click(object sender, EventArgs e)
+        private new void bouton_Click(object sender, EventArgs e)
         {
             XboxNavabrButton tempXboxButton = (XboxNavabrButton)sender;
             ContextInformations tempButtonContext = tempXboxButton.contextInfos;

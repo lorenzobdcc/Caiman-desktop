@@ -20,7 +20,6 @@ namespace Caiman.interfaceG.usercontrol
 {
     class ConfigurationMenuXbox : XboxUserControl
     {
-        private System.Windows.Forms.Label label1;
 
 
         /// <summary>
@@ -47,7 +46,6 @@ namespace Caiman.interfaceG.usercontrol
             // 
             // testContextUC
             // 
-            this.Controls.Add(this.label1);
             this.Name = "testContextUC";
             this.Size = new System.Drawing.Size(Screen.PrimaryScreen.Bounds.Width -200,Screen.PrimaryScreen.Bounds.Height-200);
             this.BackColor = Color.Transparent;
@@ -110,11 +108,6 @@ namespace Caiman.interfaceG.usercontrol
 
 
         }
-        private void bouton_Click(object sender, EventArgs e)
-        {
-            XboxButton tempXboxButton = (XboxButton)sender;
-            ContextInformations tempButtonContext = tempXboxButton.contextInfos;
-            xboxMainForm.ContexteHandler(tempButtonContext, e, true);
-        }
+
     }
 }
