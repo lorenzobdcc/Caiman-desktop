@@ -67,21 +67,19 @@ namespace Caiman.database
                 tempUser.apitoken = data.apitocken;
                 tempUser.email = data.email;
             }
-            CallAllGames();
-            CallUserFavoriteGames(8);
-            CallAllCategories();
-            CallGamesFromCategory(8);
             return tempUser;
         }
 
         public List<Game> CallAllGames()
         {
+            requestGET = new RestRequest("get", Method.GET);
             List<Game> lst_games = new List<Game>();
-            baseUrl = new Uri((URL_STRING+ @"/games/"));
+            string fullURL = URL_STRING + "/games/";
+            baseUrl = new Uri(fullURL);
             client.BaseUrl = baseUrl;
             string tempString = "";
+            requestGET =new RestRequest("get", Method.GET);
             IRestResponse<RootObject> response = client.Execute<RootObject>(requestGET);
-
 
             if (response.Content != "")
             {
@@ -132,6 +130,7 @@ namespace Caiman.database
             requestGET = new RestRequest("get", Method.GET);
             requestGET.AddParameter("byUserFavorite", userId);
             baseUrl = new Uri(fullURL);
+            client.BaseUrl = baseUrl;
             string tempString = "";
             IRestResponse<RootObject> response = client.Execute<RootObject>(requestGET);
 

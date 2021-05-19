@@ -56,6 +56,9 @@ namespace Caiman.interfaceG.usercontrol
             this.PerformLayout();
             this.AutoScroll = true;
 
+            Width = (Screen.PrimaryScreen.Bounds.Width - 270);
+            Height = (Screen.PrimaryScreen.Bounds.Height - 120);
+
         }
 
         public void CreateListGames()
@@ -63,80 +66,34 @@ namespace Caiman.interfaceG.usercontrol
 
             string imgPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), PATH_IMG_CAIMAN);
             XboxImage tempXboxImage = new XboxImage();
-            int maxWidth = Width;
-            int max_rank = Width / tempXboxImage.Width;
+            int max_rank = Width / (365);
             int tempPos_x = 0;
             int tempPos_y = 0;
             lstControls.Add(new List<Control>());
+
+
             foreach (var game in lst_games)
             {
+                if (tempPos_x == max_rank)
+                {
+                    lstControls.Add(new List<Control>());
+                    tempPos_y++;
+                    tempPos_x = 0;
+                }
+
                 lstControls[tempPos_y].Add(new XboxImage());
                 Image img = new Bitmap((imgPath+ game.imageName));
                 XboxImage tempButton = new XboxImage("game", img, game.id, 0, 0);
                 lstControls[tempPos_y][tempPos_x] = tempButton;
-                lstControls[tempPos_y][tempPos_x].Location = new System.Drawing.Point(tempPos_x * 350 + 15, tempPos_y * 150 + 15);
+                lstControls[tempPos_y][tempPos_x].Location = new System.Drawing.Point(tempPos_x * 350 + 15, tempPos_y * 430 + 15);
 
                 Controls.Add(lstControls[tempPos_y][tempPos_x]);
 
 
-                if (tempPos_x == max_rank)
-                {
-                    lstControls.Add(new List<Control>());
-                    tempPos_y ++;
-                    tempPos_x = 0;
-                }
+
                 tempPos_x++;
             }
         }
 
-        /// <summary>
-        /// Used to cheate a list of images
-        /// The images comme from the website caiman.cfpt.info
-        /// </summary>
-        /// <param name="row"></param>
-        /// <param name="column"></param>
-        public void CreateListImages(int row, int column)
-        {
-            using (WebClient client = new WebClient())
-            {
-                for (int i = 0; i < row; i++)
-                {
-                    lstControls.Add(new List<Control>());
-                }
-                for (int x = 0; x < row; x++)
-                {
-                    
-                    for (int y = 0; y < column; y++)
-                    {
-                    
-                        
-                        lstControls[x].Add(new XboxImage());
-                    }
-                }
-                
-                //for (int a_row = 0; a_row <= (row - 1); a_row++)
-                //{
-                //    if (!File.Exists(@"C:\image" + a_row + ".jpg"))
-                //    {
-                //        client.DownloadFile(new Uri("http://caiman.cfpt.info/img/games/THE_LEGEND_OF_ZELDA_THE_WIND_WAKER.jpg"), @"C:\image" + a_row + ".jpg");
-                //    }
-                    
-                //    for (int b_column = 0; b_column <= (column - 1); b_column++)
-                //    {
-                        
-                //        Image img = new Bitmap(@"C:\image" + a_row + ".jpg");
-                //        XboxImage tempButton = new XboxImage(("btn_" + a_row),img, a_row, a_row, b_column);
-                //        lstControls[a_row][b_column] = tempButton;
-                //        lstControls[a_row][b_column].Text = (a_row + 1) + " " + (b_column + 1);
-                //        lstControls[a_row][b_column].Location = new System.Drawing.Point(b_column * 350 + 15, a_row * 150 + 15);
-                //        lstControls[a_row][b_column].Name = a_row + " " + b_column;
-
-                //        Controls.Add(lstControls[a_row][b_column]);
-                //    }
-                //}
-            }
-
-
-        }
     }
 }

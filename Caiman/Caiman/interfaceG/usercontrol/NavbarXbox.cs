@@ -27,7 +27,7 @@ namespace Caiman.interfaceG.usercontrol
         {
             lstControls.Add(new List<Control>());
 
-            XboxNavabrButton home = new XboxNavabrButton("download", Caiman.Properties.Resources.green_home, 0, 0, 1);
+            XboxNavabrButton home = new XboxNavabrButton("home", Caiman.Properties.Resources.green_home, 0, 0, 1);
             home.Location = new System.Drawing.Point((Screen.PrimaryScreen.Bounds.Width - 200), 0 * 60 + 50);
             Controls.Add(home);
             home.Click += new System.EventHandler(bouton_Click);

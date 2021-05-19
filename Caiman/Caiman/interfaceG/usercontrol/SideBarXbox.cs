@@ -26,7 +26,6 @@ namespace Caiman.interfaceG.usercontrol
         public SideBarXbox(XboxMainForm xboxMain) : base(xboxMain)
         {
             CreateListNavButton();
-            base.Size = new Size(200, 800);
             Width = 250;
             Height = (Screen.PrimaryScreen.Bounds.Height-100);
             AutoScroll = true;
@@ -41,7 +40,8 @@ namespace Caiman.interfaceG.usercontrol
             List<string> lst_navbar = new List<string>();
             List<Category> lst_category = xboxMainForm.callAPI.CallAllCategories();
 
-            lst_navbar.Add("Favorite");
+            lst_navbar.Add("Favorites games");
+            lst_navbar.Add("All Games");
 
             foreach (var item in lst_category)
             {
@@ -61,7 +61,7 @@ namespace Caiman.interfaceG.usercontrol
                 XboxButton tempButton = new XboxButton("side", a_row, a_row, 0);
                 lstControls[a_row][0] = tempButton;
                 lstControls[a_row][0].Text = lst_navbar[a_row];
-                lstControls[a_row][0].Location = new System.Drawing.Point(0 * 100 + 15, a_row * 75 + 15);
+                lstControls[a_row][0].Location = new System.Drawing.Point(0 * 100 + 25, a_row * 50 + 15);
                 lstControls[a_row][0].Width = 200;
                 lstControls[a_row][0].Name =  "btn_"+ lst_navbar[a_row];
 
@@ -69,29 +69,32 @@ namespace Caiman.interfaceG.usercontrol
                 lstControls[a_row][0].Click += new System.EventHandler(bouton_Click);
 
             }
+
             //set the action of button
             XboxButton userFavoritesGames = (XboxButton)lstControls[0][0];
-            userFavoritesGames.contextInfos.contexte = "userFavoritesGame";
+            userFavoritesGames.contextInfos.contexte = "favorite";
+            XboxButton allGames = (XboxButton)lstControls[1][0];
+            allGames.contextInfos.contexte = "home";
 
             for (int i = 0; i < lst_category.Count; i++)
             {
-                XboxButton tempButton = (XboxButton)lstControls[(i+1)][0];
+                XboxButton tempButton = (XboxButton)lstControls[(i+2)][0];
                 tempButton.contextInfos.contexte = "category";
                 tempButton.contextInfos.id_contexte = (lst_category[i].id);
             }
 
         }
 
-        /// <summary>
-        /// send to the main form what he need to do
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void bouton_Click(object sender, EventArgs e)
-        {
-            XboxButton tempXboxButton = (XboxButton)sender;
-            ContextInformations tempButtonContext = tempXboxButton.contextInfos;
-            xboxMainForm.ContexteHandler(tempButtonContext, e , true);
-        }
+        ///// <summary>
+        ///// send to the main form what he need to do
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //protected void bouton_Click(object sender, EventArgs e)
+        //{
+        //    XboxButton tempXboxButton = (XboxButton)sender;
+        //    ContextInformations tempButtonContext = tempXboxButton.contextInfos;
+        //    xboxMainForm.ContexteHandler(tempButtonContext, e , true);
+        //}
     }
 }

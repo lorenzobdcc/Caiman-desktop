@@ -305,12 +305,11 @@ namespace Caiman.interfaceG
                     LoadNewHomePanel();
                     FocusToMainPanel();
                     break;
-                case "testNavigation":
-                    LoadNewTestPanel();
+                case "favorite":
+                    LoadNewListGamesFromUserFavorite();
                     FocusToMainPanel();
                     break;
                 case "category":
-                    LoadNewImagesPanel();
                     LoadNewListGamesFromCategory(contexte.id_contexte);
                     FocusToMainPanel();
                     break;
@@ -453,6 +452,49 @@ namespace Caiman.interfaceG
         {
             ListGameXbox temp = new ListGameXbox(this, topPanel, null, null, sidePanel);
             temp.lst_games = callAPI.CallGamesFromCategory(idCategory);
+            temp.Width = (Screen.PrimaryScreen.Bounds.Width - 200);
+            temp.Height = (Screen.PrimaryScreen.Bounds.Height - 150);
+            temp.CreateListGames();
+            Controls.Remove(mainPanel);
+            mainPanel.Dispose();
+            MainPanel = temp;
+
+            MainPanel.Location = new Point(270, 120);
+            Controls.Add(MainPanel);
+
+            sidePanel.right_form = MainPanel;
+            topPanel.bottom_form = MainPanel;
+
+
+        }
+
+        /// <summary>
+        /// Load a spécific categorie
+        /// </summary>
+        public void LoadNewListGamesFromUserFavorite()
+        {
+            ListGameXbox temp = new ListGameXbox(this, topPanel, null, null, sidePanel);
+            temp.lst_games = callAPI.CallUserFavoriteGames(emulatorsManager.user.id);
+            temp.CreateListGames();
+            Controls.Remove(mainPanel);
+            mainPanel.Dispose();
+            MainPanel = temp;
+            
+            MainPanel.Location = new Point(270, 120);
+            Controls.Add(MainPanel);
+
+            sidePanel.right_form = MainPanel;
+            topPanel.bottom_form = MainPanel;
+
+
+        }
+        /// <summary>
+        /// Load a spécific categorie
+        /// </summary>
+        public void LoadNewPanelAllGames()
+        {
+            ListGameXbox temp = new ListGameXbox(this, topPanel, null, null, sidePanel);
+            temp.lst_games = callAPI.CallAllGames();
             temp.CreateListGames();
             Controls.Remove(mainPanel);
             mainPanel.Dispose();
@@ -472,7 +514,10 @@ namespace Caiman.interfaceG
         /// </summary>
         public void LoadNewHomePanel()
         {
-            TestXboxUserControl temp = new TestXboxUserControl(this, topPanel, null, null, sidePanel);
+
+            ListGameXbox temp = new ListGameXbox(this, topPanel, null, null, sidePanel);
+            temp.lst_games = callAPI.CallAllGames();
+            temp.CreateListGames();
             Controls.Remove(mainPanel);
             mainPanel.Dispose();
             MainPanel = temp;
@@ -520,39 +565,6 @@ namespace Caiman.interfaceG
 
         }
 
-        /// <summary>
-        /// Used to create the main form content and set the position of each panel
-        /// </summary>
-        public void CreateTestControls()
-        {
-
-            sidePanel = new TestSideBarXboxUserControl(this);
-            sidePanel.Location = new Point(0,100);
-
-            topPanel = new TestTopPannelXbox(this);
-            topPanel.Location = new Point(0,0);
-
-            MainPanel = new TestXboxUserControl(this, topPanel, null, null, sidePanel);
-            sidePanel.right_form = MainPanel;
-            MainPanel.Location = new Point(270, 120);
-
-            MainPanel.top_form = topPanel;
-            sidePanel.top_form = topPanel;
-            topPanel.bottom_form = MainPanel;
-            topPanel.left_form = sidePanel;
-
-
-            lstControls[0].Add(sidePanel);
-            lstControls[0].Add(MainPanel);
-            lstControls[0].Add(topPanel);
-            sidePanel.BringToFront();
-            MainPanel.BringToFront();
-            topPanel.BringToFront();
-            Controls.Add(sidePanel);
-            Controls.Add(MainPanel);
-            Controls.Add(topPanel);
-
-        }
 
         /// <summary>
         /// Used to create the main form content and set the position of each panel
@@ -583,7 +595,12 @@ namespace Caiman.interfaceG
             topPanel.Location = new Point(0, 0);
 
             Controls.Remove(mainPanel);
-            MainPanel = new TestXboxUserControl(this, topPanel, null, null, sidePanel);
+            //Create main pannel
+            ListGameXbox temp = new ListGameXbox(this, topPanel, null, null, sidePanel);
+            temp.lst_games = callAPI.CallAllGames();
+            temp.CreateListGames();
+
+            mainPanel = temp;
             sidePanel.right_form = MainPanel;
             MainPanel.Location = new Point(270, 120);
 
@@ -602,6 +619,7 @@ namespace Caiman.interfaceG
             Controls.Add(sidePanel);
             Controls.Add(MainPanel);
             Controls.Add(topPanel);
+            FocusToMainPanel();
         }
 
        

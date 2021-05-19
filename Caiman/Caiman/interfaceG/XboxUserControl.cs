@@ -229,5 +229,17 @@ namespace Caiman.interfaceG
                 }
             }
         }
+
+        /// <summary>
+        /// send to the main form what he need to do
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void bouton_Click(object sender, EventArgs e)
+        {
+            XboxButton tempXboxButton = (XboxButton)sender;
+            ContextInformations tempButtonContext = tempXboxButton.contextInfos;
+            xboxMainForm.ContexteHandler(tempButtonContext, e, true);
+        }
     }
 }
