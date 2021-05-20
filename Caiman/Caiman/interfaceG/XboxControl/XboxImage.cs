@@ -18,10 +18,10 @@ namespace Caiman.interfaceG.XboxControl
     class XboxImage: Button
     {
 
-        public ContextInformations btn_contexte;
+        public ContextInformations contextInfos;
         public XboxImage(string contexte, Image img, int id_contexte, int position_y, int position_x): this()
         {
-            this.btn_contexte = new ContextInformations(contexte, id_contexte, position_y, position_x);
+            this.contextInfos = new ContextInformations(contexte, id_contexte, position_y, position_x);
             this.BackgroundImage = img;
 
         }
@@ -31,7 +31,7 @@ namespace Caiman.interfaceG.XboxControl
         /// </summary>
         public XboxImage()
         {
-            this.btn_contexte = null;
+            this.contextInfos = null;
             this.TabStop = false;
             this.FlatStyle = FlatStyle.Flat;
             this.ForeColor = Color.White;
@@ -49,22 +49,14 @@ namespace Caiman.interfaceG.XboxControl
         }
 
         /// <summary>
-        /// Updated onclick event where xou tel to the main form which button has clicked in a list of button
+        /// Updated onclick event where you tel to the main form which button has clicked in a list of button
         /// </summary>
         /// <param name="e"></param>
         protected override void OnClick(EventArgs e)
         {
             base.OnClick(e);
 
-            //this.FlatAppearance.BorderSize = 2;
 
-            //tell to the topMainForm which control is active
-            XboxUserControl xboxUserControl = (XboxUserControl)this.Parent;
-            xboxUserControl.position_x = this.btn_contexte.position_x;
-            xboxUserControl.position_y = this.btn_contexte.position_y;
-
-            XboxMainForm topMainForm = (XboxMainForm)this.TopLevelControl;
-            topMainForm.ActiveControl1 = xboxUserControl;
         }
 
 
@@ -75,6 +67,7 @@ namespace Caiman.interfaceG.XboxControl
         protected override void OnGotFocus(EventArgs e)
         {
             base.OnGotFocus(e);
+            this.FlatAppearance.BorderColor = Color.FromArgb(222, 62, 4);
             this.FlatAppearance.BorderSize = 3;
 
         }
@@ -86,7 +79,11 @@ namespace Caiman.interfaceG.XboxControl
         protected override void OnLostFocus(EventArgs e)
         {
             base.OnLostFocus(e);
+            this.FlatAppearance.BorderColor = Color.FromArgb(40, 167, 69);
             this.FlatAppearance.BorderSize = 2;
         }
+
+
+
     }
 }

@@ -23,6 +23,7 @@ namespace Caiman.interfaceG
 {
     public class XboxMainForm : Form
     {
+        const int HEIGHT_NAVBAR = 60;
 
         List<List<Control>> lstControls = new List<List<Control>>();
         XboxController xboxController;
@@ -314,6 +315,10 @@ namespace Caiman.interfaceG
                     LoadNewQuitMenu();
                     FocusToMainPanel();
                     break;
+                case "game":
+                    LoadNewGameDetails(contexte.id_contexte);
+                    FocusToMainPanel();
+                    break;
                 case "configurationMenu":
                     LoadNewConfigurationMenu();
                     FocusToMainPanel();
@@ -355,7 +360,7 @@ namespace Caiman.interfaceG
             mainPanel.Dispose();
             MainPanel = temp;
 
-            MainPanel.Location = new Point(270, 120);
+            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
             sidePanel.right_form = MainPanel;
@@ -374,7 +379,7 @@ namespace Caiman.interfaceG
             mainPanel.Dispose();
             MainPanel = temp;
 
-            MainPanel.Location = new Point(270, 120);
+            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
             sidePanel.right_form = MainPanel;
@@ -382,9 +387,6 @@ namespace Caiman.interfaceG
 
 
         }
-
-
-
 
 
         /// <summary>
@@ -401,7 +403,30 @@ namespace Caiman.interfaceG
             mainPanel.Dispose();
             MainPanel = temp;
 
-            MainPanel.Location = new Point(270, 120);
+            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
+            Controls.Add(MainPanel);
+
+            sidePanel.right_form = MainPanel;
+            topPanel.bottom_form = MainPanel;
+
+
+        }
+
+        /// <summary>
+        /// Load a spécific categorie
+        /// </summary>
+        public void LoadNewGameDetails(int idGame)
+        {
+            GameDetailsXbox temp = new GameDetailsXbox(this, topPanel, null, null, sidePanel);
+            temp.Width = (Screen.PrimaryScreen.Bounds.Width - 200);
+            temp.Height = (Screen.PrimaryScreen.Bounds.Height - 150);
+            temp.LoadGameDetail(idGame);
+            temp.CreateViewGame();
+            Controls.Remove(mainPanel);
+            mainPanel.Dispose();
+            MainPanel = temp;
+
+            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
             sidePanel.right_form = MainPanel;
@@ -422,14 +447,14 @@ namespace Caiman.interfaceG
             mainPanel.Dispose();
             MainPanel = temp;
             
-            MainPanel.Location = new Point(270, 120);
+            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
             sidePanel.right_form = MainPanel;
             topPanel.bottom_form = MainPanel;
 
-
         }
+
         /// <summary>
         /// Load a spécific categorie
         /// </summary>
@@ -442,7 +467,7 @@ namespace Caiman.interfaceG
             mainPanel.Dispose();
             MainPanel = temp;
 
-            MainPanel.Location = new Point(270, 120);
+            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
             sidePanel.right_form = MainPanel;
@@ -464,7 +489,7 @@ namespace Caiman.interfaceG
             mainPanel.Dispose();
             MainPanel = temp;
 
-            MainPanel.Location = new Point(270, 120);
+            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
             sidePanel.right_form = MainPanel;
@@ -514,8 +539,6 @@ namespace Caiman.interfaceG
         public void CreateLoginControls()
         {
 
-
-
             MainPanel = new LoginControlXbox(this, null, null, null, null);
             MainPanel.Location = new Point(0, 0);
 
@@ -531,7 +554,7 @@ namespace Caiman.interfaceG
         {
             
             sidePanel = new SideBarXbox(this);
-            sidePanel.Location = new Point(0, 100);
+            sidePanel.Location = new Point(0, HEIGHT_NAVBAR);
 
             topPanel = new NavbarXbox(this);
             topPanel.Location = new Point(0, 0);
@@ -544,7 +567,7 @@ namespace Caiman.interfaceG
 
             mainPanel = temp;
             sidePanel.right_form = MainPanel;
-            MainPanel.Location = new Point(270, 120);
+            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
 
             MainPanel.top_form = topPanel;
             sidePanel.top_form = topPanel;

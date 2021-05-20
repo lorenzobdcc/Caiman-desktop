@@ -27,7 +27,7 @@ namespace Caiman.interfaceG.usercontrol
         {
             CreateListNavButton();
             Width = 250;
-            Height = (Screen.PrimaryScreen.Bounds.Height-100);
+            Height = (Screen.PrimaryScreen.Bounds.Height-75);
             AutoScroll = true;
         }
 
@@ -61,9 +61,11 @@ namespace Caiman.interfaceG.usercontrol
                 XboxButton tempButton = new XboxButton("side", a_row, a_row, 0);
                 lstControls[a_row][0] = tempButton;
                 lstControls[a_row][0].Text = lst_navbar[a_row];
-                lstControls[a_row][0].Location = new System.Drawing.Point(0 * 100 + 25, a_row * 50 + 15);
+                lstControls[a_row][0].Location = new System.Drawing.Point(0 * 100 + 20, a_row * 75 + 15);
                 lstControls[a_row][0].Width = 200;
+                lstControls[a_row][0].Height = 50;
                 lstControls[a_row][0].Name =  "btn_"+ lst_navbar[a_row];
+
 
                 Controls.Add(lstControls[a_row][0]);
                 lstControls[a_row][0].Click += new System.EventHandler(bouton_Click);
@@ -85,16 +87,6 @@ namespace Caiman.interfaceG.usercontrol
 
         }
 
-        ///// <summary>
-        ///// send to the main form what he need to do
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //protected void bouton_Click(object sender, EventArgs e)
-        //{
-        //    XboxButton tempXboxButton = (XboxButton)sender;
-        //    ContextInformations tempButtonContext = tempXboxButton.contextInfos;
-        //    xboxMainForm.ContexteHandler(tempButtonContext, e , true);
-        //}
+
     }
 }

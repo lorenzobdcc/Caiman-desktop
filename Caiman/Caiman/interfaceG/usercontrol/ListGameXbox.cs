@@ -56,7 +56,7 @@ namespace Caiman.interfaceG.usercontrol
             this.AutoScroll = true;
 
             Width = (Screen.PrimaryScreen.Bounds.Width - 250);
-            Height = (Screen.PrimaryScreen.Bounds.Height - 120);
+            Height = (Screen.PrimaryScreen.Bounds.Height - 60);
 
         }
 
@@ -65,7 +65,7 @@ namespace Caiman.interfaceG.usercontrol
 
             string imgPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), PATH_IMG_CAIMAN);
             XboxImage tempXboxImage = new XboxImage();
-            int max_rank = Width / (365);
+            int max_rank = Width / (315);
             int tempPos_x = 0;
             int tempPos_y = 0;
             lstControls.Add(new List<Control>());
@@ -82,16 +82,24 @@ namespace Caiman.interfaceG.usercontrol
 
                 lstControls[tempPos_y].Add(new XboxImage());
                 Image img = new Bitmap((imgPath+ game.imageName));
-                XboxImage tempButton = new XboxImage("game", img, game.id, 0, 0);
+                XboxImage tempButton = new XboxImage("game", img, game.id, tempPos_x, tempPos_y);
                 lstControls[tempPos_y][tempPos_x] = tempButton;
-                lstControls[tempPos_y][tempPos_x].Location = new System.Drawing.Point(tempPos_x * 350 + 15, tempPos_y * 430 + 15);
+                lstControls[tempPos_y][tempPos_x].Location = new System.Drawing.Point(tempPos_x * 300 + 15, tempPos_y * 430 + 15);
 
                 Controls.Add(lstControls[tempPos_y][tempPos_x]);
+                tempButton.Click += new System.EventHandler(bouton_Click);
 
 
 
                 tempPos_x++;
             }
+        }
+
+        private new void bouton_Click(object sender, EventArgs e)
+        {
+            XboxImage tempXboxButton = (XboxImage)sender;
+            ContextInformations tempButtonContext = tempXboxButton.contextInfos;
+            xboxMainForm.ContexteHandler(tempButtonContext, e, true);
         }
 
     }

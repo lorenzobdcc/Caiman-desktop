@@ -43,7 +43,7 @@ namespace Caiman.interfaceG.usercontrol
         }
 
         /// <summary>
-        /// Updated onclick event where xou tel to the main form which button has clicked in a list of button
+        /// Updated onclick event where you tel to the main form which button has clicked in a list of button
         /// </summary>
         /// <param name="e"></param>
         protected override void OnClick(EventArgs e)

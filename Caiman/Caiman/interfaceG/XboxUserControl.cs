@@ -207,25 +207,33 @@ namespace Caiman.interfaceG
             }
             else
             {
-                if (lstControls[position_y][position_x] == null)
+                if (position_x < lstControls[position_y].Count())
                 {
-                    int x = position_x - 1;
-                    int y = position_y;
-                    while (lstControls[position_y][x] == null)
+
+
+                    if (lstControls[position_y][position_x] == null)
                     {
-                        if (x < 0)
+                        int x = position_x - 1;
+                        int y = position_y;
+                        while (lstControls[position_y][x] == null)
                         {
-                            
-                            break;
+                            if (x < 0)
+                            {
+
+                                break;
+                            }
+                            x--;
                         }
-                        x--;
+                        lstControls[(position_y)][x].Focus();
+                        Position_x = x;
                     }
-                    lstControls[(position_y)][x].Focus();
-                    Position_x = x;
+                    else
+                    {
+                        lstControls[(position_y)][position_x].Focus();
+                    }
                 }
-                else
-                {
-                    lstControls[(position_y)][position_x].Focus();
+                else {
+                    position_y--;
                 }
             }
         }
@@ -241,5 +249,7 @@ namespace Caiman.interfaceG
             ContextInformations tempButtonContext = tempXboxButton.contextInfos;
             xboxMainForm.ContexteHandler(tempButtonContext, e, true);
         }
+
+
     }
 }

@@ -72,7 +72,7 @@ namespace Caiman.database
 
         public List<Game> CallAllGames()
         {
-            requestGET = new RestRequest("get", Method.GET);
+            requestGET = new RestRequest("", Method.GET);
             List<Game> lst_games = new List<Game>();
             string fullURL = URL_STRING + "/games/";
             baseUrl = new Uri(fullURL);
@@ -88,13 +88,38 @@ namespace Caiman.database
                 dynamic data = JsonConvert.DeserializeObject(tempString);
                 foreach (var game in data)
                 {
-                    Game tempGame = new Game((int)game.id.Value, game.description.Value, game.imageName.Value, game.imageName.Value, (int)game.idConsole.Value, (int)game.idFile.Value);
+                    int temp_id = (int)game.id.Value;
+                    Game tempGame = new Game((int)game.id.Value, game.name.Value, game.description.Value, game.imageName.Value, (int)game.idConsole.Value, (int)game.idFile.Value);
                     lst_games.Add(tempGame);
                 }
 
             }
 
             return lst_games;
+        }
+
+        public Game CallOneGame(int idGame)
+        {
+            Game tempGame = new Game();
+            requestGET = new RestRequest("", Method.GET);
+            List<Game> lst_games = new List<Game>();
+            string fullURL = URL_STRING + "/games/"+idGame;
+            baseUrl = new Uri(fullURL);
+            client.BaseUrl = baseUrl;
+            string tempString = "";
+            IRestResponse<RootObject> response = client.Execute<RootObject>(requestGET);
+
+            if (response.Content != "")
+            {
+                tempString = response.Content.ToString();
+
+                dynamic data = JsonConvert.DeserializeObject(tempString);
+                 tempGame = new Game((int)data.id.Value, data.name.Value, data.description.Value, data.imageName.Value, (int)data.idConsole.Value, (int)data.idFile.Value);
+
+
+            }
+
+            return tempGame;
         }
 
         public List<Category> CallAllCategories()
@@ -142,7 +167,7 @@ namespace Caiman.database
                 dynamic data = JsonConvert.DeserializeObject(tempString);
                 foreach (var game in data)
                 {
-                    Game tempGame = new Game((int)game.id.Value, game.description.Value, game.imageName.Value, game.imageName.Value, (int)game.idConsole.Value, (int)game.idFile.Value);
+                    Game tempGame = new Game((int)game.id.Value, game.name.Value, game.description.Value, game.imageName.Value, (int)game.idConsole.Value, (int)game.idFile.Value);
                     lst_games.Add(tempGame);
                 }
 
@@ -170,7 +195,7 @@ namespace Caiman.database
                 dynamic data = JsonConvert.DeserializeObject(tempString);
                 foreach (var game in data)
                 {
-                    Game tempGame = new Game((int)game.id.Value, game.description.Value, game.imageName.Value, game.imageName.Value, (int)game.idConsole.Value, (int)game.idFile.Value);
+                    Game tempGame = new Game((int)game.id.Value, game.name.Value, game.description.Value, game.imageName.Value, (int)game.idConsole.Value, (int)game.idFile.Value);
                     lst_games.Add(tempGame);
                 }
 

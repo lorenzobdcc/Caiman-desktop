@@ -16,9 +16,12 @@ namespace Caiman.interfaceG.usercontrol
 {
     class NavbarXbox : XboxUserControl
     {
+
+        const int HEIGHT = 60;
+        const int OFFSET = 15;
         public NavbarXbox(XboxMainForm xboxMain) : base(xboxMain)
         {
-            Height = 100;
+            Height = HEIGHT;
             Width = Screen.PrimaryScreen.Bounds.Width;
             CreateNavButton();
         }
@@ -28,17 +31,17 @@ namespace Caiman.interfaceG.usercontrol
             lstControls.Add(new List<Control>());
 
             XboxNavabrButton home = new XboxNavabrButton("home", Caiman.Properties.Resources.green_home, 0, 0, 1);
-            home.Location = new System.Drawing.Point((Screen.PrimaryScreen.Bounds.Width - 200), 0 * 60 + 50);
+            home.Location = new System.Drawing.Point((Screen.PrimaryScreen.Bounds.Width - 200), 0 * 60 + OFFSET);
             Controls.Add(home);
             home.Click += new System.EventHandler(bouton_Click);
 
             XboxNavabrButton configuration = new XboxNavabrButton("configurationMenu", Caiman.Properties.Resources.green_gear, 0, 0, 1);
-            configuration.Location = new System.Drawing.Point( (Screen.PrimaryScreen.Bounds.Width -150) , 0 * 60 + 50);
+            configuration.Location = new System.Drawing.Point( (Screen.PrimaryScreen.Bounds.Width -150) , 0 * 60 + OFFSET);
             Controls.Add(configuration);
             configuration.Click += new System.EventHandler(bouton_Click);
 
             XboxNavabrButton quit = new XboxNavabrButton("quitMenu", Caiman.Properties.Resources.green_onoff, 0, 0, 2);
-            quit.Location = new System.Drawing.Point((Screen.PrimaryScreen.Bounds.Width - 100), 0 * 60 + 50);
+            quit.Location = new System.Drawing.Point((Screen.PrimaryScreen.Bounds.Width - 100), 0 * 60 + OFFSET);
             Controls.Add(quit);
             quit.Click += new System.EventHandler(bouton_Click);
 

@@ -13,10 +13,14 @@ namespace Caiman.logique
     {
 
         public User user;
+        public DownloadManager downloadManager;
 
         public EmulatorsManager()
         {
             user = new User();
+            downloadManager = new DownloadManager();
+            downloadManager.CreateDownload(18, "b4bd46813896a0c97aeaa2a0795e8ef6");
+            downloadManager.StartDownload();
             CreateAppDataFolder();
         }
 
