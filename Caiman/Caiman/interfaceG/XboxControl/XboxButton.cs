@@ -52,8 +52,12 @@ namespace Caiman.interfaceG.usercontrol
 
             //tell to the topMainForm which control is active
             XboxUserControl xboxUserControl = (XboxUserControl)this.Parent;
+            if (xboxUserControl != null)
+            {
             xboxUserControl.position_x = this.contextInfos.position_x;
             xboxUserControl.position_y = this.contextInfos.position_y;
+            }
+
 
             if ((XboxMainForm)this.TopLevelControl != null)
             {

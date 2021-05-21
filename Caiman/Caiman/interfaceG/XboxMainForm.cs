@@ -315,6 +315,10 @@ namespace Caiman.interfaceG
                     LoadNewQuitMenu();
                     FocusToMainPanel();
                     break;
+                case "downloadList":
+                    LoadNewDownloadList();
+                    FocusToMainPanel();
+                    break;
                 case "game":
                     LoadNewGameDetails(contexte.id_contexte);
                     FocusToMainPanel();
@@ -326,6 +330,16 @@ namespace Caiman.interfaceG
                 case "download":
                     emulatorsManager.downloadManager.CreateDownload(contexte.id_contexte,emulatorsManager.user.apitoken);
                     emulatorsManager.downloadManager.StartDownload();
+                    ContextInformations tempContexte = new ContextInformations();
+                    tempContexte.contexte = "downloadList";
+                    this.ContexteHandler(tempContexte, null);
+                    break;
+                case "delete":
+                    emulatorsManager.downloadManager.DeleteGame(contexte.id_contexte);
+                    ContextInformations tempContexteDelete = new ContextInformations();
+                    tempContexteDelete.contexte = "game";
+                    tempContexteDelete.id_contexte = contexte.id_contexte;
+                    this.ContexteHandler(tempContexteDelete, null);
                     break;
                 case "login":
                     emulatorsManager.user.Login(contexte.optionalString1, contexte.optionalString2);
@@ -379,6 +393,25 @@ namespace Caiman.interfaceG
         public void LoadNewConfigurationMenu()
         {
             ConfigurationMenuXbox temp = new ConfigurationMenuXbox(this, topPanel, null, null, sidePanel);
+            Controls.Remove(mainPanel);
+            mainPanel.Dispose();
+            MainPanel = temp;
+
+            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
+            Controls.Add(MainPanel);
+
+            sidePanel.right_form = MainPanel;
+            topPanel.bottom_form = MainPanel;
+
+
+        }
+
+        /// <summary>
+        /// Load the configuration menu
+        /// </summary>
+        public void LoadNewDownloadList()
+        {
+            DownloadListXbox temp = new DownloadListXbox(this, topPanel, null, null, sidePanel);
             Controls.Remove(mainPanel);
             mainPanel.Dispose();
             MainPanel = temp;

@@ -14,9 +14,9 @@ namespace Caiman.logique
     public class Download
     {
         string pathToFolder;
-        int idGame;
+        public int idGame;
         string apiKey;
-        string filename;
+        public string filename;
         WebClient webClient;
         public int percentage = 0;
         public CallAPI callAPI = new CallAPI();
@@ -39,28 +39,16 @@ namespace Caiman.logique
             if (!CheckIfFileIsPresent())
             {
                 webClient = new WebClient();
-                webClient.DownloadProgressChanged += wc_DownloadProgressChanged;
                 Uri uri = new Uri("http://api.caiman.cfpt.info/games/?idGame="+idGame+"&apiKey="+apiKey);
+                webClient.DownloadProgressChanged += wc_DownloadProgressChanged;
                 webClient.DownloadFileAsync(uri,pathToFolder+filename);
-                
             }
         }
 
-
-
-        public  Uri AddParameter( Uri url, string paramName, string paramValue)
+        void  wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            var uriBuilder = new UriBuilder(url);
-            var query = HttpUtility.ParseQueryString(uriBuilder.Query);
-            query[paramName] = paramValue;
-            uriBuilder.Query = query.ToString();
-
-            return uriBuilder.Uri;
-        }
-
-        void wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
-        {
-         percentage =  e.ProgressPercentage;
+            percentage = e.ProgressPercentage;
+            
         }
 
         /// <summary>
@@ -76,5 +64,7 @@ namespace Caiman.logique
             }
             return isPresent;
         }
+
+
     }
 }

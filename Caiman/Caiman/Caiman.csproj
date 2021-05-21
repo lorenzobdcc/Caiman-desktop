@@ -107,6 +107,9 @@
     <Compile Include="database\AccessDatabase.cs" />
     <Compile Include="database\CallAPI.cs" />
     <Compile Include="interfaceG\ContextInformations.cs" />
+    <Compile Include="interfaceG\usercontrol\DownloadListXbox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="interfaceG\usercontrol\GameDetailsXbox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -202,6 +205,7 @@
   <ItemGroup>
     <Content Include="img\caiman.ico" />
     <Content Include="img\gear.png" />
+    <None Include="Resources\download-2-64.png" />
     <None Include="img\green_onoff.png" />
     <None Include="img\green_home.png" />
     <None Include="img\green_gear.png" />

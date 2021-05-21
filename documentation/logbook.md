@@ -636,5 +636,129 @@ J’ai dû modifier le .htaccess pour pouvoir appliquer les rewriteRules. Le fic
 
 documentation
 
+------
+
+## 17.05.2021
+
+### 8h05
+
+Création d’une ébauche de diagram de classe sur le tableau.
+
+J’ai repris en grande partie le diagramme de mon POC en y ajoutant une gestion des sauvegardes et des téléchagement.
+
+![alt text](images_logbook/schema_caiman.jpeg "Schéma de base de la form")
+### 9h00
+
+Création du schéma sous UMLetino
+
+### 13h20
+
+J’essaie de réfléchir à la manière de télécharger les sauvegardes et la façon dont je dois stocker les jeux que l’utilisateur a téléchargé.
+
+Je pense que je vais faire en sorte de vérifier si les jeux qui devraient être présents sur le disque de l'utilisateur le sont réellement.
+
+Je vais faire en sorte que l'utilisateur ait la possibilité de pouvoir télécharger les jeux dans un dossier spécifique. Il va devoir au premier lancement de l’application spécifier ou l'installation doit se faire. (c’est peut etre contraire a mon but de faire une application simple d’utilisation).
+
+Je dois aussi savoir si le disque de l’utilisateur n’a pas la place requise pour télécharger le jeu demandé.
+
+### 14h35
+
+Discussion avec M.Maréchal 
+
+## 18.05.2021
+
+### 8h05
+
+Je vais créer une page de connexion pour l'utilisateur
+
+### 10h00
+
+La connection marche, je vais maintenant télécharger les images des jeux
+
+### 12h00
+
+Je commence a faire en sorte que quand un nouveau jeu est reçu depuis l’API son image est automatiquement télécharger et mise dans le dossier %appdata% de l’application
+
+### 13h30
+
+J’affiche dans la sidebar le nom des catégories
+
+### 15h00
+
+Quand je clique sur une catégorie les jeux de la catégorie choisie sont afficher.
+
+-----
+
+## 19.05.2021
+
+### 8h05
+
+je fais en sorte d’afficher tous les jeux quand je lance l’application.
+
+### 9h00
+
+je vais maintenant faire en sorte de pouvoir voir les détails d’un jeu.
+
+### 9h30
+
+J’ai un problème avec les image bouton le clic n’est pas pris en compte
+
+### 11h00
+
+j’ai corriger le soucis des boutons et je modifie un petit peu l’interface
+
+### 13h00 
+
+je commence l'affichage des détails d’un jeu
+
+### 14h00
+
+ je fais des recherche sur la façon de télécharger un jeu
+
+--------
+
+## 20.05.2021
+
+### 8h05
+
+Je crée une route pour pouvoir recevoir le lien de téléchargement d’un jeu.
+
+### 09h15
+
+Je me rend compte que pour créer la route de téléchargement je dois:
+
+Avoir le lien du site
+Avoir le lien pour la console
+avoir le nom du fichier
+
+Pour avec ces différents éléments je dois modifier mon API pour pouvoir faire tout ça.
+
+### 11h00
+
+J’arrive à créer l’URL mais le fichier n’est pas accessible en dehors du serveur donc je ne sais pas vraiment quoi faire
+
+### 12h50
+
+Correction d’un problème où l’on pouvait se déplacer dans une case qui n’existe pas donc l’application plantait.
+
+### 14h00
+
+Je commence a faire en sorte que je puisse créer la route pour télécharger le fichier des jeux
+
+------
+
+## 21.05.2021
+
+### 9h00
+
+Je voulais télécharger un jeu en passant par le webClient en C# mais ma route est en POST dans mon API. Malheureusement je ne peux pas fournir de paramètres en POST avec la fonction downloadFileAsync donc je dois passer ma route en GET
+
+### 11h00
+
+j’ai changé ma route et j’en ai ajouté pour pouvoir connaître les dossiers ou je dois stocker les jeux et le nom du fichier d’un jeu.
+
+### 16h00
+
+J’ai réussi à afficher la liste des téléchargements  et maintenant  je suis en train de faire en sorte de pouvoir ajouter un jeu au favoris. j’ai réglé des soucis de droit d'accès au fichier qui sont en cours de lecture. 
 
 

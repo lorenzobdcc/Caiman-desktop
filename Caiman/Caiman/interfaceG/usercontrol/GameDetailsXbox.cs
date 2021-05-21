@@ -51,7 +51,7 @@ namespace Caiman.interfaceG.usercontrol
             // testContextUC
             // 
             this.Name = "testContextUC";
-            this.Size = new System.Drawing.Size(Screen.PrimaryScreen.Bounds.Width -200,Screen.PrimaryScreen.Bounds.Height-200);
+            this.Size = new System.Drawing.Size(Screen.PrimaryScreen.Bounds.Width - 200, Screen.PrimaryScreen.Bounds.Height - 200);
             this.BackColor = Color.Transparent;
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -75,7 +75,7 @@ namespace Caiman.interfaceG.usercontrol
             PictureBox pictureBox = new PictureBox();
             string imgPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), PATH_IMG_CAIMAN);
             Image img = new Bitmap((imgPath + game.imageName));
-            pictureBox.Location = new System.Drawing.Point(15,60);
+            pictureBox.Location = new System.Drawing.Point(15, 60);
             pictureBox.Width = 472;
             pictureBox.Height = 700;
             pictureBox.TabStop = false;
@@ -89,7 +89,7 @@ namespace Caiman.interfaceG.usercontrol
             Label lbl_description = new Label();
             lbl_description.Text = game.description;
             lbl_description.Location = new System.Drawing.Point(500, 60);
-            lbl_description.MaximumSize = new Size((this.Width/2), 500);
+            lbl_description.MaximumSize = new Size((this.Width / 2), 500);
             lbl_description.AutoSize = true;
             lbl_description.Font = new Font("Arial", 14);
             lbl_description.ForeColor = Color.White;
@@ -98,24 +98,53 @@ namespace Caiman.interfaceG.usercontrol
             this.callAPI = new CallAPI();
             var gamePath = @"C:\Caiman\" + this.callAPI.CallFolderNameGame(game.id) + @"\" + this.callAPI.CallFileNameGame(game.id);
 
-            if (!File.Exists(gamePath))
+            XboxButton btn_addTofavorite = new XboxButton("Addfavorite", game.id, 0, 0);
+            btn_addTofavorite.Text = "Add to favorite";
+            btn_addTofavorite.Location = new System.Drawing.Point(500, 550);
+            btn_addTofavorite.Click += new System.EventHandler(bouton_Click);
+            lstControls[0].Add(btn_addTofavorite);
+            Controls.Add(btn_addTofavorite);
+            lstControls.Add(new List<Control>());
+            if (xboxMainForm.emulatorsManager.downloadManager.CheckIfDownloadIsActive(game.id))
             {
-                XboxButton btn_download = new XboxButton("download", game.id, 0, 0);
-                btn_download.Text = "Download: " + game.name;
-                btn_download.Location = new System.Drawing.Point(500, 650);
-                btn_download.Click += new System.EventHandler(bouton_Click);
-                lstControls[0].Add(btn_download);
-                Controls.Add(btn_download);
+                XboxButton btn_inDownload = new XboxButton("downloadList", game.id, 0, 0);
+                btn_inDownload.Text = "In download: " + game.name;
+                btn_inDownload.Location = new System.Drawing.Point(500, 650);
+                btn_inDownload.Click += new System.EventHandler(bouton_Click);
+                lstControls[0].Add(btn_inDownload);
+                Controls.Add(btn_inDownload);
             }
             else
             {
+                if (!File.Exists(gamePath))
+                {
+                    XboxButton btn_download = new XboxButton("download", game.id, 0, 0);
+                    btn_download.Text = "Download: " + game.name;
+                    btn_download.Location = new System.Drawing.Point(500, 650);
+                    btn_download.Click += new System.EventHandler(bouton_Click);
+                    lstControls[0].Add(btn_download);
+                    Controls.Add(btn_download);
+                }
+                else
+                {
 
-                XboxButton btn_play = new XboxButton("Play", game.id, 0, 0);
-                btn_play.Text = "Play: " + game.name;
-                btn_play.Location = new System.Drawing.Point(500, 650);
-                btn_play.Click += new System.EventHandler(bouton_Click);
-                lstControls[0].Add(btn_play);
-                Controls.Add(btn_play);
+
+                    XboxButton btn_play = new XboxButton("Play", game.id, 0, 0);
+                    btn_play.Text = "Play: " + game.name;
+                    btn_play.Location = new System.Drawing.Point(500, 650);
+                    btn_play.Click += new System.EventHandler(bouton_Click);
+                    lstControls[0].Add(btn_play);
+                    Controls.Add(btn_play);
+                    lstControls.Add(new List<Control>());
+
+                    XboxButton btn_delete = new XboxButton("delete", game.id, 0, 1);
+                    btn_delete.Text = "Delete: " + game.name;
+                    btn_delete.Location = new System.Drawing.Point(500, 700);
+                    btn_delete.Click += new System.EventHandler(bouton_Click);
+                    lstControls[1].Add(btn_delete);
+                    Controls.Add(btn_delete);
+
+                }
             }
 
         }
@@ -125,7 +154,7 @@ namespace Caiman.interfaceG.usercontrol
             game = callAPI.CallOneGame(idGame);
         }
 
-        
+
 
     }
 }
