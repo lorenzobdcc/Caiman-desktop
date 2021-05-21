@@ -95,12 +95,28 @@ namespace Caiman.interfaceG.usercontrol
             lbl_description.ForeColor = Color.White;
             Controls.Add(lbl_description);
 
-            XboxButton btn_download = new XboxButton("download",game.id,0,0);
-            btn_download.Text = "Download: " + game.name;
-            btn_download.Location = new System.Drawing.Point(500, 650);
-            btn_download.Click += new System.EventHandler(bouton_Click);
-            lstControls[0].Add(btn_download);
-            Controls.Add(btn_download);
+            this.callAPI = new CallAPI();
+            var gamePath = @"C:\Caiman\" + this.callAPI.CallFolderNameGame(game.id) + @"\" + this.callAPI.CallFileNameGame(game.id);
+
+            if (!File.Exists(gamePath))
+            {
+                XboxButton btn_download = new XboxButton("download", game.id, 0, 0);
+                btn_download.Text = "Download: " + game.name;
+                btn_download.Location = new System.Drawing.Point(500, 650);
+                btn_download.Click += new System.EventHandler(bouton_Click);
+                lstControls[0].Add(btn_download);
+                Controls.Add(btn_download);
+            }
+            else
+            {
+
+                XboxButton btn_play = new XboxButton("Play", game.id, 0, 0);
+                btn_play.Text = "Play: " + game.name;
+                btn_play.Location = new System.Drawing.Point(500, 650);
+                btn_play.Click += new System.EventHandler(bouton_Click);
+                lstControls[0].Add(btn_play);
+                Controls.Add(btn_play);
+            }
 
         }
 

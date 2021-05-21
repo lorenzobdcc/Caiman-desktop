@@ -45,5 +45,7 @@ namespace Caiman.logique
                 Directory.CreateDirectory(@"C:\Caiman\GamecubeWii\");
             }
         }
+
+        
     }
 }
