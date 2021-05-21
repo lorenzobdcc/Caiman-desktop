@@ -323,6 +323,10 @@ namespace Caiman.interfaceG
                     LoadNewConfigurationMenu();
                     FocusToMainPanel();
                     break;
+                case "download":
+                    emulatorsManager.downloadManager.CreateDownload(contexte.id_contexte,emulatorsManager.user.apitoken);
+                    emulatorsManager.downloadManager.StartDownload();
+                    break;
                 case "login":
                     emulatorsManager.user.Login(contexte.optionalString1, contexte.optionalString2);
 

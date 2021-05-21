@@ -148,6 +148,8 @@
     <Compile Include="logique\DownloadManager.cs" />
     <Compile Include="logique\EmulatorsManager.cs" />
     <Compile Include="models\Category.cs" />
+    <Compile Include="models\Console.cs" />
+    <Compile Include="models\File.cs" />
     <Compile Include="models\Game.cs" />
     <Compile Include="models\User.cs" />
     <Compile Include="Program.cs" />

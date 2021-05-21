@@ -103,6 +103,7 @@ namespace Caiman.interfaceG.usercontrol
 
 
             lstControls.Add(new List<Control>());
+            lstControls.Add(new List<Control>());
 
 
 
@@ -117,6 +118,17 @@ namespace Caiman.interfaceG.usercontrol
 
 
             lstControls[0].Add(btn_login);
+
+            XboxButton btn_quit = new XboxButton("quit", 0, 2, 1);
+
+            btn_quit.Text = "Quit";
+            btn_quit.Width = 100;
+            btn_quit.Location = new System.Drawing.Point((postion_first_column - 75), ((Screen.PrimaryScreen.Bounds.Height / 2) + 250));
+            Controls.Add(btn_quit);
+            btn_quit.Click += new System.EventHandler(bouton_Click);
+
+
+            lstControls[1].Add(btn_quit);
 
 
         }

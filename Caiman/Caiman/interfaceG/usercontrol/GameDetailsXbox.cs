@@ -98,6 +98,7 @@ namespace Caiman.interfaceG.usercontrol
             XboxButton btn_download = new XboxButton("download",game.id,0,0);
             btn_download.Text = "Download: " + game.name;
             btn_download.Location = new System.Drawing.Point(500, 650);
+            btn_download.Click += new System.EventHandler(bouton_Click);
             lstControls[0].Add(btn_download);
             Controls.Add(btn_download);
 

@@ -19,8 +19,6 @@ namespace Caiman.logique
         {
             user = new User();
             downloadManager = new DownloadManager();
-            downloadManager.CreateDownload(18, "b4bd46813896a0c97aeaa2a0795e8ef6");
-            downloadManager.StartDownload();
             CreateAppDataFolder();
         }
 
@@ -36,6 +34,15 @@ namespace Caiman.logique
             if (!Directory.Exists(imgPath))
             {
                 Directory.CreateDirectory(imgPath);
+            }
+
+            if (!Directory.Exists(@"C:\Caiman\Playstation2"))
+            {
+                Directory.CreateDirectory(@"C:\Caiman\Playstation2\");
+            }
+            if (!Directory.Exists(@"C:\Caiman\GamecubeWii\"))
+            {
+                Directory.CreateDirectory(@"C:\Caiman\GamecubeWii\");
             }
         }
     }

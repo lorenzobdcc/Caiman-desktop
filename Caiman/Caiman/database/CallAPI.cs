@@ -121,6 +121,59 @@ namespace Caiman.database
 
             return tempGame;
         }
+        public string CallFileNameGame(int idGame)
+        {
+            FileModel tempFile = new FileModel();
+            requestGET = new RestRequest("", Method.GET);
+            List<Game> lst_games = new List<Game>();
+            string fullURL = URL_STRING + "/games/";
+
+
+            requestGET.AddParameter("gameFileName", idGame);
+            baseUrl = new Uri(fullURL);
+            client.BaseUrl = baseUrl;
+            string tempString = "";
+            IRestResponse<RootObject> response = client.Execute<RootObject>(requestGET);
+
+            if (response.Content != "")
+            {
+                tempString = response.Content.ToString();
+
+                dynamic data = JsonConvert.DeserializeObject(tempString);
+                tempFile = new FileModel((int)data.id.Value, data.filename.Value, data.date.Value);
+
+
+            }
+
+            return tempFile.filename;
+        }
+
+        public string CallFolderNameGame(int idGame)
+        {
+            ConsoleModel tempConsole = new ConsoleModel();
+            requestGET = new RestRequest("", Method.GET);
+            List<Game> lst_games = new List<Game>();
+            string fullURL = URL_STRING + "/games/";
+
+
+            requestGET.AddParameter("gameConsole", idGame);
+            baseUrl = new Uri(fullURL);
+            client.BaseUrl = baseUrl;
+            string tempString = "";
+            IRestResponse<RootObject> response = client.Execute<RootObject>(requestGET);
+
+            if (response.Content != "")
+            {
+                tempString = response.Content.ToString();
+
+                dynamic data = JsonConvert.DeserializeObject(tempString);
+                tempConsole = new ConsoleModel((int)data.id.Value, data.name.Value, data.folderName.Value, (int)data.idEmulator.Value);
+
+
+            }
+
+            return tempConsole.folderName;
+        }
 
         public List<Category> CallAllCategories()
         {

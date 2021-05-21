@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net;
+using Caiman.database;
 
 namespace Caiman.logique
 {
@@ -11,6 +12,7 @@ namespace Caiman.logique
     {
         List<Download> lst_download = new List<Download>();
         Download activeDownload;
+        CallAPI callAPI = new CallAPI();
 
         public DownloadManager()
         {
@@ -33,11 +35,12 @@ namespace Caiman.logique
             {
                 lst_download[0].StartDownload();
             }
+            lst_download.RemoveAt(0);
         }
 
         public void CreateDownload(int idGame, string apiKey)
         {
-            lst_download.Add(new Download("",idGame, apiKey));
+            lst_download.Add(new Download(@"C:\Caiman\"+callAPI.CallFolderNameGame(idGame)+@"\", idGame, apiKey, callAPI.CallFileNameGame(idGame)));
         }
     }
 }
