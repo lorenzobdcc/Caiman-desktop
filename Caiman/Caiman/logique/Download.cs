@@ -20,13 +20,17 @@ namespace Caiman.logique
         WebClient webClient;
         public int percentage = 0;
         public CallAPI callAPI = new CallAPI();
+        public DownloadManager downloadManager;
 
-        public Download(string pathToFolderp, int idGamep, string apiKeyp,string filenamep)
+        public bool active = false;
+
+        public Download(string pathToFolderp, int idGamep, string apiKeyp,string filenamep,DownloadManager downloadManagerp)
         {
             pathToFolder = pathToFolderp;
             idGame = idGamep;
             apiKey = apiKeyp;
             filename = filenamep;
+            downloadManager = downloadManagerp;
         }
         public Download()
         {
@@ -42,13 +46,18 @@ namespace Caiman.logique
                 Uri uri = new Uri("http://api.caiman.cfpt.info/games/?idGame="+idGame+"&apiKey="+apiKey);
                 webClient.DownloadProgressChanged += wc_DownloadProgressChanged;
                 webClient.DownloadFileAsync(uri,pathToFolder+filename);
+                active = true;
             }
         }
 
         void  wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             percentage = e.ProgressPercentage;
-            
+            if (percentage == 100 && active == true)
+            {
+                active = false;
+                downloadManager.NextDownload();
+            }
         }
 
         /// <summary>

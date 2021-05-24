@@ -6,6 +6,7 @@
  *  @brief Used to test if i can load an image from the web
  */
 using Caiman.interfaceG.XboxControl;
+using Caiman.logique;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -59,19 +60,31 @@ namespace Caiman.interfaceG.usercontrol
         {
             timer = new Timer();
             timer.Tick += new EventHandler(RefreshData);
-            timer.Interval = 100;
+            timer.Interval = 10;
             timer.Start();
         }
 
         public void RefreshData(object sender = null, EventArgs e = null)
         {
             int counter = 0;
+            List<Download> lst_allDownload = new List<Download>();
+            lst_allDownload.AddRange(xboxMainForm.emulatorsManager.downloadManager.lst_download);
+            lst_allDownload.AddRange(xboxMainForm.emulatorsManager.downloadManager.lst_activeDownload);
+            lst_allDownload.AddRange(xboxMainForm.emulatorsManager.downloadManager.lst_finishDownload);
             if (xboxMainForm.emulatorsManager.downloadManager.lst_activeDownload.Count() != 0)
             {
             foreach (var control in lst_progressBar)
             {
-                lst_progressBar[counter].Value =  xboxMainForm.emulatorsManager.downloadManager.lst_activeDownload[counter].percentage; 
-                counter++;
+                lst_progressBar[counter].Value = lst_allDownload[counter].percentage;
+                    if (lst_allDownload[counter].percentage == 100)
+                    {
+                        lstControls[counter][0].Text = lst_allDownload[counter].filename + " : Finish";
+                    }
+                    else
+                    {
+                        lstControls[counter][0].Text = lst_allDownload[counter].filename + " :" + lst_allDownload[counter].percentage + "/100";
+                    }
+                    counter++;
             }
             }
 
@@ -83,10 +96,16 @@ namespace Caiman.interfaceG.usercontrol
         {
             
                 int position_width = ((Screen.PrimaryScreen.Bounds.Width / 12) - 50);
-            if (xboxMainForm.emulatorsManager.downloadManager.lst_activeDownload.Count() != 0)
+            int counterTotal = 0;
+            List<Download> lst_allDownload = new List<Download>();
+            lst_allDownload.AddRange(xboxMainForm.emulatorsManager.downloadManager.lst_download);
+            lst_allDownload.AddRange(xboxMainForm.emulatorsManager.downloadManager.lst_activeDownload);
+            lst_allDownload.AddRange(xboxMainForm.emulatorsManager.downloadManager.lst_finishDownload);
+
+            if (lst_allDownload.Count() != 0)
             {
-                int counter = 0;
-                foreach (var download in xboxMainForm.emulatorsManager.downloadManager.lst_activeDownload)
+                int counterActive = 0;
+                foreach (var download in lst_allDownload)
                 {
                     lstControls.Add(new List<Control>());
 
@@ -94,20 +113,21 @@ namespace Caiman.interfaceG.usercontrol
                     XboxButton btn_download = new XboxButton("game", download.idGame, 0, 0);
                     btn_download.Text = download.filename;
                     btn_download.Width = 100;
-                    btn_download.Location = new System.Drawing.Point(position_width, (100 + counter * 125 ));
+                    btn_download.Location = new System.Drawing.Point(position_width, (100 + counterTotal * 125 ));
                     Controls.Add(btn_download);
                     btn_download.Click += new System.EventHandler(bouton_Click);
-                    lstControls[counter].Add(btn_download);
+                    lstControls[counterActive].Add(btn_download);
 
                     ProgressBar PB_download = new ProgressBar();
                         PB_download.Minimum = 0;
                         PB_download.Maximum = 100;
                     PB_download.Width = this.Width/2;
                     PB_download.Value = download.percentage;
-                    PB_download.Location = new System.Drawing.Point(position_width, (150 + counter * 125));
+                    PB_download.Location = new System.Drawing.Point(position_width, (150 + counterTotal * 125));
                     Controls.Add(PB_download);
                     lst_progressBar.Add(PB_download);
-                    counter++;
+                    counterActive++;
+                    counterTotal++;
                 }
             }
             else
@@ -121,6 +141,64 @@ namespace Caiman.interfaceG.usercontrol
                 btn_download.Click += new System.EventHandler(bouton_Click);
                 lstControls[0].Add(btn_download);
             }
+
+            //if (xboxMainForm.emulatorsManager.downloadManager.lst_download.Count() != 0)
+            //{
+            //    int counterDownload = 0;
+            //    foreach (var download in xboxMainForm.emulatorsManager.downloadManager.lst_download)
+            //    {
+            //        lstControls.Add(new List<Control>());
+
+
+            //        XboxButton btn_download = new XboxButton("game", download.idGame, 0, 0);
+            //        btn_download.Text = download.filename +" : In queu";
+            //        btn_download.Width = 100;
+            //        btn_download.Location = new System.Drawing.Point(position_width, (200 + counterTotal * 125));
+            //        Controls.Add(btn_download);
+            //        btn_download.Click += new System.EventHandler(bouton_Click);
+            //        lstControls[counterDownload].Add(btn_download);
+
+            //        ProgressBar PB_download = new ProgressBar();
+            //        PB_download.Minimum = 0;
+            //        PB_download.Maximum = 100;
+            //        PB_download.Width = this.Width / 2;
+            //        PB_download.Value = download.percentage;
+            //        PB_download.Location = new System.Drawing.Point(position_width, (150 + counterTotal * 125));
+            //        Controls.Add(PB_download);
+            //        //lst_progressBar.Add(PB_download);
+            //        counterDownload++;
+            //        counterTotal++;
+            //    }
+            //}
+            //if (xboxMainForm.emulatorsManager.downloadManager.lst_download.Count() != 0)
+            //{
+            //    int counterFinish = 0;
+            //    foreach (var download in xboxMainForm.emulatorsManager.downloadManager.lst_download)
+            //    {
+            //        lstControls.Add(new List<Control>());
+
+
+            //        XboxButton btn_download = new XboxButton("game", download.idGame, 0, 0);
+            //        btn_download.Text = download.filename + " : In queu";
+            //        btn_download.Width = 100;
+            //        btn_download.Location = new System.Drawing.Point(position_width, (200 + counterTotal * 125));
+            //        Controls.Add(btn_download);
+            //        btn_download.Click += new System.EventHandler(bouton_Click);
+            //        lstControls[counterFinish].Add(btn_download);
+
+            //        ProgressBar PB_download = new ProgressBar();
+            //        PB_download.Minimum = 0;
+            //        PB_download.Maximum = 100;
+            //        PB_download.Width = this.Width / 2;
+            //        PB_download.Value = download.percentage;
+            //        PB_download.Location = new System.Drawing.Point(position_width, (150 + counterTotal * 125));
+            //        Controls.Add(PB_download);
+            //        //lst_progressBar.Add(PB_download);
+            //        counterFinish++;
+            //        counterTotal++;
+            //    }
+            //}
+
 
 
         }

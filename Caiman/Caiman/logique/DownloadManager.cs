@@ -13,11 +13,20 @@ namespace Caiman.logique
     {
         public List<Download> lst_download = new List<Download>();
         public List<Download> lst_activeDownload = new List<Download>();
+        public List<Download> lst_finishDownload = new List<Download>();
+        private List<Download> lst_allDonwload;
         CallAPI callAPI = new CallAPI();
+
+        public List<Download> Lst_allDonwload { get {
+                lst_download.Clear();
+                lst_download.AddRange(lst_download);
+                lst_download.AddRange(lst_activeDownload);
+                lst_download.AddRange(lst_finishDownload);
+                return lst_allDonwload;
+            }   set => lst_allDonwload = value; }
 
         public DownloadManager()
         {
-
             
         }
 
@@ -62,17 +71,37 @@ namespace Caiman.logique
 
         public void StartDownload()
         {
-            if (lst_download.Count >0)
+            if (lst_activeDownload.Count > 0)
             {
-                lst_download[0].StartDownload();
+                lst_activeDownload[0].StartDownload();
             }
-            lst_activeDownload.Add(lst_download[0]);
-            lst_download.RemoveAt(0);
+            else
+            {
+                NextDownload();
+            }
+
+        }
+        public void NextDownload()
+        {
+            if (lst_activeDownload.Count >0)
+            {
+                lst_finishDownload.Add(lst_activeDownload[0]);
+                lst_activeDownload.RemoveAt(0);
+            }
+
+            if (lst_download.Count() == 1)
+            {
+                lst_activeDownload.Add(lst_download[0]);
+                lst_download.RemoveAt(0);
+                StartDownload();
+            }
+            
+            
         }
 
         public void CreateDownload(int idGame, string apiKey)
         {
-            lst_download.Add(new Download(@"C:\Caiman\"+callAPI.CallFolderNameGame(idGame)+@"\", idGame, apiKey, callAPI.CallFileNameGame(idGame)));
+            lst_download.Add(new Download(@"C:\Caiman\"+callAPI.CallFolderNameGame(idGame)+@"\", idGame, apiKey, callAPI.CallFileNameGame(idGame),this));
         }
 
         public bool CheckIfDownloadIsActive(int idGame)
