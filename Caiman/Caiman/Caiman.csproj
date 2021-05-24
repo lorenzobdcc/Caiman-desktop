@@ -147,6 +147,7 @@
     <Compile Include="interfaceG\XboxUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="logique\ConfigFileEditor.cs" />
     <Compile Include="logique\Download.cs" />
     <Compile Include="logique\DownloadManager.cs" />
     <Compile Include="logique\EmulatorsManager.cs" />

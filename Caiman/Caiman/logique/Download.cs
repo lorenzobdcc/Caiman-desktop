@@ -58,6 +58,7 @@ namespace Caiman.logique
                 active = false;
                 downloadManager.NextDownload();
                 File.Move(pathToFolder + "temp." + filename, pathToFolder + filename);
+                downloadManager.emulatorsManager.gamesListConfigFile.AddValue(idGame.ToString());
             }
         }
 

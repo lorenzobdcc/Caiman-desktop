@@ -39,7 +39,7 @@ namespace Caiman.interfaceG.usercontrol
         {
             List<string> lst_navbar = new List<string>();
             List<Category> lst_category = xboxMainForm.callAPI.CallAllCategories();
-
+            lst_navbar.Add("Downloaded games");
             lst_navbar.Add("Favorites games");
             lst_navbar.Add("All Games");
 
@@ -73,9 +73,11 @@ namespace Caiman.interfaceG.usercontrol
             }
 
             //set the action of button
-            XboxButton userFavoritesGames = (XboxButton)lstControls[0][0];
+            XboxButton downloadedGames = (XboxButton)lstControls[0][0];
+            downloadedGames.contextInfos.contexte = "downloadedGames";
+            XboxButton userFavoritesGames = (XboxButton)lstControls[1][0];
             userFavoritesGames.contextInfos.contexte = "favorite";
-            XboxButton allGames = (XboxButton)lstControls[1][0];
+            XboxButton allGames = (XboxButton)lstControls[2][0];
             allGames.contextInfos.contexte = "home";
 
             for (int i = 0; i < lst_category.Count; i++)

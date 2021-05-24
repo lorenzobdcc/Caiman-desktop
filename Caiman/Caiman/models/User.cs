@@ -48,7 +48,7 @@ namespace Caiman.models
         public void CreateUserFolder()
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var userPath = Path.Combine(appDataPath, @"Caiman\" + username + @"\");
+            var userPath = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\");
             var savePath = Path.Combine(userPath, @"Save\");
             var configFile = Path.Combine(userPath, @"config.ini");
             if (!Directory.Exists(userPath))

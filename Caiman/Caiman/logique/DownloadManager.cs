@@ -16,6 +16,7 @@ namespace Caiman.logique
         public List<Download> lst_finishDownload = new List<Download>();
         private List<Download> lst_allDonwload;
         CallAPI callAPI = new CallAPI();
+        public EmulatorsManager emulatorsManager;
 
         public List<Download> Lst_allDonwload { get {
                 lst_download.Clear();
@@ -25,9 +26,9 @@ namespace Caiman.logique
                 return lst_allDonwload;
             }   set => lst_allDonwload = value; }
 
-        public DownloadManager()
+        public DownloadManager(EmulatorsManager emulatorsManagerp)
         {
-            
+            emulatorsManager = emulatorsManagerp;
         }
 
         public void DeleteGame(int idGame)
@@ -40,6 +41,7 @@ namespace Caiman.logique
                 {
 
                     File.Delete(path + filename);
+                    emulatorsManager.gamesListConfigFile.DeleteValue(idGame.ToString());
                 }
             }
 

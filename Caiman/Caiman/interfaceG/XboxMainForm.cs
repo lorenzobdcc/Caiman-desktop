@@ -84,14 +84,12 @@ namespace Caiman.interfaceG
             xboxController = new XboxController(this);
             lstControls.Add(new List<Control>());
             lstControls.Add(new List<Control>());
-            //CreateBaseControl();
             CreateLoginControls();
             ActiveControl1 = (XboxUserControl)lstControls[0][0];
 
             lstOldContexte.Add(new ContextInformations("home", 0, 0, 0));
             
             InitTimer();
-            //testDatabase.Select("SELECT * FROM user");
         }
 
         /// <summary>
@@ -307,6 +305,10 @@ namespace Caiman.interfaceG
                     LoadNewListGamesFromUserFavorite();
                     FocusToMainPanel();
                     break;
+                case "downloadedGames":
+                    LoadNewListGamesDownloadedGames();
+                    FocusToMainPanel();
+                    break;
                 case "category":
                     LoadNewListGamesFromCategory(contexte.id_contexte);
                     FocusToMainPanel();
@@ -479,6 +481,30 @@ namespace Caiman.interfaceG
         {
             ListGameXbox temp = new ListGameXbox(this, topPanel, null, null, sidePanel);
             temp.lst_games = callAPI.CallUserFavoriteGames(emulatorsManager.user.id);
+            temp.CreateListGames();
+            Controls.Remove(mainPanel);
+            mainPanel.Dispose();
+            MainPanel = temp;
+
+            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
+            Controls.Add(MainPanel);
+
+            sidePanel.right_form = MainPanel;
+            topPanel.bottom_form = MainPanel;
+
+        }
+
+        /// <summary>
+        /// Load a spécific categorie
+        /// </summary>
+        public void LoadNewListGamesDownloadedGames()
+        {
+            ListGameXbox temp = new ListGameXbox(this, topPanel, null, null, sidePanel);
+            temp.lst_games = new List<Game>();
+            foreach (var idGamesString in emulatorsManager.gamesListConfigFile.GetAllValueInList())
+            {
+                temp.lst_games.Add(callAPI.CallOneGame(Convert.ToInt32(idGamesString)));
+            }
             temp.CreateListGames();
             Controls.Remove(mainPanel);
             mainPanel.Dispose();
