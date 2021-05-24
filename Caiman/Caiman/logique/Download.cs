@@ -45,7 +45,7 @@ namespace Caiman.logique
                 webClient = new WebClient();
                 Uri uri = new Uri("http://api.caiman.cfpt.info/games/?idGame="+idGame+"&apiKey="+apiKey);
                 webClient.DownloadProgressChanged += wc_DownloadProgressChanged;
-                webClient.DownloadFileAsync(uri,pathToFolder+filename);
+                webClient.DownloadFileAsync(uri,pathToFolder+"temp."+filename);
                 active = true;
             }
         }
@@ -57,6 +57,7 @@ namespace Caiman.logique
             {
                 active = false;
                 downloadManager.NextDownload();
+                File.Move(pathToFolder + "temp." + filename, pathToFolder + filename);
             }
         }
 
