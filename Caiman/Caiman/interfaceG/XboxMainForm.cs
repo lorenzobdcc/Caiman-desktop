@@ -296,7 +296,10 @@ namespace Caiman.interfaceG
 
             switch (contexte.contexte)
             {
-
+                case "play":
+                    emulatorsManager.StartGame(contexte.id_contexte);
+                    
+                    break;
                 case "home":
                     LoadNewHomePanel();
                     FocusToMainPanel();

@@ -149,7 +149,7 @@ namespace Caiman.interfaceG.usercontrol
                 {
                     lstControls.Add(new List<Control>());
 
-                    XboxButton btn_play = new XboxButton("Play", game.id, 0, 0);
+                    XboxButton btn_play = new XboxButton("play", game.id, 0, 0);
                     btn_play.Text = "Play: " + game.name;
                     btn_play.Location = new System.Drawing.Point(500, 650);
                     btn_play.Click += new System.EventHandler(bouton_Click);

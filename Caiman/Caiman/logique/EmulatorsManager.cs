@@ -17,6 +17,10 @@ namespace Caiman.logique
         public ConfigFileEditor gamesListConfigFile;
         private CallAPI callAPI = new CallAPI();
 
+        private PCSX2 PCSX2 = new PCSX2();
+        private Dolphin dolphin = new Dolphin();
+
+
         public EmulatorsManager()
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -84,6 +88,27 @@ namespace Caiman.logique
                 }
 
             }
+        }
+
+        public void StartGame(int idGame)
+        {
+            string console = callAPI.CallConsoleNameGame(idGame);
+
+            switch (console)
+            {
+                case "Nintendo Gamecube":
+                    dolphin.Execute(idGame);
+                    break;
+                case "Playstation 2":
+                    PCSX2.Execute(idGame);
+                    break;
+                case "Wii":
+
+                    break;
+                default:
+                    break;
+            }
+
         }
     }
 }

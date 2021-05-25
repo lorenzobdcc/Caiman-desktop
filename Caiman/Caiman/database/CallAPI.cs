@@ -163,6 +163,32 @@ namespace Caiman.database
 
             return tempConsole.folderName;
         }
+        public string CallConsoleNameGame(int idGame)
+        {
+            ConsoleModel tempConsole = new ConsoleModel();
+            requestGET = new RestRequest("", Method.GET);
+            List<Game> lst_games = new List<Game>();
+            string fullURL = URL_STRING + "/games/";
+
+
+            requestGET.AddParameter("gameConsole", idGame);
+            baseUrl = new Uri(fullURL);
+            client.BaseUrl = baseUrl;
+            string tempString = "";
+            IRestResponse<RootObject> response = client.Execute<RootObject>(requestGET);
+
+            if (response.Content != "")
+            {
+                tempString = response.Content.ToString();
+
+                dynamic data = JsonConvert.DeserializeObject(tempString);
+                tempConsole = new ConsoleModel((int)data.id.Value, data.name.Value, data.folderName.Value, (int)data.idEmulator.Value);
+
+
+            }
+
+            return tempConsole.name;
+        }
 
         public List<Category> CallAllCategories()
         {
