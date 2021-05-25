@@ -60,7 +60,7 @@ namespace Caiman.interfaceG.usercontrol
 
         public void CreateViewGame()
         {
-
+            int rowCounter = 0;
             lstControls.Add(new List<Control>());
 
             Label lbl_title = new Label();
@@ -98,21 +98,39 @@ namespace Caiman.interfaceG.usercontrol
             this.callAPI = new CallAPI();
             var gamePath = @"C:\Caiman\" + this.callAPI.CallFolderNameGame(game.id) + @"\" + this.callAPI.CallFileNameGame(game.id);
 
-            XboxButton btn_addTofavorite = new XboxButton("Addfavorite", game.id, 0, 0);
-            btn_addTofavorite.Text = "Add to favorite";
-            btn_addTofavorite.Location = new System.Drawing.Point(500, 550);
-            btn_addTofavorite.Click += new System.EventHandler(bouton_Click);
-            lstControls[0].Add(btn_addTofavorite);
-            Controls.Add(btn_addTofavorite);
-            lstControls.Add(new List<Control>());
+            if (callAPI.CheckIfGameIsInFavorite(game.id, xboxMainForm.emulatorsManager.user.id) == false)
+            {
+                XboxButton btn_addTofavorite = new XboxButton("addFavorite", game.id, 0, 0);
+                btn_addTofavorite.Text = "Add to favorite";
+                btn_addTofavorite.Location = new System.Drawing.Point(500, 550);
+                btn_addTofavorite.Click += new System.EventHandler(bouton_Click);
+                lstControls[rowCounter].Add(btn_addTofavorite);
+                Controls.Add(btn_addTofavorite);
+                lstControls.Add(new List<Control>());
+                rowCounter++;
+            }
+            else {
+                XboxButton btn_removeFromfavorite = new XboxButton("removeFavorite", game.id, 0, 0);
+                btn_removeFromfavorite.Text = "Remove from favorite";
+                btn_removeFromfavorite.Location = new System.Drawing.Point(500, 550);
+                btn_removeFromfavorite.Click += new System.EventHandler(bouton_Click);
+                lstControls[rowCounter].Add(btn_removeFromfavorite);
+                Controls.Add(btn_removeFromfavorite);
+                lstControls.Add(new List<Control>());
+                rowCounter++;
+            }
+
+
             if (xboxMainForm.emulatorsManager.downloadManager.CheckIfDownloadIsActive(game.id))
             {
                 XboxButton btn_inDownload = new XboxButton("downloadList", game.id, 0, 0);
                 btn_inDownload.Text = "In download: " + game.name;
                 btn_inDownload.Location = new System.Drawing.Point(500, 650);
                 btn_inDownload.Click += new System.EventHandler(bouton_Click);
-                lstControls[0].Add(btn_inDownload);
+                lstControls[rowCounter].Add(btn_inDownload);
                 Controls.Add(btn_inDownload);
+                rowCounter++;
+                lstControls.Add(new List<Control>());
             }
             else
             {
@@ -122,27 +140,32 @@ namespace Caiman.interfaceG.usercontrol
                     btn_download.Text = "Download: " + game.name;
                     btn_download.Location = new System.Drawing.Point(500, 650);
                     btn_download.Click += new System.EventHandler(bouton_Click);
-                    lstControls[0].Add(btn_download);
+                    lstControls[rowCounter].Add(btn_download);
                     Controls.Add(btn_download);
+                    rowCounter++;
+                    lstControls.Add(new List<Control>());
                 }
                 else
                 {
-
+                    lstControls.Add(new List<Control>());
 
                     XboxButton btn_play = new XboxButton("Play", game.id, 0, 0);
                     btn_play.Text = "Play: " + game.name;
                     btn_play.Location = new System.Drawing.Point(500, 650);
                     btn_play.Click += new System.EventHandler(bouton_Click);
-                    lstControls[0].Add(btn_play);
+                    lstControls[rowCounter].Add(btn_play);
                     Controls.Add(btn_play);
+                    rowCounter++;
                     lstControls.Add(new List<Control>());
 
                     XboxButton btn_delete = new XboxButton("delete", game.id, 0, 1);
                     btn_delete.Text = "Delete: " + game.name;
                     btn_delete.Location = new System.Drawing.Point(500, 700);
                     btn_delete.Click += new System.EventHandler(bouton_Click);
-                    lstControls[1].Add(btn_delete);
+                    lstControls[rowCounter].Add(btn_delete);
                     Controls.Add(btn_delete);
+                    rowCounter++;
+                    lstControls.Add(new List<Control>());
 
                 }
             }

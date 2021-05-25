@@ -329,6 +329,20 @@ namespace Caiman.interfaceG
                     LoadNewConfigurationMenu();
                     FocusToMainPanel();
                     break;
+                case "addFavorite":
+                    callAPI.AddGameToFavorite(contexte.id_contexte, emulatorsManager.user.id);
+                    ContextInformations tempContexteAdd = new ContextInformations();
+                    tempContexteAdd.contexte = "game";
+                    tempContexteAdd.id_contexte = contexte.id_contexte;
+                    this.ContexteHandler(tempContexteAdd, null);
+                    break;
+                case "removeFavorite":
+                    callAPI.RemoveGameFromFavorite(contexte.id_contexte, emulatorsManager.user.id);
+                    ContextInformations tempContexteRemove = new ContextInformations();
+                    tempContexteRemove.contexte = "game";
+                    tempContexteRemove.id_contexte = contexte.id_contexte;
+                    this.ContexteHandler(tempContexteRemove, null);
+                    break;
                 case "download":
                     emulatorsManager.downloadManager.CreateDownload(contexte.id_contexte,emulatorsManager.user.apitoken);
                     emulatorsManager.downloadManager.StartDownload();

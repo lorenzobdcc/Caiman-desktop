@@ -82,7 +82,7 @@ namespace Caiman.interfaceG.usercontrol
 
             for (int i = 0; i < lst_category.Count; i++)
             {
-                XboxButton tempButton = (XboxButton)lstControls[(i+2)][0];
+                XboxButton tempButton = (XboxButton)lstControls[(i+3)][0];
                 tempButton.contextInfos.contexte = "category";
                 tempButton.contextInfos.id_contexte = (lst_category[i].id);
             }

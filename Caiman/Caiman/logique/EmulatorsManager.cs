@@ -22,9 +22,10 @@ namespace Caiman.logique
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var gamesPath = Path.Combine(appDataPath, @"Caiman\Caiman\");
             user = new User();
+            CreateAppDataFolder();
             downloadManager = new DownloadManager(this);
             
-            CreateAppDataFolder();
+            
             gamesListConfigFile = new ConfigFileEditor(gamesPath,"games.ini") ;
             CheckIfGameFileIsPresentOnDisk();
         }

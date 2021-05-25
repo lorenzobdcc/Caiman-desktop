@@ -29,18 +29,7 @@ namespace Caiman.database
             public string Name { get; set; }
         }
 
-        public string Call()
-        {
-            string value = "";
-            IRestResponse<RootObject> response = client.Execute<RootObject>(requestGET);
-            if (response.Content != "")
-            {
-                value =  response.Content.ToString();
-            }
 
-            return value;
-
-        }
 
         public User CallLogin(string username, string password)
         {
@@ -78,7 +67,7 @@ namespace Caiman.database
             baseUrl = new Uri(fullURL);
             client.BaseUrl = baseUrl;
             string tempString = "";
-            requestGET =new RestRequest("get", Method.GET);
+            requestGET = new RestRequest("get", Method.GET);
             IRestResponse<RootObject> response = client.Execute<RootObject>(requestGET);
 
             if (response.Content != "")
@@ -255,6 +244,57 @@ namespace Caiman.database
             }
 
             return lst_games;
+        }
+
+        public void AddGameToFavorite(int idGame,int idUser)
+        {
+            List<Game> lst_games = new List<Game>();
+            string fullURL = URL_STRING + "/games/";
+            requestPOST = new RestRequest("post", Method.POST);
+            requestPOST.AddParameter("idGameAdd", idGame);
+            requestPOST.AddParameter("idUser", idUser);
+            baseUrl = new Uri(fullURL);
+            client.BaseUrl = baseUrl;
+            string tempString = "";
+            IRestResponse<RootObject> response = client.Execute<RootObject>(requestPOST);
+
+        }
+
+        public void RemoveGameFromFavorite(int idGame, int idUser)
+        {
+            List<Game> lst_games = new List<Game>();
+            string fullURL = URL_STRING + "/games/";
+            requestPOST = new RestRequest("post", Method.POST);
+            requestPOST.AddParameter("idGameRemove", idGame);
+            requestPOST.AddParameter("idUser", idUser);
+            baseUrl = new Uri(fullURL);
+            client.BaseUrl = baseUrl;
+            string tempString = "";
+            IRestResponse<RootObject> response = client.Execute<RootObject>(requestPOST);
+
+        }
+
+        public bool CheckIfGameIsInFavorite(int idGame, int idUser)
+        {
+            string fullURL = URL_STRING + "/games/";
+            requestPOST = new RestRequest("post", Method.POST);
+            requestPOST.AddParameter("idGameCheck", idGame);
+            requestPOST.AddParameter("idUser", idUser);
+            baseUrl = new Uri(fullURL);
+            client.BaseUrl = baseUrl;
+            string tempString = "";
+            IRestResponse<RootObject> response = client.Execute<RootObject>(requestPOST);
+            bool tempValue = false;
+            if (response.Content != "")
+            {
+                tempString = response.Content.ToString();
+
+                dynamic data = JsonConvert.DeserializeObject(tempString);
+                tempValue = data;
+
+
+            }
+            return tempValue;
         }
 
         public class Args
