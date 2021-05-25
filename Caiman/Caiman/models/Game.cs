@@ -46,6 +46,7 @@ namespace Caiman.models
             idFile = 0;
         }
 
+
         private void DownloadImage()
         {
 

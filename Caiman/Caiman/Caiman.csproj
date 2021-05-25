@@ -153,6 +153,7 @@
     <Compile Include="logique\DownloadManager.cs" />
     <Compile Include="logique\Emulator.cs" />
     <Compile Include="logique\EmulatorsManager.cs" />
+    <Compile Include="logique\GameTimer.cs" />
     <Compile Include="logique\PCSX2.cs" />
     <Compile Include="models\Category.cs" />
     <Compile Include="models\Console.cs" />

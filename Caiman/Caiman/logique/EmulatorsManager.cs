@@ -11,7 +11,7 @@ namespace Caiman.logique
 {
     public class EmulatorsManager
     {
-
+        public GameTimer gameTimer = new GameTimer();
         public User user;
         public DownloadManager downloadManager;
         public ConfigFileEditor gamesListConfigFile;
@@ -22,6 +22,8 @@ namespace Caiman.logique
 
         public ConfigFileEditor configFile;
 
+        public Game actualGame;
+
         public bool fullScreen;
         public int definition;
         public bool formatSeizeNeuvieme;
@@ -31,16 +33,14 @@ namespace Caiman.logique
 
         public EmulatorsManager()
         {
+            user = new User();
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var gamesPath = Path.Combine(appDataPath, @"Caiman\Caiman\");
             var configPath = Path.Combine(appDataPath, @"Caiman\Caiman\config.ini");
             
-            user = new User();
+            
             CreateAppDataFolder();
             downloadManager = new DownloadManager(this);
-            
-            
-            
             configFile = new ConfigFileEditor(gamesPath, "config.ini");
 
             gamesListConfigFile = new ConfigFileEditor(gamesPath, "games.ini");
@@ -122,14 +122,6 @@ namespace Caiman.logique
 
         }
 
-        private void CreateDefaultDataConfigFile()
-        {
-            configFile.AddValue("configuration = original");
-            configFile.AddValue("fullscreen = true");
-            configFile.AddValue("definition = 4");
-            configFile.AddValue("formatSeizeNeuvieme = true");
-            configFile.AddValue("filtrageAnioscopique = 4");
-        }
 
         private void CheckIfGameFileIsPresentOnDisk()
         {
@@ -152,7 +144,8 @@ namespace Caiman.logique
         public void StartGame(int idGame)
         {
             string console = callAPI.CallConsoleNameGame(idGame);
-
+            actualGame = callAPI.CallOneGame(idGame);
+            gameTimer = new GameTimer(actualGame);
             switch (console)
             {
                 case "Nintendo Gamecube":
