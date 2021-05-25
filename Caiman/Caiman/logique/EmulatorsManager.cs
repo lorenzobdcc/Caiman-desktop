@@ -33,6 +33,8 @@ namespace Caiman.logique
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var gamesPath = Path.Combine(appDataPath, @"Caiman\Caiman\");
+            var configPath = Path.Combine(appDataPath, @"Caiman\Caiman\config.ini");
+            
             user = new User();
             CreateAppDataFolder();
             downloadManager = new DownloadManager(this);
@@ -78,9 +80,28 @@ namespace Caiman.logique
             }
             if (!File.Exists(configPath))
             {
-                File.Create(configPath);
+                using (StreamWriter sw = File.CreateText(configPath))
+                {
+                    sw.WriteLine("configuration = original");
+                    sw.WriteLine("fullscreen = true");
+                    sw.WriteLine("definition = 4");
+                    sw.WriteLine("formatSeizeNeuvieme = true");
+                    sw.WriteLine("filtrageAnioscopique = 4");
+                }
+                configFile = new ConfigFileEditor(gamesPath, "config.ini");
+                CreateDefaultDataConfigFile();
             }
 
+
+        }
+
+        private void CreateDefaultDataConfigFile()
+        {
+            configFile.AddValue("configuration = original");
+            configFile.AddValue("fullscreen = true");
+            configFile.AddValue("definition = 4");
+            configFile.AddValue("formatSeizeNeuvieme = true");
+            configFile.AddValue("filtrageAnioscopique = 4");
         }
 
         private void CheckIfGameFileIsPresentOnDisk()
@@ -128,7 +149,6 @@ namespace Caiman.logique
         {
             fullScreen = Convert.ToBoolean(configFile.ReadProperties("fullscreen"));
             definition = Convert.ToInt32(configFile.ReadProperties("definition"));
-            noGui = Convert.ToBoolean(configFile.ReadProperties("gui"));
             formatSeizeNeuvieme = Convert.ToBoolean(configFile.ReadProperties("formatSeizeNeuvieme"));
             filtrageAnioscopique = Convert.ToInt32(configFile.ReadProperties("filtrageAnioscopique"));
         }
