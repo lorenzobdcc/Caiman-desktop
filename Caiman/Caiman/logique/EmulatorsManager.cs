@@ -40,10 +40,32 @@ namespace Caiman.logique
             downloadManager = new DownloadManager(this);
             
             
-            gamesListConfigFile = new ConfigFileEditor(gamesPath,"games.ini") ;
+            
             configFile = new ConfigFileEditor(gamesPath, "config.ini");
-            CheckIfGameFileIsPresentOnDisk();
+
+            gamesListConfigFile = new ConfigFileEditor(gamesPath, "games.ini");
             ScanConfiguration();
+            CheckIfGameFileIsPresentOnDisk();
+        }
+
+        private bool IsFileinUse(FileInfo file)
+        {
+            FileStream stream = null;
+
+            try
+            {
+                stream = file.Open(FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+            }
+            catch (IOException)
+            {
+                return true;
+            }
+            finally
+            {
+                if (stream != null)
+                    stream.Close();
+            }
+            return false;
         }
 
         private void CreateAppDataFolder()
@@ -54,10 +76,7 @@ namespace Caiman.logique
             var imgPath = Path.Combine(appDataPath, @"Caiman\img\");
             var gamesPath = Path.Combine(appDataPath, @"Caiman\Caiman\games.ini");
             var configPath = Path.Combine(appDataPath, @"Caiman\Caiman\config.ini");
-            if (!File.Exists(gamesPath))
-            {
-                File.Create(gamesPath);
-            }
+
             if (!Directory.Exists(basePath))
             {
                 Directory.CreateDirectory(basePath);
@@ -78,6 +97,14 @@ namespace Caiman.logique
             {
                 Directory.CreateDirectory(@"C:\Caiman\GamecubeWii\");
             }
+            if (!File.Exists(gamesPath))
+            {
+                using (StreamWriter sw = File.CreateText(gamesPath))
+                {
+
+                }
+                configFile = new ConfigFileEditor(caimanConfigPath, "config.ini");
+            }
             if (!File.Exists(configPath))
             {
                 using (StreamWriter sw = File.CreateText(configPath))
@@ -88,8 +115,8 @@ namespace Caiman.logique
                     sw.WriteLine("formatSeizeNeuvieme = true");
                     sw.WriteLine("filtrageAnioscopique = 4");
                 }
-                configFile = new ConfigFileEditor(gamesPath, "config.ini");
-                CreateDefaultDataConfigFile();
+                configFile = new ConfigFileEditor(caimanConfigPath, "config.ini");
+
             }
 
 

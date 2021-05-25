@@ -153,7 +153,6 @@ namespace Caiman.logique
             List<string> lst_value = new List<string>();
 
 
-
             using (StreamReader sr = File.OpenText(fullPath))
             {
                 string words;
@@ -171,6 +170,7 @@ namespace Caiman.logique
 
             return lst_value;
         }
+        
 
     }
 }
