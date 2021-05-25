@@ -20,6 +20,14 @@ namespace Caiman.logique
         private PCSX2 PCSX2 = new PCSX2();
         private Dolphin dolphin = new Dolphin();
 
+        public ConfigFileEditor configFile;
+
+        public bool fullScreen;
+        public int definition;
+        public bool formatSeizeNeuvieme;
+        public bool noGui;
+        public int filtrageAnioscopique;
+
 
         public EmulatorsManager()
         {
@@ -31,7 +39,9 @@ namespace Caiman.logique
             
             
             gamesListConfigFile = new ConfigFileEditor(gamesPath,"games.ini") ;
+            configFile = new ConfigFileEditor(gamesPath, "config.ini");
             CheckIfGameFileIsPresentOnDisk();
+            ScanConfiguration();
         }
 
         private void CreateAppDataFolder()
@@ -42,6 +52,10 @@ namespace Caiman.logique
             var imgPath = Path.Combine(appDataPath, @"Caiman\img\");
             var gamesPath = Path.Combine(appDataPath, @"Caiman\Caiman\games.ini");
             var configPath = Path.Combine(appDataPath, @"Caiman\Caiman\config.ini");
+            if (!File.Exists(gamesPath))
+            {
+                File.Create(gamesPath);
+            }
             if (!Directory.Exists(basePath))
             {
                 Directory.CreateDirectory(basePath);
@@ -66,10 +80,7 @@ namespace Caiman.logique
             {
                 File.Create(configPath);
             }
-            if (!File.Exists(gamesPath))
-            {
-                File.Create(gamesPath);
-            }
+
         }
 
         private void CheckIfGameFileIsPresentOnDisk()
@@ -97,18 +108,79 @@ namespace Caiman.logique
             switch (console)
             {
                 case "Nintendo Gamecube":
+                    dolphin.SetConfiguration(fullScreen,definition,formatSeizeNeuvieme,filtrageAnioscopique);
                     dolphin.Execute(idGame);
                     break;
                 case "Playstation 2":
+                    PCSX2.SetConfiguration(fullScreen, definition, formatSeizeNeuvieme, filtrageAnioscopique);
                     PCSX2.Execute(idGame);
                     break;
                 case "Wii":
-
+                    dolphin.SetConfiguration(fullScreen, definition, formatSeizeNeuvieme, filtrageAnioscopique);
+                    dolphin.Execute(idGame);
                     break;
                 default:
                     break;
             }
 
+        }
+        public void ScanConfiguration()
+        {
+            fullScreen = Convert.ToBoolean(configFile.ReadProperties("fullscreen"));
+            definition = Convert.ToInt32(configFile.ReadProperties("definition"));
+            noGui = Convert.ToBoolean(configFile.ReadProperties("gui"));
+            formatSeizeNeuvieme = Convert.ToBoolean(configFile.ReadProperties("formatSeizeNeuvieme"));
+            filtrageAnioscopique = Convert.ToInt32(configFile.ReadProperties("filtrageAnioscopique"));
+        }
+
+        public void ApplyGlobalConfiguration(string configuration)
+        {
+            switch (configuration)
+            {
+                case "original":
+                    configFile.UpdateProperties("definition", "1");
+                    configFile.UpdateProperties("filtrageAnioscopique", "1");
+                    configFile.UpdateProperties("configuration", "original");
+                    ScanConfiguration();
+                    break;
+                case "1080":
+                    configFile.UpdateProperties("definition", "4");
+                    configFile.UpdateProperties("filtrageAnioscopique", "4");
+                    configFile.UpdateProperties("configuration", "1080p");
+                    ScanConfiguration();
+                    break;
+                case "4K":
+                    configFile.UpdateProperties("definition", "8");
+                    configFile.UpdateProperties("filtrageAnioscopique", "4");
+                    configFile.UpdateProperties("configuration", "4K");
+                    ScanConfiguration();
+                    break;
+                default:
+                    break;
+            }
+        }
+        public void ApplyFullscreenConfiguration(int fullscreen)
+        {
+            if (fullscreen == 1)
+            {
+                configFile.UpdateProperties("fullscreen", "true");
+            }
+            else {
+                configFile.UpdateProperties("fullscreen", "false");
+            }
+            ScanConfiguration();
+        }
+        public void ApplyFormatConfiguration(int format)
+        {
+            if (format == 1)
+            {
+                configFile.UpdateProperties("formatSeizeNeuvieme", "true");
+            }
+            else
+            {
+                configFile.UpdateProperties("formatSeizeNeuvieme", "false");
+            }
+            ScanConfiguration();
         }
     }
 }

@@ -52,7 +52,6 @@ namespace Caiman.interfaceG
 
         Timer timer = new Timer();
 
-        public AccessDatabase testDatabase = new AccessDatabase();
         
 
         public XboxUserControl ActiveControl1 { get => activeControl1;set
@@ -98,7 +97,6 @@ namespace Caiman.interfaceG
         public void InitTimer()
         {
             timer = new Timer();
-            timer.Tick += new EventHandler(UpdateInterface);
             timer.Tick += new EventHandler(ScanInput);
 
 
@@ -106,18 +104,7 @@ namespace Caiman.interfaceG
             timer.Start();
         }
 
-        /// <summary>
-        /// update the "tbx_console" content 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void UpdateInterface(object sender, EventArgs e)
-        {
-            string txt = "";
-            txt += xboxController.GetInput();
-            txt += "\r\nposition X: " +ActiveControl1.Position_x;
-            txt += "\r\nposition Y: " +ActiveControl1.Position_y;
-        }
+
 
         /// <summary>
         /// Used to know if the application is focused by the user or not
@@ -298,7 +285,6 @@ namespace Caiman.interfaceG
             {
                 case "play":
                     emulatorsManager.StartGame(contexte.id_contexte);
-                    
                     break;
                 case "home":
                     LoadNewHomePanel();
@@ -331,6 +317,27 @@ namespace Caiman.interfaceG
                 case "configurationMenu":
                     LoadNewConfigurationMenu();
                     FocusToMainPanel();
+                    break;
+                case "updateGlobalConfiguration":
+                    emulatorsManager.ApplyGlobalConfiguration(contexte.optionalString1);
+                    ContextInformations tempContexteConfigurationGlobal = new ContextInformations();
+                    tempContexteConfigurationGlobal.contexte = "configurationMenu";
+                    tempContexteConfigurationGlobal.id_contexte = contexte.id_contexte;
+                    this.ContexteHandler(tempContexteConfigurationGlobal, null);
+                    break;
+                case "updateFullscreenConfiguration":
+                    emulatorsManager.ApplyFullscreenConfiguration(contexte.id_contexte);
+                    ContextInformations tempContexteConfigurationFullscreen = new ContextInformations();
+                    tempContexteConfigurationFullscreen.contexte = "configurationMenu";
+                    tempContexteConfigurationFullscreen.id_contexte = contexte.id_contexte;
+                    this.ContexteHandler(tempContexteConfigurationFullscreen, null);
+                    break;
+                case "updateFormatConfiguration":
+                    emulatorsManager.ApplyFormatConfiguration(contexte.id_contexte);
+                    ContextInformations tempContexteConfigurationFormat = new ContextInformations();
+                    tempContexteConfigurationFormat.contexte = "configurationMenu";
+                    tempContexteConfigurationFormat.id_contexte = contexte.id_contexte;
+                    this.ContexteHandler(tempContexteConfigurationFormat, null);
                     break;
                 case "addFavorite":
                     callAPI.AddGameToFavorite(contexte.id_contexte, emulatorsManager.user.id);

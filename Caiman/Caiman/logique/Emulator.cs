@@ -44,7 +44,6 @@ namespace Caiman.logique
         /// </summary>
         /// <param name="fullscreenp"></param>
         /// <param name="definitionp"></param>
-        /// <param name="noGuip"></param>
         /// <param name="formatSeizeNeuviemmep"></param>
         /// <param name="filtragep"></param>
         public void SetConfiguration(bool fullscreenp, int definitionp, bool formatSeizeNeuviemmep, int filtragep)

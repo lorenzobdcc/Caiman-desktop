@@ -12,15 +12,15 @@ namespace Caiman.logique
     {
         const string EXE_NAME = @"Dolphin.exe";
         const string PROCESS_NAME = "Dolphin";
-        const string PATH_FOLDER_CONFIG_FILE_EMULATOR = @"..\..\..\emulateurs\Dolphin\User\Config\";
+        const string PATH_FOLDER_CONFIG_FILE_EMULATOR = @"..\..\emulators\Dolphin\User\Config\";
         private CallAPI callAPI = new CallAPI();
         string dolphinFolder = "";
 
 
 
         //fichiers de configuration de Dolphin
-        private ConfigFileEditor configFileDolphin = new ConfigFileEditor(PATH_FOLDER_CONFIG_FILE_EMULATOR, "Dolphin.ini");
-        private ConfigFileEditor configFileGFX = new ConfigFileEditor(PATH_FOLDER_CONFIG_FILE_EMULATOR, "GFX.ini");
+        private ConfigFileEditor configFileDolphin;
+        private ConfigFileEditor configFileGFX;
 
 
         /// <summary>
@@ -29,14 +29,18 @@ namespace Caiman.logique
         public Dolphin()
         {
             dolphinFolder = AppDomain.CurrentDomain.BaseDirectory;
+            configFileDolphin = new ConfigFileEditor(dolphinFolder + PATH_FOLDER_CONFIG_FILE_EMULATOR, "Dolphin.ini");
+            configFileGFX = new ConfigFileEditor(dolphinFolder + PATH_FOLDER_CONFIG_FILE_EMULATOR, "GFX.ini"); ;
 
-            if (System.Diagnostics.Debugger.IsAttached)
+            if (!System.Diagnostics.Debugger.IsAttached)
             {
                 dolphinFolder += @"\..\..\..\emulators\Dolphin\";
             }
             else
             {
-                dolphinFolder += @"\emulators\Dolphin\";
+                //dolphinFolder += @"emulators\Dolphin\";
+
+                dolphinFolder += @"\..\..\..\emulators\Dolphin\";
             }
 
         }
@@ -49,18 +53,16 @@ namespace Caiman.logique
         {
             string path = @"C:\Caiman\" + callAPI.CallFolderNameGame(idGame) + @"\";
             string filename = callAPI.CallFileNameGame(idGame);
-            //UpdateConfigurationFile();
+            
+            UpdateConfigurationFile();
             int process = Process.GetProcessesByName(PROCESS_NAME).Length;
 
             if (process == 0)
             {
                 //param pour ne pas mettre de gui et en fullscreen --portable
-                string param = "";
-                if (noGui)
-                {
-                    param += "--batch";
-                }
-                processEmulator = Process.Start(dolphinFolder+EXE_NAME, param + " --exec \"" + path + filename );
+                string param = " --batch";
+
+                processEmulator = Process.Start(dolphinFolder + EXE_NAME, param + " --exec \"" + path + filename);
 
             }
             else
@@ -87,6 +89,7 @@ namespace Caiman.logique
             {
                 configFileGFX.UpdateProperties("AspectRatio", "2");
             }
+            
         }
 
     }

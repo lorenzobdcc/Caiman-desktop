@@ -12,14 +12,14 @@ namespace Caiman.logique
     public class PCSX2 : Emulator
     {
         const string EXE_NAME = @"pcsx2.exe";
-        const string PATH_FOLDER_CONFIG_FILE_EMULATOR = @"\inis\";
+        const string PATH_FOLDER_CONFIG_FILE_EMULATOR = @"..\..\emulators\PCSX2\inis\";
         const string PROCESS_NAME = "pcsx2";
         private CallAPI callAPI = new CallAPI();
 
 
         //fichiers de configuration de pcsx2
-        private ConfigFileEditor configFileGSdx = new ConfigFileEditor(PATH_FOLDER_CONFIG_FILE_EMULATOR, "GSdx.ini");
-        private ConfigFileEditor configFilePCSX2_ui = new ConfigFileEditor(PATH_FOLDER_CONFIG_FILE_EMULATOR, "PCSX2_ui.ini");
+        private ConfigFileEditor configFileGSdx;
+        private ConfigFileEditor configFilePCSX2_ui;
         string PCSX2Folder = "";
 
         /// <summary>
@@ -29,14 +29,17 @@ namespace Caiman.logique
         {
 
             PCSX2Folder = AppDomain.CurrentDomain.BaseDirectory;
+            configFileGSdx = new ConfigFileEditor(PCSX2Folder + PATH_FOLDER_CONFIG_FILE_EMULATOR, "GSdx.ini");
+            configFilePCSX2_ui = new ConfigFileEditor(PCSX2Folder + PATH_FOLDER_CONFIG_FILE_EMULATOR, "PCSX2_ui.ini");
 
-            if (System.Diagnostics.Debugger.IsAttached)
+            if (!System.Diagnostics.Debugger.IsAttached)
             {
                 PCSX2Folder += @"\..\..\..\emulators\PCSX2\";
             }
             else
             {
-                PCSX2Folder += @"\emulators\PCSX2\";
+                //PCSX2Folder += @"\emulators\PCSX2\";
+                PCSX2Folder += @"\..\..\..\emulators\PCSX2\";
             }
 
 
@@ -51,7 +54,7 @@ namespace Caiman.logique
         {
             string path = @"C:\Caiman\" + callAPI.CallFolderNameGame(idGame) + @"\";
             string filename = callAPI.CallFileNameGame(idGame);
-            //UpdateConfigurationFile();
+            UpdateConfigurationFile();
             int process = Process.GetProcessesByName(PROCESS_NAME).Length;
 
             if (process == 0)

@@ -51,6 +51,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>AFFBDBFCF583A9349ACAB23C647C891685CCF9F2</ManifestCertificateThumbprint>
@@ -104,7 +105,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="database\AccessDatabase.cs" />
     <Compile Include="database\CallAPI.cs" />
     <Compile Include="interfaceG\ContextInformations.cs" />
     <Compile Include="interfaceG\usercontrol\DownloadListXbox.cs">
