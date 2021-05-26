@@ -31,13 +31,20 @@ namespace Caiman.logique
         /// </summary>
         public void Close()
         {
-            if (Process.GetProcessesByName(processEmulator.ProcessName).Length != 0)
+            try
             {
-                if (processEmulator != null)
+                if (Process.GetProcessesByName(processEmulator.ProcessName).Length != 0)
                 {
-                    processEmulator.Kill();
+                    if (processEmulator != null)
+                    {
+                        processEmulator.Kill();
+                    }
                 }
             }
+            catch
+            {
+            }
+            
         }
 
 

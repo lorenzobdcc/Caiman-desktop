@@ -133,10 +133,35 @@ namespace Caiman.database
                 dynamic data = JsonConvert.DeserializeObject(tempString);
                  tempGame = new Game((int)data.id.Value, data.name.Value, data.description.Value, data.imageName.Value, (int)data.idConsole.Value, (int)data.idFile.Value);
 
-
             }
 
             return tempGame;
+        }
+
+        public TimeInGame CallTimeInGameUser(int idGame,int idUser)
+        {
+            TimeInGame time = new TimeInGame();
+            requestGET = new RestRequest("", Method.GET);
+            List<Game> lst_games = new List<Game>();
+            string fullURL = URL_STRING + "/games/";
+            requestGET.AddParameter("idGameTime", idGame);
+            requestGET.AddParameter("idUser", idUser);
+            baseUrl = new Uri(fullURL);
+            client.BaseUrl = baseUrl;
+            string tempString = "";
+            IRestResponse<RootObject> response = client.Execute<RootObject>(requestGET);
+
+            if (response.Content != "")
+            {
+                tempString = response.Content.ToString();
+
+                dynamic data = JsonConvert.DeserializeObject(tempString);
+                time = new TimeInGame((int)data.minutes.Value);
+
+
+            }
+
+            return time;
         }
         public string CallFileNameGame(int idGame)
         {
@@ -320,6 +345,20 @@ namespace Caiman.database
             string fullURL = URL_STRING + "/games/";
             requestPOST = new RestRequest("post", Method.POST);
             requestPOST.AddParameter("idGameRemove", idGame);
+            requestPOST.AddParameter("idUser", idUser);
+            baseUrl = new Uri(fullURL);
+            client.BaseUrl = baseUrl;
+            string tempString = "";
+            IRestResponse<RootObject> response = client.Execute<RootObject>(requestPOST);
+
+        }
+
+        public void AddOneMinuteToGame(int idGame, int idUser)
+        {
+            List<Game> lst_games = new List<Game>();
+            string fullURL = URL_STRING + "/games/";
+            requestPOST = new RestRequest("post", Method.POST);
+            requestPOST.AddParameter("idGameTimeAdd", idGame);
             requestPOST.AddParameter("idUser", idUser);
             baseUrl = new Uri(fullURL);
             client.BaseUrl = baseUrl;

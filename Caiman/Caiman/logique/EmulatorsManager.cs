@@ -181,7 +181,7 @@ namespace Caiman.logique
         {
             string console = callAPI.CallConsoleNameGame(idGame);
             actualGame = callAPI.CallOneGame(idGame);
-            gameTimer = new GameTimer(actualGame);
+            gameTimer = new GameTimer(actualGame,this);
             EmulatorState = Etatenum.start;
             switch (console)
             {
@@ -208,9 +208,13 @@ namespace Caiman.logique
 
         internal void CloseGame()
         {
-            actualEmulator.Close();
-            EmulatorState = Etatenum.stop;
-            actualEmulator = null;
+            if (actualEmulator != null)
+            {
+                actualEmulator.Close();
+                EmulatorState = Etatenum.stop;
+                actualEmulator = null;
+            }
+
         }
 
         /// <summary>
@@ -247,7 +251,7 @@ namespace Caiman.logique
                     ScanConfiguration();
                     break;
                 case "1080":
-                    configFile.UpdateProperties("definition", "4");
+                    configFile.UpdateProperties("definition", "3");
                     configFile.UpdateProperties("filtrageAnioscopique", "4");
                     configFile.UpdateProperties("configuration", "1080p");
                     ScanConfiguration();

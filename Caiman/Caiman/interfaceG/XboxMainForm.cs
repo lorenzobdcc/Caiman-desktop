@@ -120,7 +120,7 @@ namespace Caiman.interfaceG
             timer.Tick += new EventHandler(ScanInput);
 
 
-            timer.Interval = 2;
+            timer.Interval = 10;
             timer.Start();
         }
 
@@ -248,6 +248,13 @@ namespace Caiman.interfaceG
 
                         LoadOldMainPanel();
                     }
+                    if (input == "Back, LeftShoulder, RightShoulder" && old_input != "Back, LeftShoulder, RightShoulder")
+                    {
+                        if (emulatorsManager.actualEmulator != null)
+                        {
+                            emulatorsManager.CloseGame();
+                        }
+                    }
 
                     old_leftAnalogUp = leftAnalogUp;
                     old_leftAnalogDown = leftAnalogDown;
@@ -321,7 +328,7 @@ namespace Caiman.interfaceG
                     this.ContexteHandler(tempContexteplay, null);
                     break;
                 case "home":
-                    LoadNewListGamesDownloadedGames();
+                    LoadNewPanelAllGames();
                     FocusToMainPanel();
                     break;
                 case "favorite":

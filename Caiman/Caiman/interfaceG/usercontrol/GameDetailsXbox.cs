@@ -64,18 +64,37 @@ namespace Caiman.interfaceG.usercontrol
             lstControls.Add(new List<Control>());
 
             Label lbl_title = new Label();
-            lbl_title.Text = game.name;
-            lbl_title.Location = new System.Drawing.Point(500,60);
+            lbl_title.Text = game.name; ;
+            lbl_title.Location = new System.Drawing.Point(500, 60);
             lbl_title.Width = 472;
+            lbl_title.Height = 50;
             lbl_title.Font = new Font("Arial", 16);
-            lbl_title.ForeColor = Color.White;
-            lbl_title.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_title.ForeColor = Color.FromArgb(40, 167, 69);
+            lbl_title.TextAlign = ContentAlignment.MiddleLeft;
             Controls.Add(lbl_title);
+
+            Label lbl_timeInGame = new Label();
+            TimeInGame timeInGame = callAPI.CallTimeInGameUser(game.id, xboxMainForm.emulatorsManager.user.id);
+            if (timeInGame.minutes != 0)
+            {
+                lbl_timeInGame.Text = "Time played: " + timeInGame.TimeHoursMinutes;
+            }
+            else
+            {
+                lbl_timeInGame.Text = "";
+            }
+            lbl_timeInGame.Location = new System.Drawing.Point(500, 110);
+            lbl_timeInGame.Width = 472;
+            lbl_timeInGame.Height = 50;
+            lbl_timeInGame.Font = new Font("Arial", 16);
+            lbl_timeInGame.ForeColor = Color.FromArgb(40, 167, 69);
+            lbl_timeInGame.TextAlign = ContentAlignment.MiddleLeft;
+            Controls.Add(lbl_timeInGame);
 
             PictureBox pictureBox = new PictureBox();
             string imgPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), PATH_IMG_CAIMAN);
             Image img = new Bitmap((imgPath + game.imageName));
-            pictureBox.Location = new System.Drawing.Point(15, 60);
+            pictureBox.Location = new System.Drawing.Point(15, 50);
             pictureBox.Width = 472;
             pictureBox.Height = 700;
             pictureBox.TabStop = false;
@@ -88,7 +107,7 @@ namespace Caiman.interfaceG.usercontrol
 
             Label lbl_description = new Label();
             lbl_description.Text = game.description;
-            lbl_description.Location = new System.Drawing.Point(500, 100);
+            lbl_description.Location = new System.Drawing.Point(500, 175);
             lbl_description.MaximumSize = new Size((this.Width / 3), 500);
             lbl_description.AutoSize = true;
             lbl_description.Font = new Font("Arial", 14);
@@ -109,7 +128,8 @@ namespace Caiman.interfaceG.usercontrol
                 lstControls.Add(new List<Control>());
                 rowCounter++;
             }
-            else {
+            else
+            {
                 XboxButton btn_removeFromfavorite = new XboxButton("removeFavorite", game.id, 0, 0);
                 btn_removeFromfavorite.Text = "Remove from favorite";
                 btn_removeFromfavorite.Location = new System.Drawing.Point(500, 550);
@@ -157,6 +177,15 @@ namespace Caiman.interfaceG.usercontrol
                     Controls.Add(btn_play);
                     rowCounter++;
                     lstControls.Add(new List<Control>());
+
+                    Label lbl_quit = new Label();
+                    lbl_quit.Text = "Press: 'Select, RB, LT' to quit game";
+                    lbl_quit.Location = new System.Drawing.Point(500, 600);
+                    lbl_quit.MaximumSize = new Size((this.Width / 3), 500);
+                    lbl_quit.AutoSize = true;
+                    lbl_quit.Font = new Font("Arial", 14);
+                    lbl_quit.ForeColor = Color.White;
+                    Controls.Add(lbl_quit);
 
                     XboxButton btn_delete = new XboxButton("delete", game.id, 0, 1);
                     btn_delete.Text = "Delete: " + game.name;

@@ -31,14 +31,21 @@ namespace Caiman.interfaceG.usercontrol
         {
             timer = new Timer();
             timer.Tick += new EventHandler(UpdateData);
-            timer.Interval = 100;
+            timer.Interval = 500;
             timer.Start();
         }
         private void UpdateData(object sender, EventArgs e)
         {
-            if (actualGameName != "")
+            if (xboxMainForm.emulatorsManager.gameTimer != null)
             {
-                lbl_game_actual.Text = " Now playing: " + actualGameName + "  "+ xboxMainForm.emulatorsManager.gameTimer.TimeInGame();
+                if (actualGameName != "")
+                {
+                    lbl_game_actual.Text = " Now playing: " + actualGameName + "  " + xboxMainForm.emulatorsManager.gameTimer.TimeInGame();
+                }
+                else
+                {
+                    lbl_game_actual.Text = "";
+                }
             }
             else
             {

@@ -1,4 +1,5 @@
-﻿using Caiman.models;
+﻿using Caiman.database;
+using Caiman.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,18 +11,21 @@ namespace Caiman.logique
     public class GameTimer
     {
         Timer timer = new Timer();
+        EmulatorsManager emulatorsManager;
+        CallAPI callAPI = new CallAPI();
         int minutes = 0;
         int counter = 0;
         Game game;
 
-        public GameTimer(Game gamep) :base()
+        public GameTimer(Game gamep, EmulatorsManager emulatorsManagerp) : base()
         {
             game = gamep;
+            emulatorsManager = emulatorsManagerp;
             InitTimer();
         }
         public GameTimer()
         {
-            
+
         }
 
         /// <summary>
@@ -47,14 +51,35 @@ namespace Caiman.logique
             {
                 minutes++;
                 counter = 0;
+
+                callAPI.AddOneMinuteToGame(game.id, emulatorsManager.user.id);
             }
 
         }
         public string TimeInGame()
         {
-            return this.minutes + ":" + counter;
+            string time = "";
+            int hours = this.minutes ;
+            int minutesInt = this.counter % 60;
+            if (minutesInt == 60)
+            {
+                hours++;
+                minutesInt = 0;
+            }
+            string minutesString = minutesInt.ToString();
+            string hoursString = hours.ToString();
+            if (minutesInt < 10)
+            {
+                minutesString = "0" + minutesInt;
+            }
+            if (hours < 10)
+            {
+                hoursString = "0" + hours;
+            }
+            time = hoursString + "m" + minutesString;
+            return time;
         }
 
 
-        }
+    }
 }

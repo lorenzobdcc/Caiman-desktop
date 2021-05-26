@@ -157,6 +157,7 @@
     <Compile Include="logique\PCSX2.cs" />
     <Compile Include="models\Category.cs" />
     <Compile Include="models\Console.cs" />
+    <Compile Include="models\TimeInGame.cs" />
     <Compile Include="models\File.cs" />
     <Compile Include="models\Game.cs" />
     <Compile Include="models\User.cs" />
