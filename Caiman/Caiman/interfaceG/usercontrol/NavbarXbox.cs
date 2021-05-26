@@ -56,7 +56,7 @@ namespace Caiman.interfaceG.usercontrol
         public void CreateNavButton()
         {
             lstControls.Add(new List<Control>());
-            int first_position = Screen.PrimaryScreen.Bounds.Width - 300;
+            int first_position = Screen.PrimaryScreen.Bounds.Width - 350;
 
             Label lbl_configuration_actual = new Label();
             lbl_configuration_actual.Text = xboxMainForm.emulatorsManager.user.username;
@@ -78,37 +78,44 @@ namespace Caiman.interfaceG.usercontrol
             lbl_game_actual.ForeColor = Color.White;
             Controls.Add(lbl_game_actual);
 
-            XboxNavabrButton home = new XboxNavabrButton("home", Caiman.Properties.Resources.green_home, 0, 0, 0);
-            home.Location = new System.Drawing.Point((first_position + 100),  OFFSET);
+            XboxNavbarButton home = new XboxNavbarButton("home", Caiman.Properties.Resources.green_home, 0, 0, 0);
+            home.Location = new System.Drawing.Point((first_position + 50),  OFFSET);
             Controls.Add(home);
             home.Click += new System.EventHandler(bouton_Click);
 
-            XboxNavabrButton configuration = new XboxNavabrButton("configurationMenu", Caiman.Properties.Resources.green_gear, 0, 0, 1);
-            configuration.Location = new System.Drawing.Point((first_position + 150),  OFFSET);
+            XboxNavbarButton configuration = new XboxNavbarButton("configurationMenu", Caiman.Properties.Resources.green_gear, 0, 0, 1);
+            configuration.Location = new System.Drawing.Point((first_position + 100),  OFFSET);
             Controls.Add(configuration);
             configuration.Click += new System.EventHandler(bouton_Click);
 
-            XboxNavabrButton download = new XboxNavabrButton("downloadList", Caiman.Properties.Resources.download, 0, 0, 2);
-            download.Location = new System.Drawing.Point((first_position + 200),  OFFSET);
+            XboxNavbarButton download = new XboxNavbarButton("downloadList", Caiman.Properties.Resources.download, 0, 0, 2);
+            download.Location = new System.Drawing.Point((first_position + 150),  OFFSET);
             Controls.Add(download);
             download.Click += new System.EventHandler(bouton_Click);
 
-            XboxNavabrButton quit = new XboxNavabrButton("quitMenu", Caiman.Properties.Resources.green_onoff, 0, 0, 3);
-            quit.Location = new System.Drawing.Point((first_position + 250),  OFFSET);
+            XboxNavbarButton minimize = new XboxNavbarButton("minimize", Caiman.Properties.Resources.minimize, 0, 0, 4);
+            minimize.Location = new System.Drawing.Point((first_position + 250), OFFSET);
+            Controls.Add(minimize);
+            minimize.Click += new System.EventHandler(bouton_Click);
+
+            XboxNavbarButton quit = new XboxNavbarButton("quitMenu", Caiman.Properties.Resources.green_onoff, 0, 0, 3);
+            quit.Location = new System.Drawing.Point((first_position + 300),  OFFSET);
             Controls.Add(quit);
             quit.Click += new System.EventHandler(bouton_Click);
+
+
 
 
             lstControls[0].Add(home);
             lstControls[0].Add(configuration);
             lstControls[0].Add(download);
+            lstControls[0].Add(minimize);
             lstControls[0].Add(quit);
-
 
         }
         private new void bouton_Click(object sender, EventArgs e)
         {
-            XboxNavabrButton tempXboxButton = (XboxNavabrButton)sender;
+            XboxNavbarButton tempXboxButton = (XboxNavbarButton)sender;
             ContextInformations tempButtonContext = tempXboxButton.contextInfos;
             xboxMainForm.ContexteHandler(tempButtonContext, e, true);
         }

@@ -60,33 +60,25 @@ namespace Caiman.interfaceG.usercontrol
             lstControls.Add(new List<Control>());
             lstControls.Add(new List<Control>());
 
-            int position_width = ((Screen.PrimaryScreen.Bounds.Width / 2) - 185);
+            int position_width = ((Screen.PrimaryScreen.Bounds.Width / 2) - 200);
 
-            XboxButton minimize = new XboxButton("minimize", 0, 0, 0);
-            minimize.Text = "Minimise";
-            minimize.Width = 100;
-            minimize.Location = new System.Drawing.Point(position_width,( (Screen.PrimaryScreen.Bounds.Height/2) -300));
-            Controls.Add(minimize);
-            minimize.Click += new System.EventHandler(bouton_Click);
-
-            XboxButton quit = new XboxButton("quit", 0, 1, 0);
-            quit.Text = "Quit";
+            XboxButton quit = new XboxButton("quit", 0, 0, 0);
+            quit.Text = "Close Caiman";
             quit.Width = 100;
             quit.Location = new System.Drawing.Point(position_width, ((Screen.PrimaryScreen.Bounds.Height / 2) - 200));
             Controls.Add(quit);
             quit.Click += new System.EventHandler(bouton_Click);
 
-            XboxButton logOut = new XboxButton("logOut", 0, 2, 0);
-            logOut.Text = "LogOut";
+            XboxButton logOut = new XboxButton("logOut", 0, 1, 0);
+            logOut.Text = "Log out and quit Caiman";
             logOut.Width = 100;
             logOut.Location = new System.Drawing.Point(position_width, ((Screen.PrimaryScreen.Bounds.Height / 2) - 100));
             Controls.Add(logOut);
             logOut.Click += new System.EventHandler(bouton_Click);
 
 
-            lstControls[0].Add(minimize);
             lstControls[1].Add(quit);
-            lstControls[2].Add(logOut);
+            lstControls[0].Add(logOut);
 
         }
 

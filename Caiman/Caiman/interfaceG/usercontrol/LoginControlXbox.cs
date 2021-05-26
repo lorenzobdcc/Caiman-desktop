@@ -88,14 +88,14 @@ namespace Caiman.interfaceG.usercontrol
             Controls.Add(lbl_login);
 
             tbx_username = new TextBox();
-            tbx_username.Text = "lorenzo1227";
+            tbx_username.Text = "";
             tbx_username.Location = new System.Drawing.Point((position_first_column + 100), (position_first_row));
             tbx_username.Width = 150;
             tbx_username.Font = new Font("Arial", 14);
             Controls.Add(tbx_username);
 
             tbx_password = new TextBox();
-            tbx_password.Text = "Super2016";
+            tbx_password.Text = "";
             tbx_password.PasswordChar = '*';
             tbx_password.Location = new System.Drawing.Point((position_first_column + 100), (position_first_row + 100));
             tbx_password.Width = 150;

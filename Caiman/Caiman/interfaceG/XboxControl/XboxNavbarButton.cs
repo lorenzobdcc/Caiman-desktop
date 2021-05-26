@@ -15,18 +15,18 @@ using System.Windows.Forms;
 
 namespace Caiman.interfaceG.usercontrol
 {
-    public class XboxNavabrButton : Button
+    public class XboxNavbarButton : Button
     {
 
         public ContextInformations contextInfos;
-        public XboxNavabrButton(string contexte ,Image img,int id_contexte, int position_y, int position_x): this()
+        public XboxNavbarButton(string contexte ,Image img,int id_contexte, int position_y, int position_x): this()
         {
             this.contextInfos = new ContextInformations(contexte, id_contexte, position_y, position_x);
             this.BackgroundImage = img;
             
         }
 
-        public XboxNavabrButton(Image img): this()
+        public XboxNavbarButton(Image img): this()
         {
             this.BackgroundImage = img;
         }
@@ -34,7 +34,7 @@ namespace Caiman.interfaceG.usercontrol
         /// <summary>
         /// Create a button with specific design
         /// </summary>
-        public XboxNavabrButton()
+        public XboxNavbarButton()
         {
             this.contextInfos = null;
             this.TabStop = false;
