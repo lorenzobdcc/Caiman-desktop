@@ -208,6 +208,7 @@
   <ItemGroup>
     <Content Include="img\caiman.ico" />
     <Content Include="img\gear.png" />
+    <None Include="Resources\logo_caiman_big.png" />
     <None Include="Resources\download-2-64.png" />
     <None Include="img\green_onoff.png" />
     <None Include="img\green_home.png" />

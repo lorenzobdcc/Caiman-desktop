@@ -1,4 +1,6 @@
 ﻿using Caiman.database;
+using Caiman.interfaceG;
+using Caiman.interfaceG.usercontrol;
 using Caiman.models;
 using System;
 using System.Collections.Generic;
@@ -6,12 +8,13 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Caiman.logique
 {
     public class EmulatorsManager
     {
-        public GameTimer gameTimer = new GameTimer();
+        public GameTimer gameTimer;
         public User user;
         public DownloadManager downloadManager;
         public ConfigFileEditor gamesListConfigFile;
@@ -19,11 +22,16 @@ namespace Caiman.logique
 
         private PCSX2 PCSX2 = new PCSX2();
         private Dolphin dolphin = new Dolphin();
+        public Emulator actualEmulator;
 
         public ConfigFileEditor configFile;
         public ConfigFileEditor loginFile;
 
         public Game actualGame;
+        public XboxMainForm xboxMainForm;
+        public enum Etatenum { stop = 0, start = 1 };
+        private Etatenum emulatorState;
+        Timer timer = new Timer();
 
         public bool fullScreen;
         public int definition;
@@ -31,9 +39,34 @@ namespace Caiman.logique
         public bool noGui;
         public int filtrageAnioscopique;
 
+        public Etatenum EmulatorState { get => emulatorState; set
+            {
+                
+                if (emulatorState != value)
+                {
+                    emulatorState = value;
+                    if (emulatorState == Etatenum.start)
+                    {
+                        NavbarXbox tempNavbar = (NavbarXbox)xboxMainForm.topPanel;
+                        tempNavbar.actualGameName = actualGame.name;
+                    }
+                    else
+                    {
+                        NavbarXbox tempNavbar = (NavbarXbox)xboxMainForm.topPanel;
+                        tempNavbar.actualGameName = "";
+                        gameTimer = null;
+                    }
 
-        public EmulatorsManager()
+
+                }
+                
+            }
+        }
+
+        public EmulatorsManager(XboxMainForm xboxMainFormp)
         {
+            xboxMainForm = xboxMainFormp;
+            EmulatorState = Etatenum.stop;
             user = new User();
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var gamesPath = Path.Combine(appDataPath, @"Caiman\Caiman\");
@@ -48,6 +81,17 @@ namespace Caiman.logique
             gamesListConfigFile = new ConfigFileEditor(gamesPath, "games.ini");
             ScanConfiguration();
             CheckIfGameFileIsPresentOnDisk();
+            InitTimer();
+        }
+        /// <summary>
+        /// appel diférentes fonctions a un interval régulier
+        /// </summary>
+        public void InitTimer()
+        {
+            timer = new Timer();
+            timer.Tick += new EventHandler(ScanEmulatorProcess);
+            timer.Interval = 100;
+            timer.Start();
         }
 
 
@@ -138,17 +182,21 @@ namespace Caiman.logique
             string console = callAPI.CallConsoleNameGame(idGame);
             actualGame = callAPI.CallOneGame(idGame);
             gameTimer = new GameTimer(actualGame);
+            EmulatorState = Etatenum.start;
             switch (console)
             {
                 case "Nintendo Gamecube":
+                    actualEmulator = dolphin;
                     dolphin.SetConfiguration(fullScreen,definition,formatSeizeNeuvieme,filtrageAnioscopique);
                     dolphin.Execute(idGame);
                     break;
                 case "Playstation 2":
+                    actualEmulator = PCSX2;
                     PCSX2.SetConfiguration(fullScreen, definition, formatSeizeNeuvieme, filtrageAnioscopique);
                     PCSX2.Execute(idGame);
                     break;
                 case "Wii":
+                    actualEmulator = dolphin;
                     dolphin.SetConfiguration(fullScreen, definition, formatSeizeNeuvieme, filtrageAnioscopique);
                     dolphin.Execute(idGame);
                     break;
@@ -156,6 +204,29 @@ namespace Caiman.logique
                     break;
             }
 
+        }
+
+        internal void CloseGame()
+        {
+            actualEmulator.Close();
+            EmulatorState = Etatenum.stop;
+            actualEmulator = null;
+        }
+
+        /// <summary>
+        /// Scan les processus en cours sur le pc pour savoir si ils ont été fermé ou non
+        /// </summary>
+        private void ScanEmulatorProcess(object sender, EventArgs e)
+        {
+            if (EmulatorState == Etatenum.start)
+            {
+                if (actualEmulator.GetEmulatorProcessLife())
+                {
+                    EmulatorState = Etatenum.stop;
+                    actualGame = null;
+                    xboxMainForm.Refresh();
+                }
+            }
         }
         public void ScanConfiguration()
         {

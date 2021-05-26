@@ -59,8 +59,17 @@ namespace Caiman.interfaceG.usercontrol
         public void CreateLoginForm()
         {
             int position_first_column = ((Screen.PrimaryScreen.Bounds.Width/ 2 ) -150);
-            int position_first_row = (Screen.PrimaryScreen.Bounds.Height / 2) - 150;
+            int position_first_row = (Screen.PrimaryScreen.Bounds.Height / 2) ;
 
+            PictureBox logoCaiman = new PictureBox();
+            Image img = new Bitmap(Caiman.Properties.Resources.logo_caiman_big);
+            logoCaiman.Location = new System.Drawing.Point(position_first_column - 250, position_first_row -400);
+            logoCaiman.Width = 700;
+            logoCaiman.Height = 300;
+            logoCaiman.BackgroundImageLayout = ImageLayout.Stretch;
+            logoCaiman.SizeMode = PictureBoxSizeMode.StretchImage;
+            logoCaiman.Image = img;
+            Controls.Add(logoCaiman);
 
             Label lbl_configuration = new Label();
             lbl_configuration.Text = "Username";

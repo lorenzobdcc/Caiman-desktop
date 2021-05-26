@@ -26,10 +26,11 @@ namespace Caiman.interfaceG
         const int HEIGHT_NAVBAR = 60;
         const int WIDTH_NAVBAR = 250;
 
+            
         List<List<Control>> lstControls = new List<List<Control>>();
         XboxController xboxController;
 
-        public EmulatorsManager  emulatorsManager = new EmulatorsManager();
+        public EmulatorsManager emulatorsManager;
 
         private XboxUserControl activeControl1;
         public XboxUserControl old_activeControl;
@@ -47,7 +48,7 @@ namespace Caiman.interfaceG
         bool old_leftAnalogRight = false;
 
         XboxUserControl mainPanel;
-        XboxUserControl topPanel;
+        public XboxUserControl topPanel;
         XboxUserControl sidePanel;
 
 
@@ -81,6 +82,7 @@ namespace Caiman.interfaceG
         public XboxMainForm()
         {
             InitializeComponent();
+            emulatorsManager = new EmulatorsManager(this);
             InitTimer();
             xboxController = new XboxController(this);
             lstControls.Add(new List<Control>());
@@ -254,6 +256,16 @@ namespace Caiman.interfaceG
 
                     old_input = input;
                 }
+                else
+                {
+                    if (input == "Back, LeftShoulder, RightShoulder" && old_input != "Back, LeftShoulder, RightShoulder")
+                    {
+                        if (emulatorsManager.actualEmulator != null)
+                        {
+                            emulatorsManager.CloseGame();
+                        }
+                    }
+                }
             }
         }
 
@@ -303,9 +315,13 @@ namespace Caiman.interfaceG
             {
                 case "play":
                     emulatorsManager.StartGame(contexte.id_contexte);
+                    ContextInformations tempContexteplay = new ContextInformations();
+                    tempContexteplay.contexte = "game";
+                    tempContexteplay.id_contexte = contexte.id_contexte;
+                    this.ContexteHandler(tempContexteplay, null);
                     break;
                 case "home":
-                    LoadNewHomePanel();
+                    LoadNewListGamesDownloadedGames();
                     FocusToMainPanel();
                     break;
                 case "favorite":
@@ -404,6 +420,13 @@ namespace Caiman.interfaceG
                     break;
                 case "quit":
                     Application.Exit();
+                    break;
+                case "close":
+                    emulatorsManager.CloseGame();
+                    ContextInformations tempContexteClose = new ContextInformations();
+                    tempContexteClose.contexte = "home";
+                    tempContexteClose.id_contexte = contexte.id_contexte;
+                    this.ContexteHandler(tempContexteClose, null);
                     break;
                 case "logOut":
                     emulatorsManager.loginFile.UpdateProperties("token", "0");
@@ -675,12 +698,16 @@ namespace Caiman.interfaceG
             Controls.Remove(mainPanel);
             //Create main pannel
             ListGameXbox temp = new ListGameXbox(this, topPanel, null, null, sidePanel);
-            temp.lst_games = callAPI.CallAllGames();
+            temp.lst_games = new List<Game>();
+            foreach (var idGamesString in emulatorsManager.gamesListConfigFile.GetAllValueInList())
+            {
+                temp.lst_games.Add(callAPI.CallOneGame(Convert.ToInt32(idGamesString)));
+            }
             temp.CreateListGames();
 
             mainPanel = temp;
             sidePanel.right_form = MainPanel;
-            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
+            MainPanel.Location = new Point(WIDTH_NAVBAR, HEIGHT_NAVBAR);
 
             MainPanel.top_form = topPanel;
             sidePanel.top_form = topPanel;

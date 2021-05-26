@@ -13,13 +13,15 @@ namespace Caiman.logique
         int minutes = 0;
         int counter = 0;
         Game game;
+
         public GameTimer(Game gamep) :base()
         {
             game = gamep;
+            InitTimer();
         }
         public GameTimer()
         {
-            InitTimer();
+            
         }
 
         /// <summary>
@@ -48,7 +50,10 @@ namespace Caiman.logique
             }
 
         }
-
+        public string TimeInGame()
+        {
+            return this.minutes + ":" + counter;
+        }
 
 
         }

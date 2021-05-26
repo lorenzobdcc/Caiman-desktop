@@ -33,7 +33,10 @@ namespace Caiman.logique
         {
             if (Process.GetProcessesByName(processEmulator.ProcessName).Length != 0)
             {
-                processEmulator.Kill();
+                if (processEmulator != null)
+                {
+                    processEmulator.Kill();
+                }
             }
         }
 

@@ -20,26 +20,63 @@ namespace Caiman.interfaceG.usercontrol
 
         const int HEIGHT = 60;
         const int OFFSET = 15;
+        public string actualGameName = "";
+        Label lbl_game_actual = new Label();
+        Timer timer = new Timer();
+
+        /// <summary>
+        /// appel diférentes fonctions a un interval régulier
+        /// </summary>
+        public void InitTimer()
+        {
+            timer = new Timer();
+            timer.Tick += new EventHandler(UpdateData);
+            timer.Interval = 100;
+            timer.Start();
+        }
+        private void UpdateData(object sender, EventArgs e)
+        {
+            if (actualGameName != "")
+            {
+                lbl_game_actual.Text = " Now playing: " + actualGameName + "  "+ xboxMainForm.emulatorsManager.gameTimer.TimeInGame();
+            }
+            else
+            {
+                lbl_game_actual.Text = "";
+            }
+        }
         public NavbarXbox(XboxMainForm xboxMain) : base(xboxMain)
         {
             Height = HEIGHT;
             Width = Screen.PrimaryScreen.Bounds.Width;
             CreateNavButton();
+            InitTimer();
         }
 
         public void CreateNavButton()
         {
             lstControls.Add(new List<Control>());
-            int first_position = Screen.PrimaryScreen.Bounds.Width - Screen.PrimaryScreen.Bounds.Width / 4;
+            int first_position = Screen.PrimaryScreen.Bounds.Width - 300;
 
             Label lbl_configuration_actual = new Label();
             lbl_configuration_actual.Text = xboxMainForm.emulatorsManager.user.username;
             lbl_configuration_actual.Location = new System.Drawing.Point((first_position -150) , OFFSET+3);
-            lbl_configuration_actual.Width = 250;
+            lbl_configuration_actual.AutoSize = true;
+            lbl_configuration_actual.Height = 40;
             lbl_configuration_actual.Font = new Font("Arial", 18);
             lbl_configuration_actual.Anchor = AnchorStyles.Right;
             lbl_configuration_actual.ForeColor = Color.White;
             Controls.Add(lbl_configuration_actual);
+
+            lbl_game_actual = new Label();
+            lbl_game_actual.Text = actualGameName;
+            lbl_game_actual.Location = new System.Drawing.Point(20, OFFSET + 3);
+            lbl_game_actual.AutoSize = true;
+            lbl_game_actual.Height = 40;
+            lbl_game_actual.Font = new Font("Arial", 18);
+            lbl_game_actual.Anchor = AnchorStyles.Right;
+            lbl_game_actual.ForeColor = Color.White;
+            Controls.Add(lbl_game_actual);
 
             XboxNavabrButton home = new XboxNavabrButton("home", Caiman.Properties.Resources.green_home, 0, 0, 0);
             home.Location = new System.Drawing.Point((first_position + 100),  OFFSET);
