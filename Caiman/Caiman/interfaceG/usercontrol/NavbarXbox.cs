@@ -7,6 +7,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,24 +30,34 @@ namespace Caiman.interfaceG.usercontrol
         public void CreateNavButton()
         {
             lstControls.Add(new List<Control>());
+            int first_position = Screen.PrimaryScreen.Bounds.Width - Screen.PrimaryScreen.Bounds.Width / 4;
+
+            Label lbl_configuration_actual = new Label();
+            lbl_configuration_actual.Text = xboxMainForm.emulatorsManager.user.username;
+            lbl_configuration_actual.Location = new System.Drawing.Point((first_position -150) , OFFSET+3);
+            lbl_configuration_actual.Width = 250;
+            lbl_configuration_actual.Font = new Font("Arial", 18);
+            lbl_configuration_actual.Anchor = AnchorStyles.Right;
+            lbl_configuration_actual.ForeColor = Color.White;
+            Controls.Add(lbl_configuration_actual);
 
             XboxNavabrButton home = new XboxNavabrButton("home", Caiman.Properties.Resources.green_home, 0, 0, 0);
-            home.Location = new System.Drawing.Point((Screen.PrimaryScreen.Bounds.Width - 250), 0 * 60 + OFFSET);
+            home.Location = new System.Drawing.Point((first_position + 100),  OFFSET);
             Controls.Add(home);
             home.Click += new System.EventHandler(bouton_Click);
 
             XboxNavabrButton configuration = new XboxNavabrButton("configurationMenu", Caiman.Properties.Resources.green_gear, 0, 0, 1);
-            configuration.Location = new System.Drawing.Point( (Screen.PrimaryScreen.Bounds.Width -200) , 0 * 60 + OFFSET);
+            configuration.Location = new System.Drawing.Point((first_position + 150),  OFFSET);
             Controls.Add(configuration);
             configuration.Click += new System.EventHandler(bouton_Click);
 
             XboxNavabrButton download = new XboxNavabrButton("downloadList", Caiman.Properties.Resources.download, 0, 0, 2);
-            download.Location = new System.Drawing.Point((Screen.PrimaryScreen.Bounds.Width - 150), 0 * 60 + OFFSET);
+            download.Location = new System.Drawing.Point((first_position + 200),  OFFSET);
             Controls.Add(download);
             download.Click += new System.EventHandler(bouton_Click);
 
             XboxNavabrButton quit = new XboxNavabrButton("quitMenu", Caiman.Properties.Resources.green_onoff, 0, 0, 3);
-            quit.Location = new System.Drawing.Point((Screen.PrimaryScreen.Bounds.Width - 100), 0 * 60 + OFFSET);
+            quit.Location = new System.Drawing.Point((first_position + 250),  OFFSET);
             Controls.Add(quit);
             quit.Click += new System.EventHandler(bouton_Click);
 

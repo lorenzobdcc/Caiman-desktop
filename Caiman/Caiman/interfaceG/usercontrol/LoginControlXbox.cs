@@ -58,12 +58,13 @@ namespace Caiman.interfaceG.usercontrol
 
         public void CreateLoginForm()
         {
-            int postion_first_column = ((Screen.PrimaryScreen.Bounds.Width/ 2 ));
+            int position_first_column = ((Screen.PrimaryScreen.Bounds.Width/ 2 ) -150);
+            int position_first_row = (Screen.PrimaryScreen.Bounds.Height / 2) - 150;
 
 
             Label lbl_configuration = new Label();
             lbl_configuration.Text = "Username";
-            lbl_configuration.Location = new System.Drawing.Point((postion_first_column -75), ((Screen.PrimaryScreen.Bounds.Height / 2) ));
+            lbl_configuration.Location = new System.Drawing.Point((position_first_column -75), (position_first_row));
             lbl_configuration.Width = 150;
             lbl_configuration.Font = new Font("Arial", 14);
             lbl_configuration.ForeColor = Color.White;
@@ -71,7 +72,7 @@ namespace Caiman.interfaceG.usercontrol
 
             Label lbl_login = new Label();
             lbl_login.Text = "Password";
-            lbl_login.Location = new System.Drawing.Point((postion_first_column -75), ((Screen.PrimaryScreen.Bounds.Height / 2) + 100));
+            lbl_login.Location = new System.Drawing.Point((position_first_column -75), (position_first_row + 100));
             lbl_login.Width = 150;
             lbl_login.Font = new Font("Arial", 14);
             lbl_login.ForeColor = Color.White;
@@ -79,7 +80,7 @@ namespace Caiman.interfaceG.usercontrol
 
             tbx_username = new TextBox();
             tbx_username.Text = "lorenzo1227";
-            tbx_username.Location = new System.Drawing.Point((postion_first_column + 100), ((Screen.PrimaryScreen.Bounds.Height / 2 )));
+            tbx_username.Location = new System.Drawing.Point((position_first_column + 100), (position_first_row));
             tbx_username.Width = 150;
             tbx_username.Font = new Font("Arial", 14);
             Controls.Add(tbx_username);
@@ -87,14 +88,14 @@ namespace Caiman.interfaceG.usercontrol
             tbx_password = new TextBox();
             tbx_password.Text = "Super2016";
             tbx_password.PasswordChar = '*';
-            tbx_password.Location = new System.Drawing.Point((postion_first_column + 100), ((Screen.PrimaryScreen.Bounds.Height / 2) +100));
+            tbx_password.Location = new System.Drawing.Point((position_first_column + 100), (position_first_row + 100));
             tbx_password.Width = 150;
             tbx_password.Font = new Font("Arial", 14);
             Controls.Add(tbx_password);
 
             lbl_error = new Label();
             lbl_error.Text = "";
-            lbl_error.Location = new System.Drawing.Point((postion_first_column - 75), ((Screen.PrimaryScreen.Bounds.Height / 2) + 200));
+            lbl_error.Location = new System.Drawing.Point((position_first_column - 75), (position_first_row + 200));
             lbl_error.Width = 150;
             lbl_error.Font = new Font("Arial", 14);
             lbl_error.ForeColor = Color.Red;
@@ -111,19 +112,27 @@ namespace Caiman.interfaceG.usercontrol
             XboxButton btn_login = new XboxButton("login", 2, 2, 0);
             
             btn_login.Text = "Login";
-            btn_login.Width = 100;
-            btn_login.Location = new System.Drawing.Point((postion_first_column -75), ((Screen.PrimaryScreen.Bounds.Height / 2) + 150  ));
+            btn_login.Width = 150;
+            btn_login.Location = new System.Drawing.Point((position_first_column -75), (position_first_row + 150  ));
             Controls.Add(btn_login);
             btn_login.Click += new System.EventHandler(bouton_Click);
 
+            XboxButton btn_newAccount = new XboxButton("newAccount", 2, 2, 0);
+            btn_newAccount.Text = "New account";
+            btn_newAccount.Width = 150;
+            btn_newAccount.Location = new System.Drawing.Point((position_first_column + 100), (position_first_row + 150));
+            Controls.Add(btn_newAccount);
+            btn_newAccount.Click += new System.EventHandler(bouton_Click);
+
 
             lstControls[0].Add(btn_login);
+            lstControls[0].Add(btn_newAccount);
 
             XboxButton btn_quit = new XboxButton("quit", 0, 2, 1);
 
             btn_quit.Text = "Quit";
-            btn_quit.Width = 100;
-            btn_quit.Location = new System.Drawing.Point((postion_first_column - 75), ((Screen.PrimaryScreen.Bounds.Height / 2) + 250));
+            btn_quit.Width = 150;
+            btn_quit.Location = new System.Drawing.Point((position_first_column - 75), (position_first_row + 250));
             Controls.Add(btn_quit);
             btn_quit.Click += new System.EventHandler(bouton_Click);
 

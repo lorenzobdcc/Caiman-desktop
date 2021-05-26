@@ -51,8 +51,9 @@ namespace Caiman.interfaceG.usercontrol
             // testContextUC
             // 
             this.Name = "testContextUC";
-            this.Size = new System.Drawing.Size(Screen.PrimaryScreen.Bounds.Width - 200, Screen.PrimaryScreen.Bounds.Height - 200);
+            this.Size = new System.Drawing.Size(Screen.PrimaryScreen.Bounds.Width - 250, Screen.PrimaryScreen.Bounds.Height - 60);
             this.BackColor = Color.Transparent;
+            AutoScroll = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -65,7 +66,7 @@ namespace Caiman.interfaceG.usercontrol
 
             Label lbl_title = new Label();
             lbl_title.Text = game.name;
-            lbl_title.Location = new System.Drawing.Point(15, 15);
+            lbl_title.Location = new System.Drawing.Point(500,60);
             lbl_title.Width = 472;
             lbl_title.Font = new Font("Arial", 16);
             lbl_title.ForeColor = Color.White;
@@ -88,8 +89,8 @@ namespace Caiman.interfaceG.usercontrol
 
             Label lbl_description = new Label();
             lbl_description.Text = game.description;
-            lbl_description.Location = new System.Drawing.Point(500, 60);
-            lbl_description.MaximumSize = new Size((this.Width / 2), 500);
+            lbl_description.Location = new System.Drawing.Point(500, 100);
+            lbl_description.MaximumSize = new Size((this.Width / 3), 500);
             lbl_description.AutoSize = true;
             lbl_description.Font = new Font("Arial", 14);
             lbl_description.ForeColor = Color.White;

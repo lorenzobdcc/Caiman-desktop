@@ -27,7 +27,7 @@ namespace Caiman.interfaceG.usercontrol
         {
             CreateListNavButton();
             Width = 250;
-            Height = (Screen.PrimaryScreen.Bounds.Height-75);
+            Height = (Screen.PrimaryScreen.Bounds.Height-60);
             AutoScroll = true;
         }
 

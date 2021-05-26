@@ -380,6 +380,9 @@ namespace Caiman.interfaceG
                         FocusToMainPanel();
                     }
                     break;
+                case "newAccount":
+                    System.Diagnostics.Process.Start("http://caiman.cfpt.info/");
+                    break;
                 case "quit":
                     Application.Exit();
                     break;
