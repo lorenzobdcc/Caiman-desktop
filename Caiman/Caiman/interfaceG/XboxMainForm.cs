@@ -24,6 +24,7 @@ namespace Caiman.interfaceG
     public class XboxMainForm : Form
     {
         const int HEIGHT_NAVBAR = 60;
+        const int WIDTH_NAVBAR = 250;
 
         List<List<Control>> lstControls = new List<List<Control>>();
         XboxController xboxController;
@@ -80,15 +81,32 @@ namespace Caiman.interfaceG
         public XboxMainForm()
         {
             InitializeComponent();
+            InitTimer();
             xboxController = new XboxController(this);
             lstControls.Add(new List<Control>());
             lstControls.Add(new List<Control>());
-            CreateLoginControls();
-            ActiveControl1 = (XboxUserControl)lstControls[0][0];
+            string token = emulatorsManager.loginFile.ReadProperties("token");
+            if (token != "")
+            {
+                 emulatorsManager.user = callAPI.CallLoginToken(token);
+                if (emulatorsManager.user.caimanToken != "0")
+                {
+                    emulatorsManager.loginFile.UpdateProperties("token", emulatorsManager.user.caimanToken);
+                }
+            }
+            if (emulatorsManager.user.username != "default_username")
+            {
+                CreateBaseControl();
+                FocusToMainPanel();
+            }
+            else
+            {
+                CreateLoginControls();
+                ActiveControl1 = (XboxUserControl)lstControls[0][0];
 
-            lstOldContexte.Add(new ContextInformations("home", 0, 0, 0));
+                lstOldContexte.Add(new ContextInformations("home", 0, 0, 0));
+            }
             
-            InitTimer();
         }
 
         /// <summary>
@@ -376,6 +394,7 @@ namespace Caiman.interfaceG
                         tempLogin.lbl_error.Text = "Invalid login";
                     }else
                     {
+                        emulatorsManager.loginFile.UpdateProperties("token",emulatorsManager.user.caimanToken);
                         CreateBaseControl();
                         FocusToMainPanel();
                     }
@@ -384,6 +403,10 @@ namespace Caiman.interfaceG
                     System.Diagnostics.Process.Start("http://caiman.cfpt.info/");
                     break;
                 case "quit":
+                    Application.Exit();
+                    break;
+                case "logOut":
+                    emulatorsManager.loginFile.UpdateProperties("token", "0");
                     Application.Exit();
                     break;
                 case "minimize":
@@ -407,7 +430,7 @@ namespace Caiman.interfaceG
             mainPanel.Dispose();
             MainPanel = temp;
 
-            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
+            MainPanel.Location = new Point(WIDTH_NAVBAR, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
             sidePanel.right_form = MainPanel;
@@ -426,7 +449,7 @@ namespace Caiman.interfaceG
             mainPanel.Dispose();
             MainPanel = temp;
 
-            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
+            MainPanel.Location = new Point(WIDTH_NAVBAR, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
             sidePanel.right_form = MainPanel;
@@ -445,7 +468,7 @@ namespace Caiman.interfaceG
             mainPanel.Dispose();
             MainPanel = temp;
 
-            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
+            MainPanel.Location = new Point(WIDTH_NAVBAR, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
             sidePanel.right_form = MainPanel;
@@ -469,7 +492,7 @@ namespace Caiman.interfaceG
             mainPanel.Dispose();
             MainPanel = temp;
 
-            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
+            MainPanel.Location = new Point(WIDTH_NAVBAR, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
             sidePanel.right_form = MainPanel;
@@ -485,14 +508,14 @@ namespace Caiman.interfaceG
         {
             GameDetailsXbox temp = new GameDetailsXbox(this, topPanel, null, null, sidePanel);
             temp.Width = (Screen.PrimaryScreen.Bounds.Width - 200);
-            temp.Height = (Screen.PrimaryScreen.Bounds.Height - 150);
+            temp.Height = (Screen.PrimaryScreen.Bounds.Height - HEIGHT_NAVBAR);
             temp.LoadGameDetail(idGame);
             temp.CreateViewGame();
             Controls.Remove(mainPanel);
             mainPanel.Dispose();
             MainPanel = temp;
 
-            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
+            MainPanel.Location = new Point(WIDTH_NAVBAR, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
             sidePanel.right_form = MainPanel;
@@ -513,7 +536,7 @@ namespace Caiman.interfaceG
             mainPanel.Dispose();
             MainPanel = temp;
 
-            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
+            MainPanel.Location = new Point(WIDTH_NAVBAR, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
             sidePanel.right_form = MainPanel;
@@ -537,7 +560,7 @@ namespace Caiman.interfaceG
             mainPanel.Dispose();
             MainPanel = temp;
             
-            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
+            MainPanel.Location = new Point(WIDTH_NAVBAR, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
             sidePanel.right_form = MainPanel;
@@ -557,7 +580,7 @@ namespace Caiman.interfaceG
             mainPanel.Dispose();
             MainPanel = temp;
 
-            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
+            MainPanel.Location = new Point(WIDTH_NAVBAR, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
             sidePanel.right_form = MainPanel;
@@ -579,7 +602,7 @@ namespace Caiman.interfaceG
             mainPanel.Dispose();
             MainPanel = temp;
 
-            MainPanel.Location = new Point(270, HEIGHT_NAVBAR);
+            MainPanel.Location = new Point(WIDTH_NAVBAR, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
             sidePanel.right_form = MainPanel;

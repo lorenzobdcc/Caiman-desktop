@@ -21,6 +21,7 @@ namespace Caiman.logique
         private Dolphin dolphin = new Dolphin();
 
         public ConfigFileEditor configFile;
+        public ConfigFileEditor loginFile;
 
         public Game actualGame;
 
@@ -42,31 +43,13 @@ namespace Caiman.logique
             CreateAppDataFolder();
             downloadManager = new DownloadManager(this);
             configFile = new ConfigFileEditor(gamesPath, "config.ini");
+            loginFile = new ConfigFileEditor(gamesPath, "login.ini");
 
             gamesListConfigFile = new ConfigFileEditor(gamesPath, "games.ini");
             ScanConfiguration();
             CheckIfGameFileIsPresentOnDisk();
         }
 
-        private bool IsFileinUse(FileInfo file)
-        {
-            FileStream stream = null;
-
-            try
-            {
-                stream = file.Open(FileMode.Open, FileAccess.ReadWrite, FileShare.None);
-            }
-            catch (IOException)
-            {
-                return true;
-            }
-            finally
-            {
-                if (stream != null)
-                    stream.Close();
-            }
-            return false;
-        }
 
         private void CreateAppDataFolder()
         {
@@ -76,6 +59,7 @@ namespace Caiman.logique
             var imgPath = Path.Combine(appDataPath, @"Caiman\img\");
             var gamesPath = Path.Combine(appDataPath, @"Caiman\Caiman\games.ini");
             var configPath = Path.Combine(appDataPath, @"Caiman\Caiman\config.ini");
+            var loginPath = Path.Combine(appDataPath, @"Caiman\Caiman\login.ini");
 
             if (!Directory.Exists(basePath))
             {
@@ -96,6 +80,14 @@ namespace Caiman.logique
             if (!Directory.Exists(@"C:\Caiman\GamecubeWii\"))
             {
                 Directory.CreateDirectory(@"C:\Caiman\GamecubeWii\");
+            }
+            if (!File.Exists(loginPath))
+            {
+                using (StreamWriter sw = File.CreateText(loginPath))
+                {
+                    sw.WriteLine("token = 0");
+                }
+                loginFile = new ConfigFileEditor(caimanConfigPath, "login.ini");
             }
             if (!File.Exists(gamesPath))
             {

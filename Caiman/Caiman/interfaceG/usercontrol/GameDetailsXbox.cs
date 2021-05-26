@@ -51,7 +51,6 @@ namespace Caiman.interfaceG.usercontrol
             // testContextUC
             // 
             this.Name = "testContextUC";
-            this.Size = new System.Drawing.Size(Screen.PrimaryScreen.Bounds.Width - 250, Screen.PrimaryScreen.Bounds.Height - 60);
             this.BackColor = Color.Transparent;
             AutoScroll = true;
             this.ResumeLayout(false);

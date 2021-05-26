@@ -55,6 +55,34 @@ namespace Caiman.database
                 tempUser.username = data.username;
                 tempUser.apitoken = data.apitocken;
                 tempUser.email = data.email;
+                tempUser.caimanToken = data.caimanToken;
+            }
+            return tempUser;
+        }
+        public User CallLoginToken(string token)
+        {
+            User tempUser = new User();
+            baseUrl = new Uri("http://api.caiman.cfpt.info/users/connection/");
+            client.BaseUrl = baseUrl;
+            string tempString = "";
+
+            requestPOST.AddParameter("caimanToken", token);
+            IRestResponse<RootObject> response = client.Execute<RootObject>(requestPOST);
+
+
+            if (response.Content != "")
+            {
+                tempString = response.Content.ToString();
+            }
+
+            if (response.IsSuccessful)
+            {
+                dynamic data = JsonConvert.DeserializeObject(tempString);
+                tempUser.id = data.id;
+                tempUser.username = data.username;
+                tempUser.apitoken = data.apitocken;
+                tempUser.email = data.email;
+                tempUser.caimanToken = data.caimanToken;
             }
             return tempUser;
         }

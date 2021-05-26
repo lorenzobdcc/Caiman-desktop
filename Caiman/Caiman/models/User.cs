@@ -14,11 +14,12 @@ namespace Caiman.models
         public int id;
         public string username;
         public string apitoken;
+        public string caimanToken;
         public string email;
         CallAPI callAPI = new CallAPI();
 
 
-        public User(int idp, string usernamep, string apitokenp, string emailp )
+        public User(int idp, string usernamep, string apitokenp, string caimanTokenp, string emailp )
         {
             id = idp;
             username = usernamep;
@@ -31,6 +32,7 @@ namespace Caiman.models
             id = 0;
             username = "default_username";
             apitoken = "default_apitoken";
+            caimanToken = "0";
             email = "default@email.test";
         }
 
@@ -40,6 +42,7 @@ namespace Caiman.models
             id = value.id;
             username = value.username;
             apitoken = value.apitoken;
+            caimanToken = value.caimanToken;
             email = value.email;
             CreateUserFolder();
             
