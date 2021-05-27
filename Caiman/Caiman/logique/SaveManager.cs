@@ -39,15 +39,17 @@ namespace Caiman.logique
         private void ScanDateFile()
         {
             int counter = 0;
-            lst_saveTimeOld = lst_saveTimeNow;
+            lst_saveTimeOld.Clear();
+            lst_saveTimeOld.AddRange(lst_saveTimeNow);
             lst_saveTimeNow.Clear();
             
             foreach (FileInfo save in lst_save)
             {
                 try
                 {
-
-                        lst_saveTimeNow.Add(GetMd5File(save));
+                    save.Refresh();
+                    //lst_saveTimeNow.Add(GetMd5File(save));
+                    lst_saveTimeNow.Add(save.LastWriteTime.Ticks.ToString());
                         if (lst_saveTimeOld[counter] != lst_saveTimeNow[counter])
                         {
                             if (lst_saveTimeOld[counter] != "")
@@ -68,15 +70,13 @@ namespace Caiman.logique
         }
         private string GetMd5File(FileInfo file)
         {
-            using (var md5 = new MD5CryptoServiceProvider())
+            using (var md5 = MD5.Create())
             {
-                var buffer = md5.ComputeHash(File.ReadAllBytes(file.FullName));
-                var sb = new StringBuilder();
-                for (var i = 0; i < buffer.Length; i++)
+                using (var stream = File.OpenRead(file.FullName))
                 {
-                    sb.Append(buffer[i].ToString("x2"));
+                    var hash = md5.ComputeHash(stream);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
                 }
-                return sb.ToString();
             }
         }
 

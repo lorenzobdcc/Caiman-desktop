@@ -26,11 +26,11 @@ namespace Caiman.models
                 string hoursString = "";
                 if (minutesInt < 10)
                 {
-                    minutesString += "0" + minutesInt;
+                    minutesString = "0" + minutesInt;
                 }
                 if (hours < 10)
                 {
-                    hoursString += "0" + hours;
+                    hoursString = "0" + hours;
                 }
                 time = hoursString + "h" + minutesString;
                 return time;
