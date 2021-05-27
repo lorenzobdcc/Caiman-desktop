@@ -23,6 +23,8 @@ namespace Caiman.logique
         private PCSX2 PCSX2 = new PCSX2();
         private Dolphin dolphin = new Dolphin();
         public Emulator actualEmulator;
+        private SaveManager saveManagerPlaystation2;
+        private SaveManager saveManagerGamecubeWii;
 
         public ConfigFileEditor configFile;
         public ConfigFileEditor loginFile;
@@ -65,10 +67,11 @@ namespace Caiman.logique
 
         public EmulatorsManager(XboxMainForm xboxMainFormp)
         {
+            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            CreateSaveManagerAndScan();
             xboxMainForm = xboxMainFormp;
             EmulatorState = Etatenum.stop;
             user = new User();
-            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var gamesPath = Path.Combine(appDataPath, @"Caiman\Caiman\");
             var configPath = Path.Combine(appDataPath, @"Caiman\Caiman\config.ini");
             
@@ -90,8 +93,24 @@ namespace Caiman.logique
         {
             timer = new Timer();
             timer.Tick += new EventHandler(ScanEmulatorProcess);
+            timer.Tick += new EventHandler(CheckIfSsaveIsUpdated);
             timer.Interval = 100;
             timer.Start();
+        }
+
+        public void CreateSaveManagerAndScan()
+        {
+            var SavePath = Environment.CurrentDirectory;
+            saveManagerGamecubeWii = new SaveManager(SavePath + @"..\..\..\emulators\Dolphin\User\GC\EUR\Card A\");
+            saveManagerPlaystation2 = new SaveManager(SavePath + @"..\..\..\emulators\PCSX2\memcards\");
+            saveManagerGamecubeWii.ScanFolder();
+            saveManagerPlaystation2.ScanFolder();
+        }
+
+        private void CheckIfSsaveIsUpdated(object sender, EventArgs e)
+        {
+            saveManagerGamecubeWii.ScanFolder();
+            saveManagerPlaystation2.ScanFolder();
         }
 
 
@@ -182,7 +201,7 @@ namespace Caiman.logique
             string console = callAPI.CallConsoleNameGame(idGame);
             actualGame = callAPI.CallOneGame(idGame);
             gameTimer = new GameTimer(actualGame,this);
-            EmulatorState = Etatenum.start;
+            
             switch (console)
             {
                 case "Nintendo Gamecube":
@@ -203,6 +222,7 @@ namespace Caiman.logique
                 default:
                     break;
             }
+            EmulatorState = Etatenum.start;
 
         }
 

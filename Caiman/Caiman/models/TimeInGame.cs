@@ -16,17 +16,17 @@ namespace Caiman.models
             {
                 string time = "";
                 int hours = this.minutes / 60;
-                int minutes = this.minutes % 60;
-                if (minutes == 60)
+                int minutesInt = this.minutes % 60;
+                if (minutesInt == 60)
                 {
                     hours++;
-                    minutes = 0;
+                    minutesInt = 0;
                 }
-                string minutesString = "";
+                string minutesString = minutesInt.ToString();
                 string hoursString = "";
-                if (minutes <10)
+                if (minutesInt < 10)
                 {
-                    minutesString += "0" + minutes;
+                    minutesString += "0" + minutesInt;
                 }
                 if (hours < 10)
                 {

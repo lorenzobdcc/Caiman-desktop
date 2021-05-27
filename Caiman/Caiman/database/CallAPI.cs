@@ -56,6 +56,8 @@ namespace Caiman.database
                 tempUser.apitoken = data.apitocken;
                 tempUser.email = data.email;
                 tempUser.caimanToken = data.caimanToken;
+                tempUser.CreateUserFolder();
+                tempUser.CreateSaveManagers();
             }
             return tempUser;
         }
@@ -83,6 +85,9 @@ namespace Caiman.database
                 tempUser.apitoken = data.apitocken;
                 tempUser.email = data.email;
                 tempUser.caimanToken = data.caimanToken;
+
+                tempUser.CreateUserFolder();
+                tempUser.CreateSaveManagers();
             }
             return tempUser;
         }

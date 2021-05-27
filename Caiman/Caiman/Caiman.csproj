@@ -155,6 +155,7 @@
     <Compile Include="logique\EmulatorsManager.cs" />
     <Compile Include="logique\GameTimer.cs" />
     <Compile Include="logique\PCSX2.cs" />
+    <Compile Include="logique\SaveManager.cs" />
     <Compile Include="models\Category.cs" />
     <Compile Include="models\Console.cs" />
     <Compile Include="models\TimeInGame.cs" />

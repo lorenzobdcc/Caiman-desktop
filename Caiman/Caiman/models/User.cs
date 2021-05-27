@@ -1,4 +1,5 @@
 ﻿using Caiman.database;
+using Caiman.logique;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace Caiman.models
         public string caimanToken;
         public string email;
         CallAPI callAPI = new CallAPI();
+        SaveManager saveManagerPlaystation2;
+        SaveManager saveManagerGamecubeWii;
 
 
         public User(int idp, string usernamep, string apitokenp, string caimanTokenp, string emailp )
@@ -25,6 +28,7 @@ namespace Caiman.models
             username = usernamep;
             apitoken = apitokenp;
             email = emailp;
+
         }
 
         public User()
@@ -36,6 +40,16 @@ namespace Caiman.models
             email = "default@email.test";
         }
 
+        public void CreateSaveManagers()
+        {
+            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var savePathPlaystation = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\Playstation2\");
+            var savePathGamecubeWii = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\GamecubeWii\");
+            saveManagerPlaystation2 = new SaveManager(savePathPlaystation);
+            saveManagerGamecubeWii = new SaveManager(savePathGamecubeWii);
+            saveManagerGamecubeWii.ScanFolder();
+        }
+
         public void Login(string usernamep, string password)
         {
             User value = callAPI.CallLogin(usernamep, password);
@@ -44,8 +58,7 @@ namespace Caiman.models
             apitoken = value.apitoken;
             caimanToken = value.caimanToken;
             email = value.email;
-            CreateUserFolder();
-            
+            //CreateUserFolder();
         }
 
         public void CreateUserFolder()
@@ -53,7 +66,10 @@ namespace Caiman.models
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var userPath = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\");
             var savePath = Path.Combine(userPath, @"Save\");
+            var savePathPlaystation = Path.Combine(savePath, @"Playstation2\");
+            var savePathGamecubeWii = Path.Combine(savePath, @"GamecubeWii\");
             var configFile = Path.Combine(userPath, @"config.ini");
+
             if (!Directory.Exists(userPath))
             {
                 Directory.CreateDirectory(userPath);
@@ -61,6 +77,14 @@ namespace Caiman.models
             if (!Directory.Exists(savePath))
             {
                 Directory.CreateDirectory(savePath);
+            }
+            if (!Directory.Exists(savePathPlaystation))
+            {
+                Directory.CreateDirectory(savePathPlaystation);
+            }
+            if (!Directory.Exists(savePathGamecubeWii))
+            {
+                Directory.CreateDirectory(savePathGamecubeWii);
             }
             if (!File.Exists(configFile))
             {

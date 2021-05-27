@@ -83,7 +83,7 @@ namespace Caiman.interfaceG.usercontrol
                     }
                     else
                     {
-                        lstControls[counter][0].Text = lst_allDownload[counter].filename + " :" + lst_allDownload[counter].percentage + "/100";
+                        lstControls[counter][0].Text = lst_allDownload[counter].filename + " :" + lst_allDownload[counter].percentage + "%";
                     }
                     counter++;
             }
