@@ -59,6 +59,7 @@ namespace Caiman.database
                 tempUser.CreateUserFolder();
                 tempUser.CreateSaveManagers();
             }
+            tempUser.InitTimer();
             return tempUser;
         }
         public User CallLoginToken(string token)
@@ -89,6 +90,7 @@ namespace Caiman.database
                 tempUser.CreateUserFolder();
                 tempUser.CreateSaveManagers();
             }
+            tempUser.InitTimer();
             return tempUser;
         }
 
@@ -339,7 +341,6 @@ namespace Caiman.database
             requestPOST.AddParameter("idUser", idUser);
             baseUrl = new Uri(fullURL);
             client.BaseUrl = baseUrl;
-            string tempString = "";
             IRestResponse<RootObject> response = client.Execute<RootObject>(requestPOST);
 
         }
@@ -353,7 +354,6 @@ namespace Caiman.database
             requestPOST.AddParameter("idUser", idUser);
             baseUrl = new Uri(fullURL);
             client.BaseUrl = baseUrl;
-            string tempString = "";
             IRestResponse<RootObject> response = client.Execute<RootObject>(requestPOST);
 
         }
@@ -367,7 +367,6 @@ namespace Caiman.database
             requestPOST.AddParameter("idUser", idUser);
             baseUrl = new Uri(fullURL);
             client.BaseUrl = baseUrl;
-            string tempString = "";
             IRestResponse<RootObject> response = client.Execute<RootObject>(requestPOST);
 
         }

@@ -23,8 +23,10 @@ namespace Caiman.logique
         private PCSX2 PCSX2 = new PCSX2();
         private Dolphin dolphin = new Dolphin();
         public Emulator actualEmulator;
+
         private SaveManager saveManagerPlaystation2;
         private SaveManager saveManagerGamecubeWii;
+        bool folderAlreadyScaned = false;
 
         public ConfigFileEditor configFile;
         public ConfigFileEditor loginFile;
@@ -68,7 +70,7 @@ namespace Caiman.logique
         public EmulatorsManager(XboxMainForm xboxMainFormp)
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            CreateSaveManagerAndScan();
+            //CreateSaveManagerAndScan();
             xboxMainForm = xboxMainFormp;
             EmulatorState = Etatenum.stop;
             user = new User();
@@ -93,24 +95,41 @@ namespace Caiman.logique
         {
             timer = new Timer();
             timer.Tick += new EventHandler(ScanEmulatorProcess);
-            timer.Tick += new EventHandler(CheckIfSsaveIsUpdated);
+            timer.Tick += new EventHandler(CheckIfSaveIsUpdated);
             timer.Interval = 100;
             timer.Start();
         }
 
         public void CreateSaveManagerAndScan()
         {
+
             var SavePath = Environment.CurrentDirectory;
-            saveManagerGamecubeWii = new SaveManager(SavePath + @"..\..\..\emulators\Dolphin\User\GC\EUR\Card A\");
-            saveManagerPlaystation2 = new SaveManager(SavePath + @"..\..\..\emulators\PCSX2\memcards\");
+            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var savePathPlaystationString = Path.Combine(appDataPath, @"Caiman\users\" + user.username + @"\Save\Playstation2\");
+            var savePathGamecubeWiiString = Path.Combine(appDataPath, @"Caiman\users\" + user.username + @"\Save\GamecubeWii\");
+            saveManagerGamecubeWii = new SaveManager(SavePath + @"..\..\..\emulators\Dolphin\User\GC\EUR\Card A\",true);
+            saveManagerPlaystation2 = new SaveManager(SavePath + @"..\..\..\emulators\PCSX2\memcards\",true);
             saveManagerGamecubeWii.ScanFolder();
             saveManagerPlaystation2.ScanFolder();
+            saveManagerGamecubeWii.destinationPath = savePathGamecubeWiiString;
+            saveManagerPlaystation2.destinationPath = savePathPlaystationString;
+
         }
 
-        private void CheckIfSsaveIsUpdated(object sender, EventArgs e)
+        private void CheckIfSaveIsUpdated(object sender, EventArgs e)
         {
-            saveManagerGamecubeWii.ScanFolder();
-            saveManagerPlaystation2.ScanFolder();
+            if (user != null || user.username != "default_username")
+            {
+                if (folderAlreadyScaned == false)
+                {
+
+                    CreateSaveManagerAndScan();
+                    folderAlreadyScaned = true;
+                }
+                saveManagerGamecubeWii.ScanFolder();
+                saveManagerPlaystation2.ScanFolder();
+            }
+
         }
 
 

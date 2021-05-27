@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Caiman.models
 {
@@ -20,6 +21,7 @@ namespace Caiman.models
         CallAPI callAPI = new CallAPI();
         SaveManager saveManagerPlaystation2;
         SaveManager saveManagerGamecubeWii;
+        Timer timer = new Timer();
 
 
         public User(int idp, string usernamep, string apitokenp, string caimanTokenp, string emailp )
@@ -40,14 +42,21 @@ namespace Caiman.models
             email = "default@email.test";
         }
 
+        public void InitTimer()
+        {
+            timer = new Timer();
+            timer.Tick += new EventHandler(CheckIfSaveIsUpdated);
+            timer.Interval = 2000;
+            timer.Start();
+        }
+
         public void CreateSaveManagers()
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var savePathPlaystation = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\Playstation2\");
             var savePathGamecubeWii = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\GamecubeWii\");
-            saveManagerPlaystation2 = new SaveManager(savePathPlaystation);
-            saveManagerGamecubeWii = new SaveManager(savePathGamecubeWii);
-            saveManagerGamecubeWii.ScanFolder();
+            saveManagerPlaystation2 = new SaveManager(savePathPlaystation,false);
+            saveManagerGamecubeWii = new SaveManager(savePathGamecubeWii,false);
         }
 
         public void Login(string usernamep, string password)
@@ -59,6 +68,11 @@ namespace Caiman.models
             caimanToken = value.caimanToken;
             email = value.email;
             //CreateUserFolder();
+        }
+        private void CheckIfSaveIsUpdated(object sender, EventArgs e)
+        {
+            saveManagerGamecubeWii.ScanFolder();
+            saveManagerPlaystation2.ScanFolder();
         }
 
         public void CreateUserFolder()
