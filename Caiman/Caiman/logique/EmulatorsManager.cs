@@ -107,12 +107,10 @@ namespace Caiman.logique
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var savePathPlaystationString = Path.Combine(appDataPath, @"Caiman\users\" + user.username + @"\Save\Playstation2\");
             var savePathGamecubeWiiString = Path.Combine(appDataPath, @"Caiman\users\" + user.username + @"\Save\GamecubeWii\");
-            saveManagerGamecubeWii = new SaveManager(SavePath + @"..\..\..\emulators\Dolphin\User\GC\EUR\Card A\",true);
-            saveManagerPlaystation2 = new SaveManager(SavePath + @"..\..\..\emulators\PCSX2\memcards\",true);
+            saveManagerGamecubeWii = new SaveManager(SavePath + @"..\..\..\emulators\Dolphin\User\GC\EUR\Card A\",savePathGamecubeWiiString,true);
+            saveManagerPlaystation2 = new SaveManager(SavePath + @"..\..\..\emulators\PCSX2\memcards\",savePathPlaystationString,true);
             saveManagerGamecubeWii.ScanFolder();
             saveManagerPlaystation2.ScanFolder();
-            saveManagerGamecubeWii.destinationPath = savePathGamecubeWiiString;
-            saveManagerPlaystation2.destinationPath = savePathPlaystationString;
 
         }
 

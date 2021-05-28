@@ -17,11 +17,18 @@ namespace Caiman.logique
         public bool isLocalFile;
         private int initialCounterFile = 0;
         public string destinationPath;
-        public SaveManager(string savePathp, bool isLocalFilep)
+        public SaveManager(string savePathp,string destinationPathp, bool isLocalFilep)
         {
             savePath = savePathp;
             isLocalFile = isLocalFilep;
+            destinationPath = destinationPathp;
+            initialCounterFile = CountFileInFolder();
+            if (isLocalFile == false)
+            {
+                MoveSaveFileFromUserFolderToEmulatorSaveFolder();
+            }
         }
+
         public SaveManager()
         {
 
@@ -45,7 +52,14 @@ namespace Caiman.logique
             lst_saveTimeOld.Clear();
             lst_saveTimeOld.AddRange(lst_saveTimeNow);
             lst_saveTimeNow.Clear();
-
+            if (initialCounterFile != CountFileInFolder())
+            {
+                if (isLocalFile)
+                {
+                    initialCounterFile = CountFileInFolder();
+                    MoveAllFileToUserFolder();
+                }
+            }
             foreach (FileInfo save in lst_save)
             {
 
@@ -84,9 +98,50 @@ namespace Caiman.logique
             File.Copy(save.FullName, Path.Combine(destinationPath,save.Name), true);
 
         }
+        public void MoveAllFileToUserFolder()
+        {
+            DirectoryInfo d = new DirectoryInfo(savePath);//Assuming Test is your Folder
+            FileInfo[] Files = d.GetFiles(); //Getting Text files
+            foreach (FileInfo file in Files)
+            {
+                try
+                {
+
+                    File.Copy(file.FullName, Path.Combine(destinationPath, file.Name), true);
+                }
+                catch (Exception)
+                {
+
+                    //throw;
+                }
+            }
+        }
         public void UploadSave()
         {
 
+        }
+
+        private int CountFileInFolder()
+        {
+            DirectoryInfo myDir = new System.IO.DirectoryInfo(this.savePath);
+            return myDir.GetFiles().Length;
+        }
+
+        private void MoveSaveFileFromUserFolderToEmulatorSaveFolder()
+        {
+            DirectoryInfo destinationDir = new DirectoryInfo(destinationPath);
+
+            foreach (FileInfo file in destinationDir.GetFiles())
+            {
+                file.Delete();
+            }
+
+            DirectoryInfo d = new DirectoryInfo(savePath);
+            FileInfo[] Files = d.GetFiles(); 
+            foreach (FileInfo file in Files)
+            {
+                File.Copy(file.FullName, Path.Combine(destinationPath, file.Name), true);
+            }
         }
 
     }

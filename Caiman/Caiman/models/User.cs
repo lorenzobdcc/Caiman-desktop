@@ -52,11 +52,14 @@ namespace Caiman.models
 
         public void CreateSaveManagers()
         {
+            var SavePath = Environment.CurrentDirectory;
+
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var savePathPlaystation = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\Playstation2\");
             var savePathGamecubeWii = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\GamecubeWii\");
-            saveManagerPlaystation2 = new SaveManager(savePathPlaystation,false);
-            saveManagerGamecubeWii = new SaveManager(savePathGamecubeWii,false);
+            saveManagerPlaystation2 = new SaveManager(savePathPlaystation, SavePath + @"..\..\..\emulators\PCSX2\memcards\", false);
+            saveManagerGamecubeWii = new SaveManager(savePathGamecubeWii, SavePath + @"..\..\..\emulators\Dolphin\User\GC\EUR\Card A\", false);
+            InitTimer();
         }
 
         public void Login(string usernamep, string password)

@@ -59,7 +59,6 @@ namespace Caiman.database
                 tempUser.CreateUserFolder();
                 tempUser.CreateSaveManagers();
             }
-            tempUser.InitTimer();
             return tempUser;
         }
         public User CallLoginToken(string token)
@@ -90,7 +89,6 @@ namespace Caiman.database
                 tempUser.CreateUserFolder();
                 tempUser.CreateSaveManagers();
             }
-            tempUser.InitTimer();
             return tempUser;
         }
 
