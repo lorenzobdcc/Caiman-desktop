@@ -46,7 +46,7 @@ namespace Caiman.models
         {
             timer = new Timer();
             timer.Tick += new EventHandler(CheckIfSaveIsUpdated);
-            timer.Interval = 2000;
+            timer.Interval = 3000;
             timer.Start();
         }
 

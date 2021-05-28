@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Caiman.database;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace Caiman.logique
         public bool isLocalFile;
         private int initialCounterFile = 0;
         public string destinationPath;
+        public CallAPI callAPI = new CallAPI();
         public SaveManager(string savePathp,string destinationPathp, bool isLocalFilep)
         {
             savePath = savePathp;
@@ -111,13 +113,12 @@ namespace Caiman.logique
                 }
                 catch (Exception)
                 {
-
-                    //throw;
                 }
             }
         }
         public void UploadSave()
         {
+
 
         }
 

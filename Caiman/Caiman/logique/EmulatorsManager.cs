@@ -116,7 +116,7 @@ namespace Caiman.logique
 
         private void CheckIfSaveIsUpdated(object sender, EventArgs e)
         {
-            if (user != null || user.username != "default_username")
+            if (user != null && user.username != "default_username")
             {
                 if (folderAlreadyScaned == false)
                 {
