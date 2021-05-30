@@ -1,4 +1,5 @@
-﻿using Caiman.models;
+﻿using Caiman.logique;
+using Caiman.models;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -31,7 +32,7 @@ namespace Caiman.database
 
 
 
-        public User CallLogin(string username, string password)
+        public User CallLogin(string username, string password,EmulatorsManager emulatorManagerp)
         {
             User tempUser = new User();
             baseUrl = new Uri("http://api.caiman.cfpt.info/users/connection/");
@@ -57,11 +58,11 @@ namespace Caiman.database
                 tempUser.email = data.email;
                 tempUser.caimanToken = data.caimanToken;
                 tempUser.CreateUserFolder();
-                tempUser.CreateSaveManagers();
+                tempUser.CreateSaveManagers(emulatorManagerp);
             }
             return tempUser;
         }
-        public User CallLoginToken(string token)
+        public User CallLoginToken(string token,EmulatorsManager emulatorManagerP)
         {
             User tempUser = new User();
             baseUrl = new Uri("http://api.caiman.cfpt.info/users/connection/");
@@ -87,9 +88,25 @@ namespace Caiman.database
                 tempUser.caimanToken = data.caimanToken;
 
                 tempUser.CreateUserFolder();
-                tempUser.CreateSaveManagers();
+                tempUser.CreateSaveManagers(emulatorManagerP);
             }
             return tempUser;
+        }
+
+        public void UploadSave(int idEmulator, int idUser ,string apiKey, string path)
+        {
+            requestPOST = new RestRequest("", Method.POST);
+            baseUrl = new Uri("http://api.caiman.cfpt.info/games/");
+            client.BaseUrl = baseUrl;
+            string tempString = "";
+
+            requestPOST.AddParameter("apiKey", apiKey);
+            requestPOST.AddParameter("idUser", idUser);
+            requestPOST.AddParameter("idEmulator", idEmulator);
+            requestPOST.AddHeader("Content-Type", "multipart/form-data");
+            requestPOST.AddFile("fileSave", path);
+            IRestResponse<RootObject> response = client.Execute<RootObject>(requestPOST);
+
         }
 
         public List<Game> CallAllGames()

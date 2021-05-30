@@ -90,7 +90,7 @@ namespace Caiman.interfaceG
             string token = emulatorsManager.loginFile.ReadProperties("token");
             if (token != "")
             {
-                 emulatorsManager.user = callAPI.CallLoginToken(token);
+                 emulatorsManager.user = callAPI.CallLoginToken(token,emulatorsManager);
                 if (emulatorsManager.user.caimanToken != "0")
                 {
                     emulatorsManager.loginFile.UpdateProperties("token", emulatorsManager.user.caimanToken);
@@ -409,7 +409,7 @@ namespace Caiman.interfaceG
                     this.ContexteHandler(tempContexteDelete, null);
                     break;
                 case "login":
-                    emulatorsManager.user.Login(contexte.optionalString1, contexte.optionalString2);
+                    emulatorsManager.user.Login(contexte.optionalString1, contexte.optionalString2,emulatorsManager);
 
                     if (emulatorsManager.user.id == 0)
                     {

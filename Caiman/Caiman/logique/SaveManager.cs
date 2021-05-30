@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -19,17 +20,20 @@ namespace Caiman.logique
         private int initialCounterFile = 0;
         public string destinationPath;
         public CallAPI callAPI = new CallAPI();
-        public SaveManager(string savePathp,string destinationPathp, bool isLocalFilep)
+        EmulatorsManager emulatorsManager;
+        public SaveManager(string savePathp, string destinationPathp, bool isLocalFilep, EmulatorsManager emulatorsManagerp)
         {
             savePath = savePathp;
             isLocalFile = isLocalFilep;
             destinationPath = destinationPathp;
+            emulatorsManager = emulatorsManagerp;
             initialCounterFile = CountFileInFolder();
             if (isLocalFile == false)
             {
                 MoveSaveFileFromUserFolderToEmulatorSaveFolder();
             }
         }
+
 
         public SaveManager()
         {
@@ -65,10 +69,10 @@ namespace Caiman.logique
             foreach (FileInfo save in lst_save)
             {
 
-                    save.Refresh();
+                save.Refresh();
 
-                    lst_saveTimeNow.Add(save.LastWriteTime.Ticks.ToString());
-                if (lst_saveTimeOld.Count() >0)
+                lst_saveTimeNow.Add(save.LastWriteTime.Ticks.ToString());
+                if (lst_saveTimeOld.Count() > 0)
                 {
                     try
                     {
@@ -97,7 +101,7 @@ namespace Caiman.logique
         }
         public void MoveFileToUserFolder(FileInfo save)
         {
-            File.Copy(save.FullName, Path.Combine(destinationPath,save.Name), true);
+            File.Copy(save.FullName, Path.Combine(destinationPath, save.Name), true);
 
         }
         public void MoveAllFileToUserFolder()
@@ -119,6 +123,22 @@ namespace Caiman.logique
         public void UploadSave()
         {
 
+            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var savePathZipDolpin = "";
+            var savePathZipPCSX2 = "";
+            var savePath = Path.Combine(appDataPath, @"Caiman\users\" + emulatorsManager.user.username + @"\Save\");
+
+            savePathZipDolpin = Path.Combine(appDataPath, @"Caiman\users\" +  emulatorsManager.user.username+ @"\Save\GamecubeWii\");
+            savePathZipPCSX2 = Path.Combine(appDataPath, @"Caiman\users\" + emulatorsManager.user.username + @"\Save\Playstation2\");
+
+            ZipFile.CreateFromDirectory(savePathZipPCSX2, savePath + "tempPCSX2.zip");
+            ZipFile.CreateFromDirectory(savePathZipDolpin, savePath + "tempDolphin.zip");
+
+            callAPI.UploadSave(1, emulatorsManager.user.id, emulatorsManager.user.apitoken, savePath + "tempDolphin.zip");
+            callAPI.UploadSave(2,emulatorsManager.user.id,emulatorsManager.user.apitoken, savePath + "tempPCSX2.zip");
+
+            File.Delete(savePath + "tempPCSX2.zip");
+            File.Delete(savePath + "tempDolphin.zip");
 
         }
 
@@ -138,7 +158,7 @@ namespace Caiman.logique
             }
 
             DirectoryInfo d = new DirectoryInfo(savePath);
-            FileInfo[] Files = d.GetFiles(); 
+            FileInfo[] Files = d.GetFiles();
             foreach (FileInfo file in Files)
             {
                 File.Copy(file.FullName, Path.Combine(destinationPath, file.Name), true);

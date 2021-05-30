@@ -23,6 +23,7 @@ namespace Caiman.models
         SaveManager saveManagerPlaystation2;
         SaveManager saveManagerGamecubeWii;
         Timer timer = new Timer();
+        public EmulatorsManager emulatorsManager;
 
 
         public User(int idp, string usernamep, string apitokenp, string caimanTokenp, string emailp )
@@ -50,27 +51,30 @@ namespace Caiman.models
             timer.Start();
         }
 
-        public void CreateSaveManagers()
+        public void CreateSaveManagers(EmulatorsManager emulatorsManagerp)
         {
+
             downloadSaveManager = new DownloadSaveManager(this);
             var SavePath = Environment.CurrentDirectory;
 
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
             var savePathPlaystation = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\Playstation2\");
             var savePathGamecubeWii = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\GamecubeWii\");
-            saveManagerPlaystation2 = new SaveManager(savePathPlaystation, SavePath + @"..\..\..\emulators\PCSX2\memcards\", false);
-            saveManagerGamecubeWii = new SaveManager(savePathGamecubeWii, SavePath + @"..\..\..\emulators\Dolphin\User\GC\EUR\Card A\", false);
+
 
             downloadSaveManager.CreateDownload(1, id, apitoken);
             downloadSaveManager.CreateDownload(2, id, apitoken);
             downloadSaveManager.StartDownload();
+            saveManagerPlaystation2 = new SaveManager(savePathPlaystation, SavePath + @"..\..\..\emulators\PCSX2\memcards\", false, emulatorsManagerp);
+            saveManagerGamecubeWii = new SaveManager(savePathGamecubeWii, SavePath + @"..\..\..\emulators\Dolphin\User\GC\EUR\Card A\", false, emulatorsManagerp);
 
             InitTimer();
         }
 
-        public void Login(string usernamep, string password)
+        public void Login(string usernamep, string password, EmulatorsManager emulatorsManagerp)
         {
-            User value = callAPI.CallLogin(usernamep, password);
+            User value = callAPI.CallLogin(usernamep, password, emulatorsManagerp);
             id = value.id;
             username = value.username;
             apitoken = value.apitoken;

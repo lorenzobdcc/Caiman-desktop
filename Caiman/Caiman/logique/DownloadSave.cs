@@ -73,20 +73,30 @@ namespace Caiman.logique
                 var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
                 var savePathZip = "";
                 var savePath = "";
+                var savePathTemp = "";
                 switch (idEmulator)
                 {
                     case 1:
                         savePathZip = Path.Combine(appDataPath, @"Caiman\users\" +username + @"\Save\GamecubeWii.zip");
                         savePath = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\GamecubeWii\");
+                        savePathTemp = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\TempGamecubeWii");
                         break;
                     case 2:
                         savePathZip = Path.Combine(appDataPath, @"Caiman\users\" +username + @"\Save\Playstation2.zip");
                         savePath = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\Playstation2\");
+                        savePathTemp = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\TempPlaystation2");
                         break;
                     default:
                         break;
                 }
-                ZipFile.ExtractToDirectory(savePathZip,savePath);
+
+                System.IO.DirectoryInfo di = new DirectoryInfo(savePath);
+
+                foreach (FileInfo file in di.GetFiles())
+                {
+                    file.Delete();
+                }
+                ZipFile.ExtractToDirectory(savePathZip, savePath);
 
             }
         }

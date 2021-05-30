@@ -74,8 +74,8 @@ namespace Caiman.logique
             xboxMainForm = xboxMainFormp;
             EmulatorState = Etatenum.stop;
             user = new User();
+            user.emulatorsManager = this;
             var gamesPath = Path.Combine(appDataPath, @"Caiman\Caiman\");
-            var configPath = Path.Combine(appDataPath, @"Caiman\Caiman\config.ini");
             
             
             CreateAppDataFolder();
@@ -102,13 +102,13 @@ namespace Caiman.logique
 
         public void CreateSaveManagerAndScan()
         {
-
+            user.emulatorsManager = this;
             var SavePath = Environment.CurrentDirectory;
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             var savePathPlaystationString = Path.Combine(appDataPath, @"Caiman\users\" + user.username + @"\Save\Playstation2\");
             var savePathGamecubeWiiString = Path.Combine(appDataPath, @"Caiman\users\" + user.username + @"\Save\GamecubeWii\");
-            saveManagerGamecubeWii = new SaveManager(SavePath + @"..\..\..\emulators\Dolphin\User\GC\EUR\Card A\",savePathGamecubeWiiString,true);
-            saveManagerPlaystation2 = new SaveManager(SavePath + @"..\..\..\emulators\PCSX2\memcards\",savePathPlaystationString,true);
+            saveManagerGamecubeWii = new SaveManager(SavePath + @"..\..\..\emulators\Dolphin\User\GC\EUR\Card A\",savePathGamecubeWiiString,true,this);
+            saveManagerPlaystation2 = new SaveManager(SavePath + @"..\..\..\emulators\PCSX2\memcards\",savePathPlaystationString,true,this);
             saveManagerGamecubeWii.ScanFolder();
             saveManagerPlaystation2.ScanFolder();
 
