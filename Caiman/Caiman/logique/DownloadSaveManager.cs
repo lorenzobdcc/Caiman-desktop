@@ -14,7 +14,6 @@ namespace Caiman.logique
     {
         public List<DownloadSave> lst_download = new List<DownloadSave>();
         private List<Download> lst_allDonwload;
-        CallAPI callAPI = new CallAPI();
         public User user;
 
         public List<Download> Lst_allDonwload { get {
@@ -32,26 +31,7 @@ namespace Caiman.logique
         }
 
 
-        private bool IsFileinUse(FileInfo file)
-        {
-            FileStream stream = null;
 
-            try
-            {
-                stream = file.Open(FileMode.Open, FileAccess.ReadWrite, FileShare.None);
-            }
-            catch (IOException)
-            {
-
-                return true;
-            }
-            finally
-            {
-                if (stream != null)
-                    stream.Close();
-            }
-            return false;
-        }
 
         public void StartDownload()
         {

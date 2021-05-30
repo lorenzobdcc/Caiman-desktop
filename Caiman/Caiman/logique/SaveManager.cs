@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Caiman.logique
 {
-    class SaveManager
+    public class SaveManager
     {
         public List<FileInfo> lst_save = new List<FileInfo>();
         public List<String> lst_saveTimeOld = new List<string>();
@@ -30,7 +30,7 @@ namespace Caiman.logique
             initialCounterFile = CountFileInFolder();
             if (isLocalFile == false)
             {
-                MoveSaveFileFromUserFolderToEmulatorSaveFolder();
+               // MoveSaveFileFromUserFolderToEmulatorSaveFolder();
             }
         }
 
@@ -106,8 +106,8 @@ namespace Caiman.logique
         }
         public void MoveAllFileToUserFolder()
         {
-            DirectoryInfo d = new DirectoryInfo(savePath);//Assuming Test is your Folder
-            FileInfo[] Files = d.GetFiles(); //Getting Text files
+            DirectoryInfo d = new DirectoryInfo(savePath);
+            FileInfo[] Files = d.GetFiles(); 
             foreach (FileInfo file in Files)
             {
                 try
@@ -139,7 +139,7 @@ namespace Caiman.logique
 
             File.Delete(savePath + "tempPCSX2.zip");
             File.Delete(savePath + "tempDolphin.zip");
-
+            
         }
 
         private int CountFileInFolder()
@@ -148,7 +148,7 @@ namespace Caiman.logique
             return myDir.GetFiles().Length;
         }
 
-        private void MoveSaveFileFromUserFolderToEmulatorSaveFolder()
+        public void MoveSaveFileFromUserFolderToEmulatorSaveFolder()
         {
             DirectoryInfo destinationDir = new DirectoryInfo(destinationPath);
 

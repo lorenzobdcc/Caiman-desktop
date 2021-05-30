@@ -121,6 +121,7 @@ namespace Caiman.logique
                 if (folderAlreadyScaned == false)
                 {
 
+
                     CreateSaveManagerAndScan();
                     folderAlreadyScaned = true;
                 }
@@ -218,7 +219,7 @@ namespace Caiman.logique
             string console = callAPI.CallConsoleNameGame(idGame);
             actualGame = callAPI.CallOneGame(idGame);
             gameTimer = new GameTimer(actualGame,this);
-            
+            user.MoveFileFromUserFolderToEmulatorFolder();
             switch (console)
             {
                 case "Nintendo Gamecube":

@@ -87,6 +87,23 @@ namespace Caiman.models
             saveManagerPlaystation2.ScanFolder();
         }
 
+        public void MoveFileFromUserFolderToEmulatorFolder()
+        {
+            if (saveManagerGamecubeWii == null)
+            {
+                var SavePath = Environment.CurrentDirectory;
+
+                var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+                var savePathPlaystation = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\Playstation2\");
+                var savePathGamecubeWii = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\GamecubeWii\");
+                saveManagerPlaystation2 = new SaveManager(savePathPlaystation, SavePath + @"..\..\..\emulators\PCSX2\memcards\", false, emulatorsManager);
+                saveManagerGamecubeWii = new SaveManager(savePathGamecubeWii, SavePath + @"..\..\..\emulators\Dolphin\User\GC\EUR\Card A\", false, emulatorsManager);
+            }
+            saveManagerPlaystation2.MoveSaveFileFromUserFolderToEmulatorSaveFolder();
+            saveManagerGamecubeWii.MoveSaveFileFromUserFolderToEmulatorSaveFolder();
+        }
+
         public void CreateUserFolder()
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
