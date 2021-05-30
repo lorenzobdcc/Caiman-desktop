@@ -179,7 +179,7 @@ namespace Caiman.interfaceG.usercontrol
                     lstControls.Add(new List<Control>());
 
                     Label lbl_quit = new Label();
-                    lbl_quit.Text = "Press: 'Select, RB, LT' to quit game";
+                    lbl_quit.Text = "Press: 'Select, RB, LB' to quit game";
                     lbl_quit.Location = new System.Drawing.Point(500, 600);
                     lbl_quit.MaximumSize = new Size((this.Width / 3), 500);
                     lbl_quit.AutoSize = true;

@@ -30,7 +30,6 @@ namespace Caiman.logique
         {
             emulatorsManager = emulatorsManagerp;
         }
-
         public void DeleteGame(int idGame)
         {
             string path = @"C:\Caiman\" + callAPI.CallFolderNameGame(idGame) + @"\";

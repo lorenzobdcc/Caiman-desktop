@@ -18,6 +18,7 @@ namespace Caiman.models
         public string apitoken;
         public string caimanToken;
         public string email;
+        DownloadSaveManager downloadSaveManager;
         CallAPI callAPI = new CallAPI();
         SaveManager saveManagerPlaystation2;
         SaveManager saveManagerGamecubeWii;
@@ -30,7 +31,6 @@ namespace Caiman.models
             username = usernamep;
             apitoken = apitokenp;
             email = emailp;
-
         }
 
         public User()
@@ -52,6 +52,7 @@ namespace Caiman.models
 
         public void CreateSaveManagers()
         {
+            downloadSaveManager = new DownloadSaveManager(this);
             var SavePath = Environment.CurrentDirectory;
 
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -59,6 +60,11 @@ namespace Caiman.models
             var savePathGamecubeWii = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\GamecubeWii\");
             saveManagerPlaystation2 = new SaveManager(savePathPlaystation, SavePath + @"..\..\..\emulators\PCSX2\memcards\", false);
             saveManagerGamecubeWii = new SaveManager(savePathGamecubeWii, SavePath + @"..\..\..\emulators\Dolphin\User\GC\EUR\Card A\", false);
+
+            downloadSaveManager.CreateDownload(1, id, apitoken);
+            downloadSaveManager.CreateDownload(2, id, apitoken);
+            downloadSaveManager.StartDownload();
+
             InitTimer();
         }
 
@@ -70,7 +76,6 @@ namespace Caiman.models
             apitoken = value.apitoken;
             caimanToken = value.caimanToken;
             email = value.email;
-            //CreateUserFolder();
         }
         private void CheckIfSaveIsUpdated(object sender, EventArgs e)
         {

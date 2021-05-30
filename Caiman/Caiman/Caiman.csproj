@@ -90,6 +90,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -149,7 +150,9 @@
     </Compile>
     <Compile Include="logique\ConfigFileEditor.cs" />
     <Compile Include="logique\Dolphin.cs" />
+    <Compile Include="logique\DownloadSave.cs" />
     <Compile Include="logique\Download.cs" />
+    <Compile Include="logique\DownloadSaveManager.cs" />
     <Compile Include="logique\DownloadManager.cs" />
     <Compile Include="logique\Emulator.cs" />
     <Compile Include="logique\EmulatorsManager.cs" />
