@@ -1,4 +1,11 @@
-﻿using System;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Model for game
+ */
+using System;
 using System.IO;
 using System.Net;
 
@@ -46,7 +53,9 @@ namespace Caiman.models
             idFile = 0;
         }
 
-
+        /// <summary>
+        /// Download the image from the website caiman
+        /// </summary>
         private void DownloadImage()
         {
 

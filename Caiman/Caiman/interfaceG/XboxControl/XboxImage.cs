@@ -3,7 +3,7 @@
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
  *  @file
  *  @copyright Copyright (c) 2021 BDCC
- *  @brief Used to create a button with an image in backGround
+ *  @brief Used to create a button with an image in background
  */
 using System;
 using System.Collections.Generic;

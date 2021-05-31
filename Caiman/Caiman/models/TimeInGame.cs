@@ -1,4 +1,11 @@
-﻿using System;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Model for timeInGame
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +17,7 @@ namespace Caiman.models
     {
         public int minutes = 0;
 
+        //get the time in the format 00h00
         public string TimeHoursMinutes
         {
             get

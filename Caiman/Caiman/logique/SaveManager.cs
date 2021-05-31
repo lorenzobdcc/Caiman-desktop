@@ -1,4 +1,11 @@
-﻿using Caiman.database;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Used to manage the download of the save file
+ */
+using Caiman.database;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,10 +35,6 @@ namespace Caiman.logique
             destinationPath = destinationPathp;
             emulatorsManager = emulatorsManagerp;
             initialCounterFile = CountFileInFolder();
-            if (isLocalFile == false)
-            {
-               // MoveSaveFileFromUserFolderToEmulatorSaveFolder();
-            }
         }
 
 
@@ -39,25 +42,30 @@ namespace Caiman.logique
         {
 
         }
-
+        /// <summary>
+        /// Scan to fold to get the files in it
+        /// </summary>
         public void ScanFolder()
         {
             lst_save.Clear();
-            DirectoryInfo d = new DirectoryInfo(savePath);//Assuming Test is your Folder
-            FileInfo[] Files = d.GetFiles(); //Getting Text files
+            DirectoryInfo d = new DirectoryInfo(savePath);
+            FileInfo[] Files = d.GetFiles(); 
             foreach (FileInfo file in Files)
             {
                 lst_save.Add(file);
             }
             ScanDateFile();
         }
-
+        /// <summary>
+        /// Scan the file to know the last time they have been modified
+        /// </summary>
         private void ScanDateFile()
         {
             int counter = 0;
             lst_saveTimeOld.Clear();
             lst_saveTimeOld.AddRange(lst_saveTimeNow);
             lst_saveTimeNow.Clear();
+            //if a file has been added or delete sync the folder
             if (initialCounterFile != CountFileInFolder())
             {
                 if (isLocalFile)
@@ -78,6 +86,7 @@ namespace Caiman.logique
                     {
                         if (lst_saveTimeOld[counter] != lst_saveTimeNow[counter])
                         {
+                            //if the file has benn modified since the last time move or sync the folder
                             if (lst_saveTimeOld[counter] != "")
                             {
                                 if (isLocalFile)
@@ -99,11 +108,18 @@ namespace Caiman.logique
 
             }
         }
+        /// <summary>
+        /// Move the local file to the appdata folder
+        /// </summary>
+        /// <param name="save"></param>
         public void MoveFileToUserFolder(FileInfo save)
         {
             File.Copy(save.FullName, Path.Combine(destinationPath, save.Name), true);
 
         }
+        /// <summary>
+        /// Move all the appdata file to the emulator folder
+        /// </summary>
         public void MoveAllFileToUserFolder()
         {
             DirectoryInfo d = new DirectoryInfo(savePath);
@@ -120,6 +136,9 @@ namespace Caiman.logique
                 }
             }
         }
+        /// <summary>
+        /// Zip the save of the user and send it to the Bunker by the API
+        /// </summary>
         public void UploadSave()
         {
 
@@ -130,33 +149,41 @@ namespace Caiman.logique
 
             savePathZipDolpin = Path.Combine(appDataPath, @"Caiman\users\" +  emulatorsManager.user.username+ @"\Save\GamecubeWii\");
             savePathZipPCSX2 = Path.Combine(appDataPath, @"Caiman\users\" + emulatorsManager.user.username + @"\Save\Playstation2\");
-
+            //zip the save of the emulators
             ZipFile.CreateFromDirectory(savePathZipPCSX2, savePath + "tempPCSX2.zip");
             ZipFile.CreateFromDirectory(savePathZipDolpin, savePath + "tempDolphin.zip");
-
+            //call the api to create a copy of the save to the Bunker
             callAPI.UploadSave(1, emulatorsManager.user.id, emulatorsManager.user.apitoken, savePath + "tempDolphin.zip");
             callAPI.UploadSave(2,emulatorsManager.user.id,emulatorsManager.user.apitoken, savePath + "tempPCSX2.zip");
-
+            //delete the temporary zip file
             File.Delete(savePath + "tempPCSX2.zip");
             File.Delete(savePath + "tempDolphin.zip");
             
         }
 
+        /// <summary>
+        /// Count the file in the folder
+        /// </summary>
+        /// <returns></returns>
         private int CountFileInFolder()
         {
             DirectoryInfo myDir = new System.IO.DirectoryInfo(this.savePath);
             return myDir.GetFiles().Length;
         }
 
+        /// <summary>
+        /// Move the file off the appdata folder to the emulators folder
+        /// </summary>
         public void MoveSaveFileFromUserFolderToEmulatorSaveFolder()
         {
             DirectoryInfo destinationDir = new DirectoryInfo(destinationPath);
-
+            //before send it to the folder whe need to erase the curent save files
             foreach (FileInfo file in destinationDir.GetFiles())
             {
                 file.Delete();
             }
 
+            //copy the file to the emulators save folders
             DirectoryInfo d = new DirectoryInfo(savePath);
             FileInfo[] Files = d.GetFiles();
             foreach (FileInfo file in Files)

@@ -1,4 +1,11 @@
-﻿using System;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Model for console
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

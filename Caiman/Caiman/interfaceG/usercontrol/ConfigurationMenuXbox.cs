@@ -3,7 +3,7 @@
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
  *  @file
  *  @copyright Copyright (c) 2021 BDCC
- *  @brief Used to test if i can load an image from the web
+ *  @brief Used to display the configuration menu
  */
 using Caiman.interfaceG.XboxControl;
 using System;
@@ -53,7 +53,9 @@ namespace Caiman.interfaceG.usercontrol
             this.PerformLayout();
 
         }
-
+        /// <summary>
+        /// Create all the buttons and labels for the configuration menu
+        /// </summary>
         public void CreateNavButton()
         {
             int postion_first_column = ((Screen.PrimaryScreen.Bounds.Width/ 12 ));

@@ -1,4 +1,11 @@
-﻿using System;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class used to manage the download of save file
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,7 +39,9 @@ namespace Caiman.logique
 
 
 
-
+        /// <summary>
+        /// Start the download od the saves 
+        /// </summary>
         public void StartDownload()
         {
             foreach (DownloadSave downloadSave in lst_download)
@@ -42,25 +51,19 @@ namespace Caiman.logique
 
         }
 
-
-        public void CreateDownload(int idEmulator,int idUser, string apiKey)
+        /// <summary>
+        /// Create a download and add it to the list
+        /// </summary>
+        /// <param name="idEmulator"></param>
+        /// <param name="idUser"></param>
+        /// <param name="apiKey"></param>
+        public void CreateDownload(int idEmulator, string apiKey)
         {
 
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            var savePath = "";
+            var savePath = Path.Combine(appDataPath, @"Caiman\users\" + user.username + @"\Save\");
 
 
-            switch (idEmulator)
-            {
-                case 1:
-                     savePath = Path.Combine(appDataPath, @"Caiman\users\" + user.username + @"\Save\");
-                    break;
-                case 2:
-                    savePath = Path.Combine(appDataPath, @"Caiman\users\" + user.username + @"\Save\");
-                    break;
-                default:
-                    break;
-            }
             if (lst_download == null)
             {
                 lst_download = new List<DownloadSave>();

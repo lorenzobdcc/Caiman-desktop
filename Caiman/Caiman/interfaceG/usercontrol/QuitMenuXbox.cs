@@ -3,7 +3,7 @@
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
  *  @file
  *  @copyright Copyright (c) 2021 BDCC
- *  @brief Used to test if i can load an image from the web
+ *  @brief Used to display the quit menu
  */
 using Caiman.interfaceG.XboxControl;
 using System;
@@ -53,7 +53,9 @@ namespace Caiman.interfaceG.usercontrol
             this.PerformLayout();
 
         }
-
+        /// <summary>
+        /// Create the log out and the quit button
+        /// </summary>
         public void CreateNavButton()
         {
             lstControls.Add(new List<Control>());

@@ -33,7 +33,7 @@ namespace Caiman.interfaceG.usercontrol
 
 
         /// <summary>
-        /// create a list of button to test the navigation
+        /// create a list of button for the diferents categories
         /// </summary>
         public void CreateListNavButton()
         {

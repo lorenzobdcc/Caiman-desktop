@@ -1,4 +1,11 @@
-﻿using Caiman.database;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Main class of the project used to interact with the emulators
+ */
+using Caiman.database;
 using Caiman.interfaceG;
 using Caiman.interfaceG.usercontrol;
 using Caiman.models;
@@ -43,6 +50,9 @@ namespace Caiman.logique
         public bool noGui;
         public int filtrageAnioscopique;
 
+        /// <summary>
+        /// used to set the name of the game in the navbar
+        /// </summary>
         public Etatenum EmulatorState { get => emulatorState; set
             {
                 
@@ -66,7 +76,11 @@ namespace Caiman.logique
                 
             }
         }
-
+        /// <summary>
+        /// Contructor of the Emulator manager
+        /// This fonction will start some methode to create the users file, set som,e variables and check if the file of the games previously donwloaded are stil present on the user's disk
+        /// </summary>
+        /// <param name="xboxMainFormp"></param>
         public EmulatorsManager(XboxMainForm xboxMainFormp)
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -89,7 +103,7 @@ namespace Caiman.logique
             InitTimer();
         }
         /// <summary>
-        /// appel diférentes fonctions a un interval régulier
+        /// Start some fonction each 100ms
         /// </summary>
         public void InitTimer()
         {
@@ -100,6 +114,9 @@ namespace Caiman.logique
             timer.Start();
         }
 
+        /// <summary>
+        /// Create the save manager for the diférents émulators and scan the folder
+        /// </summary>
         public void CreateSaveManagerAndScan()
         {
             user.emulatorsManager = this;
@@ -114,13 +131,17 @@ namespace Caiman.logique
 
         }
 
+        /// <summary>
+        /// Scan the folders of the save to check if the file has been modified since the last check
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CheckIfSaveIsUpdated(object sender, EventArgs e)
         {
             if (user != null && user.username != "default_username")
             {
                 if (folderAlreadyScaned == false)
                 {
-
 
                     CreateSaveManagerAndScan();
                     folderAlreadyScaned = true;
@@ -131,7 +152,9 @@ namespace Caiman.logique
 
         }
 
-
+        /// <summary>
+        /// Create the folder of the user and the folder of Caiman
+        /// </summary>
         private void CreateAppDataFolder()
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -180,13 +203,14 @@ namespace Caiman.logique
             }
             if (!File.Exists(configPath))
             {
+                //if the file do not exist create it with with the default emulators value
                 using (StreamWriter sw = File.CreateText(configPath))
                 {
-                    sw.WriteLine("configuration = original");
+                    sw.WriteLine("configuration = 1080");
                     sw.WriteLine("fullscreen = true");
-                    sw.WriteLine("definition = 4");
+                    sw.WriteLine("definition = 3");
                     sw.WriteLine("formatSeizeNeuvieme = true");
-                    sw.WriteLine("filtrageAnioscopique = 4");
+                    sw.WriteLine("filtrageAnioscopique = 3");
                 }
                 configFile = new ConfigFileEditor(caimanConfigPath, "config.ini");
 
@@ -195,7 +219,9 @@ namespace Caiman.logique
 
         }
 
-
+        /// <summary>
+        /// Check if the file of the previous download is stil here
+        /// </summary>
         private void CheckIfGameFileIsPresentOnDisk()
         {
             List<string> lst_idGames = gamesListConfigFile.GetAllValueInList();
@@ -213,37 +239,49 @@ namespace Caiman.logique
 
             }
         }
-
+        /// <summary>
+        /// Start the correct emulator for the game pass in parameter
+        /// Set the configuration of the emulator before starting it to be sure the correct parameter are applied
+        /// </summary>
+        /// <param name="idGame"></param>
         public void StartGame(int idGame)
         {
-            string console = callAPI.CallConsoleNameGame(idGame);
-            actualGame = callAPI.CallOneGame(idGame);
-            gameTimer = new GameTimer(actualGame,this);
-            user.MoveFileFromUserFolderToEmulatorFolder();
-            switch (console)
+            //if a game is already started do nothing
+            if (emulatorState == Etatenum.stop)
             {
-                case "Nintendo Gamecube":
-                    actualEmulator = dolphin;
-                    dolphin.SetConfiguration(fullScreen,definition,formatSeizeNeuvieme,filtrageAnioscopique);
-                    dolphin.Execute(idGame);
-                    break;
-                case "Playstation 2":
-                    actualEmulator = PCSX2;
-                    PCSX2.SetConfiguration(fullScreen, definition, formatSeizeNeuvieme, filtrageAnioscopique);
-                    PCSX2.Execute(idGame);
-                    break;
-                case "Wii":
-                    actualEmulator = dolphin;
-                    dolphin.SetConfiguration(fullScreen, definition, formatSeizeNeuvieme, filtrageAnioscopique);
-                    dolphin.Execute(idGame);
-                    break;
-                default:
-                    break;
+
+
+                string console = callAPI.CallConsoleNameGame(idGame);
+                actualGame = callAPI.CallOneGame(idGame);
+                gameTimer = new GameTimer(actualGame, this);
+                user.MoveFileFromUserFolderToEmulatorFolder();
+                switch (console)
+                {
+                    case "Nintendo Gamecube":
+                        actualEmulator = dolphin;
+                        dolphin.SetConfiguration(fullScreen, definition, formatSeizeNeuvieme, filtrageAnioscopique);
+                        dolphin.Execute(idGame);
+                        break;
+                    case "Playstation 2":
+                        actualEmulator = PCSX2;
+                        PCSX2.SetConfiguration(fullScreen, definition, formatSeizeNeuvieme, filtrageAnioscopique);
+                        PCSX2.Execute(idGame);
+                        break;
+                    case "Wii":
+                        actualEmulator = dolphin;
+                        dolphin.SetConfiguration(fullScreen, definition, formatSeizeNeuvieme, filtrageAnioscopique);
+                        dolphin.Execute(idGame);
+                        break;
+                    default:
+                        break;
+                }
+                EmulatorState = Etatenum.start;
             }
-            EmulatorState = Etatenum.start;
 
         }
-
+        /// <summary>
+        /// Close the current game
+        /// </summary>
         internal void CloseGame()
         {
             if (actualEmulator != null)
@@ -257,6 +295,7 @@ namespace Caiman.logique
 
         /// <summary>
         /// Scan les processus en cours sur le pc pour savoir si ils ont été fermé ou non
+        /// Scan the emulator process to know if a emulators is started or not
         /// </summary>
         private void ScanEmulatorProcess(object sender, EventArgs e)
         {
@@ -270,6 +309,9 @@ namespace Caiman.logique
                 }
             }
         }
+        /// <summary>
+        /// Get the configuration save in the config file to applied it to the current Caiman
+        /// </summary>
         public void ScanConfiguration()
         {
             fullScreen = Convert.ToBoolean(configFile.ReadProperties("fullscreen"));
@@ -277,7 +319,10 @@ namespace Caiman.logique
             formatSeizeNeuvieme = Convert.ToBoolean(configFile.ReadProperties("formatSeizeNeuvieme"));
             filtrageAnioscopique = Convert.ToInt32(configFile.ReadProperties("filtrageAnioscopique"));
         }
-
+        /// <summary>
+        /// Applied the configuration depend on the choice of the user
+        /// </summary>
+        /// <param name="configuration"></param>
         public void ApplyGlobalConfiguration(string configuration)
         {
             switch (configuration)
@@ -304,6 +349,10 @@ namespace Caiman.logique
                     break;
             }
         }
+        /// <summary>
+        /// Write the configuration of the fullscreen param
+        /// </summary>
+        /// <param name="fullscreen"></param>
         public void ApplyFullscreenConfiguration(int fullscreen)
         {
             if (fullscreen == 1)
@@ -315,6 +364,10 @@ namespace Caiman.logique
             }
             ScanConfiguration();
         }
+        /// <summary>
+        /// Write the configuration of the format param
+        /// </summary>
+        /// <param name="format"></param>
         public void ApplyFormatConfiguration(int format)
         {
             if (format == 1)

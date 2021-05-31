@@ -1,4 +1,11 @@
-﻿using System;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Used to update a .ini file
+ */
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,7 +28,7 @@ namespace Caiman.logique
             filename = filenamep;
         }
         /// <summary>
-        /// retourne le chemin complet du fichier
+        /// get the fullpath of the file
         /// </summary>
         public string fullPath { get => (path + filename); }
 
@@ -33,7 +40,7 @@ namespace Caiman.logique
         public string ReadProperties(string properties)
         {
             string tempValue = "";
-            //pattern de recherches
+            //search pattern
             string patternRecherche = @"^" + properties + @"";
             string patternExlusion = @"^" + properties + @"[ ]*=[ ]*(.*)";
 
@@ -64,7 +71,7 @@ namespace Caiman.logique
         }
 
         /// <summary>
-        /// permet de métre a jour une propriété 
+        /// update a properties in the file if she exist
         /// </summary>
         public void UpdateProperties(string properties, string updateValue)
         {
@@ -109,7 +116,7 @@ namespace Caiman.logique
         }
 
         /// <summary>
-        /// Remove line in file
+        /// Remove properties in file
         /// </summary>
         /// <param name="properties"></param>
         /// <returns></returns>
@@ -146,12 +153,13 @@ namespace Caiman.logique
             }
           
         }
-
+        /// <summary>
+        /// Get all the values in the list
+        /// </summary>
+        /// <returns></returns>
         public List<string> GetAllValueInList()
         {
-            string tempValue = "";
             List<string> lst_value = new List<string>();
-
 
             using (StreamReader sr = File.OpenText(fullPath))
             {

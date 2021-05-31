@@ -1,4 +1,11 @@
-﻿using Caiman.database;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Used to interact with the emulators Dolphin
+ */
+using Caiman.database;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,18 +20,17 @@ namespace Caiman.logique
         const string EXE_NAME = @"Dolphin.exe";
         const string PROCESS_NAME = "Dolphin";
         const string PATH_FOLDER_CONFIG_FILE_EMULATOR = @"..\..\emulators\Dolphin\User\Config\";
+        private const string DOLPHIN_PATH = @"\..\..\..\emulators\Dolphin\";
         private CallAPI callAPI = new CallAPI();
         string dolphinFolder = "";
 
 
-
-        //fichiers de configuration de Dolphin
         private ConfigFileEditor configFileDolphin;
         private ConfigFileEditor configFileGFX;
 
 
         /// <summary>
-        /// le constructeur n'a pas besoin de paramètre
+        /// default contructor
         /// </summary>
         public Dolphin()
         {
@@ -32,22 +38,13 @@ namespace Caiman.logique
             configFileDolphin = new ConfigFileEditor(dolphinFolder + PATH_FOLDER_CONFIG_FILE_EMULATOR, "Dolphin.ini");
             configFileGFX = new ConfigFileEditor(dolphinFolder + PATH_FOLDER_CONFIG_FILE_EMULATOR, "GFX.ini"); ;
 
-            if (!System.Diagnostics.Debugger.IsAttached)
-            {
-                dolphinFolder += @"\..\..\..\emulators\Dolphin\";
-            }
-            else
-            {
-                //dolphinFolder += @"emulators\Dolphin\";
 
-                dolphinFolder += @"\..\..\..\emulators\Dolphin\";
-            }
+                dolphinFolder += DOLPHIN_PATH;
 
         }
 
         /// <summary>
-        /// Lance l'éxécution d'un jeu grace a une ligne de commande pour l'émulateur
-        /// certain paramètres sont appliqué si besoin
+        /// start the execution of the game witout the GUI
         /// </summary>
         public override void Execute(int idGame)
         {
@@ -73,7 +70,7 @@ namespace Caiman.logique
         }
 
         /// <summary>
-        /// Sert a mettre a jour les fichiers de configurations de Dolphin pour appliquer les paramètres global de l'application
+        /// Used to applied the configuration to the configuration file of Dolphin
         /// </summary>
         public override void UpdateConfigurationFile()
         {

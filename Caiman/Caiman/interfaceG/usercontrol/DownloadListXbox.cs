@@ -3,7 +3,7 @@
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
  *  @file
  *  @copyright Copyright (c) 2021 BDCC
- *  @brief Used to test if i can load an image from the web
+ *  @brief Used to display all the download
  */
 using Caiman.interfaceG.XboxControl;
 using Caiman.logique;
@@ -56,6 +56,9 @@ namespace Caiman.interfaceG.usercontrol
             this.PerformLayout();
 
         }
+        /// <summary>
+        /// Start the timer to refres the data
+        /// </summary>
         public void InitTimer()
         {
             timer = new Timer();
@@ -63,7 +66,11 @@ namespace Caiman.interfaceG.usercontrol
             timer.Interval = 10;
             timer.Start();
         }
-
+        /// <summary>
+        /// Refresh the percentage of each download and show them
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void RefreshData(object sender = null, EventArgs e = null)
         {
             int counter = 0;
@@ -92,7 +99,11 @@ namespace Caiman.interfaceG.usercontrol
             this.Refresh();
 
         }
-
+        /// <summary>
+        /// Create list of download from all the lists of download
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void CreateListDownload(object sender = null, EventArgs e = null)
         {
             

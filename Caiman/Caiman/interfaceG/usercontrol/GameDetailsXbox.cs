@@ -3,7 +3,7 @@
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
  *  @file
  *  @copyright Copyright (c) 2021 BDCC
- *  @brief Used to test if i can load an image from the web
+ *  @brief Used to display the informations of a game
  */
 using Caiman.database;
 using Caiman.interfaceG.XboxControl;
@@ -58,6 +58,10 @@ namespace Caiman.interfaceG.usercontrol
 
         }
 
+        /// <summary>
+        /// Create the view of the detail of a game
+        /// If the game is present on the disk the user can start it if not he can download it
+        /// </summary>
         public void CreateViewGame()
         {
             int rowCounter = 0;
@@ -200,7 +204,10 @@ namespace Caiman.interfaceG.usercontrol
             }
 
         }
-
+        /// <summary>
+        /// use to call the api to get the details
+        /// </summary>
+        /// <param name="idGame"></param>
         public void LoadGameDetail(int idGame)
         {
             game = callAPI.CallOneGame(idGame);

@@ -1,4 +1,11 @@
-﻿using Caiman.database;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Model for user and fonction to syc syve and login
+ */
+using Caiman.database;
 using Caiman.logique;
 using Newtonsoft.Json;
 using System;
@@ -13,6 +20,8 @@ namespace Caiman.models
 {
     public class User
     {
+        private const string PATH_TO_MEMCARDS_PLAYSTATION2 = @"..\..\..\emulators\PCSX2\memcards\";
+        private const string PATH_TO_MEMCARDS_A_GAMECUBE = @"..\..\..\emulators\Dolphin\User\GC\EUR\Card A\";
         public int id;
         public string username;
         public string apitoken;
@@ -42,7 +51,9 @@ namespace Caiman.models
             caimanToken = "0";
             email = "default@email.test";
         }
-
+        /// <summary>
+        /// start the timer who will check if the save has been updated
+        /// </summary>
         public void InitTimer()
         {
             timer = new Timer();
@@ -51,6 +62,10 @@ namespace Caiman.models
             timer.Start();
         }
 
+        /// <summary>
+        /// Create the save moanager for alla the emuators
+        /// </summary>
+        /// <param name="emulatorsManagerp"></param>
         public void CreateSaveManagers(EmulatorsManager emulatorsManagerp)
         {
 
@@ -63,15 +78,20 @@ namespace Caiman.models
             var savePathGamecubeWii = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\Save\GamecubeWii\");
 
 
-            downloadSaveManager.CreateDownload(1, id, apitoken);
-            downloadSaveManager.CreateDownload(2, id, apitoken);
+            downloadSaveManager.CreateDownload(1,  apitoken);
+            downloadSaveManager.CreateDownload(2,  apitoken);
             downloadSaveManager.StartDownload();
-            saveManagerPlaystation2 = new SaveManager(savePathPlaystation, SavePath + @"..\..\..\emulators\PCSX2\memcards\", false, emulatorsManagerp);
-            saveManagerGamecubeWii = new SaveManager(savePathGamecubeWii, SavePath + @"..\..\..\emulators\Dolphin\User\GC\EUR\Card A\", false, emulatorsManagerp);
+            saveManagerPlaystation2 = new SaveManager(savePathPlaystation, SavePath + PATH_TO_MEMCARDS_PLAYSTATION2, false, emulatorsManagerp);
+            saveManagerGamecubeWii = new SaveManager(savePathGamecubeWii, SavePath + PATH_TO_MEMCARDS_A_GAMECUBE, false, emulatorsManagerp);
 
             InitTimer();
         }
-
+        /// <summary>
+        /// Login function to with the API
+        /// </summary>
+        /// <param name="usernamep"></param>
+        /// <param name="password"></param>
+        /// <param name="emulatorsManagerp"></param>
         public void Login(string usernamep, string password, EmulatorsManager emulatorsManagerp)
         {
             User value = callAPI.CallLogin(usernamep, password, emulatorsManagerp);
@@ -81,12 +101,19 @@ namespace Caiman.models
             caimanToken = value.caimanToken;
             email = value.email;
         }
+        /// <summary>
+        /// Check if the save has benn updated
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CheckIfSaveIsUpdated(object sender, EventArgs e)
         {
             saveManagerGamecubeWii.ScanFolder();
             saveManagerPlaystation2.ScanFolder();
         }
-
+        /// <summary>
+        /// Move file from appdata to emulator saves folders
+        /// </summary>
         public void MoveFileFromUserFolderToEmulatorFolder()
         {
             if (saveManagerGamecubeWii == null)
@@ -104,6 +131,9 @@ namespace Caiman.models
             saveManagerGamecubeWii.MoveSaveFileFromUserFolderToEmulatorSaveFolder();
         }
 
+        /// <summary>
+        /// Create the users folder and the config files
+        /// </summary>
         public void CreateUserFolder()
         {
             var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);

@@ -1,4 +1,11 @@
-﻿using Caiman.models;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Abstract base class for emulators
+ */
+using Caiman.models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,7 +20,7 @@ namespace Caiman.logique
         public Game actualGame;
         public Process processEmulator;
 
-        // variables d'affichage graphique
+        // graphical params
         protected bool fullScreen;
         protected int definition;
         protected bool formatSeizeNeuvieme;
@@ -27,7 +34,7 @@ namespace Caiman.logique
         }
 
         /// <summary>
-        /// tue le processus de l'émulateur si un émulateur est lancé.
+        /// Close the process of the emulator
         /// </summary>
         public void Close()
         {
@@ -50,7 +57,7 @@ namespace Caiman.logique
 
 
         /// <summary>
-        /// charge la configuration global dans les variables de l'émulateur
+        /// Load the global configuration and applied it to the emulator config file
         /// </summary>
         /// <param name="fullscreenp"></param>
         /// <param name="definitionp"></param>
@@ -67,15 +74,21 @@ namespace Caiman.logique
 
 
         /// <summary>
-        /// retourne l'information si le processus lancé précedament est toujours en cours
+        /// Get the emulator process life
         /// </summary>
         /// <returns></returns>
         public bool GetEmulatorProcessLife()
         {
             return processEmulator.HasExited;
         }
-
+        /// <summary>
+        /// Start the game
+        /// </summary>
+        /// <param name="idGame"></param>
         public abstract void Execute(int idGame);
+        /// <summary>
+        /// update the configuration file of the emulator
+        /// </summary>
         public abstract void UpdateConfigurationFile();
     }
 }

@@ -3,7 +3,7 @@
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
  *  @file
  *  @copyright Copyright (c) 2021 BDCC
- *  @brief Main classe of the project
+ *  @brief Main classe of the project, it used to interact with all the others component
  */
 using Caiman.database;
 using Caiman.interfaceG.usercontrol;
@@ -25,8 +25,8 @@ namespace Caiman.interfaceG
     {
         const int HEIGHT_NAVBAR = 60;
         const int WIDTH_NAVBAR = 250;
-
-            
+        private const int DEAD_ZONE_JOYSTICK = 20000;
+        private const string URL_TO_CAIMAN_CFPT_INFO = "http://caiman.cfpt.info/";
         List<List<Control>> lstControls = new List<List<Control>>();
         XboxController xboxController;
 
@@ -166,22 +166,22 @@ namespace Caiman.interfaceG
                 bool leftAnalogLeft = false;
                 bool leftAnalogRight = false;
 
-                if (inputAnalogLeftX > 20000)
+                if (inputAnalogLeftX > DEAD_ZONE_JOYSTICK)
                 {
                     leftAnalogRight = true;
                 }
 
-                if (inputAnalogLeftX < -20000)
+                if (inputAnalogLeftX < -DEAD_ZONE_JOYSTICK)
                 {
                     leftAnalogLeft = true;
                 }
 
-                if (inputAnalogLeftY > 20000)
+                if (inputAnalogLeftY > DEAD_ZONE_JOYSTICK)
                 {
                     leftAnalogUp = true;
                 }
 
-                if (inputAnalogLeftY < -20000)
+                if (inputAnalogLeftY < -DEAD_ZONE_JOYSTICK)
                 {
                     leftAnalogDown = true;
                 }
@@ -263,6 +263,7 @@ namespace Caiman.interfaceG
 
                     old_input = input;
                 }
+                //else is used to be allways accessible
                 else
                 {
                     if (input == "Back, LeftShoulder, RightShoulder" && old_input != "Back, LeftShoulder, RightShoulder")
@@ -304,6 +305,7 @@ namespace Caiman.interfaceG
         /// <summary>
         /// Used to modifiy the content of the application by getting the button input values
         /// This function will load diferent windows updated for the right contexte
+        /// each case a diferent from the others
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -423,7 +425,7 @@ namespace Caiman.interfaceG
                     }
                     break;
                 case "newAccount":
-                    System.Diagnostics.Process.Start("http://caiman.cfpt.info/");
+                    System.Diagnostics.Process.Start(URL_TO_CAIMAN_CFPT_INFO);
                     break;
                 case "quit":
                     Application.Exit();
@@ -489,7 +491,7 @@ namespace Caiman.interfaceG
         }
 
         /// <summary>
-        /// Load the configuration menu
+        /// Load the download list
         /// </summary>
         public void LoadNewDownloadList()
         {
@@ -532,7 +534,7 @@ namespace Caiman.interfaceG
         }
 
         /// <summary>
-        /// Load a spécific categorie
+        /// Load details of a game
         /// </summary>
         public void LoadNewGameDetails(int idGame)
         {
@@ -555,7 +557,7 @@ namespace Caiman.interfaceG
         }
 
         /// <summary>
-        /// Load a spécific categorie
+        /// Load favorites game of user
         /// </summary>
         public void LoadNewListGamesFromUserFavorite()
         {
@@ -575,7 +577,7 @@ namespace Caiman.interfaceG
         }
 
         /// <summary>
-        /// Load a spécific categorie
+        /// Load the list of downloaded games
         /// </summary>
         public void LoadNewListGamesDownloadedGames()
         {
@@ -599,7 +601,7 @@ namespace Caiman.interfaceG
         }
 
         /// <summary>
-        /// Load a spécific categorie
+        /// Load the list of all the games
         /// </summary>
         public void LoadNewPanelAllGames()
         {
@@ -620,7 +622,7 @@ namespace Caiman.interfaceG
         }
 
         /// <summary>
-        /// Load a spécific categorie
+        /// Load downloaded game
         /// </summary>
         public void LoadNewHomePanel()
         {
@@ -677,7 +679,7 @@ namespace Caiman.interfaceG
 
 
         /// <summary>
-        /// Used to create the main form content and set the position of each panel
+        /// Used to load the login panel
         /// </summary>
         public void CreateLoginControls()
         {
@@ -692,7 +694,9 @@ namespace Caiman.interfaceG
             Controls.Add(MainPanel);
 
         }
-
+        /// <summary>
+        /// Create the base controls of the create base controls
+        /// </summary>
         public void CreateBaseControl()
         {
             

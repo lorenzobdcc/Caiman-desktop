@@ -1,4 +1,11 @@
-﻿using System;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class used to download save file
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +21,7 @@ namespace Caiman.logique
 {
     public class DownloadSave
     {
+        private const string URL_TO_API_GAMES_ENDPOINT = "http://api.caiman.cfpt.info/games/";
         string pathToFolder;
         public int idEmulator;
         public int idUser;
@@ -40,7 +48,9 @@ namespace Caiman.logique
         {
 
         }
-
+        /// <summary>
+        /// Start the download of the save file depend on the emulator
+        /// </summary>
         public void StartDownload()
         {
 
@@ -57,13 +67,17 @@ namespace Caiman.logique
                     break;
             }
             webClient = new WebClient();
-            Uri uri = new Uri("http://api.caiman.cfpt.info/games/?idEmulator=" + idEmulator + "&idUser=" + idUser + "&apiKey=" + apiKey);
+            Uri uri = new Uri(URL_TO_API_GAMES_ENDPOINT + "?idEmulator=" + idEmulator + "&idUser=" + idUser + "&apiKey=" + apiKey);
             webClient.DownloadProgressChanged += wc_DownloadProgressChanged;
             webClient.DownloadFileAsync(uri, pathToFolder + filename);
             active = true;
 
         }
-
+        /// <summary>
+        /// Check if the download is finish and if he is finished unzip the save file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             percentage = e.ProgressPercentage;

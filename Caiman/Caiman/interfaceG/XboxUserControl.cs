@@ -34,6 +34,7 @@ namespace Caiman.interfaceG
 
         /// <summary>
         /// Check if the position where the user want to go is valid
+        /// if the position is not valid either the cursor will not move or it will go to a valid possition
         /// </summary>
         public int Position_x
         {
@@ -73,6 +74,7 @@ namespace Caiman.interfaceG
 
         /// <summary>
         /// Check if the position where the user want to go is valid
+        /// if the position is not valid either the cursor will not move or it will go to a valid possition
         /// </summary>
         public int Position_y
         {
@@ -112,7 +114,7 @@ namespace Caiman.interfaceG
         }
 
         /// <summary>
-        /// constructor used to specify the contexte who is need to be load
+        /// constructor used to specify the contexte next to the XboxUserControl
         /// </summary>
         /// <param name="xboxMain"></param>
         /// <param name="top"></param>

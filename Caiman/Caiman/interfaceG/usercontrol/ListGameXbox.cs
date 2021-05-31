@@ -3,7 +3,7 @@
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
  *  @file
  *  @copyright Copyright (c) 2021 BDCC
- *  @brief Used to test if i can load an image from the web
+ *  @brief Used to display a list of game
  */
 using Caiman.database;
 using Caiman.interfaceG.XboxControl;
@@ -54,12 +54,16 @@ namespace Caiman.interfaceG.usercontrol
             this.ResumeLayout(false);
             this.PerformLayout();
             this.AutoScroll = true;
+            //this.DoubleBuffered = true;
 
             Width = (Screen.PrimaryScreen.Bounds.Width - 250);
             Height = (Screen.PrimaryScreen.Bounds.Height - 60);
 
         }
-
+        /// <summary>
+        /// Create the list of game receive
+        /// this function does work with a list so no nedd to change the code for diferents lists of games
+        /// </summary>
         public void CreateListGames()
         {
 
@@ -94,7 +98,11 @@ namespace Caiman.interfaceG.usercontrol
                 tempPos_x++;
             }
         }
-
+        /// <summary>
+        /// Override the default clic event to send the contexte to the nain form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private new void bouton_Click(object sender, EventArgs e)
         {
             XboxImage tempXboxButton = (XboxImage)sender;

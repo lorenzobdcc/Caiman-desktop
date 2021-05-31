@@ -3,7 +3,7 @@
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
  *  @file
  *  @copyright Copyright (c) 2021 BDCC
- *  @brief Navbar panel
+ *  @brief Used to display the navbar
  */
 using System;
 using System.Collections.Generic;
@@ -34,13 +34,18 @@ namespace Caiman.interfaceG.usercontrol
             timer.Interval = 500;
             timer.Start();
         }
+        /// <summary>
+        /// update the name of the game already played by the user
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateData(object sender, EventArgs e)
         {
             if (xboxMainForm.emulatorsManager.gameTimer != null)
             {
                 if (actualGameName != "")
                 {
-                    lbl_game_actual.Text = " Now playing: " + actualGameName + "  " + xboxMainForm.emulatorsManager.gameTimer.TimeInGame();
+                    lbl_game_actual.Text = " Now playing: " + actualGameName + "  " + xboxMainForm.emulatorsManager.gameTimer.ToString();
                 }
                 else
                 {
@@ -59,7 +64,9 @@ namespace Caiman.interfaceG.usercontrol
             CreateNavButton();
             InitTimer();
         }
-
+        /// <summary>
+        /// Create the list of button for the navbar
+        /// </summary>
         public void CreateNavButton()
         {
             lstControls.Add(new List<Control>());
@@ -120,6 +127,11 @@ namespace Caiman.interfaceG.usercontrol
             lstControls[0].Add(quit);
 
         }
+        /// <summary>
+        /// Override the default click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private new void bouton_Click(object sender, EventArgs e)
         {
             XboxNavbarButton tempXboxButton = (XboxNavbarButton)sender;

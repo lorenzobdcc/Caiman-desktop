@@ -1,4 +1,11 @@
-﻿using System;
+﻿/** BDCC
+ *  -------
+ *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
+ *  @file
+ *  @copyright Copyright (c) 2021 BDCC
+ *  @brief Class to download a game
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +20,7 @@ namespace Caiman.logique
 {
     public class Download
     {
+        private const string URL_TO_GAMES = "http://api.caiman.cfpt.info/games/";
         string pathToFolder;
         public int idGame;
         string apiKey;
@@ -36,20 +44,26 @@ namespace Caiman.logique
         {
             
         }
-
+        /// <summary>
+        /// Start the download of the file
+        /// </summary>
         public void StartDownload()
         {
             
             if (!CheckIfFileIsPresent())
             {
                 webClient = new WebClient();
-                Uri uri = new Uri("http://api.caiman.cfpt.info/games/?idGame="+idGame+"&apiKey="+apiKey);
+                Uri uri = new Uri(URL_TO_GAMES + "?idGame="+idGame+"&apiKey="+apiKey);
                 webClient.DownloadProgressChanged += wc_DownloadProgressChanged;
                 webClient.DownloadFileAsync(uri,pathToFolder+"temp."+filename);
                 active = true;
             }
         }
-
+        /// <summary>
+        /// check the percent of the downloading if the percentage is 100 start the next download and rename the file to the right name
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void  wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             percentage = e.ProgressPercentage;

@@ -3,7 +3,8 @@
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
  *  @file
  *  @copyright Copyright (c) 2021 BDCC
- *  @brief Used to specify what the applcation need to load
+ *  @brief Used to get information with will be send to the main form to specify what need to happend
+ *  this class is used to simplify the interaction with the application
  */
 using System;
 using System.Collections.Generic;

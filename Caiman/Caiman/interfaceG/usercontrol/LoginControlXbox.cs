@@ -3,7 +3,7 @@
  *  @author Lorenzo Bauduccio <lorenzo.bdcc@eduge.ch>
  *  @file
  *  @copyright Copyright (c) 2021 BDCC
- *  @brief Used to test if i can load an image from the web
+ *  @brief Used to display the login menu
  */
 using Caiman.interfaceG.XboxControl;
 using System;
@@ -55,7 +55,9 @@ namespace Caiman.interfaceG.usercontrol
             this.PerformLayout();
 
         }
-
+        /// <summary>
+        /// Create the view to log in 
+        /// </summary>
         public void CreateLoginForm()
         {
             int position_first_column = ((Screen.PrimaryScreen.Bounds.Width/ 2 ) -150);
@@ -150,6 +152,11 @@ namespace Caiman.interfaceG.usercontrol
 
 
         }
+        /// <summary>
+        /// override the default click event to send the context to the main form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private new void  bouton_Click(object sender, EventArgs e)
         {
             
