@@ -19,7 +19,6 @@ namespace Caiman.interfaceG
     class XboxController
     {
         public List<Controller> lstController = new List<Controller>();
-        public List<String> lstInput = new List<String>();
         private string controllers;
 
         public int valueXboxController;
@@ -37,7 +36,6 @@ namespace Caiman.interfaceG
             overlay = mainFormp;
             valueXboxController = 0;
             lstController.Add(new Controller(UserIndex.One));
-            lstInput.Add("");
 
         }
 

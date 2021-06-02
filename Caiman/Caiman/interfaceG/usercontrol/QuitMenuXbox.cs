@@ -79,8 +79,8 @@ namespace Caiman.interfaceG.usercontrol
             logOut.Click += new System.EventHandler(bouton_Click);
 
 
-            lstControls[1].Add(quit);
-            lstControls[0].Add(logOut);
+            lstControls[0].Add(quit);
+            lstControls[1].Add(logOut);
 
         }
 

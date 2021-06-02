@@ -47,7 +47,7 @@ namespace Caiman.interfaceG.usercontrol
             // testContextUC
             // 
             this.Name = "testContextUC";
-            this.Size = new System.Drawing.Size(Screen.PrimaryScreen.Bounds.Width -200,Screen.PrimaryScreen.Bounds.Height-200);
+            this.Size = new System.Drawing.Size(Screen.PrimaryScreen.Bounds.Width - 200, Screen.PrimaryScreen.Bounds.Height - 200);
             this.BackColor = Color.Transparent;
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -58,19 +58,16 @@ namespace Caiman.interfaceG.usercontrol
         /// </summary>
         public void CreateNavButton()
         {
-            int postion_first_column = ((Screen.PrimaryScreen.Bounds.Width/ 12 ));
-
-
+            int postion_first_column = ((Screen.PrimaryScreen.Bounds.Width / 12));
 
 
             Label lbl_configuration_actual = new Label();
-            lbl_configuration_actual.Text = "Global configuration: "+ xboxMainForm.emulatorsManager.configFile.ReadProperties("configuration");
+            lbl_configuration_actual.Text = "Global configuration: " + xboxMainForm.emulatorsManager.configFile.ReadProperties("configuration");
             lbl_configuration_actual.Location = new System.Drawing.Point(postion_first_column, ((Screen.PrimaryScreen.Bounds.Height / 2) - 350));
             lbl_configuration_actual.Width = 300;
             lbl_configuration_actual.Font = new Font("Arial", 14);
             lbl_configuration_actual.ForeColor = Color.White;
             Controls.Add(lbl_configuration_actual);
-
 
 
             Label lbl_fullscreen_actual = new Label();
@@ -118,7 +115,7 @@ namespace Caiman.interfaceG.usercontrol
             original.contextInfos.optionalString1 = "original";
             original.Text = "Original";
             original.Width = 100;
-            original.Location = new System.Drawing.Point(postion_first_column,( (Screen.PrimaryScreen.Bounds.Height/2) -300));
+            original.Location = new System.Drawing.Point(postion_first_column, ((Screen.PrimaryScreen.Bounds.Height / 2) - 300));
             Controls.Add(original);
             original.Click += new System.EventHandler(bouton_Click);
 

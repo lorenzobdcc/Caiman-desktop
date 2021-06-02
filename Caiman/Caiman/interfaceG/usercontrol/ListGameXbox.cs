@@ -25,6 +25,8 @@ namespace Caiman.interfaceG.usercontrol
     {
 
         private const string PATH_IMG_CAIMAN = @"Caiman\img\";
+        private const int NAVBAR_HEIGHT = 60;
+        private const int SIDEBAR_WIDTH = 250;
         public List<Game> lst_games;
         /// <summary>
         /// contrucot with next panel specify
@@ -56,8 +58,8 @@ namespace Caiman.interfaceG.usercontrol
             this.AutoScroll = true;
             //this.DoubleBuffered = true;
 
-            Width = (Screen.PrimaryScreen.Bounds.Width - 250);
-            Height = (Screen.PrimaryScreen.Bounds.Height - 60);
+            Width = (Screen.PrimaryScreen.Bounds.Width - SIDEBAR_WIDTH);
+            Height = (Screen.PrimaryScreen.Bounds.Height - NAVBAR_HEIGHT);
 
         }
         /// <summary>

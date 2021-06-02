@@ -1,0 +1,201 @@
+PCSX2 1.6.0-20200506140834- compiled on May  6 2020
+Savestate version: 0x9a0e0000
+
+Host Machine Init:
+	Operating System =  Microsoft Windows 10 Pro (build 19042), 64-bit
+	Physical RAM     =  16315 MB
+	CPU name         =  AMD Ryzen 7 2700X Eight-Core Processor
+	Vendor/Model     =  AuthenticAMD (stepping 02)
+	CPU speed        =  3.693 ghz (16 logical threads)
+	x86PType         =  Standard OEM
+	x86Flags         =  178bfbff 7ed8320b
+	x86EFlags        =  2fd3fbff
+
+x86 Features Detected:
+	SSE2.. SSE3.. SSSE3.. SSE4.1.. SSE4.2.. AVX.. AVX2.. FMA
+	SSE4a 
+
+Reserving memory for recompilers...
+
+Loading plugins from D:\Caiman-desktop\Caiman\Caiman\emulators\PCSX2\plugins...
+	Bound   GS: GSdx32-SSE2.dll [GSdx 20200506140834 (MSVC 19.25 SSE2/AVX) 1.2.0]
+	Bound  PAD: LilyPad.dll [LilyPad (20200506140834) 0.12.1]
+	Bound SPU2: Spu2-X.dll [SPU2-X 20200506140834 2.0.0]
+(GameDB) 9858 games on record (loaded in 104ms)
+	Bound CDVD: cdvdGigaherz.dll [cdvdGigaherz 20200506140834 0.11.0]
+	Bound  USB: USBnull.dll [USBnull Driver 20200506140834 0.7.0]
+	Bound   FW: FWnull.dll [FWnull Driver 20200506140834 0.7.0]
+	Bound DEV9: DEV9null.dll [DEV9null Driver 20200506140834 0.5.0]
+Plugins loaded successfully.
+
+HLE Notice: ELF does not have a path.
+
+Initializing plugins...
+	Init GS
+	Init PAD
+	Init SPU2
+	Init CDVD
+	Init USB
+	Init FW
+	Init DEV9
+Plugins initialized successfully.
+
+Patches: No CRC found, using 00000000 instead.
+Opening plugins...
+	Opening GS
+	Opening PAD
+	Opening SPU2
+Current Renderer: Direct3D 11 (Hardware renderer)
+GSdx Lookup CRC:0
+GSdx Lookup CRC:0
+	Opening CDVD
+isoFile open ok: C:\Caiman\Playstation2\KINGDOM_HEARTS_II_FMX.iso
+	Image type  = DVD
+ * CDVD Disk Open: DVD, Single layer or unknown:
+ * * Track 1: Data (Mode 1) (2014791 sectors)
+	Opening USB
+	Opening FW
+	Opening DEV9
+McdSlot 0 [File]: D:\Caiman-desktop\Caiman\Caiman\emulators\PCSX2\memcards\Mcd001.ps2
+McdSlot 1 [File]: D:\Caiman-desktop\Caiman\Caiman\emulators\PCSX2\memcards\Mcd002.ps2
+Plugins opened successfully.
+EE/iR5900-32 Recompiler Reset
+	Bios Found: USA     v01.60(07/02/2002)  Console
+	BIOS rom1 module not found, skipping...
+	BIOS rom2 module not found, skipping...
+	BIOS erom module not found, skipping...
+# Initialize memory (rev:3.63, ctm:196Mhz, cpuclk:147Mhz detected)
+Frame buffer size set to  512x512 (4096x4096)
+
+PlayStation 2 ======== Hard reset boot
+ ROMGEN=2002-0207, IOP info (CPUID=1f, CACH_CONFIG=0, 2MB, IOP mode)
+ <20020207-164243,ROMconf,PS20160AC20020207.bin:11552>
+# Total accessable memory size: 32 MB (B:2:8:0) (363:2:7c30)
+# TLB spad=0 kernel=1:12 default=13:30 extended=31:38
+# Initialize Start.
+# Initialize GS ...
+# Initialize INTC ...
+# Initialize TIMER ...
+# Initialize DMAC ...
+# Initialize VU1 ...
+# Initialize VIF1 ...
+# Initialize GIF ...
+# Initialize VU0 ...
+# Initialize VIF0 ...
+# Initialize IPU ...
+# Initialize FPU ...
+# Initialize User Memory ...
+# Initialize Scratch Pad ...
+# Initialize Done.
+
+EE DECI2 Manager version 0.06 Feb  7 2002 16:41:20
+  CPUID=2e20, BoardID=0, ROMGEN=2002-0207, 32M
+
+Patches: No CRC found, using 00000000 instead.
+(SYSTEM.CNF) Detected PS2 Disc = cdrom0:\SLPM_666.75;1
+(SYSTEM.CNF) Software version = 1.01
+(SYSTEM.CNF) Disc region type = NTSC
+ELF (cdrom0:\SLPM_666.75;1) Game CRC = 0xA2308B19, EntryPoint = 0x0010001C
+(SYSTEM.CNF) Detected PS2 Disc = cdrom0:\SLPM_666.75;1
+(SYSTEM.CNF) Software version = 1.01
+(SYSTEM.CNF) Disc region type = NTSC
+
+IOP Realtime Kernel Ver.0.9.1
+    Copyright 1999 (C) Sony Computer Entertainment Inc. 
+Reboot service module.(99/11/10)
+cdvd driver module version 0.1.1 (C)SCEI
+Load File service.(99/11/05)
+Multi Threaded Fileio module.(99/11/15) 
+iop heap service (99/11/03)
+loadelf: fname cdrom0:¥SLPM_666.75;1 secname all
+loadelf version 3.30
+Input ELF format filename = cdrom0:¥SLPM_666.75;1
+0 00100000 0027a800 ........................................
+Loaded, cdrom0:¥SLPM_666.75;1
+start address 0x10001c
+gp address 00000000
+# Restart Without Memory Clear.
+# Initialize GS ...
+# Initialize INTC ...
+# Initialize TIMER ...
+# Initialize DMAC ...
+# Initialize VU1 ...
+# Initialize VIF1 ...
+# Initialize GIF ...
+# Initialize VU0 ...
+# Initialize VIF0 ...
+# Initialize IPU ...
+# Initialize FPU ...
+# Initialize Scratch Pad ...
+# Restart Without Memory Clear Done.
+Elf entry point @ 0x0010001c about to get recompiled. Load patches first.
+GSdx Lookup CRC:A2308B19
+GSdx Lookup CRC:A2308B19
+Get Reboot Request From EE
+ROM directory not found
+
+PlayStation 2 ======== Update rebooting..
+
+PlayStation 2 ======== Update reboot complete
+cdvdman Init
+
+IOP Realtime Kernel Ver. 2.2
+    Copyright 1999-2002 (C) Sony Computer Entertainment Inc. 
+Reboot service module.(99/11/10)
+cdvd driver module version 0.1.1 (C)SCEI
+Load File service.(99/11/05)
+Multi Threaded Fileio module.(99/11/15) 
+iop heap service (99/11/03)
+loadmodule: fname cdrom0:¥SIO2MAN.IRX args 0 arg 
+loadmodule: id 25, ret 0
+loadmodule: fname cdrom0:¥SIO2D.IRX args 0 arg 
+loadmodule: id 26, ret 0
+loadmodule: fname cdrom0:¥DBCMAN.IRX args 0 arg 
+loadmodule: id 27, ret 0
+loadmodule: fname cdrom0:¥PAD2¥DS2O.IRX args 0 arg 
+loadmodule: id 28, ret 0
+loadmodule: fname cdrom0:¥PAD2¥DS2O.IRX args 0 arg 
+loadmodule: id 29, ret 0
+loadmodule: fname cdrom0:¥MCMAN.IRX args 0 arg 
+loadmodule: id 30, ret 2
+loadmodule: fname cdrom0:¥MCSERV.IRX args 0 arg 
+loadmodule: id 31, ret 2
+loadmodule: fname cdrom0:¥LIBSD.IRX args 0 arg 
+loadmodule: id 32, ret 0
+loadmodule: fname cdrom0:¥LIBSSL.IRX args 0 arg 
+[44mSquare-Enix SoundDriver Nov  8 2006 12:52:13 by Hitoshi Ohori[0m
+loadmodule: id 33, ret 2
+(UpdateVSyncRate) Mode Changed to NTSC.
+(UpdateVSyncRate) FPS Limit Changed : 59,93 fps
+NO. ID  BANK     NO     ADRS   SIZE SPU
+System(017400:017400) SE(038fd8/038fd8:100%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+System(017400:017400) SE(034350/038fd8: 91%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+System(017400:017400) SE(031548/038fd8: 86%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+System(017400:017400) SE(030dc0/038fd8: 85%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+System(017400:017400) SE(030ab8/038fd8: 85%) BGM(0: -1:  0%,1: -1:  0%)
+Closing plugins...
+	Closing DEV9
+	Closing FW
+	Closing USB
+	Closing CDVD
+	Closing SPU2
+	Closing PAD
+	Closing GS
+Plugins closed successfully.
+Shutting down plugins...
+Plugins shutdown successfully.
+(GameDB) Unloading...

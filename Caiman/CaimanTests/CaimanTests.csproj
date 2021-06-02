@@ -57,6 +57,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="logique\GameTimerTests.cs" />
+    <Compile Include="models\TimeInGameTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

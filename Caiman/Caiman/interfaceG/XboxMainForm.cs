@@ -27,6 +27,7 @@ namespace Caiman.interfaceG
         const int WIDTH_NAVBAR = 250;
         private const int DEAD_ZONE_JOYSTICK = 20000;
         private const string URL_TO_CAIMAN_CFPT_INFO = "http://caiman.cfpt.info/";
+        private const int INTERVAL_SCAN_IN_MS = 10;
         List<List<Control>> lstControls = new List<List<Control>>();
         XboxController xboxController;
 
@@ -54,16 +55,20 @@ namespace Caiman.interfaceG
 
         Timer timer = new Timer();
 
-        
 
-        public XboxUserControl ActiveControl1 { get => activeControl1;set
+
+        public XboxUserControl ActiveControl1
+        {
+            get => activeControl1; set
             {
                 old_activeControl = ActiveControl1;
                 activeControl1 = value;
             }
         }
 
-        public XboxUserControl MainPanel { get => mainPanel; set
+        public XboxUserControl MainPanel
+        {
+            get => mainPanel; set
             {
                 mainPanel = value;
             }
@@ -75,7 +80,7 @@ namespace Caiman.interfaceG
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern int GetWindowThreadProcessId(IntPtr handle, out int processId);
 
-        
+
         /// <summary>
         /// Default contructor used to chreate the test form
         /// </summary>
@@ -87,10 +92,11 @@ namespace Caiman.interfaceG
             xboxController = new XboxController(this);
             lstControls.Add(new List<Control>());
             lstControls.Add(new List<Control>());
+            lstOldContexte.Add(new ContextInformations("home", 0, 0, 0));
             string token = emulatorsManager.loginFile.ReadProperties("token");
             if (token != "")
             {
-                 emulatorsManager.user = callAPI.CallLoginToken(token,emulatorsManager);
+                emulatorsManager.user = callAPI.CallLoginToken(token, emulatorsManager);
                 if (emulatorsManager.user.caimanToken != "0")
                 {
                     emulatorsManager.loginFile.UpdateProperties("token", emulatorsManager.user.caimanToken);
@@ -108,7 +114,7 @@ namespace Caiman.interfaceG
 
                 lstOldContexte.Add(new ContextInformations("home", 0, 0, 0));
             }
-            
+
         }
 
         /// <summary>
@@ -120,7 +126,7 @@ namespace Caiman.interfaceG
             timer.Tick += new EventHandler(ScanInput);
 
 
-            timer.Interval = 10;
+            timer.Interval = INTERVAL_SCAN_IN_MS;
             timer.Start();
         }
 
@@ -397,7 +403,7 @@ namespace Caiman.interfaceG
                     this.ContexteHandler(tempContexteRemove, null);
                     break;
                 case "download":
-                    emulatorsManager.downloadManager.CreateDownload(contexte.id_contexte,emulatorsManager.user.apitoken);
+                    emulatorsManager.downloadManager.CreateDownload(contexte.id_contexte, emulatorsManager.user.apitoken);
                     emulatorsManager.downloadManager.StartDownload();
                     ContextInformations tempContexte = new ContextInformations();
                     tempContexte.contexte = "downloadList";
@@ -411,15 +417,16 @@ namespace Caiman.interfaceG
                     this.ContexteHandler(tempContexteDelete, null);
                     break;
                 case "login":
-                    emulatorsManager.user.Login(contexte.optionalString1, contexte.optionalString2,emulatorsManager);
+                    emulatorsManager.user.Login(contexte.optionalString1, contexte.optionalString2, emulatorsManager);
 
                     if (emulatorsManager.user.id == 0)
                     {
                         LoginControlXbox tempLogin = (LoginControlXbox)mainPanel;
                         tempLogin.lbl_error.Text = "Invalid login";
-                    }else
+                    }
+                    else
                     {
-                        emulatorsManager.loginFile.UpdateProperties("token",emulatorsManager.user.caimanToken);
+                        emulatorsManager.loginFile.UpdateProperties("token", emulatorsManager.user.caimanToken);
                         CreateBaseControl();
                         FocusToMainPanel();
                     }
@@ -447,7 +454,7 @@ namespace Caiman.interfaceG
                 default:
                     break;
             }
-           
+
         }
 
 
@@ -591,7 +598,7 @@ namespace Caiman.interfaceG
             Controls.Remove(mainPanel);
             mainPanel.Dispose();
             MainPanel = temp;
-            
+
             MainPanel.Location = new Point(WIDTH_NAVBAR, HEIGHT_NAVBAR);
             Controls.Add(MainPanel);
 
@@ -662,17 +669,22 @@ namespace Caiman.interfaceG
 
             if (lstOldContexte.Count > 0)
             {
+
+
+
                 int lastContext = (lstOldContexte.Count() - 2);
-                if (activeContexte.contexte != "home")
+
+                if (lstOldContexte.Count > 1)
                 {
 
+
                     ContexteHandler(lstOldContexte[lastContext], new EventArgs());
-                    lstOldContexte.RemoveAt((lastContext +1));
+                    lstOldContexte.RemoveAt((lastContext + 1));
                     activeControl1.position_x = 0;
                     activeControl1.position_y = 0;
                     ActiveControl1.MoveActivateControl();
-
                 }
+
             }
 
         }
@@ -699,7 +711,7 @@ namespace Caiman.interfaceG
         /// </summary>
         public void CreateBaseControl()
         {
-            
+
             sidePanel = new SideBarXbox(this);
             sidePanel.Location = new Point(0, HEIGHT_NAVBAR);
 
@@ -738,7 +750,7 @@ namespace Caiman.interfaceG
             FocusToMainPanel();
         }
 
-       
+
         /// <summary>
         /// Event call when the main form is loaded
         /// </summary>

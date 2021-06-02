@@ -17,7 +17,12 @@ namespace Caiman
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new XboxMainForm());
+            
+            XboxMainForm xboxMainForm = new XboxMainForm();
+            xboxMainForm.StartPosition = FormStartPosition.Manual;
+            xboxMainForm.Location = Screen.PrimaryScreen.Bounds.Location;
+            Application.Run(xboxMainForm);
+
         }
     }
 }

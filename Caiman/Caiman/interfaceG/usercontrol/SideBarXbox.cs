@@ -41,7 +41,7 @@ namespace Caiman.interfaceG.usercontrol
             List<Category> lst_category = xboxMainForm.callAPI.CallAllCategories();
             lst_navbar.Add("Downloaded games");
             lst_navbar.Add("Favorites games");
-            lst_navbar.Add("All Games");
+            lst_navbar.Add("All games");
 
             foreach (var item in lst_category)
             {

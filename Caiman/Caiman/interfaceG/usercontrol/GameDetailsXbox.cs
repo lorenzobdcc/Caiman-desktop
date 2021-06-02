@@ -85,7 +85,7 @@ namespace Caiman.interfaceG.usercontrol
             }
             else
             {
-                lbl_timeInGame.Text = "";
+                lbl_timeInGame.Text = "Time played: 00h00";
             }
             lbl_timeInGame.Location = new System.Drawing.Point(500, 110);
             lbl_timeInGame.Width = 472;
