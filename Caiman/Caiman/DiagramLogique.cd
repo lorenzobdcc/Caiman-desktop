@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Caiman.models.User">
+    <Position X="16" Y="7.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAA4AAAAQCAAQwAAAggAEAAAAAAkAAAAAQAABAAgA=</HashCode>
+      <FileName>models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.models.TimeInGame">
+    <Position X="13.5" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>models\TimeInGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.models.Game">
+    <Position X="19.75" Y="7.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAARAAAIAIAAAAAAEAGAGCAAAAAAAACAIQgA=</HashCode>
+      <FileName>models\Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.models.FileModel">
+    <Position X="25.25" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAgA=</HashCode>
+      <FileName>models\File.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.models.ConsoleModel">
+    <Position X="27.75" Y="7.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAABAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>models\Console.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.models.Category">
+    <Position X="22.75" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>models\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.logique.SaveManager">
+    <Position X="26.25" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAlAAEAAQCQAEAAAAKgQAAAAAAAACQAAAAAQ=</HashCode>
+      <FileName>logique\SaveManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.logique.PCSX2">
+    <Position X="4" Y="4.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>EAABAACAAAAAAAQQAQAAAAAAAAAAAAAACAAAAIAABEA=</HashCode>
+      <FileName>logique\PCSX2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.logique.GameTimer">
+    <Position X="3" Y="10.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAAABAAAAUAAAAAAAAAAAAAgEIBAAAAAAAAAA=</HashCode>
+      <FileName>logique\GameTimer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.logique.EmulatorsManager">
+    <Position X="9" Y="0.5" Width="3" />
+    <NestedTypes>
+      <Enum Name="Caiman.logique.EmulatorsManager.Etatenum" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>logique\EmulatorsManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ABQAAhEYAAACIAgXAICCiAIoCAAAAiACAIAAAAEYEwA=</HashCode>
+      <FileName>logique\EmulatorsManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.logique.Emulator">
+    <Position X="2.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAICAAAAAQAAAACAAAACAAAACACAIAAAACABAA=</HashCode>
+      <FileName>logique\Emulator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.logique.DownloadSaveManager">
+    <Position X="19.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAgAAQAQA=</HashCode>
+      <FileName>logique\DownloadSaveManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.logique.DownloadSave">
+    <Position X="22.75" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAJABAAAAAiRAAAAAAEYAAAAAAAIAAAAIAAAAAE=</HashCode>
+      <FileName>logique\DownloadSave.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.logique.DownloadManager">
+    <Position X="12.25" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AUAWQIAAAAEEEAAQAAAAAAAQAAAAAAAAAAAAgAAQAAA=</HashCode>
+      <FileName>logique\DownloadManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.logique.Download">
+    <Position X="15.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAJAAAAAAACRAAIAAAAYAAAAAAAIAIAAIAAAAAA=</HashCode>
+      <FileName>logique\Download.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.logique.Dolphin">
+    <Position X="0.5" Y="4.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAAAAAAAAAQQAQAAEAAAAAAACACACAAAAAAABAA=</HashCode>
+      <FileName>logique\Dolphin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.logique.ConfigFileEditor">
+    <Position X="6.25" Y="10.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAIAAAQACAAAgAgAAAAAAAEAAAAgAAAA=</HashCode>
+      <FileName>logique\ConfigFileEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caiman.database.CallAPI">
+    <Position X="9" Y="10.25" Width="3" />
+    <NestedTypes>
+      <Class Name="Caiman.database.CallAPI.RootObject" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>database\CallAPI.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAABAEAAAgQQAAIEAEAAAAAgAAAAAABACQJBCEQAI=</HashCode>
+      <FileName>database\CallAPI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
