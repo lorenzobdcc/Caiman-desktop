@@ -87,7 +87,7 @@ namespace Caiman.logique
             {
                 minutesString = "0" + minutes;
             }
-            time = minutesString + "m" + secondesString;
+            time = minutesString + " min " + secondesString+" s";
             return time;
         }
 

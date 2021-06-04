@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['quitmenuxbox_2ecs_101',['QuitMenuXbox.cs',['../_quit_menu_xbox_8cs.html',1,'']]]
+  ['emulator_2ecs_212',['Emulator.cs',['../_emulator_8cs.html',1,'']]],
+  ['emulatorsmanager_2ecs_213',['EmulatorsManager.cs',['../_emulators_manager_8cs.html',1,'']]]
 ];

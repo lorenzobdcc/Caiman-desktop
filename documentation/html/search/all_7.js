@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inittimer_25',['InitTimer',['../class_caiman_1_1interface_g_1_1_xbox_main_form.html#aa125de82399676cd223c853e871bd8b4',1,'Caiman::interfaceG::XboxMainForm']]]
+  ['inittimer_88',['InitTimer',['../class_caiman_1_1interface_g_1_1usercontrol_1_1_download_list_xbox.html#a86bb615bb7a5489e9502c55d5b6e5e14',1,'Caiman.interfaceG.usercontrol.DownloadListXbox.InitTimer()'],['../class_caiman_1_1interface_g_1_1usercontrol_1_1_navbar_xbox.html#af33af5ef4d7c0ad5cdaebc1641a49ac7',1,'Caiman.interfaceG.usercontrol.NavbarXbox.InitTimer()'],['../class_caiman_1_1interface_g_1_1_xbox_main_form.html#aa125de82399676cd223c853e871bd8b4',1,'Caiman.interfaceG.XboxMainForm.InitTimer()'],['../class_caiman_1_1logique_1_1_emulators_manager.html#af37af0ae1ae36ec75ab2bc02f3338c18',1,'Caiman.logique.EmulatorsManager.InitTimer()'],['../class_caiman_1_1logique_1_1_game_timer.html#ab5865662da4256da2f0bb91407986040',1,'Caiman.logique.GameTimer.InitTimer()'],['../class_caiman_1_1models_1_1_user.html#a42df0d18d27aa1b4aea195a24ba0f5b7',1,'Caiman.models.User.InitTimer()']]]
 ];

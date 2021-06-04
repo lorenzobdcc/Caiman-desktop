@@ -3,22 +3,336 @@
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_1_1_args}{Args}}
-\item 
-class \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_1_1_data_object}{Data\+Object}}
-\item 
-class \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_1_1_headers}{Headers}}
-\item 
 class \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_1_1_root_object}{Root\+Object}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Class to get response of the APi \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_af40ac097cae5728eec337f240cf1ae5a}\label{class_caiman_1_1database_1_1_call_a_p_i_af40ac097cae5728eec337f240cf1ae5a}} 
-string {\bfseries Call} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_caiman_1_1models_1_1_user}{User}} \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_ac0e039acff5ef27964724d3a545550fb}{Call\+Login}} (string username, string password, \mbox{\hyperlink{class_caiman_1_1logique_1_1_emulators_manager}{Emulators\+Manager}} emulator\+Managerp)
+\begin{DoxyCompactList}\small\item\em Call the login with a password and a username \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_caiman_1_1models_1_1_user}{User}} \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_aa7a28f571ab16ed520bf9f5d8a36e2ab}{Call\+Login\+Token}} (string token, \mbox{\hyperlink{class_caiman_1_1logique_1_1_emulators_manager}{Emulators\+Manager}} emulator\+ManagerP)
+\begin{DoxyCompactList}\small\item\em Call the login api with the caiman\+Token \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_a1c8244c1981dd7efa6ef6f37415ac608}{Upload\+Save}} (int id\+Emulator, int id\+User, string api\+Key, string path)
+\begin{DoxyCompactList}\small\item\em Upload save to the Bunker \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_caiman_1_1models_1_1_game}{Game}} $>$ \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_a9de7fcffe3cb09630ed5f519eb8f8fba}{Call\+All\+Games}} ()
+\begin{DoxyCompactList}\small\item\em Get all the games infos \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_caiman_1_1models_1_1_game}{Game}} \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_a421342fd8091c7485c238eb6d6e7489a}{Call\+One\+Game}} (int id\+Game)
+\begin{DoxyCompactList}\small\item\em Get the details of one game \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_caiman_1_1models_1_1_time_in_game}{Time\+In\+Game}} \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_aa27155d87f93320945f7f8e7cf6cf24b}{Call\+Time\+In\+Game\+User}} (int id\+Game, int id\+User)
+\begin{DoxyCompactList}\small\item\em Get the time of play of a player in a specific game \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_a4f98c0dbb81acb77316f86ba6b559c4f}{Call\+File\+Name\+Game}} (int id\+Game)
+\begin{DoxyCompactList}\small\item\em Get the name of the file of a game \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_a068494fd8ba4e1306887d20d51947dfb}{Call\+Folder\+Name\+Game}} (int id\+Game)
+\begin{DoxyCompactList}\small\item\em Get the name of the folder of an emulator \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_aa970990dda6ce58156562eabc96df20b}{Call\+Console\+Name\+Game}} (int id\+Game)
+\begin{DoxyCompactList}\small\item\em Get the name of a console \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_caiman_1_1models_1_1_category}{Category}} $>$ \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_a2dd95412ea4719661b77e63aa6350b46}{Call\+All\+Categories}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of All the categories and their id\textquotesingle{}s \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_caiman_1_1models_1_1_game}{Game}} $>$ \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_a4d233c17d7aefe3d3ee51bc4cca130ad}{Call\+User\+Favorite\+Games}} (int user\+Id)
+\begin{DoxyCompactList}\small\item\em Get the list of the user favorite game \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_caiman_1_1models_1_1_game}{Game}} $>$ \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_a15ffbed9a547e1d46376409be36aa180}{Call\+Games\+From\+Category}} (int category\+Id)
+\begin{DoxyCompactList}\small\item\em Get tjhe list of games who as a specific category \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_a395cd5fbd4346cc8cbfbc2f3da26a33c}{Add\+Game\+To\+Favorite}} (int id\+Game, int id\+User)
+\begin{DoxyCompactList}\small\item\em Add a game to favorite \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_aeeb9e3b530856d5b65356b8db4dd38fd}{Remove\+Game\+From\+Favorite}} (int id\+Game, int id\+User)
+\begin{DoxyCompactList}\small\item\em Remove a game from favorite \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_ac754bed05043257934cc2584c30e2270}{Add\+One\+Minute\+To\+Game}} (int id\+Game, int id\+User)
+\begin{DoxyCompactList}\small\item\em Add a minute of play to a game \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i_a4a395e97ccb09778a2296e7652f7c44e}{Check\+If\+Game\+Is\+In\+Favorite}} (int id\+Game, int id\+User)
+\begin{DoxyCompactList}\small\item\em Get if a game is already in favorite \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_a395cd5fbd4346cc8cbfbc2f3da26a33c}\label{class_caiman_1_1database_1_1_call_a_p_i_a395cd5fbd4346cc8cbfbc2f3da26a33c}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!AddGameToFavorite@{AddGameToFavorite}}
+\index{AddGameToFavorite@{AddGameToFavorite}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{AddGameToFavorite()}{AddGameToFavorite()}}
+{\footnotesize\ttfamily void Caiman.\+database.\+Call\+API.\+Add\+Game\+To\+Favorite (\begin{DoxyParamCaption}\item[{int}]{id\+Game,  }\item[{int}]{id\+User }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a game to favorite 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Game} & \\
+\hline
+{\em id\+User} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_ac754bed05043257934cc2584c30e2270}\label{class_caiman_1_1database_1_1_call_a_p_i_ac754bed05043257934cc2584c30e2270}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!AddOneMinuteToGame@{AddOneMinuteToGame}}
+\index{AddOneMinuteToGame@{AddOneMinuteToGame}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{AddOneMinuteToGame()}{AddOneMinuteToGame()}}
+{\footnotesize\ttfamily void Caiman.\+database.\+Call\+API.\+Add\+One\+Minute\+To\+Game (\begin{DoxyParamCaption}\item[{int}]{id\+Game,  }\item[{int}]{id\+User }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a minute of play to a game 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Game} & \\
+\hline
+{\em id\+User} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_a2dd95412ea4719661b77e63aa6350b46}\label{class_caiman_1_1database_1_1_call_a_p_i_a2dd95412ea4719661b77e63aa6350b46}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!CallAllCategories@{CallAllCategories}}
+\index{CallAllCategories@{CallAllCategories}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{CallAllCategories()}{CallAllCategories()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_caiman_1_1models_1_1_category}{Category}}$>$ Caiman.\+database.\+Call\+API.\+Call\+All\+Categories (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the name of All the categories and their id\textquotesingle{}s 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_a9de7fcffe3cb09630ed5f519eb8f8fba}\label{class_caiman_1_1database_1_1_call_a_p_i_a9de7fcffe3cb09630ed5f519eb8f8fba}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!CallAllGames@{CallAllGames}}
+\index{CallAllGames@{CallAllGames}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{CallAllGames()}{CallAllGames()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_caiman_1_1models_1_1_game}{Game}}$>$ Caiman.\+database.\+Call\+API.\+Call\+All\+Games (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get all the games infos 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_aa970990dda6ce58156562eabc96df20b}\label{class_caiman_1_1database_1_1_call_a_p_i_aa970990dda6ce58156562eabc96df20b}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!CallConsoleNameGame@{CallConsoleNameGame}}
+\index{CallConsoleNameGame@{CallConsoleNameGame}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{CallConsoleNameGame()}{CallConsoleNameGame()}}
+{\footnotesize\ttfamily string Caiman.\+database.\+Call\+API.\+Call\+Console\+Name\+Game (\begin{DoxyParamCaption}\item[{int}]{id\+Game }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the name of a console 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Game} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_a4f98c0dbb81acb77316f86ba6b559c4f}\label{class_caiman_1_1database_1_1_call_a_p_i_a4f98c0dbb81acb77316f86ba6b559c4f}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!CallFileNameGame@{CallFileNameGame}}
+\index{CallFileNameGame@{CallFileNameGame}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{CallFileNameGame()}{CallFileNameGame()}}
+{\footnotesize\ttfamily string Caiman.\+database.\+Call\+API.\+Call\+File\+Name\+Game (\begin{DoxyParamCaption}\item[{int}]{id\+Game }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the name of the file of a game 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Game} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_a068494fd8ba4e1306887d20d51947dfb}\label{class_caiman_1_1database_1_1_call_a_p_i_a068494fd8ba4e1306887d20d51947dfb}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!CallFolderNameGame@{CallFolderNameGame}}
+\index{CallFolderNameGame@{CallFolderNameGame}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{CallFolderNameGame()}{CallFolderNameGame()}}
+{\footnotesize\ttfamily string Caiman.\+database.\+Call\+API.\+Call\+Folder\+Name\+Game (\begin{DoxyParamCaption}\item[{int}]{id\+Game }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the name of the folder of an emulator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Game} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_a15ffbed9a547e1d46376409be36aa180}\label{class_caiman_1_1database_1_1_call_a_p_i_a15ffbed9a547e1d46376409be36aa180}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!CallGamesFromCategory@{CallGamesFromCategory}}
+\index{CallGamesFromCategory@{CallGamesFromCategory}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{CallGamesFromCategory()}{CallGamesFromCategory()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_caiman_1_1models_1_1_game}{Game}}$>$ Caiman.\+database.\+Call\+API.\+Call\+Games\+From\+Category (\begin{DoxyParamCaption}\item[{int}]{category\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get tjhe list of games who as a specific category 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_ac0e039acff5ef27964724d3a545550fb}\label{class_caiman_1_1database_1_1_call_a_p_i_ac0e039acff5ef27964724d3a545550fb}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!CallLogin@{CallLogin}}
+\index{CallLogin@{CallLogin}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{CallLogin()}{CallLogin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_caiman_1_1models_1_1_user}{User}} Caiman.\+database.\+Call\+API.\+Call\+Login (\begin{DoxyParamCaption}\item[{string}]{username,  }\item[{string}]{password,  }\item[{\mbox{\hyperlink{class_caiman_1_1logique_1_1_emulators_manager}{Emulators\+Manager}}}]{emulator\+Managerp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Call the login with a password and a username 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & \\
+\hline
+{\em password} & \\
+\hline
+{\em emulator\+Managerp} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_aa7a28f571ab16ed520bf9f5d8a36e2ab}\label{class_caiman_1_1database_1_1_call_a_p_i_aa7a28f571ab16ed520bf9f5d8a36e2ab}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!CallLoginToken@{CallLoginToken}}
+\index{CallLoginToken@{CallLoginToken}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{CallLoginToken()}{CallLoginToken()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_caiman_1_1models_1_1_user}{User}} Caiman.\+database.\+Call\+API.\+Call\+Login\+Token (\begin{DoxyParamCaption}\item[{string}]{token,  }\item[{\mbox{\hyperlink{class_caiman_1_1logique_1_1_emulators_manager}{Emulators\+Manager}}}]{emulator\+ManagerP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Call the login api with the caiman\+Token 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & \\
+\hline
+{\em emulator\+ManagerP} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_a421342fd8091c7485c238eb6d6e7489a}\label{class_caiman_1_1database_1_1_call_a_p_i_a421342fd8091c7485c238eb6d6e7489a}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!CallOneGame@{CallOneGame}}
+\index{CallOneGame@{CallOneGame}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{CallOneGame()}{CallOneGame()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_caiman_1_1models_1_1_game}{Game}} Caiman.\+database.\+Call\+API.\+Call\+One\+Game (\begin{DoxyParamCaption}\item[{int}]{id\+Game }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the details of one game 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Game} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_aa27155d87f93320945f7f8e7cf6cf24b}\label{class_caiman_1_1database_1_1_call_a_p_i_aa27155d87f93320945f7f8e7cf6cf24b}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!CallTimeInGameUser@{CallTimeInGameUser}}
+\index{CallTimeInGameUser@{CallTimeInGameUser}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{CallTimeInGameUser()}{CallTimeInGameUser()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_caiman_1_1models_1_1_time_in_game}{Time\+In\+Game}} Caiman.\+database.\+Call\+API.\+Call\+Time\+In\+Game\+User (\begin{DoxyParamCaption}\item[{int}]{id\+Game,  }\item[{int}]{id\+User }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the time of play of a player in a specific game 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Game} & \\
+\hline
+{\em id\+User} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_a4d233c17d7aefe3d3ee51bc4cca130ad}\label{class_caiman_1_1database_1_1_call_a_p_i_a4d233c17d7aefe3d3ee51bc4cca130ad}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!CallUserFavoriteGames@{CallUserFavoriteGames}}
+\index{CallUserFavoriteGames@{CallUserFavoriteGames}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{CallUserFavoriteGames()}{CallUserFavoriteGames()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_caiman_1_1models_1_1_game}{Game}}$>$ Caiman.\+database.\+Call\+API.\+Call\+User\+Favorite\+Games (\begin{DoxyParamCaption}\item[{int}]{user\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the list of the user favorite game 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_a4a395e97ccb09778a2296e7652f7c44e}\label{class_caiman_1_1database_1_1_call_a_p_i_a4a395e97ccb09778a2296e7652f7c44e}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!CheckIfGameIsInFavorite@{CheckIfGameIsInFavorite}}
+\index{CheckIfGameIsInFavorite@{CheckIfGameIsInFavorite}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{CheckIfGameIsInFavorite()}{CheckIfGameIsInFavorite()}}
+{\footnotesize\ttfamily bool Caiman.\+database.\+Call\+API.\+Check\+If\+Game\+Is\+In\+Favorite (\begin{DoxyParamCaption}\item[{int}]{id\+Game,  }\item[{int}]{id\+User }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get if a game is already in favorite 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Game} & \\
+\hline
+{\em id\+User} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_aeeb9e3b530856d5b65356b8db4dd38fd}\label{class_caiman_1_1database_1_1_call_a_p_i_aeeb9e3b530856d5b65356b8db4dd38fd}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!RemoveGameFromFavorite@{RemoveGameFromFavorite}}
+\index{RemoveGameFromFavorite@{RemoveGameFromFavorite}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{RemoveGameFromFavorite()}{RemoveGameFromFavorite()}}
+{\footnotesize\ttfamily void Caiman.\+database.\+Call\+API.\+Remove\+Game\+From\+Favorite (\begin{DoxyParamCaption}\item[{int}]{id\+Game,  }\item[{int}]{id\+User }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove a game from favorite 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Game} & \\
+\hline
+{\em id\+User} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_caiman_1_1database_1_1_call_a_p_i_a1c8244c1981dd7efa6ef6f37415ac608}\label{class_caiman_1_1database_1_1_call_a_p_i_a1c8244c1981dd7efa6ef6f37415ac608}} 
+\index{Caiman.database.CallAPI@{Caiman.database.CallAPI}!UploadSave@{UploadSave}}
+\index{UploadSave@{UploadSave}!Caiman.database.CallAPI@{Caiman.database.CallAPI}}
+\doxysubsubsection{\texorpdfstring{UploadSave()}{UploadSave()}}
+{\footnotesize\ttfamily void Caiman.\+database.\+Call\+API.\+Upload\+Save (\begin{DoxyParamCaption}\item[{int}]{id\+Emulator,  }\item[{int}]{id\+User,  }\item[{string}]{api\+Key,  }\item[{string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Upload save to the Bunker 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Emulator} & \\
+\hline
+{\em id\+User} & \\
+\hline
+{\em api\+Key} & \\
+\hline
+{\em path} & \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Caiman/database/Call\+API.\+cs\end{DoxyCompactItemize}
+Caiman/database/\mbox{\hyperlink{_call_a_p_i_8cs}{Call\+API.\+cs}}\end{DoxyCompactItemize}

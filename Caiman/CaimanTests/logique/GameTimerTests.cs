@@ -45,8 +45,8 @@ namespace Caiman.logique.Tests
             target11m48s.UpdateTimer(new object(),new EventArgs());
             //assert
 
-            Assert.AreEqual("00m50", target50s.ToString());
-            Assert.AreEqual("11m48", target11m48s.ToString());
+            Assert.AreEqual("00 min 50 s", target50s.ToString());
+            Assert.AreEqual("11 min 48 s", target11m48s.ToString());
         }
 
         [TestMethod()]
@@ -68,10 +68,10 @@ namespace Caiman.logique.Tests
             //act
 
             //assert
-            Assert.AreEqual("10m00", target10m.ToString());
-            Assert.AreEqual("00m59", target59s.ToString());
-            Assert.AreEqual("00m50", target50s.ToString());
-            Assert.AreEqual("11m48", target11m48s.ToString());
+            Assert.AreEqual("10 min 00 s", target10m.ToString());
+            Assert.AreEqual("00 min 59 s", target59s.ToString());
+            Assert.AreEqual("00 min 50 s", target50s.ToString());
+            Assert.AreEqual("11 min 48 s", target11m48s.ToString());
         }
     }
 }

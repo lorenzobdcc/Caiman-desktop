@@ -1,0 +1,117 @@
+\hypertarget{class_caiman_1_1logique_1_1_download_manager}{}\doxysection{Caiman.\+logique.\+Download\+Manager Class Reference}
+\label{class_caiman_1_1logique_1_1_download_manager}\index{Caiman.logique.DownloadManager@{Caiman.logique.DownloadManager}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_download_manager_ac2dc0ccdeabc321925b521b92330a4d1}\label{class_caiman_1_1logique_1_1_download_manager_ac2dc0ccdeabc321925b521b92330a4d1}} 
+{\bfseries Download\+Manager} (\mbox{\hyperlink{class_caiman_1_1logique_1_1_emulators_manager}{Emulators\+Manager}} emulators\+Managerp)
+\item 
+void \mbox{\hyperlink{class_caiman_1_1logique_1_1_download_manager_a7d5a2cbf8fbaa43b5b7d8230590a2fea}{Delete\+Game}} (int id\+Game)
+\begin{DoxyCompactList}\small\item\em Delete a game form the disk of the user \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1logique_1_1_download_manager_a315ab3d26dddd2cca996ae3e641c8b46}{Start\+Download}} ()
+\begin{DoxyCompactList}\small\item\em Start the download \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1logique_1_1_download_manager_ab38e5bc2aa3307b1fcbcb4eea9d4d405}{Next\+Download}} ()
+\begin{DoxyCompactList}\small\item\em Move the started download to the finished list and start the next download \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1logique_1_1_download_manager_a9b90daf164fcf371b15883d9d0710ac6}{Create\+Download}} (int id\+Game, string api\+Key)
+\begin{DoxyCompactList}\small\item\em Create a download and add it to the download list \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_caiman_1_1logique_1_1_download_manager_a5ca93f01daf61df4a93bbc829156cc19}{Check\+If\+Download\+Is\+Active}} (int id\+Game)
+\begin{DoxyCompactList}\small\item\em Check if a download is alredy active \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_download_manager_a449b08a8cd168837d03faea6cb2c24dc}\label{class_caiman_1_1logique_1_1_download_manager_a449b08a8cd168837d03faea6cb2c24dc}} 
+List$<$ \mbox{\hyperlink{class_caiman_1_1logique_1_1_download}{Download}} $>$ {\bfseries lst\+\_\+download} = new List$<$\mbox{\hyperlink{class_caiman_1_1logique_1_1_download}{Download}}$>$()
+\item 
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_download_manager_a3363c44af82237ff34304a8a58168e84}\label{class_caiman_1_1logique_1_1_download_manager_a3363c44af82237ff34304a8a58168e84}} 
+List$<$ \mbox{\hyperlink{class_caiman_1_1logique_1_1_download}{Download}} $>$ {\bfseries lst\+\_\+active\+Download} = new List$<$\mbox{\hyperlink{class_caiman_1_1logique_1_1_download}{Download}}$>$()
+\item 
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_download_manager_aa20aca2eedfafea110f4d779a68ab41d}\label{class_caiman_1_1logique_1_1_download_manager_aa20aca2eedfafea110f4d779a68ab41d}} 
+List$<$ \mbox{\hyperlink{class_caiman_1_1logique_1_1_download}{Download}} $>$ {\bfseries lst\+\_\+finish\+Download} = new List$<$\mbox{\hyperlink{class_caiman_1_1logique_1_1_download}{Download}}$>$()
+\item 
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_download_manager_a12ba75e8f5c1a27d4c4521e55fedb59b}\label{class_caiman_1_1logique_1_1_download_manager_a12ba75e8f5c1a27d4c4521e55fedb59b}} 
+\mbox{\hyperlink{class_caiman_1_1logique_1_1_emulators_manager}{Emulators\+Manager}} {\bfseries emulators\+Manager}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_download_manager_a6ecffd5e9eacb8d33f82128e630b201d}\label{class_caiman_1_1logique_1_1_download_manager_a6ecffd5e9eacb8d33f82128e630b201d}} 
+List$<$ \mbox{\hyperlink{class_caiman_1_1logique_1_1_download}{Download}} $>$ {\bfseries Lst\+\_\+all\+Donwload}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_download_manager_a5ca93f01daf61df4a93bbc829156cc19}\label{class_caiman_1_1logique_1_1_download_manager_a5ca93f01daf61df4a93bbc829156cc19}} 
+\index{Caiman.logique.DownloadManager@{Caiman.logique.DownloadManager}!CheckIfDownloadIsActive@{CheckIfDownloadIsActive}}
+\index{CheckIfDownloadIsActive@{CheckIfDownloadIsActive}!Caiman.logique.DownloadManager@{Caiman.logique.DownloadManager}}
+\doxysubsubsection{\texorpdfstring{CheckIfDownloadIsActive()}{CheckIfDownloadIsActive()}}
+{\footnotesize\ttfamily bool Caiman.\+logique.\+Download\+Manager.\+Check\+If\+Download\+Is\+Active (\begin{DoxyParamCaption}\item[{int}]{id\+Game }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if a download is alredy active 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Game} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_download_manager_a9b90daf164fcf371b15883d9d0710ac6}\label{class_caiman_1_1logique_1_1_download_manager_a9b90daf164fcf371b15883d9d0710ac6}} 
+\index{Caiman.logique.DownloadManager@{Caiman.logique.DownloadManager}!CreateDownload@{CreateDownload}}
+\index{CreateDownload@{CreateDownload}!Caiman.logique.DownloadManager@{Caiman.logique.DownloadManager}}
+\doxysubsubsection{\texorpdfstring{CreateDownload()}{CreateDownload()}}
+{\footnotesize\ttfamily void Caiman.\+logique.\+Download\+Manager.\+Create\+Download (\begin{DoxyParamCaption}\item[{int}]{id\+Game,  }\item[{string}]{api\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a download and add it to the download list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Game} & \\
+\hline
+{\em api\+Key} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_download_manager_a7d5a2cbf8fbaa43b5b7d8230590a2fea}\label{class_caiman_1_1logique_1_1_download_manager_a7d5a2cbf8fbaa43b5b7d8230590a2fea}} 
+\index{Caiman.logique.DownloadManager@{Caiman.logique.DownloadManager}!DeleteGame@{DeleteGame}}
+\index{DeleteGame@{DeleteGame}!Caiman.logique.DownloadManager@{Caiman.logique.DownloadManager}}
+\doxysubsubsection{\texorpdfstring{DeleteGame()}{DeleteGame()}}
+{\footnotesize\ttfamily void Caiman.\+logique.\+Download\+Manager.\+Delete\+Game (\begin{DoxyParamCaption}\item[{int}]{id\+Game }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Delete a game form the disk of the user 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Game} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_download_manager_ab38e5bc2aa3307b1fcbcb4eea9d4d405}\label{class_caiman_1_1logique_1_1_download_manager_ab38e5bc2aa3307b1fcbcb4eea9d4d405}} 
+\index{Caiman.logique.DownloadManager@{Caiman.logique.DownloadManager}!NextDownload@{NextDownload}}
+\index{NextDownload@{NextDownload}!Caiman.logique.DownloadManager@{Caiman.logique.DownloadManager}}
+\doxysubsubsection{\texorpdfstring{NextDownload()}{NextDownload()}}
+{\footnotesize\ttfamily void Caiman.\+logique.\+Download\+Manager.\+Next\+Download (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Move the started download to the finished list and start the next download 
+
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_download_manager_a315ab3d26dddd2cca996ae3e641c8b46}\label{class_caiman_1_1logique_1_1_download_manager_a315ab3d26dddd2cca996ae3e641c8b46}} 
+\index{Caiman.logique.DownloadManager@{Caiman.logique.DownloadManager}!StartDownload@{StartDownload}}
+\index{StartDownload@{StartDownload}!Caiman.logique.DownloadManager@{Caiman.logique.DownloadManager}}
+\doxysubsubsection{\texorpdfstring{StartDownload()}{StartDownload()}}
+{\footnotesize\ttfamily void Caiman.\+logique.\+Download\+Manager.\+Start\+Download (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Start the download 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Caiman/logique/\mbox{\hyperlink{_download_manager_8cs}{Download\+Manager.\+cs}}\end{DoxyCompactItemize}

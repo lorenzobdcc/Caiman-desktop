@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['dataobject_75',['DataObject',['../class_caiman_1_1database_1_1_call_a_p_i_1_1_data_object.html',1,'Caiman::database::CallAPI']]]
+  ['emulator_170',['Emulator',['../class_caiman_1_1logique_1_1_emulator.html',1,'Caiman::logique']]],
+  ['emulatorsmanager_171',['EmulatorsManager',['../class_caiman_1_1logique_1_1_emulators_manager.html',1,'Caiman::logique']]]
 ];

@@ -43,10 +43,10 @@ namespace Caiman.models.Tests
 
             //act 
             //assert
-            Assert.AreEqual("00h50", target50.TimeHoursMinutes);
-            Assert.AreEqual("01h00", target60.TimeHoursMinutes);
-            Assert.AreEqual("02h10", target130.TimeHoursMinutes);
-            Assert.AreEqual("00h00", target0.TimeHoursMinutes);
+            Assert.AreEqual("00 h 50", target50.TimeHoursMinutes);
+            Assert.AreEqual("01 h 00", target60.TimeHoursMinutes);
+            Assert.AreEqual("02 h 10", target130.TimeHoursMinutes);
+            Assert.AreEqual("00 h 00", target0.TimeHoursMinutes);
         }
     }
 }

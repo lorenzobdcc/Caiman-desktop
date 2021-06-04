@@ -141,7 +141,6 @@ namespace Caiman.models
             var savePath = Path.Combine(userPath, @"Save\");
             var savePathPlaystation = Path.Combine(savePath, @"Playstation2\");
             var savePathGamecubeWii = Path.Combine(savePath, @"GamecubeWii\");
-            var configFile = Path.Combine(userPath, @"config.ini");
 
             if (!Directory.Exists(userPath))
             {
@@ -159,10 +158,7 @@ namespace Caiman.models
             {
                 Directory.CreateDirectory(savePathGamecubeWii);
             }
-            if (!File.Exists(configFile))
-            {
-                File.Create(configFile);
-            }
+
         }
 
     }

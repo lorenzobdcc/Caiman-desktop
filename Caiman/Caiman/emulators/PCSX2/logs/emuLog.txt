@@ -2,27 +2,26 @@ PCSX2 1.6.0-20200506140834- compiled on May  6 2020
 Savestate version: 0x9a0e0000
 
 Host Machine Init:
-	Operating System =  Microsoft Windows 10 Pro (build 19042), 64-bit
-	Physical RAM     =  16315 MB
-	CPU name         =  AMD Ryzen 7 2700X Eight-Core Processor
-	Vendor/Model     =  AuthenticAMD (stepping 02)
-	CPU speed        =  3.693 ghz (16 logical threads)
+	Operating System =  Microsoft Windows 10 Education (build 19042), 64-bit
+	Physical RAM     =  32711 MB
+	CPU name         =  Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
+	Vendor/Model     =  GenuineIntel (stepping 09)
+	CPU speed        =  3.599 ghz (8 logical threads)
 	x86PType         =  Standard OEM
-	x86Flags         =  178bfbff 7ed8320b
-	x86EFlags        =  2fd3fbff
+	x86Flags         =  bfebfbff 7ffafbff
+	x86EFlags        =  2c100000
 
 x86 Features Detected:
 	SSE2.. SSE3.. SSSE3.. SSE4.1.. SSE4.2.. AVX.. AVX2.. FMA
-	SSE4a 
 
 Reserving memory for recompilers...
 
-Loading plugins from D:\Caiman-desktop\Caiman\Caiman\emulators\PCSX2\plugins...
+Loading plugins from C:\Users\BDCC\Desktop\Caiman-desktop\Caiman\Caiman\Emulators\PCSX2\plugins...
 	Bound   GS: GSdx32-SSE2.dll [GSdx 20200506140834 (MSVC 19.25 SSE2/AVX) 1.2.0]
 	Bound  PAD: LilyPad.dll [LilyPad (20200506140834) 0.12.1]
 	Bound SPU2: Spu2-X.dll [SPU2-X 20200506140834 2.0.0]
-(GameDB) 9858 games on record (loaded in 104ms)
 	Bound CDVD: cdvdGigaherz.dll [cdvdGigaherz 20200506140834 0.11.0]
+(GameDB) 9858 games on record (loaded in 137ms)
 	Bound  USB: USBnull.dll [USBnull Driver 20200506140834 0.7.0]
 	Bound   FW: FWnull.dll [FWnull Driver 20200506140834 0.7.0]
 	Bound DEV9: DEV9null.dll [DEV9null Driver 20200506140834 0.5.0]
@@ -46,8 +45,6 @@ Opening plugins...
 	Opening PAD
 	Opening SPU2
 Current Renderer: Direct3D 11 (Hardware renderer)
-GSdx Lookup CRC:0
-GSdx Lookup CRC:0
 	Opening CDVD
 isoFile open ok: C:\Caiman\Playstation2\KINGDOM_HEARTS_II_FMX.iso
 	Image type  = DVD
@@ -56,8 +53,10 @@ isoFile open ok: C:\Caiman\Playstation2\KINGDOM_HEARTS_II_FMX.iso
 	Opening USB
 	Opening FW
 	Opening DEV9
-McdSlot 0 [File]: D:\Caiman-desktop\Caiman\Caiman\emulators\PCSX2\memcards\Mcd001.ps2
-McdSlot 1 [File]: D:\Caiman-desktop\Caiman\Caiman\emulators\PCSX2\memcards\Mcd002.ps2
+McdSlot 0 [File]: C:\Users\BDCC\Desktop\Caiman-desktop\Caiman\Caiman\Emulators\PCSX2\memcards\Mcd001.ps2
+GSdx Lookup CRC:0
+McdSlot 1 [File]: C:\Users\BDCC\Desktop\Caiman-desktop\Caiman\Caiman\Emulators\PCSX2\memcards\Mcd002.ps2
+GSdx Lookup CRC:0
 Plugins opened successfully.
 EE/iR5900-32 Recompiler Reset
 	Bios Found: USA     v01.60(07/02/2002)  Console
@@ -65,13 +64,13 @@ EE/iR5900-32 Recompiler Reset
 	BIOS rom2 module not found, skipping...
 	BIOS erom module not found, skipping...
 # Initialize memory (rev:3.63, ctm:196Mhz, cpuclk:147Mhz detected)
-Frame buffer size set to  512x512 (4096x4096)
 
 PlayStation 2 ======== Hard reset boot
  ROMGEN=2002-0207, IOP info (CPUID=1f, CACH_CONFIG=0, 2MB, IOP mode)
  <20020207-164243,ROMconf,PS20160AC20020207.bin:11552>
 # Total accessable memory size: 32 MB (B:2:8:0) (363:2:7c30)
 # TLB spad=0 kernel=1:12 default=13:30 extended=31:38
+Frame buffer size set to  512x512 (2048x2048)
 # Initialize Start.
 # Initialize GS ...
 # Initialize INTC ...
@@ -187,15 +186,3 @@ NO. ID  BANK     NO     ADRS   SIZE SPU
 002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
 003 WAV    3      1   1d0ce0    300 100000-104FFF
 System(017400:017400) SE(030ab8/038fd8: 85%) BGM(0: -1:  0%,1: -1:  0%)
-Closing plugins...
-	Closing DEV9
-	Closing FW
-	Closing USB
-	Closing CDVD
-	Closing SPU2
-	Closing PAD
-	Closing GS
-Plugins closed successfully.
-Shutting down plugins...
-Plugins shutdown successfully.
-(GameDB) Unloading...

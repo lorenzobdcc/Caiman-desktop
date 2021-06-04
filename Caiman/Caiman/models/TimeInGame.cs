@@ -40,7 +40,7 @@ namespace Caiman.models
                 {
                     hoursString = "0" + hours;
                 }
-                time = hoursString + "h" + minutesString;
+                time = hoursString + " h " + minutesString;
                 return time;
             }
         }
