@@ -1,4 +1,4 @@
-# Caiman
+# Logbook
 
 ## 19.04.2021
 
@@ -22,7 +22,7 @@ je réfléchi à ce par quoi je vais commencer j'hésite entre commencé entre l
 
 Modélisation de la BDD
 
-![alt text](images_logbook/bdd_tableau.jpg "base de données")
+![alt text](images/bdd_tableau.jpg "base de données")
 
 
 ### 10h30
@@ -349,7 +349,7 @@ Réflexion sur l’interface graphique et création du projet
 
 Importation de la classe XboxController.cs que j’ai créé précédemment. 
 
-![alt text](images_logbook/schema-form.jpg "Schéma de base de la form")
+![alt text](images/schema-form.jpg "Schéma de base de la form")
 
 La table MainForm contient un XboxController() cette classe permet de connaître les manettes connectés au pc et de recevoir leur inputs.
 
@@ -368,7 +368,7 @@ Mon problème venait du fait que je n’initialisait pas l 'usercontrol.
 ### 13h00
 
 Je vais essayer de me baser sur la structure des div en html pour gérer le contenu de l’affichage.
-![alt text](images_logbook/schema-div.jpeg "Schéma de base de la form")
+![alt text](images/schema-div.jpeg "Schéma de base de la form")
 
 ### 14h00
 
@@ -411,7 +411,7 @@ la navbar
 la sidebar
 le main contenu
 
-![alt text](images_logbook/schema-home-page.jpeg "Schéma de base de la form")
+![alt text](images/schema-home-page.jpeg "Schéma de base de la form")
 
 ### 10h50
 
@@ -476,9 +476,6 @@ Je commente les classe que j’ai créé et je supprimer les fonctions qui ne so
 ### 12h40
 
 documentation + Création d’une release pour pouvoir essayer l’interface
-Je déplace la documentation du projet web au projet desktop la seul documentation qui reste dans le projet web est celle qui concern son propre code (doxygen)
-
-documentation + Création d’une release pour pouvoir essayer l’interface
 
 Je déplace la documentation du projet web au projet desktop la seul documentation qui reste dans le projet web est celle qui concern son propre code (doxygen)
 
@@ -489,7 +486,9 @@ Je dois modifier la connexion a la base de données  pour passer des fonctions d
 
 J’ai mis à jour ma documentation du projet.
 
-J’ai essayé d’ajouter des tâche à mon git mais j’ai eu des soucis pour la signature du projet donc je remet ca a plus tard.
+J’ai essayé d’ajouter des tâches à mon git mais j’ai eu des soucis pour la signature du projet donc je remet ça à plus tard.
+
+--------
 
 ## 10.05.2021
 
@@ -646,10 +645,13 @@ Création d’une ébauche de diagram de classe sur le tableau.
 
 J’ai repris en grande partie le diagramme de mon POC en y ajoutant une gestion des sauvegardes et des téléchagement.
 
-![alt text](images_logbook/schema_caiman.jpeg "Schéma de base de la form")
+
+
 ### 9h00
 
 Création du schéma sous UMLetino
+
+Première version du diagramme de la logique de Caiman.
 
 ### 13h20
 
@@ -716,7 +718,6 @@ je commence l'affichage des détails d’un jeu
  je fais des recherche sur la façon de télécharger un jeu
 
 --------
-
 ## 20.05.2021
 
 ### 8h05
@@ -975,4 +976,5 @@ Je vais essayer d’installer un certificat ssl sur le serveur debian
 
 ### 13h30
 
-Je n'arrive pas a installer certbot donc je laisse ca en attente
+Je n'arrive pas a installer certbot donc je laisse ca en attente 
+

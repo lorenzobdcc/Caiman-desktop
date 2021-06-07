@@ -1,0 +1,508 @@
+\begin{theindex}
+
+  \item {AddGameToFavorite}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{12}
+  \item {AddOneMinuteToGame}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{12}
+  \item {AddValue}
+    \subitem {Caiman.logique.ConfigFileEditor}, \hyperpage{18}
+  \item {ApplicationIsActivated}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{58}
+  \item {ApplyFormatConfiguration}
+    \subitem {Caiman.logique.EmulatorsManager}, \hyperpage{34}
+  \item {ApplyFullscreenConfiguration}
+    \subitem {Caiman.logique.EmulatorsManager}, \hyperpage{34}
+  \item {ApplyGlobalConfiguration}
+    \subitem {Caiman.logique.EmulatorsManager}, \hyperpage{34}
+
+  \indexspace
+
+  \item {bouton\_Click}
+    \subitem {Caiman.interfaceG.XboxUserControl}, \hyperpage{66}
+
+  \indexspace
+
+  \item {Caiman}, \hyperpage{9}
+  \item {Caiman.database}, \hyperpage{9}
+  \item {Caiman.database.CallAPI}, \hyperpage{11}
+    \subitem {AddGameToFavorite}, \hyperpage{12}
+    \subitem {AddOneMinuteToGame}, \hyperpage{12}
+    \subitem {CallAllCategories}, \hyperpage{12}
+    \subitem {CallAllGames}, \hyperpage{13}
+    \subitem {CallConsoleNameGame}, \hyperpage{13}
+    \subitem {CallFileNameGame}, \hyperpage{13}
+    \subitem {CallFolderNameGame}, \hyperpage{14}
+    \subitem {CallGamesFromCategory}, \hyperpage{14}
+    \subitem {CallLogin}, \hyperpage{14}
+    \subitem {CallLoginToken}, \hyperpage{15}
+    \subitem {CallOneGame}, \hyperpage{15}
+    \subitem {CallTimeInGameUser}, \hyperpage{15}
+    \subitem {CallUserFavoriteGames}, \hyperpage{16}
+    \subitem {CheckIfGameIsInFavorite}, \hyperpage{16}
+    \subitem {RemoveGameFromFavorite}, \hyperpage{17}
+    \subitem {UploadSave}, \hyperpage{17}
+  \item {Caiman.database.CallAPI.RootObject}, \hyperpage{46}
+  \item {Caiman.interfaceG}, \hyperpage{9}
+  \item {Caiman.interfaceG.ContextInformations}, \hyperpage{21}
+    \subitem {ContextInformations}, \hyperpage{22}
+  \item {Caiman.interfaceG.usercontrol}, \hyperpage{9}
+  \item {Caiman.interfaceG.usercontrol.ConfigurationMenuXbox}, 
+		\hyperpage{20}
+    \subitem {ConfigurationMenuXbox}, \hyperpage{20}
+    \subitem {CreateNavButton}, \hyperpage{21}
+  \item {Caiman.interfaceG.usercontrol.DownloadListXbox}, 
+		\hyperpage{25}
+    \subitem {CreateListDownload}, \hyperpage{26}
+    \subitem {DownloadListXbox}, \hyperpage{25}
+    \subitem {InitTimer}, \hyperpage{26}
+    \subitem {RefreshData}, \hyperpage{26}
+  \item {Caiman.interfaceG.usercontrol.GameDetailsXbox}, \hyperpage{36}
+    \subitem {CreateViewGame}, \hyperpage{37}
+    \subitem {GameDetailsXbox}, \hyperpage{37}
+    \subitem {LoadGameDetail}, \hyperpage{38}
+  \item {Caiman.interfaceG.usercontrol.ListGameXbox}, \hyperpage{39}
+    \subitem {CreateListGames}, \hyperpage{40}
+    \subitem {ListGameXbox}, \hyperpage{40}
+  \item {Caiman.interfaceG.usercontrol.LoginControlXbox}, 
+		\hyperpage{41}
+    \subitem {CreateLoginForm}, \hyperpage{42}
+    \subitem {LoginControlXbox}, \hyperpage{41}
+  \item {Caiman.interfaceG.usercontrol.NavbarXbox}, \hyperpage{42}
+    \subitem {CreateNavButton}, \hyperpage{42}
+    \subitem {InitTimer}, \hyperpage{43}
+  \item {Caiman.interfaceG.usercontrol.QuitMenuXbox}, \hyperpage{44}
+    \subitem {CreateNavButton}, \hyperpage{45}
+    \subitem {QuitMenuXbox}, \hyperpage{45}
+  \item {Caiman.interfaceG.usercontrol.SideBarXbox}, \hyperpage{48}
+    \subitem {CreateListNavButton}, \hyperpage{48}
+    \subitem {SideBarXbox}, \hyperpage{48}
+  \item {Caiman.interfaceG.usercontrol.XboxButton}, \hyperpage{52}
+    \subitem {OnClick}, \hyperpage{52}
+    \subitem {OnGotFocus}, \hyperpage{53}
+    \subitem {OnLostFocus}, \hyperpage{53}
+    \subitem {XboxButton}, \hyperpage{52}
+  \item {Caiman.interfaceG.usercontrol.XboxNavbarButton}, 
+		\hyperpage{61}
+    \subitem {OnClick}, \hyperpage{62}
+    \subitem {OnGotFocus}, \hyperpage{63}
+    \subitem {OnLostFocus}, \hyperpage{63}
+    \subitem {XboxNavbarButton}, \hyperpage{62}
+  \item {Caiman.interfaceG.XboxControl}, \hyperpage{10}
+  \item {Caiman.interfaceG.XboxControl.XboxImage}, \hyperpage{55}
+    \subitem {OnClick}, \hyperpage{56}
+    \subitem {OnGotFocus}, \hyperpage{56}
+    \subitem {OnLostFocus}, \hyperpage{56}
+    \subitem {XboxImage}, \hyperpage{55}
+  \item {Caiman.interfaceG.XboxController}, \hyperpage{53}
+    \subitem {GetInput}, \hyperpage{54}
+    \subitem {ScanController}, \hyperpage{54}
+    \subitem {XboxController}, \hyperpage{54}
+  \item {Caiman.interfaceG.XboxMainForm}, \hyperpage{57}
+    \subitem {ApplicationIsActivated}, \hyperpage{58}
+    \subitem {ContexteHandler}, \hyperpage{58}
+    \subitem {CreateBaseControl}, \hyperpage{59}
+    \subitem {CreateLoginControls}, \hyperpage{59}
+    \subitem {FocusToMainPanel}, \hyperpage{59}
+    \subitem {InitTimer}, \hyperpage{59}
+    \subitem {LoadNewConfigurationMenu}, \hyperpage{59}
+    \subitem {LoadNewDownloadList}, \hyperpage{59}
+    \subitem {LoadNewGameDetails}, \hyperpage{60}
+    \subitem {LoadNewHomePanel}, \hyperpage{60}
+    \subitem {LoadNewListGamesDownloadedGames}, \hyperpage{60}
+    \subitem {LoadNewListGamesFromCategory}, \hyperpage{60}
+    \subitem {LoadNewListGamesFromUserFavorite}, \hyperpage{60}
+    \subitem {LoadNewPanelAllGames}, \hyperpage{60}
+    \subitem {LoadNewQuitMenu}, \hyperpage{61}
+    \subitem {LoadOldMainPanel}, \hyperpage{61}
+    \subitem {ScanInput}, \hyperpage{61}
+    \subitem {XboxMainForm}, \hyperpage{58}
+  \item {Caiman.interfaceG.XboxUserControl}, \hyperpage{63}
+    \subitem {bouton\_Click}, \hyperpage{66}
+    \subitem {MoveActivateControl}, \hyperpage{66}
+    \subitem {Position\_x}, \hyperpage{66}
+    \subitem {Position\_y}, \hyperpage{66}
+    \subitem {XboxUserControl}, \hyperpage{65}
+  \item {Caiman.logique}, \hyperpage{10}
+  \item {Caiman.logique.ConfigFileEditor}, \hyperpage{18}
+    \subitem {AddValue}, \hyperpage{18}
+    \subitem {DeleteValue}, \hyperpage{18}
+    \subitem {fullPath}, \hyperpage{20}
+    \subitem {GetAllValueInList}, \hyperpage{19}
+    \subitem {ReadProperties}, \hyperpage{19}
+    \subitem {UpdateProperties}, \hyperpage{19}
+  \item {Caiman.logique.Dolphin}, \hyperpage{22}
+    \subitem {Dolphin}, \hyperpage{23}
+    \subitem {Execute}, \hyperpage{23}
+    \subitem {UpdateConfigurationFile}, \hyperpage{23}
+  \item {Caiman.logique.Download}, \hyperpage{24}
+    \subitem {StartDownload}, \hyperpage{24}
+  \item {Caiman.logique.DownloadManager}, \hyperpage{26}
+    \subitem {CheckIfDownloadIsActive}, \hyperpage{27}
+    \subitem {CreateDownload}, \hyperpage{27}
+    \subitem {DeleteGame}, \hyperpage{28}
+    \subitem {NextDownload}, \hyperpage{28}
+    \subitem {StartDownload}, \hyperpage{28}
+  \item {Caiman.logique.DownloadSave}, \hyperpage{28}
+    \subitem {StartDownload}, \hyperpage{29}
+  \item {Caiman.logique.DownloadSaveManager}, \hyperpage{29}
+    \subitem {CreateDownload}, \hyperpage{29}
+    \subitem {StartDownload}, \hyperpage{30}
+  \item {Caiman.logique.Emulator}, \hyperpage{30}
+    \subitem {Close}, \hyperpage{31}
+    \subitem {Execute}, \hyperpage{31}
+    \subitem {GetEmulatorProcessLife}, \hyperpage{31}
+    \subitem {SetConfiguration}, \hyperpage{31}
+    \subitem {UpdateConfigurationFile}, \hyperpage{32}
+  \item {Caiman.logique.EmulatorsManager}, \hyperpage{32}
+    \subitem {ApplyFormatConfiguration}, \hyperpage{34}
+    \subitem {ApplyFullscreenConfiguration}, \hyperpage{34}
+    \subitem {ApplyGlobalConfiguration}, \hyperpage{34}
+    \subitem {CreateSaveManagerAndScan}, \hyperpage{34}
+    \subitem {EmulatorsManager}, \hyperpage{33}
+    \subitem {EmulatorState}, \hyperpage{35}
+    \subitem {InitTimer}, \hyperpage{35}
+    \subitem {ScanConfiguration}, \hyperpage{35}
+    \subitem {StartGame}, \hyperpage{35}
+  \item {Caiman.logique.GameTimer}, \hyperpage{38}
+    \subitem {InitTimer}, \hyperpage{38}
+    \subitem {ToString}, \hyperpage{38}
+    \subitem {UpdateTimer}, \hyperpage{39}
+  \item {Caiman.logique.PCSX2}, \hyperpage{43}
+    \subitem {Execute}, \hyperpage{44}
+    \subitem {PCSX2}, \hyperpage{43}
+    \subitem {UpdateConfigurationFile}, \hyperpage{44}
+  \item {Caiman.logique.SaveManager}, \hyperpage{46}
+    \subitem {MoveAllFileToUserFolder}, \hyperpage{47}
+    \subitem {MoveFileToUserFolder}, \hyperpage{47}
+    \subitem {MoveSaveFileFromUserFolderToEmulatorSaveFolder}, 
+		\hyperpage{47}
+    \subitem {ScanFolder}, \hyperpage{47}
+    \subitem {UploadSave}, \hyperpage{47}
+  \item {Caiman.models}, \hyperpage{10}
+  \item {Caiman.models.Category}, \hyperpage{17}
+  \item {Caiman.models.ConsoleModel}, \hyperpage{21}
+  \item {Caiman.models.FileModel}, \hyperpage{36}
+  \item {Caiman.models.Game}, \hyperpage{36}
+  \item {Caiman.models.TimeInGame}, \hyperpage{49}
+  \item {Caiman.models.User}, \hyperpage{49}
+    \subitem {CreateSaveManagers}, \hyperpage{50}
+    \subitem {CreateUserFolder}, \hyperpage{51}
+    \subitem {InitTimer}, \hyperpage{51}
+    \subitem {Login}, \hyperpage{51}
+    \subitem {MoveFileFromUserFolderToEmulatorFolder}, \hyperpage{51}
+  \item {Caiman.Properties}, \hyperpage{10}
+  \item {Caiman/database/CallAPI.cs}, \hyperpage{69}
+  \item {Caiman/interfaceG/ContextInformations.cs}, \hyperpage{69}
+  \item {Caiman/interfaceG/usercontrol/ConfigurationMenuXbox.cs}, 
+		\hyperpage{70}
+  \item {Caiman/interfaceG/usercontrol/DownloadListXbox.cs}, 
+		\hyperpage{70}
+  \item {Caiman/interfaceG/usercontrol/GameDetailsXbox.cs}, 
+		\hyperpage{71}
+  \item {Caiman/interfaceG/usercontrol/ListGameXbox.cs}, \hyperpage{71}
+  \item {Caiman/interfaceG/usercontrol/LoginControlXbox.cs}, 
+		\hyperpage{72}
+  \item {Caiman/interfaceG/usercontrol/NavbarXbox.cs}, \hyperpage{72}
+  \item {Caiman/interfaceG/usercontrol/QuitMenuXbox.cs}, \hyperpage{73}
+  \item {Caiman/interfaceG/usercontrol/SideBarXbox.cs}, \hyperpage{73}
+  \item {Caiman/interfaceG/XboxControl/XboxButton.cs}, \hyperpage{74}
+  \item {Caiman/interfaceG/XboxControl/XboxImage.cs}, \hyperpage{74}
+  \item {Caiman/interfaceG/XboxControl/XboxNavbarButton.cs}, 
+		\hyperpage{75}
+  \item {Caiman/interfaceG/XboxController.cs}, \hyperpage{75}
+  \item {Caiman/interfaceG/XboxMainForm.cs}, \hyperpage{76}
+  \item {Caiman/interfaceG/XboxUserControl.cs}, \hyperpage{76}
+  \item {Caiman/logique/ConfigFileEditor.cs}, \hyperpage{77}
+  \item {Caiman/logique/Dolphin.cs}, \hyperpage{77}
+  \item {Caiman/logique/Download.cs}, \hyperpage{78}
+  \item {Caiman/logique/DownloadManager.cs}, \hyperpage{78}
+  \item {Caiman/logique/DownloadSave.cs}, \hyperpage{79}
+  \item {Caiman/logique/DownloadSaveManager.cs}, \hyperpage{79}
+  \item {Caiman/logique/Emulator.cs}, \hyperpage{80}
+  \item {Caiman/logique/EmulatorsManager.cs}, \hyperpage{80}
+  \item {Caiman/logique/GameTimer.cs}, \hyperpage{81}
+  \item {Caiman/logique/PCSX2.cs}, \hyperpage{81}
+  \item {Caiman/logique/SaveManager.cs}, \hyperpage{82}
+  \item {Caiman/models/Category.cs}, \hyperpage{82}
+  \item {Caiman/models/Console.cs}, \hyperpage{83}
+  \item {Caiman/models/File.cs}, \hyperpage{83}
+  \item {Caiman/models/Game.cs}, \hyperpage{84}
+  \item {Caiman/models/TimeInGame.cs}, \hyperpage{84}
+  \item {Caiman/models/User.cs}, \hyperpage{85}
+  \item {CallAllCategories}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{12}
+  \item {CallAllGames}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{13}
+  \item {CallConsoleNameGame}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{13}
+  \item {CallFileNameGame}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{13}
+  \item {CallFolderNameGame}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{14}
+  \item {CallGamesFromCategory}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{14}
+  \item {CallLogin}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{14}
+  \item {CallLoginToken}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{15}
+  \item {CallOneGame}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{15}
+  \item {CallTimeInGameUser}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{15}
+  \item {CallUserFavoriteGames}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{16}
+  \item {CheckIfDownloadIsActive}
+    \subitem {Caiman.logique.DownloadManager}, \hyperpage{27}
+  \item {CheckIfGameIsInFavorite}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{16}
+  \item {Close}
+    \subitem {Caiman.logique.Emulator}, \hyperpage{31}
+  \item {ConfigurationMenuXbox}
+    \subitem {Caiman.interfaceG.usercontrol.ConfigurationMenuXbox}, 
+		\hyperpage{20}
+  \item {ContexteHandler}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{58}
+  \item {ContextInformations}
+    \subitem {Caiman.interfaceG.ContextInformations}, \hyperpage{22}
+  \item {CreateBaseControl}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{59}
+  \item {CreateDownload}
+    \subitem {Caiman.logique.DownloadManager}, \hyperpage{27}
+    \subitem {Caiman.logique.DownloadSaveManager}, \hyperpage{29}
+  \item {CreateListDownload}
+    \subitem {Caiman.interfaceG.usercontrol.DownloadListXbox}, 
+		\hyperpage{26}
+  \item {CreateListGames}
+    \subitem {Caiman.interfaceG.usercontrol.ListGameXbox}, 
+		\hyperpage{40}
+  \item {CreateListNavButton}
+    \subitem {Caiman.interfaceG.usercontrol.SideBarXbox}, 
+		\hyperpage{48}
+  \item {CreateLoginControls}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{59}
+  \item {CreateLoginForm}
+    \subitem {Caiman.interfaceG.usercontrol.LoginControlXbox}, 
+		\hyperpage{42}
+  \item {CreateNavButton}
+    \subitem {Caiman.interfaceG.usercontrol.ConfigurationMenuXbox}, 
+		\hyperpage{21}
+    \subitem {Caiman.interfaceG.usercontrol.NavbarXbox}, \hyperpage{42}
+    \subitem {Caiman.interfaceG.usercontrol.QuitMenuXbox}, 
+		\hyperpage{45}
+  \item {CreateSaveManagerAndScan}
+    \subitem {Caiman.logique.EmulatorsManager}, \hyperpage{34}
+  \item {CreateSaveManagers}
+    \subitem {Caiman.models.User}, \hyperpage{50}
+  \item {CreateUserFolder}
+    \subitem {Caiman.models.User}, \hyperpage{51}
+  \item {CreateViewGame}
+    \subitem {Caiman.interfaceG.usercontrol.GameDetailsXbox}, 
+		\hyperpage{37}
+
+  \indexspace
+
+  \item {DeleteGame}
+    \subitem {Caiman.logique.DownloadManager}, \hyperpage{28}
+  \item {DeleteValue}
+    \subitem {Caiman.logique.ConfigFileEditor}, \hyperpage{18}
+  \item {Dolphin}
+    \subitem {Caiman.logique.Dolphin}, \hyperpage{23}
+  \item {DownloadListXbox}
+    \subitem {Caiman.interfaceG.usercontrol.DownloadListXbox}, 
+		\hyperpage{25}
+
+  \indexspace
+
+  \item {EmulatorsManager}
+    \subitem {Caiman.logique.EmulatorsManager}, \hyperpage{33}
+  \item {EmulatorState}
+    \subitem {Caiman.logique.EmulatorsManager}, \hyperpage{35}
+  \item {Execute}
+    \subitem {Caiman.logique.Dolphin}, \hyperpage{23}
+    \subitem {Caiman.logique.Emulator}, \hyperpage{31}
+    \subitem {Caiman.logique.PCSX2}, \hyperpage{44}
+
+  \indexspace
+
+  \item {FocusToMainPanel}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{59}
+  \item {fullPath}
+    \subitem {Caiman.logique.ConfigFileEditor}, \hyperpage{20}
+
+  \indexspace
+
+  \item {GameDetailsXbox}
+    \subitem {Caiman.interfaceG.usercontrol.GameDetailsXbox}, 
+		\hyperpage{37}
+  \item {GetAllValueInList}
+    \subitem {Caiman.logique.ConfigFileEditor}, \hyperpage{19}
+  \item {GetEmulatorProcessLife}
+    \subitem {Caiman.logique.Emulator}, \hyperpage{31}
+  \item {GetInput}
+    \subitem {Caiman.interfaceG.XboxController}, \hyperpage{54}
+
+  \indexspace
+
+  \item {InitTimer}
+    \subitem {Caiman.interfaceG.usercontrol.DownloadListXbox}, 
+		\hyperpage{26}
+    \subitem {Caiman.interfaceG.usercontrol.NavbarXbox}, \hyperpage{43}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{59}
+    \subitem {Caiman.logique.EmulatorsManager}, \hyperpage{35}
+    \subitem {Caiman.logique.GameTimer}, \hyperpage{38}
+    \subitem {Caiman.models.User}, \hyperpage{51}
+
+  \indexspace
+
+  \item {ListGameXbox}
+    \subitem {Caiman.interfaceG.usercontrol.ListGameXbox}, 
+		\hyperpage{40}
+  \item {LoadGameDetail}
+    \subitem {Caiman.interfaceG.usercontrol.GameDetailsXbox}, 
+		\hyperpage{38}
+  \item {LoadNewConfigurationMenu}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{59}
+  \item {LoadNewDownloadList}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{59}
+  \item {LoadNewGameDetails}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{60}
+  \item {LoadNewHomePanel}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{60}
+  \item {LoadNewListGamesDownloadedGames}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{60}
+  \item {LoadNewListGamesFromCategory}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{60}
+  \item {LoadNewListGamesFromUserFavorite}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{60}
+  \item {LoadNewPanelAllGames}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{60}
+  \item {LoadNewQuitMenu}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{61}
+  \item {LoadOldMainPanel}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{61}
+  \item {Login}
+    \subitem {Caiman.models.User}, \hyperpage{51}
+  \item {LoginControlXbox}
+    \subitem {Caiman.interfaceG.usercontrol.LoginControlXbox}, 
+		\hyperpage{41}
+
+  \indexspace
+
+  \item {MoveActivateControl}
+    \subitem {Caiman.interfaceG.XboxUserControl}, \hyperpage{66}
+  \item {MoveAllFileToUserFolder}
+    \subitem {Caiman.logique.SaveManager}, \hyperpage{47}
+  \item {MoveFileFromUserFolderToEmulatorFolder}
+    \subitem {Caiman.models.User}, \hyperpage{51}
+  \item {MoveFileToUserFolder}
+    \subitem {Caiman.logique.SaveManager}, \hyperpage{47}
+  \item {MoveSaveFileFromUserFolderToEmulatorSaveFolder}
+    \subitem {Caiman.logique.SaveManager}, \hyperpage{47}
+
+  \indexspace
+
+  \item {NextDownload}
+    \subitem {Caiman.logique.DownloadManager}, \hyperpage{28}
+
+  \indexspace
+
+  \item {OnClick}
+    \subitem {Caiman.interfaceG.usercontrol.XboxButton}, \hyperpage{52}
+    \subitem {Caiman.interfaceG.usercontrol.XboxNavbarButton}, 
+		\hyperpage{62}
+    \subitem {Caiman.interfaceG.XboxControl.XboxImage}, \hyperpage{56}
+  \item {OnGotFocus}
+    \subitem {Caiman.interfaceG.usercontrol.XboxButton}, \hyperpage{53}
+    \subitem {Caiman.interfaceG.usercontrol.XboxNavbarButton}, 
+		\hyperpage{63}
+    \subitem {Caiman.interfaceG.XboxControl.XboxImage}, \hyperpage{56}
+  \item {OnLostFocus}
+    \subitem {Caiman.interfaceG.usercontrol.XboxButton}, \hyperpage{53}
+    \subitem {Caiman.interfaceG.usercontrol.XboxNavbarButton}, 
+		\hyperpage{63}
+    \subitem {Caiman.interfaceG.XboxControl.XboxImage}, \hyperpage{56}
+
+  \indexspace
+
+  \item {PCSX2}
+    \subitem {Caiman.logique.PCSX2}, \hyperpage{43}
+  \item {Position\_x}
+    \subitem {Caiman.interfaceG.XboxUserControl}, \hyperpage{66}
+  \item {Position\_y}
+    \subitem {Caiman.interfaceG.XboxUserControl}, \hyperpage{66}
+
+  \indexspace
+
+  \item {QuitMenuXbox}
+    \subitem {Caiman.interfaceG.usercontrol.QuitMenuXbox}, 
+		\hyperpage{45}
+
+  \indexspace
+
+  \item {ReadProperties}
+    \subitem {Caiman.logique.ConfigFileEditor}, \hyperpage{19}
+  \item {RefreshData}
+    \subitem {Caiman.interfaceG.usercontrol.DownloadListXbox}, 
+		\hyperpage{26}
+  \item {RemoveGameFromFavorite}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{17}
+
+  \indexspace
+
+  \item {ScanConfiguration}
+    \subitem {Caiman.logique.EmulatorsManager}, \hyperpage{35}
+  \item {ScanController}
+    \subitem {Caiman.interfaceG.XboxController}, \hyperpage{54}
+  \item {ScanFolder}
+    \subitem {Caiman.logique.SaveManager}, \hyperpage{47}
+  \item {ScanInput}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{61}
+  \item {SetConfiguration}
+    \subitem {Caiman.logique.Emulator}, \hyperpage{31}
+  \item {SideBarXbox}
+    \subitem {Caiman.interfaceG.usercontrol.SideBarXbox}, 
+		\hyperpage{48}
+  \item {StartDownload}
+    \subitem {Caiman.logique.Download}, \hyperpage{24}
+    \subitem {Caiman.logique.DownloadManager}, \hyperpage{28}
+    \subitem {Caiman.logique.DownloadSave}, \hyperpage{29}
+    \subitem {Caiman.logique.DownloadSaveManager}, \hyperpage{30}
+  \item {StartGame}
+    \subitem {Caiman.logique.EmulatorsManager}, \hyperpage{35}
+
+  \indexspace
+
+  \item {ToString}
+    \subitem {Caiman.logique.GameTimer}, \hyperpage{38}
+
+  \indexspace
+
+  \item {UpdateConfigurationFile}
+    \subitem {Caiman.logique.Dolphin}, \hyperpage{23}
+    \subitem {Caiman.logique.Emulator}, \hyperpage{32}
+    \subitem {Caiman.logique.PCSX2}, \hyperpage{44}
+  \item {UpdateProperties}
+    \subitem {Caiman.logique.ConfigFileEditor}, \hyperpage{19}
+  \item {UpdateTimer}
+    \subitem {Caiman.logique.GameTimer}, \hyperpage{39}
+  \item {UploadSave}
+    \subitem {Caiman.database.CallAPI}, \hyperpage{17}
+    \subitem {Caiman.logique.SaveManager}, \hyperpage{47}
+
+  \indexspace
+
+  \item {XboxButton}
+    \subitem {Caiman.interfaceG.usercontrol.XboxButton}, \hyperpage{52}
+  \item {XboxController}
+    \subitem {Caiman.interfaceG.XboxController}, \hyperpage{54}
+  \item {XboxImage}
+    \subitem {Caiman.interfaceG.XboxControl.XboxImage}, \hyperpage{55}
+  \item {XboxMainForm}
+    \subitem {Caiman.interfaceG.XboxMainForm}, \hyperpage{58}
+  \item {XboxNavbarButton}
+    \subitem {Caiman.interfaceG.usercontrol.XboxNavbarButton}, 
+		\hyperpage{62}
+  \item {XboxUserControl}
+    \subitem {Caiman.interfaceG.XboxUserControl}, \hyperpage{65}
+
+\end{theindex}

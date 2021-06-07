@@ -1,0 +1,1455 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Analyse fonctionnelle" href="fonctionnelleBDD.html" />
+
+    <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
+        <title>Logbook - Caiman 1.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
+    <link rel="stylesheet" href="_static/pygments.css">
+    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
+    
+
+
+<style>
+  :root {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
+  <body dir="">
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Caiman 1.1.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">Caiman 1.1.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html">
+  <input class="sidebar-search" placeholder=Search name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption"><span class="caption-text">table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="resume.html">Résumé</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resume.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resume.html#remerciement">Remerciement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resume.html#legalite-du-projet">Légalité du projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resume.html#installation-de-caiman-utilisateur">Installation de Caiman utilisateur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resume.html#installation-de-caiman-serveur">Installation de Caiman serveur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cdc.html">Cahier des charges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opportunite.html">Étude d’opportunité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fonctionnelleBDD.html">Analyse fonctionnelle</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Logbook</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        <div class="section" id="logbook">
+<h1>Logbook<a class="headerlink" href="#logbook" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>19.04.2021<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="h05">
+<h3>8h05<a class="headerlink" href="#h05" title="Permalink to this headline">¶</a></h3>
+<p>Entretiens avec M. Garcia</p>
+</div>
+<div class="section" id="id2">
+<h3>9h05<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Copie de mon disque pour Gawen</p>
+</div>
+<div class="section" id="h20">
+<h3>9h20<a class="headerlink" href="#h20" title="Permalink to this headline">¶</a></h3>
+<p>Création du git</p>
+</div>
+<div class="section" id="h30">
+<h3>9h30<a class="headerlink" href="#h30" title="Permalink to this headline">¶</a></h3>
+<p>je réfléchi à ce par quoi je vais commencer j’hésite entre commencé entre le site web ou les téléchargement</p>
+</div>
+<div class="section" id="h40">
+<h3>9h40<a class="headerlink" href="#h40" title="Permalink to this headline">¶</a></h3>
+<p>Modélisation de la BDD</p>
+<p><img alt="alt text" src="_images/bdd_tableau.jpg"/></p>
+</div>
+<div class="section" id="id3">
+<h3>10h30<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Installation de laragon</p>
+</div>
+<div class="section" id="id4">
+<h3>10h40<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Création de la base de données</p>
+</div>
+<div class="section" id="id5">
+<h3>12h40<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Création de la structure du site web</p>
+</div>
+<div class="section" id="h35">
+<h3>14h35<a class="headerlink" href="#h35" title="Permalink to this headline">¶</a></h3>
+<p>Création des différente pages et mise en place de bootstrap</p>
+</div>
+<div class="section" id="resume">
+<h3>résumé<a class="headerlink" href="#resume" title="Permalink to this headline">¶</a></h3>
+<p>j’ai créer la base de donnée et le site web</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id6">
+<h2>20.04.2021<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>8h05<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>je continue à créer le site web je crée les formulaires pour la connexion</p>
+</div>
+<div class="section" id="id8">
+<h3>15h20<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>J’ai impliqué la création de compte et la connexion, le mail doit être unique et le username aussi.</p>
+<p>j’ai selon les indication de M. Schmid utilisé les fonctions</p>
+<p>password_hash et password_verify de php.</p>
+</div>
+<div class="section" id="id9">
+<h3>15h30<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>j’ajoute des donnée a la main dans la bdd</p>
+</div>
+<div class="section" id="h56">
+<h3>15h56<a class="headerlink" href="#h56" title="Permalink to this headline">¶</a></h3>
+<p>aide de M.Schmid pour du sql</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id10">
+<h2>21.04.2021<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="h10">
+<h3>8h10<a class="headerlink" href="#h10" title="Permalink to this headline">¶</a></h3>
+<p>Modification de la structure du site et ajout de l’update de mots de passe</p>
+</div>
+<div class="section" id="h00">
+<h3>13h00<a class="headerlink" href="#h00" title="Permalink to this headline">¶</a></h3>
+<p>l’affichage des jeux est disponible ainsi qu’une recherche sur les jeux grâce à leurs noms.</p>
+</div>
+<div class="section" id="id11">
+<h3>13h20<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>Ajout de champs dans la table game</p>
+<ul class="simple">
+<li><p>description</p></li>
+<li><p>imageName</p></li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h3>15h00<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>l’affichage de la recherche et du détail d’un jeu fonctionne mais n’est pas beau.</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id13">
+<h2>22.04.2021<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h3>8h05<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>Ajout de l’affichage des catégories de chaque jeu</p>
+</div>
+<div class="section" id="id15">
+<h3>9h00<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>Affichage des jeux qui appartiennent à une catégorie.</p>
+</div>
+<div class="section" id="id16">
+<h3>10h20<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>modification de l’interface de recherche</p>
+</div>
+<div class="section" id="notes-personnelles">
+<h3>notes personnelles<a class="headerlink" href="#notes-personnelles" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>je dois ajouter une table pour savoir le nombre d’heure de jeu de chaque utilisateurs</p></li>
+<li><p>je dois ajouter une gestion des messages d’erreurs.</p></li>
+<li><p>je peux ajouter une photo de profil</p></li>
+</ul>
+</div>
+<div class="section" id="h0">
+<h3>11h0<a class="headerlink" href="#h0" title="Permalink to this headline">¶</a></h3>
+<p>modification de l’interface de connexion et de d’inscription</p>
+</div>
+<div class="section" id="h50">
+<h3>11h50<a class="headerlink" href="#h50" title="Permalink to this headline">¶</a></h3>
+<p>suppression de la page de création de compte</p>
+</div>
+<div class="section" id="id17">
+<h3>12h40<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>Ajout d’un jeux en favoris</p>
+</div>
+<div class="section" id="id18">
+<h3>15h00<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>suppression d’un jeu en favoris</p>
+</div>
+<div class="section" id="a-faire-demain">
+<h3>a faire demain<a class="headerlink" href="#a-faire-demain" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>l’affichage des card dans le dashboard n’est pas bon</p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id19">
+<h2>23.04.2021<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id20">
+<h3>8h05<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p>modification de la l’interface du Dashboard</p>
+</div>
+<div class="section" id="id21">
+<h3>8h40<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>Ajout d’un champ dans la table utilisateur pour spécifier si l’utilisateur est privé ou non
+si l’utilisateur n’est pas privé tout le monde va pouvoir voir son profils</p>
+</div>
+<div class="section" id="id22">
+<h3>9h30<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<p>la modification du paramètre pour savoir si le compte est privé ou non</p>
+</div>
+<div class="section" id="id23">
+<h3>12h20<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<p>test de Git Hook</p>
+</div>
+<div class="section" id="id24">
+<h3>13h30<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<p>modification de l’interface theme blanc -&gt; dark</p>
+</div>
+<div class="section" id="id25">
+<h3>15h20<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<p>Création de la page de téléchargement et mise en place de du téléchargement de Caiman depuis le site</p>
+</div>
+<div class="section" id="notes-pour-la-prochaine-fois">
+<h3>notes pour la prochaine fois<a class="headerlink" href="#notes-pour-la-prochaine-fois" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Je dois créer la partie Administrateur du site</p></li>
+<li><p>Je dois créer un une fonctionnalité qui me permet de gérer les messages d’erreurs</p></li>
+<li><p>Je dois sécuriser l’accès au pages</p></li>
+<li><p>je dois sécuriser les différents formulaires</p></li>
+<li><p>je dois je dois me renseigner comment uploader des gros fichier depuis un poste clients</p></li>
+<li><p>je dois changer de navbar</p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id26">
+<h2>26.04.2021<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id27">
+<h3>8h05<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<p>notes personnelles:</p>
+<ul class="simple">
+<li><p>je dois ajouter la possibilité d’afficher la page d’un utilisateur</p></li>
+<li><p>je dois corriger mon script d’export de base de données</p></li>
+</ul>
+</div>
+<div class="section" id="id28">
+<h3>8h10<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<p>Création de la page dédiée aux administrateurs.</p>
+</div>
+<div class="section" id="id29">
+<h3>8h30<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<p>Ajout de catégorie</p>
+</div>
+<div class="section" id="id30">
+<h3>9h00<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<p>Ajout de jeu</p>
+</div>
+<div class="section" id="notes-personnels">
+<h3>notes personnels<a class="headerlink" href="#notes-personnels" title="Permalink to this headline">¶</a></h3>
+<p>j’ai regardé plusieurs méthodes pour envoyer un fichier depuis un formulaire en php. Pour l’instant j’utilise les fonctions de base de php et elle fonctionne donc je vais faire des tests une fois le site uploadé sur le Bunker.</p>
+</div>
+<div class="section" id="id31">
+<h3>11h00<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+<p>le fichier .iso est uploadé avec le bon nom mais pas encore dans la base de données</p>
+</div>
+<div class="section" id="id32">
+<h3>15h00<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
+<p>Le jeu est bien ajouté avec le bon nom ainsi que la bonne image.</p>
+</div>
+<div class="section" id="h45">
+<h3>15h45<a class="headerlink" href="#h45" title="Permalink to this headline">¶</a></h3>
+<p>il est maintenant possible de mettre à jour le nom, la description ou la console d’un jeu.</p>
+</div>
+<div class="section" id="id33">
+<h3>15h50<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<p>modification de la structure du git</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id34">
+<h2>27.04.2021<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id35">
+<h3>8h05<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+<p>ajout/ suppression de catégories a un jeu</p>
+</div>
+<div class="section" id="id36">
+<h3>9h20<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
+<p>modification mineur de l’interface</p>
+</div>
+<div class="section" id="id37">
+<h3>10h05<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h3>
+<p>recherche d’un profil utilisateur</p>
+</div>
+<div class="section" id="h15">
+<h3>12h15<a class="headerlink" href="#h15" title="Permalink to this headline">¶</a></h3>
+<p>la recherche et l’affichage d’un profil utilisateur est fonctionnel</p>
+</div>
+<div class="section" id="id38">
+<h3>13h00<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
+<p>modification de l’interface pour que les jeux s’affiche correctement</p>
+</div>
+<div class="section" id="id39">
+<h3>13h30<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h3>
+<p>Le site est fonctionnel mais il manque des détail comme les message d’erreur et les droit sur les pages</p>
+</div>
+<div class="section" id="id40">
+<h3>notes personnelles<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
+<p>pour finir le site il me reste les choses suivante a faire:</p>
+<ul class="simple">
+<li><p>Sécuriser les pages</p></li>
+<li><p>afficher des messages d’erreur</p></li>
+<li><p>suppression de catégories</p></li>
+<li><p>suppression de jeu</p></li>
+<li><p>mot de passe oublié</p></li>
+<li><p>commenter mon code</p></li>
+<li><p>pagination pour les recherches</p></li>
+</ul>
+</div>
+<div class="section" id="id41">
+<h3>13h40<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h3>
+<p>documentation</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id42">
+<h2>28.04.2021<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id43">
+<h3>8h05<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
+<p>documentation</p>
+</div>
+<div class="section" id="id44">
+<h3>10h40<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h3>
+<p>correction d’un bogue sur le nombre d’heure de jeu et riage des jeux par heure de jeu</p>
+</div>
+<div class="section" id="id45">
+<h3>11h00<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h3>
+<p>gestion des droit d’accès au page</p>
+</div>
+<div class="section" id="id46">
+<h3>13h10<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h3>
+<p>modification de la navbar</p>
+</div>
+<div class="section" id="id47">
+<h3>14h00<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h3>
+<p>gestion des erreurs de du login</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id48">
+<h2>29.04.2021<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id49">
+<h3>8h30<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h3>
+<p>Documentation</p>
+</div>
+<div class="section" id="id50">
+<h3>10h20<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h3>
+<p>Mr. Garcia m’a aidé à mettre en place ma documentation doxygen</p>
+</div>
+<div class="section" id="id51">
+<h3>11h00<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h3>
+<p>documentation</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id52">
+<h2>30.04.2021<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id53">
+<h3>8h05<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h3>
+<p>Correction du logbook</p>
+</div>
+<div class="section" id="id54">
+<h3>8h20<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h3>
+<p>supression de code inutile sur le site et mis a jour de la doccumentation</p>
+</div>
+<div class="section" id="id55">
+<h3>9h30<a class="headerlink" href="#id55" title="Permalink to this headline">¶</a></h3>
+<p>ajout de contrainte dans la base de données</p>
+</div>
+<div class="section" id="id56">
+<h3>10h45<a class="headerlink" href="#id56" title="Permalink to this headline">¶</a></h3>
+<p>Création du planning effectif</p>
+</div>
+<div class="section" id="id57">
+<h3>13h00<a class="headerlink" href="#id57" title="Permalink to this headline">¶</a></h3>
+<p>Configuration de debian</p>
+<p>user tfp : FTPdiplomant
+password ftp : SuperCfpt@</p>
+<p>J’ai pus installer apache, php, et mysql mais je n’arrive pas à me connecter en ftp. A la connexion je bloque sur l’erreur : “Impossible de récupérer le contenu du dossier”. Malgré l’aide de Mr.Schmidt je n’ai toujours pas réussi.</p>
+</div>
+<div class="section" id="id58">
+<h3>15h20<a class="headerlink" href="#id58" title="Permalink to this headline">¶</a></h3>
+<p>Je n’arrive toujours pas a me connecter au ftp, je ne sais pas si le probléme viens de ma configuration ou du firewall</p>
+</div>
+</div>
+<div class="section" id="notes-pour-le-premier-rendu">
+<h2>notes pour le premier rendu<a class="headerlink" href="#notes-pour-le-premier-rendu" title="Permalink to this headline">¶</a></h2>
+<p>J’ai durant ces deux premières semaines, créé le site internet de Caiman. Le site n’est pas fini à 100% mais les fonctionnalités de base sont toutes implémentées. Les fonctionnalités actuelles permettent de faire toutes les choses nécessaires au fonctionnement de l’application. J’ai pris plus de temps que prévu à réaliser le site mais durant la création de mon planning prévisionnel j’ai fait des erreurs, j’ai par exemple oublié de planifier la création des fonctionnalités d’administration ( Ajout de jeux, ajout de catégories, assignation de catégories à un jeu, upload de jeux, etc ).</p>
+<p>La documentation du site n’est pas forcément touffue mais le site n’est pas particulièrement complexe, il m’a pris du temps dû au nombre de tables à gérer. Il reste à mettre en place la récupération de mot de passe mais j’ai décidé de passer à l’interface graphique de l’application C# dès la semaine prochaine. Étant donné que le projet est la partie la plus importante de l’application, je ne vais pas configurer la récupération de mot de passe maintenant.</p>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id59">
+<h2>03.05.2021<a class="headerlink" href="#id59" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id60">
+<h3>8h10<a class="headerlink" href="#id60" title="Permalink to this headline">¶</a></h3>
+<p>Réflexion sur l’interface graphique et création du projet</p>
+</div>
+<div class="section" id="id61">
+<h3>8h15<a class="headerlink" href="#id61" title="Permalink to this headline">¶</a></h3>
+<p>Importation de la classe XboxController.cs que j’ai créé précédemment.</p>
+<p><img alt="alt text" src="_images/schema-form.jpg"/></p>
+<p>La table MainForm contient un XboxController() cette classe permet de connaître les manettes connectés au pc et de recevoir leur inputs.</p>
+<p>Elle contient aussi une liste de form, ces formes sont les différentes fenêtres de l’application (si possible j’aimerai faire que seul une fenêtre soit active).</p>
+<p>Je fais des test avec les usercontrols</p>
+</div>
+<div class="section" id="id62">
+<h3>10h00<a class="headerlink" href="#id62" title="Permalink to this headline">¶</a></h3>
+<p>je n’arrive pas a afficher dynamiquement quand une action est faite.</p>
+</div>
+<div class="section" id="id63">
+<h3>12h00<a class="headerlink" href="#id63" title="Permalink to this headline">¶</a></h3>
+<p>Mon problème venait du fait que je n’initialisait pas l ‘usercontrol.</p>
+</div>
+<div class="section" id="id64">
+<h3>13h00<a class="headerlink" href="#id64" title="Permalink to this headline">¶</a></h3>
+<p>Je vais essayer de me baser sur la structure des div en html pour gérer le contenu de l’affichage.
+<img alt="alt text" src="_images/schema-div.jpeg"/></p>
+</div>
+<div class="section" id="id65">
+<h3>14h00<a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h3>
+<p>FInalisation de la configuration du serveur</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id66">
+<h2>04.05.2021<a class="headerlink" href="#id66" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id67">
+<h3>8h05<a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h3>
+<p>Je continue à faire des test pour pouvoir bouger le focus d’une “div” a une autre</p>
+</div>
+<div class="section" id="id68">
+<h3>11h00<a class="headerlink" href="#id68" title="Permalink to this headline">¶</a></h3>
+<p>Je continue à faire des test mais j’ai apporté des modifications:</p>
+<p>le MainForm ne contient pas une liste de list de control, ce n’est pas nécessaire sachant que le lien entre les control est seulement connu des sous contrôle</p>
+<p>dorénavant chaque sous control possède une liste de listes de control pour pouvoir se déplacer.</p>
+<p>quand on déplace la position maximum dans un sous control il y a deux possibilité.:
+un control est disponible dans la direction souhaité
+rien n’est disponible
+Si un control est disponible alors la main form est informée qu’elle doit changer d’activeForm pour pouvoir se déplacer dans de bonne condition.</p>
+</div>
+<div class="section" id="id69">
+<h3>12h05<a class="headerlink" href="#id69" title="Permalink to this headline">¶</a></h3>
+<p>Le déplacement dans chaque form fonctionne et l’on peut passer d’une form à une autre.</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id70">
+<h2>05.05.2021<a class="headerlink" href="#id70" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id71">
+<h3>8h05<a class="headerlink" href="#id71" title="Permalink to this headline">¶</a></h3>
+<p>Je continue à améliorer le fonctionnement de l’interface.</p>
+<p>J’ai décidé de diviser l’interface en 3 “partie”
+la navbar
+la sidebar
+le main contenu</p>
+<p><img alt="alt text" src="_images/schema-home-page.jpeg"/></p>
+</div>
+<div class="section" id="id72">
+<h3>10h50<a class="headerlink" href="#id72" title="Permalink to this headline">¶</a></h3>
+<p>J’ai créé une nouvelle classe ButtonContext.cs, elle contient les paramètres qui doivent être passer a la forme pour quel sache l’action à exécuter.</p>
+<p>Il est maintenant possible de cliquer sur un bouton et la manette va reprendre la ou l’utilisateur a cliqué.</p>
+</div>
+<div class="section" id="id73">
+<h3>12h40<a class="headerlink" href="#id73" title="Permalink to this headline">¶</a></h3>
+<p>Je permet le déplacement grâce au joystick gauche</p>
+</div>
+<div class="section" id="id74">
+<h3>13h00<a class="headerlink" href="#id74" title="Permalink to this headline">¶</a></h3>
+<p>J’essaie de faire en sorte que je puisse revenir en arrière dans les fenétre</p>
+</div>
+<div class="section" id="id75">
+<h3>15h00<a class="headerlink" href="#id75" title="Permalink to this headline">¶</a></h3>
+<p>J’ai essayé de sauver dans une liste les choses précédemment affichée mais j’ai des soucis avec les liens entre les différents panel.</p>
+<p>Je vais essayer de recréer les anciens panel a chaque fois au lieu de les recharger.</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id76">
+<h2>06.05.2021<a class="headerlink" href="#id76" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id77">
+<h3>8h05<a class="headerlink" href="#id77" title="Permalink to this headline">¶</a></h3>
+<p>Je continue a faire en sorte que je puisse retourner en arrière grâce à la touche “B”</p>
+</div>
+<div class="section" id="id78">
+<h3>9h00<a class="headerlink" href="#id78" title="Permalink to this headline">¶</a></h3>
+<p>Il est maintenant possible de revenir en arrière dans la navigation</p>
+</div>
+<div class="section" id="id79">
+<h3>10h00<a class="headerlink" href="#id79" title="Permalink to this headline">¶</a></h3>
+<p>si il y a des “trou” dans la navigation le curseur le contourne</p>
+</div>
+<div class="section" id="id80">
+<h3>10h40<a class="headerlink" href="#id80" title="Permalink to this headline">¶</a></h3>
+<p>J’essaie d’afficher des images dans l’application</p>
+</div>
+<div class="section" id="id81">
+<h3>13h00<a class="headerlink" href="#id81" title="Permalink to this headline">¶</a></h3>
+<p>J’ai discuté avec Mr Maréchal de mon git. Pour pouvoir appliquer correctement mon gitignore j’ai dus supprimer les fichier du git</p>
+</div>
+<div class="section" id="id82">
+<h3>14h00<a class="headerlink" href="#id82" title="Permalink to this headline">¶</a></h3>
+<p>J’ai fais des recherche sur la publication de projet et j’ai corrigé des bugs</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id83">
+<h2>07.05.2021<a class="headerlink" href="#id83" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id84">
+<h3>8h05<a class="headerlink" href="#id84" title="Permalink to this headline">¶</a></h3>
+<p>J’ai essayé le paquet “Microsoft Visual Studio Installer Projects” que m’a conseillé M. Schmid. L’installation marche mais certains dossiers de PCSX2 et de Dolphin ne sont pas inclus dans l’installation.</p>
+</div>
+<div class="section" id="id85">
+<h3>10h00<a class="headerlink" href="#id85" title="Permalink to this headline">¶</a></h3>
+<p>Je commente les classe que j’ai créé et je supprimer les fonctions qui ne sont pas utilisé</p>
+</div>
+<div class="section" id="id86">
+<h3>12h40<a class="headerlink" href="#id86" title="Permalink to this headline">¶</a></h3>
+<p>documentation + Création d’une release pour pouvoir essayer l’interface</p>
+<p>Je déplace la documentation du projet web au projet desktop la seul documentation qui reste dans le projet web est celle qui concern son propre code (doxygen)</p>
+</div>
+<div class="section" id="id87">
+<h3>notes personnelles<a class="headerlink" href="#id87" title="Permalink to this headline">¶</a></h3>
+<p>Je dois modifier la connexion a la base de données  pour passer des fonctions de cryptographie de PHP au mds. Le problème ce que je ne peux pas me connecter depuis le c# avec les fonctions de cryptographie de php.</p>
+</div>
+<div class="section" id="id88">
+<h3>15h30<a class="headerlink" href="#id88" title="Permalink to this headline">¶</a></h3>
+<p>J’ai mis à jour ma documentation du projet.</p>
+<p>J’ai essayé d’ajouter des tâches à mon git mais j’ai eu des soucis pour la signature du projet donc je remet ça à plus tard.</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id89">
+<h2>10.05.2021<a class="headerlink" href="#id89" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id90">
+<h3>8h05<a class="headerlink" href="#id90" title="Permalink to this headline">¶</a></h3>
+<p>Je modifie la création de mot de passe et la connexion pour qu’un utilisateur puisse se connecter depuis le site web et Caiman.</p>
+<p>J’utilisais les fonctions de php (password_hash et password_verify) mais je passe a du md5 + salt. La raison est que je ne pouvais pas utiliser ces fonctions pour me connecter depuis l’application c#.</p>
+</div>
+<div class="section" id="id91">
+<h3>10h10<a class="headerlink" href="#id91" title="Permalink to this headline">¶</a></h3>
+<p>je vais essayer de créer un login en C#</p>
+<p>Pour ce faire, je commence par créer une classe “AccessDatabase.cs” pour communiquer avec la base. Pour stocker la la connexionString je l’ai mise dans les settings de l’application.</p>
+</div>
+<div class="section" id="id92">
+<h3>10h45<a class="headerlink" href="#id92" title="Permalink to this headline">¶</a></h3>
+<p>Pour pouvoir me connecter a la base de donnée je dois passer par le port 1433 mais il est fermé dans le firewall du coup je dois essayer de me connecter par le port 433</p>
+</div>
+<div class="section" id="id93">
+<h3>13h30<a class="headerlink" href="#id93" title="Permalink to this headline">¶</a></h3>
+<p>Je commence à créer la “vrai” interface je commence par les menu de configurations et le menu pour quitter l’application.</p>
+</div>
+<div class="section" id="id94">
+<h3>14h00<a class="headerlink" href="#id94" title="Permalink to this headline">¶</a></h3>
+<p>Après une discussion avec M. Scmid j’ai décidé de faire une api.</p>
+</div>
+<div class="section" id="id95">
+<h3>14h30<a class="headerlink" href="#id95" title="Permalink to this headline">¶</a></h3>
+<p>J’ai demandé à M.Borel de l’aide pour la structure de mon api, il a pu m’indiquer une structure correcte mais elle est très verbeuse donc je vais surement avoir pour minimum 3 jours a faire mon API.</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id96">
+<h2>11.05.2021<a class="headerlink" href="#id96" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id97">
+<h3>8h00<a class="headerlink" href="#id97" title="Permalink to this headline">¶</a></h3>
+<p>Je continue mon api, je commence par essayer la structure de M.Borel sur une seule table pour essayer puis je vais faire les autres.</p>
+</div>
+<div class="section" id="id98">
+<h3>11h40<a class="headerlink" href="#id98" title="Permalink to this headline">¶</a></h3>
+<p>Je peux maintenant faire des requêtes mais j’ai un souci avec les headers.
+Le hearder Autorization n’est pas correctement recu
+Je pense que vu le temps que faire une API prend je fais faire en sorte que l’API ne soit que faite pour Caiman. Je vais donc seulement créer les requêtes nécessaires</p>
+</div>
+<div class="section" id="id99">
+<h3>13h00<a class="headerlink" href="#id99" title="Permalink to this headline">¶</a></h3>
+<p>Je vais lister les requêtes qui me seront potentiellement utile pour Caiman</p>
+<p>liste des jeux
+recherche de jeu
+affichage des informations d’un jeu
+recherche des informations d’un utilisateur
+recherche des jeux avec un nombre qui ont été joué par un utilisateur particulier
+recherche d’un jeu selon sa catégorie
+jeux favoris d’un utilisateur
+recherche des jeux qui ont été joué
+connexion d’un utilisateur
+Création de compte
+réception d’un fichier de sauvegarde
+réception d’un fichier de configuration</p>
+</div>
+<div class="section" id="id100">
+<h3>13h40<a class="headerlink" href="#id100" title="Permalink to this headline">¶</a></h3>
+<p>Je fais un test d’appel a l’API depuis Caiman</p>
+</div>
+<div class="section" id="id101">
+<h3>14h20<a class="headerlink" href="#id101" title="Permalink to this headline">¶</a></h3>
+<p>Pour pouvoir utiliser correctement les appels à l’api je dois utiliser des objets que je je rempli avec chaque appel.</p>
+<p>Par exemple, si je veux recevoir les informations d’un jeu je créer un objet jeu a qui je vais attribuer les données que je viens de recevoir.</p>
+<p>Il me faut donc créer une classe pour l’utilisateur et une classe pour les jeux.</p>
+</div>
+<div class="section" id="id102">
+<h3>15h50<a class="headerlink" href="#id102" title="Permalink to this headline">¶</a></h3>
+<p>je dois aussi pouvoir connaître la liste des catégories grâce à l’API</p>
+</div>
+<div class="section" id="id103">
+<h3>16h00<a class="headerlink" href="#id103" title="Permalink to this headline">¶</a></h3>
+<p>Il est maintenant possible de récupérer les catégories</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id104">
+<h2>12.05.2021<a class="headerlink" href="#id104" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id105">
+<h3>8h05<a class="headerlink" href="#id105" title="Permalink to this headline">¶</a></h3>
+<p>Documentation et suppression de code inutile</p>
+</div>
+<div class="section" id="id106">
+<h3>13h00<a class="headerlink" href="#id106" title="Permalink to this headline">¶</a></h3>
+<p>J’ai discuté avec M.Smid il m’a donner des conseil sur pour mon api</p>
+</div>
+<div class="section" id="id107">
+<h3>14h30<a class="headerlink" href="#id107" title="Permalink to this headline">¶</a></h3>
+<p>J’ai changé les routes de mon api
+exemple:
+/games/userFavorites/8  =&gt; /games/?byUserFavorites=8</p>
+</div>
+<div class="section" id="id108">
+<h3>15h30<a class="headerlink" href="#id108" title="Permalink to this headline">¶</a></h3>
+<p>J’ai essayé de mettre l’api en ligne mais quand j’arrive sur une page j’ai une erreur 500.</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id109">
+<h2>13.05.2021<a class="headerlink" href="#id109" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id110">
+<h3>11h00<a class="headerlink" href="#id110" title="Permalink to this headline">¶</a></h3>
+<p>L’erreur 500 que j’avais était liée à une version de PHP, le serveur avait une version de php 7.3 alors que mon API a besoin d’une version PHP minimum en 7.4.
+J’ai donc mis à jour la version présente sur le serveur.</p>
+</div>
+<div class="section" id="id111">
+<h3>12h00<a class="headerlink" href="#id111" title="Permalink to this headline">¶</a></h3>
+<p>J’ai corrigé différentes erreurs liées à l’api par exemple quand on envoyait que le username et pas de password pour se connecter une erreur apparaissait.</p>
+</div>
+<div class="section" id="id112">
+<h3>13h00<a class="headerlink" href="#id112" title="Permalink to this headline">¶</a></h3>
+<p>J’ai une erreur sur le serveur quand je veux faire une requête d’utilisateur avec sa clé d’API j’ai une erreur 404.</p>
+<p>Je vais peut etre passer la recherche d’api en POST et non en GET</p>
+</div>
+</div>
+<div class="section" id="id113">
+<h2>14.05.2021<a class="headerlink" href="#id113" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id114">
+<h3>8h00<a class="headerlink" href="#id114" title="Permalink to this headline">¶</a></h3>
+<p>J’ai toujours une erreur quand je veux récupérer les informations d’un utilisateur grâce à son apitoken, l’erreur n’est présente que sur le caiman.cfpt.info.
+Pour corriger l’erreur je vais passer par du post pour éviter de perdre trop de temps.</p>
+</div>
+<div class="section" id="h22">
+<h3>09h22<a class="headerlink" href="#h22" title="Permalink to this headline">¶</a></h3>
+<p>j’ai push sur le serveur une version de l’API qui fonctionne bien, je vais maintenant continuer ma documentation</p>
+</div>
+<div class="section" id="id115">
+<h3>09h30<a class="headerlink" href="#id115" title="Permalink to this headline">¶</a></h3>
+<p>je me rend compte qu j’ai une requête qui ne marche pas</p>
+</div>
+<div class="section" id="id116">
+<h3>11h30<a class="headerlink" href="#id116" title="Permalink to this headline">¶</a></h3>
+<p>J’ai dû modifier le .htaccess pour pouvoir appliquer les rewriteRules. Le fichier n’était pas pris en compte sur le serveur je l’ai donc mis dans le dossier ou point le virtual host.</p>
+</div>
+<div class="section" id="id117">
+<h3>12h00<a class="headerlink" href="#id117" title="Permalink to this headline">¶</a></h3>
+<p>documentation</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id118">
+<h2>17.05.2021<a class="headerlink" href="#id118" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id119">
+<h3>8h05<a class="headerlink" href="#id119" title="Permalink to this headline">¶</a></h3>
+<p>Création d’une ébauche de diagram de classe sur le tableau.</p>
+<p>J’ai repris en grande partie le diagramme de mon POC en y ajoutant une gestion des sauvegardes et des téléchagement.</p>
+</div>
+<div class="section" id="id120">
+<h3>9h00<a class="headerlink" href="#id120" title="Permalink to this headline">¶</a></h3>
+<p>Création du schéma sous UMLetino</p>
+<p>Première version du diagramme de la logique de Caiman.</p>
+</div>
+<div class="section" id="id121">
+<h3>13h20<a class="headerlink" href="#id121" title="Permalink to this headline">¶</a></h3>
+<p>J’essaie de réfléchir à la manière de télécharger les sauvegardes et la façon dont je dois stocker les jeux que l’utilisateur a téléchargé.</p>
+<p>Je pense que je vais faire en sorte de vérifier si les jeux qui devraient être présents sur le disque de l’utilisateur le sont réellement.</p>
+<p>Je vais faire en sorte que l’utilisateur ait la possibilité de pouvoir télécharger les jeux dans un dossier spécifique. Il va devoir au premier lancement de l’application spécifier ou l’installation doit se faire. (c’est peut etre contraire a mon but de faire une application simple d’utilisation).</p>
+<p>Je dois aussi savoir si le disque de l’utilisateur n’a pas la place requise pour télécharger le jeu demandé.</p>
+</div>
+<div class="section" id="id122">
+<h3>14h35<a class="headerlink" href="#id122" title="Permalink to this headline">¶</a></h3>
+<p>Discussion avec M.Maréchal</p>
+</div>
+</div>
+<div class="section" id="id123">
+<h2>18.05.2021<a class="headerlink" href="#id123" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id124">
+<h3>8h05<a class="headerlink" href="#id124" title="Permalink to this headline">¶</a></h3>
+<p>Je vais créer une page de connexion pour l’utilisateur</p>
+</div>
+<div class="section" id="id125">
+<h3>10h00<a class="headerlink" href="#id125" title="Permalink to this headline">¶</a></h3>
+<p>La connection marche, je vais maintenant télécharger les images des jeux</p>
+</div>
+<div class="section" id="id126">
+<h3>12h00<a class="headerlink" href="#id126" title="Permalink to this headline">¶</a></h3>
+<p>Je commence a faire en sorte que quand un nouveau jeu est reçu depuis l’API son image est automatiquement télécharger et mise dans le dossier %appdata% de l’application</p>
+</div>
+<div class="section" id="id127">
+<h3>13h30<a class="headerlink" href="#id127" title="Permalink to this headline">¶</a></h3>
+<p>J’affiche dans la sidebar le nom des catégories</p>
+</div>
+<div class="section" id="id128">
+<h3>15h00<a class="headerlink" href="#id128" title="Permalink to this headline">¶</a></h3>
+<p>Quand je clique sur une catégorie les jeux de la catégorie choisie sont afficher.</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id129">
+<h2>19.05.2021<a class="headerlink" href="#id129" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id130">
+<h3>8h05<a class="headerlink" href="#id130" title="Permalink to this headline">¶</a></h3>
+<p>je fais en sorte d’afficher tous les jeux quand je lance l’application.</p>
+</div>
+<div class="section" id="id131">
+<h3>9h00<a class="headerlink" href="#id131" title="Permalink to this headline">¶</a></h3>
+<p>je vais maintenant faire en sorte de pouvoir voir les détails d’un jeu.</p>
+</div>
+<div class="section" id="id132">
+<h3>9h30<a class="headerlink" href="#id132" title="Permalink to this headline">¶</a></h3>
+<p>J’ai un problème avec les image bouton le clic n’est pas pris en compte</p>
+</div>
+<div class="section" id="id133">
+<h3>11h00<a class="headerlink" href="#id133" title="Permalink to this headline">¶</a></h3>
+<p>j’ai corriger le soucis des boutons et je modifie un petit peu l’interface</p>
+</div>
+<div class="section" id="id134">
+<h3>13h00<a class="headerlink" href="#id134" title="Permalink to this headline">¶</a></h3>
+<p>je commence l’affichage des détails d’un jeu</p>
+</div>
+<div class="section" id="id135">
+<h3>14h00<a class="headerlink" href="#id135" title="Permalink to this headline">¶</a></h3>
+<p>je fais des recherche sur la façon de télécharger un jeu</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id136">
+<h2>20.05.2021<a class="headerlink" href="#id136" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id137">
+<h3>8h05<a class="headerlink" href="#id137" title="Permalink to this headline">¶</a></h3>
+<p>Je crée une route pour pouvoir recevoir le lien de téléchargement d’un jeu.</p>
+</div>
+<div class="section" id="id138">
+<h3>09h15<a class="headerlink" href="#id138" title="Permalink to this headline">¶</a></h3>
+<p>Je me rend compte que pour créer la route de téléchargement je dois:</p>
+<p>Avoir le lien du site
+Avoir le lien pour la console
+avoir le nom du fichier</p>
+<p>Pour avec ces différents éléments je dois modifier mon API pour pouvoir faire tout ça.</p>
+</div>
+<div class="section" id="id139">
+<h3>11h00<a class="headerlink" href="#id139" title="Permalink to this headline">¶</a></h3>
+<p>J’arrive à créer l’URL mais le fichier n’est pas accessible en dehors du serveur donc je ne sais pas vraiment quoi faire</p>
+</div>
+<div class="section" id="id140">
+<h3>12h50<a class="headerlink" href="#id140" title="Permalink to this headline">¶</a></h3>
+<p>Correction d’un problème où l’on pouvait se déplacer dans une case qui n’existe pas donc l’application plantait.</p>
+</div>
+<div class="section" id="id141">
+<h3>14h00<a class="headerlink" href="#id141" title="Permalink to this headline">¶</a></h3>
+<p>Je commence a faire en sorte que je puisse créer la route pour télécharger le fichier des jeux</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id142">
+<h2>21.05.2021<a class="headerlink" href="#id142" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id143">
+<h3>9h00<a class="headerlink" href="#id143" title="Permalink to this headline">¶</a></h3>
+<p>Je voulais télécharger un jeu en passant par le webClient en C# mais ma route est en POST dans mon API. Malheureusement je ne peux pas fournir de paramètres en POST avec la fonction downloadFileAsync donc je dois passer ma route en GET</p>
+</div>
+<div class="section" id="id144">
+<h3>11h00<a class="headerlink" href="#id144" title="Permalink to this headline">¶</a></h3>
+<p>j’ai changé ma route et j’en ai ajouté pour pouvoir connaître les dossiers ou je dois stocker les jeux et le nom du fichier d’un jeu.</p>
+</div>
+<div class="section" id="id145">
+<h3>16h00<a class="headerlink" href="#id145" title="Permalink to this headline">¶</a></h3>
+<p>J’ai réussi à afficher la liste des téléchargements  et maintenant  je suis en train de faire en sorte de pouvoir ajouter un jeu au favoris. j’ai réglé des soucis de droit d’accès au fichier qui sont en cours de lecture.</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id146">
+<h2>24.05.2021<a class="headerlink" href="#id146" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id147">
+<h3>15h15<a class="headerlink" href="#id147" title="Permalink to this headline">¶</a></h3>
+<p>les téléchargement se font maintenant l’un après l’autre</p>
+</div>
+<div class="section" id="id148">
+<h3>16h35<a class="headerlink" href="#id148" title="Permalink to this headline">¶</a></h3>
+<p>Affichage des jeux téléchargé</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id149">
+<h2>25.05.2021<a class="headerlink" href="#id149" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id150">
+<h3>8h10<a class="headerlink" href="#id150" title="Permalink to this headline">¶</a></h3>
+<p>je dois modifier l’API pour pouvoir manipuler les jeux favoris des utilisateur</p>
+</div>
+<div class="section" id="h25">
+<h3>10h25<a class="headerlink" href="#h25" title="Permalink to this headline">¶</a></h3>
+<p>il est maintenant possible d’ajouter et de supprimer un jeu des favoris.
+je vais maintenant faire en sorte de pouvoir exécuter des jeux depuis caiman.</p>
+</div>
+<div class="section" id="id151">
+<h3>10h30<a class="headerlink" href="#id151" title="Permalink to this headline">¶</a></h3>
+<p>Je regarde le code que j’ai fais pour le poc pour voir si je peux reprendre des parties de codes.</p>
+</div>
+<div class="section" id="id152">
+<h3>14h00<a class="headerlink" href="#id152" title="Permalink to this headline">¶</a></h3>
+<p>J’ai un soucis avec le lancement des jeux de PS2</p>
+</div>
+<div class="section" id="id153">
+<h3>14h25<a class="headerlink" href="#id153" title="Permalink to this headline">¶</a></h3>
+<p>Le problème venait des paramètres j’avais oublié une espace entre le nom du fichier à exécuter et les paramètres</p>
+</div>
+<div class="section" id="id154">
+<h3>15h50<a class="headerlink" href="#id154" title="Permalink to this headline">¶</a></h3>
+<p>J’ai pus ajouter les émulateurs et appliquer certains paramètres graphique.</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id155">
+<h2>26.05.2021<a class="headerlink" href="#id155" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id156">
+<h3>8h05<a class="headerlink" href="#id156" title="Permalink to this headline">¶</a></h3>
+<p>Je dois modifier mon api pour pouvoir générer un token à chaque connexion pour ne pas avoir à se connecter à chaque lancement de l’application.</p>
+</div>
+<div class="section" id="id157">
+<h3>10h30<a class="headerlink" href="#id157" title="Permalink to this headline">¶</a></h3>
+<p>J’ai modifié l’API, je vais maintenant passer a Caiman.</p>
+</div>
+<div class="section" id="id158">
+<h3>11h00<a class="headerlink" href="#id158" title="Permalink to this headline">¶</a></h3>
+<p>Il est maintenant possible de se connecter automatiquement , je vais maintenant modifier un petit peu l’aspect graphique de Caiman.</p>
+</div>
+<div class="section" id="id159">
+<h3>13h00<a class="headerlink" href="#id159" title="Permalink to this headline">¶</a></h3>
+<p>je veux afficher le jeux qui est actuellement utilisé par l’utilisateur</p>
+</div>
+<div class="section" id="id160">
+<h3>15h30<a class="headerlink" href="#id160" title="Permalink to this headline">¶</a></h3>
+<p>Il est possible de voir le jeu actuellement lancé par l’utilisateur et peut importe comment l’utilisateur quite le jeu Caiman va étre au courant</p>
+</div>
+<div class="section" id="id161">
+<h3>18h00<a class="headerlink" href="#id161" title="Permalink to this headline">¶</a></h3>
+<p>Affichage du temps de jeu de la session</p>
+</div>
+<div class="section" id="id162">
+<h3>21h00<a class="headerlink" href="#id162" title="Permalink to this headline">¶</a></h3>
+<p>Le nombre de minutes de jeu a comptabilisé</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id163">
+<h2>27.05.2021<a class="headerlink" href="#id163" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id164">
+<h3>8h10<a class="headerlink" href="#id164" title="Permalink to this headline">¶</a></h3>
+<p>J’ai remarqué que je ne pouvais pas upload de jeu actuellement je vais essayer de comprendre pouquoi.</p>
+</div>
+<div class="section" id="id165">
+<h3>09h00<a class="headerlink" href="#id165" title="Permalink to this headline">¶</a></h3>
+<p>J’ai résolu le problème je devais ajouter les droit d’écriture dans mon debian
+Par contre hier soir j’ai oublié de push donc je ne peux pas continuer Caiman ce matin</p>
+</div>
+<div class="section" id="id166">
+<h3>10h05<a class="headerlink" href="#id166" title="Permalink to this headline">¶</a></h3>
+<p>Je profite de ne pas pouvoir coder pour faire des tests, ajouter des jeux et faire de la doc</p>
+</div>
+<div class="section" id="id167">
+<h3>23h30<a class="headerlink" href="#id167" title="Permalink to this headline">¶</a></h3>
+<p>J’ai réussi à scanner un dossier pour savoir si il a y eu une modification.</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id168">
+<h2>28.05.2021<a class="headerlink" href="#id168" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id169">
+<h3>9h30<a class="headerlink" href="#id169" title="Permalink to this headline">¶</a></h3>
+<p>j’ai reussi a faire en sorte que les sauvegardes de l’utilisateur qui se connecte sont déplacé dans le dossier des sauvegardes des émulateurs.</p>
+</div>
+<div class="section" id="id170">
+<h3>10h00<a class="headerlink" href="#id170" title="Permalink to this headline">¶</a></h3>
+<p>Je réfléchi à comment faire pour synchroniser les sauvegardes des utilisateurs. J’ai eu l’idée de créer un sous répertoire pour chaque utilisateur sur le serveur</p>
+<p>###10h30</p>
+<p>J’ai réfléchi et finalement je pense envoyer des fichier zip contenant toutes les sauvegardes d’un utilisateur et cela pour chaque console. Cela a l’avantage de réduire la taille des fichier et de simplifier l’upload et le téléchargement</p>
+</div>
+<div class="section" id="id171">
+<h3>14h00<a class="headerlink" href="#id171" title="Permalink to this headline">¶</a></h3>
+<p>J’ai eu un bogue ou les sauvegarde n’était pas envoyé dans le bon dossier</p>
+</div>
+<div class="section" id="id172">
+<h3>14h35<a class="headerlink" href="#id172" title="Permalink to this headline">¶</a></h3>
+<p>Documentation</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id173">
+<h2>30.05.2021<a class="headerlink" href="#id173" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id174">
+<h3>13h30<a class="headerlink" href="#id174" title="Permalink to this headline">¶</a></h3>
+<p>Modification de l’API pour pouvoir télécharger un fichier de sauvegarde</p>
+</div>
+<div class="section" id="h12">
+<h3>16h12<a class="headerlink" href="#h12" title="Permalink to this headline">¶</a></h3>
+<p>Je fais en sorte que les sauvegardes se synchronisent sur caiman</p>
+</div>
+<div class="section" id="h43">
+<h3>19h43<a class="headerlink" href="#h43" title="Permalink to this headline">¶</a></h3>
+<p>j’ai ENFIN réussi à synchroniser les sauvegardes de Gamecube mais j’ai un soucis avec celle de ps2</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id175">
+<h2>31.05.2021<a class="headerlink" href="#id175" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id176">
+<h3>8h05<a class="headerlink" href="#id176" title="Permalink to this headline">¶</a></h3>
+<p>Je commente le code de Caiman</p>
+</div>
+<div class="section" id="id177">
+<h3>14h00<a class="headerlink" href="#id177" title="Permalink to this headline">¶</a></h3>
+<p>Discussion avec M.Maréchal et ajout de tests pour la classe GameTimer</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id178">
+<h2>01.06.2021<a class="headerlink" href="#id178" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id179">
+<h3>8h05<a class="headerlink" href="#id179" title="Permalink to this headline">¶</a></h3>
+<p>Ajout de tests pour la classe TimeInGame</p>
+</div>
+<div class="section" id="id180">
+<h3>8h20<a class="headerlink" href="#id180" title="Permalink to this headline">¶</a></h3>
+<p>Je veux faire en sorte que Caiman s’exécute sur l’écran principale du pc de l’utilisateur</p>
+</div>
+<div class="section" id="id181">
+<h3>8h30<a class="headerlink" href="#id181" title="Permalink to this headline">¶</a></h3>
+<p>J’ai désactiver le .gitIgnore par ce que cela créait des soucis avec les dossier des émulateurs</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id182">
+<h2>02.06.2021<a class="headerlink" href="#id182" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id183">
+<h3>8h05<a class="headerlink" href="#id183" title="Permalink to this headline">¶</a></h3>
+<p>Commentaire du code de l’API</p>
+</div>
+<div class="section" id="id184">
+<h3>10h30<a class="headerlink" href="#id184" title="Permalink to this headline">¶</a></h3>
+<p>documentation</p>
+</div>
+<div class="section" id="id185">
+<h3>15h30<a class="headerlink" href="#id185" title="Permalink to this headline">¶</a></h3>
+<p>J’ai corrigé le fait que un compte pouvait être créé sans remplir tous les champ</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id186">
+<h2>03.06.2021<a class="headerlink" href="#id186" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id187">
+<h3>8h10<a class="headerlink" href="#id187" title="Permalink to this headline">¶</a></h3>
+<p>J’ai eu un problème de conflit avec mon git j’ai du re télécharger tout le projet mais maintenant c’est bon.</p>
+</div>
+<div class="section" id="h34">
+<h3>8h34<a class="headerlink" href="#h34" title="Permalink to this headline">¶</a></h3>
+<p>Je continue la documentation</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id188">
+<h2>04.06.2021<a class="headerlink" href="#id188" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id189">
+<h3>8h05<a class="headerlink" href="#id189" title="Permalink to this headline">¶</a></h3>
+<p>Documentation</p>
+</div>
+<div class="section" id="id190">
+<h3>13h15<a class="headerlink" href="#id190" title="Permalink to this headline">¶</a></h3>
+<p>La documentation avance bien je vais donc créer les diagrammes de classe pour le C#.</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id191">
+<h2>07.06.2021<a class="headerlink" href="#id191" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id192">
+<h3>8h10<a class="headerlink" href="#id192" title="Permalink to this headline">¶</a></h3>
+<p>Recherche sur comment exporter ma documentation en pdf et je continue ma doc.</p>
+</div>
+<div class="section" id="id193">
+<h3>11h20<a class="headerlink" href="#id193" title="Permalink to this headline">¶</a></h3>
+<p>Je vais essayer d’installer un certificat ssl sur le serveur debian</p>
+</div>
+<div class="section" id="id194">
+<h3>13h30<a class="headerlink" href="#id194" title="Permalink to this headline">¶</a></h3>
+<p>Je n’arrive pas a installer certbot donc je laisse ca en attente</p>
+</div>
+</div>
+</div>
+
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="fonctionnelleBDD.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Analyse fonctionnelle</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, Lorenzo Bauduccio
+            |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            |
+            <a class="muted-link" href="_sources/logbook.md.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Logbook</a><ul>
+<li><a class="reference internal" href="#id1">19.04.2021</a><ul>
+<li><a class="reference internal" href="#h05">8h05</a></li>
+<li><a class="reference internal" href="#id2">9h05</a></li>
+<li><a class="reference internal" href="#h20">9h20</a></li>
+<li><a class="reference internal" href="#h30">9h30</a></li>
+<li><a class="reference internal" href="#h40">9h40</a></li>
+<li><a class="reference internal" href="#id3">10h30</a></li>
+<li><a class="reference internal" href="#id4">10h40</a></li>
+<li><a class="reference internal" href="#id5">12h40</a></li>
+<li><a class="reference internal" href="#h35">14h35</a></li>
+<li><a class="reference internal" href="#resume">résumé</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">20.04.2021</a><ul>
+<li><a class="reference internal" href="#id7">8h05</a></li>
+<li><a class="reference internal" href="#id8">15h20</a></li>
+<li><a class="reference internal" href="#id9">15h30</a></li>
+<li><a class="reference internal" href="#h56">15h56</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id10">21.04.2021</a><ul>
+<li><a class="reference internal" href="#h10">8h10</a></li>
+<li><a class="reference internal" href="#h00">13h00</a></li>
+<li><a class="reference internal" href="#id11">13h20</a></li>
+<li><a class="reference internal" href="#id12">15h00</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id13">22.04.2021</a><ul>
+<li><a class="reference internal" href="#id14">8h05</a></li>
+<li><a class="reference internal" href="#id15">9h00</a></li>
+<li><a class="reference internal" href="#id16">10h20</a></li>
+<li><a class="reference internal" href="#notes-personnelles">notes personnelles</a></li>
+<li><a class="reference internal" href="#h0">11h0</a></li>
+<li><a class="reference internal" href="#h50">11h50</a></li>
+<li><a class="reference internal" href="#id17">12h40</a></li>
+<li><a class="reference internal" href="#id18">15h00</a></li>
+<li><a class="reference internal" href="#a-faire-demain">a faire demain</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id19">23.04.2021</a><ul>
+<li><a class="reference internal" href="#id20">8h05</a></li>
+<li><a class="reference internal" href="#id21">8h40</a></li>
+<li><a class="reference internal" href="#id22">9h30</a></li>
+<li><a class="reference internal" href="#id23">12h20</a></li>
+<li><a class="reference internal" href="#id24">13h30</a></li>
+<li><a class="reference internal" href="#id25">15h20</a></li>
+<li><a class="reference internal" href="#notes-pour-la-prochaine-fois">notes pour la prochaine fois</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id26">26.04.2021</a><ul>
+<li><a class="reference internal" href="#id27">8h05</a></li>
+<li><a class="reference internal" href="#id28">8h10</a></li>
+<li><a class="reference internal" href="#id29">8h30</a></li>
+<li><a class="reference internal" href="#id30">9h00</a></li>
+<li><a class="reference internal" href="#notes-personnels">notes personnels</a></li>
+<li><a class="reference internal" href="#id31">11h00</a></li>
+<li><a class="reference internal" href="#id32">15h00</a></li>
+<li><a class="reference internal" href="#h45">15h45</a></li>
+<li><a class="reference internal" href="#id33">15h50</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id34">27.04.2021</a><ul>
+<li><a class="reference internal" href="#id35">8h05</a></li>
+<li><a class="reference internal" href="#id36">9h20</a></li>
+<li><a class="reference internal" href="#id37">10h05</a></li>
+<li><a class="reference internal" href="#h15">12h15</a></li>
+<li><a class="reference internal" href="#id38">13h00</a></li>
+<li><a class="reference internal" href="#id39">13h30</a></li>
+<li><a class="reference internal" href="#id40">notes personnelles</a></li>
+<li><a class="reference internal" href="#id41">13h40</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id42">28.04.2021</a><ul>
+<li><a class="reference internal" href="#id43">8h05</a></li>
+<li><a class="reference internal" href="#id44">10h40</a></li>
+<li><a class="reference internal" href="#id45">11h00</a></li>
+<li><a class="reference internal" href="#id46">13h10</a></li>
+<li><a class="reference internal" href="#id47">14h00</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id48">29.04.2021</a><ul>
+<li><a class="reference internal" href="#id49">8h30</a></li>
+<li><a class="reference internal" href="#id50">10h20</a></li>
+<li><a class="reference internal" href="#id51">11h00</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id52">30.04.2021</a><ul>
+<li><a class="reference internal" href="#id53">8h05</a></li>
+<li><a class="reference internal" href="#id54">8h20</a></li>
+<li><a class="reference internal" href="#id55">9h30</a></li>
+<li><a class="reference internal" href="#id56">10h45</a></li>
+<li><a class="reference internal" href="#id57">13h00</a></li>
+<li><a class="reference internal" href="#id58">15h20</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#notes-pour-le-premier-rendu">notes pour le premier rendu</a></li>
+<li><a class="reference internal" href="#id59">03.05.2021</a><ul>
+<li><a class="reference internal" href="#id60">8h10</a></li>
+<li><a class="reference internal" href="#id61">8h15</a></li>
+<li><a class="reference internal" href="#id62">10h00</a></li>
+<li><a class="reference internal" href="#id63">12h00</a></li>
+<li><a class="reference internal" href="#id64">13h00</a></li>
+<li><a class="reference internal" href="#id65">14h00</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id66">04.05.2021</a><ul>
+<li><a class="reference internal" href="#id67">8h05</a></li>
+<li><a class="reference internal" href="#id68">11h00</a></li>
+<li><a class="reference internal" href="#id69">12h05</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id70">05.05.2021</a><ul>
+<li><a class="reference internal" href="#id71">8h05</a></li>
+<li><a class="reference internal" href="#id72">10h50</a></li>
+<li><a class="reference internal" href="#id73">12h40</a></li>
+<li><a class="reference internal" href="#id74">13h00</a></li>
+<li><a class="reference internal" href="#id75">15h00</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id76">06.05.2021</a><ul>
+<li><a class="reference internal" href="#id77">8h05</a></li>
+<li><a class="reference internal" href="#id78">9h00</a></li>
+<li><a class="reference internal" href="#id79">10h00</a></li>
+<li><a class="reference internal" href="#id80">10h40</a></li>
+<li><a class="reference internal" href="#id81">13h00</a></li>
+<li><a class="reference internal" href="#id82">14h00</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id83">07.05.2021</a><ul>
+<li><a class="reference internal" href="#id84">8h05</a></li>
+<li><a class="reference internal" href="#id85">10h00</a></li>
+<li><a class="reference internal" href="#id86">12h40</a></li>
+<li><a class="reference internal" href="#id87">notes personnelles</a></li>
+<li><a class="reference internal" href="#id88">15h30</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id89">10.05.2021</a><ul>
+<li><a class="reference internal" href="#id90">8h05</a></li>
+<li><a class="reference internal" href="#id91">10h10</a></li>
+<li><a class="reference internal" href="#id92">10h45</a></li>
+<li><a class="reference internal" href="#id93">13h30</a></li>
+<li><a class="reference internal" href="#id94">14h00</a></li>
+<li><a class="reference internal" href="#id95">14h30</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id96">11.05.2021</a><ul>
+<li><a class="reference internal" href="#id97">8h00</a></li>
+<li><a class="reference internal" href="#id98">11h40</a></li>
+<li><a class="reference internal" href="#id99">13h00</a></li>
+<li><a class="reference internal" href="#id100">13h40</a></li>
+<li><a class="reference internal" href="#id101">14h20</a></li>
+<li><a class="reference internal" href="#id102">15h50</a></li>
+<li><a class="reference internal" href="#id103">16h00</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id104">12.05.2021</a><ul>
+<li><a class="reference internal" href="#id105">8h05</a></li>
+<li><a class="reference internal" href="#id106">13h00</a></li>
+<li><a class="reference internal" href="#id107">14h30</a></li>
+<li><a class="reference internal" href="#id108">15h30</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id109">13.05.2021</a><ul>
+<li><a class="reference internal" href="#id110">11h00</a></li>
+<li><a class="reference internal" href="#id111">12h00</a></li>
+<li><a class="reference internal" href="#id112">13h00</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id113">14.05.2021</a><ul>
+<li><a class="reference internal" href="#id114">8h00</a></li>
+<li><a class="reference internal" href="#h22">09h22</a></li>
+<li><a class="reference internal" href="#id115">09h30</a></li>
+<li><a class="reference internal" href="#id116">11h30</a></li>
+<li><a class="reference internal" href="#id117">12h00</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id118">17.05.2021</a><ul>
+<li><a class="reference internal" href="#id119">8h05</a></li>
+<li><a class="reference internal" href="#id120">9h00</a></li>
+<li><a class="reference internal" href="#id121">13h20</a></li>
+<li><a class="reference internal" href="#id122">14h35</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id123">18.05.2021</a><ul>
+<li><a class="reference internal" href="#id124">8h05</a></li>
+<li><a class="reference internal" href="#id125">10h00</a></li>
+<li><a class="reference internal" href="#id126">12h00</a></li>
+<li><a class="reference internal" href="#id127">13h30</a></li>
+<li><a class="reference internal" href="#id128">15h00</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id129">19.05.2021</a><ul>
+<li><a class="reference internal" href="#id130">8h05</a></li>
+<li><a class="reference internal" href="#id131">9h00</a></li>
+<li><a class="reference internal" href="#id132">9h30</a></li>
+<li><a class="reference internal" href="#id133">11h00</a></li>
+<li><a class="reference internal" href="#id134">13h00</a></li>
+<li><a class="reference internal" href="#id135">14h00</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id136">20.05.2021</a><ul>
+<li><a class="reference internal" href="#id137">8h05</a></li>
+<li><a class="reference internal" href="#id138">09h15</a></li>
+<li><a class="reference internal" href="#id139">11h00</a></li>
+<li><a class="reference internal" href="#id140">12h50</a></li>
+<li><a class="reference internal" href="#id141">14h00</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id142">21.05.2021</a><ul>
+<li><a class="reference internal" href="#id143">9h00</a></li>
+<li><a class="reference internal" href="#id144">11h00</a></li>
+<li><a class="reference internal" href="#id145">16h00</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id146">24.05.2021</a><ul>
+<li><a class="reference internal" href="#id147">15h15</a></li>
+<li><a class="reference internal" href="#id148">16h35</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id149">25.05.2021</a><ul>
+<li><a class="reference internal" href="#id150">8h10</a></li>
+<li><a class="reference internal" href="#h25">10h25</a></li>
+<li><a class="reference internal" href="#id151">10h30</a></li>
+<li><a class="reference internal" href="#id152">14h00</a></li>
+<li><a class="reference internal" href="#id153">14h25</a></li>
+<li><a class="reference internal" href="#id154">15h50</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id155">26.05.2021</a><ul>
+<li><a class="reference internal" href="#id156">8h05</a></li>
+<li><a class="reference internal" href="#id157">10h30</a></li>
+<li><a class="reference internal" href="#id158">11h00</a></li>
+<li><a class="reference internal" href="#id159">13h00</a></li>
+<li><a class="reference internal" href="#id160">15h30</a></li>
+<li><a class="reference internal" href="#id161">18h00</a></li>
+<li><a class="reference internal" href="#id162">21h00</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id163">27.05.2021</a><ul>
+<li><a class="reference internal" href="#id164">8h10</a></li>
+<li><a class="reference internal" href="#id165">09h00</a></li>
+<li><a class="reference internal" href="#id166">10h05</a></li>
+<li><a class="reference internal" href="#id167">23h30</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id168">28.05.2021</a><ul>
+<li><a class="reference internal" href="#id169">9h30</a></li>
+<li><a class="reference internal" href="#id170">10h00</a></li>
+<li><a class="reference internal" href="#id171">14h00</a></li>
+<li><a class="reference internal" href="#id172">14h35</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id173">30.05.2021</a><ul>
+<li><a class="reference internal" href="#id174">13h30</a></li>
+<li><a class="reference internal" href="#h12">16h12</a></li>
+<li><a class="reference internal" href="#h43">19h43</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id175">31.05.2021</a><ul>
+<li><a class="reference internal" href="#id176">8h05</a></li>
+<li><a class="reference internal" href="#id177">14h00</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id178">01.06.2021</a><ul>
+<li><a class="reference internal" href="#id179">8h05</a></li>
+<li><a class="reference internal" href="#id180">8h20</a></li>
+<li><a class="reference internal" href="#id181">8h30</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id182">02.06.2021</a><ul>
+<li><a class="reference internal" href="#id183">8h05</a></li>
+<li><a class="reference internal" href="#id184">10h30</a></li>
+<li><a class="reference internal" href="#id185">15h30</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id186">03.06.2021</a><ul>
+<li><a class="reference internal" href="#id187">8h10</a></li>
+<li><a class="reference internal" href="#h34">8h34</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id188">04.06.2021</a><ul>
+<li><a class="reference internal" href="#id189">8h05</a></li>
+<li><a class="reference internal" href="#id190">13h15</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id191">07.06.2021</a><ul>
+<li><a class="reference internal" href="#id192">8h10</a></li>
+<li><a class="reference internal" href="#id193">11h20</a></li>
+<li><a class="reference internal" href="#id194">13h30</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </main>
+</div>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
+</html>
