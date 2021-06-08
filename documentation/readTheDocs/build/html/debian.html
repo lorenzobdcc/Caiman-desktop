@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Recherche" href="search.html" /><link rel="next" title="Cahier des charges" href="cdc.html" /><link rel="prev" title="Résumé" href="resume.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Recherche" href="search.html" /><link rel="next" title="Analyse organique" href="architecture.html" /><link rel="prev" title="Interface utilisateur utilisable à la manette" href="fonctionnelleInterface.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>Introduction - Documentation Caiman 1.1.0</title>
+        <title>Serveur Debian 10 - Documentation Caiman 1.1.0</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -115,7 +115,7 @@
 <li class="toctree-l1"><a class="reference internal" href="resume.html#legalite-du-projet">Légalité du projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resume.html#installation-de-caiman-utilisateur">Installation de Caiman utilisateur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resume.html#installation-de-caiman-serveur">Installation de Caiman serveur</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cdc.html">Cahier des charges</a></li>
 <li class="toctree-l1"><a class="reference internal" href="opportunite.html">Étude d’opportunité</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fonctionnelleBDD.html">Analyse fonctionnelle</a></li>
@@ -123,7 +123,7 @@
 <li class="toctree-l1"><a class="reference internal" href="fonctionnelleAPI.html">API Caiman</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fonctionnelleC%23.html">Application  Caiman C#</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fonctionnelleInterface.html">Interface utilisateur utilisable à la manette</a></li>
-<li class="toctree-l1"><a class="reference internal" href="debian.html">Serveur Debian 10</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Serveur Debian 10</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Analyse organique</a></li>
 <li class="toctree-l1"><a class="reference internal" href="techniqueWeb.html">Description technique: Site web</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logbook.html">Logbook</a></li>
@@ -141,17 +141,34 @@
         <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="contexte">
-<h2>Contexte<a class="headerlink" href="#contexte" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Caiman a été réalisé dans le cadre du travail de diplôme de technicien deuxième année. La réussite du travail de diplôme est l’une des conditions pour recevoir son titre de technicien en informatique.</p>
+        <div class="section" id="serveur-debian-10">
+<h1>Serveur Debian 10<a class="headerlink" href="#serveur-debian-10" title="Lien permanent vers ce titre">¶</a></h1>
+<p>J’ai utilisé un serveur sous Debian10 pour héberger le site web de caiman, l’API et les fichiers des différents jeux.</p>
+<div class="section" id="configuration-de-php">
+<h2>Configuration de PHP<a class="headerlink" href="#configuration-de-php" title="Lien permanent vers ce titre">¶</a></h2>
+<p>J’ai dû installer PHP pour le site web et l’API. Donc, je vais détailler la configuration que j’ai faite pour Caiman.</p>
+<ul class="simple">
+<li><p>version 7.4</p></li>
+<li><p>max_input_time = 600</p></li>
+<li><p>max_execution_time = 300</p></li>
+<li><p>post_max_size = 8G</p></li>
+<li><p>upload_max_filesize = 10G</p></li>
+</ul>
+<p>J’ai dû grandement augmenter la taille d’upload pour pouvoir uploader les fichiers des jeux sur le serveur.</p>
 </div>
-<div class="section" id="motivations">
-<h2>Motivations<a class="headerlink" href="#motivations" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Le choix de ce travail de diplôme découle de mon envie de faire un travail de diplôme qui serait intéressant, ludique et en lien avec les jeux vidéo. La réalisation d’un jeu vidéo étant trop compliquée pour un travail de diplôme, j’ai décidé de créer une application a mi-chemin entre un launcher de jeu comme Steam ou GOG et un gestionnaire de VM.</p>
-<p>J’utilise depuis des années des émulateurs et je me heurte souvent aux mêmes problèmes, perte de sauvegarde dû à une réinstallation de windows, problème pour ripper mes jeux, téléchargement de chaque émulateur un par un. Donc, J’ai eu l’idée de créer Caiman pour pallier ces différents problèmes.</p>
-<p>Un autre aspect important pour moi est la simplicité. Je voulais que l’utilisation de l’application soit le plus simple possible, une personne sans connaissance particulière en informatique doit pouvoir utiliser Caiman sans difficulté. Une autre spécification est que l’utilisation de Caiman puisse se faire à la manette. Pour créer une interface ergonomique, je me suis basé sur l’interface Big Picture de Steam qui a justement été créé pour être utilisé  à la manette.</p>
+<div class="section" id="modification-des-droits-des-dossiers">
+<h2>Modification des droits des dossiers<a class="headerlink" href="#modification-des-droits-des-dossiers" title="Lien permanent vers ce titre">¶</a></h2>
+<p>J’ai modifié les droits d’écriture pour le dossier où les images sont stockées et les dossiers où sont stockés les fichiers des jeux. Le dossier où sont stockées les sauvegardes des utilisateurs a lui aussi eu ces droits modifiés.</p>
+<p>Chaque émulateur qui est supporté par caiman a un dossier ou les jeux compatibles sont stockés. Le dossier pour les sauvegardes contient les sauvegardes pour chaque émulateur. Il n’est donc pas nécessaire de créer plusieurs sous-dossiers.</p>
+</div>
+<div class="section" id="services-installe">
+<h2>Services installé<a class="headerlink" href="#services-installe" title="Lien permanent vers ce titre">¶</a></h2>
+<p>J’ai aussi installer un service FTP pour pouvoir transférer les fichiers sur le serveur plus facilement que par ssh. J’ai aussi installé mySQL et apache2.</p>
+</div>
+<div class="section" id="creation-de-virtual-host">
+<h2>Création de virtual host<a class="headerlink" href="#creation-de-virtual-host" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour simplifier l’accès au site de Caiman et à l’API, les deux ne possèdent pas la même URL. Pour cela, j’ai dû configurer un sous-domaine pour l’API. Le nom de domaine de “base” est “caiman.cfpt.info” mais j’ai créé le sous-domaine “api.caiman.cfpt.info” pour les requêtes à l’API.</p>
+<p>Le chemin où pointe “caiman.cfpt.info“ est “/var/www/caimanWeb/www” et le chemin pour “api.caiman.cfpt.info” est “/var/www/caimanAPI/public”. Pour créer les deux domaines j’ai dû modifier le fichier “/etc/apache2/sites-enabled/000-default.conf”. et ajouter les deux chemin et leur nom.</p>
 </div>
 </div>
 
@@ -159,23 +176,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="cdc.html">
+          <a class="next-page" href="architecture.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Cahier des charges</div>
+                <div class="title">Analyse organique</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="resume.html">
+          <a class="prev-page" href="fonctionnelleInterface.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Résumé</div>
+                <div class="title">Interface utilisateur utilisable à la manette</div>
                 
               </div>
             </a>
@@ -189,7 +206,7 @@
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             |
-            <a class="muted-link" href="_sources/introduction.md.txt"
+            <a class="muted-link" href="_sources/debian.md.txt"
                rel="nofollow">
               Montrer le code source
             </a>
@@ -209,9 +226,11 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Introduction</a><ul>
-<li><a class="reference internal" href="#contexte">Contexte</a></li>
-<li><a class="reference internal" href="#motivations">Motivations</a></li>
+<li><a class="reference internal" href="#">Serveur Debian 10</a><ul>
+<li><a class="reference internal" href="#configuration-de-php">Configuration de PHP</a></li>
+<li><a class="reference internal" href="#modification-des-droits-des-dossiers">Modification des droits des dossiers</a></li>
+<li><a class="reference internal" href="#services-installe">Services installé</a></li>
+<li><a class="reference internal" href="#creation-de-virtual-host">Création de virtual host</a></li>
 </ul>
 </li>
 </ul>

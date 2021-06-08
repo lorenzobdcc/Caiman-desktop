@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Recherche" href="search.html" /><link rel="next" title="Cahier des charges" href="cdc.html" /><link rel="prev" title="Résumé" href="resume.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Recherche" href="search.html" /><link rel="next" title="Logbook" href="logbook.html" /><link rel="prev" title="Analyse organique" href="architecture.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>Introduction - Documentation Caiman 1.1.0</title>
+        <title>Description technique: Site web - Documentation Caiman 1.1.0</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -115,7 +115,7 @@
 <li class="toctree-l1"><a class="reference internal" href="resume.html#legalite-du-projet">Légalité du projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resume.html#installation-de-caiman-utilisateur">Installation de Caiman utilisateur</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resume.html#installation-de-caiman-serveur">Installation de Caiman serveur</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cdc.html">Cahier des charges</a></li>
 <li class="toctree-l1"><a class="reference internal" href="opportunite.html">Étude d’opportunité</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fonctionnelleBDD.html">Analyse fonctionnelle</a></li>
@@ -125,7 +125,7 @@
 <li class="toctree-l1"><a class="reference internal" href="fonctionnelleInterface.html">Interface utilisateur utilisable à la manette</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debian.html">Serveur Debian 10</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Analyse organique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="techniqueWeb.html">Description technique: Site web</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Description technique: Site web</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logbook.html">Logbook</a></li>
 </ul>
 
@@ -141,17 +141,66 @@
         <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="contexte">
-<h2>Contexte<a class="headerlink" href="#contexte" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Caiman a été réalisé dans le cadre du travail de diplôme de technicien deuxième année. La réussite du travail de diplôme est l’une des conditions pour recevoir son titre de technicien en informatique.</p>
+        <div class="section" id="description-technique-site-web">
+<h1>Description technique: Site web<a class="headerlink" href="#description-technique-site-web" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="creation-de-compte">
+<h2>Création de compte<a class="headerlink" href="#creation-de-compte" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Caiman propose aux utilisateurs de se créer un compte.Se compte est commun au site internet et à l’application. Pour pouvoir se créer un compte, il faut renseigner plusieurs champs.</p>
+<ul class="simple">
+<li><p>un nom d’utilisateur</p></li>
+<li><p>un mail</p></li>
+<li><p>un mot de passe</p></li>
+<li><p>un validation du mot de passe</p></li>
+</ul>
+<p>Dans l’état actuel de l’application, l’émail n’est pas utilisé.</p>
+<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
 </div>
-<div class="section" id="motivations">
-<h2>Motivations<a class="headerlink" href="#motivations" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Le choix de ce travail de diplôme découle de mon envie de faire un travail de diplôme qui serait intéressant, ludique et en lien avec les jeux vidéo. La réalisation d’un jeu vidéo étant trop compliquée pour un travail de diplôme, j’ai décidé de créer une application a mi-chemin entre un launcher de jeu comme Steam ou GOG et un gestionnaire de VM.</p>
-<p>J’utilise depuis des années des émulateurs et je me heurte souvent aux mêmes problèmes, perte de sauvegarde dû à une réinstallation de windows, problème pour ripper mes jeux, téléchargement de chaque émulateur un par un. Donc, J’ai eu l’idée de créer Caiman pour pallier ces différents problèmes.</p>
-<p>Un autre aspect important pour moi est la simplicité. Je voulais que l’utilisation de l’application soit le plus simple possible, une personne sans connaissance particulière en informatique doit pouvoir utiliser Caiman sans difficulté. Une autre spécification est que l’utilisation de Caiman puisse se faire à la manette. Pour créer une interface ergonomique, je me suis basé sur l’interface Big Picture de Steam qui a justement été créé pour être utilisé  à la manette.</p>
+<div class="section" id="connexion">
+<h2>Connexion<a class="headerlink" href="#connexion" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour se connecter au site web de caiman, il faut renseigner son nom d’utilisateur et son mot de passe.</p>
+<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+</div>
+<div class="section" id="fonctionnalite-disponible-une-fois-connecte">
+<h2>Fonctionnalité disponible une fois connecté<a class="headerlink" href="#fonctionnalite-disponible-une-fois-connecte" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Quand un utilisateur se connecte à l’application, il a accès à de nouvelles fonctionnalités. L’utilisateur a maintenant la possibilité de modifier son mot de passe, ajouter/supprimer des jeux de ses favoris et de modifier la visibilité de son profil (si le profil est visible, il sera affiché dans la liste des utilisateurs).</p>
+<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+</div>
+<div class="section" id="ajout-de-jeu">
+<h2>Ajout de jeu<a class="headerlink" href="#ajout-de-jeu" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L’ajout de jeu ne peut se faire que par le site et seulement par les administrateurs du site.</p>
+<p>Pour pouvoir ajouter un jeu, il faut au préalable avoir sur le disque dur de l’administrateur un fichier .iso du jeu, il faut aussi envoyer une image. Cette image sera affichée sur le site web et dans l’application Caiman.</p>
+<p>Pour pouvoir envoyer le formulaire, il faut remplir les champs suivants:</p>
+<ul class="simple">
+<li><p>nom du jeu</p></li>
+<li><p>description</p></li>
+<li><p>nom de l’image(le nom doit respecter un certain format)</p></li>
+<li><p>le fichier de l’image</p></li>
+<li><p>la console sur lequel le jeu tourne</p></li>
+<li><p>le nom du fichier du jeu(le nom doit respecter un certain format)</p></li>
+<li><p>le fichier du jeu</p></li>
+</ul>
+<p>Le serveur est configuré pour recevoir des fichiers jusqu’à 8GB. Donc pour les fichiers de Gamecube qui ne peuvent faire que 1.4GB et les fichiers de Playstation 2 qui peuvent faire jusqu’à 7 GB, il n’y a pas de problèmes.</p>
+<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+</div>
+<div class="section" id="ajout-suppression-de-categories-au-jeux">
+<h2>Ajout / suppression de catégories au jeux<a class="headerlink" href="#ajout-suppression-de-categories-au-jeux" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Chaque jeu peut appartenir à une ou plusieurs catégories. Seuls les administrateurs ont le droit d’ajouter des catégories aux jeux.</p>
+<p>Pour pouvoir modifier les catégories d’un jeu, il faut qu’un administrateur aille sur la page du jeu qui doit être modifiée.</p>
+<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+</div>
+<div class="section" id="ajout-de-categories">
+<h2>Ajout de catégories<a class="headerlink" href="#ajout-de-categories" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La liste des catégories est définie par les administrateurs, ils ont la possibilité d’en ajouter depuis le menu d’administration. Pour ajouter une catégorie, il suffit de spécifier le nom que va porter la nouvelle catégorie.</p>
+<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+</div>
+<div class="section" id="telechargement-de-caiman">
+<h2>Téléchargement de Caiman<a class="headerlink" href="#telechargement-de-caiman" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le téléchargement de Caiman se fait sous forme de fichier .zip. Pour pouvoir télécharger l’application, il faut être authentifié. Actuellement, pour pouvoir modifier le fichier caiman.zip que l’utilisateur télécharge, il faut passer par le FTP. Le site web ne permet pas de le mettre à jour.</p>
+<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+</div>
+<div class="section" id="modification-des-jeux">
+<h2>Modification des jeux<a class="headerlink" href="#modification-des-jeux" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Actuellement, il est possible de modifier le nom et la description du jeu.</p>
 </div>
 </div>
 
@@ -159,23 +208,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="cdc.html">
+          <a class="next-page" href="logbook.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Cahier des charges</div>
+                <div class="title">Logbook</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="resume.html">
+          <a class="prev-page" href="architecture.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Résumé</div>
+                <div class="title">Analyse organique</div>
                 
               </div>
             </a>
@@ -189,7 +238,7 @@
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             |
-            <a class="muted-link" href="_sources/introduction.md.txt"
+            <a class="muted-link" href="_sources/techniqueWeb.md.txt"
                rel="nofollow">
               Montrer le code source
             </a>
@@ -209,9 +258,15 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Introduction</a><ul>
-<li><a class="reference internal" href="#contexte">Contexte</a></li>
-<li><a class="reference internal" href="#motivations">Motivations</a></li>
+<li><a class="reference internal" href="#">Description technique: Site web</a><ul>
+<li><a class="reference internal" href="#creation-de-compte">Création de compte</a></li>
+<li><a class="reference internal" href="#connexion">Connexion</a></li>
+<li><a class="reference internal" href="#fonctionnalite-disponible-une-fois-connecte">Fonctionnalité disponible une fois connecté</a></li>
+<li><a class="reference internal" href="#ajout-de-jeu">Ajout de jeu</a></li>
+<li><a class="reference internal" href="#ajout-suppression-de-categories-au-jeux">Ajout / suppression de catégories au jeux</a></li>
+<li><a class="reference internal" href="#ajout-de-categories">Ajout de catégories</a></li>
+<li><a class="reference internal" href="#telechargement-de-caiman">Téléchargement de Caiman</a></li>
+<li><a class="reference internal" href="#modification-des-jeux">Modification des jeux</a></li>
 </ul>
 </li>
 </ul>

@@ -1,0 +1,82 @@
+## Description technique: Site web
+
+
+### Création de compte
+
+Caiman propose aux utilisateurs de se créer un compte.Se compte est commun au site internet et à l’application. Pour pouvoir se créer un compte, il faut renseigner plusieurs champs.
+
+
+
+*   un nom d’utilisateur
+*   un mail
+*   un mot de passe
+*   un validation du mot de passe
+
+Dans l’état actuel de l’application, l’émail n’est pas utilisé.
+
+````CODE````
+
+
+### Connexion
+
+Pour se connecter au site web de caiman, il faut renseigner son nom d’utilisateur et son mot de passe.
+
+````CODE````
+
+
+### Fonctionnalité disponible une fois connecté
+
+Quand un utilisateur se connecte à l’application, il a accès à de nouvelles fonctionnalités. L’utilisateur a maintenant la possibilité de modifier son mot de passe, ajouter/supprimer des jeux de ses favoris et de modifier la visibilité de son profil (si le profil est visible, il sera affiché dans la liste des utilisateurs).
+
+````CODE````
+
+
+### Ajout de jeu
+
+L’ajout de jeu ne peut se faire que par le site et seulement par les administrateurs du site.
+
+Pour pouvoir ajouter un jeu, il faut au préalable avoir sur le disque dur de l’administrateur un fichier .iso du jeu, il faut aussi envoyer une image. Cette image sera affichée sur le site web et dans l'application Caiman.
+
+Pour pouvoir envoyer le formulaire, il faut remplir les champs suivants:
+
+
+
+*   nom du jeu
+*   description
+*   nom de l’image(le nom doit respecter un certain format)
+*   le fichier de l’image
+*   la console sur lequel le jeu tourne
+*   le nom du fichier du jeu(le nom doit respecter un certain format)
+*   le fichier du jeu
+
+Le serveur est configuré pour recevoir des fichiers jusqu'à 8GB. Donc pour les fichiers de Gamecube qui ne peuvent faire que 1.4GB et les fichiers de Playstation 2 qui peuvent faire jusqu'à 7 GB, il n’y a pas de problèmes.
+
+````CODE````
+
+
+### Ajout / suppression de catégories au jeux
+
+Chaque jeu peut appartenir à une ou plusieurs catégories. Seuls les administrateurs ont le droit d’ajouter des catégories aux jeux.
+
+Pour pouvoir modifier les catégories d’un jeu, il faut qu'un administrateur aille sur la page du jeu qui doit être modifiée.
+
+````CODE````
+
+
+### Ajout de catégories
+
+La liste des catégories est définie par les administrateurs, ils ont la possibilité d’en ajouter depuis le menu d’administration. Pour ajouter une catégorie, il suffit de spécifier le nom que va porter la nouvelle catégorie.
+
+````CODE````
+
+
+### Téléchargement de Caiman
+
+Le téléchargement de Caiman se fait sous forme de fichier .zip. Pour pouvoir télécharger l’application, il faut être authentifié. Actuellement, pour pouvoir modifier le fichier caiman.zip que l'utilisateur télécharge, il faut passer par le FTP. Le site web ne permet pas de le mettre à jour.
+
+````CODE````
+
+
+### Modification des jeux
+
+Actuellement, il est possible de modifier le nom et la description du jeu.

@@ -15,6 +15,9 @@ Welcome to Caiman's documentation!
    fonctionnelleAPI
    fonctionnelleC#
    fonctionnelleInterface
+   debian
+   architecture
+   techniqueWeb
    logbook
    
 
