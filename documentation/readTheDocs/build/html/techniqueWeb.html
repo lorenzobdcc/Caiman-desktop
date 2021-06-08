@@ -2,7 +2,7 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Recherche" href="search.html" /><link rel="next" title="Logbook" href="logbook.html" /><link rel="prev" title="Analyse organique" href="architecture.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Recherche" href="search.html" /><link rel="next" title="Description technique: API" href="techniqueAPI.html" /><link rel="prev" title="Analyse organique" href="architecture.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
         <title>Description technique: Site web - Documentation Caiman 1.1.0</title>
@@ -126,6 +126,7 @@
 <li class="toctree-l1"><a class="reference internal" href="debian.html">Serveur Debian 10</a></li>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Analyse organique</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Description technique: Site web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="techniqueAPI.html">Description technique: API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logbook.html">Logbook</a></li>
 </ul>
 
@@ -153,17 +154,77 @@
 <li><p>un validation du mot de passe</p></li>
 </ul>
 <p>Dans l’état actuel de l’application, l’émail n’est pas utilisé.</p>
-<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+<div class="highlight-PHP notranslate"><div class="highlight"><pre><span></span><span class="x">    // check if email alredy used</span>
+<span class="x">    $sqlrequestEmail = "SELECT * FROM user WHERE email = :search_email ";</span>
+<span class="x">    $this-&gt;psCheckEmail = $this-&gt;dbh-&gt;prepare($sqlrequestEmail);</span>
+<span class="x">    $this-&gt;psCheckEmail-&gt;setFetchMode(PDO::FETCH_ASSOC);</span>
+
+<span class="x">    // check if username alredy used</span>
+<span class="x">    $sqlRequestUsername = "SELECT * FROM user WHERE username = :search_username ";</span>
+<span class="x">    $this-&gt;psCheckUsername = $this-&gt;dbh-&gt;prepare($sqlRequestUsername);</span>
+<span class="x">    $this-&gt;psCheckUsername-&gt;setFetchMode(PDO::FETCH_ASSOC);</span>
+
+<span class="x">    $sqlInsert = "INSERT INTO user  (username, password, email, salt,apitocken)</span>
+<span class="x">    </span>
+<span class="x">    VALUES (:insert_username, :insert_password, :insert_email, :insert_salt, :insert_apiTocken)";</span>
+<span class="x">    $this-&gt;psInsert = $this-&gt;dbh-&gt;prepare($sqlInsert);</span>
+<span class="x">    $this-&gt;psInsert-&gt;setFetchMode(PDO::FETCH_ASSOC);</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="connexion">
 <h2>Connexion<a class="headerlink" href="#connexion" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour se connecter au site web de caiman, il faut renseigner son nom d’utilisateur et son mot de passe.</p>
-<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+<div class="highlight-PHP notranslate"><div class="highlight"><pre><span></span><span class="x"> $this-&gt;psLogin-&gt;execute(array(':search_username' =&gt; $this-&gt;search_username));</span>
+<span class="x">            $result = $this-&gt;psLogin-&gt;fetchAll();</span>
+<span class="x">            if ($result != null) {</span>
+<span class="x">                if (md5($result[0]["salt"].$password_verify) == $result[0]["password"]  ) {</span>
+<span class="x">                    $returnArray = $result;</span>
+<span class="x">                    $_SESSION['error'] = "Welcome back: ". $result[0]['username'];</span>
+<span class="x">                }else</span>
+<span class="x">                {</span>
+<span class="x">                    $_SESSION['error'] = "Invalid log in";</span>
+<span class="x">                }</span>
+<span class="x">            }</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="fonctionnalite-disponible-une-fois-connecte">
 <h2>Fonctionnalité disponible une fois connecté<a class="headerlink" href="#fonctionnalite-disponible-une-fois-connecte" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Quand un utilisateur se connecte à l’application, il a accès à de nouvelles fonctionnalités. L’utilisateur a maintenant la possibilité de modifier son mot de passe, ajouter/supprimer des jeux de ses favoris et de modifier la visibilité de son profil (si le profil est visible, il sera affiché dans la liste des utilisateurs).</p>
-<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function updatePassword(string $newPassword, string $newPasswordRepeat, string $oldPassword)</span>
+<span class="x">    {</span>
+<span class="x">        $dbh = new PDO('mysql:host=' . HOST . ';dbname=' . DBNAME, USER, PASSWORD, array(</span>
+<span class="x">            PDO::MYSQL_ATTR_INIT_COMMAND =&gt; "SET NAMES utf8",</span>
+<span class="x">            PDO::ATTR_PERSISTENT =&gt; true</span>
+<span class="x">        ));</span>
+
+<span class="x">        $hasBeenUpdated = 1;</span>
+<span class="x">        if (md5($_SESSION['user']-&gt;salt.$oldPassword) == $this-&gt;getUserPassword()) {</span>
+
+<span class="x">            if ($newPasswordRepeat == $newPassword) {</span>
+<span class="x">                try {</span>
+<span class="x">                    $salt = rand(1,10000);</span>
+<span class="x">                    $sqlUpdatePassword = "UPDATE user  SET password = :update_password, salt = :update_salt WHERE id = :id_user";</span>
+<span class="x">                    $psUpdatePassword = $dbh-&gt;prepare($sqlUpdatePassword);</span>
+<span class="x">                    $psUpdatePassword-&gt;execute(array(':update_password' =&gt; md5($salt.$newPassword), ':id_user' =&gt; $this-&gt;idUser, ':update_salt' =&gt; $salt));</span>
+
+<span class="x">                    $hasBeenUpdated = 0;</span>
+<span class="x">                } catch (PDOException $e) {</span>
+<span class="x">                    print "Erreur !: " . $e-&gt;getMessage() . "&lt;br&gt;";</span>
+<span class="x">                    die();</span>
+<span class="x">                }</span>
+<span class="x">            } else {</span>
+<span class="x">                $hasBeenUpdated = 2;</span>
+<span class="x">            }</span>
+<span class="x">        } else {</span>
+<span class="x">            $hasBeenUpdated = 4;</span>
+<span class="x">        }</span>
+
+<span class="x">        return $hasBeenUpdated;</span>
+<span class="x">    }</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="ajout-de-jeu">
 <h2>Ajout de jeu<a class="headerlink" href="#ajout-de-jeu" title="Lien permanent vers ce titre">¶</a></h2>
@@ -180,27 +241,106 @@
 <li><p>le fichier du jeu</p></li>
 </ul>
 <p>Le serveur est configuré pour recevoir des fichiers jusqu’à 8GB. Donc pour les fichiers de Gamecube qui ne peuvent faire que 1.4GB et les fichiers de Playstation 2 qui peuvent faire jusqu’à 7 GB, il n’y a pas de problèmes.</p>
-<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+<div class="highlight-PHP notranslate"><div class="highlight"><pre><span></span><span class="x">public function uploadGame($gameFileName, $consoleId)</span>
+<span class="x">    {</span>
+<span class="x">        $uploadIsValid = false;</span>
+<span class="x">        $target_dir = "../games/" . $this-&gt;getConsoleFolderName($consoleId) . "/";</span>
+
+<span class="x">        $target_file =  basename($_FILES["fileGame"]["name"]);</span>
+<span class="x">        $uploadOk = 1;</span>
+<span class="x">        $fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));</span>
+
+<span class="x">        //rename file</span>
+<span class="x">        $newfilename = $gameFileName ;</span>
+
+
+<span class="x">        // Check if file already exists</span>
+<span class="x">        if (file_exists($target_file)) {</span>
+<span class="x">            echo "Sorry, file already exists.";</span>
+<span class="x">            $uploadOk = 0;</span>
+<span class="x">        }</span>
+<span class="x">        if ($uploadOk == 0) {</span>
+<span class="x">            echo "Sorry, your file was not uploaded.";</span>
+<span class="x">            // if everything is ok, try to upload file</span>
+<span class="x">        } else {</span>
+<span class="x">            if (move_uploaded_file($_FILES["fileGame"]["tmp_name"], $target_dir . $newfilename)) {</span>
+<span class="x">                $uploadIsValid = true;</span>
+<span class="x">            } else {</span>
+<span class="x">                //Sorry, there was an error uploading your file</span>
+<span class="x">            }</span>
+<span class="x">        }</span>
+<span class="x">        return $uploadIsValid;</span>
+<span class="x">    }</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="ajout-suppression-de-categories-au-jeux">
 <h2>Ajout / suppression de catégories au jeux<a class="headerlink" href="#ajout-suppression-de-categories-au-jeux" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Chaque jeu peut appartenir à une ou plusieurs catégories. Seuls les administrateurs ont le droit d’ajouter des catégories aux jeux.</p>
 <p>Pour pouvoir modifier les catégories d’un jeu, il faut qu’un administrateur aille sur la page du jeu qui doit être modifiée.</p>
-<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function addCategorieToGame(int $idGame, int $idCategorie)</span>
+<span class="x">    {</span>
+<span class="x">        $result = null;</span>
+<span class="x">        try {</span>
+<span class="x">            $this-&gt;psCheckIfGameHasCategorie-&gt;execute(array(':insert_idCategorie' =&gt; $idCategorie, ':insert_idGame' =&gt; $idGame));</span>
+<span class="x">            $result = $this-&gt;psCheckIfGameHasCategorie-&gt;fetchAll();</span>
+<span class="x">        } catch (PDOException $e) {</span>
+<span class="x">            print "Erreur !: " . $e-&gt;getMessage() . "&lt;br&gt;";</span>
+<span class="x">            die();</span>
+<span class="x">        }</span>
+<span class="x">        if ($result == null) {</span>
+<span class="x">            try {</span>
+<span class="x">                $this-&gt;psAddCategorieToGame-&gt;execute(array(':insert_idCategorie' =&gt; $idCategorie, ':insert_idGame' =&gt; $idGame));</span>
+<span class="x">            } catch (PDOException $e) {</span>
+<span class="x">                print "Erreur !: " . $e-&gt;getMessage() . "&lt;br&gt;";</span>
+<span class="x">                die();</span>
+<span class="x">            }</span>
+<span class="x">        }</span>
+<span class="x">    }</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="ajout-de-categories">
 <h2>Ajout de catégories<a class="headerlink" href="#ajout-de-categories" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La liste des catégories est définie par les administrateurs, ils ont la possibilité d’en ajouter depuis le menu d’administration. Pour ajouter une catégorie, il suffit de spécifier le nom que va porter la nouvelle catégorie.</p>
-<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function addCategorie(string $categorieName)</span>
+<span class="x">    {</span>
+<span class="x">        try {</span>
+<span class="x">            $this-&gt;psAddCategorie-&gt;execute(array(':categorie_name' =&gt; $categorieName));</span>
+<span class="x">            $result = $this-&gt;psAddCategorie-&gt;fetchAll();</span>
+<span class="x">        } catch (PDOException $e) {</span>
+<span class="x">            print "Erreur !: " . $e-&gt;getMessage() . "&lt;br&gt;";</span>
+<span class="x">            die();</span>
+<span class="x">        }</span>
+<span class="x">        return $result;</span>
+<span class="x">    }</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="telechargement-de-caiman">
 <h2>Téléchargement de Caiman<a class="headerlink" href="#telechargement-de-caiman" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Le téléchargement de Caiman se fait sous forme de fichier .zip. Pour pouvoir télécharger l’application, il faut être authentifié. Actuellement, pour pouvoir modifier le fichier caiman.zip que l’utilisateur télécharge, il faut passer par le FTP. Le site web ne permet pas de le mettre à jour.</p>
-<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function downloadCaiman()</span>
+<span class="x">    {</span>
+
+<span class="x">        $zipFile = "../release/Caiman.zip";</span>
+
+<span class="x">        $file_name = basename($zipFile);</span>
+
+<span class="x">        header("Content-Type: application/zip");</span>
+<span class="x">        header("Content-Disposition: attachment; filename=$file_name");</span>
+<span class="x">        header("Content-Length: " . filesize($zipFile));</span>
+
+<span class="x">        readfile($zipFile);</span>
+<span class="x">        exit;</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="modification-des-jeux">
 <h2>Modification des jeux<a class="headerlink" href="#modification-des-jeux" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Actuellement, il est possible de modifier le nom et la description du jeu.</p>
+<p>Actuellement, il est possible de modifier le nom et la description d’un jeu.</p>
 </div>
 </div>
 
@@ -208,12 +348,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="logbook.html">
+          <a class="next-page" href="techniqueAPI.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Logbook</div>
+                <div class="title">Description technique: API</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>

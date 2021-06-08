@@ -18,6 +18,7 @@ Welcome to Caiman's documentation!
    debian
    architecture
    techniqueWeb
+   techniqueAPI
    logbook
    
 
