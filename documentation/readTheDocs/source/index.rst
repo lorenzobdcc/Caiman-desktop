@@ -15,6 +15,10 @@ Welcome to Caiman's documentation!
    cdc
    opportunite
    fonctionnelleBDD
+   fonctionnelleWeb
+   fonctionnelleAPI
+   fonctionnelleC#
+   fonctionnelleInterface
    logbook
    
 

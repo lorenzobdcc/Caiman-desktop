@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Site web Caiman" href="fonctionnelleWeb.html" /><link rel="prev" title="Étude d’opportunité" href="opportunite.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Logbook" href="logbook.html" /><link rel="prev" title="Application Caiman C#" href="fonctionnelleC%23.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>Analyse fonctionnelle - Caiman 1.1.0 documentation</title>
+        <title>Interface utilisateur utilisable à la manette - Caiman 1.1.0 documentation</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -118,11 +118,11 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cdc.html">Cahier des charges</a></li>
 <li class="toctree-l1"><a class="reference internal" href="opportunite.html">Étude d’opportunité</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Analyse fonctionnelle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fonctionnelleBDD.html">Analyse fonctionnelle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fonctionnelleWeb.html">Site web Caiman</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fonctionnelleAPI.html">API Caiman</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fonctionnelleC%23.html">Application  Caiman C#</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fonctionnelleInterface.html">Interface utilisateur utilisable à la manette</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Interface utilisateur utilisable à la manette</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logbook.html">Logbook</a></li>
 </ul>
 
@@ -138,63 +138,46 @@
         <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <div class="section" id="analyse-fonctionnelle">
-<h1>Analyse fonctionnelle<a class="headerlink" href="#analyse-fonctionnelle" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="base-de-donnees">
-<h2>Base de données<a class="headerlink" href="#base-de-donnees" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="schema">
-<h3>Schéma<a class="headerlink" href="#schema" title="Permalink to this headline">¶</a></h3>
-<p>Le schéma suivant représente la structure de la base de données. La base de données est commune au site web et à l’application Caiman. Les tables sont principalement utilisées pour stocker les informations des utilisateurs et des différents jeux.</p>
-<p><img alt="alt_text" src="_images/caiman_database.png"/></p>
+        <div class="section" id="interface-utilisateur-utilisable-a-la-manette">
+<h1>Interface utilisateur utilisable à la manette<a class="headerlink" href="#interface-utilisateur-utilisable-a-la-manette" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="reception-des-input-des-manettes-connecte">
+<h2>Réception des input des manettes connecté<a class="headerlink" href="#reception-des-input-des-manettes-connecte" title="Permalink to this headline">¶</a></h2>
+<p>L’utilisateur de Caiman a la possibilité de pouvoir utiliser l’application au clavier souris mais aussi à la manette. Pour ce faire, j’ai utilisé le paquet nuGet “SharpDX.XInput”. Ce paquet me permet de connaître les manettes connectées au pc ainsi que les touches appuyées par l’utilisateur.</p>
+<p>La seule manette qui peut se déplacer dans l’application est la manette 1. Pour connaître les boutons de la manette, j’utilise la fonction getInput(). Cette fonction me permet de connaître les touches qui sont pressées à un instant T.  Je vais chercher les inputs toutes les 2ms pour être sûr de ne pas louper d’inputs.</p>
+<p>Les inputs sont ensuite traités par l’interface de l’application qui décide quoi en faire selon le contexte.</p>
 </div>
-<div class="section" id="table-categorie">
-<h3>Table categorie<a class="headerlink" href="#table-categorie" title="Permalink to this headline">¶</a></h3>
-<p>Cette table est utilisée pour stocker les différentes catégories auxquelles les jeux peuvent appartenir.</p>
+<div class="section" id="transformation-des-input-de-la-manette-en-evenement">
+<h2>Transformation des input de la manette en événement<a class="headerlink" href="#transformation-des-input-de-la-manette-en-evenement" title="Permalink to this headline">¶</a></h2>
+<p>Les inputs de la manette sont analysés par la form principale de Caiman. Selon la ou les touches qui sont pressées, l’application exécute des actions différentes. Par exemple, quand la touche “A” est pressée, alors le programme envoie la touche ENTER à l’application ce qui me permet de cliquer sur des boutons.</p>
+<p>Pour gérer les événements, je fais un test pour savoir si l’utilisateur utilise l’application ou non . Si l’application n’est pas focus par l’utilisateur, seul une partie des actions sont possibles pour éviter que des actions inattendues puissent arriver alors que l’application n’est plus visible.</p>
 </div>
-<div class="section" id="table-console">
-<h3>Table console<a class="headerlink" href="#table-console" title="Permalink to this headline">¶</a></h3>
-<p>Cette table sert à stocker les différentes consoles prises en charge par l’application Caiman. Chaque console doit être reliée à un émulateur.</p>
+<div class="section" id="structure-de-laffichage">
+<h2>Structure de l’affichage<a class="headerlink" href="#structure-de-laffichage" title="Permalink to this headline">¶</a></h2>
+<p>L’affichage est constitué d’un “XboxMainForm”. Il sert à contenir tous les autres panels, il est aussi chargé de la gestion des inputs de la manette de l’utilisateur 1.</p>
+<p>Un “XboxMainForm” contient une liste de XboxUserController qui elles contiennent différentes choses comme des boutons des images ou des labels.</p>
+<p>Le XboxMainForm est aussi responsable de la gestion des demandes de l’utilisateur, par exemple si l’utilisateur veut afficher l’accueil de Caiman, il va lui passer un objet contenant sa demande. Il va donc traiter les demandes et afficher les panels selon les besoins de l’utilisateur.</p>
 </div>
-<div class="section" id="table-emulator">
-<h3>Table emulator<a class="headerlink" href="#table-emulator" title="Permalink to this headline">¶</a></h3>
-<p>La table émulateur sert à lister les différents émulateurs disponible pour l’application, il est possible qu’ un émulateur soit compatible avec plusieurs consoles.</p>
+<div class="section" id="deplacement-dans-un-panel-de-lapplication">
+<h2>Déplacement dans un panel de l’application<a class="headerlink" href="#deplacement-dans-un-panel-de-lapplication" title="Permalink to this headline">¶</a></h2>
+<p>L’application est conçue avec des “panels”, c’est-à-dire une liste de listes de controls. Cette liste de controls est propre à chaque panel. Les panels contiennent aussi une variable position_x et position_y qui permettent de connaître le control actuellement sélectionné par l’utilisateur. Quand l’utilisateur décide de se déplacer, il demande au panel de modifier ses variables x et y. Avant de valider ce changement, le panel regarde si le déplacement demandé par l’utilisateur est possible ou non.</p>
+<p>Il existe 3 possibilités:</p>
+<ol class="simple">
+<li><p>Le déplacement est possible, alors la position sur l’axe x,y est modifiée.</p></li>
+<li><p>Le déplacement est impossible car il n’y a rien à l’emplacement demandé. Dans ce cas, le panel va décider de bouger le curseur sur un des emplacements possibles.</p></li>
+<li><p>L’utilisateur est à la fin du panel et “sors du panel” dans ce cas il va se diriger dans un autre panel s’il y en a un dans la direction demandée.</p></li>
+</ol>
 </div>
-<div class="section" id="table-favoritegame">
-<h3>Table favoritegame<a class="headerlink" href="#table-favoritegame" title="Permalink to this headline">¶</a></h3>
-<p>Sert à lister les jeux favoris des utilisateurs.</p>
-</div>
-<div class="section" id="table-file">
-<h3>Table file<a class="headerlink" href="#table-file" title="Permalink to this headline">¶</a></h3>
-<p>La table file sert à lister le nom d’un fichier, cela peut être un fichier .iso d’un jeu, un fichier de sauvegarde ou un fichier de configuration utilisateur.</p>
-</div>
-<div class="section" id="table-filesave">
-<h3>Table filesave<a class="headerlink" href="#table-filesave" title="Permalink to this headline">¶</a></h3>
-<p>Sert  faire le lien entre un émulateur, un utilisateur, et un fichier de sauvegarde. Alors elle permet de connaître les sauvegardes pour un émulateur particulier d’un utilisateur.</p>
-</div>
-<div class="section" id="table-game">
-<h3>Table game<a class="headerlink" href="#table-game" title="Permalink to this headline">¶</a></h3>
-<p>Table qui liste les jeux disponibles. Chaque jeu a plusieurs informations: un nom, une description, une console. La console permet de à l’application de savoir quel émulateur doit être utilisé.</p>
-</div>
-<div class="section" id="table-gamehascategorie">
-<h3>Table gamehascategorie<a class="headerlink" href="#table-gamehascategorie" title="Permalink to this headline">¶</a></h3>
-<p>Sert à assigner des catégories aux jeux.</p>
-</div>
-<div class="section" id="table-role">
-<h3>Table rôle<a class="headerlink" href="#table-role" title="Permalink to this headline">¶</a></h3>
-<p>Sert à lister les différents rôles (utilisateur, administrateur), elle ne sert que pour le site web sachant que toute la partie administration est sur le site.</p>
-</div>
-<div class="section" id="table-timeingame">
-<h3>Table timeingame<a class="headerlink" href="#table-timeingame" title="Permalink to this headline">¶</a></h3>
-<p>Sert à stocker le temps de jeu en minutes de chaque utilisateur. Le temps de jeu est spécifique à chaque jeu. Il est mis à jour directement depuis l’application Caiman.</p>
-</div>
-<div class="section" id="table-user">
-<h3>Table user<a class="headerlink" href="#table-user" title="Permalink to this headline">¶</a></h3>
-<p>Cette table sert à stocker les informations de compte de chaque utilisateur de Caiman. Le compte est commun au site web et à l’application. Le mot de passe de l’utilisateur est crypté avec les fonctions de sécurité de php.</p>
-</div>
-<div class="section" id="table-userconfigfile">
-<h3>Table userconfigfile<a class="headerlink" href="#table-userconfigfile" title="Permalink to this headline">¶</a></h3>
-<p>Cette table sert à faire le lien entre un fichier de configuration et un utilisateur. Le fichier de configuration sert à connaître la configuration.</p>
-</div>
+<div class="section" id="deplacement-de-panel-en-panel">
+<h2>Déplacement de panel en panel<a class="headerlink" href="#deplacement-de-panel-en-panel" title="Permalink to this headline">¶</a></h2>
+<p>Chaque “panel” possède un pointeur sur le panel du haut, du bas, de droite et de gauche.</p>
+<p>Ces pointers ne sont pas forcément utilisés, ils ont le droit d’être nul.</p>
+<p>Si on prend l’exemple suivant:</p>
+<p><img alt="alt_text" src="_images/exemple_3_panel.jpeg"/></p>
+<p>Nous avons 3 panels différents qui contiennent chacun plusieurs controls.</p>
+<p>Le panel 1 possède donc deux pointeurs différents, un sur le panel 2 et un autre sur le panel 3.</p>
+<p>trop confus</p>
+<p>Si l’utilisateur se trouve en bas du panel 1 et qu’il décide de se déplacer encore plus  bas, il ne pourra pas car aucune case n’est disponible dans ce panel. C’est pourquoi une vérification  sera faite pour savoir si un panel est indiqué comme le panel “down”, si tel est le cas le focus va changer de panel.</p>
+<p>Un autre cas possible est que l’utilisateur va peut-être décider de retourner sur le panel 1. La contrainte est de savoir où doit pointer le panel haut du panel 3. Actuellement, un seul panel peut être défini par côté, mais la solution est de créer de petits panels pour éviter que ces situations arrivent.</p>
 </div>
 </div>
 
@@ -202,23 +185,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="fonctionnelleWeb.html">
+          <a class="next-page" href="logbook.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Site web Caiman</div>
+                <div class="title">Logbook</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="opportunite.html">
+          <a class="prev-page" href="fonctionnelleC%23.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Étude d’opportunité</div>
+                <div class="title">Application  Caiman C#</div>
                 
               </div>
             </a>
@@ -232,7 +215,7 @@
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             |
-            <a class="muted-link" href="_sources/fonctionnelleBDD.md.txt"
+            <a class="muted-link" href="_sources/fonctionnelleInterface.md.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -252,23 +235,12 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Analyse fonctionnelle</a><ul>
-<li><a class="reference internal" href="#base-de-donnees">Base de données</a><ul>
-<li><a class="reference internal" href="#schema">Schéma</a></li>
-<li><a class="reference internal" href="#table-categorie">Table categorie</a></li>
-<li><a class="reference internal" href="#table-console">Table console</a></li>
-<li><a class="reference internal" href="#table-emulator">Table emulator</a></li>
-<li><a class="reference internal" href="#table-favoritegame">Table favoritegame</a></li>
-<li><a class="reference internal" href="#table-file">Table file</a></li>
-<li><a class="reference internal" href="#table-filesave">Table filesave</a></li>
-<li><a class="reference internal" href="#table-game">Table game</a></li>
-<li><a class="reference internal" href="#table-gamehascategorie">Table gamehascategorie</a></li>
-<li><a class="reference internal" href="#table-role">Table rôle</a></li>
-<li><a class="reference internal" href="#table-timeingame">Table timeingame</a></li>
-<li><a class="reference internal" href="#table-user">Table user</a></li>
-<li><a class="reference internal" href="#table-userconfigfile">Table userconfigfile</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Interface utilisateur utilisable à la manette</a><ul>
+<li><a class="reference internal" href="#reception-des-input-des-manettes-connecte">Réception des input des manettes connecté</a></li>
+<li><a class="reference internal" href="#transformation-des-input-de-la-manette-en-evenement">Transformation des input de la manette en événement</a></li>
+<li><a class="reference internal" href="#structure-de-laffichage">Structure de l’affichage</a></li>
+<li><a class="reference internal" href="#deplacement-dans-un-panel-de-lapplication">Déplacement dans un panel de l’application</a></li>
+<li><a class="reference internal" href="#deplacement-de-panel-en-panel">Déplacement de panel en panel</a></li>
 </ul>
 </li>
 </ul>
