@@ -19,6 +19,9 @@ Welcome to Caiman's documentation!
    architecture
    techniqueWeb
    techniqueAPI
+   techniqueCaiman
+   techniqueInterface
+   test
    logbook
    
 

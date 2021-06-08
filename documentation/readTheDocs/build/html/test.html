@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Recherche" href="search.html" /><link rel="next" title="Site web Caiman" href="fonctionnelleWeb.html" /><link rel="prev" title="Étude d’opportunité" href="opportunite.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Recherche" href="search.html" /><link rel="next" title="Logbook" href="logbook.html" /><link rel="prev" title="Description technique: Interface graphique" href="techniqueInterface.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>Analyse fonctionnelle - Documentation Caiman 1.1.0</title>
+        <title>Tests - Documentation Caiman 1.1.0</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -118,7 +118,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cdc.html">Cahier des charges</a></li>
 <li class="toctree-l1"><a class="reference internal" href="opportunite.html">Étude d’opportunité</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Analyse fonctionnelle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fonctionnelleBDD.html">Analyse fonctionnelle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fonctionnelleWeb.html">Site web Caiman</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fonctionnelleAPI.html">API Caiman</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fonctionnelleC%23.html">Application  Caiman C#</a></li>
@@ -129,7 +129,7 @@
 <li class="toctree-l1"><a class="reference internal" href="techniqueAPI.html">Description technique: API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="techniqueCaiman.html">Description technique: Application Caiman</a></li>
 <li class="toctree-l1"><a class="reference internal" href="techniqueInterface.html">Description technique: Interface graphique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="test.html">Tests</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logbook.html">Logbook</a></li>
 </ul>
 
@@ -145,62 +145,27 @@
         <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <div class="section" id="analyse-fonctionnelle">
-<h1>Analyse fonctionnelle<a class="headerlink" href="#analyse-fonctionnelle" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="base-de-donnees">
-<h2>Base de données<a class="headerlink" href="#base-de-donnees" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="schema">
-<h3>Schéma<a class="headerlink" href="#schema" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Le schéma suivant représente la structure de la base de données. La base de données est commune au site web et à l’application Caiman. Les tables sont principalement utilisées pour stocker les informations des utilisateurs et des différents jeux.</p>
-<p><img alt="alt_text" src="_images/caiman_database.png"/></p>
+        <div class="section" id="tests">
+<h1>Tests<a class="headerlink" href="#tests" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="test-de-linterface-graphique">
+<h2>Test de l’interface graphique<a class="headerlink" href="#test-de-linterface-graphique" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour pouvoir tester mon interface graphique, j’ai créé un projet contenant des différentes vues pour pouvoir essayer le déplacement et le changement de vue.</p>
+<p><img alt="alt_text" src="_images/test_caiman_interface_1.png"/></p>
+<p><img alt="alt_text" src="_images/test_caiman_interface_2.png"/></p>
+<p>Ce programme de test m’a permis de me rendre compte des différentes difficultés que j’ai pu avoir, ainsi que de pouvoir les corriger avant de passer à la partie développement de l’application.</p>
+<p>Le but de ces tests étaient de ne pas avoir à me soucier de l’interface pendant que je devais développer la gestion des jeux et des émulateurs.</p>
 </div>
-<div class="section" id="table-categorie">
-<h3>Table categorie<a class="headerlink" href="#table-categorie" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Cette table est utilisée pour stocker les différentes catégories auxquelles les jeux peuvent appartenir.</p>
+<div class="section" id="test-de-caiman">
+<h2>Test de Caiman<a class="headerlink" href="#test-de-caiman" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="test-globaux">
+<h3>Test globaux<a class="headerlink" href="#test-globaux" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour pouvoir faire des tests, j’ai d’abord pensé à utiliser les tests de Visual Studio, malheureusement cela n’est pas vraiment applicable à Caiman. Alors, je n’ai donc testé que quelques classes de cette manière. Pour quand même essayer de trouver le plus de bogues possibles, j’ai demandé à plusieurs personnes de mon entourage d’essayer mon application pour me faire remonter les différents soucis qu’ils ont pu avoir.</p>
+<p>Grâce aux différents retours, j’ai pu connaître un bon nombre de bogues liés à l’interface utilisable à la manettes et aux différents soucis d’ergonomie de Caiman. J’ai pu fournir à différents moments du développement des versions Alpha de Caiman, cela me permettait d’avoir des retours le plus régulièrement possible pour éviter d’avoir trop de contraintes à régler à la fin du développement.</p>
 </div>
-<div class="section" id="table-console">
-<h3>Table console<a class="headerlink" href="#table-console" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Cette table sert à stocker les différentes consoles prises en charge par l’application Caiman. Chaque console doit être reliée à un émulateur.</p>
-</div>
-<div class="section" id="table-emulator">
-<h3>Table emulator<a class="headerlink" href="#table-emulator" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La table émulateur sert à lister les différents émulateurs disponible pour l’application, il est possible qu” un émulateur soit compatible avec plusieurs consoles.</p>
-</div>
-<div class="section" id="table-favoritegame">
-<h3>Table favoritegame<a class="headerlink" href="#table-favoritegame" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Sert à lister les jeux favoris des utilisateurs.</p>
-</div>
-<div class="section" id="table-file">
-<h3>Table file<a class="headerlink" href="#table-file" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La table file sert à lister le nom d’un fichier, cela peut être un fichier .iso d’un jeu, un fichier de sauvegarde ou un fichier de configuration utilisateur.</p>
-</div>
-<div class="section" id="table-filesave">
-<h3>Table filesave<a class="headerlink" href="#table-filesave" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Sert  faire le lien entre un émulateur, un utilisateur, et un fichier de sauvegarde. Alors elle permet de connaître les sauvegardes pour un émulateur particulier d’un utilisateur.</p>
-</div>
-<div class="section" id="table-game">
-<h3>Table game<a class="headerlink" href="#table-game" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Table qui liste les jeux disponibles. Chaque jeu a plusieurs informations: un nom, une description, une console. La console permet de à l’application de savoir quel émulateur doit être utilisé.</p>
-</div>
-<div class="section" id="table-gamehascategorie">
-<h3>Table gamehascategorie<a class="headerlink" href="#table-gamehascategorie" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Sert à assigner des catégories aux jeux.</p>
-</div>
-<div class="section" id="table-role">
-<h3>Table rôle<a class="headerlink" href="#table-role" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Sert à lister les différents rôles (utilisateur, administrateur), elle ne sert que pour le site web sachant que toute la partie administration est sur le site.</p>
-</div>
-<div class="section" id="table-timeingame">
-<h3>Table timeingame<a class="headerlink" href="#table-timeingame" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Sert à stocker le temps de jeu en minutes de chaque utilisateur. Le temps de jeu est spécifique à chaque jeu. Il est mis à jour directement depuis l’application Caiman.</p>
-</div>
-<div class="section" id="table-user">
-<h3>Table user<a class="headerlink" href="#table-user" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Cette table sert à stocker les informations de compte de chaque utilisateur de Caiman. Le compte est commun au site web et à l’application. Le mot de passe de l’utilisateur est crypté avec les fonctions de sécurité de php.</p>
-</div>
-<div class="section" id="table-userconfigfile">
-<h3>Table userconfigfile<a class="headerlink" href="#table-userconfigfile" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Cette table sert à faire le lien entre un fichier de configuration et un utilisateur. Le fichier de configuration sert à connaître la configuration.</p>
+<div class="section" id="test-synchronisation-des-sauvegardes">
+<h3>Test synchronisation des sauvegardes<a class="headerlink" href="#test-synchronisation-des-sauvegardes" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour tester la synchronisation des sauvegardes, j’ai créé un “protocole”. Ce protocole consiste à utiliser les sauvegardes du jeu “Metroid Prime” pour tester les sauvegardes des jeux de gamecube. Metroid Prime nous laisse créer un plusieurs fichiers de sauvegarde directement au lancement du jeu, je me sers donc de ces fichiers pour savoir si la sauvegarde est bien présente.</p>
+<p>Pour tester les sauvegardes des jeux de Playstation 2, j’ai utilisé le jeu Dragon Quest: VIII, il a l’avantage de pouvoir créer un fichier de sauvegarde avec un nom spécifique. Donc, J’ai créé un fichier de sauvegarde avec mon prénom et un autre avec un nom complètement étrange. Si je ne trouve pas les sauvegardes quand je lance le jeu, alors je sais que la synchronisation n’a pas marché.</p>
 </div>
 </div>
 </div>
@@ -209,23 +174,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="fonctionnelleWeb.html">
+          <a class="next-page" href="logbook.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Site web Caiman</div>
+                <div class="title">Logbook</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="opportunite.html">
+          <a class="prev-page" href="techniqueInterface.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Étude d’opportunité</div>
+                <div class="title">Description technique: Interface graphique</div>
                 
               </div>
             </a>
@@ -239,7 +204,7 @@
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             |
-            <a class="muted-link" href="_sources/fonctionnelleBDD.md.txt"
+            <a class="muted-link" href="_sources/test.md.txt"
                rel="nofollow">
               Montrer le code source
             </a>
@@ -259,21 +224,11 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Analyse fonctionnelle</a><ul>
-<li><a class="reference internal" href="#base-de-donnees">Base de données</a><ul>
-<li><a class="reference internal" href="#schema">Schéma</a></li>
-<li><a class="reference internal" href="#table-categorie">Table categorie</a></li>
-<li><a class="reference internal" href="#table-console">Table console</a></li>
-<li><a class="reference internal" href="#table-emulator">Table emulator</a></li>
-<li><a class="reference internal" href="#table-favoritegame">Table favoritegame</a></li>
-<li><a class="reference internal" href="#table-file">Table file</a></li>
-<li><a class="reference internal" href="#table-filesave">Table filesave</a></li>
-<li><a class="reference internal" href="#table-game">Table game</a></li>
-<li><a class="reference internal" href="#table-gamehascategorie">Table gamehascategorie</a></li>
-<li><a class="reference internal" href="#table-role">Table rôle</a></li>
-<li><a class="reference internal" href="#table-timeingame">Table timeingame</a></li>
-<li><a class="reference internal" href="#table-user">Table user</a></li>
-<li><a class="reference internal" href="#table-userconfigfile">Table userconfigfile</a></li>
+<li><a class="reference internal" href="#">Tests</a><ul>
+<li><a class="reference internal" href="#test-de-linterface-graphique">Test de l’interface graphique</a></li>
+<li><a class="reference internal" href="#test-de-caiman">Test de Caiman</a><ul>
+<li><a class="reference internal" href="#test-globaux">Test globaux</a></li>
+<li><a class="reference internal" href="#test-synchronisation-des-sauvegardes">Test synchronisation des sauvegardes</a></li>
 </ul>
 </li>
 </ul>
