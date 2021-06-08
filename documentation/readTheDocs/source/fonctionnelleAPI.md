@@ -1,9 +1,9 @@
-## API Caiman
+# API Caiman
 
 L’API sert à pouvoir accéder à la base de données depuis l’application Caiman. Je vais détailler les endpoint et la structure de l’API.
 
 
-### Structure de l’API
+## Structure de l’API
 
 ![alt_text](images/schema-API.png "image_tooltip")
 
@@ -20,10 +20,10 @@ Pour expliquer la structure de l’API, je vais expliquer étape par étape comm
 6. La réponse est envoyée à l'utilisateur par l’intermédiaire de la page index.php
 
 
-### Categories
+## Categories
 
 
-#### GET
+## GET
 
 Permet de recevoir la liste des catégories disponibles.
 
@@ -35,10 +35,10 @@ Les informations reçues sont les suivantes:
 *   nom
 
 
-### Games
+## Games
 
 
-#### GET
+## GET
 
 Retourne la liste des jeux.
 
@@ -53,7 +53,7 @@ Les informations reçues sont les suivantes:
 *   id du fichier du jeu
 
 
-#### GET(?byName)
+## GET(?byName)
 
 Retourne la liste des jeux qui dans le nom contient ce que l’utilisateur a demandé.
 
@@ -68,7 +68,7 @@ Les informations reçues sont les suivantes:
 *   id du fichier du jeu
 
 
-#### GET(?byCategory)
+## GET(?byCategory)
 
 Retourne la liste des jeux qui appartiennent à une catégorie.
 
@@ -85,7 +85,7 @@ Les informations reçues sont les suivantes:
 *   id du fichier du jeu
 
 
-#### GET(?byFavoriteUser)
+## GET(?byFavoriteUser)
 
 Retourne la liste des jeux favoris d’un utilisateur.
 
@@ -102,7 +102,7 @@ Les informations reçues sont les suivantes:
 *   id du fichier du jeu
 
 
-#### GET(?byUserTime)
+## GET(?byUserTime)
 
 Retourne la liste des jeux auxquels un joueur a joué.
 
@@ -120,7 +120,7 @@ Les informations reçues sont les suivantes:
 *   nombre de minutes en jeu
 
 
-#### GET(?gameFileName)
+## GET(?gameFileName)
 
 Retourne le nom du fichier d’un jeu.
 
@@ -131,7 +131,7 @@ Les informations reçues sont les suivantes:
 *   filename
 
 
-#### GET(?gameConsole)
+## GET(?gameConsole)
 
 Retourne la console d’un jeu.
 
@@ -143,7 +143,7 @@ Les informations reçues sont les suivantes:
 *   folderName
 
 
-#### GET(?idGame&apiKey)
+## GET(?idGame&apiKey)
 
 Retourne le fichier d’un jeu.
 
@@ -154,7 +154,7 @@ Les informations reçues sont les suivantes:
 *   fichier.iso
 
 
-#### GET(?idGameTime&idUser)
+## GET(?idGameTime&idUser)
 
 Retourne le temps de jeu sur un jeu. 
 
@@ -165,7 +165,7 @@ Les informations reçues sont les suivantes:
 *   minutes
 
 
-#### GET(?idEmulator&idUser&apiKey)
+## GET(?idEmulator&idUser&apiKey)
 
 Retourne un fichier zip contenant les sauvegardes d’un joueur pour un émulateur particulier 
 
@@ -176,35 +176,35 @@ Les informations reçues sont les suivantes:
 *   fichier.zip
 
 
-#### POST(?idEmulator&idUser&apiKey)
+## POST(?idEmulator&idUser&apiKey)
 
 Upload un fichier zip contenant les sauvegardes d’un joueur pour un émulateur particulier 
 
 
-#### POST(idGameAdd&idUser)
+## POST(idGameAdd&idUser)
 
 Ajouter un jeu en favoris pour un utilisateur particulier
 
 
-#### POST(idGameRemove&idUser)
+## POST(idGameRemove&idUser)
 
 Supprime un jeu en favoris pour un utilisateur particulier
 
 
-#### POST(idGameCheck&idUser)
+## POST(idGameCheck&idUser)
 
 Vérifie si un jeu est déjà en favoris et retourne un booléen
 
 
-#### POST(idGameTimeAdd&idUser)
+## POST(idGameTimeAdd&idUser)
 
 Ajouter une minute de jeu à un jeu particulier pour un utilisateur
 
 
-### Users
+## Users
 
 
-#### GET(sans paramétres)
+## GET(sans paramétres)
 
 Retourne la liste des utilisateurs.
 
@@ -216,7 +216,7 @@ Les informations reçues sont les suivantes:
 *   username
 
 
-#### POST(avec apitoken)
+## POST(avec apitoken)
 
 Retourne un utilisateur en particulier
 
@@ -234,10 +234,10 @@ Les informations reçues sont les suivantes:
 *   idRole
 
 
-### User/connection
+## User/connection
 
 
-#### POST(?username, password)
+## POST(?username, password)
 
 Permet de vérifier les informations de connexion d’un utilisateur
 
@@ -255,7 +255,7 @@ Les informations reçues sont les suivantes:
 *   idRole
 
 
-#### POST(caimanToken)
+## POST(caimanToken)
 
 Permet de recevoir les informations d’un utilisateur grâce à un token généré à chaque connexion.
 

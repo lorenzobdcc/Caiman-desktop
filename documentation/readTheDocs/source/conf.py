@@ -12,8 +12,8 @@
 #
 # import os
 # import sys
-# sys.path.insert(0, os.path.abspath('.'))
 
+master_doc = 'index'
 
 # -- Project information -----------------------------------------------------
 
@@ -37,10 +37,12 @@ extensions = [
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
+language = 'fr'
+
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -54,3 +56,16 @@ html_theme = 'furo'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# -- Options for LaTeX output ------------------------------------------------
+
+latex_engine = 'xelatex'
+latex_elements = {
+    'papersize': 'a4paper',
+    'pointsize': '12pt',
+
+}
+latex_documents = [
+    (master_doc, 'main.tex',
+     'Documentation Technique de Caiman', author, 'manual')
+]

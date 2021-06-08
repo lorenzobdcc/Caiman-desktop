@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Logbook" href="logbook.html" /><link rel="prev" title="Application Caiman C#" href="fonctionnelleC%23.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Recherche" href="search.html" /><link rel="next" title="Logbook" href="logbook.html" /><link rel="prev" title="Application Caiman C#" href="fonctionnelleC%23.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>Interface utilisateur utilisable à la manette - Caiman 1.1.0 documentation</title>
+        <title>Interface utilisateur utilisable à la manette - Documentation Caiman 1.1.0</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -86,7 +86,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Caiman 1.1.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Documentation Caiman 1.1.0</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -100,10 +100,10 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">Caiman 1.1.0 documentation</span>
+  <span class="sidebar-brand-text">Documentation Caiman 1.1.0</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html">
-  <input class="sidebar-search" placeholder=Search name="q">
+  <input class="sidebar-search" placeholder=Recherche name="q">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form><div class="sidebar-scroll"><div class="sidebar-tree">
@@ -139,26 +139,26 @@
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
         <div class="section" id="interface-utilisateur-utilisable-a-la-manette">
-<h1>Interface utilisateur utilisable à la manette<a class="headerlink" href="#interface-utilisateur-utilisable-a-la-manette" title="Permalink to this headline">¶</a></h1>
+<h1>Interface utilisateur utilisable à la manette<a class="headerlink" href="#interface-utilisateur-utilisable-a-la-manette" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="reception-des-input-des-manettes-connecte">
-<h2>Réception des input des manettes connecté<a class="headerlink" href="#reception-des-input-des-manettes-connecte" title="Permalink to this headline">¶</a></h2>
+<h2>Réception des input des manettes connecté<a class="headerlink" href="#reception-des-input-des-manettes-connecte" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’utilisateur de Caiman a la possibilité de pouvoir utiliser l’application au clavier souris mais aussi à la manette. Pour ce faire, j’ai utilisé le paquet nuGet “SharpDX.XInput”. Ce paquet me permet de connaître les manettes connectées au pc ainsi que les touches appuyées par l’utilisateur.</p>
 <p>La seule manette qui peut se déplacer dans l’application est la manette 1. Pour connaître les boutons de la manette, j’utilise la fonction getInput(). Cette fonction me permet de connaître les touches qui sont pressées à un instant T.  Je vais chercher les inputs toutes les 2ms pour être sûr de ne pas louper d’inputs.</p>
 <p>Les inputs sont ensuite traités par l’interface de l’application qui décide quoi en faire selon le contexte.</p>
 </div>
 <div class="section" id="transformation-des-input-de-la-manette-en-evenement">
-<h2>Transformation des input de la manette en événement<a class="headerlink" href="#transformation-des-input-de-la-manette-en-evenement" title="Permalink to this headline">¶</a></h2>
+<h2>Transformation des input de la manette en événement<a class="headerlink" href="#transformation-des-input-de-la-manette-en-evenement" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les inputs de la manette sont analysés par la form principale de Caiman. Selon la ou les touches qui sont pressées, l’application exécute des actions différentes. Par exemple, quand la touche “A” est pressée, alors le programme envoie la touche ENTER à l’application ce qui me permet de cliquer sur des boutons.</p>
 <p>Pour gérer les événements, je fais un test pour savoir si l’utilisateur utilise l’application ou non . Si l’application n’est pas focus par l’utilisateur, seul une partie des actions sont possibles pour éviter que des actions inattendues puissent arriver alors que l’application n’est plus visible.</p>
 </div>
 <div class="section" id="structure-de-laffichage">
-<h2>Structure de l’affichage<a class="headerlink" href="#structure-de-laffichage" title="Permalink to this headline">¶</a></h2>
+<h2>Structure de l’affichage<a class="headerlink" href="#structure-de-laffichage" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’affichage est constitué d’un “XboxMainForm”. Il sert à contenir tous les autres panels, il est aussi chargé de la gestion des inputs de la manette de l’utilisateur 1.</p>
 <p>Un “XboxMainForm” contient une liste de XboxUserController qui elles contiennent différentes choses comme des boutons des images ou des labels.</p>
 <p>Le XboxMainForm est aussi responsable de la gestion des demandes de l’utilisateur, par exemple si l’utilisateur veut afficher l’accueil de Caiman, il va lui passer un objet contenant sa demande. Il va donc traiter les demandes et afficher les panels selon les besoins de l’utilisateur.</p>
 </div>
 <div class="section" id="deplacement-dans-un-panel-de-lapplication">
-<h2>Déplacement dans un panel de l’application<a class="headerlink" href="#deplacement-dans-un-panel-de-lapplication" title="Permalink to this headline">¶</a></h2>
+<h2>Déplacement dans un panel de l’application<a class="headerlink" href="#deplacement-dans-un-panel-de-lapplication" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’application est conçue avec des “panels”, c’est-à-dire une liste de listes de controls. Cette liste de controls est propre à chaque panel. Les panels contiennent aussi une variable position_x et position_y qui permettent de connaître le control actuellement sélectionné par l’utilisateur. Quand l’utilisateur décide de se déplacer, il demande au panel de modifier ses variables x et y. Avant de valider ce changement, le panel regarde si le déplacement demandé par l’utilisateur est possible ou non.</p>
 <p>Il existe 3 possibilités:</p>
 <ol class="simple">
@@ -168,7 +168,7 @@
 </ol>
 </div>
 <div class="section" id="deplacement-de-panel-en-panel">
-<h2>Déplacement de panel en panel<a class="headerlink" href="#deplacement-de-panel-en-panel" title="Permalink to this headline">¶</a></h2>
+<h2>Déplacement de panel en panel<a class="headerlink" href="#deplacement-de-panel-en-panel" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Chaque “panel” possède un pointeur sur le panel du haut, du bas, de droite et de gauche.</p>
 <p>Ces pointers ne sont pas forcément utilisés, ils ont le droit d’être nul.</p>
 <p>Si on prend l’exemple suivant:</p>
@@ -217,7 +217,7 @@
             |
             <a class="muted-link" href="_sources/fonctionnelleInterface.md.txt"
                rel="nofollow">
-              Show Source
+              Montrer le code source
             </a>
         </div>
         
@@ -229,7 +229,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            Contenu
           </span>
         </div>
         <div class="toc-tree-container">
@@ -257,5 +257,6 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
     <script src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
 </html>

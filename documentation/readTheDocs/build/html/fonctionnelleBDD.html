@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Site web Caiman" href="fonctionnelleWeb.html" /><link rel="prev" title="Étude d’opportunité" href="opportunite.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Recherche" href="search.html" /><link rel="next" title="Site web Caiman" href="fonctionnelleWeb.html" /><link rel="prev" title="Étude d’opportunité" href="opportunite.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>Analyse fonctionnelle - Caiman 1.1.0 documentation</title>
+        <title>Analyse fonctionnelle - Documentation Caiman 1.1.0</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -86,7 +86,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Caiman 1.1.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Documentation Caiman 1.1.0</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -100,10 +100,10 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">Caiman 1.1.0 documentation</span>
+  <span class="sidebar-brand-text">Documentation Caiman 1.1.0</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html">
-  <input class="sidebar-search" placeholder=Search name="q">
+  <input class="sidebar-search" placeholder=Recherche name="q">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form><div class="sidebar-scroll"><div class="sidebar-tree">
@@ -139,60 +139,60 @@
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
         <div class="section" id="analyse-fonctionnelle">
-<h1>Analyse fonctionnelle<a class="headerlink" href="#analyse-fonctionnelle" title="Permalink to this headline">¶</a></h1>
+<h1>Analyse fonctionnelle<a class="headerlink" href="#analyse-fonctionnelle" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="base-de-donnees">
-<h2>Base de données<a class="headerlink" href="#base-de-donnees" title="Permalink to this headline">¶</a></h2>
+<h2>Base de données<a class="headerlink" href="#base-de-donnees" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="schema">
-<h3>Schéma<a class="headerlink" href="#schema" title="Permalink to this headline">¶</a></h3>
+<h3>Schéma<a class="headerlink" href="#schema" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Le schéma suivant représente la structure de la base de données. La base de données est commune au site web et à l’application Caiman. Les tables sont principalement utilisées pour stocker les informations des utilisateurs et des différents jeux.</p>
 <p><img alt="alt_text" src="_images/caiman_database.png"/></p>
 </div>
 <div class="section" id="table-categorie">
-<h3>Table categorie<a class="headerlink" href="#table-categorie" title="Permalink to this headline">¶</a></h3>
+<h3>Table categorie<a class="headerlink" href="#table-categorie" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Cette table est utilisée pour stocker les différentes catégories auxquelles les jeux peuvent appartenir.</p>
 </div>
 <div class="section" id="table-console">
-<h3>Table console<a class="headerlink" href="#table-console" title="Permalink to this headline">¶</a></h3>
+<h3>Table console<a class="headerlink" href="#table-console" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Cette table sert à stocker les différentes consoles prises en charge par l’application Caiman. Chaque console doit être reliée à un émulateur.</p>
 </div>
 <div class="section" id="table-emulator">
-<h3>Table emulator<a class="headerlink" href="#table-emulator" title="Permalink to this headline">¶</a></h3>
-<p>La table émulateur sert à lister les différents émulateurs disponible pour l’application, il est possible qu’ un émulateur soit compatible avec plusieurs consoles.</p>
+<h3>Table emulator<a class="headerlink" href="#table-emulator" title="Lien permanent vers ce titre">¶</a></h3>
+<p>La table émulateur sert à lister les différents émulateurs disponible pour l’application, il est possible qu” un émulateur soit compatible avec plusieurs consoles.</p>
 </div>
 <div class="section" id="table-favoritegame">
-<h3>Table favoritegame<a class="headerlink" href="#table-favoritegame" title="Permalink to this headline">¶</a></h3>
+<h3>Table favoritegame<a class="headerlink" href="#table-favoritegame" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Sert à lister les jeux favoris des utilisateurs.</p>
 </div>
 <div class="section" id="table-file">
-<h3>Table file<a class="headerlink" href="#table-file" title="Permalink to this headline">¶</a></h3>
+<h3>Table file<a class="headerlink" href="#table-file" title="Lien permanent vers ce titre">¶</a></h3>
 <p>La table file sert à lister le nom d’un fichier, cela peut être un fichier .iso d’un jeu, un fichier de sauvegarde ou un fichier de configuration utilisateur.</p>
 </div>
 <div class="section" id="table-filesave">
-<h3>Table filesave<a class="headerlink" href="#table-filesave" title="Permalink to this headline">¶</a></h3>
+<h3>Table filesave<a class="headerlink" href="#table-filesave" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Sert  faire le lien entre un émulateur, un utilisateur, et un fichier de sauvegarde. Alors elle permet de connaître les sauvegardes pour un émulateur particulier d’un utilisateur.</p>
 </div>
 <div class="section" id="table-game">
-<h3>Table game<a class="headerlink" href="#table-game" title="Permalink to this headline">¶</a></h3>
+<h3>Table game<a class="headerlink" href="#table-game" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Table qui liste les jeux disponibles. Chaque jeu a plusieurs informations: un nom, une description, une console. La console permet de à l’application de savoir quel émulateur doit être utilisé.</p>
 </div>
 <div class="section" id="table-gamehascategorie">
-<h3>Table gamehascategorie<a class="headerlink" href="#table-gamehascategorie" title="Permalink to this headline">¶</a></h3>
+<h3>Table gamehascategorie<a class="headerlink" href="#table-gamehascategorie" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Sert à assigner des catégories aux jeux.</p>
 </div>
 <div class="section" id="table-role">
-<h3>Table rôle<a class="headerlink" href="#table-role" title="Permalink to this headline">¶</a></h3>
+<h3>Table rôle<a class="headerlink" href="#table-role" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Sert à lister les différents rôles (utilisateur, administrateur), elle ne sert que pour le site web sachant que toute la partie administration est sur le site.</p>
 </div>
 <div class="section" id="table-timeingame">
-<h3>Table timeingame<a class="headerlink" href="#table-timeingame" title="Permalink to this headline">¶</a></h3>
+<h3>Table timeingame<a class="headerlink" href="#table-timeingame" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Sert à stocker le temps de jeu en minutes de chaque utilisateur. Le temps de jeu est spécifique à chaque jeu. Il est mis à jour directement depuis l’application Caiman.</p>
 </div>
 <div class="section" id="table-user">
-<h3>Table user<a class="headerlink" href="#table-user" title="Permalink to this headline">¶</a></h3>
+<h3>Table user<a class="headerlink" href="#table-user" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Cette table sert à stocker les informations de compte de chaque utilisateur de Caiman. Le compte est commun au site web et à l’application. Le mot de passe de l’utilisateur est crypté avec les fonctions de sécurité de php.</p>
 </div>
 <div class="section" id="table-userconfigfile">
-<h3>Table userconfigfile<a class="headerlink" href="#table-userconfigfile" title="Permalink to this headline">¶</a></h3>
+<h3>Table userconfigfile<a class="headerlink" href="#table-userconfigfile" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Cette table sert à faire le lien entre un fichier de configuration et un utilisateur. Le fichier de configuration sert à connaître la configuration.</p>
 </div>
 </div>
@@ -234,7 +234,7 @@
             |
             <a class="muted-link" href="_sources/fonctionnelleBDD.md.txt"
                rel="nofollow">
-              Show Source
+              Montrer le code source
             </a>
         </div>
         
@@ -246,7 +246,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            Contenu
           </span>
         </div>
         <div class="toc-tree-container">
@@ -285,5 +285,6 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
     <script src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
 </html>

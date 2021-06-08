@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Application Caiman C#" href="fonctionnelleC%23.html" /><link rel="prev" title="Site web Caiman" href="fonctionnelleWeb.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Recherche" href="search.html" /><link rel="next" title="Application Caiman C#" href="fonctionnelleC%23.html" /><link rel="prev" title="Site web Caiman" href="fonctionnelleWeb.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>API Caiman - Caiman 1.1.0 documentation</title>
+        <title>API Caiman - Documentation Caiman 1.1.0</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -86,7 +86,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Caiman 1.1.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Documentation Caiman 1.1.0</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -100,10 +100,10 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">Caiman 1.1.0 documentation</span>
+  <span class="sidebar-brand-text">Documentation Caiman 1.1.0</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html">
-  <input class="sidebar-search" placeholder=Search name="q">
+  <input class="sidebar-search" placeholder=Recherche name="q">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form><div class="sidebar-scroll"><div class="sidebar-tree">
@@ -139,10 +139,10 @@
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
         <div class="section" id="api-caiman">
-<h1>API Caiman<a class="headerlink" href="#api-caiman" title="Permalink to this headline">¶</a></h1>
+<h1>API Caiman<a class="headerlink" href="#api-caiman" title="Lien permanent vers ce titre">¶</a></h1>
 <p>L’API sert à pouvoir accéder à la base de données depuis l’application Caiman. Je vais détailler les endpoint et la structure de l’API.</p>
 <div class="section" id="structure-de-lapi">
-<h2>Structure de l’API<a class="headerlink" href="#structure-de-lapi" title="Permalink to this headline">¶</a></h2>
+<h2>Structure de l’API<a class="headerlink" href="#structure-de-lapi" title="Lien permanent vers ce titre">¶</a></h2>
 <p><img alt="alt_text" src="_images/schema-API.png"/></p>
 <p>Pour expliquer la structure de l’API, je vais expliquer étape par étape comment un appel se passe.</p>
 <ol class="simple">
@@ -155,9 +155,10 @@
 </ol>
 </div>
 <div class="section" id="categories">
-<h2>Categories<a class="headerlink" href="#categories" title="Permalink to this headline">¶</a></h2>
+<h2>Categories<a class="headerlink" href="#categories" title="Lien permanent vers ce titre">¶</a></h2>
+</div>
 <div class="section" id="get">
-<h3>GET<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h3>
+<h2>GET<a class="headerlink" href="#get" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Permet de recevoir la liste des catégories disponibles.</p>
 <p>Les informations reçues sont les suivantes:</p>
 <ul class="simple">
@@ -165,11 +166,11 @@
 <li><p>nom</p></li>
 </ul>
 </div>
-</div>
 <div class="section" id="games">
-<h2>Games<a class="headerlink" href="#games" title="Permalink to this headline">¶</a></h2>
+<h2>Games<a class="headerlink" href="#games" title="Lien permanent vers ce titre">¶</a></h2>
+</div>
 <div class="section" id="id1">
-<h3>GET<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h2>GET<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Retourne la liste des jeux.</p>
 <p>Les informations reçues sont les suivantes:</p>
 <ul class="simple">
@@ -181,7 +182,7 @@
 </ul>
 </div>
 <div class="section" id="get-byname">
-<h3>GET(?byName)<a class="headerlink" href="#get-byname" title="Permalink to this headline">¶</a></h3>
+<h2>GET(?byName)<a class="headerlink" href="#get-byname" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Retourne la liste des jeux qui dans le nom contient ce que l’utilisateur a demandé.</p>
 <p>Les informations reçues sont les suivantes:</p>
 <ul class="simple">
@@ -193,7 +194,7 @@
 </ul>
 </div>
 <div class="section" id="get-bycategory">
-<h3>GET(?byCategory)<a class="headerlink" href="#get-bycategory" title="Permalink to this headline">¶</a></h3>
+<h2>GET(?byCategory)<a class="headerlink" href="#get-bycategory" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Retourne la liste des jeux qui appartiennent à une catégorie.</p>
 <p>Il faut spécifier l’id de la catégorie qui est demandée.</p>
 <p>Les informations reçues sont les suivantes:</p>
@@ -206,7 +207,7 @@
 </ul>
 </div>
 <div class="section" id="get-byfavoriteuser">
-<h3>GET(?byFavoriteUser)<a class="headerlink" href="#get-byfavoriteuser" title="Permalink to this headline">¶</a></h3>
+<h2>GET(?byFavoriteUser)<a class="headerlink" href="#get-byfavoriteuser" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Retourne la liste des jeux favoris d’un utilisateur.</p>
 <p>Il faut spécifier l’id de l’utilisateur.</p>
 <p>Les informations reçues sont les suivantes:</p>
@@ -219,7 +220,7 @@
 </ul>
 </div>
 <div class="section" id="get-byusertime">
-<h3>GET(?byUserTime)<a class="headerlink" href="#get-byusertime" title="Permalink to this headline">¶</a></h3>
+<h2>GET(?byUserTime)<a class="headerlink" href="#get-byusertime" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Retourne la liste des jeux auxquels un joueur a joué.</p>
 <p>Il faut spécifier l’id de l’utilisateur.</p>
 <p>Les informations reçues sont les suivantes:</p>
@@ -233,7 +234,7 @@
 </ul>
 </div>
 <div class="section" id="get-gamefilename">
-<h3>GET(?gameFileName)<a class="headerlink" href="#get-gamefilename" title="Permalink to this headline">¶</a></h3>
+<h2>GET(?gameFileName)<a class="headerlink" href="#get-gamefilename" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Retourne le nom du fichier d’un jeu.</p>
 <p>Les informations reçues sont les suivantes:</p>
 <ul class="simple">
@@ -241,7 +242,7 @@
 </ul>
 </div>
 <div class="section" id="get-gameconsole">
-<h3>GET(?gameConsole)<a class="headerlink" href="#get-gameconsole" title="Permalink to this headline">¶</a></h3>
+<h2>GET(?gameConsole)<a class="headerlink" href="#get-gameconsole" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Retourne la console d’un jeu.</p>
 <p>Les informations reçues sont les suivantes:</p>
 <ul class="simple">
@@ -250,7 +251,7 @@
 </ul>
 </div>
 <div class="section" id="get-idgame-apikey">
-<h3>GET(?idGame&amp;apiKey)<a class="headerlink" href="#get-idgame-apikey" title="Permalink to this headline">¶</a></h3>
+<h2>GET(?idGame&amp;apiKey)<a class="headerlink" href="#get-idgame-apikey" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Retourne le fichier d’un jeu.</p>
 <p>Les informations reçues sont les suivantes:</p>
 <ul class="simple">
@@ -258,7 +259,7 @@
 </ul>
 </div>
 <div class="section" id="get-idgametime-iduser">
-<h3>GET(?idGameTime&amp;idUser)<a class="headerlink" href="#get-idgametime-iduser" title="Permalink to this headline">¶</a></h3>
+<h2>GET(?idGameTime&amp;idUser)<a class="headerlink" href="#get-idgametime-iduser" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Retourne le temps de jeu sur un jeu.</p>
 <p>Les informations reçues sont les suivantes:</p>
 <ul class="simple">
@@ -266,7 +267,7 @@
 </ul>
 </div>
 <div class="section" id="get-idemulator-iduser-apikey">
-<h3>GET(?idEmulator&amp;idUser&amp;apiKey)<a class="headerlink" href="#get-idemulator-iduser-apikey" title="Permalink to this headline">¶</a></h3>
+<h2>GET(?idEmulator&amp;idUser&amp;apiKey)<a class="headerlink" href="#get-idemulator-iduser-apikey" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Retourne un fichier zip contenant les sauvegardes d’un joueur pour un émulateur particulier</p>
 <p>Les informations reçues sont les suivantes:</p>
 <ul class="simple">
@@ -274,30 +275,30 @@
 </ul>
 </div>
 <div class="section" id="post-idemulator-iduser-apikey">
-<h3>POST(?idEmulator&amp;idUser&amp;apiKey)<a class="headerlink" href="#post-idemulator-iduser-apikey" title="Permalink to this headline">¶</a></h3>
+<h2>POST(?idEmulator&amp;idUser&amp;apiKey)<a class="headerlink" href="#post-idemulator-iduser-apikey" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Upload un fichier zip contenant les sauvegardes d’un joueur pour un émulateur particulier</p>
 </div>
 <div class="section" id="post-idgameadd-iduser">
-<h3>POST(idGameAdd&amp;idUser)<a class="headerlink" href="#post-idgameadd-iduser" title="Permalink to this headline">¶</a></h3>
+<h2>POST(idGameAdd&amp;idUser)<a class="headerlink" href="#post-idgameadd-iduser" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Ajouter un jeu en favoris pour un utilisateur particulier</p>
 </div>
 <div class="section" id="post-idgameremove-iduser">
-<h3>POST(idGameRemove&amp;idUser)<a class="headerlink" href="#post-idgameremove-iduser" title="Permalink to this headline">¶</a></h3>
+<h2>POST(idGameRemove&amp;idUser)<a class="headerlink" href="#post-idgameremove-iduser" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Supprime un jeu en favoris pour un utilisateur particulier</p>
 </div>
 <div class="section" id="post-idgamecheck-iduser">
-<h3>POST(idGameCheck&amp;idUser)<a class="headerlink" href="#post-idgamecheck-iduser" title="Permalink to this headline">¶</a></h3>
+<h2>POST(idGameCheck&amp;idUser)<a class="headerlink" href="#post-idgamecheck-iduser" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Vérifie si un jeu est déjà en favoris et retourne un booléen</p>
 </div>
 <div class="section" id="post-idgametimeadd-iduser">
-<h3>POST(idGameTimeAdd&amp;idUser)<a class="headerlink" href="#post-idgametimeadd-iduser" title="Permalink to this headline">¶</a></h3>
+<h2>POST(idGameTimeAdd&amp;idUser)<a class="headerlink" href="#post-idgametimeadd-iduser" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Ajouter une minute de jeu à un jeu particulier pour un utilisateur</p>
 </div>
-</div>
 <div class="section" id="users">
-<h2>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h2>
+<h2>Users<a class="headerlink" href="#users" title="Lien permanent vers ce titre">¶</a></h2>
+</div>
 <div class="section" id="get-sans-parametres">
-<h3>GET(sans paramétres)<a class="headerlink" href="#get-sans-parametres" title="Permalink to this headline">¶</a></h3>
+<h2>GET(sans paramétres)<a class="headerlink" href="#get-sans-parametres" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Retourne la liste des utilisateurs.</p>
 <p>Les informations reçues sont les suivantes:</p>
 <ul class="simple">
@@ -306,7 +307,7 @@
 </ul>
 </div>
 <div class="section" id="post-avec-apitoken">
-<h3>POST(avec apitoken)<a class="headerlink" href="#post-avec-apitoken" title="Permalink to this headline">¶</a></h3>
+<h2>POST(avec apitoken)<a class="headerlink" href="#post-avec-apitoken" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Retourne un utilisateur en particulier</p>
 <p>Les informations reçues sont les suivantes:</p>
 <ul class="simple">
@@ -320,11 +321,11 @@
 <li><p>idRole</p></li>
 </ul>
 </div>
-</div>
 <div class="section" id="user-connection">
-<h2>User/connection<a class="headerlink" href="#user-connection" title="Permalink to this headline">¶</a></h2>
+<h2>User/connection<a class="headerlink" href="#user-connection" title="Lien permanent vers ce titre">¶</a></h2>
+</div>
 <div class="section" id="post-username-password">
-<h3>POST(?username, password)<a class="headerlink" href="#post-username-password" title="Permalink to this headline">¶</a></h3>
+<h2>POST(?username, password)<a class="headerlink" href="#post-username-password" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Permet de vérifier les informations de connexion d’un utilisateur</p>
 <p>Les informations reçues sont les suivantes:</p>
 <ul class="simple">
@@ -339,7 +340,7 @@
 </ul>
 </div>
 <div class="section" id="post-caimantoken">
-<h3>POST(caimanToken)<a class="headerlink" href="#post-caimantoken" title="Permalink to this headline">¶</a></h3>
+<h2>POST(caimanToken)<a class="headerlink" href="#post-caimantoken" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Permet de recevoir les informations d’un utilisateur grâce à un token généré à chaque connexion.</p>
 <p>Les informations reçues sont les suivantes:</p>
 <ul class="simple">
@@ -352,7 +353,6 @@
 <li><p>email</p></li>
 <li><p>idRole</p></li>
 </ul>
-</div>
 </div>
 </div>
 
@@ -392,7 +392,7 @@
             |
             <a class="muted-link" href="_sources/fonctionnelleAPI.md.txt"
                rel="nofollow">
-              Show Source
+              Montrer le code source
             </a>
         </div>
         
@@ -404,7 +404,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            Contenu
           </span>
         </div>
         <div class="toc-tree-container">
@@ -412,11 +412,9 @@
             <ul>
 <li><a class="reference internal" href="#">API Caiman</a><ul>
 <li><a class="reference internal" href="#structure-de-lapi">Structure de l’API</a></li>
-<li><a class="reference internal" href="#categories">Categories</a><ul>
+<li><a class="reference internal" href="#categories">Categories</a></li>
 <li><a class="reference internal" href="#get">GET</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#games">Games</a><ul>
+<li><a class="reference internal" href="#games">Games</a></li>
 <li><a class="reference internal" href="#id1">GET</a></li>
 <li><a class="reference internal" href="#get-byname">GET(?byName)</a></li>
 <li><a class="reference internal" href="#get-bycategory">GET(?byCategory)</a></li>
@@ -432,18 +430,12 @@
 <li><a class="reference internal" href="#post-idgameremove-iduser">POST(idGameRemove&amp;idUser)</a></li>
 <li><a class="reference internal" href="#post-idgamecheck-iduser">POST(idGameCheck&amp;idUser)</a></li>
 <li><a class="reference internal" href="#post-idgametimeadd-iduser">POST(idGameTimeAdd&amp;idUser)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#users">Users</a><ul>
+<li><a class="reference internal" href="#users">Users</a></li>
 <li><a class="reference internal" href="#get-sans-parametres">GET(sans paramétres)</a></li>
 <li><a class="reference internal" href="#post-avec-apitoken">POST(avec apitoken)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#user-connection">User/connection</a><ul>
+<li><a class="reference internal" href="#user-connection">User/connection</a></li>
 <li><a class="reference internal" href="#post-username-password">POST(?username, password)</a></li>
 <li><a class="reference internal" href="#post-caimantoken">POST(caimanToken)</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -460,5 +452,6 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
     <script src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
 </html>
