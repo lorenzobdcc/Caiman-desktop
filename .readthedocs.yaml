@@ -13,3 +13,7 @@ sphinx:
 formats: all
 
 
+python:
+    version: 3.7
+    install:
+        - requirements: documentation/readTheDocs/requirements.txt
