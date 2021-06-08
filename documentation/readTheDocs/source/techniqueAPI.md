@@ -7,13 +7,13 @@ Les jeux sont sous forme de fichier .iso dans le dossier “caimanWeb\games\”.
 
 Le chemin sur le serveur web pour accéder au fichier des jeux n’est pas public. Par conséquent, il a donc fallu que je trouve une solution pour que n’importe qui ne puisse pas télécharger un jeu. Pour ce faire, j'ai créé une route dans mon API qui prend en paramètres l’id du jeu et l’apiKey de l’utilisateur qui veut télécharger le jeu.
 
-La fonction getURL($idGame,$apiKey) permet de recevoir le lien de téléchargement pour un jeu. Avant de valider le téléchargement, l’API vérifie que l’apiKey qui lui a été donné est valide. Pour savoir si l’apiKey est valide, j'utilise la fonction DAOUser->Find($apikey) qui me retourne l’utilisateur en lien avec cette apiKey. Si l’apiKey est valide, je vais donc devoir reconstituer le chemin vers le dossier ou est le jeu stocké.
+La fonction getURL(idGame,apiKey) permet de recevoir le lien de téléchargement pour un jeu. Avant de valider le téléchargement, l’API vérifie que l’apiKey qui lui a été donné est valide. Pour savoir si l’apiKey est valide, j'utilise la fonction DAOUser->Find(apikey) qui me retourne l’utilisateur en lien avec cette apiKey. Si l’apiKey est valide, je vais donc devoir reconstituer le chemin vers le dossier ou est le jeu stocké.
 
-Pour connaître le nom du dossier où se trouve le fichier, il faut savoir de quelle console est le jeu. Pour connaître cette information, je dois rechercher un jeu grâce à son id. Quand j’ai l’id de la console en lien avec le jeu, je dois encore faire une recherche pour savoir quel est son nom de dossier dans la base de données. Alors j'utilise la fonction DAOConsole->find($idConsole) pour connaître son nom de dossier.
+Pour connaître le nom du dossier où se trouve le fichier, il faut savoir de quelle console est le jeu. Pour connaître cette information, je dois rechercher un jeu grâce à son id. Quand j’ai l’id de la console en lien avec le jeu, je dois encore faire une recherche pour savoir quel est son nom de dossier dans la base de données. Alors j'utilise la fonction DAOConsole->find(idConsole) pour connaître son nom de dossier.
 
-Désormais que nous avons le dossier dans lequel se trouve le fichier du jeu, il faut maintenant connaître son nom de fichier. Pour cela, j'utilise la fonction DAOFile->find($file). l’id du fichier est connu grâce à l’appel la fonction DAOGame->find().
+Désormais que nous avons le dossier dans lequel se trouve le fichier du jeu, il faut maintenant connaître son nom de fichier. Pour cela, j'utilise la fonction DAOFile->find(file). l’id du fichier est connu grâce à l’appel la fonction DAOGame->find().
 
-Â présent que nous avons toutes les parties du chemin, il est possible de construire le chemin complet en concaténant toutes les parties. Ensuite pour renvoyer le jeu à l'utilisateur, j’utilise les fonctions fopen($path,’rb’) et fpassthru($fopen).
+Â présent que nous avons toutes les parties du chemin, il est possible de construire le chemin complet en concaténant toutes les parties. Ensuite pour renvoyer le jeu à l'utilisateur, j’utilise les fonctions fopen(path,’rb’) et fpassthru(fopen).
 
 ```php
 public function getURL(int $idGame, string $apikey)
@@ -52,7 +52,7 @@ public function getURL(int $idGame, string $apikey)
 
 ### Téléchargement de sauvegarde
 
-Les sauvegardes des utilisateurs sont stockées sous forme de fichiers .zip. L'intérêt d’utiliser des fichiers .zip est la taille et le fait qu' un fichier puisse contenir toutes les sauvegardes instantanément. Les fichiers de sauvegardes se trouvent dans le dossier “\CaimanWeb\saves\”.
+Les sauvegardes des utilisateurs sont stockées sous forme de fichiers .zip. L'intérêt d’utiliser des fichiers .zip est la taille et le fait qu'un fichier puisse contenir toutes les sauvegardes instantanément. Les fichiers de sauvegardes se trouvent dans le dossier “\CaimanWeb\saves\”.
 
 Le nom attribué au fichier est décidé au premier envoie de sauvegardes, le nom est le md5 du microtime de l’heure d’envoie. 
 
@@ -60,13 +60,13 @@ Pour recevoir le fichier, l’API possède une route qui prend les paramètres s
 
 
 
-*   $idEmulator
-*   $iduser
-*   $apikey
+*   idEmulator
+*   iduser
+*   apikey
 
-Cette route va envoyer le fichier demandé. Comme pour les fichiers des jeux, les sauvegardes sont dans un dossier privé du serveur. La fonction getURLsave($idEmulator,$Iduser,$apikey) se charge de renvoyer les fichiers à l'utilisateur. Pour faire ça il faut connaître le nom du fichier qui doit être envoyé. Il faut donc utiliser la fonction DAOFileSave->find($idemulator,$idUser) pour connaître les informations du fichier.
+Cette route va envoyer le fichier demandé. Comme pour les fichiers des jeux, les sauvegardes sont dans un dossier privé du serveur. La fonction getURLsave( idEmulator, Iduser,apikey) se charge de renvoyer les fichiers à l'utilisateur. Pour faire ça il faut connaître le nom du fichier qui doit être envoyé. Il faut donc utiliser la fonction DAOFileSave->find( idemulator, idUser) pour connaître les informations du fichier.
 
-Désormais que le nom du fichier est connu, il est possible de retourner le fichier grâce à la fonction fopen($path,’rb’) et fpassthru($fopen) pour renvoyer le fichier à l'utilisateur.
+Désormais que le nom du fichier est connu, il est possible de retourner le fichier grâce à la fonction fopen(path,’rb’) et fpassthru(fopen) pour renvoyer le fichier à l'utilisateur.
 
 ```php
 public function getURLSave(int $idEmulator, int $idUser, string $apikey)
@@ -115,14 +115,14 @@ Pour enregistrer les sauvegardes, il y a une route dans l’API qui prend en par
 
 
 
-*   $idEmulator
-*   $iduser
-*   $apikey
-*   $file
+*   idEmulator
+*   iduser
+*   apikey
+*   file
 
 Les fichiers de sauvegarde concernent un émulateur àchaque fois, donc il faut le spécifier à l'envoi. Il faut aussi spécifier l’utilisateur à qui appartiennent ces sauvegardes, il faut aussi transmettre une apiKey valide et finalement le fichier à envoyer.
 
-Quand l’API reçoit ces informations, il faut déjà vérifier si l’apiKey reçu est bien valide. Si elle est valide, il faut ensuite vérifier si l'utilisateur a déjà créé une sauvegarde pour cet émulateur. Pour effectuer cette vérification, il faut utiliser la fonction DAOFileSave->find($idEmulator,idUser) qui retourne les informations du fichier s’il existe.
+Quand l’API reçoit ces informations, il faut déjà vérifier si l’apiKey reçu est bien valide. Si elle est valide, il faut ensuite vérifier si l'utilisateur a déjà créé une sauvegarde pour cet émulateur. Pour effectuer cette vérification, il faut utiliser la fonction DAOFileSave->find(idEmulator,idUser) qui retourne les informations du fichier s’il existe.
 
 ```php
 public function AddSave($idEmulator, $idUser, $apiKey, $file)
@@ -164,7 +164,7 @@ public function AddSave($idEmulator, $idUser, $apiKey, $file)
 
 #### Sauvegarde déjà présente
 
-Si la sauvegarde d’un émulateur est déjà présente, il faut utiliser la fonction move_uploaded_file($file,$target_dir). Tout d’abord il faut connaître le nom du fichier qui est attribué à la sauvegarde. Pour faire cela, il faut appeler la fonction DAOFileSave->findFilename($idEmulator,idUser) celle-ci va renvoyer le nom du fichier.Il suffit maintenant d’écraser le fichier présent sur le serveur par le nouveau.
+Si la sauvegarde d’un émulateur est déjà présente, il faut utiliser la fonction move_uploaded_file(file,target_dir). Tout d’abord il faut connaître le nom du fichier qui est attribué à la sauvegarde. Pour faire cela, il faut appeler la fonction DAOFileSave->findFilename(idEmulator,idUser) celle-ci va renvoyer le nom du fichier.Il suffit maintenant d’écraser le fichier présent sur le serveur par le nouveau.
 
 ```php
     public function findFileName(int $idEmulator, int $idUser)
@@ -197,9 +197,9 @@ Si la sauvegarde d’un émulateur est déjà présente, il faut utiliser la fon
 
 #### Sauvegarde pas encore présente
 
-S’il n’y a aucune sauvegarde pour l’émulateur en question et l’utilisateur en question. Il faut commencer par donner un nom au fichier. Ce nom est constitué du MD5 du microtime() et de l'extension “.zip”. Quand le nom pour le fichier aété créé, il faut uploader le fichier dans le dossier de sauvegarde grâce à la fonction move_uploaded_file($file,$path). 
+S’il n’y a aucune sauvegarde pour l’émulateur en question et l’utilisateur en question. Il faut commencer par donner un nom au fichier. Ce nom est constitué du MD5 du microtime() et de l'extension “.zip”. Quand le nom pour le fichier aété créé, il faut uploader le fichier dans le dossier de sauvegarde grâce à la fonction move_uploaded_file(file,path). 
 
-Quand l’upload est validé, un ajout de fichier de sauvegarde va se faire grâce à la fonction DAOFileSave->AddFileSave($idEmulator,$idUser,$newfilename). Cette fonction va créer une entrée dans la base de données pour le nouveau fichier.
+Quand l’upload est validé, un ajout de fichier de sauvegarde va se faire grâce à la fonction DAOFileSave->AddFileSave(idEmulator,idUser,newfilename). Cette fonction va créer une entrée dans la base de données pour le nouveau fichier.
 
 ```php
 public function AddFileSave($idEmulator, $idUser, $newFileName)
@@ -240,7 +240,7 @@ public function AddFileSave($idEmulator, $idUser, $newFileName)
 
 Le caimanToken sert à pouvoir se connecter sans mot de passe à l'application Caiman. Se token doit être changée à chaque fois que l’utilisateur se connecte, que ce soit en se connectant avec un mot de passe ou par le caimanToken justement.
 
-Pour ce faire, j’ai créé une function DAOUser->updateCaimanToken($apiToken) qui sert à modifier le caimanToken d’un utilisateur dans la base de données. Le caimanToken est un md5 du microtime actuel. Par conséquent, il est presque impossible que deux utilisateurs aient le même. 
+Pour ce faire, j’ai créé une function DAOUser->updateCaimanToken(apiToken) qui sert à modifier le caimanToken d’un utilisateur dans la base de données. Le caimanToken est un md5 du microtime actuel. Par conséquent, il est presque impossible que deux utilisateurs aient le même. 
 
 ```php
 public function updateCaimanToken(string $apitocken)
