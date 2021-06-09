@@ -6,7 +6,7 @@ Caiman est un projet comprenant deux parties distinctes. La première partie con
 
 La deuxième partie du projet est une application C# inspirée par le mode Big Picture de steam. Caiman sert de frontend pour différents émulateurs (Dolphin, PCSX2,etc). L’application permet de télécharger les différents jeux qui ont été ajoutés au store prévu pour le projet. Les jeux pris en charge sont ajoutés par des administrateurs via le site internet de Caiman. L’application permet de synchroniser les sauvegardes de l’utilisateur et cela peut importe sur quel pc, il lance l’application.
 
-![alt_text](images/schema_intro.jpg "image_tooltip")
+![alt_text](images/schema_intro_2.jpg "image_tooltip")
 
 
 # Abstract

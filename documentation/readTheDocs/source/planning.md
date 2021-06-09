@@ -9,3 +9,8 @@
 
 
 ### Planning effectif
+
+![alt_text](images/planning_effectif_2.png "image_tooltip")
+
+
+![alt_text](images/planning_effectif_1.png "image_tooltip")
