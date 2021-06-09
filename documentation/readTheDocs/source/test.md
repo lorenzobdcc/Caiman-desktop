@@ -5,10 +5,10 @@
 
 Pour pouvoir tester mon interface graphique, j’ai créé un projet contenant des différentes vues pour pouvoir essayer le déplacement et le changement de vue.
 
-![alt_text](images/test_caiman_interface_1.png "image_tooltip")
+![alt_text](images/caiman_interface_1.png "image_tooltip")
 
 
-![alt_text](images/test_caiman_interface_2.png "image_tooltip")
+![alt_text](images/caiman_interface_2.png "image_tooltip")
 
 
 Ce programme de test m'a permis de me rendre compte des différentes difficultés que j’ai pu avoir, ainsi que de pouvoir les corriger avant de passer à la partie développement de l’application.

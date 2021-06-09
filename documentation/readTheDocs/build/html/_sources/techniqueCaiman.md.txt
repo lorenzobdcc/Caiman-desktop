@@ -35,24 +35,132 @@ Ce dossier contient les dossiers personnels de chaque utilisateur de l'applicati
 
 Les dossiers pour caiman doivent obligatoirement être créés. Donc au début du lancement de l’application Caiman, il y a toujours une vérification pour savoir si les dossiers sont bien présents. Si c’est le premier lancement de Caiman ou si les dossiers ont été supprimés, ils vont être créés.
 
-````CODE````
+```C#
+private void CreateAppDataFolder()
+        {
+            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var basePath = Path.Combine(appDataPath, @"Caiman\");
+            var caimanConfigPath = Path.Combine(appDataPath, @"Caiman\Caiman\");
+            var imgPath = Path.Combine(appDataPath, @"Caiman\img\");
+            var gamesPath = Path.Combine(appDataPath, @"Caiman\Caiman\games.ini");
+            var configPath = Path.Combine(appDataPath, @"Caiman\Caiman\config.ini");
+            var loginPath = Path.Combine(appDataPath, @"Caiman\Caiman\login.ini");
+
+            if (!Directory.Exists(basePath))
+            {
+                Directory.CreateDirectory(basePath);
+            }
+            if (!Directory.Exists(imgPath))
+            {
+                Directory.CreateDirectory(imgPath);
+            }
+            if (!Directory.Exists(caimanConfigPath))
+            {
+                Directory.CreateDirectory(caimanConfigPath);
+            }
+            if (!Directory.Exists(@"C:\Caiman\Playstation2"))
+            {
+                Directory.CreateDirectory(@"C:\Caiman\Playstation2\");
+            }
+            if (!Directory.Exists(@"C:\Caiman\GamecubeWii\"))
+            {
+                Directory.CreateDirectory(@"C:\Caiman\GamecubeWii\");
+            }
+            if (!File.Exists(loginPath))
+            {
+                using (StreamWriter sw = File.CreateText(loginPath))
+                {
+                    sw.WriteLine("token = 0");
+                }
+                loginFile = new ConfigFileEditor(caimanConfigPath, "login.ini");
+            }
+            if (!File.Exists(gamesPath))
+            {
+                using (StreamWriter sw = File.CreateText(gamesPath))
+                {
+
+                }
+                configFile = new ConfigFileEditor(caimanConfigPath, "config.ini");
+            }
+            if (!File.Exists(configPath))
+            {
+                //if the file do not exist create it with with the default emulators value
+                using (StreamWriter sw = File.CreateText(configPath))
+                {
+                    sw.WriteLine("configuration = 1080");
+                    sw.WriteLine("fullscreen = true");
+                    sw.WriteLine("definition = 3");
+                    sw.WriteLine("formatSeizeNeuvieme = true");
+                    sw.WriteLine("filtrageAnioscopique = 3");
+                }
+                configFile = new ConfigFileEditor(caimanConfigPath, "config.ini");
+
+            }
+
+
+        }
+```
 
 **Dossier des utilisateurs**
 
 La création des dossiers des utilisateurs pour gérer correctement les sauvegardes. Ces dossiers sont créés à la première connexion de l’utilisateur.
 
-````CODE````
+```C#
+ public void CreateUserFolder()
+        {
+            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var userPath = Path.Combine(appDataPath, @"Caiman\users\" + username + @"\");
+            var savePath = Path.Combine(userPath, @"Save\");
+            var savePathPlaystation = Path.Combine(savePath, @"Playstation2\");
+            var savePathGamecubeWii = Path.Combine(savePath, @"GamecubeWii\");
+
+            if (!Directory.Exists(userPath))
+            {
+                Directory.CreateDirectory(userPath);
+            }
+            if (!Directory.Exists(savePath))
+            {
+                Directory.CreateDirectory(savePath);
+            }
+            if (!Directory.Exists(savePathPlaystation))
+            {
+                Directory.CreateDirectory(savePathPlaystation);
+            }
+            if (!Directory.Exists(savePathGamecubeWii))
+            {
+                Directory.CreateDirectory(savePathGamecubeWii);
+            }
+
+        }
+```
 
 
 ### Verification des jeux présent sur le disque
 
 Pour connaître les jeux qui ont été téléchargés, il existe un fichier comprenant les ids des jeux. Ce fichier se trouve dans le dossier “appdata” de Caiman. Il est donc commun à tous les utilisateurs. Ce fichier est mis à jour quand un utilisateur a fini de télécharger un jeu ou quand il décide d’en supprimer un.
 
-`````CODE````
+```C#
+private void CheckIfGameFileIsPresentOnDisk()
+        {
+            List<string> lst_idGames = gamesListConfigFile.GetAllValueInList();
+
+            foreach (var idGameString in lst_idGames)
+            {
+                if (idGameString != "")
+                {
+                    int idGame = Convert.ToInt32(idGameString);
+                    if (!File.Exists(@"C:\Caiman\" + callAPI.CallFolderNameGame(idGame) + @"\" + callAPI.CallFileNameGame(idGame)))
+                    {
+                        gamesListConfigFile.DeleteValue(idGameString);
+                    }
+                }
+
+            }
+        }
+```
 
 Si l’utilisateur décide de supprimer un fichier sans passer par caiman il pourrait y avoir un souci alors pour pallier à ce problème une vérification est faite. Au lancement de l’application, si un fichier est manquant, alors le fichier qui contient les id des jeux sera mis à jour.
 
-````CODE````
 
 
 ### Paramètres graphique
@@ -108,11 +216,35 @@ Le fichier “PCSX2_ui.ini” permet de modifier l’affichage en plein écran e
 
 Le paramètre de format d’écran dans le fichier de configuration de PCSX n’est pas un booléen mais du texte je dois avant l'écriture dans le fichier le convertir.
 
-````CODE````
-
 Pareil pour le paramètre de mode plein écran 
 
-````CODE````
+```C#
+public override void UpdateConfigurationFile()
+        {
+            configFileGSdx.UpdateProperties("upscale_multiplier", definition.ToString());
+            configFileGSdx.UpdateProperties("MaxAnisotropy", filtrageAnioscopique.ToString());
+
+            // the format is not true or false so i have to format it
+            if (fullScreen)
+            {
+                configFilePCSX2_ui.UpdateProperties("DefaultToFullscreen", "enabled");
+            }
+            else
+            {
+                configFilePCSX2_ui.UpdateProperties("DefaultToFullscreen", "disabled");
+            }
+
+            // the format is not true or false so i have to format it 
+            if (formatSeizeNeuvieme)
+            {
+                configFilePCSX2_ui.UpdateProperties("AspectRatio", "16:9");
+            }
+            else
+            {
+                configFilePCSX2_ui.UpdateProperties("AspectRatio", "4:3");
+            }
+        }
+```
 
 
 #### Fichiers de configuration Dolphin
@@ -127,7 +259,24 @@ Le fichier “Dolphin.ini” permet de modifier l’affichage en plein écran et
 
 Le paramètre de format d’écran dans le fichier de configuration de Dolphin n’est pas un booléen mais un nombre. Donc avant l'écriture dans le fichier je dois le convertir.
 
-````CODE````
+```C#
+public override void UpdateConfigurationFile()
+        {
+            configFileDolphin.UpdateProperties("Fullscreen", fullScreen.ToString());
+            configFileGFX.UpdateProperties("InternalResolution", definition.ToString());
+            configFileGFX.UpdateProperties("MaxAnisotropy", filtrageAnioscopique.ToString());
+
+            if (formatSeizeNeuvieme)
+            {
+                configFileGFX.UpdateProperties("AspectRatio", "1");
+            }
+            else
+            {
+                configFileGFX.UpdateProperties("AspectRatio", "2");
+            }
+            
+        }
+```
 
 
 #### Sauvegarde des paramètres graphique
@@ -136,7 +285,34 @@ Les paramètres graphiques définis par l’utilisateur se trouvent dans le doss
 
 Les paramètres sont mis à jour grâce à la classe ConfigFileEditor, cette classe permet la manipulation de fichier “.ini” que ce soit la lecture,la modification, la suppression, la création de propriétés.
 
-````CODE````
+```C#
+public void ApplyGlobalConfiguration(string configuration)
+        {
+            switch (configuration)
+            {
+                case "original":
+                    configFile.UpdateProperties("definition", "1");
+                    configFile.UpdateProperties("filtrageAnioscopique", "1");
+                    configFile.UpdateProperties("configuration", "original");
+                    ScanConfiguration();
+                    break;
+                case "1080":
+                    configFile.UpdateProperties("definition", "3");
+                    configFile.UpdateProperties("filtrageAnioscopique", "4");
+                    configFile.UpdateProperties("configuration", "1080p");
+                    ScanConfiguration();
+                    break;
+                case "4K":
+                    configFile.UpdateProperties("definition", "8");
+                    configFile.UpdateProperties("filtrageAnioscopique", "4");
+                    configFile.UpdateProperties("configuration", "4K");
+                    ScanConfiguration();
+                    break;
+                default:
+                    break;
+            }
+        }
+```
 
 
 ### Téléchargement d’images
@@ -145,7 +321,19 @@ Le téléchargement des images se fait à la création d’un objet de type Game
  \
 Le téléchargement se fait grâce à un WebClient. Avant tout téléchargement de fichier, Caiman vérifie si le fichier n’est pas déjà existant, ce qui permet d'éviter de télécharger plusieurs fois la même image.
 
-````CODE````
+```C#
+private void DownloadImage()
+        {
+
+            if (!File.Exists(imgPath + imageName))
+            {
+                using (WebClient client = new WebClient())
+                {
+                    client.DownloadFile(new Uri(URL_IMAGES_CAIMAN + imageName), (imgPath + imageName));
+                }
+            }
+        }
+```
 
 
 ### Exécution de jeu
@@ -171,7 +359,29 @@ Le premier paramètre fait en sorte que l’émulateur n’affiche pas d’inter
 
 Pour lancer l'exécution, je vais lancer le processus de PCSX2.exe avec en premier paramètre le chemin de l’iso à exécuter et après les paramètres cités précédemment.
 
-````CODE````
+```C#
+public override void Execute(int idGame)
+        {
+            string path = @"C:\Caiman\" + callAPI.CallFolderNameGame(idGame) + @"\";
+            string filename = callAPI.CallFileNameGame(idGame);
+            UpdateConfigurationFile();
+            int process = Process.GetProcessesByName(PROCESS_NAME).Length;
+
+            if (process == 0)
+            {
+                //param pour ne pas afficher l'interface graphique --portable --nogui
+                string param = " --nogui --portable";
+
+                processEmulator = Process.Start(PCSX2Folder + EXE_NAME, path + filename + param);
+
+            }
+            else
+            {
+                Close();
+                Execute(idGame);
+            }
+        }
+```
 
 
 #### Exécution avec Dolphin
@@ -182,7 +392,30 @@ Le paramètre “--batch” fait en sorte de ne pas afficher l’interface de Do
 
 Pour lancer l'exécution, je vais lancer le processus de PCSX2.exe avec en premier paramètre le chemin de l’iso a exécuter et après le paramètre cité précédemment.
 
-````CODE````
+```C#
+public override void Execute(int idGame)
+        {
+            string path = @"C:\Caiman\" + callAPI.CallFolderNameGame(idGame) + @"\";
+            string filename = callAPI.CallFileNameGame(idGame);
+            
+            UpdateConfigurationFile();
+            int process = Process.GetProcessesByName(PROCESS_NAME).Length;
+
+            if (process == 0)
+            {
+                //param pour ne pas mettre de gui et en fullscreen --portable
+                string param = " --batch";
+
+                processEmulator = Process.Start(dolphinFolder + EXE_NAME, param + " --exec \"" + path + filename);
+
+            }
+            else
+            {
+                Close();
+                Execute(idGame);
+            }
+        }
+```
 
 
 #### Information complémentaire 
@@ -197,9 +430,36 @@ Le temps de jeu est comptabilisé dans la base de données à la minute près.
 
 #### Affichage dans le détail d’un jeu
 
-Quand un utilisateur de Caiman se rend sur la page de détails d’un jeu, il verra son nombre d’heures et de minutes de jeu. Pour récupérer cette information, je fais un appel àla base de données CallAPI.CallTimeInGameUser(idGame,idUser) cette appel va me rendre un objet TimeInGame qui va permettre de formater la réponse de l’API et afficher les heures et le minutes sous le format “10h10”. Si l’utilisateur n’a pas jouer au jeu, il verra afficher “Time played: 00h00”.
+Quand un utilisateur de Caiman se rend sur la page de détails d’un jeu, il verra son nombre d’heures et de minutes de jeu. Pour récupérer cette information, je fais un appel à la base de données .CallTimeInGameUser(idGame,idUser) cette appel va me rendre un objet TimeInGame qui va permettre de formater la réponse de l’API et afficher les heures et le minutes sous le format “10h10”. Si l’utilisateur n’a pas jouer au jeu, il verra afficher “Time played: 00h00”.
 
-````CODE````
+```C#
+public string TimeHoursMinutes
+        {
+            get
+            {
+                string time = "";
+                int hours = this.minutes / 60;
+                int minutesInt = this.minutes % 60;
+                if (minutesInt == 60)
+                {
+                    hours++;
+                    minutesInt = 0;
+                }
+                string minutesString = minutesInt.ToString();
+                string hoursString = "";
+                if (minutesInt < 10)
+                {
+                    minutesString = "0" + minutesInt;
+                }
+                if (hours < 10)
+                {
+                    hoursString = "0" + hours;
+                }
+                time = hoursString + " h " + minutesString;
+                return time;
+            }
+        }
+```
 
 
 #### Affichage du temps de jeu actuel
@@ -208,7 +468,30 @@ Quand un utilisateur lance un jeu, un objet GameTimer va être créé, cet objet
 
 La classe GameTimer va initialiser in timer pour rafraîchir l’affichage de la navbar avec la valeur adéquate. Ce timer se rafraîchit toutes les secondes. Celui-ci va également appeler la fonction UpdateTimer, UpdateTimer va incrémenter le nombre de secondes de jeu et toutes les 60 secondes, il va faire un appel à l'API pour incrémenter le temps de jeu de l’utilisateur dans la base de données. L'incrémentation se fait donc toutes les minutes, cela permet d'être assez précis dans le décompte de temps de jeu.
 
-````CODE````
+```C#
+public void InitTimer()
+        {
+            timer = new Timer();
+            timer.Tick += new EventHandler(UpdateTimer);
+
+            timer.Interval = 1000;
+            timer.Start();
+        }
+
+public void UpdateTimer(object sender, EventArgs e)
+        {
+            counter++;
+
+            if (counter == 60)
+            {
+                minutes++;
+                counter = 0;
+
+                callAPI.AddOneMinuteToGame(game.id, emulatorsManager.user.id);
+            }
+
+        }
+```
 
 L’affichage de temps de jeu se fait dans la navbar en haut à gauche, Les informations affichées sont les suivantes:
 
@@ -230,7 +513,19 @@ Les fichiers utilisés par les émulateurs sont des fichiers .iso, que ce soit p
 
 Le fichier à télécharger se fait sur la page de détails d’un jeu, si le jeu n’a pas déjà été téléchargé. Un bouton “download” sera présent, ce bouton va envoyer l’id du jeu qui doit être télécharger.
 
-```` CODE ```` 
+```C#
+if (!File.Exists(gamePath))
+                {
+                    XboxButton btn_download = new XboxButton("download", game.id, 0, 0);
+                    btn_download.Text = "Download: " + game.name;
+                    btn_download.Location = new System.Drawing.Point(500, 650);
+                    btn_download.Click += new System.EventHandler(bouton_Click);
+                    lstControls[rowCounter].Add(btn_download);
+                    Controls.Add(btn_download);
+                    rowCounter++;
+                    lstControls.Add(new List<Control>());
+                }
+``` 
 
 
 #### Ajout d’un jeu à la liste de téléchargement
@@ -259,7 +554,20 @@ La fonction NextDownload() sert à savoir si un téléchargement est en cours,Si
 
 Quand la fonction download.StartDownload() est lancée, le WebClient se lance également. Ce WebClient télécharge le fichier en appelant l’API de caiman en passant en paramètres l’id du jeu qui doit être télécharger et l’apiKey de l’utilisateur.
 
-```` CODE ````
+```C#
+public void StartDownload()
+        {
+            
+            if (!CheckIfFileIsPresent())
+            {
+                webClient = new WebClient();
+                Uri uri = new Uri(URL_TO_GAMES + "?idGame="+idGame+"&apiKey="+apiKey);
+                webClient.DownloadProgressChanged += wc_DownloadProgressChanged;
+                webClient.DownloadFileAsync(uri,pathToFolder+"temp."+filename);
+                active = true;
+            }
+        }
+```
 
 Le fichier sera téléchargé dans le dossier spécifique à l'émulateur, par exemple si un jeu pour l’émulateur PCSX2 est téléchargé alors le jeu sera télécharger dans le dossier
 
@@ -267,7 +575,25 @@ Le fichier sera téléchargé dans le dossier spécifique à l'émulateur, par e
 
 A la fin du téléchargement d’un fichier, la fonction DownloadManager.NextDownload() est appelée. l’id du jeu est ajouté à la liste des jeux téléchargés, et le fichier est renommé avec le nom correct. 
 
-```` CODE ````
+```C#
+public void NextDownload()
+        {
+            if (lst_activeDownload.Count >0)
+            {
+                lst_finishDownload.Add(lst_activeDownload[0]);
+                lst_activeDownload.RemoveAt(0);
+            }
+
+            if (lst_download.Count() == 1)
+            {
+                lst_activeDownload.Add(lst_download[0]);
+                lst_download.RemoveAt(0);
+                StartDownload();
+            }
+            
+            
+        }
+```
 
 
 ### Synchronisation des sauvegardes
@@ -310,21 +636,124 @@ Le dossier contenant les sauvegardes de l'utilisateur lorenzo1227:
 
 Pour pouvoir synchroniser les sauvegardes entre les différents PCs d’un utilisateur, j’ai commencé par savoir si l’un des fichiers présents dans les dossiers des différents émulateurs a été mis à jour. Pour ce faire, j'ai un timer qui va faire une vérification sur la dernière date de modification du fichier. S’il s'avère qu'une modification a été faite dans l’un des dossiers de sauvegardes, je copie l’intégralité du dossier de l’émulateur vers le dossier appdata de l'utilisateur.
 
-```CODE```
+```C#
+private void ScanDateFile()
+        {
+            int counter = 0;
+            lst_saveTimeOld.Clear();
+            lst_saveTimeOld.AddRange(lst_saveTimeNow);
+            lst_saveTimeNow.Clear();
+            //if a file has been added or delete sync the folder
+            if (initialCounterFile != CountFileInFolder())
+            {
+                if (isLocalFile)
+                {
+                    initialCounterFile = CountFileInFolder();
+                    MoveAllFileToUserFolder();
+                }
+            }
+            foreach (FileInfo save in lst_save)
+            {
+
+                save.Refresh();
+
+                lst_saveTimeNow.Add(save.LastWriteTime.Ticks.ToString());
+                if (lst_saveTimeOld.Count() > 0)
+                {
+                    try
+                    {
+                        if (lst_saveTimeOld[counter] != lst_saveTimeNow[counter])
+                        {
+                            //if the file has benn modified since the last time move or sync the folder
+                            if (lst_saveTimeOld[counter] != "")
+                            {
+                                if (isLocalFile)
+                                {
+                                    MoveFileToUserFolder(save);
+                                }
+                                else
+                                {
+                                    UploadSave();
+                                }
+                            }
+
+                        }
+                        counter++;
+                    }
+                    catch { }
+                }
+
+
+            }
+        }
+
+        public void MoveAllFileToUserFolder()
+        {
+            DirectoryInfo d = new DirectoryInfo(savePath);
+            FileInfo[] Files = d.GetFiles(); 
+            foreach (FileInfo file in Files)
+            {
+                try
+                {
+
+                    File.Copy(file.FullName, Path.Combine(destinationPath, file.Name), true);
+                }
+                catch (Exception)
+                {
+                }
+            }
+        }
+```
 
 Si je trouve une différence alors cela veut dire que le fichier a été modifié. Quand un fichier a été modifié je crée une copie de ce fichier dans le dossier “username/save/nom_de_emulateur/”.
 
 Quand un fichier a été mis à jour, supprimé ou créé dans le dossier de sauvegarde de l’utilisateur, je zip les fichiers présents dans le dossier pour les envoyer sur le serveur de Caiman.
 
-`````CODE````
+```C#
+public void UploadSave()
+        {
+
+            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var savePathZipDolpin = "";
+            var savePathZipPCSX2 = "";
+            var savePath = Path.Combine(appDataPath, @"Caiman\users\" + emulatorsManager.user.username + @"\Save\");
+
+            savePathZipDolpin = Path.Combine(appDataPath, @"Caiman\users\" +  emulatorsManager.user.username+ @"\Save\GamecubeWii\");
+            savePathZipPCSX2 = Path.Combine(appDataPath, @"Caiman\users\" + emulatorsManager.user.username + @"\Save\Playstation2\");
+            //zip the save of the emulators
+            ZipFile.CreateFromDirectory(savePathZipPCSX2, savePath + "tempPCSX2.zip");
+            ZipFile.CreateFromDirectory(savePathZipDolpin, savePath + "tempDolphin.zip");
+            //call the api to create a copy of the save to the Bunker
+            callAPI.UploadSave(1, emulatorsManager.user.id, emulatorsManager.user.apitoken, savePath + "tempDolphin.zip");
+            callAPI.UploadSave(2,emulatorsManager.user.id,emulatorsManager.user.apitoken, savePath + "tempPCSX2.zip");
+            //delete the temporary zip file
+            File.Delete(savePath + "tempPCSX2.zip");
+            File.Delete(savePath + "tempDolphin.zip");
+            
+        }
+```
 
 
 #### Download des sauvegardes présente sur le serveur de Caiman
 
 Le lancement du téléchargement des sauvegardes est lancé à la connexion de l’utilisateur. Un appel à l'API est fait pour les deux émulateurs:
 
-````CODE````
+```C#
+ public void CreateDownload(int idEmulator, string apiKey)
+        {
 
-Ces appels à l'API vont télécharger des fichiers .zip contenant les sauvegardes des différents émulateurs. Ces deux fichiers vont être décompressé dans le dossier spécifique de chaque émulateur. Avant de pouvoir décompresser le dossier, je dois au préalable supprimer le contenu des dossiers de destination (Si je dois supprimer le contenu des dossiers c’est parce que la classe Zipfile de C# sous la version 5.0 ne peut pas “override” le contenu d’un dossier). 
+            var appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var savePath = Path.Combine(appDataPath, @"Caiman\users\" + user.username + @"\Save\");
+
+
+            if (lst_download == null)
+            {
+                lst_download = new List<DownloadSave>();
+            }
+            lst_download.Add(new DownloadSave(savePath, idEmulator,user.id, apiKey,user.username,this));
+        }
+```
+
+Ces appels à l'API vont télécharger des fichiers .zip contenant les sauvegardes des différents émulateurs. Ces deux fichiers vont être décompressé dans le dossier spécifique de chaque émulateur. Avant de pouvoir décompresser le dossier, je dois au préalable supprimer le contenu des dossiers de destination (Si je dois supprimer le contenu des dossiers c’est parce que la classe Zipfile de C# sous la version 5.0 ne peut pas “override” le contenu d’un dossier).
 
 Quand les fichiers zip sont décompressés le contenu est envoyé dans les dossiers des différents émulateurs.
