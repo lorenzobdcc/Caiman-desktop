@@ -23,6 +23,7 @@ Welcome to Caiman's documentation!
    techniqueInterface
    test
    planning
+   poster
    conclusion
    sources
    logbook
