@@ -130,6 +130,10 @@
 <li class="toctree-l1"><a class="reference internal" href="techniqueCaiman.html">Description technique: Application Caiman</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Description technique: Interface graphique</a></li>
 <li class="toctree-l1"><a class="reference internal" href="test.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="planning.html">Planning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="planning.html#id1"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="conclusion.html">Conclusion et perspectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sources.html">Sources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logbook.html">Logbook</a></li>
 </ul>
 
@@ -167,12 +171,54 @@
 <div class="section" id="gestion-des-boutons">
 <h3>Gestion des boutons<a class="headerlink" href="#gestion-des-boutons" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Quand la fonction ScanInput reçoit un string contenant les inputs de la manette 1. Ce string est envoyé dans un switch qui va faire une comparaison entre l’input précédent de la manette et l’input actuel. Si l’input actuel est différent de l’ancien alors celaveut dire que l’utilisateur a pressé un bouton puis il l’a soit relâché soit fait une autre combinaison de touches.</p>
-<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+<p>Le code suivant n’est pas complet!</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">void</span> <span class="nf">ScanInput</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+
+            <span class="c1">// if the user 1 controller is connected</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">xboxController</span><span class="p">.</span><span class="n">lstController</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">IsConnected</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="kt">string</span> <span class="n">input</span> <span class="p">=</span> <span class="n">xboxController</span><span class="p">.</span><span class="n">lstController</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">GetState</span><span class="p">().</span><span class="n">Gamepad</span><span class="p">.</span><span class="n">Buttons</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span>
+                <span class="kt">int</span> <span class="n">inputAnalogLeftX</span> <span class="p">=</span> <span class="n">xboxController</span><span class="p">.</span><span class="n">lstController</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">GetState</span><span class="p">().</span><span class="n">Gamepad</span><span class="p">.</span><span class="n">LeftThumbX</span><span class="p">;</span>
+                <span class="kt">int</span> <span class="n">inputAnalogLeftY</span> <span class="p">=</span> <span class="n">xboxController</span><span class="p">.</span><span class="n">lstController</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">GetState</span><span class="p">().</span><span class="n">Gamepad</span><span class="p">.</span><span class="n">LeftThumbY</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">input</span> <span class="p">==</span> <span class="s">"A"</span> <span class="p">&amp;&amp;</span> <span class="n">old_input</span> <span class="p">!=</span> <span class="s">"A"</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">SendKeys</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="s">"{ENTER}"</span><span class="p">);</span>
+                    <span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="gestion-du-joystick-gauche">
 <h3>Gestion du joystick gauche<a class="headerlink" href="#gestion-du-joystick-gauche" title="Lien permanent vers ce titre">¶</a></h3>
 <p>La réception des inputs pour le joystick n’est pas comme pour les boutons, en sachant que les joysticks sont analogiques, je reçois une valeur entre -32000 et +32000. Je vais recevoir ces valeurs pour l’axe X et l’axe Y. Pour savoir si l’utilisateur a poussé le joystick dans une direction, j’ai défini une “deadzone” dans laquelle je considère qu” aucune direction n’est définie par l’utilisateur de la manette. J’ai défini cette zone à 20000, j’ai fait des tests pour savoir où je trouvais que la “deadzone” devait s’arrêter. Puis j’ai fait comme pour les boutons,  j’ai fait une comparaison avec la valeur précédente pour savoir si le joystick vient d’être poussé.</p>
-<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span>                <span class="kt">bool</span> <span class="n">leftAnalogUp</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+                <span class="kt">bool</span> <span class="n">leftAnalogDown</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+                <span class="kt">bool</span> <span class="n">leftAnalogLeft</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+                <span class="kt">bool</span> <span class="n">leftAnalogRight</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">inputAnalogLeftX</span> <span class="p">&gt;</span> <span class="n">DEAD_ZONE_JOYSTICK</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">leftAnalogRight</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">inputAnalogLeftX</span> <span class="p">&lt;</span> <span class="p">-</span><span class="n">DEAD_ZONE_JOYSTICK</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">leftAnalogLeft</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">inputAnalogLeftY</span> <span class="p">&gt;</span> <span class="n">DEAD_ZONE_JOYSTICK</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">leftAnalogUp</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">inputAnalogLeftY</span> <span class="p">&lt;</span> <span class="p">-</span><span class="n">DEAD_ZONE_JOYSTICK</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">leftAnalogDown</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+                <span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="decoupage-de-linterface">
@@ -182,7 +228,26 @@
 <h3>Navbar<a class="headerlink" href="#navbar" title="Lien permanent vers ce titre">¶</a></h3>
 <p>La première est la navbar qui contient les différents boutons de navigation et les informations sur le jeu en cours. Tous les boutons sont créés dynamiquement, le placement s’adapte à l’écran principal de l’utilisateur, mais s’il a un écran vraiment trop petit, les informations sur le jeu en cours et les boutons risquent de s’entremêler.</p>
 <p>Pour afficher le jeu en cours, le navigateur est obligé de se rafraîchir et de se redessiner toutes les secondes pour afficher le temps de jeu. Pour savoir si un jeu est en cours,lal’a navbar regarde si le GameTimer est lancé. Si le GameTimer est lancé c’est qu’un jeu est en cours, dans ce cas il va afficher le nom et le temps de jeu.</p>
-<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">private</span> <span class="k">void</span> <span class="nf">UpdateData</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">xboxMainForm</span><span class="p">.</span><span class="n">emulatorsManager</span><span class="p">.</span><span class="n">gameTimer</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">actualGameName</span> <span class="p">!=</span> <span class="s">""</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">lbl_game_actual</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">" Now playing: "</span> <span class="p">+</span> <span class="n">actualGameName</span> <span class="p">+</span> <span class="s">"  "</span> <span class="p">+</span> <span class="n">xboxMainForm</span><span class="p">.</span><span class="n">emulatorsManager</span><span class="p">.</span><span class="n">gameTimer</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="n">lbl_game_actual</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">""</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">lbl_game_actual</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">""</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="sidebar">
 <h3>Sidebar<a class="headerlink" href="#sidebar" title="Lien permanent vers ce titre">¶</a></h3>
@@ -194,7 +259,64 @@
 </ul>
 <p>Ces catégories ne sont pas créées dynamiquement.</p>
 <p>Par contre, les suivants sont reçus de l’API, ils concernent les différentes catégories disponibles pour Caiman. À l’appui de ces boutons, la liste des jeux va être chargée et le main panel va afficher la liste des jeux reçus par l’API.</p>
-<p>`````CODE````</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">void</span> <span class="nf">CreateListNavButton</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">lst_navbar</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+            <span class="n">List</span><span class="p">&lt;</span><span class="n">Category</span><span class="p">&gt;</span> <span class="n">lst_category</span> <span class="p">=</span> <span class="n">xboxMainForm</span><span class="p">.</span><span class="n">callAPI</span><span class="p">.</span><span class="n">CallAllCategories</span><span class="p">();</span>
+            <span class="n">lst_navbar</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"Downloaded games"</span><span class="p">);</span>
+            <span class="n">lst_navbar</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"Favorites games"</span><span class="p">);</span>
+            <span class="n">lst_navbar</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"All games"</span><span class="p">);</span>
+
+            <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">item</span> <span class="k">in</span> <span class="n">lst_category</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">lst_navbar</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">lst_navbar</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+            <span class="p">{</span>
+                <span class="n">lstControls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Control</span><span class="p">&gt;());</span>
+                <span class="n">lstControls</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">XboxButton</span><span class="p">());</span>
+            <span class="p">}</span>
+
+            <span class="c1">//update the buttons infos</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">a_row</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">a_row</span> <span class="p">&lt;=</span> <span class="p">(</span><span class="n">lst_navbar</span><span class="p">.</span><span class="n">Count</span> <span class="p">-</span><span class="m">1</span><span class="p">);</span> <span class="n">a_row</span><span class="p">++)</span>
+            <span class="p">{</span>
+
+                <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">lstString</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+                <span class="n">XboxButton</span> <span class="n">tempButton</span> <span class="p">=</span> <span class="k">new</span> <span class="n">XboxButton</span><span class="p">(</span><span class="s">"side"</span><span class="p">,</span> <span class="n">a_row</span><span class="p">,</span> <span class="n">a_row</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+                <span class="n">lstControls</span><span class="p">[</span><span class="n">a_row</span><span class="p">][</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="n">tempButton</span><span class="p">;</span>
+                <span class="n">lstControls</span><span class="p">[</span><span class="n">a_row</span><span class="p">][</span><span class="m">0</span><span class="p">].</span><span class="n">Text</span> <span class="p">=</span> <span class="n">lst_navbar</span><span class="p">[</span><span class="n">a_row</span><span class="p">];</span>
+                <span class="n">lstControls</span><span class="p">[</span><span class="n">a_row</span><span class="p">][</span><span class="m">0</span><span class="p">].</span><span class="n">Location</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Point</span><span class="p">(</span><span class="m">0</span> <span class="p">*</span> <span class="m">100</span> <span class="p">+</span> <span class="m">20</span><span class="p">,</span> <span class="n">a_row</span> <span class="p">*</span> <span class="m">75</span> <span class="p">+</span> <span class="m">15</span><span class="p">);</span>
+                <span class="n">lstControls</span><span class="p">[</span><span class="n">a_row</span><span class="p">][</span><span class="m">0</span><span class="p">].</span><span class="n">Width</span> <span class="p">=</span> <span class="m">200</span><span class="p">;</span>
+                <span class="n">lstControls</span><span class="p">[</span><span class="n">a_row</span><span class="p">][</span><span class="m">0</span><span class="p">].</span><span class="n">Height</span> <span class="p">=</span> <span class="m">50</span><span class="p">;</span>
+                <span class="n">lstControls</span><span class="p">[</span><span class="n">a_row</span><span class="p">][</span><span class="m">0</span><span class="p">].</span><span class="n">Name</span> <span class="p">=</span>  <span class="s">"btn_"</span><span class="p">+</span> <span class="n">lst_navbar</span><span class="p">[</span><span class="n">a_row</span><span class="p">];</span>
+
+
+                <span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">lstControls</span><span class="p">[</span><span class="n">a_row</span><span class="p">][</span><span class="m">0</span><span class="p">]);</span>
+                <span class="n">lstControls</span><span class="p">[</span><span class="n">a_row</span><span class="p">][</span><span class="m">0</span><span class="p">].</span><span class="n">Click</span> <span class="p">+=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">EventHandler</span><span class="p">(</span><span class="n">bouton_Click</span><span class="p">);</span>
+
+            <span class="p">}</span>
+
+            <span class="c1">//set the action of button</span>
+            <span class="n">XboxButton</span> <span class="n">downloadedGames</span> <span class="p">=</span> <span class="p">(</span><span class="n">XboxButton</span><span class="p">)</span><span class="n">lstControls</span><span class="p">[</span><span class="m">0</span><span class="p">][</span><span class="m">0</span><span class="p">];</span>
+            <span class="n">downloadedGames</span><span class="p">.</span><span class="n">contextInfos</span><span class="p">.</span><span class="n">contexte</span> <span class="p">=</span> <span class="s">"downloadedGames"</span><span class="p">;</span>
+            <span class="n">XboxButton</span> <span class="n">userFavoritesGames</span> <span class="p">=</span> <span class="p">(</span><span class="n">XboxButton</span><span class="p">)</span><span class="n">lstControls</span><span class="p">[</span><span class="m">1</span><span class="p">][</span><span class="m">0</span><span class="p">];</span>
+            <span class="n">userFavoritesGames</span><span class="p">.</span><span class="n">contextInfos</span><span class="p">.</span><span class="n">contexte</span> <span class="p">=</span> <span class="s">"favorite"</span><span class="p">;</span>
+            <span class="n">XboxButton</span> <span class="n">allGames</span> <span class="p">=</span> <span class="p">(</span><span class="n">XboxButton</span><span class="p">)</span><span class="n">lstControls</span><span class="p">[</span><span class="m">2</span><span class="p">][</span><span class="m">0</span><span class="p">];</span>
+            <span class="n">allGames</span><span class="p">.</span><span class="n">contextInfos</span><span class="p">.</span><span class="n">contexte</span> <span class="p">=</span> <span class="s">"home"</span><span class="p">;</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">lst_category</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+            <span class="p">{</span>
+                <span class="n">XboxButton</span> <span class="n">tempButton</span> <span class="p">=</span> <span class="p">(</span><span class="n">XboxButton</span><span class="p">)</span><span class="n">lstControls</span><span class="p">[(</span><span class="n">i</span><span class="p">+</span><span class="m">3</span><span class="p">)][</span><span class="m">0</span><span class="p">];</span>
+                <span class="n">tempButton</span><span class="p">.</span><span class="n">contextInfos</span><span class="p">.</span><span class="n">contexte</span> <span class="p">=</span> <span class="s">"category"</span><span class="p">;</span>
+                <span class="n">tempButton</span><span class="p">.</span><span class="n">contextInfos</span><span class="p">.</span><span class="n">id_contexte</span> <span class="p">=</span> <span class="p">(</span><span class="n">lst_category</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span><span class="p">);</span>
+            <span class="p">}</span>
+
+        <span class="p">}</span>
+
+
+    <span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="main-panel">
 <h3>Main panel<a class="headerlink" href="#main-panel" title="Lien permanent vers ce titre">¶</a></h3>
@@ -205,18 +327,151 @@
 <h2>Affichage d’une liste de jeu<a class="headerlink" href="#affichage-dune-liste-de-jeu" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour l’affichage des listes des jeux, j’ai essayé de faire en sorte que le panel soit le plus flexible possible. le panel demande juste une liste de jeux, il n’y a pas de panel fait pour les jeux favoris ou les jeux déjà présents sur le disque.</p>
 <p>Le panel utilise la fonction CreateListGames() pour dessiner les différents boutons de lien vers les détails des jeux. Pour que certaines images ne dépasse pas l’écran et qu’elles soient coupées, la fonction calcul le nombre d’images qu’elle peut afficher par ligne. Le calcul se fait selon la définition de l’écran de l’utilisateur. Les images affichées sont celles qui sont dans le dossier appdata de Caiman.</p>
-<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">void</span> <span class="nf">CreateListGames</span><span class="p">()</span>
+        <span class="p">{</span>
+
+            <span class="kt">string</span> <span class="n">imgPath</span> <span class="p">=</span> <span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="n">Environment</span><span class="p">.</span><span class="n">GetFolderPath</span><span class="p">(</span><span class="n">Environment</span><span class="p">.</span><span class="n">SpecialFolder</span><span class="p">.</span><span class="n">ApplicationData</span><span class="p">),</span> <span class="n">PATH_IMG_CAIMAN</span><span class="p">);</span>
+            <span class="n">XboxImage</span> <span class="n">tempXboxImage</span> <span class="p">=</span> <span class="k">new</span> <span class="n">XboxImage</span><span class="p">();</span>
+            <span class="kt">int</span> <span class="n">max_rank</span> <span class="p">=</span> <span class="n">Width</span> <span class="p">/</span> <span class="p">(</span><span class="m">315</span><span class="p">);</span>
+            <span class="kt">int</span> <span class="n">tempPos_x</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">tempPos_y</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+            <span class="n">lstControls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Control</span><span class="p">&gt;());</span>
+
+
+            <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">game</span> <span class="k">in</span> <span class="n">lst_games</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">tempPos_x</span> <span class="p">==</span> <span class="n">max_rank</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">lstControls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Control</span><span class="p">&gt;());</span>
+                    <span class="n">tempPos_y</span><span class="p">++;</span>
+                    <span class="n">tempPos_x</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="n">lstControls</span><span class="p">[</span><span class="n">tempPos_y</span><span class="p">].</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span> <span class="n">XboxImage</span><span class="p">());</span>
+                <span class="n">Image</span> <span class="n">img</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Bitmap</span><span class="p">((</span><span class="n">imgPath</span><span class="p">+</span> <span class="n">game</span><span class="p">.</span><span class="n">imageName</span><span class="p">));</span>
+                <span class="n">XboxImage</span> <span class="n">tempButton</span> <span class="p">=</span> <span class="k">new</span> <span class="n">XboxImage</span><span class="p">(</span><span class="s">"game"</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">game</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">tempPos_x</span><span class="p">,</span> <span class="n">tempPos_y</span><span class="p">);</span>
+                <span class="n">lstControls</span><span class="p">[</span><span class="n">tempPos_y</span><span class="p">][</span><span class="n">tempPos_x</span><span class="p">]</span> <span class="p">=</span> <span class="n">tempButton</span><span class="p">;</span>
+                <span class="n">lstControls</span><span class="p">[</span><span class="n">tempPos_y</span><span class="p">][</span><span class="n">tempPos_x</span><span class="p">].</span><span class="n">Location</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Point</span><span class="p">(</span><span class="n">tempPos_x</span> <span class="p">*</span> <span class="m">300</span> <span class="p">+</span> <span class="m">15</span><span class="p">,</span> <span class="n">tempPos_y</span> <span class="p">*</span> <span class="m">430</span> <span class="p">+</span> <span class="m">15</span><span class="p">);</span>
+
+                <span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">lstControls</span><span class="p">[</span><span class="n">tempPos_y</span><span class="p">][</span><span class="n">tempPos_x</span><span class="p">]);</span>
+                <span class="n">tempButton</span><span class="p">.</span><span class="n">Click</span> <span class="p">+=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">EventHandler</span><span class="p">(</span><span class="n">bouton_Click</span><span class="p">);</span>
+
+
+
+                <span class="n">tempPos_x</span><span class="p">++;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="gestion-des-erreurs-de-deplacement">
 <h2>Gestion des erreurs de déplacement<a class="headerlink" href="#gestion-des-erreurs-de-deplacement" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Le déplacement à la manette se fait par déplacement haut,bas,gauche,droite. Donc, J’ai décidé de faire en sorte que si l’utilisateur se déplace dans une case qui n’existe pas, ils soient soit déplacés dans l’une des casses disponibles proche de la case demandée, autrement  rien ne se passe.</p>
 <p>Pour cela, j’ai dû décider arbitrairement ce qui se passait. si un mouvement illégal était fait. J’ai essayé de reproduire les déplacements utilisés dans l’interface de la console Xbox. Il y a certains cas qui ne sont pas forcément bien gérés. Il serait possible de faire un déplacement en calculant la position actuelle et en se basant sur la position en pixel. Cette alternative pourrait être intéressante.</p>
-<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">void</span> <span class="nf">MoveActivateControl</span><span class="p">(</span><span class="kt">string</span> <span class="n">destination</span> <span class="p">=</span> <span class="s">""</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">//top = 1</span>
+            <span class="c1">//right = 2</span>
+            <span class="c1">//down = 3</span>
+            <span class="c1">//left = 4</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">destination</span> <span class="p">==</span> <span class="s">"down"</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">lstControls</span><span class="p">[</span><span class="n">position_y</span><span class="p">][</span><span class="n">position_x</span><span class="p">]</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="n">position_x</span><span class="p">;</span>
+                    <span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="n">position_y</span><span class="p">;</span>
+
+                    <span class="kt">int</span> <span class="n">y_right_not_disponible</span><span class="p">;</span>
+                    <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="p">&lt;</span> <span class="n">lstControls</span><span class="p">[</span><span class="n">position_y</span><span class="p">].</span><span class="n">Count</span><span class="p">()</span> <span class="p">&amp;&amp;</span> <span class="n">lstControls</span><span class="p">[</span><span class="n">position_y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="p">&gt;</span> <span class="n">lstControls</span><span class="p">[</span><span class="n">position_x</span><span class="p">-</span><span class="m">1</span><span class="p">].</span><span class="n">Count</span><span class="p">())</span>
+                        <span class="p">{</span>
+                            <span class="k">break</span><span class="p">;</span>
+                        <span class="p">}</span>
+                        <span class="n">x</span><span class="p">++;</span>
+                    <span class="p">}</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="p">==</span> <span class="n">lstControls</span><span class="p">[</span><span class="n">position_y</span><span class="p">].</span><span class="n">Count</span><span class="p">())</span>
+                    <span class="p">{</span>
+                        <span class="n">y_right_not_disponible</span> <span class="p">=</span> <span class="n">y</span><span class="p">;</span>
+
+                        <span class="k">while</span> <span class="p">(</span><span class="n">y_right_not_disponible</span><span class="p">&gt;</span><span class="m">0</span><span class="p">)</span>
+                        <span class="p">{</span>
+                            <span class="n">y_right_not_disponible</span> <span class="p">--;</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="n">lstControls</span><span class="p">[</span><span class="n">y_right_not_disponible</span><span class="p">][</span><span class="n">position_x</span><span class="p">]</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                            <span class="p">{</span>
+                                <span class="n">position_y</span> <span class="p">=</span> <span class="n">y_right_not_disponible</span><span class="p">;</span>
+                                <span class="n">lstControls</span><span class="p">[(</span><span class="n">position_y</span><span class="p">)][</span><span class="n">position_x</span><span class="p">].</span><span class="n">Focus</span><span class="p">();</span>
+                                <span class="k">return</span><span class="p">;</span>
+                            <span class="p">}</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                    <span class="n">lstControls</span><span class="p">[(</span><span class="n">position_y</span><span class="p">)][</span><span class="n">x</span><span class="p">].</span><span class="n">Focus</span><span class="p">();</span>
+                    <span class="n">Position_x</span> <span class="p">=</span> <span class="n">x</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="n">lstControls</span><span class="p">[(</span><span class="n">position_y</span><span class="p">)][</span><span class="n">position_x</span><span class="p">].</span><span class="n">Focus</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">position_x</span> <span class="p">&lt;</span> <span class="n">lstControls</span><span class="p">[</span><span class="n">position_y</span><span class="p">].</span><span class="n">Count</span><span class="p">())</span>
+                <span class="p">{</span>
+
+
+                    <span class="k">if</span> <span class="p">(</span><span class="n">lstControls</span><span class="p">[</span><span class="n">position_y</span><span class="p">][</span><span class="n">position_x</span><span class="p">]</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="n">position_x</span> <span class="p">-</span> <span class="m">1</span><span class="p">;</span>
+                        <span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="n">position_y</span><span class="p">;</span>
+                        <span class="k">while</span> <span class="p">(</span><span class="n">lstControls</span><span class="p">[</span><span class="n">position_y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+                        <span class="p">{</span>
+                            <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="p">&lt;</span> <span class="m">0</span><span class="p">)</span>
+                            <span class="p">{</span>
+
+                                <span class="k">break</span><span class="p">;</span>
+                            <span class="p">}</span>
+                            <span class="n">x</span><span class="p">--;</span>
+                        <span class="p">}</span>
+                        <span class="n">lstControls</span><span class="p">[(</span><span class="n">position_y</span><span class="p">)][</span><span class="n">x</span><span class="p">].</span><span class="n">Focus</span><span class="p">();</span>
+                        <span class="n">Position_x</span> <span class="p">=</span> <span class="n">x</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span>
+                    <span class="p">{</span>
+                        <span class="n">lstControls</span><span class="p">[(</span><span class="n">position_y</span><span class="p">)][</span><span class="n">position_x</span><span class="p">].</span><span class="n">Focus</span><span class="p">();</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="p">{</span>
+                    <span class="n">position_y</span><span class="p">--;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="passage-de-la-souris-a-la-manette">
 <h2>Passage de la souris à la manette<a class="headerlink" href="#passage-de-la-souris-a-la-manette" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Durant mes tests de l’application, je me suis rendu compte que le fait de passer de la manette à la souris et inversement, posait un problème. Quand je passais de l’un à l’autre la position du curseur n’était pas sauvegardée. Quand je passais de la souris à la manette, le curseur se retrouvait à une position erronée. Pour pouvoir pallier au problème, chaque bouton a une position définie et quand l’utilisateur clique dessus ,un événement se déclenche et notifie la forme que le bouton actuel a changé.</p>
-<p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnClick</span><span class="p">(</span><span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">base</span><span class="p">.</span><span class="n">OnClick</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+
+            <span class="c1">//tell to the topMainForm which control is active</span>
+            <span class="n">XboxUserControl</span> <span class="n">xboxUserControl</span> <span class="p">=</span> <span class="p">(</span><span class="n">XboxUserControl</span><span class="p">)</span><span class="k">this</span><span class="p">.</span><span class="n">Parent</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">xboxUserControl</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+            <span class="p">{</span>
+            <span class="n">xboxUserControl</span><span class="p">.</span><span class="n">position_x</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">contextInfos</span><span class="p">.</span><span class="n">position_x</span><span class="p">;</span>
+            <span class="n">xboxUserControl</span><span class="p">.</span><span class="n">position_y</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">contextInfos</span><span class="p">.</span><span class="n">position_y</span><span class="p">;</span>
+            <span class="p">}</span>
+
+
+            <span class="k">if</span> <span class="p">((</span><span class="n">XboxMainForm</span><span class="p">)</span><span class="k">this</span><span class="p">.</span><span class="n">TopLevelControl</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">XboxMainForm</span> <span class="n">topMainForm</span> <span class="p">=</span> <span class="p">(</span><span class="n">XboxMainForm</span><span class="p">)</span><span class="k">this</span><span class="p">.</span><span class="n">TopLevelControl</span><span class="p">;</span>
+                <span class="n">topMainForm</span><span class="p">.</span><span class="n">ActiveControl1</span> <span class="p">=</span> <span class="n">xboxUserControl</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 

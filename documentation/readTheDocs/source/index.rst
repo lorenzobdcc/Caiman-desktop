@@ -22,6 +22,9 @@ Welcome to Caiman's documentation!
    techniqueCaiman
    techniqueInterface
    test
+   planning
+   conclusion
+   sources
    logbook
    
 
