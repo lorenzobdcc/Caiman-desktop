@@ -15,8 +15,9 @@ Welcome to Caiman's documentation!
    test
    planning
    conclusion
-   sources
    remerciment
+   sources
+
    logbook
    
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 21.3) (preloaded format=xelatex 2021.6.8)  10 JUN 2021 15:41
+This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 21.3) (preloaded format=xelatex 2021.6.8)  10 JUN 2021 15:45
 entering extended mode
 **./main.tex
 (main.tex
@@ -1944,8 +1944,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 ]
 Chapitre 9.
+[101]
 
-Overfull \hbox (42.52412pt too wide) in paragraph at lines 3854--3856
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[102
+
+]
+Chapitre 10.
+
+Overfull \hbox (42.52412pt too wide) in paragraph at lines 3860--3862
 [][][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][] [] [][][] [] [][]
 [][][][][][][] [] [][][][][][][][][] [] [][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[
@@ -1953,7 +1966,7 @@ Overfull \hbox (42.52412pt too wide) in paragraph at lines 3854--3856
  []
 
 
-Overfull \hbox (75.67212pt too wide) in paragraph at lines 3875--3877
+Overfull \hbox (75.67212pt too wide) in paragraph at lines 3881--3883
 [][][]$[][][][][] [] [] [] [][][][][][][][][][][][][] [] [][][] [] [][][][][][]
 [][][] [] [][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -1961,7 +1974,7 @@ Overfull \hbox (75.67212pt too wide) in paragraph at lines 3875--3877
  []
 
 
-Overfull \hbox (122.41621pt too wide) in paragraph at lines 3890--3892
+Overfull \hbox (122.41621pt too wide) in paragraph at lines 3896--3898
 [][][]$[][][][][] [] [] [] [][][][][][][][][][][][][] [] [][][] [] [][][][][][]
 [][][] [] [][][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -1969,21 +1982,21 @@ Overfull \hbox (122.41621pt too wide) in paragraph at lines 3890--3892
  []
 
 
-Overfull \hbox (6.52414pt too wide) in paragraph at lines 3896--3898
+Overfull \hbox (6.52414pt too wide) in paragraph at lines 3902--3904
 [][][]$[][][][][] [] [] [] [][][][][][][][][][][][][] [] [][][] [] [][][][][][]
 [][][] [] [][][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3905--3907
+Underfull \hbox (badness 10000) in paragraph at lines 3911--3913
 [][][]$[][][][][] [] [] [] [][][][] [] [][][][][][][][][] [] [][][] [] [][][][]
 [][] [] [][][][][][] [] [][][][][][] [] [][][][][][][][][][][][][][][][][][] []
  [][][][][][][][][][][][] []
  []
 
-[101]
-Underfull \hbox (badness 10000) in paragraph at lines 3914--3916
+[103]
+Underfull \hbox (badness 10000) in paragraph at lines 3920--3922
 [][][]$[][][][] [] [] [] [][][][][][][][][][][][] [] [][][][][][][][][][][][][]
  [] [][] [] [][] [] [][] [] [][][][][][][][][] [] [][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][] [] [][][][][][] [] [][][][][][][][] []
@@ -1997,24 +2010,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[102]
-Chapitre 10.
-[103
-
-]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[104
-
-]
+[104]
 Chapitre 11.
-[105]
+[105
+
+]
 File: bdd_tableau.jpg Graphic file (type bmp)
 <bdd_tableau.jpg>
 
@@ -2328,7 +2328,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [138] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A4B3451A2CB303CA2EF800D0C96F2089;11329.
+(rerunfilecheck)             Checksum: A93A838D09770D8ACED4857AE9BB3FFB;11329.
  ) 
 Here is how much of TeX's memory you used:
  16534 strings out of 411722
