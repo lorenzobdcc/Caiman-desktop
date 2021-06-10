@@ -6,7 +6,7 @@ Welcome to Caiman's documentation!
    :maxdepth: 2
    :caption: table des matières
 
-   resume
+   
    introduction
    cdc
    opportunite
@@ -14,9 +14,9 @@ Welcome to Caiman's documentation!
    organique
    test
    planning
-   poster
    conclusion
    sources
+   remerciment
    logbook
    
 

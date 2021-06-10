@@ -91,8 +91,29 @@
 
 
 
-\chapter{Résumé}
-\label{\detokenize{resume:resume}}\label{\detokenize{resume::doc}}
+\chapter{Introduction}
+\label{\detokenize{introduction:introduction}}\label{\detokenize{introduction::doc}}
+
+\section{Contexte}
+\label{\detokenize{introduction:contexte}}
+\sphinxAtStartPar
+Caiman a été réalisé dans le cadre du travail de diplôme de technicien deuxième année. La réussite du travail de diplôme est l’une des conditions pour recevoir son titre de technicien en informatique.
+
+
+\section{Motivations}
+\label{\detokenize{introduction:motivations}}
+\sphinxAtStartPar
+Le choix de ce travail de diplôme découle de mon envie de faire un travail de diplôme qui serait intéressant, ludique et en lien avec les jeux vidéo. La réalisation d’un jeu vidéo étant trop compliquée pour un travail de diplôme, j’ai décidé de créer une application a mi\sphinxhyphen{}chemin entre un launcher de jeu comme Steam ou GOG et un gestionnaire de VM.
+
+\sphinxAtStartPar
+J’utilise depuis des années des émulateurs et je me heurte souvent aux mêmes problèmes, perte de sauvegarde dû à une réinstallation de windows, problème pour ripper mes jeux, téléchargement de chaque émulateur un par un. Donc, J’ai eu l’idée de créer Caiman pour pallier ces différents problèmes.
+
+\sphinxAtStartPar
+Un autre aspect important pour moi est la simplicité. Je voulais que l’utilisation de l’application soit le plus simple possible, une personne sans connaissance particulière en informatique doit pouvoir utiliser Caiman sans difficulté. Une autre spécification est que l’utilisation de Caiman puisse se faire à la manette. Pour créer une interface ergonomique, je me suis basé sur l’interface Big Picture de Steam qui a justement été créé pour être utilisé  à la manette.
+
+
+\section{Résumé}
+\label{\detokenize{introduction:resume}}
 \sphinxAtStartPar
 Ce document décrit le processus de conception de mon projet Caiman. Caiman est inspiré par des applications comme Retropie, RetroArch ou Steam. RetroPie est une distribution pour raspberry comprenant des émulateurs pour d’anciennes consoles de jeu. RetroArch est lui une application servant de frontend pour émulateur, RetroArch est disponible sur plusieurs plateformes(Windows, macOS, Xbox).
 
@@ -106,8 +127,8 @@ La deuxième partie du projet est une application C\# inspirée par le mode Big 
 \sphinxincludegraphics{{schema_intro_2}.jpg}
 
 
-\chapter{Abstract}
-\label{\detokenize{resume:abstract}}
+\section{Abstract}
+\label{\detokenize{introduction:abstract}}
 \sphinxAtStartPar
 This document describes the design process of my project Caiman. Caiman is inspired by applications like Retropie, RetroArch or Steam. RetroPie is a raspberry distribution including emulators for old game consoles. RetroArch is a frontend application for emulators, RetroArch is available on several platforms (Windows, macOS, Xbox).
 
@@ -118,23 +139,17 @@ Caiman is a project with two distinct parts. The first part consists of a PHP we
 The second part of the project is a C\# application inspired by the Big Picture mode of Steam. Caiman is used as a frontend for different emulators (Dolphin, PCSX2, etc). The application allows you to download the different games that have been added to the store provided for the project. Supported games are added by administrators via the Caiman website. The application allows synchronizing the user’s save, no matter on which PC the user runs the application.
 
 
-\chapter{Remerciement}
-\label{\detokenize{resume:remerciement}}
-\sphinxAtStartPar
-Pour commencer, je tenais en particulier à remercier les personnes qui ont pris le temps de me faire des retours sur Caiman. Sans les retours que j’ai reçus de leur part, Caiman ne serait pas aussi bien peaufiné qu’il l’est actuellement. Ensuite, j’aimerais remercier M.Maréchal et M.Schmid pour leurs conseils et leurs retours tout le long de mon travail de diplôme. Pour finir, j’aimerais remercier les autres élèves de ma classe avec qui j’ai passé de très bon moment et qui m’ont aussi donné des conseils pertinents. Je tiens en particulier à remercier M.Borel\sphinxhyphen{}Jaquet qui m’a énormément aidé avec la structure de l’API.
+\section{Légalité du projet}
+\label{\detokenize{introduction:legalite-du-projet}}
 
-
-\chapter{Légalité du projet}
-\label{\detokenize{resume:legalite-du-projet}}
-
-\section{Caiman}
-\label{\detokenize{resume:caiman}}
+\subsection{Caiman}
+\label{\detokenize{introduction:caiman}}
 \sphinxAtStartPar
 Je pense qu’il est nécessaire d’aborder le sujet de la légalité de Caiman. Selon le droit Suisse, il n’est pas légal de mettre à disposition des fichiers sous droit d’auteur. Il est par contre légal de télécharger des films, séries ou jeux à condition de les utiliser dans un but privé. Caiman ne répondant pas à ces descriptions l’utilisation de l’application n’est pas conforme au droit Suisse.
 
 
-\section{Utilisation d’émulateurs}
-\label{\detokenize{resume:utilisation-demulateurs}}
+\subsection{Utilisation d’émulateurs}
+\label{\detokenize{introduction:utilisation-demulateurs}}
 \sphinxAtStartPar
 L’utilisation d’émulateurs n’est pas illégale en soi, en sachant que le code des émulateurs n’est pas la propriété de Sony ou de Nintendo. Par contre, il y a un petit point technique à détailler. L’émulateur PCSX2 doit pour fonctionner utiliser un BIOS de console de Playstation 2. Le BIOS de la Playstation 2 étant soumis à des droits d’auteur, il n’est en théorie pas légal de le distribuer en Suisse.
 
@@ -142,8 +157,11 @@ L’utilisation d’émulateurs n’est pas illégale en soi, en sachant que le 
 Je tiens donc à spécifier que Caiman est développé dans un seul but pédagogique. Il n’a aucune vocation à être distribué après la fin de mon travail de diplôme. L’application sera supprimée du serveur de l “école à la fin de mon travail. Par contre, il serait légal de distribuer le projet si je supprime la fonctionnalité de téléchargement de jeu.
 
 
-\chapter{Installation de Caiman utilisateur}
-\label{\detokenize{resume:installation-de-caiman-utilisateur}}
+\section{Installation}
+\label{\detokenize{introduction:installation}}
+
+\subsection{Installation de Caiman utilisateur}
+\label{\detokenize{introduction:installation-de-caiman-utilisateur}}
 \sphinxAtStartPar
 Pour utiliser Caiman, il faut le télécharger depuis \sphinxhref{http://caiman.cfpt.info}{caiman.cfpt.info}. Quand on télécharge l’application, l’utilisateur télécharge un fichier caiman.zip contenant l’application ainsi que les émulateurs, il n’y a donc rien d’autre à télécharger.
 
@@ -160,8 +178,8 @@ Pour pouvoir exécuter Caiman, il faut se rendre dans le dossier “\textbacksla
 Caiman est donc une application “portable”, c’est\sphinxhyphen{}à\sphinxhyphen{} dire qu’elle ne nécessite pas d’une installation pour pouvoir être lancée.
 
 
-\chapter{Installation de Caiman serveur}
-\label{\detokenize{resume:installation-de-caiman-serveur}}
+\subsection{Installation de Caiman serveur}
+\label{\detokenize{introduction:installation-de-caiman-serveur}}
 \sphinxAtStartPar
 Pour pouvoir déployer le site et l’API de caiman, il faut que le serveur ait les services suivant:
 \begin{itemize}
@@ -189,25 +207,10 @@ Le site web et l’api doivent se trouver dans le même dossier, en sachant qu�
 Pour pouvoir uploader des jeux, il faut augmenter la taille que le PHP peut recevoir par formulaire, il faut également le configurer pour recevoir minimum 8GB. Pour finir, Il faut autoriser l’écriture dans les dossiers des sauvegardes et des jeux.
 
 
-\chapter{Introduction}
-\label{\detokenize{introduction:introduction}}\label{\detokenize{introduction::doc}}
-
-\section{Contexte}
-\label{\detokenize{introduction:contexte}}
+\section{Poster}
+\label{\detokenize{introduction:poster}}
 \sphinxAtStartPar
-Caiman a été réalisé dans le cadre du travail de diplôme de technicien deuxième année. La réussite du travail de diplôme est l’une des conditions pour recevoir son titre de technicien en informatique.
-
-
-\section{Motivations}
-\label{\detokenize{introduction:motivations}}
-\sphinxAtStartPar
-Le choix de ce travail de diplôme découle de mon envie de faire un travail de diplôme qui serait intéressant, ludique et en lien avec les jeux vidéo. La réalisation d’un jeu vidéo étant trop compliquée pour un travail de diplôme, j’ai décidé de créer une application a mi\sphinxhyphen{}chemin entre un launcher de jeu comme Steam ou GOG et un gestionnaire de VM.
-
-\sphinxAtStartPar
-J’utilise depuis des années des émulateurs et je me heurte souvent aux mêmes problèmes, perte de sauvegarde dû à une réinstallation de windows, problème pour ripper mes jeux, téléchargement de chaque émulateur un par un. Donc, J’ai eu l’idée de créer Caiman pour pallier ces différents problèmes.
-
-\sphinxAtStartPar
-Un autre aspect important pour moi est la simplicité. Je voulais que l’utilisation de l’application soit le plus simple possible, une personne sans connaissance particulière en informatique doit pouvoir utiliser Caiman sans difficulté. Une autre spécification est que l’utilisation de Caiman puisse se faire à la manette. Pour créer une interface ergonomique, je me suis basé sur l’interface Big Picture de Steam qui a justement été créé pour être utilisé  à la manette.
+\sphinxincludegraphics{{poster}.png}
 
 
 \chapter{Cahier des charges}
@@ -3749,12 +3752,6 @@ Pour tester les sauvegardes des jeux de Playstation 2, j’ai utilisé le jeu Dr
 \sphinxincludegraphics{{planning_effectif_1}.png}
 
 
-\chapter{Poster}
-\label{\detokenize{poster:poster}}\label{\detokenize{poster::doc}}
-\sphinxAtStartPar
-\sphinxincludegraphics{{poster}.png}
-
-
 \chapter{Conclusion et perspectives}
 \label{\detokenize{conclusion:conclusion-et-perspectives}}\label{\detokenize{conclusion::doc}}
 
@@ -3919,6 +3916,12 @@ Pour conclure, je pense que Caiman est une réussite. Mon but principal était q
 
 \sphinxAtStartPar
 \sphinxurl{https://css.comonsoft.com/tutoriels/installation-certificat-lets-encrypt-ssl-debian.htm}
+
+
+\chapter{Remerciement}
+\label{\detokenize{remerciment:remerciement}}\label{\detokenize{remerciment::doc}}
+\sphinxAtStartPar
+Pour commencer, je tenais en particulier à remercier les personnes qui ont pris le temps de me faire des retours sur Caiman. Sans les retours que j’ai reçus de leur part, Caiman ne serait pas aussi bien peaufiné qu’il l’est actuellement. Ensuite, j’aimerais remercier M.Maréchal et M.Schmid pour leurs conseils et leurs retours tout le long de mon travail de diplôme. Pour finir, j’aimerais remercier les autres élèves de ma classe avec qui j’ai passé de très bon moment et qui m’ont aussi donné des conseils pertinents. Je tiens en particulier à remercier M.Borel\sphinxhyphen{}Jaquet qui m’a énormément aidé avec la structure de l’API.
 
 
 \chapter{Logbook}

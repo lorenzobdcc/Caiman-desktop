@@ -1046,6 +1046,12 @@ INPUT dossier_caiman.png
 INPUT .\dossier_caiman.png
 INPUT .\dossier_caiman.png
 INPUT dossier_caiman.png
+INPUT .\poster.png
+INPUT .\poster.png
+INPUT poster.png
+INPUT .\poster.png
+INPUT .\poster.png
+INPUT poster.png
 INPUT .\retro_pie.jpg
 INPUT .\retro_pie.jpg
 INPUT retro_pie.jpg
@@ -1319,12 +1325,6 @@ INPUT planning_effectif_1.png
 INPUT .\planning_effectif_1.png
 INPUT .\planning_effectif_1.png
 INPUT planning_effectif_1.png
-INPUT .\poster.png
-INPUT .\poster.png
-INPUT poster.png
-INPUT .\poster.png
-INPUT .\poster.png
-INPUT poster.png
 INPUT .\bdd_tableau.jpg
 INPUT .\bdd_tableau.jpg
 INPUT bdd_tableau.jpg

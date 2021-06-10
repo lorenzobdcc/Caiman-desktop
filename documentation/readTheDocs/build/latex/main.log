@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 21.3) (preloaded format=xelatex 2021.6.8)  10 JUN 2021 15:20
+This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 21.3) (preloaded format=xelatex 2021.6.8)  10 JUN 2021 15:41
 entering extended mode
 **./main.tex
 (main.tex
@@ -909,11 +909,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 Chapitre 1.
-File: schema_intro_2.jpg Graphic file (type bmp)
-<schema_intro_2.jpg>
 [1
 
 ]
+File: schema_intro_2.jpg Graphic file (type bmp)
+<schema_intro_2.jpg>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -922,11 +923,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[2
+[2]
+File: dossier_caiman.png Graphic file (type bmp)
+<dossier_caiman.png>
 
-]
-Chapitre 2.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
 [3]
+File: poster.png Graphic file (type bmp)
+<poster.png>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -935,10 +947,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[4
+[4]
 
-]
-Chapitre 3.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
 [5]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -951,7 +968,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [6
 
 ]
-Chapitre 4.
+Chapitre 2.
 [7]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -961,12 +978,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[8
+[8]
 
-]
-Chapitre 5.
-File: dossier_caiman.png Graphic file (type bmp)
-<dossier_caiman.png>
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
 [9]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -976,68 +996,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[10
-
-]
-Chapitre 6.
-[11]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[12
-
-]
-Chapitre 7.
-[13]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[14
-
-]
-Chapitre 8.
-[15]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[16]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[17]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[18]
-Chapitre 9.
+[10]
+Chapitre 3.
 File: retro_pie.jpg Graphic file (type bmp)
 <retro_pie.jpg>
-[19
+[11
 
 ]
 File: RetroArch.jpg Graphic file (type bmp)
@@ -1051,7 +1014,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20]
+[12]
 File: RomStation.png Graphic file (type bmp)
 <RomStation.png>
 File: steam.png Graphic file (type bmp)
@@ -1065,7 +1028,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21]
+[13]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1074,11 +1037,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22]
-Chapitre 10.
+[14]
+Chapitre 4.
 File: caiman_database.png Graphic file (type bmp)
 <caiman_database.png>
-[23
+[15
 
 ]
 
@@ -1089,7 +1052,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24]
+[16]
 File: SignIn.png Graphic file (type bmp)
 <SignIn.png>
 
@@ -1101,7 +1064,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[25]
+[17]
 File: login.png Graphic file (type bmp)
 <login.png>
 
@@ -1113,7 +1076,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[26]
+[18]
 File: usersInfos.png Graphic file (type bmp)
 <usersInfos.png>
 File: gamesDetails.png Graphic file (type bmp)
@@ -1127,7 +1090,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[27]
+[19]
 File: UserFavoritesGames.png Graphic file (type bmp)
 <UserFavoritesGames.png>
 
@@ -1139,7 +1102,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[28]
+[20]
 File: UserTimeInGame.png Graphic file (type bmp)
 <UserTimeInGame.png>
 
@@ -1151,7 +1114,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[29]
+[21]
 File: FormAddGame.png Graphic file (type bmp)
 <FormAddGame.png>
 
@@ -1163,7 +1126,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[30]
+[22]
 File: GameDetailsAdmin.png Graphic file (type bmp)
 <GameDetailsAdmin.png>
 
@@ -1175,7 +1138,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[31]
+[23]
 File: FormAddCategory.png Graphic file (type bmp)
 <FormAddCategory.png>
 File: downloadNotConnected.png Graphic file (type bmp)
@@ -1189,7 +1152,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[32]
+[24]
 File: download.png Graphic file (type bmp)
 <download.png>
 
@@ -1201,7 +1164,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[33]
+[25]
 File: schema-API.png Graphic file (type bmp)
 <schema-API.png>
 
@@ -1213,7 +1176,93 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
+[26]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[28]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[29]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[30]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[31]
+File: login_caiman.png Graphic file (type bmp)
+<login_caiman.png>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[32]
+File: Caiman_non_downloaded_game.png Graphic file (type bmp)
+<Caiman_non_downloaded_game.png>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[33]
+File: Caiman_download_queu.png Graphic file (type bmp)
+<Caiman_download_queu.png>
+File: caiman_downloaded_game.png Graphic file (type bmp)
+<caiman_downloaded_game.png>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
 [34]
+File: caiman_configuration.png Graphic file (type bmp)
+<caiman_configuration.png>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1232,6 +1281,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [36]
+File: caiman_add_favorite.png Graphic file (type bmp)
+<caiman_add_favorite.png>
+File: caiman_remove_favorite.png Graphic file (type bmp)
+<caiman_remove_favorite.png>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1241,6 +1295,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [37]
+File: caiman_categories.png Graphic file (type bmp)
+<caiman_categories.png>
+File: caiman_time_played.png Graphic file (type bmp)
+<caiman_time_played.png>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1259,8 +1318,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [39]
-File: login_caiman.png Graphic file (type bmp)
-<login_caiman.png>
+File: exemple_3_panel.jpeg Graphic file (type bmp)
+<exemple_3_panel.jpeg>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1271,9 +1330,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [40]
-File: Caiman_non_downloaded_game.png Graphic file (type bmp)
-<Caiman_non_downloaded_game.png>
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1283,11 +1339,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [41]
-File: Caiman_download_queu.png Graphic file (type bmp)
-<Caiman_download_queu.png>
-File: caiman_downloaded_game.png Graphic file (type bmp)
-<caiman_downloaded_game.png>
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1297,18 +1348,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [42]
-File: caiman_configuration.png Graphic file (type bmp)
-<caiman_configuration.png>
+Chapitre 5.
+[43
 
+]
+File: structure_caiman.png Graphic file (type bmp)
+<structure_caiman.png>
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[43]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1318,10 +1364,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [44]
-File: caiman_add_favorite.png Graphic file (type bmp)
-<caiman_add_favorite.png>
-File: caiman_remove_favorite.png Graphic file (type bmp)
-<caiman_remove_favorite.png>
+File: dossier_caimanweb.png Graphic file (type bmp)
+<dossier_caimanweb.png>
+File: dossier_caimanweb_WWW.png Graphic file (type bmp)
+<dossier_caimanweb_WWW.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1332,10 +1378,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [45]
-File: caiman_categories.png Graphic file (type bmp)
-<caiman_categories.png>
-File: caiman_time_played.png Graphic file (type bmp)
-<caiman_time_played.png>
+File: dossier_api_caiman.png Graphic file (type bmp)
+<dossier_api_caiman.png>
+File: dossier_api_caiman_app.png Graphic file (type bmp)
+<dossier_api_caiman_app.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1355,8 +1401,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [47]
-File: exemple_3_panel.jpeg Graphic file (type bmp)
-<exemple_3_panel.jpeg>
+Overfull \vbox (18.93909pt too high) detected at line 1972
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1376,6 +1422,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [49]
+Overfull \vbox (1.74922pt too high) detected at line 2081
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1385,13 +1434,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [50]
-Chapitre 11.
-[51
 
-]
-File: structure_caiman.png Graphic file (type bmp)
-<structure_caiman.png>
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[51]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1401,11 +1452,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [52]
-File: dossier_caimanweb.png Graphic file (type bmp)
-<dossier_caimanweb.png>
-File: dossier_caimanweb_WWW.png Graphic file (type bmp)
-<dossier_caimanweb_WWW.png>
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1415,11 +1461,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [53]
-File: dossier_api_caiman.png Graphic file (type bmp)
-<dossier_api_caiman.png>
-File: dossier_api_caiman_app.png Graphic file (type bmp)
-<dossier_api_caiman_app.png>
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1438,7 +1479,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [55]
-Overfull \vbox (18.93909pt too high) detected at line 1969
+Underfull \hbox (badness 10000) in paragraph at lines 2334--2336
+[]\TU/FreeSerif(0)/m/n/12 Si la sauvegarde d’un émulateur est déjà présente, il
+ faut utiliser la fonction
  []
 
 
@@ -1459,8 +1502,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [57]
-Overfull \vbox (1.74922pt too high) detected at line 2078
- []
+File: DiagramLogique.png Graphic file (type bmp)
+<DiagramLogique.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1471,6 +1514,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [58]
+File: dossier_appdata_caiman.png Graphic file (type bmp)
+<dossier_appdata_caiman.png>
+
+Overfull \vbox (2.65912pt too high) detected at line 2549
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1480,6 +1529,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [59]
+Underfull \vbox (badness 10000) detected at line 2549
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 2549
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1507,6 +1563,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [62]
+Overfull \vbox (6.38914pt too high) detected at line 2733
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1516,11 +1575,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [63]
-Underfull \hbox (badness 10000) in paragraph at lines 2331--2333
-[]\TU/FreeSerif(0)/m/n/12 Si la sauvegarde d’un émulateur est déjà présente, il
- faut utiliser la fonction
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1530,6 +1584,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [64]
+Underfull \hbox (badness 6110) in paragraph at lines 2775--2777
+[]\TU/FreeSerif(0)/m/n/12 Les paramètres graphiques définis par l’utilisateur s
+e trouvent dans le dossier “app-
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1539,9 +1598,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [65]
-File: DiagramLogique.png Graphic file (type bmp)
-<DiagramLogique.png>
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1551,12 +1607,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [66]
-File: dossier_appdata_caiman.png Graphic file (type bmp)
-<dossier_appdata_caiman.png>
-
-Overfull \vbox (2.65912pt too high) detected at line 2546
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1566,13 +1616,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [67]
-Underfull \vbox (badness 10000) detected at line 2546
- []
-
-
-Underfull \vbox (badness 10000) detected at line 2546
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1600,9 +1643,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [70]
-Overfull \vbox (6.38914pt too high) detected at line 2730
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1612,6 +1652,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [71]
+Overfull \vbox (1.76917pt too high) detected at line 3127
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1621,10 +1664,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [72]
-Underfull \hbox (badness 6110) in paragraph at lines 2772--2774
-[]\TU/FreeSerif(0)/m/n/12 Les paramètres graphiques définis par l’utilisateur s
-e trouvent dans le dossier “app-
- []
+File: dossier_memcards.png Graphic file (type bmp)
+<dossier_memcards.png>
+File: dossier_card_a.png Graphic file (type bmp)
+<dossier_card_a.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1635,6 +1678,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [73]
+File: dossier_lorenzo1227.png Graphic file (type bmp)
+<dossier_lorenzo1227.png>
+File: save_lorenzo1227.png Graphic file (type bmp)
+<save_lorenzo1227.png>
+
+Overfull \vbox (2.78717pt too high) detected at line 3247
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1662,6 +1713,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [76]
+File: DiagramVue.png Graphic file (type bmp)
+<DiagramVue.png>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1689,9 +1743,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [79]
-Overfull \vbox (1.76917pt too high) detected at line 3124
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1701,10 +1752,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [80]
-File: dossier_memcards.png Graphic file (type bmp)
-<dossier_memcards.png>
-File: dossier_card_a.png Graphic file (type bmp)
-<dossier_card_a.png>
+Underfull \vbox (badness 10000) detected at line 3520
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1715,14 +1764,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [81]
-File: dossier_lorenzo1227.png Graphic file (type bmp)
-<dossier_lorenzo1227.png>
-File: save_lorenzo1227.png Graphic file (type bmp)
-<save_lorenzo1227.png>
-
-Overfull \vbox (2.78717pt too high) detected at line 3244
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1741,6 +1782,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [83]
+Underfull \vbox (badness 10000) detected at line 3661
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3661
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1750,9 +1798,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [84]
-File: DiagramVue.png Graphic file (type bmp)
-<DiagramVue.png>
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1771,15 +1816,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [86]
+Chapitre 6.
+File: caiman_interface_1.png Graphic file (type bmp)
+<caiman_interface_1.png>
+File: caiman_interface_2.png Graphic file (type bmp)
+<caiman_interface_2.png>
+[87
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[87]
+]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1789,9 +1833,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [88]
-Underfull \vbox (badness 10000) detected at line 3517
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1809,22 +1850,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[90]
+[90
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
+]
+Chapitre 7.
+File: planning_previsionnel-2.png Graphic file (type bmp)
+<planning_previsionnel-2.png>
 [91]
-Underfull \vbox (badness 10000) detected at line 3658
- []
-
-
-Underfull \vbox (badness 10000) detected at line 3658
- []
+File: planning_previsionnel-1.png Graphic file (type bmp)
+<planning_previsionnel-1.png>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1844,77 +1878,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [93]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[94]
-Chapitre 12.
-File: caiman_interface_1.png Graphic file (type bmp)
-<caiman_interface_1.png>
-File: caiman_interface_2.png Graphic file (type bmp)
-<caiman_interface_2.png>
-[95
-
-]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[96]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[97]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[98
-
-]
-Chapitre 13.
-File: planning_previsionnel-2.png Graphic file (type bmp)
-<planning_previsionnel-2.png>
-[99]
-File: planning_previsionnel-1.png Graphic file (type bmp)
-<planning_previsionnel-1.png>
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[100]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[101]
 File: planning_effectif_2.png Graphic file (type bmp)
 <planning_effectif_2.png>
 File: planning_effectif_1.png Graphic file (type bmp)
@@ -1928,7 +1891,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[102]
+[94]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1937,7 +1900,108 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[103]
+[95]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[96
+
+]
+Chapitre 8.
+[97]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[98]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[99]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[100
+
+]
+Chapitre 9.
+
+Overfull \hbox (42.52412pt too wide) in paragraph at lines 3854--3856
+[][][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][] [] [][][] [] [][]
+[][][][][][][] [] [][][][][][][][][] [] [][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[
+][] 
+ []
+
+
+Overfull \hbox (75.67212pt too wide) in paragraph at lines 3875--3877
+[][][]$[][][][][] [] [] [] [][][][][][][][][][][][][] [] [][][] [] [][][][][][]
+[][][] [] [][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][]$[][] 
+ []
+
+
+Overfull \hbox (122.41621pt too wide) in paragraph at lines 3890--3892
+[][][]$[][][][][] [] [] [] [][][][][][][][][][][][][] [] [][][] [] [][][][][][]
+[][][] [] [][][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][]$[][] 
+ []
+
+
+Overfull \hbox (6.52414pt too wide) in paragraph at lines 3896--3898
+[][][]$[][][][][] [] [] [] [][][][][][][][][][][][][] [] [][][] [] [][][][][][]
+[][][] [] [][][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3905--3907
+[][][]$[][][][][] [] [] [] [][][][] [] [][][][][][][][][] [] [][][] [] [][][][]
+[][] [] [][][][][][] [] [][][][][][] [] [][][][][][][][][][][][][][][][][][] []
+ [][][][][][][][][][][][] []
+ []
+
+[101]
+Underfull \hbox (badness 10000) in paragraph at lines 3914--3916
+[][][]$[][][][] [] [] [] [][][][][][][][][][][][] [] [][][][][][][][][][][][][]
+ [] [][] [] [][] [] [][] [] [][][][][][][][][] [] [][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][] [] [][][][][][] [] [][][][][][][][] []
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[102]
+Chapitre 10.
+[103
+
+]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1949,12 +2013,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [104
 
 ]
-Chapitre 14.
-File: poster.png Graphic file (type bmp)
-<poster.png>
+Chapitre 11.
 [105]
-Overfull \vbox (220.3731pt too high) has occurred while \output is active []
-
+File: bdd_tableau.jpg Graphic file (type bmp)
+<bdd_tableau.jpg>
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1965,10 +2027,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [106]
-Chapitre 15.
-[107
 
-]
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[107]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1995,55 +2062,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[110
+[110]
 
-]
-Chapitre 16.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
-Overfull \hbox (42.52412pt too wide) in paragraph at lines 3857--3859
-[][][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][] [] [][][] [] [][]
-[][][][][][][] [] [][][][][][][][][] [] [][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[
-][] 
- []
-
-
-Overfull \hbox (75.67212pt too wide) in paragraph at lines 3878--3880
-[][][]$[][][][][] [] [] [] [][][][][][][][][][][][][] [] [][][] [] [][][][][][]
-[][][] [] [][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][][][][][][][][]$[][] 
- []
-
-
-Overfull \hbox (122.41621pt too wide) in paragraph at lines 3893--3895
-[][][]$[][][][][] [] [] [] [][][][][][][][][][][][][] [] [][][] [] [][][][][][]
-[][][] [] [][][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][][][][][][][][][][][][][][]$[][] 
- []
-
-
-Overfull \hbox (6.52414pt too wide) in paragraph at lines 3899--3901
-[][][]$[][][][][] [] [] [] [][][][][][][][][][][][][] [] [][][] [] [][][][][][]
-[][][] [] [][][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3908--3910
-[][][]$[][][][][] [] [] [] [][][][] [] [][][][][][][][][] [] [][][] [] [][][][]
-[][] [] [][][][][][] [] [][][][][][] [] [][][][][][][][][][][][][][][][][][] []
- [][][][][][][][][][][][] []
- []
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [111]
-Underfull \hbox (badness 10000) in paragraph at lines 3917--3919
-[][][]$[][][][] [] [] [] [][][][][][][][][][][][] [] [][][][][][][][][][][][][]
- [] [][] [] [][] [] [][] [] [][][][][][][][][] [] [][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][] [] [][][][][][] [] [][][][][][][][] []
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2053,13 +2081,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [112]
-Chapitre 17.
-[113
 
-]
-File: bdd_tableau.jpg Graphic file (type bmp)
-<bdd_tableau.jpg>
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[113]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2069,6 +2099,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [114]
+File: schema-form.jpg Graphic file (type bmp)
+<schema-form.jpg>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2087,6 +2120,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [116]
+File: schema-div.jpeg Graphic file (type bmp)
+<schema-div.jpeg>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2096,6 +2132,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [117]
+Overfull \vbox (46.06592pt too high) has occurred while \output is active []
+
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2105,6 +2144,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [118]
+File: schema-home-page.jpeg Graphic file (type bmp)
+<schema-home-page.jpeg>
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2141,9 +2183,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [122]
-File: schema-form.jpg Graphic file (type bmp)
-<schema-form.jpg>
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2162,9 +2201,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [124]
-File: schema-div.jpeg Graphic file (type bmp)
-<schema-div.jpeg>
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2174,9 +2210,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [125]
-Overfull \vbox (46.06592pt too high) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2186,9 +2219,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [126]
-File: schema-home-page.jpeg Graphic file (type bmp)
-<schema-home-page.jpeg>
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2287,7 +2317,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[137]
+[137] (main.ind)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2296,89 +2326,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[138]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[139]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[140]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[141]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[142]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[143]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[144]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[145] (main.ind)
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[146] (main.aux)
+[138] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D1DA98AA8145F3D306CFE3F38F3B458F;11909.
+(rerunfilecheck)             Checksum: A4B3451A2CB303CA2EF800D0C96F2089;11329.
  ) 
 Here is how much of TeX's memory you used:
- 16535 strings out of 411722
- 294271 string characters out of 2841052
- 917488 words of memory out of 3000000
- 36177 multiletter control sequences out of 15000+600000
+ 16534 strings out of 411722
+ 294327 string characters out of 2841052
+ 916570 words of memory out of 3000000
+ 36176 multiletter control sequences out of 15000+600000
  412539 words of font info for 107 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  83i,12n,89p,694b,649s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (152 pages).
+Output written on main.pdf (144 pages).
