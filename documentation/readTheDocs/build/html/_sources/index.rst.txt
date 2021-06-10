@@ -10,17 +10,8 @@ Welcome to Caiman's documentation!
    introduction
    cdc
    opportunite
-   fonctionnelleBDD
-   fonctionnelleWeb
-   fonctionnelleAPI
-   fonctionnelleC#
-   fonctionnelleInterface
-   debian
-   architecture
-   techniqueWeb
-   techniqueAPI
-   techniqueCaiman
-   techniqueInterface
+   fonctionnelle
+   organique
    test
    planning
    poster

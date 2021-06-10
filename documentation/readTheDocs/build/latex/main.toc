@@ -45,277 +45,377 @@
 \contentsline {subsection}{\numberline {10.1.11}Table timeingame}{25}{subsection.10.1.11}%
 \contentsline {subsection}{\numberline {10.1.12}Table user}{25}{subsection.10.1.12}%
 \contentsline {subsection}{\numberline {10.1.13}Table userconfigfile}{25}{subsection.10.1.13}%
-\contentsline {chapter}{\numberline {11}Site web Caiman}{27}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Création de compte}{27}{section.11.1}%
-\contentsline {section}{\numberline {11.2}connexion}{27}{section.11.2}%
-\contentsline {section}{\numberline {11.3}modification des informations d’un utilisateur}{27}{section.11.3}%
-\contentsline {section}{\numberline {11.4}affichage des jeux}{28}{section.11.4}%
-\contentsline {section}{\numberline {11.5}affichage d’un profil utilisateur}{28}{section.11.5}%
-\contentsline {section}{\numberline {11.6}ajout d’un jeu à la base de données / sur le Bunker pour le fichier .ISO}{28}{section.11.6}%
-\contentsline {section}{\numberline {11.7}modification d’un jeu}{28}{section.11.7}%
-\contentsline {section}{\numberline {11.8}Administration}{29}{section.11.8}%
-\contentsline {section}{\numberline {11.9}Téléchargement}{29}{section.11.9}%
-\contentsline {section}{\numberline {11.10}Fonctionnalitées manquante}{29}{section.11.10}%
-\contentsline {chapter}{\numberline {12}API Caiman}{31}{chapter.12}%
-\contentsline {section}{\numberline {12.1}Structure de l’API}{32}{section.12.1}%
-\contentsline {section}{\numberline {12.2}Categories}{33}{section.12.2}%
-\contentsline {section}{\numberline {12.3}GET}{33}{section.12.3}%
-\contentsline {section}{\numberline {12.4}Games}{33}{section.12.4}%
-\contentsline {section}{\numberline {12.5}GET}{33}{section.12.5}%
-\contentsline {section}{\numberline {12.6}GET(?byName)}{33}{section.12.6}%
-\contentsline {section}{\numberline {12.7}GET(?byCategory)}{34}{section.12.7}%
-\contentsline {section}{\numberline {12.8}GET(?byFavoriteUser)}{34}{section.12.8}%
-\contentsline {section}{\numberline {12.9}GET(?byUserTime)}{34}{section.12.9}%
-\contentsline {section}{\numberline {12.10}GET(?gameFileName)}{35}{section.12.10}%
-\contentsline {section}{\numberline {12.11}GET(?gameConsole)}{35}{section.12.11}%
-\contentsline {section}{\numberline {12.12}GET(?idGame\&apiKey)}{35}{section.12.12}%
-\contentsline {section}{\numberline {12.13}GET(?idGameTime\&idUser)}{35}{section.12.13}%
-\contentsline {section}{\numberline {12.14}GET(?idEmulator\&idUser\&apiKey)}{35}{section.12.14}%
-\contentsline {section}{\numberline {12.15}POST(?idEmulator\&idUser\&apiKey)}{36}{section.12.15}%
-\contentsline {section}{\numberline {12.16}POST(idGameAdd\&idUser)}{36}{section.12.16}%
-\contentsline {section}{\numberline {12.17}POST(idGameRemove\&idUser)}{36}{section.12.17}%
-\contentsline {section}{\numberline {12.18}POST(idGameCheck\&idUser)}{36}{section.12.18}%
-\contentsline {section}{\numberline {12.19}POST(idGameTimeAdd\&idUser)}{36}{section.12.19}%
-\contentsline {section}{\numberline {12.20}Users}{36}{section.12.20}%
-\contentsline {section}{\numberline {12.21}GET(sans paramétres)}{36}{section.12.21}%
-\contentsline {section}{\numberline {12.22}POST(avec apitoken)}{37}{section.12.22}%
-\contentsline {section}{\numberline {12.23}User/connection}{37}{section.12.23}%
-\contentsline {section}{\numberline {12.24}POST(?username, password)}{37}{section.12.24}%
-\contentsline {section}{\numberline {12.25}POST(caimanToken)}{37}{section.12.25}%
-\contentsline {chapter}{\numberline {13}Application Caiman C\#}{39}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Connexion}{39}{section.13.1}%
-\contentsline {section}{\numberline {13.2}Inscription}{40}{section.13.2}%
-\contentsline {section}{\numberline {13.3}Téléchargement de jeu}{40}{section.13.3}%
-\contentsline {section}{\numberline {13.4}Lancement d’un jeu}{41}{section.13.4}%
-\contentsline {section}{\numberline {13.5}Synchronisation des sauvegarde entre le pc client et le Bunker}{41}{section.13.5}%
-\contentsline {section}{\numberline {13.6}Modification de la configuration utilisateur}{41}{section.13.6}%
-\contentsline {section}{\numberline {13.7}Application de la configuration utilisateur}{43}{section.13.7}%
-\contentsline {section}{\numberline {13.8}Ajout/suppresion de jeu en favoris}{43}{section.13.8}%
-\contentsline {section}{\numberline {13.9}Affichage de jeux par catégories}{44}{section.13.9}%
-\contentsline {section}{\numberline {13.10}Nombre d’heures de jeu}{45}{section.13.10}%
-\contentsline {section}{\numberline {13.11}Gestion des manettes}{45}{section.13.11}%
-\contentsline {chapter}{\numberline {14}Interface utilisateur utilisable à la manette}{47}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Réception des input des manettes connecté}{47}{section.14.1}%
-\contentsline {section}{\numberline {14.2}Transformation des input de la manette en événement}{47}{section.14.2}%
-\contentsline {section}{\numberline {14.3}Structure de l’affichage}{48}{section.14.3}%
-\contentsline {section}{\numberline {14.4}Déplacement dans un panel de l’application}{48}{section.14.4}%
-\contentsline {section}{\numberline {14.5}Déplacement de panel en panel}{48}{section.14.5}%
-\contentsline {chapter}{\numberline {15}Logbook}{51}{chapter.15}%
-\contentsline {section}{\numberline {15.1}19.04.2021}{51}{section.15.1}%
-\contentsline {subsection}{\numberline {15.1.1}8h05}{51}{subsection.15.1.1}%
-\contentsline {subsection}{\numberline {15.1.2}9h05}{51}{subsection.15.1.2}%
-\contentsline {subsection}{\numberline {15.1.3}9h20}{51}{subsection.15.1.3}%
-\contentsline {subsection}{\numberline {15.1.4}9h30}{51}{subsection.15.1.4}%
-\contentsline {subsection}{\numberline {15.1.5}9h40}{52}{subsection.15.1.5}%
-\contentsline {subsection}{\numberline {15.1.6}10h30}{52}{subsection.15.1.6}%
-\contentsline {subsection}{\numberline {15.1.7}10h40}{52}{subsection.15.1.7}%
-\contentsline {subsection}{\numberline {15.1.8}12h40}{52}{subsection.15.1.8}%
-\contentsline {subsection}{\numberline {15.1.9}14h35}{52}{subsection.15.1.9}%
-\contentsline {subsection}{\numberline {15.1.10}résumé}{53}{subsection.15.1.10}%
-\contentsline {section}{\numberline {15.2}20.04.2021}{53}{section.15.2}%
-\contentsline {subsection}{\numberline {15.2.1}8h05}{53}{subsection.15.2.1}%
-\contentsline {subsection}{\numberline {15.2.2}15h20}{53}{subsection.15.2.2}%
-\contentsline {subsection}{\numberline {15.2.3}15h30}{53}{subsection.15.2.3}%
-\contentsline {subsection}{\numberline {15.2.4}15h56}{53}{subsection.15.2.4}%
-\contentsline {section}{\numberline {15.3}21.04.2021}{53}{section.15.3}%
-\contentsline {subsection}{\numberline {15.3.1}8h10}{53}{subsection.15.3.1}%
-\contentsline {subsection}{\numberline {15.3.2}13h00}{54}{subsection.15.3.2}%
-\contentsline {subsection}{\numberline {15.3.3}13h20}{54}{subsection.15.3.3}%
-\contentsline {subsection}{\numberline {15.3.4}15h00}{54}{subsection.15.3.4}%
-\contentsline {section}{\numberline {15.4}22.04.2021}{54}{section.15.4}%
-\contentsline {subsection}{\numberline {15.4.1}8h05}{54}{subsection.15.4.1}%
-\contentsline {subsection}{\numberline {15.4.2}9h00}{54}{subsection.15.4.2}%
-\contentsline {subsection}{\numberline {15.4.3}10h20}{54}{subsection.15.4.3}%
-\contentsline {subsection}{\numberline {15.4.4}notes personnelles}{54}{subsection.15.4.4}%
-\contentsline {subsection}{\numberline {15.4.5}11h0}{55}{subsection.15.4.5}%
-\contentsline {subsection}{\numberline {15.4.6}11h50}{55}{subsection.15.4.6}%
-\contentsline {subsection}{\numberline {15.4.7}12h40}{55}{subsection.15.4.7}%
-\contentsline {subsection}{\numberline {15.4.8}15h00}{55}{subsection.15.4.8}%
-\contentsline {subsection}{\numberline {15.4.9}a faire demain}{55}{subsection.15.4.9}%
-\contentsline {section}{\numberline {15.5}23.04.2021}{55}{section.15.5}%
-\contentsline {subsection}{\numberline {15.5.1}8h05}{55}{subsection.15.5.1}%
-\contentsline {subsection}{\numberline {15.5.2}8h40}{55}{subsection.15.5.2}%
-\contentsline {subsection}{\numberline {15.5.3}9h30}{56}{subsection.15.5.3}%
-\contentsline {subsection}{\numberline {15.5.4}12h20}{56}{subsection.15.5.4}%
-\contentsline {subsection}{\numberline {15.5.5}13h30}{56}{subsection.15.5.5}%
-\contentsline {subsection}{\numberline {15.5.6}15h20}{56}{subsection.15.5.6}%
-\contentsline {subsection}{\numberline {15.5.7}notes pour la prochaine fois}{56}{subsection.15.5.7}%
-\contentsline {section}{\numberline {15.6}26.04.2021}{56}{section.15.6}%
-\contentsline {subsection}{\numberline {15.6.1}8h05}{56}{subsection.15.6.1}%
-\contentsline {subsection}{\numberline {15.6.2}8h10}{57}{subsection.15.6.2}%
-\contentsline {subsection}{\numberline {15.6.3}8h30}{57}{subsection.15.6.3}%
-\contentsline {subsection}{\numberline {15.6.4}9h00}{57}{subsection.15.6.4}%
-\contentsline {subsection}{\numberline {15.6.5}notes personnels}{57}{subsection.15.6.5}%
-\contentsline {subsection}{\numberline {15.6.6}11h00}{57}{subsection.15.6.6}%
-\contentsline {subsection}{\numberline {15.6.7}15h00}{57}{subsection.15.6.7}%
-\contentsline {subsection}{\numberline {15.6.8}15h45}{57}{subsection.15.6.8}%
-\contentsline {subsection}{\numberline {15.6.9}15h50}{57}{subsection.15.6.9}%
-\contentsline {section}{\numberline {15.7}27.04.2021}{58}{section.15.7}%
-\contentsline {subsection}{\numberline {15.7.1}8h05}{58}{subsection.15.7.1}%
-\contentsline {subsection}{\numberline {15.7.2}9h20}{58}{subsection.15.7.2}%
-\contentsline {subsection}{\numberline {15.7.3}10h05}{58}{subsection.15.7.3}%
-\contentsline {subsection}{\numberline {15.7.4}12h15}{58}{subsection.15.7.4}%
-\contentsline {subsection}{\numberline {15.7.5}13h00}{58}{subsection.15.7.5}%
-\contentsline {subsection}{\numberline {15.7.6}13h30}{58}{subsection.15.7.6}%
-\contentsline {subsection}{\numberline {15.7.7}notes personnelles}{58}{subsection.15.7.7}%
-\contentsline {subsection}{\numberline {15.7.8}13h40}{59}{subsection.15.7.8}%
-\contentsline {section}{\numberline {15.8}28.04.2021}{59}{section.15.8}%
-\contentsline {subsection}{\numberline {15.8.1}8h05}{59}{subsection.15.8.1}%
-\contentsline {subsection}{\numberline {15.8.2}10h40}{59}{subsection.15.8.2}%
-\contentsline {subsection}{\numberline {15.8.3}11h00}{59}{subsection.15.8.3}%
-\contentsline {subsection}{\numberline {15.8.4}13h10}{59}{subsection.15.8.4}%
-\contentsline {subsection}{\numberline {15.8.5}14h00}{59}{subsection.15.8.5}%
-\contentsline {section}{\numberline {15.9}29.04.2021}{59}{section.15.9}%
-\contentsline {subsection}{\numberline {15.9.1}8h30}{59}{subsection.15.9.1}%
-\contentsline {subsection}{\numberline {15.9.2}10h20}{60}{subsection.15.9.2}%
-\contentsline {subsection}{\numberline {15.9.3}11h00}{60}{subsection.15.9.3}%
-\contentsline {section}{\numberline {15.10}30.04.2021}{60}{section.15.10}%
-\contentsline {subsection}{\numberline {15.10.1}8h05}{60}{subsection.15.10.1}%
-\contentsline {subsection}{\numberline {15.10.2}8h20}{60}{subsection.15.10.2}%
-\contentsline {subsection}{\numberline {15.10.3}9h30}{60}{subsection.15.10.3}%
-\contentsline {subsection}{\numberline {15.10.4}10h45}{60}{subsection.15.10.4}%
-\contentsline {subsection}{\numberline {15.10.5}13h00}{60}{subsection.15.10.5}%
-\contentsline {subsection}{\numberline {15.10.6}15h20}{61}{subsection.15.10.6}%
-\contentsline {section}{\numberline {15.11}notes pour le premier rendu}{61}{section.15.11}%
-\contentsline {section}{\numberline {15.12}03.05.2021}{61}{section.15.12}%
-\contentsline {subsection}{\numberline {15.12.1}8h10}{61}{subsection.15.12.1}%
-\contentsline {subsection}{\numberline {15.12.2}8h15}{61}{subsection.15.12.2}%
-\contentsline {subsection}{\numberline {15.12.3}10h00}{63}{subsection.15.12.3}%
-\contentsline {subsection}{\numberline {15.12.4}12h00}{63}{subsection.15.12.4}%
-\contentsline {subsection}{\numberline {15.12.5}13h00}{64}{subsection.15.12.5}%
-\contentsline {subsection}{\numberline {15.12.6}14h00}{65}{subsection.15.12.6}%
-\contentsline {section}{\numberline {15.13}04.05.2021}{65}{section.15.13}%
-\contentsline {subsection}{\numberline {15.13.1}8h05}{65}{subsection.15.13.1}%
-\contentsline {subsection}{\numberline {15.13.2}11h00}{65}{subsection.15.13.2}%
-\contentsline {subsection}{\numberline {15.13.3}12h05}{65}{subsection.15.13.3}%
-\contentsline {section}{\numberline {15.14}05.05.2021}{65}{section.15.14}%
-\contentsline {subsection}{\numberline {15.14.1}8h05}{65}{subsection.15.14.1}%
-\contentsline {subsection}{\numberline {15.14.2}10h50}{67}{subsection.15.14.2}%
-\contentsline {subsection}{\numberline {15.14.3}12h40}{67}{subsection.15.14.3}%
-\contentsline {subsection}{\numberline {15.14.4}13h00}{67}{subsection.15.14.4}%
-\contentsline {subsection}{\numberline {15.14.5}15h00}{67}{subsection.15.14.5}%
-\contentsline {section}{\numberline {15.15}06.05.2021}{67}{section.15.15}%
-\contentsline {subsection}{\numberline {15.15.1}8h05}{67}{subsection.15.15.1}%
-\contentsline {subsection}{\numberline {15.15.2}9h00}{67}{subsection.15.15.2}%
-\contentsline {subsection}{\numberline {15.15.3}10h00}{68}{subsection.15.15.3}%
-\contentsline {subsection}{\numberline {15.15.4}10h40}{68}{subsection.15.15.4}%
-\contentsline {subsection}{\numberline {15.15.5}13h00}{68}{subsection.15.15.5}%
-\contentsline {subsection}{\numberline {15.15.6}14h00}{68}{subsection.15.15.6}%
-\contentsline {section}{\numberline {15.16}07.05.2021}{68}{section.15.16}%
-\contentsline {subsection}{\numberline {15.16.1}8h05}{68}{subsection.15.16.1}%
-\contentsline {subsection}{\numberline {15.16.2}10h00}{68}{subsection.15.16.2}%
-\contentsline {subsection}{\numberline {15.16.3}12h40}{68}{subsection.15.16.3}%
-\contentsline {subsection}{\numberline {15.16.4}notes personnelles}{69}{subsection.15.16.4}%
-\contentsline {subsection}{\numberline {15.16.5}15h30}{69}{subsection.15.16.5}%
-\contentsline {section}{\numberline {15.17}10.05.2021}{69}{section.15.17}%
-\contentsline {subsection}{\numberline {15.17.1}8h05}{69}{subsection.15.17.1}%
-\contentsline {subsection}{\numberline {15.17.2}10h10}{69}{subsection.15.17.2}%
-\contentsline {subsection}{\numberline {15.17.3}10h45}{69}{subsection.15.17.3}%
-\contentsline {subsection}{\numberline {15.17.4}13h30}{70}{subsection.15.17.4}%
-\contentsline {subsection}{\numberline {15.17.5}14h00}{70}{subsection.15.17.5}%
-\contentsline {subsection}{\numberline {15.17.6}14h30}{70}{subsection.15.17.6}%
-\contentsline {section}{\numberline {15.18}11.05.2021}{70}{section.15.18}%
-\contentsline {subsection}{\numberline {15.18.1}8h00}{70}{subsection.15.18.1}%
-\contentsline {subsection}{\numberline {15.18.2}11h40}{70}{subsection.15.18.2}%
-\contentsline {subsection}{\numberline {15.18.3}13h00}{70}{subsection.15.18.3}%
-\contentsline {subsection}{\numberline {15.18.4}13h40}{71}{subsection.15.18.4}%
-\contentsline {subsection}{\numberline {15.18.5}14h20}{71}{subsection.15.18.5}%
-\contentsline {subsection}{\numberline {15.18.6}15h50}{71}{subsection.15.18.6}%
-\contentsline {subsection}{\numberline {15.18.7}16h00}{71}{subsection.15.18.7}%
-\contentsline {section}{\numberline {15.19}12.05.2021}{71}{section.15.19}%
-\contentsline {subsection}{\numberline {15.19.1}8h05}{71}{subsection.15.19.1}%
-\contentsline {subsection}{\numberline {15.19.2}13h00}{71}{subsection.15.19.2}%
-\contentsline {subsection}{\numberline {15.19.3}14h30}{71}{subsection.15.19.3}%
-\contentsline {subsection}{\numberline {15.19.4}15h30}{72}{subsection.15.19.4}%
-\contentsline {section}{\numberline {15.20}13.05.2021}{72}{section.15.20}%
-\contentsline {subsection}{\numberline {15.20.1}11h00}{72}{subsection.15.20.1}%
-\contentsline {subsection}{\numberline {15.20.2}12h00}{72}{subsection.15.20.2}%
-\contentsline {subsection}{\numberline {15.20.3}13h00}{72}{subsection.15.20.3}%
-\contentsline {section}{\numberline {15.21}14.05.2021}{72}{section.15.21}%
-\contentsline {subsection}{\numberline {15.21.1}8h00}{72}{subsection.15.21.1}%
-\contentsline {subsection}{\numberline {15.21.2}09h22}{72}{subsection.15.21.2}%
-\contentsline {subsection}{\numberline {15.21.3}09h30}{73}{subsection.15.21.3}%
-\contentsline {subsection}{\numberline {15.21.4}11h30}{73}{subsection.15.21.4}%
-\contentsline {subsection}{\numberline {15.21.5}12h00}{73}{subsection.15.21.5}%
-\contentsline {section}{\numberline {15.22}17.05.2021}{73}{section.15.22}%
-\contentsline {subsection}{\numberline {15.22.1}8h05}{73}{subsection.15.22.1}%
-\contentsline {subsection}{\numberline {15.22.2}9h00}{73}{subsection.15.22.2}%
-\contentsline {subsection}{\numberline {15.22.3}13h20}{73}{subsection.15.22.3}%
-\contentsline {subsection}{\numberline {15.22.4}14h35}{74}{subsection.15.22.4}%
-\contentsline {section}{\numberline {15.23}18.05.2021}{74}{section.15.23}%
-\contentsline {subsection}{\numberline {15.23.1}8h05}{74}{subsection.15.23.1}%
-\contentsline {subsection}{\numberline {15.23.2}10h00}{74}{subsection.15.23.2}%
-\contentsline {subsection}{\numberline {15.23.3}12h00}{74}{subsection.15.23.3}%
-\contentsline {subsection}{\numberline {15.23.4}13h30}{74}{subsection.15.23.4}%
-\contentsline {subsection}{\numberline {15.23.5}15h00}{74}{subsection.15.23.5}%
-\contentsline {section}{\numberline {15.24}19.05.2021}{74}{section.15.24}%
-\contentsline {subsection}{\numberline {15.24.1}8h05}{74}{subsection.15.24.1}%
-\contentsline {subsection}{\numberline {15.24.2}9h00}{75}{subsection.15.24.2}%
-\contentsline {subsection}{\numberline {15.24.3}9h30}{75}{subsection.15.24.3}%
-\contentsline {subsection}{\numberline {15.24.4}11h00}{75}{subsection.15.24.4}%
-\contentsline {subsection}{\numberline {15.24.5}13h00}{75}{subsection.15.24.5}%
-\contentsline {subsection}{\numberline {15.24.6}14h00}{75}{subsection.15.24.6}%
-\contentsline {section}{\numberline {15.25}20.05.2021}{75}{section.15.25}%
-\contentsline {subsection}{\numberline {15.25.1}8h05}{75}{subsection.15.25.1}%
-\contentsline {subsection}{\numberline {15.25.2}09h15}{75}{subsection.15.25.2}%
-\contentsline {subsection}{\numberline {15.25.3}11h00}{76}{subsection.15.25.3}%
-\contentsline {subsection}{\numberline {15.25.4}12h50}{76}{subsection.15.25.4}%
-\contentsline {subsection}{\numberline {15.25.5}14h00}{76}{subsection.15.25.5}%
-\contentsline {section}{\numberline {15.26}21.05.2021}{76}{section.15.26}%
-\contentsline {subsection}{\numberline {15.26.1}9h00}{76}{subsection.15.26.1}%
-\contentsline {subsection}{\numberline {15.26.2}11h00}{76}{subsection.15.26.2}%
-\contentsline {subsection}{\numberline {15.26.3}16h00}{76}{subsection.15.26.3}%
-\contentsline {section}{\numberline {15.27}24.05.2021}{77}{section.15.27}%
-\contentsline {subsection}{\numberline {15.27.1}15h15}{77}{subsection.15.27.1}%
-\contentsline {subsection}{\numberline {15.27.2}16h35}{77}{subsection.15.27.2}%
-\contentsline {section}{\numberline {15.28}25.05.2021}{77}{section.15.28}%
-\contentsline {subsection}{\numberline {15.28.1}8h10}{77}{subsection.15.28.1}%
-\contentsline {subsection}{\numberline {15.28.2}10h25}{77}{subsection.15.28.2}%
-\contentsline {subsection}{\numberline {15.28.3}10h30}{77}{subsection.15.28.3}%
-\contentsline {subsection}{\numberline {15.28.4}14h00}{77}{subsection.15.28.4}%
-\contentsline {subsection}{\numberline {15.28.5}14h25}{77}{subsection.15.28.5}%
-\contentsline {subsection}{\numberline {15.28.6}15h50}{78}{subsection.15.28.6}%
-\contentsline {section}{\numberline {15.29}26.05.2021}{78}{section.15.29}%
-\contentsline {subsection}{\numberline {15.29.1}8h05}{78}{subsection.15.29.1}%
-\contentsline {subsection}{\numberline {15.29.2}10h30}{78}{subsection.15.29.2}%
-\contentsline {subsection}{\numberline {15.29.3}11h00}{78}{subsection.15.29.3}%
-\contentsline {subsection}{\numberline {15.29.4}13h00}{78}{subsection.15.29.4}%
-\contentsline {subsection}{\numberline {15.29.5}15h30}{78}{subsection.15.29.5}%
-\contentsline {subsection}{\numberline {15.29.6}18h00}{78}{subsection.15.29.6}%
-\contentsline {subsection}{\numberline {15.29.7}21h00}{79}{subsection.15.29.7}%
-\contentsline {section}{\numberline {15.30}27.05.2021}{79}{section.15.30}%
-\contentsline {subsection}{\numberline {15.30.1}8h10}{79}{subsection.15.30.1}%
-\contentsline {subsection}{\numberline {15.30.2}09h00}{79}{subsection.15.30.2}%
-\contentsline {subsection}{\numberline {15.30.3}10h05}{79}{subsection.15.30.3}%
-\contentsline {subsection}{\numberline {15.30.4}23h30}{79}{subsection.15.30.4}%
-\contentsline {section}{\numberline {15.31}28.05.2021}{79}{section.15.31}%
-\contentsline {subsection}{\numberline {15.31.1}9h30}{79}{subsection.15.31.1}%
-\contentsline {subsection}{\numberline {15.31.2}10h00}{80}{subsection.15.31.2}%
-\contentsline {subsection}{\numberline {15.31.3}14h00}{80}{subsection.15.31.3}%
-\contentsline {subsection}{\numberline {15.31.4}14h35}{80}{subsection.15.31.4}%
-\contentsline {section}{\numberline {15.32}30.05.2021}{80}{section.15.32}%
-\contentsline {subsection}{\numberline {15.32.1}13h30}{80}{subsection.15.32.1}%
-\contentsline {subsection}{\numberline {15.32.2}16h12}{80}{subsection.15.32.2}%
-\contentsline {subsection}{\numberline {15.32.3}19h43}{80}{subsection.15.32.3}%
-\contentsline {section}{\numberline {15.33}31.05.2021}{81}{section.15.33}%
-\contentsline {subsection}{\numberline {15.33.1}8h05}{81}{subsection.15.33.1}%
-\contentsline {subsection}{\numberline {15.33.2}14h00}{81}{subsection.15.33.2}%
-\contentsline {section}{\numberline {15.34}01.06.2021}{81}{section.15.34}%
-\contentsline {subsection}{\numberline {15.34.1}8h05}{81}{subsection.15.34.1}%
-\contentsline {subsection}{\numberline {15.34.2}8h20}{81}{subsection.15.34.2}%
-\contentsline {subsection}{\numberline {15.34.3}8h30}{81}{subsection.15.34.3}%
-\contentsline {section}{\numberline {15.35}02.06.2021}{81}{section.15.35}%
-\contentsline {subsection}{\numberline {15.35.1}8h05}{81}{subsection.15.35.1}%
-\contentsline {subsection}{\numberline {15.35.2}10h30}{82}{subsection.15.35.2}%
-\contentsline {subsection}{\numberline {15.35.3}15h30}{82}{subsection.15.35.3}%
-\contentsline {section}{\numberline {15.36}03.06.2021}{82}{section.15.36}%
-\contentsline {subsection}{\numberline {15.36.1}8h10}{82}{subsection.15.36.1}%
-\contentsline {subsection}{\numberline {15.36.2}8h34}{82}{subsection.15.36.2}%
-\contentsline {section}{\numberline {15.37}04.06.2021}{82}{section.15.37}%
-\contentsline {subsection}{\numberline {15.37.1}8h05}{82}{subsection.15.37.1}%
-\contentsline {subsection}{\numberline {15.37.2}13h15}{82}{subsection.15.37.2}%
-\contentsline {section}{\numberline {15.38}07.06.2021}{83}{section.15.38}%
-\contentsline {subsection}{\numberline {15.38.1}8h10}{83}{subsection.15.38.1}%
-\contentsline {subsection}{\numberline {15.38.2}11h20}{83}{subsection.15.38.2}%
-\contentsline {subsection}{\numberline {15.38.3}13h30}{83}{subsection.15.38.3}%
-\contentsline {subsection}{\numberline {15.38.4}14h00}{83}{subsection.15.38.4}%
+\contentsline {section}{\numberline {10.2}Site web Caiman}{25}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}Création de compte}{25}{subsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.2.2}connexion}{26}{subsection.10.2.2}%
+\contentsline {subsection}{\numberline {10.2.3}modification des informations d’un utilisateur}{27}{subsection.10.2.3}%
+\contentsline {subsection}{\numberline {10.2.4}affichage des jeux}{27}{subsection.10.2.4}%
+\contentsline {subsection}{\numberline {10.2.5}affichage d’un profil utilisateur}{28}{subsection.10.2.5}%
+\contentsline {subsection}{\numberline {10.2.6}ajout d’un jeu à la base de données / sur le Bunker pour le fichier .ISO}{30}{subsection.10.2.6}%
+\contentsline {subsection}{\numberline {10.2.7}modification d’un jeu}{31}{subsection.10.2.7}%
+\contentsline {subsection}{\numberline {10.2.8}Administration}{32}{subsection.10.2.8}%
+\contentsline {subsection}{\numberline {10.2.9}Téléchargement}{32}{subsection.10.2.9}%
+\contentsline {subsection}{\numberline {10.2.10}Fonctionnalitées manquante}{33}{subsection.10.2.10}%
+\contentsline {subsection}{\numberline {10.2.11}API Caiman}{34}{subsection.10.2.11}%
+\contentsline {subsection}{\numberline {10.2.12}Structure de l’API}{35}{subsection.10.2.12}%
+\contentsline {subsection}{\numberline {10.2.13}Categories}{36}{subsection.10.2.13}%
+\contentsline {subsection}{\numberline {10.2.14}GET}{36}{subsection.10.2.14}%
+\contentsline {subsection}{\numberline {10.2.15}Games}{36}{subsection.10.2.15}%
+\contentsline {subsection}{\numberline {10.2.16}GET}{36}{subsection.10.2.16}%
+\contentsline {subsection}{\numberline {10.2.17}GET(?byName)}{36}{subsection.10.2.17}%
+\contentsline {subsection}{\numberline {10.2.18}GET(?byCategory)}{37}{subsection.10.2.18}%
+\contentsline {subsection}{\numberline {10.2.19}GET(?byFavoriteUser)}{37}{subsection.10.2.19}%
+\contentsline {subsection}{\numberline {10.2.20}GET(?byUserTime)}{37}{subsection.10.2.20}%
+\contentsline {subsection}{\numberline {10.2.21}GET(?gameFileName)}{38}{subsection.10.2.21}%
+\contentsline {subsection}{\numberline {10.2.22}GET(?gameConsole)}{38}{subsection.10.2.22}%
+\contentsline {subsection}{\numberline {10.2.23}GET(?idGame\&apiKey)}{38}{subsection.10.2.23}%
+\contentsline {subsection}{\numberline {10.2.24}GET(?idGameTime\&idUser)}{38}{subsection.10.2.24}%
+\contentsline {subsection}{\numberline {10.2.25}GET(?idEmulator\&idUser\&apiKey)}{38}{subsection.10.2.25}%
+\contentsline {subsection}{\numberline {10.2.26}POST(?idEmulator\&idUser\&apiKey)}{38}{subsection.10.2.26}%
+\contentsline {subsection}{\numberline {10.2.27}POST(idGameAdd\&idUser)}{39}{subsection.10.2.27}%
+\contentsline {subsection}{\numberline {10.2.28}POST(idGameRemove\&idUser)}{39}{subsection.10.2.28}%
+\contentsline {subsection}{\numberline {10.2.29}POST(idGameCheck\&idUser)}{39}{subsection.10.2.29}%
+\contentsline {subsection}{\numberline {10.2.30}POST(idGameTimeAdd\&idUser)}{39}{subsection.10.2.30}%
+\contentsline {subsection}{\numberline {10.2.31}Users}{39}{subsection.10.2.31}%
+\contentsline {subsection}{\numberline {10.2.32}GET(sans paramétres)}{39}{subsection.10.2.32}%
+\contentsline {subsection}{\numberline {10.2.33}POST(avec apitoken)}{39}{subsection.10.2.33}%
+\contentsline {subsection}{\numberline {10.2.34}User/connection}{40}{subsection.10.2.34}%
+\contentsline {subsection}{\numberline {10.2.35}POST(?username, password)}{40}{subsection.10.2.35}%
+\contentsline {subsection}{\numberline {10.2.36}POST(caimanToken)}{40}{subsection.10.2.36}%
+\contentsline {section}{\numberline {10.3}Application Caiman C\#}{40}{section.10.3}%
+\contentsline {subsection}{\numberline {10.3.1}Connexion}{40}{subsection.10.3.1}%
+\contentsline {subsection}{\numberline {10.3.2}Inscription}{41}{subsection.10.3.2}%
+\contentsline {subsection}{\numberline {10.3.3}Téléchargement de jeu}{41}{subsection.10.3.3}%
+\contentsline {subsection}{\numberline {10.3.4}Lancement d’un jeu}{42}{subsection.10.3.4}%
+\contentsline {subsection}{\numberline {10.3.5}Synchronisation des sauvegarde entre le pc client et le Bunker}{43}{subsection.10.3.5}%
+\contentsline {subsection}{\numberline {10.3.6}Modification de la configuration utilisateur}{43}{subsection.10.3.6}%
+\contentsline {subsection}{\numberline {10.3.7}Application de la configuration utilisateur}{44}{subsection.10.3.7}%
+\contentsline {subsection}{\numberline {10.3.8}Ajout/suppresion de jeu en favoris}{45}{subsection.10.3.8}%
+\contentsline {subsection}{\numberline {10.3.9}Affichage de jeux par catégories}{46}{subsection.10.3.9}%
+\contentsline {subsection}{\numberline {10.3.10}Nombre d’heures de jeu}{46}{subsection.10.3.10}%
+\contentsline {subsection}{\numberline {10.3.11}Gestion des manettes}{46}{subsection.10.3.11}%
+\contentsline {section}{\numberline {10.4}Interface utilisateur utilisable à la manette}{47}{section.10.4}%
+\contentsline {subsection}{\numberline {10.4.1}Réception des input des manettes connecté}{47}{subsection.10.4.1}%
+\contentsline {subsection}{\numberline {10.4.2}Transformation des input de la manette en événement}{47}{subsection.10.4.2}%
+\contentsline {subsection}{\numberline {10.4.3}Structure de l’affichage}{47}{subsection.10.4.3}%
+\contentsline {subsection}{\numberline {10.4.4}Déplacement dans un panel de l’application}{48}{subsection.10.4.4}%
+\contentsline {subsection}{\numberline {10.4.5}Déplacement de panel en panel}{48}{subsection.10.4.5}%
+\contentsline {section}{\numberline {10.5}Serveur Debian 10}{50}{section.10.5}%
+\contentsline {subsection}{\numberline {10.5.1}Configuration de PHP}{50}{subsection.10.5.1}%
+\contentsline {subsection}{\numberline {10.5.2}Modification des droits des dossiers}{50}{subsection.10.5.2}%
+\contentsline {subsection}{\numberline {10.5.3}Services installé}{50}{subsection.10.5.3}%
+\contentsline {subsection}{\numberline {10.5.4}Création de virtual host}{50}{subsection.10.5.4}%
+\contentsline {chapter}{\numberline {11}Analyse organique}{51}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Technologies utilisées}{51}{section.11.1}%
+\contentsline {subsection}{\numberline {11.1.1}HTML}{51}{subsection.11.1.1}%
+\contentsline {subsection}{\numberline {11.1.2}CSS}{51}{subsection.11.1.2}%
+\contentsline {subsection}{\numberline {11.1.3}PHP}{51}{subsection.11.1.3}%
+\contentsline {subsection}{\numberline {11.1.4}C\#}{51}{subsection.11.1.4}%
+\contentsline {section}{\numberline {11.2}Architecture du projet}{52}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}Caiman}{52}{subsection.11.2.1}%
+\contentsline {subsection}{\numberline {11.2.2}Site web}{53}{subsection.11.2.2}%
+\contentsline {subsection}{\numberline {11.2.3}API}{54}{subsection.11.2.3}%
+\contentsline {subsubsection}{app}{54}{subsubsection*.3}%
+\contentsline {subsubsection}{public}{55}{subsubsection*.4}%
+\contentsline {section}{\numberline {11.3}Description technique: Site web}{55}{section.11.3}%
+\contentsline {subsection}{\numberline {11.3.1}Création de compte}{55}{subsection.11.3.1}%
+\contentsline {subsection}{\numberline {11.3.2}Connexion}{56}{subsection.11.3.2}%
+\contentsline {subsection}{\numberline {11.3.3}Fonctionnalité disponible une fois connecté}{56}{subsection.11.3.3}%
+\contentsline {subsection}{\numberline {11.3.4}Ajout de jeu}{57}{subsection.11.3.4}%
+\contentsline {subsection}{\numberline {11.3.5}Ajout / suppression de catégories au jeux}{58}{subsection.11.3.5}%
+\contentsline {subsection}{\numberline {11.3.6}Ajout de catégories}{59}{subsection.11.3.6}%
+\contentsline {subsection}{\numberline {11.3.7}Téléchargement de Caiman}{59}{subsection.11.3.7}%
+\contentsline {subsection}{\numberline {11.3.8}Modification des jeux}{60}{subsection.11.3.8}%
+\contentsline {section}{\numberline {11.4}Description technique: API}{60}{section.11.4}%
+\contentsline {subsection}{\numberline {11.4.1}Téléchargement de jeu}{60}{subsection.11.4.1}%
+\contentsline {subsection}{\numberline {11.4.2}Téléchargement de sauvegarde}{61}{subsection.11.4.2}%
+\contentsline {subsection}{\numberline {11.4.3}Upload de sauvegarde}{63}{subsection.11.4.3}%
+\contentsline {subsubsection}{Sauvegarde déjà présente}{64}{subsubsection*.5}%
+\contentsline {subsubsection}{Sauvegarde pas encore présente}{65}{subsubsection*.6}%
+\contentsline {subsection}{\numberline {11.4.4}Mise à jour du caimanToken}{66}{subsection.11.4.4}%
+\contentsline {section}{\numberline {11.5}Description technique: Application Caiman}{66}{section.11.5}%
+\contentsline {subsection}{\numberline {11.5.1}Création de dossier}{67}{subsection.11.5.1}%
+\contentsline {subsubsection}{Structure des dossiers}{67}{subsubsection*.7}%
+\contentsline {subsubsection}{Création des dossiers}{67}{subsubsection*.8}%
+\contentsline {subsection}{\numberline {11.5.2}Verification des jeux présent sur le disque}{70}{subsection.11.5.2}%
+\contentsline {subsection}{\numberline {11.5.3}Paramètres graphique}{70}{subsection.11.5.3}%
+\contentsline {subsubsection}{Liste des paramètres graphique}{70}{subsubsection*.9}%
+\contentsline {subsubsection}{Fichiers de configuration PCSX2}{71}{subsubsection*.10}%
+\contentsline {subsubsection}{Fichiers de configuration Dolphin}{72}{subsubsection*.11}%
+\contentsline {subsubsection}{Sauvegarde des paramètres graphique}{73}{subsubsection*.12}%
+\contentsline {subsection}{\numberline {11.5.4}Téléchargement d’images}{74}{subsection.11.5.4}%
+\contentsline {subsection}{\numberline {11.5.5}Exécution de jeu}{74}{subsection.11.5.5}%
+\contentsline {subsubsection}{Choix du jeu à lancer}{74}{subsubsection*.13}%
+\contentsline {subsubsection}{Emulateur embarqué avec Caiman}{74}{subsubsection*.14}%
+\contentsline {subsubsection}{Exécution avec PCSX2}{75}{subsubsection*.15}%
+\contentsline {subsubsection}{Exécution avec Dolphin}{76}{subsubsection*.16}%
+\contentsline {subsubsection}{Information complémentaire}{77}{subsubsection*.17}%
+\contentsline {subsection}{\numberline {11.5.6}Affichage et calcul du temps de jeu}{77}{subsection.11.5.6}%
+\contentsline {subsubsection}{Affichage dans le détail d’un jeu}{77}{subsubsection*.18}%
+\contentsline {subsubsection}{Affichage du temps de jeu actuel}{78}{subsubsection*.19}%
+\contentsline {subsection}{\numberline {11.5.7}Téléchargement de jeux}{79}{subsection.11.5.7}%
+\contentsline {subsubsection}{Type de fichiers}{79}{subsubsection*.20}%
+\contentsline {subsubsection}{Choix du fichier à télécharger}{79}{subsubsection*.21}%
+\contentsline {subsubsection}{Ajout d’un jeu à la liste de téléchargement}{79}{subsubsection*.22}%
+\contentsline {subsubsection}{Lancement d’un téléchargement}{80}{subsubsection*.23}%
+\contentsline {subsubsection}{Téléchargement d’un fichier}{80}{subsubsection*.24}%
+\contentsline {subsection}{\numberline {11.5.8}Synchronisation des sauvegardes}{81}{subsection.11.5.8}%
+\contentsline {subsubsection}{Structure des sauvegardes}{81}{subsubsection*.25}%
+\contentsline {subsubsection}{Upload des sauvegardes}{82}{subsubsection*.26}%
+\contentsline {subsubsection}{Download des sauvegardes présente sur le serveur de Caiman}{84}{subsubsection*.27}%
+\contentsline {section}{\numberline {11.6}Description technique: Interface graphique}{85}{section.11.6}%
+\contentsline {subsection}{\numberline {11.6.1}Organisation des boutons}{86}{subsection.11.6.1}%
+\contentsline {subsection}{\numberline {11.6.2}Gestion des inputs}{86}{subsection.11.6.2}%
+\contentsline {subsubsection}{Interaction avec les manettes}{86}{subsubsection*.28}%
+\contentsline {subsubsection}{Transformation d’inputs en événement.}{86}{subsubsection*.29}%
+\contentsline {subsubsection}{Gestion des boutons}{86}{subsubsection*.30}%
+\contentsline {subsubsection}{Gestion du joystick gauche}{87}{subsubsection*.31}%
+\contentsline {subsection}{\numberline {11.6.3}Découpage de l’interface}{88}{subsection.11.6.3}%
+\contentsline {subsubsection}{Navbar}{88}{subsubsection*.32}%
+\contentsline {subsubsection}{Sidebar}{88}{subsubsection*.33}%
+\contentsline {subsubsection}{Main panel}{90}{subsubsection*.34}%
+\contentsline {subsection}{\numberline {11.6.4}Affichage d’une liste de jeu}{90}{subsection.11.6.4}%
+\contentsline {subsection}{\numberline {11.6.5}Gestion des erreurs de déplacement}{91}{subsection.11.6.5}%
+\contentsline {subsection}{\numberline {11.6.6}Passage de la souris à la manette}{93}{subsection.11.6.6}%
+\contentsline {chapter}{\numberline {12}Tests}{95}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Test de l’interface graphique}{95}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Test de Caiman}{96}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}Test globaux}{96}{subsection.12.2.1}%
+\contentsline {subsection}{\numberline {12.2.2}Test synchronisation des sauvegardes}{97}{subsection.12.2.2}%
+\contentsline {chapter}{\numberline {13}Planning}{99}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Planning prévisionnel}{100}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Planning effectif}{102}{section.13.2}%
+\contentsline {chapter}{\numberline {14}Poster}{105}{chapter.14}%
+\contentsline {chapter}{\numberline {15}Conclusion et perspectives}{107}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Problème rencontrés}{107}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Expérience acquise durant le travail}{108}{section.15.2}%
+\contentsline {section}{\numberline {15.3}Améliorations envisageables}{108}{section.15.3}%
+\contentsline {subsection}{\numberline {15.3.1}Caiman C\#}{108}{subsection.15.3.1}%
+\contentsline {subsection}{\numberline {15.3.2}API}{108}{subsection.15.3.2}%
+\contentsline {section}{\numberline {15.4}Conclusion Globale}{109}{section.15.4}%
+\contentsline {chapter}{\numberline {16}Sources}{111}{chapter.16}%
+\contentsline {chapter}{\numberline {17}Logbook}{113}{chapter.17}%
+\contentsline {section}{\numberline {17.1}19.04.2021}{113}{section.17.1}%
+\contentsline {subsection}{\numberline {17.1.1}8h05}{113}{subsection.17.1.1}%
+\contentsline {subsection}{\numberline {17.1.2}9h05}{113}{subsection.17.1.2}%
+\contentsline {subsection}{\numberline {17.1.3}9h20}{113}{subsection.17.1.3}%
+\contentsline {subsection}{\numberline {17.1.4}9h30}{113}{subsection.17.1.4}%
+\contentsline {subsection}{\numberline {17.1.5}9h40}{114}{subsection.17.1.5}%
+\contentsline {subsection}{\numberline {17.1.6}10h30}{114}{subsection.17.1.6}%
+\contentsline {subsection}{\numberline {17.1.7}10h40}{114}{subsection.17.1.7}%
+\contentsline {subsection}{\numberline {17.1.8}12h40}{114}{subsection.17.1.8}%
+\contentsline {subsection}{\numberline {17.1.9}14h35}{114}{subsection.17.1.9}%
+\contentsline {subsection}{\numberline {17.1.10}résumé}{115}{subsection.17.1.10}%
+\contentsline {section}{\numberline {17.2}20.04.2021}{115}{section.17.2}%
+\contentsline {subsection}{\numberline {17.2.1}8h05}{115}{subsection.17.2.1}%
+\contentsline {subsection}{\numberline {17.2.2}15h20}{115}{subsection.17.2.2}%
+\contentsline {subsection}{\numberline {17.2.3}15h30}{115}{subsection.17.2.3}%
+\contentsline {subsection}{\numberline {17.2.4}15h56}{115}{subsection.17.2.4}%
+\contentsline {section}{\numberline {17.3}21.04.2021}{115}{section.17.3}%
+\contentsline {subsection}{\numberline {17.3.1}8h10}{115}{subsection.17.3.1}%
+\contentsline {subsection}{\numberline {17.3.2}13h00}{116}{subsection.17.3.2}%
+\contentsline {subsection}{\numberline {17.3.3}13h20}{116}{subsection.17.3.3}%
+\contentsline {subsection}{\numberline {17.3.4}15h00}{116}{subsection.17.3.4}%
+\contentsline {section}{\numberline {17.4}22.04.2021}{116}{section.17.4}%
+\contentsline {subsection}{\numberline {17.4.1}8h05}{116}{subsection.17.4.1}%
+\contentsline {subsection}{\numberline {17.4.2}9h00}{116}{subsection.17.4.2}%
+\contentsline {subsection}{\numberline {17.4.3}10h20}{116}{subsection.17.4.3}%
+\contentsline {subsection}{\numberline {17.4.4}notes personnelles}{116}{subsection.17.4.4}%
+\contentsline {subsection}{\numberline {17.4.5}11h0}{117}{subsection.17.4.5}%
+\contentsline {subsection}{\numberline {17.4.6}11h50}{117}{subsection.17.4.6}%
+\contentsline {subsection}{\numberline {17.4.7}12h40}{117}{subsection.17.4.7}%
+\contentsline {subsection}{\numberline {17.4.8}15h00}{117}{subsection.17.4.8}%
+\contentsline {subsection}{\numberline {17.4.9}a faire demain}{117}{subsection.17.4.9}%
+\contentsline {section}{\numberline {17.5}23.04.2021}{117}{section.17.5}%
+\contentsline {subsection}{\numberline {17.5.1}8h05}{117}{subsection.17.5.1}%
+\contentsline {subsection}{\numberline {17.5.2}8h40}{117}{subsection.17.5.2}%
+\contentsline {subsection}{\numberline {17.5.3}9h30}{118}{subsection.17.5.3}%
+\contentsline {subsection}{\numberline {17.5.4}12h20}{118}{subsection.17.5.4}%
+\contentsline {subsection}{\numberline {17.5.5}13h30}{118}{subsection.17.5.5}%
+\contentsline {subsection}{\numberline {17.5.6}15h20}{118}{subsection.17.5.6}%
+\contentsline {subsection}{\numberline {17.5.7}notes pour la prochaine fois}{118}{subsection.17.5.7}%
+\contentsline {section}{\numberline {17.6}26.04.2021}{118}{section.17.6}%
+\contentsline {subsection}{\numberline {17.6.1}8h05}{118}{subsection.17.6.1}%
+\contentsline {subsection}{\numberline {17.6.2}8h10}{119}{subsection.17.6.2}%
+\contentsline {subsection}{\numberline {17.6.3}8h30}{119}{subsection.17.6.3}%
+\contentsline {subsection}{\numberline {17.6.4}9h00}{119}{subsection.17.6.4}%
+\contentsline {subsection}{\numberline {17.6.5}notes personnels}{119}{subsection.17.6.5}%
+\contentsline {subsection}{\numberline {17.6.6}11h00}{119}{subsection.17.6.6}%
+\contentsline {subsection}{\numberline {17.6.7}15h00}{119}{subsection.17.6.7}%
+\contentsline {subsection}{\numberline {17.6.8}15h45}{119}{subsection.17.6.8}%
+\contentsline {subsection}{\numberline {17.6.9}15h50}{119}{subsection.17.6.9}%
+\contentsline {section}{\numberline {17.7}27.04.2021}{120}{section.17.7}%
+\contentsline {subsection}{\numberline {17.7.1}8h05}{120}{subsection.17.7.1}%
+\contentsline {subsection}{\numberline {17.7.2}9h20}{120}{subsection.17.7.2}%
+\contentsline {subsection}{\numberline {17.7.3}10h05}{120}{subsection.17.7.3}%
+\contentsline {subsection}{\numberline {17.7.4}12h15}{120}{subsection.17.7.4}%
+\contentsline {subsection}{\numberline {17.7.5}13h00}{120}{subsection.17.7.5}%
+\contentsline {subsection}{\numberline {17.7.6}13h30}{120}{subsection.17.7.6}%
+\contentsline {subsection}{\numberline {17.7.7}notes personnelles}{120}{subsection.17.7.7}%
+\contentsline {subsection}{\numberline {17.7.8}13h40}{121}{subsection.17.7.8}%
+\contentsline {section}{\numberline {17.8}28.04.2021}{121}{section.17.8}%
+\contentsline {subsection}{\numberline {17.8.1}8h05}{121}{subsection.17.8.1}%
+\contentsline {subsection}{\numberline {17.8.2}10h40}{121}{subsection.17.8.2}%
+\contentsline {subsection}{\numberline {17.8.3}11h00}{121}{subsection.17.8.3}%
+\contentsline {subsection}{\numberline {17.8.4}13h10}{121}{subsection.17.8.4}%
+\contentsline {subsection}{\numberline {17.8.5}14h00}{121}{subsection.17.8.5}%
+\contentsline {section}{\numberline {17.9}29.04.2021}{121}{section.17.9}%
+\contentsline {subsection}{\numberline {17.9.1}8h30}{121}{subsection.17.9.1}%
+\contentsline {subsection}{\numberline {17.9.2}10h20}{122}{subsection.17.9.2}%
+\contentsline {subsection}{\numberline {17.9.3}11h00}{122}{subsection.17.9.3}%
+\contentsline {section}{\numberline {17.10}30.04.2021}{122}{section.17.10}%
+\contentsline {subsection}{\numberline {17.10.1}8h05}{122}{subsection.17.10.1}%
+\contentsline {subsection}{\numberline {17.10.2}8h20}{122}{subsection.17.10.2}%
+\contentsline {subsection}{\numberline {17.10.3}9h30}{122}{subsection.17.10.3}%
+\contentsline {subsection}{\numberline {17.10.4}10h45}{122}{subsection.17.10.4}%
+\contentsline {subsection}{\numberline {17.10.5}13h00}{122}{subsection.17.10.5}%
+\contentsline {subsection}{\numberline {17.10.6}15h20}{123}{subsection.17.10.6}%
+\contentsline {section}{\numberline {17.11}notes pour le premier rendu}{123}{section.17.11}%
+\contentsline {section}{\numberline {17.12}03.05.2021}{123}{section.17.12}%
+\contentsline {subsection}{\numberline {17.12.1}8h10}{123}{subsection.17.12.1}%
+\contentsline {subsection}{\numberline {17.12.2}8h15}{123}{subsection.17.12.2}%
+\contentsline {subsection}{\numberline {17.12.3}10h00}{125}{subsection.17.12.3}%
+\contentsline {subsection}{\numberline {17.12.4}12h00}{125}{subsection.17.12.4}%
+\contentsline {subsection}{\numberline {17.12.5}13h00}{126}{subsection.17.12.5}%
+\contentsline {subsection}{\numberline {17.12.6}14h00}{127}{subsection.17.12.6}%
+\contentsline {section}{\numberline {17.13}04.05.2021}{127}{section.17.13}%
+\contentsline {subsection}{\numberline {17.13.1}8h05}{127}{subsection.17.13.1}%
+\contentsline {subsection}{\numberline {17.13.2}11h00}{127}{subsection.17.13.2}%
+\contentsline {subsection}{\numberline {17.13.3}12h05}{127}{subsection.17.13.3}%
+\contentsline {section}{\numberline {17.14}05.05.2021}{127}{section.17.14}%
+\contentsline {subsection}{\numberline {17.14.1}8h05}{127}{subsection.17.14.1}%
+\contentsline {subsection}{\numberline {17.14.2}10h50}{129}{subsection.17.14.2}%
+\contentsline {subsection}{\numberline {17.14.3}12h40}{129}{subsection.17.14.3}%
+\contentsline {subsection}{\numberline {17.14.4}13h00}{129}{subsection.17.14.4}%
+\contentsline {subsection}{\numberline {17.14.5}15h00}{129}{subsection.17.14.5}%
+\contentsline {section}{\numberline {17.15}06.05.2021}{129}{section.17.15}%
+\contentsline {subsection}{\numberline {17.15.1}8h05}{129}{subsection.17.15.1}%
+\contentsline {subsection}{\numberline {17.15.2}9h00}{129}{subsection.17.15.2}%
+\contentsline {subsection}{\numberline {17.15.3}10h00}{130}{subsection.17.15.3}%
+\contentsline {subsection}{\numberline {17.15.4}10h40}{130}{subsection.17.15.4}%
+\contentsline {subsection}{\numberline {17.15.5}13h00}{130}{subsection.17.15.5}%
+\contentsline {subsection}{\numberline {17.15.6}14h00}{130}{subsection.17.15.6}%
+\contentsline {section}{\numberline {17.16}07.05.2021}{130}{section.17.16}%
+\contentsline {subsection}{\numberline {17.16.1}8h05}{130}{subsection.17.16.1}%
+\contentsline {subsection}{\numberline {17.16.2}10h00}{130}{subsection.17.16.2}%
+\contentsline {subsection}{\numberline {17.16.3}12h40}{130}{subsection.17.16.3}%
+\contentsline {subsection}{\numberline {17.16.4}notes personnelles}{131}{subsection.17.16.4}%
+\contentsline {subsection}{\numberline {17.16.5}15h30}{131}{subsection.17.16.5}%
+\contentsline {section}{\numberline {17.17}10.05.2021}{131}{section.17.17}%
+\contentsline {subsection}{\numberline {17.17.1}8h05}{131}{subsection.17.17.1}%
+\contentsline {subsection}{\numberline {17.17.2}10h10}{131}{subsection.17.17.2}%
+\contentsline {subsection}{\numberline {17.17.3}10h45}{131}{subsection.17.17.3}%
+\contentsline {subsection}{\numberline {17.17.4}13h30}{132}{subsection.17.17.4}%
+\contentsline {subsection}{\numberline {17.17.5}14h00}{132}{subsection.17.17.5}%
+\contentsline {subsection}{\numberline {17.17.6}14h30}{132}{subsection.17.17.6}%
+\contentsline {section}{\numberline {17.18}11.05.2021}{132}{section.17.18}%
+\contentsline {subsection}{\numberline {17.18.1}8h00}{132}{subsection.17.18.1}%
+\contentsline {subsection}{\numberline {17.18.2}11h40}{132}{subsection.17.18.2}%
+\contentsline {subsection}{\numberline {17.18.3}13h00}{132}{subsection.17.18.3}%
+\contentsline {subsection}{\numberline {17.18.4}13h40}{133}{subsection.17.18.4}%
+\contentsline {subsection}{\numberline {17.18.5}14h20}{133}{subsection.17.18.5}%
+\contentsline {subsection}{\numberline {17.18.6}15h50}{133}{subsection.17.18.6}%
+\contentsline {subsection}{\numberline {17.18.7}16h00}{133}{subsection.17.18.7}%
+\contentsline {section}{\numberline {17.19}12.05.2021}{133}{section.17.19}%
+\contentsline {subsection}{\numberline {17.19.1}8h05}{133}{subsection.17.19.1}%
+\contentsline {subsection}{\numberline {17.19.2}13h00}{133}{subsection.17.19.2}%
+\contentsline {subsection}{\numberline {17.19.3}14h30}{133}{subsection.17.19.3}%
+\contentsline {subsection}{\numberline {17.19.4}15h30}{134}{subsection.17.19.4}%
+\contentsline {section}{\numberline {17.20}13.05.2021}{134}{section.17.20}%
+\contentsline {subsection}{\numberline {17.20.1}11h00}{134}{subsection.17.20.1}%
+\contentsline {subsection}{\numberline {17.20.2}12h00}{134}{subsection.17.20.2}%
+\contentsline {subsection}{\numberline {17.20.3}13h00}{134}{subsection.17.20.3}%
+\contentsline {section}{\numberline {17.21}14.05.2021}{134}{section.17.21}%
+\contentsline {subsection}{\numberline {17.21.1}8h00}{134}{subsection.17.21.1}%
+\contentsline {subsection}{\numberline {17.21.2}09h22}{134}{subsection.17.21.2}%
+\contentsline {subsection}{\numberline {17.21.3}09h30}{135}{subsection.17.21.3}%
+\contentsline {subsection}{\numberline {17.21.4}11h30}{135}{subsection.17.21.4}%
+\contentsline {subsection}{\numberline {17.21.5}12h00}{135}{subsection.17.21.5}%
+\contentsline {section}{\numberline {17.22}17.05.2021}{135}{section.17.22}%
+\contentsline {subsection}{\numberline {17.22.1}8h05}{135}{subsection.17.22.1}%
+\contentsline {subsection}{\numberline {17.22.2}9h00}{135}{subsection.17.22.2}%
+\contentsline {subsection}{\numberline {17.22.3}13h20}{135}{subsection.17.22.3}%
+\contentsline {subsection}{\numberline {17.22.4}14h35}{136}{subsection.17.22.4}%
+\contentsline {section}{\numberline {17.23}18.05.2021}{136}{section.17.23}%
+\contentsline {subsection}{\numberline {17.23.1}8h05}{136}{subsection.17.23.1}%
+\contentsline {subsection}{\numberline {17.23.2}10h00}{136}{subsection.17.23.2}%
+\contentsline {subsection}{\numberline {17.23.3}12h00}{136}{subsection.17.23.3}%
+\contentsline {subsection}{\numberline {17.23.4}13h30}{136}{subsection.17.23.4}%
+\contentsline {subsection}{\numberline {17.23.5}15h00}{136}{subsection.17.23.5}%
+\contentsline {section}{\numberline {17.24}19.05.2021}{136}{section.17.24}%
+\contentsline {subsection}{\numberline {17.24.1}8h05}{136}{subsection.17.24.1}%
+\contentsline {subsection}{\numberline {17.24.2}9h00}{137}{subsection.17.24.2}%
+\contentsline {subsection}{\numberline {17.24.3}9h30}{137}{subsection.17.24.3}%
+\contentsline {subsection}{\numberline {17.24.4}11h00}{137}{subsection.17.24.4}%
+\contentsline {subsection}{\numberline {17.24.5}13h00}{137}{subsection.17.24.5}%
+\contentsline {subsection}{\numberline {17.24.6}14h00}{137}{subsection.17.24.6}%
+\contentsline {section}{\numberline {17.25}20.05.2021}{137}{section.17.25}%
+\contentsline {subsection}{\numberline {17.25.1}8h05}{137}{subsection.17.25.1}%
+\contentsline {subsection}{\numberline {17.25.2}09h15}{137}{subsection.17.25.2}%
+\contentsline {subsection}{\numberline {17.25.3}11h00}{138}{subsection.17.25.3}%
+\contentsline {subsection}{\numberline {17.25.4}12h50}{138}{subsection.17.25.4}%
+\contentsline {subsection}{\numberline {17.25.5}14h00}{138}{subsection.17.25.5}%
+\contentsline {section}{\numberline {17.26}21.05.2021}{138}{section.17.26}%
+\contentsline {subsection}{\numberline {17.26.1}9h00}{138}{subsection.17.26.1}%
+\contentsline {subsection}{\numberline {17.26.2}11h00}{138}{subsection.17.26.2}%
+\contentsline {subsection}{\numberline {17.26.3}16h00}{138}{subsection.17.26.3}%
+\contentsline {section}{\numberline {17.27}24.05.2021}{139}{section.17.27}%
+\contentsline {subsection}{\numberline {17.27.1}15h15}{139}{subsection.17.27.1}%
+\contentsline {subsection}{\numberline {17.27.2}16h35}{139}{subsection.17.27.2}%
+\contentsline {section}{\numberline {17.28}25.05.2021}{139}{section.17.28}%
+\contentsline {subsection}{\numberline {17.28.1}8h10}{139}{subsection.17.28.1}%
+\contentsline {subsection}{\numberline {17.28.2}10h25}{139}{subsection.17.28.2}%
+\contentsline {subsection}{\numberline {17.28.3}10h30}{139}{subsection.17.28.3}%
+\contentsline {subsection}{\numberline {17.28.4}14h00}{139}{subsection.17.28.4}%
+\contentsline {subsection}{\numberline {17.28.5}14h25}{139}{subsection.17.28.5}%
+\contentsline {subsection}{\numberline {17.28.6}15h50}{140}{subsection.17.28.6}%
+\contentsline {section}{\numberline {17.29}26.05.2021}{140}{section.17.29}%
+\contentsline {subsection}{\numberline {17.29.1}8h05}{140}{subsection.17.29.1}%
+\contentsline {subsection}{\numberline {17.29.2}10h30}{140}{subsection.17.29.2}%
+\contentsline {subsection}{\numberline {17.29.3}11h00}{140}{subsection.17.29.3}%
+\contentsline {subsection}{\numberline {17.29.4}13h00}{140}{subsection.17.29.4}%
+\contentsline {subsection}{\numberline {17.29.5}15h30}{140}{subsection.17.29.5}%
+\contentsline {subsection}{\numberline {17.29.6}18h00}{140}{subsection.17.29.6}%
+\contentsline {subsection}{\numberline {17.29.7}21h00}{141}{subsection.17.29.7}%
+\contentsline {section}{\numberline {17.30}27.05.2021}{141}{section.17.30}%
+\contentsline {subsection}{\numberline {17.30.1}8h10}{141}{subsection.17.30.1}%
+\contentsline {subsection}{\numberline {17.30.2}09h00}{141}{subsection.17.30.2}%
+\contentsline {subsection}{\numberline {17.30.3}10h05}{141}{subsection.17.30.3}%
+\contentsline {subsection}{\numberline {17.30.4}23h30}{141}{subsection.17.30.4}%
+\contentsline {section}{\numberline {17.31}28.05.2021}{141}{section.17.31}%
+\contentsline {subsection}{\numberline {17.31.1}9h30}{141}{subsection.17.31.1}%
+\contentsline {subsection}{\numberline {17.31.2}10h00}{142}{subsection.17.31.2}%
+\contentsline {subsection}{\numberline {17.31.3}14h00}{142}{subsection.17.31.3}%
+\contentsline {subsection}{\numberline {17.31.4}14h35}{142}{subsection.17.31.4}%
+\contentsline {section}{\numberline {17.32}30.05.2021}{142}{section.17.32}%
+\contentsline {subsection}{\numberline {17.32.1}13h30}{142}{subsection.17.32.1}%
+\contentsline {subsection}{\numberline {17.32.2}16h12}{142}{subsection.17.32.2}%
+\contentsline {subsection}{\numberline {17.32.3}19h43}{142}{subsection.17.32.3}%
+\contentsline {section}{\numberline {17.33}31.05.2021}{143}{section.17.33}%
+\contentsline {subsection}{\numberline {17.33.1}8h05}{143}{subsection.17.33.1}%
+\contentsline {subsection}{\numberline {17.33.2}14h00}{143}{subsection.17.33.2}%
+\contentsline {section}{\numberline {17.34}01.06.2021}{143}{section.17.34}%
+\contentsline {subsection}{\numberline {17.34.1}8h05}{143}{subsection.17.34.1}%
+\contentsline {subsection}{\numberline {17.34.2}8h20}{143}{subsection.17.34.2}%
+\contentsline {subsection}{\numberline {17.34.3}8h30}{143}{subsection.17.34.3}%
+\contentsline {section}{\numberline {17.35}02.06.2021}{143}{section.17.35}%
+\contentsline {subsection}{\numberline {17.35.1}8h05}{143}{subsection.17.35.1}%
+\contentsline {subsection}{\numberline {17.35.2}10h30}{144}{subsection.17.35.2}%
+\contentsline {subsection}{\numberline {17.35.3}15h30}{144}{subsection.17.35.3}%
+\contentsline {section}{\numberline {17.36}03.06.2021}{144}{section.17.36}%
+\contentsline {subsection}{\numberline {17.36.1}8h10}{144}{subsection.17.36.1}%
+\contentsline {subsection}{\numberline {17.36.2}8h34}{144}{subsection.17.36.2}%
+\contentsline {section}{\numberline {17.37}04.06.2021}{144}{section.17.37}%
+\contentsline {subsection}{\numberline {17.37.1}8h05}{144}{subsection.17.37.1}%
+\contentsline {subsection}{\numberline {17.37.2}13h15}{144}{subsection.17.37.2}%
+\contentsline {section}{\numberline {17.38}07.06.2021}{145}{section.17.38}%
+\contentsline {subsection}{\numberline {17.38.1}8h10}{145}{subsection.17.38.1}%
+\contentsline {subsection}{\numberline {17.38.2}11h20}{145}{subsection.17.38.2}%
+\contentsline {subsection}{\numberline {17.38.3}13h30}{145}{subsection.17.38.3}%
+\contentsline {subsection}{\numberline {17.38.4}14h00}{145}{subsection.17.38.4}%
+\contentsline {section}{\numberline {17.39}08.06.2021}{145}{section.17.39}%
+\contentsline {subsection}{\numberline {17.39.1}8h10}{145}{subsection.17.39.1}%
+\contentsline {section}{\numberline {17.40}09.06.2021}{145}{section.17.40}%
+\contentsline {subsection}{\numberline {17.40.1}8h10}{145}{subsection.17.40.1}%
+\contentsline {section}{\numberline {17.41}10.06.2021}{146}{section.17.41}%
+\contentsline {subsection}{\numberline {17.41.1}8h10}{146}{subsection.17.41.1}%
