@@ -1,0 +1,327 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Namespace Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Packages}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Namespace Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Caiman Namespace Reference}{9}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}database Namespace Reference}{9}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interfaceG Namespace Reference}{9}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}usercontrol Namespace Reference}{9}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control Namespace Reference}{10}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}logique Namespace Reference}{10}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models Namespace Reference}{10}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Properties Namespace Reference}{10}{section.5.8}%
+\contentsline {chapter}{\numberline {6}Class Documentation}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}database.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Call\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}API Class Reference}{11}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Member Function Documentation}{12}{subsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.1.1}AddGameToFavorite()}{12}{subsubsection.6.1.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.1.2}AddOneMinuteToGame()}{12}{subsubsection.6.1.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.1.3}CallAllCategories()}{12}{subsubsection.6.1.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.1.4}CallAllGames()}{13}{subsubsection.6.1.1.4}%
+\contentsline {subsubsection}{\numberline {6.1.1.5}CallConsoleNameGame()}{13}{subsubsection.6.1.1.5}%
+\contentsline {subsubsection}{\numberline {6.1.1.6}CallFileNameGame()}{13}{subsubsection.6.1.1.6}%
+\contentsline {subsubsection}{\numberline {6.1.1.7}CallFolderNameGame()}{14}{subsubsection.6.1.1.7}%
+\contentsline {subsubsection}{\numberline {6.1.1.8}CallGamesFromCategory()}{14}{subsubsection.6.1.1.8}%
+\contentsline {subsubsection}{\numberline {6.1.1.9}CallLogin()}{14}{subsubsection.6.1.1.9}%
+\contentsline {subsubsection}{\numberline {6.1.1.10}CallLoginToken()}{15}{subsubsection.6.1.1.10}%
+\contentsline {subsubsection}{\numberline {6.1.1.11}CallOneGame()}{15}{subsubsection.6.1.1.11}%
+\contentsline {subsubsection}{\numberline {6.1.1.12}CallTimeInGameUser()}{16}{subsubsection.6.1.1.12}%
+\contentsline {subsubsection}{\numberline {6.1.1.13}CallUserFavoriteGames()}{16}{subsubsection.6.1.1.13}%
+\contentsline {subsubsection}{\numberline {6.1.1.14}CheckIfGameIsInFavorite()}{16}{subsubsection.6.1.1.14}%
+\contentsline {subsubsection}{\numberline {6.1.1.15}RemoveGameFromFavorite()}{17}{subsubsection.6.1.1.15}%
+\contentsline {subsubsection}{\numberline {6.1.1.16}UploadSave()}{17}{subsubsection.6.1.1.16}%
+\contentsline {section}{\numberline {6.2}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Category Class Reference}{17}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}logique.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}File\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Editor Class Reference}{18}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Member Function Documentation}{18}{subsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.1.1}AddValue()}{18}{subsubsection.6.3.1.1}%
+\contentsline {subsubsection}{\numberline {6.3.1.2}DeleteValue()}{18}{subsubsection.6.3.1.2}%
+\contentsline {subsubsection}{\numberline {6.3.1.3}GetAllValueInList()}{19}{subsubsection.6.3.1.3}%
+\contentsline {subsubsection}{\numberline {6.3.1.4}ReadProperties()}{19}{subsubsection.6.3.1.4}%
+\contentsline {subsubsection}{\numberline {6.3.1.5}UpdateProperties()}{19}{subsubsection.6.3.1.5}%
+\contentsline {subsection}{\numberline {6.3.2}Property Documentation}{20}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}fullPath}{20}{subsubsection.6.3.2.1}%
+\contentsline {section}{\numberline {6.4}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}usercontrol.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Configuration\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox Class Reference}{20}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Constructor \& Destructor Documentation}{20}{subsection.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.4.1.1}ConfigurationMenuXbox()}{20}{subsubsection.6.4.1.1}%
+\contentsline {subsection}{\numberline {6.4.2}Member Function Documentation}{21}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}CreateNavButton()}{21}{subsubsection.6.4.2.1}%
+\contentsline {section}{\numberline {6.5}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Console\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model Class Reference}{21}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Context\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Informations Class Reference}{21}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Constructor \& Destructor Documentation}{22}{subsection.6.6.1}%
+\contentsline {subsubsection}{\numberline {6.6.1.1}ContextInformations()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{22}{subsubsection.6.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.6.1.2}ContextInformations()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{22}{subsubsection.6.6.1.2}%
+\contentsline {section}{\numberline {6.7}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}logique.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dolphin Class Reference}{22}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Constructor \& Destructor Documentation}{23}{subsection.6.7.1}%
+\contentsline {subsubsection}{\numberline {6.7.1.1}Dolphin()}{23}{subsubsection.6.7.1.1}%
+\contentsline {subsection}{\numberline {6.7.2}Member Function Documentation}{23}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}Execute()}{23}{subsubsection.6.7.2.1}%
+\contentsline {subsubsection}{\numberline {6.7.2.2}UpdateConfigurationFile()}{24}{subsubsection.6.7.2.2}%
+\contentsline {section}{\numberline {6.8}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}logique.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Download Class Reference}{24}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Member Function Documentation}{24}{subsection.6.8.1}%
+\contentsline {subsubsection}{\numberline {6.8.1.1}StartDownload()}{24}{subsubsection.6.8.1.1}%
+\contentsline {section}{\numberline {6.9}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}usercontrol.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Download\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox Class Reference}{25}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Constructor \& Destructor Documentation}{25}{subsection.6.9.1}%
+\contentsline {subsubsection}{\numberline {6.9.1.1}DownloadListXbox()}{25}{subsubsection.6.9.1.1}%
+\contentsline {subsection}{\numberline {6.9.2}Member Function Documentation}{26}{subsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.1}CreateListDownload()}{26}{subsubsection.6.9.2.1}%
+\contentsline {subsubsection}{\numberline {6.9.2.2}InitTimer()}{26}{subsubsection.6.9.2.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.3}RefreshData()}{26}{subsubsection.6.9.2.3}%
+\contentsline {section}{\numberline {6.10}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}logique.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Download\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{26}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Member Function Documentation}{27}{subsection.6.10.1}%
+\contentsline {subsubsection}{\numberline {6.10.1.1}CheckIfDownloadIsActive()}{27}{subsubsection.6.10.1.1}%
+\contentsline {subsubsection}{\numberline {6.10.1.2}CreateDownload()}{27}{subsubsection.6.10.1.2}%
+\contentsline {subsubsection}{\numberline {6.10.1.3}DeleteGame()}{28}{subsubsection.6.10.1.3}%
+\contentsline {subsubsection}{\numberline {6.10.1.4}NextDownload()}{28}{subsubsection.6.10.1.4}%
+\contentsline {subsubsection}{\numberline {6.10.1.5}StartDownload()}{28}{subsubsection.6.10.1.5}%
+\contentsline {section}{\numberline {6.11}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}logique.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Download\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Save Class Reference}{28}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Member Function Documentation}{29}{subsection.6.11.1}%
+\contentsline {subsubsection}{\numberline {6.11.1.1}StartDownload()}{29}{subsubsection.6.11.1.1}%
+\contentsline {section}{\numberline {6.12}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}logique.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Download\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Save\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{29}{section.6.12}%
+\contentsline {subsection}{\numberline {6.12.1}Member Function Documentation}{29}{subsection.6.12.1}%
+\contentsline {subsubsection}{\numberline {6.12.1.1}CreateDownload()}{29}{subsubsection.6.12.1.1}%
+\contentsline {subsubsection}{\numberline {6.12.1.2}StartDownload()}{30}{subsubsection.6.12.1.2}%
+\contentsline {section}{\numberline {6.13}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}logique.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Emulator Class Reference}{30}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Member Function Documentation}{31}{subsection.6.13.1}%
+\contentsline {subsubsection}{\numberline {6.13.1.1}Close()}{31}{subsubsection.6.13.1.1}%
+\contentsline {subsubsection}{\numberline {6.13.1.2}Execute()}{31}{subsubsection.6.13.1.2}%
+\contentsline {subsubsection}{\numberline {6.13.1.3}GetEmulatorProcessLife()}{31}{subsubsection.6.13.1.3}%
+\contentsline {subsubsection}{\numberline {6.13.1.4}SetConfiguration()}{32}{subsubsection.6.13.1.4}%
+\contentsline {subsubsection}{\numberline {6.13.1.5}UpdateConfigurationFile()}{32}{subsubsection.6.13.1.5}%
+\contentsline {section}{\numberline {6.14}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}logique.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Emulators\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{32}{section.6.14}%
+\contentsline {subsection}{\numberline {6.14.1}Constructor \& Destructor Documentation}{33}{subsection.6.14.1}%
+\contentsline {subsubsection}{\numberline {6.14.1.1}EmulatorsManager()}{33}{subsubsection.6.14.1.1}%
+\contentsline {subsection}{\numberline {6.14.2}Member Function Documentation}{34}{subsection.6.14.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.1}ApplyFormatConfiguration()}{34}{subsubsection.6.14.2.1}%
+\contentsline {subsubsection}{\numberline {6.14.2.2}ApplyFullscreenConfiguration()}{34}{subsubsection.6.14.2.2}%
+\contentsline {subsubsection}{\numberline {6.14.2.3}ApplyGlobalConfiguration()}{34}{subsubsection.6.14.2.3}%
+\contentsline {subsubsection}{\numberline {6.14.2.4}CreateSaveManagerAndScan()}{34}{subsubsection.6.14.2.4}%
+\contentsline {subsubsection}{\numberline {6.14.2.5}InitTimer()}{35}{subsubsection.6.14.2.5}%
+\contentsline {subsubsection}{\numberline {6.14.2.6}ScanConfiguration()}{35}{subsubsection.6.14.2.6}%
+\contentsline {subsubsection}{\numberline {6.14.2.7}StartGame()}{35}{subsubsection.6.14.2.7}%
+\contentsline {subsection}{\numberline {6.14.3}Property Documentation}{35}{subsection.6.14.3}%
+\contentsline {subsubsection}{\numberline {6.14.3.1}EmulatorState}{35}{subsubsection.6.14.3.1}%
+\contentsline {section}{\numberline {6.15}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}File\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model Class Reference}{36}{section.6.15}%
+\contentsline {section}{\numberline {6.16}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game Class Reference}{36}{section.6.16}%
+\contentsline {section}{\numberline {6.17}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}usercontrol.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Details\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox Class Reference}{36}{section.6.17}%
+\contentsline {subsection}{\numberline {6.17.1}Constructor \& Destructor Documentation}{37}{subsection.6.17.1}%
+\contentsline {subsubsection}{\numberline {6.17.1.1}GameDetailsXbox()}{37}{subsubsection.6.17.1.1}%
+\contentsline {subsection}{\numberline {6.17.2}Member Function Documentation}{37}{subsection.6.17.2}%
+\contentsline {subsubsection}{\numberline {6.17.2.1}CreateViewGame()}{37}{subsubsection.6.17.2.1}%
+\contentsline {subsubsection}{\numberline {6.17.2.2}LoadGameDetail()}{38}{subsubsection.6.17.2.2}%
+\contentsline {section}{\numberline {6.18}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}logique.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timer Class Reference}{38}{section.6.18}%
+\contentsline {subsection}{\numberline {6.18.1}Member Function Documentation}{38}{subsection.6.18.1}%
+\contentsline {subsubsection}{\numberline {6.18.1.1}InitTimer()}{38}{subsubsection.6.18.1.1}%
+\contentsline {subsubsection}{\numberline {6.18.1.2}ToString()}{39}{subsubsection.6.18.1.2}%
+\contentsline {subsubsection}{\numberline {6.18.1.3}UpdateTimer()}{39}{subsubsection.6.18.1.3}%
+\contentsline {section}{\numberline {6.19}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}usercontrol.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox Class Reference}{39}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Constructor \& Destructor Documentation}{40}{subsection.6.19.1}%
+\contentsline {subsubsection}{\numberline {6.19.1.1}ListGameXbox()}{40}{subsubsection.6.19.1.1}%
+\contentsline {subsection}{\numberline {6.19.2}Member Function Documentation}{40}{subsection.6.19.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.1}CreateListGames()}{40}{subsubsection.6.19.2.1}%
+\contentsline {section}{\numberline {6.20}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}usercontrol.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Login\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox Class Reference}{41}{section.6.20}%
+\contentsline {subsection}{\numberline {6.20.1}Constructor \& Destructor Documentation}{41}{subsection.6.20.1}%
+\contentsline {subsubsection}{\numberline {6.20.1.1}LoginControlXbox()}{41}{subsubsection.6.20.1.1}%
+\contentsline {subsection}{\numberline {6.20.2}Member Function Documentation}{42}{subsection.6.20.2}%
+\contentsline {subsubsection}{\numberline {6.20.2.1}CreateLoginForm()}{42}{subsubsection.6.20.2.1}%
+\contentsline {section}{\numberline {6.21}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}usercontrol.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Navbar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox Class Reference}{42}{section.6.21}%
+\contentsline {subsection}{\numberline {6.21.1}Member Function Documentation}{42}{subsection.6.21.1}%
+\contentsline {subsubsection}{\numberline {6.21.1.1}CreateNavButton()}{43}{subsubsection.6.21.1.1}%
+\contentsline {subsubsection}{\numberline {6.21.1.2}InitTimer()}{43}{subsubsection.6.21.1.2}%
+\contentsline {section}{\numberline {6.22}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}logique.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}PCSX2 Class Reference}{43}{section.6.22}%
+\contentsline {subsection}{\numberline {6.22.1}Constructor \& Destructor Documentation}{43}{subsection.6.22.1}%
+\contentsline {subsubsection}{\numberline {6.22.1.1}PCSX2()}{44}{subsubsection.6.22.1.1}%
+\contentsline {subsection}{\numberline {6.22.2}Member Function Documentation}{44}{subsection.6.22.2}%
+\contentsline {subsubsection}{\numberline {6.22.2.1}Execute()}{44}{subsubsection.6.22.2.1}%
+\contentsline {subsubsection}{\numberline {6.22.2.2}UpdateConfigurationFile()}{44}{subsubsection.6.22.2.2}%
+\contentsline {section}{\numberline {6.23}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}usercontrol.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Quit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox Class Reference}{44}{section.6.23}%
+\contentsline {subsection}{\numberline {6.23.1}Constructor \& Destructor Documentation}{45}{subsection.6.23.1}%
+\contentsline {subsubsection}{\numberline {6.23.1.1}QuitMenuXbox()}{45}{subsubsection.6.23.1.1}%
+\contentsline {subsection}{\numberline {6.23.2}Member Function Documentation}{45}{subsection.6.23.2}%
+\contentsline {subsubsection}{\numberline {6.23.2.1}CreateNavButton()}{45}{subsubsection.6.23.2.1}%
+\contentsline {section}{\numberline {6.24}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}database.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Call\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}API.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Root\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object Class Reference}{46}{section.6.24}%
+\contentsline {subsection}{\numberline {6.24.1}Detailed Description}{46}{subsection.6.24.1}%
+\contentsline {section}{\numberline {6.25}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}logique.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Save\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{46}{section.6.25}%
+\contentsline {subsection}{\numberline {6.25.1}Member Function Documentation}{47}{subsection.6.25.1}%
+\contentsline {subsubsection}{\numberline {6.25.1.1}MoveAllFileToUserFolder()}{47}{subsubsection.6.25.1.1}%
+\contentsline {subsubsection}{\numberline {6.25.1.2}MoveFileToUserFolder()}{47}{subsubsection.6.25.1.2}%
+\contentsline {subsubsection}{\numberline {6.25.1.3}MoveSaveFileFromUserFolderToEmulatorSaveFolder()}{47}{subsubsection.6.25.1.3}%
+\contentsline {subsubsection}{\numberline {6.25.1.4}ScanFolder()}{47}{subsubsection.6.25.1.4}%
+\contentsline {subsubsection}{\numberline {6.25.1.5}UploadSave()}{47}{subsubsection.6.25.1.5}%
+\contentsline {section}{\numberline {6.26}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}usercontrol.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Side\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox Class Reference}{48}{section.6.26}%
+\contentsline {subsection}{\numberline {6.26.1}Constructor \& Destructor Documentation}{48}{subsection.6.26.1}%
+\contentsline {subsubsection}{\numberline {6.26.1.1}SideBarXbox()}{48}{subsubsection.6.26.1.1}%
+\contentsline {subsection}{\numberline {6.26.2}Member Function Documentation}{48}{subsection.6.26.2}%
+\contentsline {subsubsection}{\numberline {6.26.2.1}CreateListNavButton()}{48}{subsubsection.6.26.2.1}%
+\contentsline {section}{\numberline {6.27}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}In\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game Class Reference}{49}{section.6.27}%
+\contentsline {section}{\numberline {6.28}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User Class Reference}{49}{section.6.28}%
+\contentsline {subsection}{\numberline {6.28.1}Member Function Documentation}{50}{subsection.6.28.1}%
+\contentsline {subsubsection}{\numberline {6.28.1.1}CreateSaveManagers()}{50}{subsubsection.6.28.1.1}%
+\contentsline {subsubsection}{\numberline {6.28.1.2}CreateUserFolder()}{51}{subsubsection.6.28.1.2}%
+\contentsline {subsubsection}{\numberline {6.28.1.3}InitTimer()}{51}{subsubsection.6.28.1.3}%
+\contentsline {subsubsection}{\numberline {6.28.1.4}Login()}{51}{subsubsection.6.28.1.4}%
+\contentsline {subsubsection}{\numberline {6.28.1.5}MoveFileFromUserFolderToEmulatorFolder()}{51}{subsubsection.6.28.1.5}%
+\contentsline {section}{\numberline {6.29}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}usercontrol.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Button Class Reference}{52}{section.6.29}%
+\contentsline {subsection}{\numberline {6.29.1}Constructor \& Destructor Documentation}{52}{subsection.6.29.1}%
+\contentsline {subsubsection}{\numberline {6.29.1.1}XboxButton()}{52}{subsubsection.6.29.1.1}%
+\contentsline {subsection}{\numberline {6.29.2}Member Function Documentation}{52}{subsection.6.29.2}%
+\contentsline {subsubsection}{\numberline {6.29.2.1}OnClick()}{52}{subsubsection.6.29.2.1}%
+\contentsline {subsubsection}{\numberline {6.29.2.2}OnGotFocus()}{53}{subsubsection.6.29.2.2}%
+\contentsline {subsubsection}{\numberline {6.29.2.3}OnLostFocus()}{53}{subsubsection.6.29.2.3}%
+\contentsline {section}{\numberline {6.30}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller Class Reference}{53}{section.6.30}%
+\contentsline {subsection}{\numberline {6.30.1}Constructor \& Destructor Documentation}{54}{subsection.6.30.1}%
+\contentsline {subsubsection}{\numberline {6.30.1.1}XboxController()}{54}{subsubsection.6.30.1.1}%
+\contentsline {subsection}{\numberline {6.30.2}Member Function Documentation}{54}{subsection.6.30.2}%
+\contentsline {subsubsection}{\numberline {6.30.2.1}GetInput()}{54}{subsubsection.6.30.2.1}%
+\contentsline {subsubsection}{\numberline {6.30.2.2}ScanController()}{54}{subsubsection.6.30.2.2}%
+\contentsline {section}{\numberline {6.31}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Image Class Reference}{55}{section.6.31}%
+\contentsline {subsection}{\numberline {6.31.1}Constructor \& Destructor Documentation}{55}{subsection.6.31.1}%
+\contentsline {subsubsection}{\numberline {6.31.1.1}XboxImage()}{56}{subsubsection.6.31.1.1}%
+\contentsline {subsection}{\numberline {6.31.2}Member Function Documentation}{56}{subsection.6.31.2}%
+\contentsline {subsubsection}{\numberline {6.31.2.1}OnClick()}{56}{subsubsection.6.31.2.1}%
+\contentsline {subsubsection}{\numberline {6.31.2.2}OnGotFocus()}{56}{subsubsection.6.31.2.2}%
+\contentsline {subsubsection}{\numberline {6.31.2.3}OnLostFocus()}{56}{subsubsection.6.31.2.3}%
+\contentsline {section}{\numberline {6.32}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Form Class Reference}{57}{section.6.32}%
+\contentsline {subsection}{\numberline {6.32.1}Constructor \& Destructor Documentation}{58}{subsection.6.32.1}%
+\contentsline {subsubsection}{\numberline {6.32.1.1}XboxMainForm()}{58}{subsubsection.6.32.1.1}%
+\contentsline {subsection}{\numberline {6.32.2}Member Function Documentation}{58}{subsection.6.32.2}%
+\contentsline {subsubsection}{\numberline {6.32.2.1}ApplicationIsActivated()}{58}{subsubsection.6.32.2.1}%
+\contentsline {subsubsection}{\numberline {6.32.2.2}ContexteHandler()}{58}{subsubsection.6.32.2.2}%
+\contentsline {subsubsection}{\numberline {6.32.2.3}CreateBaseControl()}{59}{subsubsection.6.32.2.3}%
+\contentsline {subsubsection}{\numberline {6.32.2.4}CreateLoginControls()}{59}{subsubsection.6.32.2.4}%
+\contentsline {subsubsection}{\numberline {6.32.2.5}FocusToMainPanel()}{59}{subsubsection.6.32.2.5}%
+\contentsline {subsubsection}{\numberline {6.32.2.6}InitTimer()}{59}{subsubsection.6.32.2.6}%
+\contentsline {subsubsection}{\numberline {6.32.2.7}LoadNewConfigurationMenu()}{59}{subsubsection.6.32.2.7}%
+\contentsline {subsubsection}{\numberline {6.32.2.8}LoadNewDownloadList()}{60}{subsubsection.6.32.2.8}%
+\contentsline {subsubsection}{\numberline {6.32.2.9}LoadNewGameDetails()}{60}{subsubsection.6.32.2.9}%
+\contentsline {subsubsection}{\numberline {6.32.2.10}LoadNewHomePanel()}{60}{subsubsection.6.32.2.10}%
+\contentsline {subsubsection}{\numberline {6.32.2.11}LoadNewListGamesDownloadedGames()}{60}{subsubsection.6.32.2.11}%
+\contentsline {subsubsection}{\numberline {6.32.2.12}LoadNewListGamesFromCategory()}{60}{subsubsection.6.32.2.12}%
+\contentsline {subsubsection}{\numberline {6.32.2.13}LoadNewListGamesFromUserFavorite()}{60}{subsubsection.6.32.2.13}%
+\contentsline {subsubsection}{\numberline {6.32.2.14}LoadNewPanelAllGames()}{61}{subsubsection.6.32.2.14}%
+\contentsline {subsubsection}{\numberline {6.32.2.15}LoadNewQuitMenu()}{61}{subsubsection.6.32.2.15}%
+\contentsline {subsubsection}{\numberline {6.32.2.16}LoadOldMainPanel()}{61}{subsubsection.6.32.2.16}%
+\contentsline {subsubsection}{\numberline {6.32.2.17}ScanInput()}{61}{subsubsection.6.32.2.17}%
+\contentsline {section}{\numberline {6.33}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}usercontrol.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Navbar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Button Class Reference}{61}{section.6.33}%
+\contentsline {subsection}{\numberline {6.33.1}Constructor \& Destructor Documentation}{62}{subsection.6.33.1}%
+\contentsline {subsubsection}{\numberline {6.33.1.1}XboxNavbarButton()}{62}{subsubsection.6.33.1.1}%
+\contentsline {subsection}{\numberline {6.33.2}Member Function Documentation}{62}{subsection.6.33.2}%
+\contentsline {subsubsection}{\numberline {6.33.2.1}OnClick()}{62}{subsubsection.6.33.2.1}%
+\contentsline {subsubsection}{\numberline {6.33.2.2}OnGotFocus()}{63}{subsubsection.6.33.2.2}%
+\contentsline {subsubsection}{\numberline {6.33.2.3}OnLostFocus()}{63}{subsubsection.6.33.2.3}%
+\contentsline {section}{\numberline {6.34}Caiman.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control Class Reference}{63}{section.6.34}%
+\contentsline {subsection}{\numberline {6.34.1}Constructor \& Destructor Documentation}{65}{subsection.6.34.1}%
+\contentsline {subsubsection}{\numberline {6.34.1.1}XboxUserControl()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{65}{subsubsection.6.34.1.1}%
+\contentsline {subsubsection}{\numberline {6.34.1.2}XboxUserControl()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{65}{subsubsection.6.34.1.2}%
+\contentsline {subsubsection}{\numberline {6.34.1.3}XboxUserControl()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{65}{subsubsection.6.34.1.3}%
+\contentsline {subsection}{\numberline {6.34.2}Member Function Documentation}{66}{subsection.6.34.2}%
+\contentsline {subsubsection}{\numberline {6.34.2.1}bouton\_Click()}{66}{subsubsection.6.34.2.1}%
+\contentsline {subsubsection}{\numberline {6.34.2.2}MoveActivateControl()}{66}{subsubsection.6.34.2.2}%
+\contentsline {subsection}{\numberline {6.34.3}Property Documentation}{66}{subsection.6.34.3}%
+\contentsline {subsubsection}{\numberline {6.34.3.1}Position\_x}{66}{subsubsection.6.34.3.1}%
+\contentsline {subsubsection}{\numberline {6.34.3.2}Position\_y}{67}{subsubsection.6.34.3.2}%
+\contentsline {chapter}{\numberline {7}File Documentation}{69}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Caiman/database/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Call\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}API.cs File Reference}{69}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{69}{subsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.1.1}BDCC}{69}{subsubsection.7.1.1.1}%
+\contentsline {section}{\numberline {7.2}Caiman/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Context\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Informations.cs File Reference}{69}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Detailed Description}{70}{subsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.1.1}BDCC}{70}{subsubsection.7.2.1.1}%
+\contentsline {section}{\numberline {7.3}Caiman/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G/usercontrol/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Configuration\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox.cs File Reference}{70}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{70}{subsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.1.1}BDCC}{70}{subsubsection.7.3.1.1}%
+\contentsline {section}{\numberline {7.4}Caiman/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G/usercontrol/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Download\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox.cs File Reference}{70}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Detailed Description}{71}{subsection.7.4.1}%
+\contentsline {subsubsection}{\numberline {7.4.1.1}BDCC}{71}{subsubsection.7.4.1.1}%
+\contentsline {section}{\numberline {7.5}Caiman/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G/usercontrol/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Details\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox.cs File Reference}{71}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{71}{subsection.7.5.1}%
+\contentsline {subsubsection}{\numberline {7.5.1.1}BDCC}{71}{subsubsection.7.5.1.1}%
+\contentsline {section}{\numberline {7.6}Caiman/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G/usercontrol/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox.cs File Reference}{71}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Detailed Description}{72}{subsection.7.6.1}%
+\contentsline {subsubsection}{\numberline {7.6.1.1}BDCC}{72}{subsubsection.7.6.1.1}%
+\contentsline {section}{\numberline {7.7}Caiman/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G/usercontrol/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Login\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox.cs File Reference}{72}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Detailed Description}{72}{subsection.7.7.1}%
+\contentsline {subsubsection}{\numberline {7.7.1.1}BDCC}{72}{subsubsection.7.7.1.1}%
+\contentsline {section}{\numberline {7.8}Caiman/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G/usercontrol/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Navbar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox.cs File Reference}{72}{section.7.8}%
+\contentsline {subsection}{\numberline {7.8.1}Detailed Description}{73}{subsection.7.8.1}%
+\contentsline {subsubsection}{\numberline {7.8.1.1}BDCC}{73}{subsubsection.7.8.1.1}%
+\contentsline {section}{\numberline {7.9}Caiman/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G/usercontrol/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Quit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox.cs File Reference}{73}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{73}{subsection.7.9.1}%
+\contentsline {subsubsection}{\numberline {7.9.1.1}BDCC}{73}{subsubsection.7.9.1.1}%
+\contentsline {section}{\numberline {7.10}Caiman/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G/usercontrol/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Side\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox.cs File Reference}{73}{section.7.10}%
+\contentsline {subsection}{\numberline {7.10.1}Detailed Description}{74}{subsection.7.10.1}%
+\contentsline {subsubsection}{\numberline {7.10.1.1}BDCC}{74}{subsubsection.7.10.1.1}%
+\contentsline {section}{\numberline {7.11}Caiman/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Button.cs File Reference}{74}{section.7.11}%
+\contentsline {subsection}{\numberline {7.11.1}Detailed Description}{74}{subsection.7.11.1}%
+\contentsline {subsubsection}{\numberline {7.11.1.1}BDCC}{74}{subsubsection.7.11.1.1}%
+\contentsline {section}{\numberline {7.12}Caiman/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Image.cs File Reference}{74}{section.7.12}%
+\contentsline {subsection}{\numberline {7.12.1}Detailed Description}{75}{subsection.7.12.1}%
+\contentsline {subsubsection}{\numberline {7.12.1.1}BDCC}{75}{subsubsection.7.12.1.1}%
+\contentsline {section}{\numberline {7.13}Caiman/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Navbar\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Button.cs File Reference}{75}{section.7.13}%
+\contentsline {subsection}{\numberline {7.13.1}Detailed Description}{75}{subsection.7.13.1}%
+\contentsline {subsubsection}{\numberline {7.13.1.1}BDCC}{75}{subsubsection.7.13.1.1}%
+\contentsline {section}{\numberline {7.14}Caiman/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.cs File Reference}{75}{section.7.14}%
+\contentsline {subsection}{\numberline {7.14.1}Detailed Description}{76}{subsection.7.14.1}%
+\contentsline {subsubsection}{\numberline {7.14.1.1}BDCC}{76}{subsubsection.7.14.1.1}%
+\contentsline {section}{\numberline {7.15}Caiman/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Form.cs File Reference}{76}{section.7.15}%
+\contentsline {subsection}{\numberline {7.15.1}Detailed Description}{76}{subsection.7.15.1}%
+\contentsline {subsubsection}{\numberline {7.15.1.1}BDCC}{76}{subsubsection.7.15.1.1}%
+\contentsline {section}{\numberline {7.16}Caiman/interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}G/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Xbox\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control.cs File Reference}{76}{section.7.16}%
+\contentsline {subsection}{\numberline {7.16.1}Detailed Description}{77}{subsection.7.16.1}%
+\contentsline {subsubsection}{\numberline {7.16.1.1}BDCC}{77}{subsubsection.7.16.1.1}%
+\contentsline {section}{\numberline {7.17}Caiman/logique/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}File\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Editor.cs File Reference}{77}{section.7.17}%
+\contentsline {subsection}{\numberline {7.17.1}Detailed Description}{77}{subsection.7.17.1}%
+\contentsline {subsubsection}{\numberline {7.17.1.1}BDCC}{77}{subsubsection.7.17.1.1}%
+\contentsline {section}{\numberline {7.18}Caiman/logique/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dolphin.cs File Reference}{77}{section.7.18}%
+\contentsline {subsection}{\numberline {7.18.1}Detailed Description}{78}{subsection.7.18.1}%
+\contentsline {subsubsection}{\numberline {7.18.1.1}BDCC}{78}{subsubsection.7.18.1.1}%
+\contentsline {section}{\numberline {7.19}Caiman/logique/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Download.cs File Reference}{78}{section.7.19}%
+\contentsline {subsection}{\numberline {7.19.1}Detailed Description}{78}{subsection.7.19.1}%
+\contentsline {subsubsection}{\numberline {7.19.1.1}BDCC}{78}{subsubsection.7.19.1.1}%
+\contentsline {section}{\numberline {7.20}Caiman/logique/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Download\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cs File Reference}{78}{section.7.20}%
+\contentsline {subsection}{\numberline {7.20.1}Detailed Description}{79}{subsection.7.20.1}%
+\contentsline {subsubsection}{\numberline {7.20.1.1}BDCC}{79}{subsubsection.7.20.1.1}%
+\contentsline {section}{\numberline {7.21}Caiman/logique/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Download\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Save.cs File Reference}{79}{section.7.21}%
+\contentsline {subsection}{\numberline {7.21.1}Detailed Description}{79}{subsection.7.21.1}%
+\contentsline {subsubsection}{\numberline {7.21.1.1}BDCC}{79}{subsubsection.7.21.1.1}%
+\contentsline {section}{\numberline {7.22}Caiman/logique/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Download\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Save\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cs File Reference}{79}{section.7.22}%
+\contentsline {subsection}{\numberline {7.22.1}Detailed Description}{80}{subsection.7.22.1}%
+\contentsline {subsubsection}{\numberline {7.22.1.1}BDCC}{80}{subsubsection.7.22.1.1}%
+\contentsline {section}{\numberline {7.23}Caiman/logique/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Emulator.cs File Reference}{80}{section.7.23}%
+\contentsline {subsection}{\numberline {7.23.1}Detailed Description}{80}{subsection.7.23.1}%
+\contentsline {subsubsection}{\numberline {7.23.1.1}BDCC}{80}{subsubsection.7.23.1.1}%
+\contentsline {section}{\numberline {7.24}Caiman/logique/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Emulators\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cs File Reference}{80}{section.7.24}%
+\contentsline {subsection}{\numberline {7.24.1}Detailed Description}{81}{subsection.7.24.1}%
+\contentsline {subsubsection}{\numberline {7.24.1.1}BDCC}{81}{subsubsection.7.24.1.1}%
+\contentsline {section}{\numberline {7.25}Caiman/logique/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timer.cs File Reference}{81}{section.7.25}%
+\contentsline {subsection}{\numberline {7.25.1}Detailed Description}{81}{subsection.7.25.1}%
+\contentsline {subsubsection}{\numberline {7.25.1.1}BDCC}{81}{subsubsection.7.25.1.1}%
+\contentsline {section}{\numberline {7.26}Caiman/logique/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}PCSX2.cs File Reference}{81}{section.7.26}%
+\contentsline {subsection}{\numberline {7.26.1}Detailed Description}{82}{subsection.7.26.1}%
+\contentsline {subsubsection}{\numberline {7.26.1.1}BDCC}{82}{subsubsection.7.26.1.1}%
+\contentsline {section}{\numberline {7.27}Caiman/logique/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Save\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager.cs File Reference}{82}{section.7.27}%
+\contentsline {subsection}{\numberline {7.27.1}Detailed Description}{82}{subsection.7.27.1}%
+\contentsline {subsubsection}{\numberline {7.27.1.1}BDCC}{82}{subsubsection.7.27.1.1}%
+\contentsline {section}{\numberline {7.28}Caiman/models/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Category.cs File Reference}{82}{section.7.28}%
+\contentsline {subsection}{\numberline {7.28.1}Detailed Description}{83}{subsection.7.28.1}%
+\contentsline {subsubsection}{\numberline {7.28.1.1}BDCC}{83}{subsubsection.7.28.1.1}%
+\contentsline {section}{\numberline {7.29}Caiman/models/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Console.cs File Reference}{83}{section.7.29}%
+\contentsline {subsection}{\numberline {7.29.1}Detailed Description}{83}{subsection.7.29.1}%
+\contentsline {subsubsection}{\numberline {7.29.1.1}BDCC}{83}{subsubsection.7.29.1.1}%
+\contentsline {section}{\numberline {7.30}Caiman/models/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}File.cs File Reference}{83}{section.7.30}%
+\contentsline {subsection}{\numberline {7.30.1}Detailed Description}{84}{subsection.7.30.1}%
+\contentsline {subsubsection}{\numberline {7.30.1.1}BDCC}{84}{subsubsection.7.30.1.1}%
+\contentsline {section}{\numberline {7.31}Caiman/models/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game.cs File Reference}{84}{section.7.31}%
+\contentsline {subsection}{\numberline {7.31.1}Detailed Description}{84}{subsection.7.31.1}%
+\contentsline {subsubsection}{\numberline {7.31.1.1}BDCC}{84}{subsubsection.7.31.1.1}%
+\contentsline {section}{\numberline {7.32}Caiman/models/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}In\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game.cs File Reference}{84}{section.7.32}%
+\contentsline {subsection}{\numberline {7.32.1}Detailed Description}{85}{subsection.7.32.1}%
+\contentsline {subsubsection}{\numberline {7.32.1.1}BDCC}{85}{subsubsection.7.32.1.1}%
+\contentsline {section}{\numberline {7.33}Caiman/models/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}User.cs File Reference}{85}{section.7.33}%
+\contentsline {subsection}{\numberline {7.33.1}Detailed Description}{85}{subsection.7.33.1}%
+\contentsline {subsubsection}{\numberline {7.33.1.1}BDCC}{85}{subsubsection.7.33.1.1}%
+\contentsline {chapter}{Index}{87}{section*.143}%

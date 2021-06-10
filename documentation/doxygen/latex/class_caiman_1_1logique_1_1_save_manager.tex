@@ -1,0 +1,105 @@
+\hypertarget{class_caiman_1_1logique_1_1_save_manager}{}\doxysection{Caiman.\+logique.\+Save\+Manager Class Reference}
+\label{class_caiman_1_1logique_1_1_save_manager}\index{Caiman.logique.SaveManager@{Caiman.logique.SaveManager}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_save_manager_adbd1d4e3600fc04020b80e5b6bfb2a1a}\label{class_caiman_1_1logique_1_1_save_manager_adbd1d4e3600fc04020b80e5b6bfb2a1a}} 
+{\bfseries Save\+Manager} (string save\+Pathp, string destination\+Pathp, bool is\+Local\+Filep, \mbox{\hyperlink{class_caiman_1_1logique_1_1_emulators_manager}{Emulators\+Manager}} emulators\+Managerp)
+\item 
+void \mbox{\hyperlink{class_caiman_1_1logique_1_1_save_manager_ad928e608a2ced2bb20e19a2d59ad1ef8}{Scan\+Folder}} ()
+\begin{DoxyCompactList}\small\item\em Scan to fold to get the files in it \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1logique_1_1_save_manager_afb97d5914cf93661fecb525a0d450613}{Move\+File\+To\+User\+Folder}} (File\+Info save)
+\begin{DoxyCompactList}\small\item\em Move the local file to the appdata folder \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1logique_1_1_save_manager_a5f1e5cf8399035dcfddd8eae14684e2d}{Move\+All\+File\+To\+User\+Folder}} ()
+\begin{DoxyCompactList}\small\item\em Move all the appdata file to the emulator folder \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1logique_1_1_save_manager_ada6fe337a835692ec6b93f60f3e8f17e}{Upload\+Save}} ()
+\begin{DoxyCompactList}\small\item\em Zip the save of the user and send it to the Bunker by the API \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_caiman_1_1logique_1_1_save_manager_adce2f3d04f2bcbd1055d1025ea092230}{Move\+Save\+File\+From\+User\+Folder\+To\+Emulator\+Save\+Folder}} ()
+\begin{DoxyCompactList}\small\item\em Move the file off the appdata folder to the emulators folder \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_save_manager_a4b57d27e60cc0204582bef34f672c9b5}\label{class_caiman_1_1logique_1_1_save_manager_a4b57d27e60cc0204582bef34f672c9b5}} 
+List$<$ File\+Info $>$ {\bfseries lst\+\_\+save} = new List$<$File\+Info$>$()
+\item 
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_save_manager_aecded1b7a4e6bc5fbfbc1a813a5fc1ce}\label{class_caiman_1_1logique_1_1_save_manager_aecded1b7a4e6bc5fbfbc1a813a5fc1ce}} 
+List$<$ String $>$ {\bfseries lst\+\_\+save\+Time\+Old} = new List$<$string$>$()
+\item 
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_save_manager_acb506895f5f3c2e23fc73f3025b5bf02}\label{class_caiman_1_1logique_1_1_save_manager_acb506895f5f3c2e23fc73f3025b5bf02}} 
+List$<$ String $>$ {\bfseries lst\+\_\+save\+Time\+Now} = new List$<$string$>$()
+\item 
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_save_manager_a4065d5b8b97230dccbe005b149a8fbbd}\label{class_caiman_1_1logique_1_1_save_manager_a4065d5b8b97230dccbe005b149a8fbbd}} 
+string {\bfseries save\+Path}
+\item 
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_save_manager_a4ce233e2f2ae19b3070dc5973707ac74}\label{class_caiman_1_1logique_1_1_save_manager_a4ce233e2f2ae19b3070dc5973707ac74}} 
+bool {\bfseries is\+Local\+File}
+\item 
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_save_manager_a6673757e59b8c4c01e0c14d0d2ab94c8}\label{class_caiman_1_1logique_1_1_save_manager_a6673757e59b8c4c01e0c14d0d2ab94c8}} 
+string {\bfseries destination\+Path}
+\item 
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_save_manager_a59557558d95a394b84eadfd17cd97384}\label{class_caiman_1_1logique_1_1_save_manager_a59557558d95a394b84eadfd17cd97384}} 
+\mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i}{Call\+API}} {\bfseries call\+API} = new \mbox{\hyperlink{class_caiman_1_1database_1_1_call_a_p_i}{Call\+API}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_save_manager_a5f1e5cf8399035dcfddd8eae14684e2d}\label{class_caiman_1_1logique_1_1_save_manager_a5f1e5cf8399035dcfddd8eae14684e2d}} 
+\index{Caiman.logique.SaveManager@{Caiman.logique.SaveManager}!MoveAllFileToUserFolder@{MoveAllFileToUserFolder}}
+\index{MoveAllFileToUserFolder@{MoveAllFileToUserFolder}!Caiman.logique.SaveManager@{Caiman.logique.SaveManager}}
+\doxysubsubsection{\texorpdfstring{MoveAllFileToUserFolder()}{MoveAllFileToUserFolder()}}
+{\footnotesize\ttfamily void Caiman.\+logique.\+Save\+Manager.\+Move\+All\+File\+To\+User\+Folder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Move all the appdata file to the emulator folder 
+
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_save_manager_afb97d5914cf93661fecb525a0d450613}\label{class_caiman_1_1logique_1_1_save_manager_afb97d5914cf93661fecb525a0d450613}} 
+\index{Caiman.logique.SaveManager@{Caiman.logique.SaveManager}!MoveFileToUserFolder@{MoveFileToUserFolder}}
+\index{MoveFileToUserFolder@{MoveFileToUserFolder}!Caiman.logique.SaveManager@{Caiman.logique.SaveManager}}
+\doxysubsubsection{\texorpdfstring{MoveFileToUserFolder()}{MoveFileToUserFolder()}}
+{\footnotesize\ttfamily void Caiman.\+logique.\+Save\+Manager.\+Move\+File\+To\+User\+Folder (\begin{DoxyParamCaption}\item[{File\+Info}]{save }\end{DoxyParamCaption})}
+
+
+
+Move the local file to the appdata folder 
+
+
+\begin{DoxyParams}{Parameters}
+{\em save} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_save_manager_adce2f3d04f2bcbd1055d1025ea092230}\label{class_caiman_1_1logique_1_1_save_manager_adce2f3d04f2bcbd1055d1025ea092230}} 
+\index{Caiman.logique.SaveManager@{Caiman.logique.SaveManager}!MoveSaveFileFromUserFolderToEmulatorSaveFolder@{MoveSaveFileFromUserFolderToEmulatorSaveFolder}}
+\index{MoveSaveFileFromUserFolderToEmulatorSaveFolder@{MoveSaveFileFromUserFolderToEmulatorSaveFolder}!Caiman.logique.SaveManager@{Caiman.logique.SaveManager}}
+\doxysubsubsection{\texorpdfstring{MoveSaveFileFromUserFolderToEmulatorSaveFolder()}{MoveSaveFileFromUserFolderToEmulatorSaveFolder()}}
+{\footnotesize\ttfamily void Caiman.\+logique.\+Save\+Manager.\+Move\+Save\+File\+From\+User\+Folder\+To\+Emulator\+Save\+Folder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Move the file off the appdata folder to the emulators folder 
+
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_save_manager_ad928e608a2ced2bb20e19a2d59ad1ef8}\label{class_caiman_1_1logique_1_1_save_manager_ad928e608a2ced2bb20e19a2d59ad1ef8}} 
+\index{Caiman.logique.SaveManager@{Caiman.logique.SaveManager}!ScanFolder@{ScanFolder}}
+\index{ScanFolder@{ScanFolder}!Caiman.logique.SaveManager@{Caiman.logique.SaveManager}}
+\doxysubsubsection{\texorpdfstring{ScanFolder()}{ScanFolder()}}
+{\footnotesize\ttfamily void Caiman.\+logique.\+Save\+Manager.\+Scan\+Folder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Scan to fold to get the files in it 
+
+\mbox{\Hypertarget{class_caiman_1_1logique_1_1_save_manager_ada6fe337a835692ec6b93f60f3e8f17e}\label{class_caiman_1_1logique_1_1_save_manager_ada6fe337a835692ec6b93f60f3e8f17e}} 
+\index{Caiman.logique.SaveManager@{Caiman.logique.SaveManager}!UploadSave@{UploadSave}}
+\index{UploadSave@{UploadSave}!Caiman.logique.SaveManager@{Caiman.logique.SaveManager}}
+\doxysubsubsection{\texorpdfstring{UploadSave()}{UploadSave()}}
+{\footnotesize\ttfamily void Caiman.\+logique.\+Save\+Manager.\+Upload\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Zip the save of the user and send it to the Bunker by the API 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Caiman/logique/\mbox{\hyperlink{_save_manager_8cs}{Save\+Manager.\+cs}}\end{DoxyCompactItemize}
