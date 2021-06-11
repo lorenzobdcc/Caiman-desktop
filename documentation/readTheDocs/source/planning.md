@@ -7,7 +7,6 @@
 
 ![alt_text](images/planning_previsionnel-1.png "image_tooltip")
 
-
 ### Planning effectif
 
 ![alt_text](images/planning_effectif_2.png "image_tooltip")

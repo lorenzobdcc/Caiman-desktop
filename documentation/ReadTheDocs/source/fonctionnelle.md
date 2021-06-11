@@ -94,7 +94,6 @@ Si l’utilisateur oublie son mot de passe, il a la possibilité de le réinitia
 ![alt_text](images/login.png "image_tooltip")
 
 
-
 ### modification des informations d’un utilisateur
 
 Un utilisateur connecté a la possibilité de modifier ces informations:
