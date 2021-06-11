@@ -20,6 +20,7 @@ J’ai utilisé le php pour le site web de Caiman ainsi que pour l’API.
 L’application Caiman a été développé en C#, j’ai utilisé les paquets suivants:
 
 
+
 *   Microsoft.ASPNet.WEbApi.Client
 *   Newtonsoft.Json
 *   SharpDX
