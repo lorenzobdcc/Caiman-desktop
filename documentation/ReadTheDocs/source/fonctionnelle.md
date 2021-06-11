@@ -19,7 +19,6 @@ Cette table est utilisée pour stocker les différentes catégories auxquelles l
 
 Cette table sert à stocker les différentes consoles prises en charge par l'application Caiman. Chaque console doit être reliée à un émulateur.
 
-
 ### Table emulator
 
 La table émulateur sert à lister les différents émulateurs disponible pour l'application, il est possible qu' un émulateur soit compatible avec plusieurs consoles.
