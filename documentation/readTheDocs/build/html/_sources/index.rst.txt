@@ -6,26 +6,18 @@ Welcome to Caiman's documentation!
    :maxdepth: 2
    :caption: table des matières
 
-   resume
+   
    introduction
    cdc
    opportunite
-   fonctionnelleBDD
-   fonctionnelleWeb
-   fonctionnelleAPI
-   fonctionnelleC#
-   fonctionnelleInterface
-   debian
-   architecture
-   techniqueWeb
-   techniqueAPI
-   techniqueCaiman
-   techniqueInterface
+   fonctionnelle
+   organique
    test
    planning
-   poster
    conclusion
+   remerciment
    sources
+
    logbook
    
 

@@ -69,7 +69,7 @@
 
 
 \title{Documentation Technique de Caiman}
-\date{juin 08, 2021}
+\date{juin 10, 2021}
 \release{1.1.0}
 \author{Lorenzo Bauduccio}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -91,8 +91,29 @@
 
 
 
-\chapter{Résumé}
-\label{\detokenize{resume:resume}}\label{\detokenize{resume::doc}}
+\chapter{Introduction}
+\label{\detokenize{introduction:introduction}}\label{\detokenize{introduction::doc}}
+
+\section{Contexte}
+\label{\detokenize{introduction:contexte}}
+\sphinxAtStartPar
+Caiman a été réalisé dans le cadre du travail de diplôme de technicien deuxième année. La réussite du travail de diplôme est l’une des conditions pour recevoir son titre de technicien en informatique.
+
+
+\section{Motivations}
+\label{\detokenize{introduction:motivations}}
+\sphinxAtStartPar
+Le choix de ce travail de diplôme découle de mon envie de faire un travail de diplôme qui serait intéressant, ludique et en lien avec les jeux vidéo. La réalisation d’un jeu vidéo étant trop compliquée pour un travail de diplôme, j’ai décidé de créer une application a mi\sphinxhyphen{}chemin entre un launcher de jeu comme Steam ou GOG et un gestionnaire de VM.
+
+\sphinxAtStartPar
+J’utilise depuis des années des émulateurs et je me heurte souvent aux mêmes problèmes, perte de sauvegarde dû à une réinstallation de windows, problème pour ripper mes jeux, téléchargement de chaque émulateur un par un. Donc, J’ai eu l’idée de créer Caiman pour pallier ces différents problèmes.
+
+\sphinxAtStartPar
+Un autre aspect important pour moi est la simplicité. Je voulais que l’utilisation de l’application soit le plus simple possible, une personne sans connaissance particulière en informatique doit pouvoir utiliser Caiman sans difficulté. Une autre spécification est que l’utilisation de Caiman puisse se faire à la manette. Pour créer une interface ergonomique, je me suis basé sur l’interface Big Picture de Steam qui a justement été créé pour être utilisé  à la manette.
+
+
+\section{Résumé}
+\label{\detokenize{introduction:resume}}
 \sphinxAtStartPar
 Ce document décrit le processus de conception de mon projet Caiman. Caiman est inspiré par des applications comme Retropie, RetroArch ou Steam. RetroPie est une distribution pour raspberry comprenant des émulateurs pour d’anciennes consoles de jeu. RetroArch est lui une application servant de frontend pour émulateur, RetroArch est disponible sur plusieurs plateformes(Windows, macOS, Xbox).
 
@@ -102,9 +123,12 @@ Caiman est un projet comprenant deux parties distinctes. La première partie con
 \sphinxAtStartPar
 La deuxième partie du projet est une application C\# inspirée par le mode Big Picture de steam. Caiman sert de frontend pour différents émulateurs (Dolphin, PCSX2,etc). L’application permet de télécharger les différents jeux qui ont été ajoutés au store prévu pour le projet. Les jeux pris en charge sont ajoutés par des administrateurs via le site internet de Caiman. L’application permet de synchroniser les sauvegardes de l’utilisateur et cela peut importe sur quel pc, il lance l’application.
 
+\sphinxAtStartPar
+\sphinxincludegraphics{{schema_intro_2}.jpg}
 
-\chapter{Abstract}
-\label{\detokenize{resume:abstract}}
+
+\section{Abstract}
+\label{\detokenize{introduction:abstract}}
 \sphinxAtStartPar
 This document describes the design process of my project Caiman. Caiman is inspired by applications like Retropie, RetroArch or Steam. RetroPie is a raspberry distribution including emulators for old game consoles. RetroArch is a frontend application for emulators, RetroArch is available on several platforms (Windows, macOS, Xbox).
 
@@ -115,23 +139,17 @@ Caiman is a project with two distinct parts. The first part consists of a PHP we
 The second part of the project is a C\# application inspired by the Big Picture mode of Steam. Caiman is used as a frontend for different emulators (Dolphin, PCSX2, etc). The application allows you to download the different games that have been added to the store provided for the project. Supported games are added by administrators via the Caiman website. The application allows synchronizing the user’s save, no matter on which PC the user runs the application.
 
 
-\chapter{Remerciement}
-\label{\detokenize{resume:remerciement}}
-\sphinxAtStartPar
-Pour commencer, je tenais en particulier à remercier les personnes qui ont pris le temps de me faire des retours sur Caiman. Sans les retours que j’ai reçus de leur part, Caiman ne serait pas aussi bien peaufiné qu’il l’est actuellement. Ensuite, j’aimerais remercier M.Maréchal et M.Schmid pour leurs conseils et leurs retours tout le long de mon travail de diplôme. Pour finir, j’aimerais remercier les autres élèves de ma classe avec qui j’ai passé de très bon moment et qui m’ont aussi donné des conseils pertinents. Je tiens en particulier à remercier M.Borel\sphinxhyphen{}Jaquet qui m’a énormément aidé avec la structure de l’API.
+\section{Légalité du projet}
+\label{\detokenize{introduction:legalite-du-projet}}
 
-
-\chapter{Légalité du projet}
-\label{\detokenize{resume:legalite-du-projet}}
-
-\section{Caiman}
-\label{\detokenize{resume:caiman}}
+\subsection{Caiman}
+\label{\detokenize{introduction:caiman}}
 \sphinxAtStartPar
 Je pense qu’il est nécessaire d’aborder le sujet de la légalité de Caiman. Selon le droit Suisse, il n’est pas légal de mettre à disposition des fichiers sous droit d’auteur. Il est par contre légal de télécharger des films, séries ou jeux à condition de les utiliser dans un but privé. Caiman ne répondant pas à ces descriptions l’utilisation de l’application n’est pas conforme au droit Suisse.
 
 
-\section{Utilisation d’émulateurs}
-\label{\detokenize{resume:utilisation-demulateurs}}
+\subsection{Utilisation d’émulateurs}
+\label{\detokenize{introduction:utilisation-demulateurs}}
 \sphinxAtStartPar
 L’utilisation d’émulateurs n’est pas illégale en soi, en sachant que le code des émulateurs n’est pas la propriété de Sony ou de Nintendo. Par contre, il y a un petit point technique à détailler. L’émulateur PCSX2 doit pour fonctionner utiliser un BIOS de console de Playstation 2. Le BIOS de la Playstation 2 étant soumis à des droits d’auteur, il n’est en théorie pas légal de le distribuer en Suisse.
 
@@ -139,8 +157,11 @@ L’utilisation d’émulateurs n’est pas illégale en soi, en sachant que le 
 Je tiens donc à spécifier que Caiman est développé dans un seul but pédagogique. Il n’a aucune vocation à être distribué après la fin de mon travail de diplôme. L’application sera supprimée du serveur de l “école à la fin de mon travail. Par contre, il serait légal de distribuer le projet si je supprime la fonctionnalité de téléchargement de jeu.
 
 
-\chapter{Installation de Caiman utilisateur}
-\label{\detokenize{resume:installation-de-caiman-utilisateur}}
+\section{Installation}
+\label{\detokenize{introduction:installation}}
+
+\subsection{Installation de Caiman utilisateur}
+\label{\detokenize{introduction:installation-de-caiman-utilisateur}}
 \sphinxAtStartPar
 Pour utiliser Caiman, il faut le télécharger depuis \sphinxhref{http://caiman.cfpt.info}{caiman.cfpt.info}. Quand on télécharge l’application, l’utilisateur télécharge un fichier caiman.zip contenant l’application ainsi que les émulateurs, il n’y a donc rien d’autre à télécharger.
 
@@ -157,8 +178,8 @@ Pour pouvoir exécuter Caiman, il faut se rendre dans le dossier “\textbacksla
 Caiman est donc une application “portable”, c’est\sphinxhyphen{}à\sphinxhyphen{} dire qu’elle ne nécessite pas d’une installation pour pouvoir être lancée.
 
 
-\chapter{Installation de Caiman serveur}
-\label{\detokenize{resume:installation-de-caiman-serveur}}
+\subsection{Installation de Caiman serveur}
+\label{\detokenize{introduction:installation-de-caiman-serveur}}
 \sphinxAtStartPar
 Pour pouvoir déployer le site et l’API de caiman, il faut que le serveur ait les services suivant:
 \begin{itemize}
@@ -186,25 +207,10 @@ Le site web et l’api doivent se trouver dans le même dossier, en sachant qu�
 Pour pouvoir uploader des jeux, il faut augmenter la taille que le PHP peut recevoir par formulaire, il faut également le configurer pour recevoir minimum 8GB. Pour finir, Il faut autoriser l’écriture dans les dossiers des sauvegardes et des jeux.
 
 
-\chapter{Introduction}
-\label{\detokenize{introduction:introduction}}\label{\detokenize{introduction::doc}}
-
-\section{Contexte}
-\label{\detokenize{introduction:contexte}}
+\section{Poster}
+\label{\detokenize{introduction:poster}}
 \sphinxAtStartPar
-Caiman a été réalisé dans le cadre du travail de diplôme de technicien deuxième année. La réussite du travail de diplôme est l’une des conditions pour recevoir son titre de technicien en informatique.
-
-
-\section{Motivations}
-\label{\detokenize{introduction:motivations}}
-\sphinxAtStartPar
-Le choix de ce travail de diplôme découle de mon envie de faire un travail de diplôme qui serait intéressant, ludique et en lien avec les jeux vidéo. La réalisation d’un jeu vidéo étant trop compliquée pour un travail de diplôme, j’ai décidé de créer une application a mi\sphinxhyphen{}chemin entre un launcher de jeu comme Steam ou GOG et un gestionnaire de VM.
-
-\sphinxAtStartPar
-J’utilise depuis des années des émulateurs et je me heurte souvent aux mêmes problèmes, perte de sauvegarde dû à une réinstallation de windows, problème pour ripper mes jeux, téléchargement de chaque émulateur un par un. Donc, J’ai eu l’idée de créer Caiman pour pallier ces différents problèmes.
-
-\sphinxAtStartPar
-Un autre aspect important pour moi est la simplicité. Je voulais que l’utilisation de l’application soit le plus simple possible, une personne sans connaissance particulière en informatique doit pouvoir utiliser Caiman sans difficulté. Une autre spécification est que l’utilisation de Caiman puisse se faire à la manette. Pour créer une interface ergonomique, je me suis basé sur l’interface Big Picture de Steam qui a justement été créé pour être utilisé  à la manette.
+\sphinxincludegraphics{{poster}.png}
 
 
 \chapter{Cahier des charges}
@@ -569,13 +575,13 @@ Steam représente un niveau de finition dans son interface BigPicture que j’ai
 
 
 \chapter{Analyse fonctionnelle}
-\label{\detokenize{fonctionnelleBDD:analyse-fonctionnelle}}\label{\detokenize{fonctionnelleBDD::doc}}
+\label{\detokenize{fonctionnelle:analyse-fonctionnelle}}\label{\detokenize{fonctionnelle::doc}}
 
 \section{Base de données}
-\label{\detokenize{fonctionnelleBDD:base-de-donnees}}
+\label{\detokenize{fonctionnelle:base-de-donnees}}
 
 \subsection{Schéma}
-\label{\detokenize{fonctionnelleBDD:schema}}
+\label{\detokenize{fonctionnelle:schema}}
 \sphinxAtStartPar
 Le schéma suivant représente la structure de la base de données. La base de données est commune au site web et à l’application Caiman. Les tables sont principalement utilisées pour stocker les informations des utilisateurs et des différents jeux.
 
@@ -584,105 +590,103 @@ Le schéma suivant représente la structure de la base de données. La base de d
 
 
 \subsection{Table categorie}
-\label{\detokenize{fonctionnelleBDD:table-categorie}}
+\label{\detokenize{fonctionnelle:table-categorie}}
 \sphinxAtStartPar
 Cette table est utilisée pour stocker les différentes catégories auxquelles les jeux peuvent appartenir.
 
 
 \subsection{Table console}
-\label{\detokenize{fonctionnelleBDD:table-console}}
+\label{\detokenize{fonctionnelle:table-console}}
 \sphinxAtStartPar
 Cette table sert à stocker les différentes consoles prises en charge par l’application Caiman. Chaque console doit être reliée à un émulateur.
 
 
 \subsection{Table emulator}
-\label{\detokenize{fonctionnelleBDD:table-emulator}}
+\label{\detokenize{fonctionnelle:table-emulator}}
 \sphinxAtStartPar
 La table émulateur sert à lister les différents émulateurs disponible pour l’application, il est possible qu” un émulateur soit compatible avec plusieurs consoles.
 
 
 \subsection{Table favoritegame}
-\label{\detokenize{fonctionnelleBDD:table-favoritegame}}
+\label{\detokenize{fonctionnelle:table-favoritegame}}
 \sphinxAtStartPar
 Sert à lister les jeux favoris des utilisateurs.
 
 
 \subsection{Table file}
-\label{\detokenize{fonctionnelleBDD:table-file}}
+\label{\detokenize{fonctionnelle:table-file}}
 \sphinxAtStartPar
 La table file sert à lister le nom d’un fichier, cela peut être un fichier .iso d’un jeu, un fichier de sauvegarde ou un fichier de configuration utilisateur.
 
 
 \subsection{Table filesave}
-\label{\detokenize{fonctionnelleBDD:table-filesave}}
+\label{\detokenize{fonctionnelle:table-filesave}}
 \sphinxAtStartPar
 Sert  faire le lien entre un émulateur, un utilisateur, et un fichier de sauvegarde. Alors elle permet de connaître les sauvegardes pour un émulateur particulier d’un utilisateur.
 
 
 \subsection{Table game}
-\label{\detokenize{fonctionnelleBDD:table-game}}
+\label{\detokenize{fonctionnelle:table-game}}
 \sphinxAtStartPar
 Table qui liste les jeux disponibles. Chaque jeu a plusieurs informations: un nom, une description, une console. La console permet de à l’application de savoir quel émulateur doit être utilisé.
 
 
 \subsection{Table gamehascategorie}
-\label{\detokenize{fonctionnelleBDD:table-gamehascategorie}}
+\label{\detokenize{fonctionnelle:table-gamehascategorie}}
 \sphinxAtStartPar
 Sert à assigner des catégories aux jeux.
 
 
 \subsection{Table rôle}
-\label{\detokenize{fonctionnelleBDD:table-role}}
+\label{\detokenize{fonctionnelle:table-role}}
 \sphinxAtStartPar
 Sert à lister les différents rôles (utilisateur, administrateur), elle ne sert que pour le site web sachant que toute la partie administration est sur le site.
 
 
 \subsection{Table timeingame}
-\label{\detokenize{fonctionnelleBDD:table-timeingame}}
+\label{\detokenize{fonctionnelle:table-timeingame}}
 \sphinxAtStartPar
 Sert à stocker le temps de jeu en minutes de chaque utilisateur. Le temps de jeu est spécifique à chaque jeu. Il est mis à jour directement depuis l’application Caiman.
 
 
 \subsection{Table user}
-\label{\detokenize{fonctionnelleBDD:table-user}}
+\label{\detokenize{fonctionnelle:table-user}}
 \sphinxAtStartPar
 Cette table sert à stocker les informations de compte de chaque utilisateur de Caiman. Le compte est commun au site web et à l’application. Le mot de passe de l’utilisateur est crypté avec les fonctions de sécurité de php.
 
 
 \subsection{Table userconfigfile}
-\label{\detokenize{fonctionnelleBDD:table-userconfigfile}}
+\label{\detokenize{fonctionnelle:table-userconfigfile}}
 \sphinxAtStartPar
 Cette table sert à faire le lien entre un fichier de configuration et un utilisateur. Le fichier de configuration sert à connaître la configuration.
 
 
-\chapter{Site web Caiman}
-\label{\detokenize{fonctionnelleWeb:site-web-caiman}}\label{\detokenize{fonctionnelleWeb::doc}}
+\section{Site web Caiman}
+\label{\detokenize{fonctionnelle:site-web-caiman}}
 
-\section{Création de compte}
-\label{\detokenize{fonctionnelleWeb:creation-de-compte}}
+\subsection{Création de compte}
+\label{\detokenize{fonctionnelle:creation-de-compte}}
 \sphinxAtStartPar
 L’utilisateur du site a la possibilité de créer un compte qui sera commun au site et à l’application. La création de compte nécessite de renseigner son email, de donner un nom d’utilisateur ainsi que un mot de passe.
 
+\sphinxAtStartPar
+\sphinxincludegraphics{{SignIn}.png}
 
 
-
-
-
-\section{connexion}
-\label{\detokenize{fonctionnelleWeb:connexion}}
+\subsection{connexion}
+\label{\detokenize{fonctionnelle:connexion}}
 \sphinxAtStartPar
 La connexion à son compte utilisateur permet de modifier nos informations de compte et d’ajouter ou de supprimer des jeux à la liste de favoris.
 
 \sphinxAtStartPar
 Si l’utilisateur oublie son mot de passe, il a la possibilité de le réinitialiser. L’utilisateur qui se décide de réinitialiser son mot de passe reçoit un mail contenant un lien de réinitialisation.
 
+\sphinxAtStartPar
+\sphinxincludegraphics{{login}.png}
 
 
-
-
-
-\section{modification des informations d’un utilisateur}
-\label{\detokenize{fonctionnelleWeb:modification-des-informations-dun-utilisateur}}
+\subsection{modification des informations d’un utilisateur}
+\label{\detokenize{fonctionnelle:modification-des-informations-dun-utilisateur}}
 \sphinxAtStartPar
 Un utilisateur connecté a la possibilité de modifier ces informations:
 \begin{itemize}
@@ -700,13 +704,12 @@ la visibilité de son profil pour les autres utilisateurs
 
 \end{itemize}
 
+\sphinxAtStartPar
+\sphinxincludegraphics{{usersInfos}.png}
 
 
-
-
-
-\section{affichage des jeux}
-\label{\detokenize{fonctionnelleWeb:affichage-des-jeux}}
+\subsection{affichage des jeux}
+\label{\detokenize{fonctionnelle:affichage-des-jeux}}
 \sphinxAtStartPar
 Tous les utilisateurs ont la possibilité d’afficher la liste de jeux disponible. Il n’y a pas de restriction particulière.
 
@@ -727,13 +730,12 @@ Catégories du jeu
 
 \end{itemize}
 
+\sphinxAtStartPar
+\sphinxincludegraphics{{gamesDetails}.png}
 
 
-
-
-
-\section{affichage d’un profil utilisateur}
-\label{\detokenize{fonctionnelleWeb:affichage-dun-profil-utilisateur}}
+\subsection{affichage d’un profil utilisateur}
+\label{\detokenize{fonctionnelle:affichage-dun-profil-utilisateur}}
 \sphinxAtStartPar
 Il est possible de consulter la page personnelle d’un utilisateur si celui\sphinxhyphen{}ci a rendu son compte publique. Les informations disponibles sont celle\sphinxhyphen{}ci:
 \begin{itemize}
@@ -751,17 +753,15 @@ Nombres d’heures de jeux sur chaque jeu
 
 \end{itemize}
 
+\sphinxAtStartPar
+\sphinxincludegraphics{{UserFavoritesGames}.png}
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{UserTimeInGame}.png}
 
 
-
-
-
-
-
-
-
-\section{ajout d’un jeu à la base de données / sur le Bunker pour le fichier .ISO}
-\label{\detokenize{fonctionnelleWeb:ajout-dun-jeu-a-la-base-de-donnees-sur-le-bunker-pour-le-fichier-iso}}
+\subsection{ajout d’un jeu à la base de données / sur le Bunker pour le fichier .ISO}
+\label{\detokenize{fonctionnelle:ajout-dun-jeu-a-la-base-de-donnees-sur-le-bunker-pour-le-fichier-iso}}
 \sphinxAtStartPar
 L’ajout d’un jeu se fait grâce à un formulaire, plusieurs champs sont à renseigner:
 \begin{itemize}
@@ -794,13 +794,12 @@ le fichier de base du jeu
 \sphinxAtStartPar
 L’ajout à la base va créer deux entrées. Une dans la table Game et une autre dans la table file. Après avoir été ajouté depuis le site web, le jeu devient accessible depuis l’application Caiman et le site web pour de la consultation.
 
+\sphinxAtStartPar
+\sphinxincludegraphics{{FormAddGame}.png}
 
 
-
-
-
-\section{modification d’un jeu}
-\label{\detokenize{fonctionnelleWeb:modification-dun-jeu}}
+\subsection{modification d’un jeu}
+\label{\detokenize{fonctionnelle:modification-dun-jeu}}
 \sphinxAtStartPar
 La modification d’un jeu ne peut être faite que par un administrateur. Les modifications possibles sont les suivantes:
 \begin{itemize}
@@ -822,13 +821,12 @@ catégories
 
 \end{itemize}
 
+\sphinxAtStartPar
+\sphinxincludegraphics{{GameDetailsAdmin}.png}
 
 
-
-
-
-\section{Administration}
-\label{\detokenize{fonctionnelleWeb:administration}}
+\subsection{Administration}
+\label{\detokenize{fonctionnelle:administration}}
 \sphinxAtStartPar
 Les administrateurs ont la possibilité de faire plusieurs choses. Donc, je vais les lister ici, il n’est pas nécessaire de les détailler.
 \begin{itemize}
@@ -846,27 +844,24 @@ ajouter ou supprimer des catégories à un jeu
 
 \end{itemize}
 
+\sphinxAtStartPar
+\sphinxincludegraphics{{FormAddCategory}.png}
 
 
-
-
-
-\section{Téléchargement}
-\label{\detokenize{fonctionnelleWeb:telechargement}}
+\subsection{Téléchargement}
+\label{\detokenize{fonctionnelle:telechargement}}
 \sphinxAtStartPar
 L’un des intérêts du site est de pouvoir télécharger l’application Caiman. Le téléchargement de cette application nécessite d’être authentifié sur le site. Si un invité se rend sur la page de téléchargement sans être authentifié, une invitation lui sera faite de s’authentifier ou de créer un compte.
 
+\sphinxAtStartPar
+\sphinxincludegraphics{{downloadNotConnected}.png}
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{download}.png}
 
 
-
-
-
-
-
-
-
-\section{Fonctionnalitées manquante}
-\label{\detokenize{fonctionnelleWeb:fonctionnalitees-manquante}}
+\subsection{Fonctionnalitées manquante}
+\label{\detokenize{fonctionnelle:fonctionnalitees-manquante}}
 \sphinxAtStartPar
 Malheureusement dû au temps imposé j’ai dû faire des choix organisationnel. J’ai donc décidé de me focaliser sur L’application Caiman au lieu du site internet ce qui explique que certaines fonctionnalités ne soient pas finalisées ou mises en place. Je vais lister les ce qui n’a pas été fini complètement ou abandonné.
 \begin{itemize}
@@ -889,14 +884,14 @@ Création de compte administrateur
 \end{itemize}
 
 
-\chapter{API Caiman}
-\label{\detokenize{fonctionnelleAPI:api-caiman}}\label{\detokenize{fonctionnelleAPI::doc}}
+\subsection{API Caiman}
+\label{\detokenize{fonctionnelle:api-caiman}}
 \sphinxAtStartPar
 L’API sert à pouvoir accéder à la base de données depuis l’application Caiman. Je vais détailler les endpoint et la structure de l’API.
 
 
-\section{Structure de l’API}
-\label{\detokenize{fonctionnelleAPI:structure-de-lapi}}
+\subsection{Structure de l’API}
+\label{\detokenize{fonctionnelle:structure-de-lapi}}
 \sphinxAtStartPar
 \sphinxincludegraphics{{schema-API}.png}
 
@@ -931,11 +926,11 @@ La réponse est envoyée à l’utilisateur par l’intermédiaire de la page in
 \end{enumerate}
 
 
-\section{Categories}
-\label{\detokenize{fonctionnelleAPI:categories}}
+\subsection{Categories}
+\label{\detokenize{fonctionnelle:categories}}
 
-\section{GET}
-\label{\detokenize{fonctionnelleAPI:get}}
+\subsection{GET}
+\label{\detokenize{fonctionnelle:get}}
 \sphinxAtStartPar
 Permet de recevoir la liste des catégories disponibles.
 
@@ -953,11 +948,11 @@ nom
 \end{itemize}
 
 
-\section{Games}
-\label{\detokenize{fonctionnelleAPI:games}}
+\subsection{Games}
+\label{\detokenize{fonctionnelle:games}}
 
-\section{GET}
-\label{\detokenize{fonctionnelleAPI:id1}}
+\subsection{GET}
+\label{\detokenize{fonctionnelle:id1}}
 \sphinxAtStartPar
 Retourne la liste des jeux.
 
@@ -987,8 +982,8 @@ id du fichier du jeu
 \end{itemize}
 
 
-\section{GET(?byName)}
-\label{\detokenize{fonctionnelleAPI:get-byname}}
+\subsection{GET(?byName)}
+\label{\detokenize{fonctionnelle:get-byname}}
 \sphinxAtStartPar
 Retourne la liste des jeux qui dans le nom contient ce que l’utilisateur a demandé.
 
@@ -1018,8 +1013,8 @@ id du fichier du jeu
 \end{itemize}
 
 
-\section{GET(?byCategory)}
-\label{\detokenize{fonctionnelleAPI:get-bycategory}}
+\subsection{GET(?byCategory)}
+\label{\detokenize{fonctionnelle:get-bycategory}}
 \sphinxAtStartPar
 Retourne la liste des jeux qui appartiennent à une catégorie.
 
@@ -1052,8 +1047,8 @@ id du fichier du jeu
 \end{itemize}
 
 
-\section{GET(?byFavoriteUser)}
-\label{\detokenize{fonctionnelleAPI:get-byfavoriteuser}}
+\subsection{GET(?byFavoriteUser)}
+\label{\detokenize{fonctionnelle:get-byfavoriteuser}}
 \sphinxAtStartPar
 Retourne la liste des jeux favoris d’un utilisateur.
 
@@ -1086,8 +1081,8 @@ id du fichier du jeu
 \end{itemize}
 
 
-\section{GET(?byUserTime)}
-\label{\detokenize{fonctionnelleAPI:get-byusertime}}
+\subsection{GET(?byUserTime)}
+\label{\detokenize{fonctionnelle:get-byusertime}}
 \sphinxAtStartPar
 Retourne la liste des jeux auxquels un joueur a joué.
 
@@ -1124,8 +1119,8 @@ nombre de minutes en jeu
 \end{itemize}
 
 
-\section{GET(?gameFileName)}
-\label{\detokenize{fonctionnelleAPI:get-gamefilename}}
+\subsection{GET(?gameFileName)}
+\label{\detokenize{fonctionnelle:get-gamefilename}}
 \sphinxAtStartPar
 Retourne le nom du fichier d’un jeu.
 
@@ -1139,8 +1134,8 @@ filename
 \end{itemize}
 
 
-\section{GET(?gameConsole)}
-\label{\detokenize{fonctionnelleAPI:get-gameconsole}}
+\subsection{GET(?gameConsole)}
+\label{\detokenize{fonctionnelle:get-gameconsole}}
 \sphinxAtStartPar
 Retourne la console d’un jeu.
 
@@ -1158,8 +1153,8 @@ folderName
 \end{itemize}
 
 
-\section{GET(?idGame\&apiKey)}
-\label{\detokenize{fonctionnelleAPI:get-idgame-apikey}}
+\subsection{GET(?idGame\&apiKey)}
+\label{\detokenize{fonctionnelle:get-idgame-apikey}}
 \sphinxAtStartPar
 Retourne le fichier d’un jeu.
 
@@ -1173,8 +1168,8 @@ fichier.iso
 \end{itemize}
 
 
-\section{GET(?idGameTime\&idUser)}
-\label{\detokenize{fonctionnelleAPI:get-idgametime-iduser}}
+\subsection{GET(?idGameTime\&idUser)}
+\label{\detokenize{fonctionnelle:get-idgametime-iduser}}
 \sphinxAtStartPar
 Retourne le temps de jeu sur un jeu.
 
@@ -1188,8 +1183,8 @@ minutes
 \end{itemize}
 
 
-\section{GET(?idEmulator\&idUser\&apiKey)}
-\label{\detokenize{fonctionnelleAPI:get-idemulator-iduser-apikey}}
+\subsection{GET(?idEmulator\&idUser\&apiKey)}
+\label{\detokenize{fonctionnelle:get-idemulator-iduser-apikey}}
 \sphinxAtStartPar
 Retourne un fichier zip contenant les sauvegardes d’un joueur pour un émulateur particulier
 
@@ -1203,41 +1198,41 @@ fichier.zip
 \end{itemize}
 
 
-\section{POST(?idEmulator\&idUser\&apiKey)}
-\label{\detokenize{fonctionnelleAPI:post-idemulator-iduser-apikey}}
+\subsection{POST(?idEmulator\&idUser\&apiKey)}
+\label{\detokenize{fonctionnelle:post-idemulator-iduser-apikey}}
 \sphinxAtStartPar
 Upload un fichier zip contenant les sauvegardes d’un joueur pour un émulateur particulier
 
 
-\section{POST(idGameAdd\&idUser)}
-\label{\detokenize{fonctionnelleAPI:post-idgameadd-iduser}}
+\subsection{POST(idGameAdd\&idUser)}
+\label{\detokenize{fonctionnelle:post-idgameadd-iduser}}
 \sphinxAtStartPar
 Ajouter un jeu en favoris pour un utilisateur particulier
 
 
-\section{POST(idGameRemove\&idUser)}
-\label{\detokenize{fonctionnelleAPI:post-idgameremove-iduser}}
+\subsection{POST(idGameRemove\&idUser)}
+\label{\detokenize{fonctionnelle:post-idgameremove-iduser}}
 \sphinxAtStartPar
 Supprime un jeu en favoris pour un utilisateur particulier
 
 
-\section{POST(idGameCheck\&idUser)}
-\label{\detokenize{fonctionnelleAPI:post-idgamecheck-iduser}}
+\subsection{POST(idGameCheck\&idUser)}
+\label{\detokenize{fonctionnelle:post-idgamecheck-iduser}}
 \sphinxAtStartPar
 Vérifie si un jeu est déjà en favoris et retourne un booléen
 
 
-\section{POST(idGameTimeAdd\&idUser)}
-\label{\detokenize{fonctionnelleAPI:post-idgametimeadd-iduser}}
+\subsection{POST(idGameTimeAdd\&idUser)}
+\label{\detokenize{fonctionnelle:post-idgametimeadd-iduser}}
 \sphinxAtStartPar
 Ajouter une minute de jeu à un jeu particulier pour un utilisateur
 
 
-\section{Users}
-\label{\detokenize{fonctionnelleAPI:users}}
+\subsection{Users}
+\label{\detokenize{fonctionnelle:users}}
 
-\section{GET(sans paramétres)}
-\label{\detokenize{fonctionnelleAPI:get-sans-parametres}}
+\subsection{GET(sans paramétres)}
+\label{\detokenize{fonctionnelle:get-sans-parametres}}
 \sphinxAtStartPar
 Retourne la liste des utilisateurs.
 
@@ -1255,8 +1250,8 @@ username
 \end{itemize}
 
 
-\section{POST(avec apitoken)}
-\label{\detokenize{fonctionnelleAPI:post-avec-apitoken}}
+\subsection{POST(avec apitoken)}
+\label{\detokenize{fonctionnelle:post-avec-apitoken}}
 \sphinxAtStartPar
 Retourne un utilisateur en particulier
 
@@ -1298,11 +1293,11 @@ idRole
 \end{itemize}
 
 
-\section{User/connection}
-\label{\detokenize{fonctionnelleAPI:user-connection}}
+\subsection{User/connection}
+\label{\detokenize{fonctionnelle:user-connection}}
 
-\section{POST(?username, password)}
-\label{\detokenize{fonctionnelleAPI:post-username-password}}
+\subsection{POST(?username, password)}
+\label{\detokenize{fonctionnelle:post-username-password}}
 \sphinxAtStartPar
 Permet de vérifier les informations de connexion d’un utilisateur
 
@@ -1344,8 +1339,8 @@ idRole
 \end{itemize}
 
 
-\section{POST(caimanToken)}
-\label{\detokenize{fonctionnelleAPI:post-caimantoken}}
+\subsection{POST(caimanToken)}
+\label{\detokenize{fonctionnelle:post-caimantoken}}
 \sphinxAtStartPar
 Permet de recevoir les informations d’un utilisateur grâce à un token généré à chaque connexion.
 
@@ -1387,11 +1382,11 @@ idRole
 \end{itemize}
 
 
-\chapter{Application  Caiman C\#}
-\label{\detokenize{fonctionnelleC_:application-caiman-c}}\label{\detokenize{fonctionnelleC_::doc}}
+\section{Application  Caiman C\#}
+\label{\detokenize{fonctionnelle:application-caiman-c}}
 
-\section{Connexion}
-\label{\detokenize{fonctionnelleC_:connexion}}
+\subsection{Connexion}
+\label{\detokenize{fonctionnelle:id2}}
 \sphinxAtStartPar
 L’utilisateur de Caiman doit obligatoirement être connecté pour pouvoir utiliser caiman. La connexion se fait avec le nom d’utilisateur et le mot de passe. Une fois la connexion valable, elle est maintenue tant que l’utilisateur ne se déconnecte pas ou tant que l’utilisateur ne s’est pas connecté sur un autre ordinateur.
 
@@ -1399,14 +1394,14 @@ L’utilisateur de Caiman doit obligatoirement être connecté pour pouvoir util
 \sphinxincludegraphics{{login_caiman}.png}
 
 
-\section{Inscription}
-\label{\detokenize{fonctionnelleC_:inscription}}
+\subsection{Inscription}
+\label{\detokenize{fonctionnelle:inscription}}
 \sphinxAtStartPar
 L’inscription n’est pas disponible sur caiman mais un bouton est disponible pour être redirigé sur le site web de Caiman.
 
 
-\section{Téléchargement de jeu}
-\label{\detokenize{fonctionnelleC_:telechargement-de-jeu}}
+\subsection{Téléchargement de jeu}
+\label{\detokenize{fonctionnelle:telechargement-de-jeu}}
 \sphinxAtStartPar
 L’utilisateur a la possibilité de télécharger des jeux. Les jeux disponibles dans l’application sont ajoutés depuis le site internet de Caiman. Les téléchargements des jeux se font les un après les autres.
 
@@ -1417,8 +1412,8 @@ L’utilisateur a la possibilité de télécharger des jeux. Les jeux disponible
 \sphinxincludegraphics{{Caiman_download_queu}.png}
 
 
-\section{Lancement d’un jeu}
-\label{\detokenize{fonctionnelleC_:lancement-dun-jeu}}
+\subsection{Lancement d’un jeu}
+\label{\detokenize{fonctionnelle:lancement-dun-jeu}}
 \sphinxAtStartPar
 Caiman inclut deux émulateurs Dolphin un PCSX2. Ces deux émulateurs permettent d’exécuter des jeux de Gamecube et Wii pour Dolphin et de Playstation 2 pour PCSX2. Pour lancer un jeu, il suffit de le télécharger, puis de cliquer sur Play. Il n’est donc pas nécessaire de lancer soit même un émulateur.
 
@@ -1426,14 +1421,14 @@ Caiman inclut deux émulateurs Dolphin un PCSX2. Ces deux émulateurs permettent
 \sphinxincludegraphics{{caiman_downloaded_game}.png}
 
 
-\section{Synchronisation des sauvegarde entre le pc client et le Bunker}
-\label{\detokenize{fonctionnelleC_:synchronisation-des-sauvegarde-entre-le-pc-client-et-le-bunker}}
+\subsection{Synchronisation des sauvegarde entre le pc client et le Bunker}
+\label{\detokenize{fonctionnelle:synchronisation-des-sauvegarde-entre-le-pc-client-et-le-bunker}}
 \sphinxAtStartPar
 Les sauvegardes de l’utilisateur sont synchronisées entre les différents pc qu’il utilise. La synchronisation se fait à la connexion, les sauvegardes sont stockées sur les serveurs de Caiman. La copie des sauvegardes des utilisateurs est envoyée automatiquement donc l’utilisateur n’a pas de manipulation à faire. L’envoie se passe dès que l’utilisateur sauvegarde, cela permet d’éviter de perte de sauvegardes si un problème se produit durant le moment où le joueur est en train de jouer.
 
 
-\section{Modification de la configuration utilisateur}
-\label{\detokenize{fonctionnelleC_:modification-de-la-configuration-utilisateur}}
+\subsection{Modification de la configuration utilisateur}
+\label{\detokenize{fonctionnelle:modification-de-la-configuration-utilisateur}}
 \sphinxAtStartPar
 L’utilisateur a la possibilité de modifier plusieurs paramètres graphiques. Il a la possibilité de choisir en trois mode de configuration global:
 \begin{itemize}
@@ -1461,14 +1456,14 @@ L’utilisateur a aussi la possibilité de choisir entre lancer le jeu plein éc
 \sphinxincludegraphics{{caiman_configuration}.png}
 
 
-\section{Application de la configuration utilisateur}
-\label{\detokenize{fonctionnelleC_:application-de-la-configuration-utilisateur}}
+\subsection{Application de la configuration utilisateur}
+\label{\detokenize{fonctionnelle:application-de-la-configuration-utilisateur}}
 \sphinxAtStartPar
 La configuration est appliquée avant de lancer un jeu, c’est à dire que la configuration n’est pas appliquée si l’utilisateur est déjà en jeu.
 
 
-\section{Ajout/suppresion de jeu en favoris}
-\label{\detokenize{fonctionnelleC_:ajout-suppresion-de-jeu-en-favoris}}
+\subsection{Ajout/suppresion de jeu en favoris}
+\label{\detokenize{fonctionnelle:ajout-suppresion-de-jeu-en-favoris}}
 \sphinxAtStartPar
 L’utilisateur a la possibilité de modifier ses jeux favoris directement depuis caiman.
 
@@ -1482,8 +1477,8 @@ Suppression de jeu des favoris
 \sphinxincludegraphics{{caiman_remove_favorite}.png}
 
 
-\section{Affichage de jeux par catégories}
-\label{\detokenize{fonctionnelleC_:affichage-de-jeux-par-categories}}
+\subsection{Affichage de jeux par catégories}
+\label{\detokenize{fonctionnelle:affichage-de-jeux-par-categories}}
 \sphinxAtStartPar
 L’utilisateur a la possibilité d’afficher les jeux par catégories. Les catégories sont créées manuellement par un administrateur. Il y a certaines catégories « spéciales », par exemple les jeux favoris et les jeux uniques téléchargés par chaque utilisateur.
 
@@ -1491,8 +1486,8 @@ L’utilisateur a la possibilité d’afficher les jeux par catégories. Les cat
 \sphinxincludegraphics{{caiman_categories}.png}
 
 
-\section{Nombre d’heures de jeu}
-\label{\detokenize{fonctionnelleC_:nombre-dheures-de-jeu}}
+\subsection{Nombre d’heures de jeu}
+\label{\detokenize{fonctionnelle:nombre-dheures-de-jeu}}
 \sphinxAtStartPar
 Le nombre de minutes de jeu d’un utilisateur est mis à jour à chaque minute de jeu. le nombre de minutes de jeu est visible sur la page de chaque jeu si l’utilisateur n’a pas encore joué.
 
@@ -1500,8 +1495,8 @@ Le nombre de minutes de jeu d’un utilisateur est mis à jour à chaque minute 
 \sphinxincludegraphics{{caiman_time_played}.png}
 
 
-\section{Gestion des manettes}
-\label{\detokenize{fonctionnelleC_:gestion-des-manettes}}
+\subsection{Gestion des manettes}
+\label{\detokenize{fonctionnelle:gestion-des-manettes}}
 \sphinxAtStartPar
 Pour Caiman, les manettes supportées sont les manettes pour xbox qui fonctionne avec Xinput. Il est possible d’utiliser d’autres manettes pour cela, il faut passer par un programme qui va convertir les inputs de la manette non compatible en input de manette xbox.
 
@@ -1509,11 +1504,11 @@ Pour Caiman, les manettes supportées sont les manettes pour xbox qui fonctionne
 Pour gérer les déplacements, j’utilise les touches “haut, bas, gauche,droite”, le stick gauche, la validation se fait avec la touche “A” et le retour arrière avec la touche “B”.
 
 
-\chapter{Interface utilisateur utilisable à la manette}
-\label{\detokenize{fonctionnelleInterface:interface-utilisateur-utilisable-a-la-manette}}\label{\detokenize{fonctionnelleInterface::doc}}
+\section{Interface utilisateur utilisable à la manette}
+\label{\detokenize{fonctionnelle:interface-utilisateur-utilisable-a-la-manette}}
 
-\section{Réception des input des manettes connecté}
-\label{\detokenize{fonctionnelleInterface:reception-des-input-des-manettes-connecte}}
+\subsection{Réception des input des manettes connecté}
+\label{\detokenize{fonctionnelle:reception-des-input-des-manettes-connecte}}
 \sphinxAtStartPar
 L’utilisateur de Caiman a la possibilité de pouvoir utiliser l’application au clavier souris mais aussi à la manette. Pour ce faire, j’ai utilisé le paquet nuGet “SharpDX.XInput”. Ce paquet me permet de connaître les manettes connectées au pc ainsi que les touches appuyées par l’utilisateur.
 
@@ -1524,8 +1519,8 @@ La seule manette qui peut se déplacer dans l’application est la manette 1. Po
 Les inputs sont ensuite traités par l’interface de l’application qui décide quoi en faire selon le contexte.
 
 
-\section{Transformation des input de la manette en événement}
-\label{\detokenize{fonctionnelleInterface:transformation-des-input-de-la-manette-en-evenement}}
+\subsection{Transformation des input de la manette en événement}
+\label{\detokenize{fonctionnelle:transformation-des-input-de-la-manette-en-evenement}}
 \sphinxAtStartPar
 Les inputs de la manette sont analysés par la form principale de Caiman. Selon la ou les touches qui sont pressées, l’application exécute des actions différentes. Par exemple, quand la touche “A” est pressée, alors le programme envoie la touche ENTER à l’application ce qui me permet de cliquer sur des boutons.
 
@@ -1533,8 +1528,8 @@ Les inputs de la manette sont analysés par la form principale de Caiman. Selon 
 Pour gérer les événements, je fais un test pour savoir si l’utilisateur utilise l’application ou non . Si l’application n’est pas focus par l’utilisateur, seul une partie des actions sont possibles pour éviter que des actions inattendues puissent arriver alors que l’application n’est plus visible.
 
 
-\section{Structure de l’affichage}
-\label{\detokenize{fonctionnelleInterface:structure-de-laffichage}}
+\subsection{Structure de l’affichage}
+\label{\detokenize{fonctionnelle:structure-de-laffichage}}
 \sphinxAtStartPar
 L’affichage est constitué d’un “XboxMainForm”. Il sert à contenir tous les autres panels, il est aussi chargé de la gestion des inputs de la manette de l’utilisateur 1.
 
@@ -1545,8 +1540,8 @@ Un “XboxMainForm” contient une liste de XboxUserController qui elles contien
 Le XboxMainForm est aussi responsable de la gestion des demandes de l’utilisateur, par exemple si l’utilisateur veut afficher l’accueil de Caiman, il va lui passer un objet contenant sa demande. Il va donc traiter les demandes et afficher les panels selon les besoins de l’utilisateur.
 
 
-\section{Déplacement dans un panel de l’application}
-\label{\detokenize{fonctionnelleInterface:deplacement-dans-un-panel-de-lapplication}}
+\subsection{Déplacement dans un panel de l’application}
+\label{\detokenize{fonctionnelle:deplacement-dans-un-panel-de-lapplication}}
 \sphinxAtStartPar
 L’application est conçue avec des “panels”, c’est\sphinxhyphen{}à\sphinxhyphen{}dire une liste de listes de controls. Cette liste de controls est propre à chaque panel. Les panels contiennent aussi une variable position\_x et position\_y qui permettent de connaître le control actuellement sélectionné par l’utilisateur. Quand l’utilisateur décide de se déplacer, il demande au panel de modifier ses variables x et y. Avant de valider ce changement, le panel regarde si le déplacement demandé par l’utilisateur est possible ou non.
 
@@ -1569,8 +1564,8 @@ L’utilisateur est à la fin du panel et “sors du panel” dans ce cas il va 
 \end{enumerate}
 
 
-\section{Déplacement de panel en panel}
-\label{\detokenize{fonctionnelleInterface:deplacement-de-panel-en-panel}}
+\subsection{Déplacement de panel en panel}
+\label{\detokenize{fonctionnelle:deplacement-de-panel-en-panel}}
 \sphinxAtStartPar
 Chaque “panel” possède un pointeur sur le panel du haut, du bas, de droite et de gauche.
 
@@ -1597,6 +1592,2336 @@ Si l’utilisateur se trouve en bas du panel 1 et qu’il décide de se déplace
 
 \sphinxAtStartPar
 Un autre cas possible est que l’utilisateur va peut\sphinxhyphen{}être décider de retourner sur le panel 1. La contrainte est de savoir où doit pointer le panel haut du panel 3. Actuellement, un seul panel peut être défini par côté, mais la solution est de créer de petits panels pour éviter que ces situations arrivent.
+
+
+\section{Serveur Debian 10}
+\label{\detokenize{fonctionnelle:serveur-debian-10}}
+\sphinxAtStartPar
+J’ai utilisé un serveur sous Debian10 pour héberger le site web de caiman, l’API et les fichiers des différents jeux.
+
+
+\subsection{Configuration de PHP}
+\label{\detokenize{fonctionnelle:configuration-de-php}}
+\sphinxAtStartPar
+J’ai dû installer PHP pour le site web et l’API. Donc, je vais détailler la configuration que j’ai faite pour Caiman.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+version 7.4
+
+\item {} 
+\sphinxAtStartPar
+max\_input\_time = 600
+
+\item {} 
+\sphinxAtStartPar
+max\_execution\_time = 300
+
+\item {} 
+\sphinxAtStartPar
+post\_max\_size = 8G
+
+\item {} 
+\sphinxAtStartPar
+upload\_max\_filesize = 10G
+
+\end{itemize}
+
+\sphinxAtStartPar
+J’ai dû grandement augmenter la taille d’upload pour pouvoir uploader les fichiers des jeux sur le serveur.
+
+
+\subsection{Modification des droits des dossiers}
+\label{\detokenize{fonctionnelle:modification-des-droits-des-dossiers}}
+\sphinxAtStartPar
+J’ai modifié les droits d’écriture pour le dossier où les images sont stockées et les dossiers où sont stockés les fichiers des jeux. Le dossier où sont stockées les sauvegardes des utilisateurs a lui aussi eu ces droits modifiés.
+
+\sphinxAtStartPar
+Chaque émulateur qui est supporté par caiman a un dossier ou les jeux compatibles sont stockés. Le dossier pour les sauvegardes contient les sauvegardes pour chaque émulateur. Il n’est donc pas nécessaire de créer plusieurs sous\sphinxhyphen{}dossiers.
+
+
+\subsection{Services installé}
+\label{\detokenize{fonctionnelle:services-installe}}
+\sphinxAtStartPar
+J’ai aussi installer un service FTP pour pouvoir transférer les fichiers sur le serveur plus facilement que par ssh. J’ai aussi installé mySQL et apache2.
+
+
+\subsection{Création de virtual host}
+\label{\detokenize{fonctionnelle:creation-de-virtual-host}}
+\sphinxAtStartPar
+Pour simplifier l’accès au site de Caiman et à l’API, les deux ne possèdent pas la même URL. Pour cela, j’ai dû configurer un sous\sphinxhyphen{}domaine pour l’API. Le nom de domaine de “base” est “caiman.cfpt.info” mais j’ai créé le sous\sphinxhyphen{}domaine “api.caiman.cfpt.info” pour les requêtes à l’API.
+
+\sphinxAtStartPar
+Le chemin où pointe “caiman.cfpt.info“ est “/var/www/caimanWeb/www” et le chemin pour “api.caiman.cfpt.info” est “/var/www/caimanAPI/public”. Pour créer les deux domaines j’ai dû modifier le fichier “/etc/apache2/sites\sphinxhyphen{}enabled/000\sphinxhyphen{}default.conf”. et ajouter les deux chemin et leur nom.
+
+
+\chapter{Analyse organique}
+\label{\detokenize{organique:analyse-organique}}\label{\detokenize{organique::doc}}
+
+\section{Technologies utilisées}
+\label{\detokenize{organique:technologies-utilisees}}
+
+\subsection{HTML}
+\label{\detokenize{organique:html}}
+
+\subsection{CSS}
+\label{\detokenize{organique:css}}
+
+\subsection{PHP}
+\label{\detokenize{organique:php}}
+\sphinxAtStartPar
+J’ai utilisé le php pour le site web de Caiman ainsi que pour l’API.
+
+
+\subsection{C\#}
+\label{\detokenize{organique:c}}
+\sphinxAtStartPar
+L’application Caiman a été développé en C\#, j’ai utilisé les paquets suivants:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Microsoft.ASPNet.WEbApi.Client
+
+\item {} 
+\sphinxAtStartPar
+Newtonsoft.Json
+
+\item {} 
+\sphinxAtStartPar
+SharpDX
+
+\end{itemize}
+
+
+\section{Architecture du projet}
+\label{\detokenize{organique:architecture-du-projet}}
+\sphinxAtStartPar
+Le projet se divise en 3 parties: l’application Caiman pour windows, le site web et l’API. Chaque partie du projet contient une documentation doxygene qui lui est propre.
+
+
+\subsection{Caiman}
+\label{\detokenize{organique:caiman}}
+\sphinxAtStartPar
+Je vais expliquer ci\sphinxhyphen{}dessous l’arborescence des fichiers de l’application Caiman et comment les émulateurs y sont intégrés.
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{structure_caiman}.png}
+
+\sphinxAtStartPar
+Je vais expliquer ce que contiennent les différents dossiers.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Database}
+
+\sphinxAtStartPar
+Contient les classes servant à appeler la base de données.
+
+\sphinxAtStartPar
+\sphinxstylestrong{interfaceG}
+
+\sphinxAtStartPar
+Ce dossier contient les fichiers de base de l’affichage.
+
+\sphinxAtStartPar
+\sphinxstylestrong{interfaceG\textbackslash{}usercontrol}
+
+\sphinxAtStartPar
+Ce dossier contient les différents panels qui sont utilisés dans Caiman pour créer l’affichage.
+
+\sphinxAtStartPar
+\sphinxstylestrong{interfaceG\textbackslash{}XboxControl}
+
+\sphinxAtStartPar
+Ce dossier contient une version modifiée de plusieurs contrôles de base de Windows Form.
+
+\sphinxAtStartPar
+\sphinxstylestrong{logique}
+
+\sphinxAtStartPar
+Ce dossier contient les classes servant à gérer les émulateurs et les sauvegardes et plus généralement toute la logique de l’application.
+
+\sphinxAtStartPar
+\sphinxstylestrong{models}
+
+\sphinxAtStartPar
+Ce dossier contient les modèles pour simplifier l’interaction entre la base de données et Caiman.
+
+\sphinxAtStartPar
+\sphinxstylestrong{emulators}
+
+\sphinxAtStartPar
+Le dossier est bien présent mais n’est pas visible sur la photo. Ce dossier contient tous les fichiers des émulateurs.
+
+
+\subsection{Site web}
+\label{\detokenize{organique:site-web}}
+\sphinxAtStartPar
+Le site web contient en plus des fichiers du site les fichiers des jeux et des sauvegardes des utilisateurs.
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{dossier_caimanweb}.png}
+
+\sphinxAtStartPar
+\sphinxstylestrong{games}
+
+\sphinxAtStartPar
+Ce dossier contient dans un sous dossier spécifique à chaque émulateur les fichiers des jeux.
+
+\sphinxAtStartPar
+\sphinxstylestrong{release}
+
+\sphinxAtStartPar
+Ce dossier contient le fichier .zip de la version téléchargeable de Caiman depuis le site.
+
+\sphinxAtStartPar
+\sphinxstylestrong{saves}
+
+\sphinxAtStartPar
+Ce dossier contient les fichiers de sauvegardes des utilisateurs.
+
+\sphinxAtStartPar
+\sphinxstylestrong{www}
+
+\sphinxAtStartPar
+Ce dossier contient les fichiers du site web de Caiman.
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{dossier_caimanweb_WWW}.png}
+
+\sphinxAtStartPar
+\sphinxstylestrong{common}
+
+\sphinxAtStartPar
+Ce dossier contient les fichiers de base de la vue  comme le footer ou le header.
+
+\sphinxAtStartPar
+\sphinxstylestrong{controllers}
+
+\sphinxAtStartPar
+Ce dossier contient les différents controllers de l’application.
+
+\sphinxAtStartPar
+\sphinxstylestrong{css}
+
+\sphinxAtStartPar
+contient les fichiers de css
+
+\sphinxAtStartPar
+\sphinxstylestrong{img}
+
+\sphinxAtStartPar
+contient les images des jeux
+
+\sphinxAtStartPar
+\sphinxstylestrong{models}
+
+\sphinxAtStartPar
+contient les fichiers pour simplifier l’accès à la base de données
+
+
+\subsection{API}
+\label{\detokenize{organique:api}}
+\sphinxAtStartPar
+\sphinxincludegraphics{{dossier_api_caiman}.png}
+
+\sphinxAtStartPar
+Le dossier de base de l’api contient deux dossiers importants .
+
+
+\subsubsection{app}
+\label{\detokenize{organique:app}}
+\sphinxAtStartPar
+\sphinxincludegraphics{{dossier_api_caiman_app}.png}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Controllers}
+
+\sphinxAtStartPar
+Ce dossier contient les différents controllers de l’API.
+
+\sphinxAtStartPar
+\sphinxstylestrong{DataAccessObject}
+
+\sphinxAtStartPar
+Ce dossier contient les différents fichiers servant à exécuter des requêtes à la base de données.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Models}
+
+\sphinxAtStartPar
+Ce dossier contient les modèles utilisés par l’API.
+
+\sphinxAtStartPar
+\sphinxstylestrong{System}
+
+\sphinxAtStartPar
+Ce dossier contient des fichiers servant à se connecter à la base de données.
+
+
+\subsubsection{public}
+\label{\detokenize{organique:public}}
+\sphinxAtStartPar
+Je ne vais pas développer davantage sur le contenu du dossier, en sachant que le détail des différents endpoint est disponible dans la documentation. Néaumoins, ce dossier comporte les points d’accès de l’API.
+
+
+\section{Description technique: Site web}
+\label{\detokenize{organique:description-technique-site-web}}
+
+\subsection{Création de compte}
+\label{\detokenize{organique:creation-de-compte}}
+\sphinxAtStartPar
+Caiman propose aux utilisateurs de se créer un compte.Se compte est commun au site internet et à l’application. Pour pouvoir se créer un compte, il faut renseigner plusieurs champs.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+un nom d’utilisateur
+
+\item {} 
+\sphinxAtStartPar
+un mail
+
+\item {} 
+\sphinxAtStartPar
+un mot de passe
+
+\item {} 
+\sphinxAtStartPar
+un validation du mot de passe
+
+\end{itemize}
+
+\sphinxAtStartPar
+Dans l’état actuel de l’application, l’émail n’est pas utilisé.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{    // check if email alredy used}
+\PYG{x}{    \PYGZdl{}sqlrequestEmail = \PYGZdq{}SELECT * FROM user WHERE email = :search\PYGZus{}email \PYGZdq{};}
+\PYG{x}{    \PYGZdl{}this\PYGZhy{}\PYGZgt{}psCheckEmail = \PYGZdl{}this\PYGZhy{}\PYGZgt{}dbh\PYGZhy{}\PYGZgt{}prepare(\PYGZdl{}sqlrequestEmail);}
+\PYG{x}{    \PYGZdl{}this\PYGZhy{}\PYGZgt{}psCheckEmail\PYGZhy{}\PYGZgt{}setFetchMode(PDO::FETCH\PYGZus{}ASSOC);}
+
+\PYG{x}{    // check if username alredy used}
+\PYG{x}{    \PYGZdl{}sqlRequestUsername = \PYGZdq{}SELECT * FROM user WHERE username = :search\PYGZus{}username \PYGZdq{};}
+\PYG{x}{    \PYGZdl{}this\PYGZhy{}\PYGZgt{}psCheckUsername = \PYGZdl{}this\PYGZhy{}\PYGZgt{}dbh\PYGZhy{}\PYGZgt{}prepare(\PYGZdl{}sqlRequestUsername);}
+\PYG{x}{    \PYGZdl{}this\PYGZhy{}\PYGZgt{}psCheckUsername\PYGZhy{}\PYGZgt{}setFetchMode(PDO::FETCH\PYGZus{}ASSOC);}
+
+\PYG{x}{    \PYGZdl{}sqlInsert = \PYGZdq{}INSERT INTO user  (username, password, email, salt,apitocken)}
+\PYG{x}{    }
+\PYG{x}{    VALUES (:insert\PYGZus{}username, :insert\PYGZus{}password, :insert\PYGZus{}email, :insert\PYGZus{}salt, :insert\PYGZus{}apiTocken)\PYGZdq{};}
+\PYG{x}{    \PYGZdl{}this\PYGZhy{}\PYGZgt{}psInsert = \PYGZdl{}this\PYGZhy{}\PYGZgt{}dbh\PYGZhy{}\PYGZgt{}prepare(\PYGZdl{}sqlInsert);}
+\PYG{x}{    \PYGZdl{}this\PYGZhy{}\PYGZgt{}psInsert\PYGZhy{}\PYGZgt{}setFetchMode(PDO::FETCH\PYGZus{}ASSOC);}
+\end{sphinxVerbatim}
+
+
+\subsection{Connexion}
+\label{\detokenize{organique:connexion}}
+\sphinxAtStartPar
+Pour se connecter au site web de caiman, il faut renseigner son nom d’utilisateur et son mot de passe.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{ \PYGZdl{}this\PYGZhy{}\PYGZgt{}psLogin\PYGZhy{}\PYGZgt{}execute(array(\PYGZsq{}:search\PYGZus{}username\PYGZsq{} =\PYGZgt{} \PYGZdl{}this\PYGZhy{}\PYGZgt{}search\PYGZus{}username));}
+\PYG{x}{            \PYGZdl{}result = \PYGZdl{}this\PYGZhy{}\PYGZgt{}psLogin\PYGZhy{}\PYGZgt{}fetchAll();}
+\PYG{x}{            if (\PYGZdl{}result != null) \PYGZob{}}
+\PYG{x}{                if (md5(\PYGZdl{}result[0][\PYGZdq{}salt\PYGZdq{}].\PYGZdl{}password\PYGZus{}verify) == \PYGZdl{}result[0][\PYGZdq{}password\PYGZdq{}]  ) \PYGZob{}}
+\PYG{x}{                    \PYGZdl{}returnArray = \PYGZdl{}result;}
+\PYG{x}{                    \PYGZdl{}\PYGZus{}SESSION[\PYGZsq{}error\PYGZsq{}] = \PYGZdq{}Welcome back: \PYGZdq{}. \PYGZdl{}result[0][\PYGZsq{}username\PYGZsq{}];}
+\PYG{x}{                \PYGZcb{}else}
+\PYG{x}{                \PYGZob{}}
+\PYG{x}{                    \PYGZdl{}\PYGZus{}SESSION[\PYGZsq{}error\PYGZsq{}] = \PYGZdq{}Invalid log in\PYGZdq{};}
+\PYG{x}{                \PYGZcb{}}
+\PYG{x}{            \PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Fonctionnalité disponible une fois connecté}
+\label{\detokenize{organique:fonctionnalite-disponible-une-fois-connecte}}
+\sphinxAtStartPar
+Quand un utilisateur se connecte à l’application, il a accès à de nouvelles fonctionnalités. L’utilisateur a maintenant la possibilité de modifier son mot de passe, ajouter/supprimer des jeux de ses favoris et de modifier la visibilité de son profil (si le profil est visible, il sera affiché dans la liste des utilisateurs).
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{public function updatePassword(string \PYGZdl{}newPassword, string \PYGZdl{}newPasswordRepeat, string \PYGZdl{}oldPassword)}
+\PYG{x}{    \PYGZob{}}
+\PYG{x}{        \PYGZdl{}dbh = new PDO(\PYGZsq{}mysql:host=\PYGZsq{} . HOST . \PYGZsq{};dbname=\PYGZsq{} . DBNAME, USER, PASSWORD, array(}
+\PYG{x}{            PDO::MYSQL\PYGZus{}ATTR\PYGZus{}INIT\PYGZus{}COMMAND =\PYGZgt{} \PYGZdq{}SET NAMES utf8\PYGZdq{},}
+\PYG{x}{            PDO::ATTR\PYGZus{}PERSISTENT =\PYGZgt{} true}
+\PYG{x}{        ));}
+
+\PYG{x}{        \PYGZdl{}hasBeenUpdated = 1;}
+\PYG{x}{        if (md5(\PYGZdl{}\PYGZus{}SESSION[\PYGZsq{}user\PYGZsq{}]\PYGZhy{}\PYGZgt{}salt.\PYGZdl{}oldPassword) == \PYGZdl{}this\PYGZhy{}\PYGZgt{}getUserPassword()) \PYGZob{}}
+
+\PYG{x}{            if (\PYGZdl{}newPasswordRepeat == \PYGZdl{}newPassword) \PYGZob{}}
+\PYG{x}{                try \PYGZob{}}
+\PYG{x}{                    \PYGZdl{}salt = rand(1,10000);}
+\PYG{x}{                    \PYGZdl{}sqlUpdatePassword = \PYGZdq{}UPDATE user  SET password = :update\PYGZus{}password, salt = :update\PYGZus{}salt WHERE id = :id\PYGZus{}user\PYGZdq{};}
+\PYG{x}{                    \PYGZdl{}psUpdatePassword = \PYGZdl{}dbh\PYGZhy{}\PYGZgt{}prepare(\PYGZdl{}sqlUpdatePassword);}
+\PYG{x}{                    \PYGZdl{}psUpdatePassword\PYGZhy{}\PYGZgt{}execute(array(\PYGZsq{}:update\PYGZus{}password\PYGZsq{} =\PYGZgt{} md5(\PYGZdl{}salt.\PYGZdl{}newPassword), \PYGZsq{}:id\PYGZus{}user\PYGZsq{} =\PYGZgt{} \PYGZdl{}this\PYGZhy{}\PYGZgt{}idUser, \PYGZsq{}:update\PYGZus{}salt\PYGZsq{} =\PYGZgt{} \PYGZdl{}salt));}
+
+\PYG{x}{                    \PYGZdl{}hasBeenUpdated = 0;}
+\PYG{x}{                \PYGZcb{} catch (PDOException \PYGZdl{}e) \PYGZob{}}
+\PYG{x}{                    print \PYGZdq{}Erreur !: \PYGZdq{} . \PYGZdl{}e\PYGZhy{}\PYGZgt{}getMessage() . \PYGZdq{}}\PYG{x}{\PYGZlt{}}\PYG{x}{br\PYGZgt{}\PYGZdq{};}
+\PYG{x}{                    die();}
+\PYG{x}{                \PYGZcb{}}
+\PYG{x}{            \PYGZcb{} else \PYGZob{}}
+\PYG{x}{                \PYGZdl{}hasBeenUpdated = 2;}
+\PYG{x}{            \PYGZcb{}}
+\PYG{x}{        \PYGZcb{} else \PYGZob{}}
+\PYG{x}{            \PYGZdl{}hasBeenUpdated = 4;}
+\PYG{x}{        \PYGZcb{}}
+
+\PYG{x}{        return \PYGZdl{}hasBeenUpdated;}
+\PYG{x}{    \PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Ajout de jeu}
+\label{\detokenize{organique:ajout-de-jeu}}
+\sphinxAtStartPar
+L’ajout de jeu ne peut se faire que par le site et seulement par les administrateurs du site.
+
+\sphinxAtStartPar
+Pour pouvoir ajouter un jeu, il faut au préalable avoir sur le disque dur de l’administrateur un fichier .iso du jeu, il faut aussi envoyer une image. Cette image sera affichée sur le site web et dans l’application Caiman.
+
+\sphinxAtStartPar
+Pour pouvoir envoyer le formulaire, il faut remplir les champs suivants:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+nom du jeu
+
+\item {} 
+\sphinxAtStartPar
+description
+
+\item {} 
+\sphinxAtStartPar
+nom de l’image(le nom doit respecter un certain format)
+
+\item {} 
+\sphinxAtStartPar
+le fichier de l’image
+
+\item {} 
+\sphinxAtStartPar
+la console sur lequel le jeu tourne
+
+\item {} 
+\sphinxAtStartPar
+le nom du fichier du jeu(le nom doit respecter un certain format)
+
+\item {} 
+\sphinxAtStartPar
+le fichier du jeu
+
+\end{itemize}
+
+\sphinxAtStartPar
+Le serveur est configuré pour recevoir des fichiers jusqu’à 8GB. Donc pour les fichiers de Gamecube qui ne peuvent faire que 1.4GB et les fichiers de Playstation 2 qui peuvent faire jusqu’à 7 GB, il n’y a pas de problèmes.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{public function uploadGame(\PYGZdl{}gameFileName, \PYGZdl{}consoleId)}
+\PYG{x}{    \PYGZob{}}
+\PYG{x}{        \PYGZdl{}uploadIsValid = false;}
+\PYG{x}{        \PYGZdl{}target\PYGZus{}dir = \PYGZdq{}../games/\PYGZdq{} . \PYGZdl{}this\PYGZhy{}\PYGZgt{}getConsoleFolderName(\PYGZdl{}consoleId) . \PYGZdq{}/\PYGZdq{};}
+
+\PYG{x}{        \PYGZdl{}target\PYGZus{}file =  basename(\PYGZdl{}\PYGZus{}FILES[\PYGZdq{}fileGame\PYGZdq{}][\PYGZdq{}name\PYGZdq{}]);}
+\PYG{x}{        \PYGZdl{}uploadOk = 1;}
+\PYG{x}{        \PYGZdl{}fileType = strtolower(pathinfo(\PYGZdl{}target\PYGZus{}file, PATHINFO\PYGZus{}EXTENSION));}
+
+\PYG{x}{        //rename file}
+\PYG{x}{        \PYGZdl{}newfilename = \PYGZdl{}gameFileName ;}
+
+
+\PYG{x}{        // Check if file already exists}
+\PYG{x}{        if (file\PYGZus{}exists(\PYGZdl{}target\PYGZus{}file)) \PYGZob{}}
+\PYG{x}{            echo \PYGZdq{}Sorry, file already exists.\PYGZdq{};}
+\PYG{x}{            \PYGZdl{}uploadOk = 0;}
+\PYG{x}{        \PYGZcb{}}
+\PYG{x}{        if (\PYGZdl{}uploadOk == 0) \PYGZob{}}
+\PYG{x}{            echo \PYGZdq{}Sorry, your file was not uploaded.\PYGZdq{};}
+\PYG{x}{            // if everything is ok, try to upload file}
+\PYG{x}{        \PYGZcb{} else \PYGZob{}}
+\PYG{x}{            if (move\PYGZus{}uploaded\PYGZus{}file(\PYGZdl{}\PYGZus{}FILES[\PYGZdq{}fileGame\PYGZdq{}][\PYGZdq{}tmp\PYGZus{}name\PYGZdq{}], \PYGZdl{}target\PYGZus{}dir . \PYGZdl{}newfilename)) \PYGZob{}}
+\PYG{x}{                \PYGZdl{}uploadIsValid = true;}
+\PYG{x}{            \PYGZcb{} else \PYGZob{}}
+\PYG{x}{                //Sorry, there was an error uploading your file}
+\PYG{x}{            \PYGZcb{}}
+\PYG{x}{        \PYGZcb{}}
+\PYG{x}{        return \PYGZdl{}uploadIsValid;}
+\PYG{x}{    \PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Ajout / suppression de catégories au jeux}
+\label{\detokenize{organique:ajout-suppression-de-categories-au-jeux}}
+\sphinxAtStartPar
+Chaque jeu peut appartenir à une ou plusieurs catégories. Seuls les administrateurs ont le droit d’ajouter des catégories aux jeux.
+
+\sphinxAtStartPar
+Pour pouvoir modifier les catégories d’un jeu, il faut qu’un administrateur aille sur la page du jeu qui doit être modifiée.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{public function addCategorieToGame(int \PYGZdl{}idGame, int \PYGZdl{}idCategorie)}
+\PYG{x}{    \PYGZob{}}
+\PYG{x}{        \PYGZdl{}result = null;}
+\PYG{x}{        try \PYGZob{}}
+\PYG{x}{            \PYGZdl{}this\PYGZhy{}\PYGZgt{}psCheckIfGameHasCategorie\PYGZhy{}\PYGZgt{}execute(array(\PYGZsq{}:insert\PYGZus{}idCategorie\PYGZsq{} =\PYGZgt{} \PYGZdl{}idCategorie, \PYGZsq{}:insert\PYGZus{}idGame\PYGZsq{} =\PYGZgt{} \PYGZdl{}idGame));}
+\PYG{x}{            \PYGZdl{}result = \PYGZdl{}this\PYGZhy{}\PYGZgt{}psCheckIfGameHasCategorie\PYGZhy{}\PYGZgt{}fetchAll();}
+\PYG{x}{        \PYGZcb{} catch (PDOException \PYGZdl{}e) \PYGZob{}}
+\PYG{x}{            print \PYGZdq{}Erreur !: \PYGZdq{} . \PYGZdl{}e\PYGZhy{}\PYGZgt{}getMessage() . \PYGZdq{}}\PYG{x}{\PYGZlt{}}\PYG{x}{br\PYGZgt{}\PYGZdq{};}
+\PYG{x}{            die();}
+\PYG{x}{        \PYGZcb{}}
+\PYG{x}{        if (\PYGZdl{}result == null) \PYGZob{}}
+\PYG{x}{            try \PYGZob{}}
+\PYG{x}{                \PYGZdl{}this\PYGZhy{}\PYGZgt{}psAddCategorieToGame\PYGZhy{}\PYGZgt{}execute(array(\PYGZsq{}:insert\PYGZus{}idCategorie\PYGZsq{} =\PYGZgt{} \PYGZdl{}idCategorie, \PYGZsq{}:insert\PYGZus{}idGame\PYGZsq{} =\PYGZgt{} \PYGZdl{}idGame));}
+\PYG{x}{            \PYGZcb{} catch (PDOException \PYGZdl{}e) \PYGZob{}}
+\PYG{x}{                print \PYGZdq{}Erreur !: \PYGZdq{} . \PYGZdl{}e\PYGZhy{}\PYGZgt{}getMessage() . \PYGZdq{}}\PYG{x}{\PYGZlt{}}\PYG{x}{br\PYGZgt{}\PYGZdq{};}
+\PYG{x}{                die();}
+\PYG{x}{            \PYGZcb{}}
+\PYG{x}{        \PYGZcb{}}
+\PYG{x}{    \PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Ajout de catégories}
+\label{\detokenize{organique:ajout-de-categories}}
+\sphinxAtStartPar
+La liste des catégories est définie par les administrateurs, ils ont la possibilité d’en ajouter depuis le menu d’administration. Pour ajouter une catégorie, il suffit de spécifier le nom que va porter la nouvelle catégorie.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{public function addCategorie(string \PYGZdl{}categorieName)}
+\PYG{x}{    \PYGZob{}}
+\PYG{x}{        try \PYGZob{}}
+\PYG{x}{            \PYGZdl{}this\PYGZhy{}\PYGZgt{}psAddCategorie\PYGZhy{}\PYGZgt{}execute(array(\PYGZsq{}:categorie\PYGZus{}name\PYGZsq{} =\PYGZgt{} \PYGZdl{}categorieName));}
+\PYG{x}{            \PYGZdl{}result = \PYGZdl{}this\PYGZhy{}\PYGZgt{}psAddCategorie\PYGZhy{}\PYGZgt{}fetchAll();}
+\PYG{x}{        \PYGZcb{} catch (PDOException \PYGZdl{}e) \PYGZob{}}
+\PYG{x}{            print \PYGZdq{}Erreur !: \PYGZdq{} . \PYGZdl{}e\PYGZhy{}\PYGZgt{}getMessage() . \PYGZdq{}}\PYG{x}{\PYGZlt{}}\PYG{x}{br\PYGZgt{}\PYGZdq{};}
+\PYG{x}{            die();}
+\PYG{x}{        \PYGZcb{}}
+\PYG{x}{        return \PYGZdl{}result;}
+\PYG{x}{    \PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Téléchargement de Caiman}
+\label{\detokenize{organique:telechargement-de-caiman}}
+\sphinxAtStartPar
+Le téléchargement de Caiman se fait sous forme de fichier .zip. Pour pouvoir télécharger l’application, il faut être authentifié. Actuellement, pour pouvoir modifier le fichier caiman.zip que l’utilisateur télécharge, il faut passer par le FTP. Le site web ne permet pas de le mettre à jour.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{public function downloadCaiman()}
+\PYG{x}{    \PYGZob{}}
+
+\PYG{x}{        \PYGZdl{}zipFile = \PYGZdq{}../release/Caiman.zip\PYGZdq{};}
+
+\PYG{x}{        \PYGZdl{}file\PYGZus{}name = basename(\PYGZdl{}zipFile);}
+
+\PYG{x}{        header(\PYGZdq{}Content\PYGZhy{}Type: application/zip\PYGZdq{});}
+\PYG{x}{        header(\PYGZdq{}Content\PYGZhy{}Disposition: attachment; filename=\PYGZdl{}file\PYGZus{}name\PYGZdq{});}
+\PYG{x}{        header(\PYGZdq{}Content\PYGZhy{}Length: \PYGZdq{} . filesize(\PYGZdl{}zipFile));}
+
+\PYG{x}{        readfile(\PYGZdl{}zipFile);}
+\PYG{x}{        exit;}
+\PYG{x}{    \PYGZcb{}}
+\PYG{x}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Modification des jeux}
+\label{\detokenize{organique:modification-des-jeux}}
+\sphinxAtStartPar
+Actuellement, il est possible de modifier le nom et la description d’un jeu.
+
+
+\section{Description technique: API}
+\label{\detokenize{organique:description-technique-api}}
+
+\subsection{Téléchargement de jeu}
+\label{\detokenize{organique:telechargement-de-jeu}}
+\sphinxAtStartPar
+Les jeux sont sous forme de fichier .iso dans le dossier “caimanWeb\textbackslash{}games\textbackslash{}”.Par contre, ce n’est pas tout pour simplifier, il faut bien séparer les jeux des différentes consoles. J’ai décidé de créer des dossiers par émulateurs. C’est pourquoi il va y avoir des sous\sphinxhyphen{}dossiers “GamecubeWii\textbackslash{}” et “Playstation2\textbackslash{}”. Chaque jeu est stocké avec le nom que l’administrateur lui aura donné quand il l’a ajouté depuis le site web.
+
+\sphinxAtStartPar
+Le chemin sur le serveur web pour accéder au fichier des jeux n’est pas public. Par conséquent, il a donc fallu que je trouve une solution pour que n’importe qui ne puisse pas télécharger un jeu. Pour ce faire, j’ai créé une route dans mon API qui prend en paramètres l’id du jeu et l’apiKey de l’utilisateur qui veut télécharger le jeu.
+
+\sphinxAtStartPar
+La fonction getURL(idGame,apiKey) permet de recevoir le lien de téléchargement pour un jeu. Avant de valider le téléchargement, l’API vérifie que l’apiKey qui lui a été donné est valide. Pour savoir si l’apiKey est valide, j’utilise la fonction DAOUser\sphinxhyphen{}>Find(apikey) qui me retourne l’utilisateur en lien avec cette apiKey. Si l’apiKey est valide, je vais donc devoir reconstituer le chemin vers le dossier ou est le jeu stocké.
+
+\sphinxAtStartPar
+Pour connaître le nom du dossier où se trouve le fichier, il faut savoir de quelle console est le jeu. Pour connaître cette information, je dois rechercher un jeu grâce à son id. Quand j’ai l’id de la console en lien avec le jeu, je dois encore faire une recherche pour savoir quel est son nom de dossier dans la base de données. Alors j’utilise la fonction DAOConsole\sphinxhyphen{}>find(idConsole) pour connaître son nom de dossier.
+
+\sphinxAtStartPar
+Désormais que nous avons le dossier dans lequel se trouve le fichier du jeu, il faut maintenant connaître son nom de fichier. Pour cela, j’utilise la fonction DAOFile\sphinxhyphen{}>find(file). l’id du fichier est connu grâce à l’appel la fonction DAOGame\sphinxhyphen{}>find().
+
+\sphinxAtStartPar
+Â présent que nous avons toutes les parties du chemin, il est possible de construire le chemin complet en concaténant toutes les parties. Ensuite pour renvoyer le jeu à l’utilisateur, j’utilise les fonctions fopen(path,’rb’) et fpassthru(fopen).
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{public function getURL(int \PYGZdl{}idGame, string \PYGZdl{}apikey)}
+\PYG{x}{    \PYGZob{}}
+
+\PYG{x}{        \PYGZdl{}user = \PYGZdl{}this\PYGZhy{}\PYGZgt{}DAOUser\PYGZhy{}\PYGZgt{}find(\PYGZdl{}apikey);}
+\PYG{x}{        \PYGZdl{}fullpath = \PYGZdq{}\PYGZdq{};}
+\PYG{x}{        if (is\PYGZus{}null(\PYGZdl{}user)) \PYGZob{}}
+\PYG{x}{            return ResponseController::notFoundResponse();}
+\PYG{x}{        \PYGZcb{} else \PYGZob{}}
+\PYG{x}{            \PYGZdl{}game = \PYGZdl{}this\PYGZhy{}\PYGZgt{}DAOGame\PYGZhy{}\PYGZgt{}find(\PYGZdl{}idGame);}
+\PYG{x}{            \PYGZdl{}file = \PYGZdl{}this\PYGZhy{}\PYGZgt{}DAOFile\PYGZhy{}\PYGZgt{}find(\PYGZdl{}game\PYGZhy{}\PYGZgt{}idFile);}
+\PYG{x}{            \PYGZdl{}console = \PYGZdl{}this\PYGZhy{}\PYGZgt{}DAOConsole\PYGZhy{}\PYGZgt{}find(\PYGZdl{}game\PYGZhy{}\PYGZgt{}idConsole);}
+\PYG{x}{            \PYGZdl{}fullpath = \PYGZdq{}../../../../caimanWeb/games/\PYGZdq{} . \PYGZdl{}console\PYGZhy{}\PYGZgt{}folderName . \PYGZdq{}/\PYGZdq{} . \PYGZdl{}file\PYGZhy{}\PYGZgt{}filename;}
+
+
+\PYG{x}{            if (file\PYGZus{}exists(\PYGZdl{}fullpath)) \PYGZob{}}
+\PYG{x}{                header(\PYGZsq{}Content\PYGZhy{}Description: File Transfer\PYGZsq{});}
+\PYG{x}{                header(\PYGZsq{}Content\PYGZhy{}Type: application/octet\PYGZhy{}stream\PYGZsq{});}
+\PYG{x}{                header(\PYGZsq{}Content\PYGZhy{}Disposition: attachment; filename=\PYGZsq{} . basename(\PYGZdl{}fullpath));}
+\PYG{x}{                header(\PYGZsq{}Content\PYGZhy{}Transfer\PYGZhy{}Encoding: binary\PYGZsq{});}
+\PYG{x}{                header(\PYGZsq{}Expires: 0\PYGZsq{});}
+\PYG{x}{                header(\PYGZsq{}Cache\PYGZhy{}Control: must\PYGZhy{}revalidate, post\PYGZhy{}check=0, pre\PYGZhy{}check=0\PYGZsq{});}
+\PYG{x}{                header(\PYGZsq{}Pragma: public\PYGZsq{});}
+\PYG{x}{                header(\PYGZsq{}Content\PYGZhy{}Length: \PYGZsq{} . filesize(\PYGZdl{}fullpath));}
+\PYG{x}{                \PYGZdl{}fp = fopen(\PYGZdl{}fullpath, \PYGZsq{}rb\PYGZsq{});}
+\PYG{x}{                fpassthru(\PYGZdl{}fp);}
+\PYG{x}{                exit;}
+\PYG{x}{            \PYGZcb{}}
+\PYG{x}{        \PYGZcb{}}
+
+\PYG{x}{        return ResponseController::successfulRequest(\PYGZdl{}fullpath);}
+\PYG{x}{    \PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Téléchargement de sauvegarde}
+\label{\detokenize{organique:telechargement-de-sauvegarde}}
+\sphinxAtStartPar
+Les sauvegardes des utilisateurs sont stockées sous forme de fichiers .zip. L’intérêt d’utiliser des fichiers .zip est la taille et le fait qu’un fichier puisse contenir toutes les sauvegardes instantanément. Les fichiers de sauvegardes se trouvent dans le dossier “\textbackslash{}CaimanWeb\textbackslash{}saves\textbackslash{}”.
+
+\sphinxAtStartPar
+Le nom attribué au fichier est décidé au premier envoie de sauvegardes, le nom est le md5 du microtime de l’heure d’envoie.
+
+\sphinxAtStartPar
+Pour recevoir le fichier, l’API possède une route qui prend les paramètres suivants:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+idEmulator
+
+\item {} 
+\sphinxAtStartPar
+iduser
+
+\item {} 
+\sphinxAtStartPar
+apikey
+
+\end{itemize}
+
+\sphinxAtStartPar
+Cette route va envoyer le fichier demandé. Comme pour les fichiers des jeux, les sauvegardes sont dans un dossier privé du serveur. La fonction getURLsave( idEmulator, Iduser,apikey) se charge de renvoyer les fichiers à l’utilisateur. Pour faire ça il faut connaître le nom du fichier qui doit être envoyé. Il faut donc utiliser la fonction DAOFileSave\sphinxhyphen{}>find( idemulator, idUser) pour connaître les informations du fichier.
+
+\sphinxAtStartPar
+Désormais que le nom du fichier est connu, il est possible de retourner le fichier grâce à la fonction fopen(path,’rb’) et fpassthru(fopen) pour renvoyer le fichier à l’utilisateur.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{public function getURLSave(int \PYGZdl{}idEmulator, int \PYGZdl{}idUser, string \PYGZdl{}apikey)}
+\PYG{x}{    \PYGZob{}}
+
+\PYG{x}{        \PYGZdl{}user = \PYGZdl{}this\PYGZhy{}\PYGZgt{}DAOUser\PYGZhy{}\PYGZgt{}find(\PYGZdl{}apikey);}
+\PYG{x}{        \PYGZdl{}fullpath = \PYGZdq{}\PYGZdq{};}
+\PYG{x}{        if (is\PYGZus{}null(\PYGZdl{}user)) \PYGZob{}}
+\PYG{x}{            return ResponseController::notFoundResponse();}
+\PYG{x}{        \PYGZcb{} else \PYGZob{}}
+\PYG{x}{            \PYGZdl{}fileSave = \PYGZdl{}this\PYGZhy{}\PYGZgt{}DAOFileSave\PYGZhy{}\PYGZgt{}find(\PYGZdl{}idEmulator, \PYGZdl{}idUser);}
+
+\PYG{x}{            if (is\PYGZus{}null(\PYGZdl{}fileSave)) \PYGZob{}}
+\PYG{x}{                return ResponseController::notFoundResponse();}
+\PYG{x}{                exit;}
+\PYG{x}{            \PYGZcb{}}
+\PYG{x}{            \PYGZdl{}file = \PYGZdl{}this\PYGZhy{}\PYGZgt{}DAOFile\PYGZhy{}\PYGZgt{}find(\PYGZdl{}fileSave\PYGZhy{}\PYGZgt{}idFile);}
+\PYG{x}{            \PYGZdl{}fullpath = \PYGZdq{}../../../../caimanWeb/saves/\PYGZdq{} . \PYGZdl{}file\PYGZhy{}\PYGZgt{}filename;}
+
+
+\PYG{x}{            if (file\PYGZus{}exists(\PYGZdl{}fullpath)) \PYGZob{}}
+\PYG{x}{                header(\PYGZsq{}Content\PYGZhy{}Description: File Transfer\PYGZsq{});}
+\PYG{x}{                header(\PYGZsq{}Content\PYGZhy{}Type: application/zip\PYGZsq{});}
+\PYG{x}{                header(\PYGZsq{}Content\PYGZhy{}Disposition: attachment; filename=\PYGZsq{} . basename(\PYGZdl{}fullpath));}
+\PYG{x}{                header(\PYGZsq{}Content\PYGZhy{}Transfer\PYGZhy{}Encoding: binary\PYGZsq{});}
+\PYG{x}{                header(\PYGZsq{}Expires: 0\PYGZsq{});}
+\PYG{x}{                header(\PYGZsq{}Cache\PYGZhy{}Control: must\PYGZhy{}revalidate, post\PYGZhy{}check=0, pre\PYGZhy{}check=0\PYGZsq{});}
+\PYG{x}{                header(\PYGZsq{}Pragma: public\PYGZsq{});}
+\PYG{x}{                header(\PYGZsq{}Content\PYGZhy{}Length: \PYGZsq{} . filesize(\PYGZdl{}fullpath));}
+\PYG{x}{                \PYGZdl{}fp = fopen(\PYGZdl{}fullpath, \PYGZsq{}rb\PYGZsq{});}
+\PYG{x}{                fpassthru(\PYGZdl{}fp);}
+\PYG{x}{                exit;}
+\PYG{x}{            \PYGZcb{}}
+\PYG{x}{        \PYGZcb{}}
+
+\PYG{x}{        return ResponseController::successfulRequest();}
+\PYG{x}{    \PYGZcb{}}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Dans l’état actuel de l’applicationCaiman, il est impossible de télécharger seulement la sauvegarde d’un seul jeu, la structure des sauvegardes des émulateurs ne laisse pas vraiment le choix.
+
+
+\subsection{Upload de sauvegarde}
+\label{\detokenize{organique:upload-de-sauvegarde}}
+\sphinxAtStartPar
+Pour enregistrer les sauvegardes, il y a une route dans l’API qui prend en paramètres:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+idEmulator
+
+\item {} 
+\sphinxAtStartPar
+iduser
+
+\item {} 
+\sphinxAtStartPar
+apikey
+
+\item {} 
+\sphinxAtStartPar
+file
+
+\end{itemize}
+
+\sphinxAtStartPar
+Les fichiers de sauvegarde concernent un émulateur àchaque fois, donc il faut le spécifier à l’envoi. Il faut aussi spécifier l’utilisateur à qui appartiennent ces sauvegardes, il faut aussi transmettre une apiKey valide et finalement le fichier à envoyer.
+
+\sphinxAtStartPar
+Quand l’API reçoit ces informations, il faut déjà vérifier si l’apiKey reçu est bien valide. Si elle est valide, il faut ensuite vérifier si l’utilisateur a déjà créé une sauvegarde pour cet émulateur. Pour effectuer cette vérification, il faut utiliser la fonction DAOFileSave\sphinxhyphen{}>find(idEmulator,idUser) qui retourne les informations du fichier s’il existe.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{public function AddSave(\PYGZdl{}idEmulator, \PYGZdl{}idUser, \PYGZdl{}apiKey, \PYGZdl{}file)}
+\PYG{x}{    \PYGZob{}}
+
+\PYG{x}{        if (is\PYGZus{}null(\PYGZdl{}idEmulator) || is\PYGZus{}null(\PYGZdl{}idUser) || is\PYGZus{}null(\PYGZdl{}apiKey)) \PYGZob{}}
+\PYG{x}{            return ResponseController::notFoundResponse();}
+\PYG{x}{            exit;}
+\PYG{x}{        \PYGZcb{}}
+\PYG{x}{        \PYGZdl{}user = \PYGZdl{}this\PYGZhy{}\PYGZgt{}DAOUser\PYGZhy{}\PYGZgt{}find(\PYGZdl{}apiKey);}
+
+\PYG{x}{        if (\PYGZdl{}user == null) \PYGZob{}}
+\PYG{x}{            return ResponseController::notFoundResponse();}
+\PYG{x}{            exit;}
+\PYG{x}{        \PYGZcb{}}
+\PYG{x}{        \PYGZdl{}isNewFile = false;}
+\PYG{x}{        \PYGZdl{}newfilename = \PYGZdl{}this\PYGZhy{}\PYGZgt{}DAOFileSave\PYGZhy{}\PYGZgt{}FindFileName(\PYGZdl{}idEmulator, \PYGZdl{}idUser);}
+
+\PYG{x}{        if (\PYGZdl{}newfilename == null) \PYGZob{}}
+\PYG{x}{            \PYGZdl{}newfilename = md5(microtime());}
+\PYG{x}{            \PYGZdl{}newfilename = \PYGZdl{}newfilename . \PYGZdq{}.zip\PYGZdq{};}
+\PYG{x}{            \PYGZdl{}isNewFile = true;}
+\PYG{x}{        \PYGZcb{}}
+\PYG{x}{        \PYGZdl{}target\PYGZus{}dir = \PYGZdq{}../../../../caimanWeb/saves/\PYGZdq{};}
+
+\PYG{x}{        if (move\PYGZus{}uploaded\PYGZus{}file(\PYGZdl{}file, \PYGZdl{}target\PYGZus{}dir . \PYGZdl{}newfilename)) \PYGZob{}}
+\PYG{x}{            if (\PYGZdl{}isNewFile) \PYGZob{}}
+\PYG{x}{                \PYGZdl{}this\PYGZhy{}\PYGZgt{}DAOFileSave\PYGZhy{}\PYGZgt{}AddFileSave(\PYGZdl{}idEmulator, \PYGZdl{}idUser, \PYGZdl{}newfilename);}
+\PYG{x}{            \PYGZcb{}}
+\PYG{x}{        \PYGZcb{} else \PYGZob{}}
+\PYG{x}{            return ResponseController::uploadFailed();}
+\PYG{x}{            exit;}
+\PYG{x}{        \PYGZcb{}}
+
+\PYG{x}{        return ResponseController::successfulRequest();}
+\PYG{x}{    \PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Sauvegarde déjà présente}
+\label{\detokenize{organique:sauvegarde-deja-presente}}
+\sphinxAtStartPar
+Si la sauvegarde d’un émulateur est déjà présente, il faut utiliser la fonction move\_uploaded\_file(file,target\_dir). Tout d’abord il faut connaître le nom du fichier qui est attribué à la sauvegarde. Pour faire cela, il faut appeler la fonction DAOFileSave\sphinxhyphen{}>findFilename(idEmulator,idUser) celle\sphinxhyphen{}ci va renvoyer le nom du fichier.Il suffit maintenant d’écraser le fichier présent sur le serveur par le nouveau.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{    public function findFileName(int \PYGZdl{}idEmulator, int \PYGZdl{}idUser)}
+\PYG{x}{    \PYGZob{}}
+
+\PYG{x}{        \PYGZdl{}statement = \PYGZdq{}}
+\PYG{x}{    SELECT f.filename filesave FROM `filesave` as fs}
+\PYG{x}{                LEFT JOIN file as f}
+\PYG{x}{                ON fs.idFile = f.id}
+\PYG{x}{                WHERE idUser = :ID\PYGZus{}user AND idEmulator = :ID\PYGZus{}emulator;\PYGZdq{};}
+\PYG{x}{        try \PYGZob{}}
+\PYG{x}{            \PYGZdl{}statement = \PYGZdl{}this\PYGZhy{}\PYGZgt{}db\PYGZhy{}\PYGZgt{}prepare(\PYGZdl{}statement);}
+\PYG{x}{            \PYGZdl{}statement\PYGZhy{}\PYGZgt{}bindParam(\PYGZsq{}:ID\PYGZus{}user\PYGZsq{}, \PYGZdl{}idUser, \PYGZbs{}PDO::PARAM\PYGZus{}INT);}
+\PYG{x}{            \PYGZdl{}statement\PYGZhy{}\PYGZgt{}bindParam(\PYGZsq{}:ID\PYGZus{}emulator\PYGZsq{}, \PYGZdl{}idEmulator, \PYGZbs{}PDO::PARAM\PYGZus{}INT);}
+\PYG{x}{            \PYGZdl{}statement\PYGZhy{}\PYGZgt{}execute();}
+
+\PYG{x}{            \PYGZdl{}file = new File();}
+
+\PYG{x}{            if (\PYGZdl{}statement\PYGZhy{}\PYGZgt{}rowCount() == 1) \PYGZob{}}
+\PYG{x}{                \PYGZdl{}result = \PYGZdl{}statement\PYGZhy{}\PYGZgt{}fetch(\PYGZbs{}PDO::FETCH\PYGZus{}ASSOC);}
+\PYG{x}{                \PYGZdl{}file\PYGZhy{}\PYGZgt{}filename = \PYGZdl{}result[\PYGZsq{}filesave\PYGZsq{}];}
+\PYG{x}{            \PYGZcb{}}
+\PYG{x}{            return \PYGZdl{}file\PYGZhy{}\PYGZgt{}filename;}
+\PYG{x}{        \PYGZcb{} catch (\PYGZbs{}PDOException \PYGZdl{}e) \PYGZob{}}
+\PYG{x}{            exit(\PYGZdl{}e\PYGZhy{}\PYGZgt{}getMessage());}
+\PYG{x}{        \PYGZcb{}}
+\PYG{x}{    \PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Sauvegarde pas encore présente}
+\label{\detokenize{organique:sauvegarde-pas-encore-presente}}
+\sphinxAtStartPar
+S’il n’y a aucune sauvegarde pour l’émulateur en question et l’utilisateur en question. Il faut commencer par donner un nom au fichier. Ce nom est constitué du MD5 du microtime() et de l’extension “.zip”. Quand le nom pour le fichier aété créé, il faut uploader le fichier dans le dossier de sauvegarde grâce à la fonction move\_uploaded\_file(file,path).
+
+\sphinxAtStartPar
+Quand l’upload est validé, un ajout de fichier de sauvegarde va se faire grâce à la fonction DAOFileSave\sphinxhyphen{}>AddFileSave(idEmulator,idUser,newfilename). Cette fonction va créer une entrée dans la base de données pour le nouveau fichier.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{public function AddFileSave(\PYGZdl{}idEmulator, \PYGZdl{}idUser, \PYGZdl{}newFileName)}
+\PYG{x}{    \PYGZob{}}
+\PYG{x}{        \PYGZdl{}statementFile = \PYGZdq{}}
+\PYG{x}{        INSERT INTO file}
+\PYG{x}{        (filename, dateUpdate)}
+\PYG{x}{        VALUES}
+\PYG{x}{        (:FILENAME, NOW())\PYGZdq{};}
+\PYG{x}{        try \PYGZob{}}
+\PYG{x}{            \PYGZdl{}statementFile = \PYGZdl{}this\PYGZhy{}\PYGZgt{}db\PYGZhy{}\PYGZgt{}prepare(\PYGZdl{}statementFile);}
+\PYG{x}{            \PYGZdl{}statementFile\PYGZhy{}\PYGZgt{}bindParam(\PYGZsq{}:FILENAME\PYGZsq{}, \PYGZdl{}newFileName, \PYGZbs{}PDO::PARAM\PYGZus{}STR);}
+\PYG{x}{            \PYGZdl{}statementFile\PYGZhy{}\PYGZgt{}execute();}
+\PYG{x}{            //when create file is done}
+\PYG{x}{            \PYGZdl{}statementFileSave = \PYGZdq{}}
+\PYG{x}{            INSERT INTO filesave}
+\PYG{x}{            (idUser, idEmulator,idFile)}
+\PYG{x}{            VALUES}
+\PYG{x}{            (:ID\PYGZus{}user,:ID\PYGZus{}emulator, :ID\PYGZus{}file)\PYGZdq{};}
+\PYG{x}{            try \PYGZob{}}
+\PYG{x}{                \PYGZdl{}statementFileSave = \PYGZdl{}this\PYGZhy{}\PYGZgt{}db\PYGZhy{}\PYGZgt{}prepare(\PYGZdl{}statementFileSave);}
+\PYG{x}{                \PYGZdl{}statementFileSave\PYGZhy{}\PYGZgt{}bindParam(\PYGZsq{}:ID\PYGZus{}user\PYGZsq{}, \PYGZdl{}idUser, \PYGZbs{}PDO::PARAM\PYGZus{}INT);}
+\PYG{x}{                \PYGZdl{}statementFileSave\PYGZhy{}\PYGZgt{}bindParam(\PYGZsq{}:ID\PYGZus{}emulator\PYGZsq{}, \PYGZdl{}idEmulator, \PYGZbs{}PDO::PARAM\PYGZus{}INT);}
+\PYG{x}{                \PYGZdl{}lastInsertId = \PYGZdl{}this\PYGZhy{}\PYGZgt{}db\PYGZhy{}\PYGZgt{}lastInsertId();}
+\PYG{x}{                \PYGZdl{}statementFileSave\PYGZhy{}\PYGZgt{}bindParam(\PYGZsq{}:ID\PYGZus{}file\PYGZsq{}, \PYGZdl{}lastInsertId, \PYGZbs{}PDO::PARAM\PYGZus{}INT);}
+\PYG{x}{                \PYGZdl{}statementFileSave\PYGZhy{}\PYGZgt{}execute();}
+\PYG{x}{            \PYGZcb{} catch (\PYGZbs{}PDOException \PYGZdl{}e) \PYGZob{}}
+\PYG{x}{                exit(\PYGZdl{}e\PYGZhy{}\PYGZgt{}getMessage());}
+\PYG{x}{            \PYGZcb{}}
+\PYG{x}{        \PYGZcb{} catch (\PYGZbs{}PDOException \PYGZdl{}e) \PYGZob{}}
+\PYG{x}{            exit(\PYGZdl{}e\PYGZhy{}\PYGZgt{}getMessage());}
+\PYG{x}{        \PYGZcb{}}
+\PYG{x}{    \PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Mise à jour du caimanToken}
+\label{\detokenize{organique:mise-a-jour-du-caimantoken}}
+\sphinxAtStartPar
+Le caimanToken sert à pouvoir se connecter sans mot de passe à l’application Caiman. Se token doit être changée à chaque fois que l’utilisateur se connecte, que ce soit en se connectant avec un mot de passe ou par le caimanToken justement.
+
+\sphinxAtStartPar
+Pour ce faire, j’ai créé une function DAOUser\sphinxhyphen{}>updateCaimanToken(apiToken) qui sert à modifier le caimanToken d’un utilisateur dans la base de données. Le caimanToken est un md5 du microtime actuel. Par conséquent, il est presque impossible que deux utilisateurs aient le même.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{x}{public function updateCaimanToken(string \PYGZdl{}apitocken)}
+\PYG{x}{    \PYGZob{}}
+\PYG{x}{        \PYGZdl{}statement = \PYGZdq{}}
+\PYG{x}{        UPDATE user}
+\PYG{x}{        SET caimanToken = :CAIMAN\PYGZus{}TOKEN}
+\PYG{x}{        WHERE apitocken = :API\PYGZus{}TOCKEN;\PYGZdq{};}
+
+\PYG{x}{        try \PYGZob{}}
+\PYG{x}{            \PYGZdl{}statement = \PYGZdl{}this\PYGZhy{}\PYGZgt{}db\PYGZhy{}\PYGZgt{}prepare(\PYGZdl{}statement);}
+\PYG{x}{            \PYGZdl{}statement\PYGZhy{}\PYGZgt{}bindParam(\PYGZsq{}:API\PYGZus{}TOCKEN\PYGZsq{}, \PYGZdl{}apitocken);}
+\PYG{x}{            \PYGZdl{}caimanTocken = md5(microtime());}
+\PYG{x}{            \PYGZdl{}statement\PYGZhy{}\PYGZgt{}bindParam(\PYGZsq{}:CAIMAN\PYGZus{}TOKEN\PYGZsq{}, \PYGZdl{}caimanTocken);}
+\PYG{x}{            \PYGZdl{}statement\PYGZhy{}\PYGZgt{}execute();}
+\PYG{x}{        \PYGZcb{} catch (\PYGZbs{}PDOException \PYGZdl{}e) \PYGZob{}}
+\PYG{x}{            exit(\PYGZdl{}e\PYGZhy{}\PYGZgt{}getMessage());}
+\PYG{x}{        \PYGZcb{}}
+\PYG{x}{    \PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\section{Description technique: Application Caiman}
+\label{\detokenize{organique:description-technique-application-caiman}}
+\sphinxAtStartPar
+Diagramme de classe
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{DiagramLogique}.png}
+
+
+\subsection{Création de dossier}
+\label{\detokenize{organique:creation-de-dossier}}
+
+\subsubsection{Structure des dossiers}
+\label{\detokenize{organique:structure-des-dossiers}}
+\sphinxAtStartPar
+Caiman nécessite de créer certains dossiers et fichiers pour pouvoir fonctionner correctement. Ces dossiers se trouvent dans le dossier “\%appdata\%\textbackslash{}Roaming\textbackslash{}Caiman”
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{dossier_appdata_caiman}.png}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Caiman}
+
+\sphinxAtStartPar
+Ce dossier contient les fichiers de configuration graphique, la liste des jeux téléchargés et le dernier CaimanToken reçu.
+
+\sphinxAtStartPar
+\sphinxstylestrong{img}
+
+\sphinxAtStartPar
+Ce dossier contient les différentes images des jeux, ces images sont téléchargées sur le site internet de caiman.
+
+\sphinxAtStartPar
+\sphinxstylestrong{users}
+
+\sphinxAtStartPar
+Ce dossier contient les dossiers personnels de chaque utilisateur de l’application qui s’est connecté sur le pc. Il possède les fichiers de sauvegarde de l’utilisateur en question.
+
+
+\subsubsection{Création des dossiers}
+\label{\detokenize{organique:creation-des-dossiers}}
+\sphinxAtStartPar
+\sphinxstylestrong{Dossier de base}
+
+\sphinxAtStartPar
+Les dossiers pour caiman doivent obligatoirement être créés. Donc au début du lancement de l’application Caiman, il y a toujours une vérification pour savoir si les dossiers sont bien présents. Si c’est le premier lancement de Caiman ou si les dossiers ont été supprimés, ils vont être créés.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{private} \PYG{k}{void} \PYG{n+nf}{CreateAppDataFolder}\PYG{p}{(}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{var} \PYG{n}{appDataPath} \PYG{p}{=} \PYG{n}{Environment}\PYG{p}{.}\PYG{n}{GetFolderPath}\PYG{p}{(}\PYG{n}{Environment}\PYG{p}{.}\PYG{n}{SpecialFolder}\PYG{p}{.}\PYG{n}{ApplicationData}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{var} \PYG{n}{basePath} \PYG{p}{=} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{appDataPath}\PYG{p}{,} \PYG{l+s}{@\PYGZdq{}Caiman\PYGZbs{}\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{var} \PYG{n}{caimanConfigPath} \PYG{p}{=} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{appDataPath}\PYG{p}{,} \PYG{l+s}{@\PYGZdq{}Caiman\PYGZbs{}Caiman\PYGZbs{}\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{var} \PYG{n}{imgPath} \PYG{p}{=} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{appDataPath}\PYG{p}{,} \PYG{l+s}{@\PYGZdq{}Caiman\PYGZbs{}img\PYGZbs{}\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{var} \PYG{n}{gamesPath} \PYG{p}{=} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{appDataPath}\PYG{p}{,} \PYG{l+s}{@\PYGZdq{}Caiman\PYGZbs{}Caiman\PYGZbs{}games.ini\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{var} \PYG{n}{configPath} \PYG{p}{=} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{appDataPath}\PYG{p}{,} \PYG{l+s}{@\PYGZdq{}Caiman\PYGZbs{}Caiman\PYGZbs{}config.ini\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{var} \PYG{n}{loginPath} \PYG{p}{=} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{appDataPath}\PYG{p}{,} \PYG{l+s}{@\PYGZdq{}Caiman\PYGZbs{}Caiman\PYGZbs{}login.ini\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{Directory}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{basePath}\PYG{p}{)}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Directory}\PYG{p}{.}\PYG{n}{CreateDirectory}\PYG{p}{(}\PYG{n}{basePath}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{Directory}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{imgPath}\PYG{p}{)}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Directory}\PYG{p}{.}\PYG{n}{CreateDirectory}\PYG{p}{(}\PYG{n}{imgPath}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{Directory}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{caimanConfigPath}\PYG{p}{)}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Directory}\PYG{p}{.}\PYG{n}{CreateDirectory}\PYG{p}{(}\PYG{n}{caimanConfigPath}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{Directory}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{l+s}{@\PYGZdq{}C:\PYGZbs{}Caiman\PYGZbs{}Playstation2\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Directory}\PYG{p}{.}\PYG{n}{CreateDirectory}\PYG{p}{(}\PYG{l+s}{@\PYGZdq{}C:\PYGZbs{}Caiman\PYGZbs{}Playstation2\PYGZbs{}\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{Directory}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{l+s}{@\PYGZdq{}C:\PYGZbs{}Caiman\PYGZbs{}GamecubeWii\PYGZbs{}\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Directory}\PYG{p}{.}\PYG{n}{CreateDirectory}\PYG{p}{(}\PYG{l+s}{@\PYGZdq{}C:\PYGZbs{}Caiman\PYGZbs{}GamecubeWii\PYGZbs{}\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{File}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{loginPath}\PYG{p}{)}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{using} \PYG{p}{(}\PYG{n}{StreamWriter} \PYG{n}{sw} \PYG{p}{=} \PYG{n}{File}\PYG{p}{.}\PYG{n}{CreateText}\PYG{p}{(}\PYG{n}{loginPath}\PYG{p}{)}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{sw}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}token = 0\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{loginFile} \PYG{p}{=} \PYG{k}{new} \PYG{n}{ConfigFileEditor}\PYG{p}{(}\PYG{n}{caimanConfigPath}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}login.ini\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{File}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{gamesPath}\PYG{p}{)}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{using} \PYG{p}{(}\PYG{n}{StreamWriter} \PYG{n}{sw} \PYG{p}{=} \PYG{n}{File}\PYG{p}{.}\PYG{n}{CreateText}\PYG{p}{(}\PYG{n}{gamesPath}\PYG{p}{)}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{configFile} \PYG{p}{=} \PYG{k}{new} \PYG{n}{ConfigFileEditor}\PYG{p}{(}\PYG{n}{caimanConfigPath}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}config.ini\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{File}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{configPath}\PYG{p}{)}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{c+c1}{//if the file do not exist create it with with the default emulators value}
+                \PYG{k}{using} \PYG{p}{(}\PYG{n}{StreamWriter} \PYG{n}{sw} \PYG{p}{=} \PYG{n}{File}\PYG{p}{.}\PYG{n}{CreateText}\PYG{p}{(}\PYG{n}{configPath}\PYG{p}{)}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{sw}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}configuration = 1080\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{sw}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}fullscreen = true\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{sw}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}definition = 3\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{sw}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}formatSeizeNeuvieme = true\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{sw}\PYG{p}{.}\PYG{n}{WriteLine}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}filtrageAnioscopique = 3\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{configFile} \PYG{p}{=} \PYG{k}{new} \PYG{n}{ConfigFileEditor}\PYG{p}{(}\PYG{n}{caimanConfigPath}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}config.ini\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+
+            \PYG{p}{\PYGZcb{}}
+
+
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Dossier des utilisateurs}
+
+\sphinxAtStartPar
+La création des dossiers des utilisateurs pour gérer correctement les sauvegardes. Ces dossiers sont créés à la première connexion de l’utilisateur.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+ \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{CreateUserFolder}\PYG{p}{(}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{var} \PYG{n}{appDataPath} \PYG{p}{=} \PYG{n}{Environment}\PYG{p}{.}\PYG{n}{GetFolderPath}\PYG{p}{(}\PYG{n}{Environment}\PYG{p}{.}\PYG{n}{SpecialFolder}\PYG{p}{.}\PYG{n}{ApplicationData}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{var} \PYG{n}{userPath} \PYG{p}{=} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{appDataPath}\PYG{p}{,} \PYG{l+s}{@\PYGZdq{}Caiman\PYGZbs{}users\PYGZbs{}\PYGZdq{}} \PYG{p}{+} \PYG{n}{username} \PYG{p}{+} \PYG{l+s}{@\PYGZdq{}\PYGZbs{}\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{var} \PYG{n}{savePath} \PYG{p}{=} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{userPath}\PYG{p}{,} \PYG{l+s}{@\PYGZdq{}Save\PYGZbs{}\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{var} \PYG{n}{savePathPlaystation} \PYG{p}{=} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{savePath}\PYG{p}{,} \PYG{l+s}{@\PYGZdq{}Playstation2\PYGZbs{}\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{var} \PYG{n}{savePathGamecubeWii} \PYG{p}{=} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{savePath}\PYG{p}{,} \PYG{l+s}{@\PYGZdq{}GamecubeWii\PYGZbs{}\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{Directory}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{userPath}\PYG{p}{)}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Directory}\PYG{p}{.}\PYG{n}{CreateDirectory}\PYG{p}{(}\PYG{n}{userPath}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{Directory}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{savePath}\PYG{p}{)}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Directory}\PYG{p}{.}\PYG{n}{CreateDirectory}\PYG{p}{(}\PYG{n}{savePath}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{Directory}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{savePathPlaystation}\PYG{p}{)}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Directory}\PYG{p}{.}\PYG{n}{CreateDirectory}\PYG{p}{(}\PYG{n}{savePathPlaystation}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{Directory}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{savePathGamecubeWii}\PYG{p}{)}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Directory}\PYG{p}{.}\PYG{n}{CreateDirectory}\PYG{p}{(}\PYG{n}{savePathGamecubeWii}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Verification des jeux présent sur le disque}
+\label{\detokenize{organique:verification-des-jeux-present-sur-le-disque}}
+\sphinxAtStartPar
+Pour connaître les jeux qui ont été téléchargés, il existe un fichier comprenant les ids des jeux. Ce fichier se trouve dans le dossier “appdata” de Caiman. Il est donc commun à tous les utilisateurs. Ce fichier est mis à jour quand un utilisateur a fini de télécharger un jeu ou quand il décide d’en supprimer un.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{private} \PYG{k}{void} \PYG{n+nf}{CheckIfGameFileIsPresentOnDisk}\PYG{p}{(}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}} \PYG{n}{lst\PYGZus{}idGames} \PYG{p}{=} \PYG{n}{gamesListConfigFile}\PYG{p}{.}\PYG{n}{GetAllValueInList}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{k+kt}{var} \PYG{n}{idGameString} \PYG{k}{in} \PYG{n}{lst\PYGZus{}idGames}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{idGameString} \PYG{p}{!}\PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k+kt}{int} \PYG{n}{idGame} \PYG{p}{=} \PYG{n}{Convert}\PYG{p}{.}\PYG{n}{ToInt32}\PYG{p}{(}\PYG{n}{idGameString}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{File}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{l+s}{@\PYGZdq{}C:\PYGZbs{}Caiman\PYGZbs{}\PYGZdq{}} \PYG{p}{+} \PYG{n}{callAPI}\PYG{p}{.}\PYG{n}{CallFolderNameGame}\PYG{p}{(}\PYG{n}{idGame}\PYG{p}{)} \PYG{p}{+} \PYG{l+s}{@\PYGZdq{}\PYGZbs{}\PYGZdq{}} \PYG{p}{+} \PYG{n}{callAPI}\PYG{p}{.}\PYG{n}{CallFileNameGame}\PYG{p}{(}\PYG{n}{idGame}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{n}{gamesListConfigFile}\PYG{p}{.}\PYG{n}{DeleteValue}\PYG{p}{(}\PYG{n}{idGameString}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Si l’utilisateur décide de supprimer un fichier sans passer par caiman il pourrait y avoir un souci alors pour pallier à ce problème une vérification est faite. Au lancement de l’application, si un fichier est manquant, alors le fichier qui contient les id des jeux sera mis à jour.
+
+
+\subsection{Paramètres graphique}
+\label{\detokenize{organique:parametres-graphique}}
+
+\subsubsection{Liste des paramètres graphique}
+\label{\detokenize{organique:liste-des-parametres-graphique}}
+\sphinxAtStartPar
+L’utilisateur a la possibilité de modifier plusieurs paramètres:
+
+\sphinxAtStartPar
+La configuration global de l’émulateur
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Original
+
+\item {} 
+\sphinxAtStartPar
+1080p
+
+\item {} 
+\sphinxAtStartPar
+4K
+
+\end{itemize}
+
+\sphinxAtStartPar
+Si le jeu doit se lancer en mode plein écran
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+true
+
+\item {} 
+\sphinxAtStartPar
+false
+
+\end{itemize}
+
+\sphinxAtStartPar
+Si le jeu doit se lancer en 16/9
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+true
+
+\item {} 
+\sphinxAtStartPar
+false
+
+\end{itemize}
+
+\sphinxAtStartPar
+Les différents modes graphiques modifient ces paramètres:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+le filtrage anisotropique
+
+\item {} 
+\sphinxAtStartPar
+l’upscale de la définition
+
+\end{itemize}
+
+\sphinxAtStartPar
+Le filtrage anisotropique permet entre autres de diminuer l’effet de crénelage, ainsi qu’à améliorer l’affichage des textures vue depuis un angle de vue extrême.
+
+\sphinxAtStartPar
+L’upscale de la définition permet d’augmenter la définition native du rendu. Par exemple, la définition de base de la Playstation 2 sur le jeu Kingdom Heart( 512x448). Cette définition est donc la définition que l’utilisateur va avoir en “Original”, mais s’il opte pour le paramètre 1080p, il va avoir une définition native de 1536x1344. En mode 4K le rendu sera en définition 4096x3584.
+
+
+\subsubsection{Fichiers de configuration PCSX2}
+\label{\detokenize{organique:fichiers-de-configuration-pcsx2}}
+\sphinxAtStartPar
+Pour l’émulateur PCSX2, il y a deux fichiers de configuration qui doivent être modifiés.
+
+\sphinxAtStartPar
+Les fichiers se trouvent dans le dossier “PCSX2\textbackslash{}inis\textbackslash{}”.
+
+\sphinxAtStartPar
+Le fichier “GSDX.ini” permet de modifier les paramètres de d’upscale et de filtrage anisotropique.
+
+\sphinxAtStartPar
+Le fichier “PCSX2\_ui.ini” permet de modifier l’affichage en plein écran et le format d’affichage.
+
+\sphinxAtStartPar
+Le paramètre de format d’écran dans le fichier de configuration de PCSX n’est pas un booléen mais du texte je dois avant l’écriture dans le fichier le convertir.
+
+\sphinxAtStartPar
+Pareil pour le paramètre de mode plein écran
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k}{override} \PYG{k}{void} \PYG{n+nf}{UpdateConfigurationFile}\PYG{p}{(}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{configFileGSdx}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}upscale\PYGZus{}multiplier\PYGZdq{}}\PYG{p}{,} \PYG{n}{definition}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{configFileGSdx}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}MaxAnisotropy\PYGZdq{}}\PYG{p}{,} \PYG{n}{filtrageAnioscopique}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+
+            \PYG{c+c1}{// the format is not true or false so i have to format it}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{fullScreen}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{configFilePCSX2\PYGZus{}ui}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}DefaultToFullscreen\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}enabled\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{configFilePCSX2\PYGZus{}ui}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}DefaultToFullscreen\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}disabled\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{c+c1}{// the format is not true or false so i have to format it }
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{formatSeizeNeuvieme}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{configFilePCSX2\PYGZus{}ui}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}AspectRatio\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}16:9\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{configFilePCSX2\PYGZus{}ui}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}AspectRatio\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}4:3\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Fichiers de configuration Dolphin}
+\label{\detokenize{organique:fichiers-de-configuration-dolphin}}
+\sphinxAtStartPar
+Pour l’émulateur Dolphin, il y a deux fichiers de configuration qui doivent être modifiés.
+
+\sphinxAtStartPar
+Les fichiers se trouvent dans le dossier “Dolphin\textbackslash{}User\textbackslash{}Config\textbackslash{}”.
+
+\sphinxAtStartPar
+Le fichier “GFX.ini” permet de modifier les paramètres de d’upscale et de filtrage anisotropique.
+
+\sphinxAtStartPar
+Le fichier “Dolphin.ini” permet de modifier l’affichage en plein écran et le format d’affichage.
+
+\sphinxAtStartPar
+Le paramètre de format d’écran dans le fichier de configuration de Dolphin n’est pas un booléen mais un nombre. Donc avant l’écriture dans le fichier je dois le convertir.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k}{override} \PYG{k}{void} \PYG{n+nf}{UpdateConfigurationFile}\PYG{p}{(}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{configFileDolphin}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Fullscreen\PYGZdq{}}\PYG{p}{,} \PYG{n}{fullScreen}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{configFileGFX}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}InternalResolution\PYGZdq{}}\PYG{p}{,} \PYG{n}{definition}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{configFileGFX}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}MaxAnisotropy\PYGZdq{}}\PYG{p}{,} \PYG{n}{filtrageAnioscopique}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{formatSeizeNeuvieme}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{configFileGFX}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}AspectRatio\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}1\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{configFileGFX}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}AspectRatio\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}2\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Sauvegarde des paramètres graphique}
+\label{\detokenize{organique:sauvegarde-des-parametres-graphique}}
+\sphinxAtStartPar
+Les paramètres graphiques définis par l’utilisateur se trouvent dans le dossier “appdata\textbackslash{}Caiman\textbackslash{}Caiman\textbackslash{}config.ini”.
+
+\sphinxAtStartPar
+Les paramètres sont mis à jour grâce à la classe ConfigFileEditor, cette classe permet la manipulation de fichier “.ini” que ce soit la lecture,la modification, la suppression, la création de propriétés.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{ApplyGlobalConfiguration}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{configuration}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{switch} \PYG{p}{(}\PYG{n}{configuration}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{case} \PYG{l+s}{\PYGZdq{}original\PYGZdq{}}\PYG{p}{:}
+                    \PYG{n}{configFile}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}definition\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}1\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{configFile}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}filtrageAnioscopique\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}1\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{configFile}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}configuration\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}original\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{ScanConfiguration}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{k}{break}\PYG{p}{;}
+                \PYG{k}{case} \PYG{l+s}{\PYGZdq{}1080\PYGZdq{}}\PYG{p}{:}
+                    \PYG{n}{configFile}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}definition\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}3\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{configFile}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}filtrageAnioscopique\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}4\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{configFile}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}configuration\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}1080p\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{ScanConfiguration}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{k}{break}\PYG{p}{;}
+                \PYG{k}{case} \PYG{l+s}{\PYGZdq{}4K\PYGZdq{}}\PYG{p}{:}
+                    \PYG{n}{configFile}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}definition\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}8\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{configFile}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}filtrageAnioscopique\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}4\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{configFile}\PYG{p}{.}\PYG{n}{UpdateProperties}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}configuration\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}4K\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{ScanConfiguration}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{k}{break}\PYG{p}{;}
+                \PYG{k}{default}\PYG{p}{:}
+                    \PYG{k}{break}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Téléchargement d’images}
+\label{\detokenize{organique:telechargement-dimages}}
+\sphinxAtStartPar
+Le téléchargement des images se fait à la création d’un objet de type Game. Le téléchargement se fait à partir du site web de Caiman “caiman.cfpt.info”. Les fichiers sont téléchargés dans le dossier appdata. L’intérêt de stocker les images dans ce dossier est de créer un système de cache qui sera accessible à tous les utilisateurs.  Le téléchargement se fait grâce à un WebClient. Avant tout téléchargement de fichier, Caiman vérifie si le fichier n’est pas déjà existant, ce qui permet d’éviter de télécharger plusieurs fois la même image.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{private} \PYG{k}{void} \PYG{n+nf}{DownloadImage}\PYG{p}{(}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{File}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{imgPath} \PYG{p}{+} \PYG{n}{imageName}\PYG{p}{)}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{using} \PYG{p}{(}\PYG{n}{WebClient} \PYG{n}{client} \PYG{p}{=} \PYG{k}{new} \PYG{n}{WebClient}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{client}\PYG{p}{.}\PYG{n}{DownloadFile}\PYG{p}{(}\PYG{k}{new} \PYG{n}{Uri}\PYG{p}{(}\PYG{n}{URL\PYGZus{}IMAGES\PYGZus{}CAIMAN} \PYG{p}{+} \PYG{n}{imageName}\PYG{p}{)}\PYG{p}{,} \PYG{p}{(}\PYG{n}{imgPath} \PYG{p}{+} \PYG{n}{imageName}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Exécution de jeu}
+\label{\detokenize{organique:execution-de-jeu}}
+
+\subsubsection{Choix du jeu à lancer}
+\label{\detokenize{organique:choix-du-jeu-a-lancer}}
+\sphinxAtStartPar
+Le choix du jeu se fait à partir de la page de visualisation des détails d’un jeu. Quand l’utilisateur clique sur le bouton “Play” l’id du jeu qui doit être exécuté est envoyé à la fonction EmulatorManager.StartGame(idGame).
+
+\sphinxAtStartPar
+La fonction va ensuite faire un appel à l’API pour connaître de quelle console est le jeu qui doit être exécuté et selon la console un émulateur différent sera utilisé.
+
+
+\subsubsection{Emulateur embarqué avec Caiman}
+\label{\detokenize{organique:emulateur-embarque-avec-caiman}}
+\sphinxAtStartPar
+Caiman embarque deux émulateurs PCSX2 et Dolphin ces émulateurs servent respectivement à l’exécution de jeux de Playstation 2 et de Gamecube/Wii. L’exécution n’est pas la même selon l’émulateur, alors je vais détailler pour chacun. Avant l’exécution d’un jeu, l’application des paramètres graphiques est faite mais je ne vais pas le détailler ici.
+
+
+\subsubsection{Exécution avec PCSX2}
+\label{\detokenize{organique:execution-avec-pcsx2}}
+\sphinxAtStartPar
+En premier lieu, je vais recréer le chemin qui mène au fichier qui doit être exécuté par exemple “C:\textbackslash{}Caiman\textbackslash{}Playstation2\textbackslash{}DRAGON\_QUEST\_VIII.iso”. Par la suite, je vais créer une variable pour les différents paramètres, dans la version de caiman actuel on ne peut pas changer ces paramètres se sera donc toujours “ –nogui –portable”.
+
+\sphinxAtStartPar
+Le premier paramètre fait en sorte que l’émulateur n’affiche pas d’interface graphique, seule la fenêtre d’exécution du jeu est visible. Le deuxième paramètre sert à dire à PCSX2 que les fichiers de configurations qui doivent être utilisés sont ceux du dossier de l’émulateur, et non ceux du dossier créé pour chaque utilisateur windows par PCSX2.
+
+\sphinxAtStartPar
+Pour lancer l’exécution, je vais lancer le processus de PCSX2.exe avec en premier paramètre le chemin de l’iso à exécuter et après les paramètres cités précédemment.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k}{override} \PYG{k}{void} \PYG{n+nf}{Execute}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{idGame}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{string} \PYG{n}{path} \PYG{p}{=} \PYG{l+s}{@\PYGZdq{}C:\PYGZbs{}Caiman\PYGZbs{}\PYGZdq{}} \PYG{p}{+} \PYG{n}{callAPI}\PYG{p}{.}\PYG{n}{CallFolderNameGame}\PYG{p}{(}\PYG{n}{idGame}\PYG{p}{)} \PYG{p}{+} \PYG{l+s}{@\PYGZdq{}\PYGZbs{}\PYGZdq{}}\PYG{p}{;}
+            \PYG{k+kt}{string} \PYG{n}{filename} \PYG{p}{=} \PYG{n}{callAPI}\PYG{p}{.}\PYG{n}{CallFileNameGame}\PYG{p}{(}\PYG{n}{idGame}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{UpdateConfigurationFile}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{int} \PYG{n}{process} \PYG{p}{=} \PYG{n}{Process}\PYG{p}{.}\PYG{n}{GetProcessesByName}\PYG{p}{(}\PYG{n}{PROCESS\PYGZus{}NAME}\PYG{p}{)}\PYG{p}{.}\PYG{n}{Length}\PYG{p}{;}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{process} \PYG{p}{=}\PYG{p}{=} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{c+c1}{//param pour ne pas afficher l\PYGZsq{}interface graphique \PYGZhy{}\PYGZhy{}portable \PYGZhy{}\PYGZhy{}nogui}
+                \PYG{k+kt}{string} \PYG{n}{param} \PYG{p}{=} \PYG{l+s}{\PYGZdq{} \PYGZhy{}\PYGZhy{}nogui \PYGZhy{}\PYGZhy{}portable\PYGZdq{}}\PYG{p}{;}
+
+                \PYG{n}{processEmulator} \PYG{p}{=} \PYG{n}{Process}\PYG{p}{.}\PYG{n}{Start}\PYG{p}{(}\PYG{n}{PCSX2Folder} \PYG{p}{+} \PYG{n}{EXE\PYGZus{}NAME}\PYG{p}{,} \PYG{n}{path} \PYG{p}{+} \PYG{n}{filename} \PYG{p}{+} \PYG{n}{param}\PYG{p}{)}\PYG{p}{;}
+
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Close}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{Execute}\PYG{p}{(}\PYG{n}{idGame}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Exécution avec Dolphin}
+\label{\detokenize{organique:execution-avec-dolphin}}
+\sphinxAtStartPar
+Ensuite, je vais recréer le chemin qui mène au fichier qui doit être exécuté par exemple “C:\textbackslash{}Caiman\textbackslash{}GamecubeWii\textbackslash{}METROID\_PRIME.iso”. Je vais également créer une variable pour les différents paramètres, dans la version de caiman actuel on ne peut pas changer ces paramètres, il sera toujours “ –batch”.
+
+\sphinxAtStartPar
+Le paramètre “–batch” fait en sorte de ne pas afficher l’interface de Dolphin, et donc d’avoir seulement la fenêtre d’exécution du jeu.
+
+\sphinxAtStartPar
+Pour lancer l’exécution, je vais lancer le processus de PCSX2.exe avec en premier paramètre le chemin de l’iso a exécuter et après le paramètre cité précédemment.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k}{override} \PYG{k}{void} \PYG{n+nf}{Execute}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{idGame}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{string} \PYG{n}{path} \PYG{p}{=} \PYG{l+s}{@\PYGZdq{}C:\PYGZbs{}Caiman\PYGZbs{}\PYGZdq{}} \PYG{p}{+} \PYG{n}{callAPI}\PYG{p}{.}\PYG{n}{CallFolderNameGame}\PYG{p}{(}\PYG{n}{idGame}\PYG{p}{)} \PYG{p}{+} \PYG{l+s}{@\PYGZdq{}\PYGZbs{}\PYGZdq{}}\PYG{p}{;}
+            \PYG{k+kt}{string} \PYG{n}{filename} \PYG{p}{=} \PYG{n}{callAPI}\PYG{p}{.}\PYG{n}{CallFileNameGame}\PYG{p}{(}\PYG{n}{idGame}\PYG{p}{)}\PYG{p}{;}
+            
+            \PYG{n}{UpdateConfigurationFile}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{int} \PYG{n}{process} \PYG{p}{=} \PYG{n}{Process}\PYG{p}{.}\PYG{n}{GetProcessesByName}\PYG{p}{(}\PYG{n}{PROCESS\PYGZus{}NAME}\PYG{p}{)}\PYG{p}{.}\PYG{n}{Length}\PYG{p}{;}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{process} \PYG{p}{=}\PYG{p}{=} \PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{c+c1}{//param pour ne pas mettre de gui et en fullscreen \PYGZhy{}\PYGZhy{}portable}
+                \PYG{k+kt}{string} \PYG{n}{param} \PYG{p}{=} \PYG{l+s}{\PYGZdq{} \PYGZhy{}\PYGZhy{}batch\PYGZdq{}}\PYG{p}{;}
+
+                \PYG{n}{processEmulator} \PYG{p}{=} \PYG{n}{Process}\PYG{p}{.}\PYG{n}{Start}\PYG{p}{(}\PYG{n}{dolphinFolder} \PYG{p}{+} \PYG{n}{EXE\PYGZus{}NAME}\PYG{p}{,} \PYG{n}{param} \PYG{p}{+} \PYG{l+s}{\PYGZdq{} \PYGZhy{}\PYGZhy{}exec \PYGZbs{}\PYGZdq{}\PYGZdq{}} \PYG{p}{+} \PYG{n}{path} \PYG{p}{+} \PYG{n}{filename}\PYG{p}{)}\PYG{p}{;}
+
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{Close}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{Execute}\PYG{p}{(}\PYG{n}{idGame}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Information complémentaire}
+\label{\detokenize{organique:information-complementaire}}
+\sphinxAtStartPar
+Il n’est pas possible de lancer un jeu alors qu” un autre est toujours en cours.
+
+
+\subsection{Affichage et calcul du temps de jeu}
+\label{\detokenize{organique:affichage-et-calcul-du-temps-de-jeu}}
+\sphinxAtStartPar
+Le temps de jeu est comptabilisé dans la base de données à la minute près.
+
+
+\subsubsection{Affichage dans le détail d’un jeu}
+\label{\detokenize{organique:affichage-dans-le-detail-dun-jeu}}
+\sphinxAtStartPar
+Quand un utilisateur de Caiman se rend sur la page de détails d’un jeu, il verra son nombre d’heures et de minutes de jeu. Pour récupérer cette information, je fais un appel à la base de données .CallTimeInGameUser(idGame,idUser) cette appel va me rendre un objet TimeInGame qui va permettre de formater la réponse de l’API et afficher les heures et le minutes sous le format “10h10”. Si l’utilisateur n’a pas jouer au jeu, il verra afficher “Time played: 00h00”.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k+kt}{string} \PYG{n}{TimeHoursMinutes}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{get}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k+kt}{string} \PYG{n}{time} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+                \PYG{k+kt}{int} \PYG{n}{hours} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{minutes} \PYG{p}{/} \PYG{l+m}{6}\PYG{l+m}{0}\PYG{p}{;}
+                \PYG{k+kt}{int} \PYG{n}{minutesInt} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{minutes} \PYG{p}{\PYGZpc{}} \PYG{l+m}{6}\PYG{l+m}{0}\PYG{p}{;}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{minutesInt} \PYG{p}{=}\PYG{p}{=} \PYG{l+m}{6}\PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{hours}\PYG{p}{+}\PYG{p}{+}\PYG{p}{;}
+                    \PYG{n}{minutesInt} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k+kt}{string} \PYG{n}{minutesString} \PYG{p}{=} \PYG{n}{minutesInt}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                \PYG{k+kt}{string} \PYG{n}{hoursString} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{minutesInt} \PYG{p}{\PYGZlt{}} \PYG{l+m}{1}\PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{minutesString} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}0\PYGZdq{}} \PYG{p}{+} \PYG{n}{minutesInt}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{hours} \PYG{p}{\PYGZlt{}} \PYG{l+m}{1}\PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{hoursString} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}0\PYGZdq{}} \PYG{p}{+} \PYG{n}{hours}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{n}{time} \PYG{p}{=} \PYG{n}{hoursString} \PYG{p}{+} \PYG{l+s}{\PYGZdq{} h \PYGZdq{}} \PYG{p}{+} \PYG{n}{minutesString}\PYG{p}{;}
+                \PYG{k}{return} \PYG{n}{time}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Affichage du temps de jeu actuel}
+\label{\detokenize{organique:affichage-du-temps-de-jeu-actuel}}
+\sphinxAtStartPar
+Quand un utilisateur lance un jeu, un objet GameTimer va être créé, cet objet sert à compter le temps de jeu de la session actuelle et à mettre à jour la base de données.
+
+\sphinxAtStartPar
+La classe GameTimer va initialiser in timer pour rafraîchir l’affichage de la navbar avec la valeur adéquate. Ce timer se rafraîchit toutes les secondes. Celui\sphinxhyphen{}ci va également appeler la fonction UpdateTimer, UpdateTimer va incrémenter le nombre de secondes de jeu et toutes les 60 secondes, il va faire un appel à l’API pour incrémenter le temps de jeu de l’utilisateur dans la base de données. L’incrémentation se fait donc toutes les minutes, cela permet d’être assez précis dans le décompte de temps de jeu.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{InitTimer}\PYG{p}{(}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{timer} \PYG{p}{=} \PYG{k}{new} \PYG{n}{Timer}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{timer}\PYG{p}{.}\PYG{n}{Tick} \PYG{p}{+}\PYG{p}{=} \PYG{k}{new} \PYG{n}{EventHandler}\PYG{p}{(}\PYG{n}{UpdateTimer}\PYG{p}{)}\PYG{p}{;}
+
+            \PYG{n}{timer}\PYG{p}{.}\PYG{n}{Interval} \PYG{p}{=} \PYG{l+m}{1}\PYG{l+m}{0}\PYG{l+m}{0}\PYG{l+m}{0}\PYG{p}{;}
+            \PYG{n}{timer}\PYG{p}{.}\PYG{n}{Start}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+
+\PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{UpdateTimer}\PYG{p}{(}\PYG{k+kt}{object} \PYG{n}{sender}\PYG{p}{,} \PYG{n}{EventArgs} \PYG{n}{e}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{counter}\PYG{p}{+}\PYG{p}{+}\PYG{p}{;}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{counter} \PYG{p}{=}\PYG{p}{=} \PYG{l+m}{6}\PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{minutes}\PYG{p}{+}\PYG{p}{+}\PYG{p}{;}
+                \PYG{n}{counter} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
+
+                \PYG{n}{callAPI}\PYG{p}{.}\PYG{n}{AddOneMinuteToGame}\PYG{p}{(}\PYG{n}{game}\PYG{p}{.}\PYG{n}{id}\PYG{p}{,} \PYG{n}{emulatorsManager}\PYG{p}{.}\PYG{n}{user}\PYG{p}{.}\PYG{n}{id}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+L’affichage de temps de jeu se fait dans la navbar en haut à gauche, Les informations affichées sont les suivantes:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Nom du jeu en cours
+
+\item {} 
+\sphinxAtStartPar
+heures et minutes de jeu de la session actuel sous le format 10m50
+
+\end{itemize}
+
+
+\subsection{Téléchargement de jeux}
+\label{\detokenize{organique:telechargement-de-jeux}}
+
+\subsubsection{Type de fichiers}
+\label{\detokenize{organique:type-de-fichiers}}
+\sphinxAtStartPar
+Les fichiers utilisés par les émulateurs sont des fichiers .iso, que ce soit par PCSX2 ou Dolphin.
+
+
+\subsubsection{Choix du fichier à télécharger}
+\label{\detokenize{organique:choix-du-fichier-a-telecharger}}
+\sphinxAtStartPar
+Le fichier à télécharger se fait sur la page de détails d’un jeu, si le jeu n’a pas déjà été téléchargé. Un bouton “download” sera présent, ce bouton va envoyer l’id du jeu qui doit être télécharger.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{File}\PYG{p}{.}\PYG{n}{Exists}\PYG{p}{(}\PYG{n}{gamePath}\PYG{p}{)}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{XboxButton} \PYG{n}{btn\PYGZus{}download} \PYG{p}{=} \PYG{k}{new} \PYG{n}{XboxButton}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}download\PYGZdq{}}\PYG{p}{,} \PYG{n}{game}\PYG{p}{.}\PYG{n}{id}\PYG{p}{,} \PYG{l+m}{0}\PYG{p}{,} \PYG{l+m}{0}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{btn\PYGZus{}download}\PYG{p}{.}\PYG{n}{Text} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}Download: \PYGZdq{}} \PYG{p}{+} \PYG{n}{game}\PYG{p}{.}\PYG{n}{name}\PYG{p}{;}
+                    \PYG{n}{btn\PYGZus{}download}\PYG{p}{.}\PYG{n}{Location} \PYG{p}{=} \PYG{k}{new} \PYG{n}{System}\PYG{p}{.}\PYG{n}{Drawing}\PYG{p}{.}\PYG{n}{Point}\PYG{p}{(}\PYG{l+m}{5}\PYG{l+m}{0}\PYG{l+m}{0}\PYG{p}{,} \PYG{l+m}{6}\PYG{l+m}{5}\PYG{l+m}{0}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{btn\PYGZus{}download}\PYG{p}{.}\PYG{n}{Click} \PYG{p}{+}\PYG{p}{=} \PYG{k}{new} \PYG{n}{System}\PYG{p}{.}\PYG{n}{EventHandler}\PYG{p}{(}\PYG{n}{bouton\PYGZus{}Click}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{rowCounter}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{btn\PYGZus{}download}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{Controls}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{btn\PYGZus{}download}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{rowCounter}\PYG{p}{+}\PYG{p}{+}\PYG{p}{;}
+                    \PYG{n}{lstControls}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Control}\PYG{p}{\PYGZgt{}}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Ajout d’un jeu à la liste de téléchargement}
+\label{\detokenize{organique:ajout-dun-jeu-a-la-liste-de-telechargement}}
+\sphinxAtStartPar
+Les téléchargement des jeux sont gérés par la classe “DownloadManager”, cette classe contient 3 listes de téléchargement différentes:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+lst\_download
+
+\item {} 
+\sphinxAtStartPar
+lst\_activeDownload
+
+\item {} 
+\sphinxAtStartPar
+lst\_finishDownload
+
+\end{itemize}
+
+\sphinxAtStartPar
+La première contient les téléchargement en attente, la deuxième le téléchargement en cours et la troisième la liste des téléchargements terminés.
+
+\sphinxAtStartPar
+Quand un téléchargement est créé, il est automatiquement ajouté à la liste de téléchargement en attente.
+
+
+\subsubsection{Lancement d’un téléchargement}
+\label{\detokenize{organique:lancement-dun-telechargement}}
+\sphinxAtStartPar
+À l’ajout d’un téléchargement, la fonction StartDownload() est appelée. Cette fonction vérifie si dans la liste de téléchargement il sera lancé. Si aucun téléchargement n’est en cours, la fonction NextDownload() va être lancée.
+
+\sphinxAtStartPar
+La fonction NextDownload() sert à savoir si un téléchargement est en cours,Si un téléchargement est en cours, il sera déplacé dans la liste des téléchargements finis, si aucun téléchargement n’est en cours le premier téléchargement de la liste en attente est lancé
+
+
+\subsubsection{Téléchargement d’un fichier}
+\label{\detokenize{organique:telechargement-dun-fichier}}
+\sphinxAtStartPar
+Quand la fonction download.StartDownload() est lancée, le WebClient se lance également. Ce WebClient télécharge le fichier en appelant l’API de caiman en passant en paramètres l’id du jeu qui doit être télécharger et l’apiKey de l’utilisateur.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{StartDownload}\PYG{p}{(}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            
+            \PYG{k}{if} \PYG{p}{(}\PYG{p}{!}\PYG{n}{CheckIfFileIsPresent}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{webClient} \PYG{p}{=} \PYG{k}{new} \PYG{n}{WebClient}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{Uri} \PYG{n}{uri} \PYG{p}{=} \PYG{k}{new} \PYG{n}{Uri}\PYG{p}{(}\PYG{n}{URL\PYGZus{}TO\PYGZus{}GAMES} \PYG{p}{+} \PYG{l+s}{\PYGZdq{}?idGame=\PYGZdq{}}\PYG{p}{+}\PYG{n}{idGame}\PYG{p}{+}\PYG{l+s}{\PYGZdq{}\PYGZam{}apiKey=\PYGZdq{}}\PYG{p}{+}\PYG{n}{apiKey}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{webClient}\PYG{p}{.}\PYG{n}{DownloadProgressChanged} \PYG{p}{+}\PYG{p}{=} \PYG{n}{wc\PYGZus{}DownloadProgressChanged}\PYG{p}{;}
+                \PYG{n}{webClient}\PYG{p}{.}\PYG{n}{DownloadFileAsync}\PYG{p}{(}\PYG{n}{uri}\PYG{p}{,}\PYG{n}{pathToFolder}\PYG{p}{+}\PYG{l+s}{\PYGZdq{}temp.\PYGZdq{}}\PYG{p}{+}\PYG{n}{filename}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{active} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Le fichier sera téléchargé dans le dossier spécifique à l’émulateur, par exemple si un jeu pour l’émulateur PCSX2 est téléchargé alors le jeu sera télécharger dans le dossier
+
+\sphinxAtStartPar
+“C:\textbackslash{}Caiman\textbackslash{}Playstation2”. Par contre, le fichier n’est pas téléchargé avec le nom final, le préfix “temp.” est ajouté.Le préfixe est ajouté pour éviter que si un utilisateur quitte Caiman pendant un téléchargement, il ne se retrouve pas avec un fichier incomplet au prochain lancement de l’application.
+
+\sphinxAtStartPar
+A la fin du téléchargement d’un fichier, la fonction DownloadManager.NextDownload() est appelée. l’id du jeu est ajouté à la liste des jeux téléchargés, et le fichier est renommé avec le nom correct.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{NextDownload}\PYG{p}{(}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{lst\PYGZus{}activeDownload}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{\PYGZgt{}}\PYG{l+m}{0}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{lst\PYGZus{}finishDownload}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{lst\PYGZus{}activeDownload}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{lst\PYGZus{}activeDownload}\PYG{p}{.}\PYG{n}{RemoveAt}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{lst\PYGZus{}download}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{(}\PYG{p}{)} \PYG{p}{=}\PYG{p}{=} \PYG{l+m}{1}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{lst\PYGZus{}activeDownload}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{lst\PYGZus{}download}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{lst\PYGZus{}download}\PYG{p}{.}\PYG{n}{RemoveAt}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{StartDownload}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            
+            
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Synchronisation des sauvegardes}
+\label{\detokenize{organique:synchronisation-des-sauvegardes}}
+
+\subsubsection{Structure des sauvegardes}
+\label{\detokenize{organique:structure-des-sauvegardes}}
+\sphinxAtStartPar
+Les fichiers de sauvegardes des émulateurs sont faits ainsi:
+
+\sphinxAtStartPar
+PCSX2:
+
+\sphinxAtStartPar
+Les fichiers de sauvegardes pour PCSX2 sont 2 fichiers de 8MB, comme  les memory cards étaient à l’époque de la Playstation 2. Ces deux fichiers contiennent les différentes sauvegardes des jeux.
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{dossier_memcards}.png}
+
+\sphinxAtStartPar
+Dolphin:
+
+\sphinxAtStartPar
+Les fichiers de sauvegardes de l’émulateur Dolphin ne concernent qu’un seul jeu à la fois.
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{dossier_card_a}.png}
+
+\sphinxAtStartPar
+La solution pour structurer les sauvegardes des différents utilisateurs est celle\sphinxhyphen{}ci:
+
+\sphinxAtStartPar
+Chaque utilisateur possède un dossier personnel dans le dossier appdata de Caiman. Ce dossier contient le fichier de configuration graphique de l’application et un dossier ou ces sauvegardes sont présentes.
+
+\sphinxAtStartPar
+Le dossier de l’utilisateur lorenzo1227:
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{dossier_lorenzo1227}.png}
+
+\sphinxAtStartPar
+Le dossier contenant les sauvegardes de l’utilisateur lorenzo1227:
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{save_lorenzo1227}.png}
+
+
+\subsubsection{Upload des sauvegardes}
+\label{\detokenize{organique:upload-des-sauvegardes}}
+\sphinxAtStartPar
+Pour pouvoir synchroniser les sauvegardes entre les différents PCs d’un utilisateur, j’ai commencé par savoir si l’un des fichiers présents dans les dossiers des différents émulateurs a été mis à jour. Pour ce faire, j’ai un timer qui va faire une vérification sur la dernière date de modification du fichier. S’il s’avère qu’une modification a été faite dans l’un des dossiers de sauvegardes, je copie l’intégralité du dossier de l’émulateur vers le dossier appdata de l’utilisateur.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{private} \PYG{k}{void} \PYG{n+nf}{ScanDateFile}\PYG{p}{(}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k+kt}{int} \PYG{n}{counter} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
+            \PYG{n}{lst\PYGZus{}saveTimeOld}\PYG{p}{.}\PYG{n}{Clear}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{lst\PYGZus{}saveTimeOld}\PYG{p}{.}\PYG{n}{AddRange}\PYG{p}{(}\PYG{n}{lst\PYGZus{}saveTimeNow}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{lst\PYGZus{}saveTimeNow}\PYG{p}{.}\PYG{n}{Clear}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+            \PYG{c+c1}{//if a file has been added or delete sync the folder}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{initialCounterFile} \PYG{p}{!}\PYG{p}{=} \PYG{n}{CountFileInFolder}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{isLocalFile}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{initialCounterFile} \PYG{p}{=} \PYG{n}{CountFileInFolder}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{MoveAllFileToUserFolder}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{FileInfo} \PYG{n}{save} \PYG{k}{in} \PYG{n}{lst\PYGZus{}save}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+
+                \PYG{n}{save}\PYG{p}{.}\PYG{n}{Refresh}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+
+                \PYG{n}{lst\PYGZus{}saveTimeNow}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{save}\PYG{p}{.}\PYG{n}{LastWriteTime}\PYG{p}{.}\PYG{n}{Ticks}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{lst\PYGZus{}saveTimeOld}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{(}\PYG{p}{)} \PYG{p}{\PYGZgt{}} \PYG{l+m}{0}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k}{try}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{k}{if} \PYG{p}{(}\PYG{n}{lst\PYGZus{}saveTimeOld}\PYG{p}{[}\PYG{n}{counter}\PYG{p}{]} \PYG{p}{!}\PYG{p}{=} \PYG{n}{lst\PYGZus{}saveTimeNow}\PYG{p}{[}\PYG{n}{counter}\PYG{p}{]}\PYG{p}{)}
+                        \PYG{p}{\PYGZob{}}
+                            \PYG{c+c1}{//if the file has benn modified since the last time move or sync the folder}
+                            \PYG{k}{if} \PYG{p}{(}\PYG{n}{lst\PYGZus{}saveTimeOld}\PYG{p}{[}\PYG{n}{counter}\PYG{p}{]} \PYG{p}{!}\PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)}
+                            \PYG{p}{\PYGZob{}}
+                                \PYG{k}{if} \PYG{p}{(}\PYG{n}{isLocalFile}\PYG{p}{)}
+                                \PYG{p}{\PYGZob{}}
+                                    \PYG{n}{MoveFileToUserFolder}\PYG{p}{(}\PYG{n}{save}\PYG{p}{)}\PYG{p}{;}
+                                \PYG{p}{\PYGZcb{}}
+                                \PYG{k}{else}
+                                \PYG{p}{\PYGZob{}}
+                                    \PYG{n}{UploadSave}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                                \PYG{p}{\PYGZcb{}}
+                            \PYG{p}{\PYGZcb{}}
+
+                        \PYG{p}{\PYGZcb{}}
+                        \PYG{n}{counter}\PYG{p}{+}\PYG{p}{+}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}
+                    \PYG{k}{catch} \PYG{p}{\PYGZob{}} \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+
+
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{MoveAllFileToUserFolder}\PYG{p}{(}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{DirectoryInfo} \PYG{n}{d} \PYG{p}{=} \PYG{k}{new} \PYG{n}{DirectoryInfo}\PYG{p}{(}\PYG{n}{savePath}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{FileInfo}\PYG{p}{[}\PYG{p}{]} \PYG{n}{Files} \PYG{p}{=} \PYG{n}{d}\PYG{p}{.}\PYG{n}{GetFiles}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;} 
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{n}{FileInfo} \PYG{n}{file} \PYG{k}{in} \PYG{n}{Files}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{try}
+                \PYG{p}{\PYGZob{}}
+
+                    \PYG{n}{File}\PYG{p}{.}\PYG{n}{Copy}\PYG{p}{(}\PYG{n}{file}\PYG{p}{.}\PYG{n}{FullName}\PYG{p}{,} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{destinationPath}\PYG{p}{,} \PYG{n}{file}\PYG{p}{.}\PYG{n}{Name}\PYG{p}{)}\PYG{p}{,} \PYG{k}{true}\PYG{p}{)}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{catch} \PYG{p}{(}\PYG{n}{Exception}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Si je trouve une différence alors cela veut dire que le fichier a été modifié. Quand un fichier a été modifié je crée une copie de ce fichier dans le dossier “username/save/nom\_de\_emulateur/”.
+
+\sphinxAtStartPar
+Quand un fichier a été mis à jour, supprimé ou créé dans le dossier de sauvegarde de l’utilisateur, je zip les fichiers présents dans le dossier pour les envoyer sur le serveur de Caiman.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{UploadSave}\PYG{p}{(}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{k+kt}{var} \PYG{n}{appDataPath} \PYG{p}{=} \PYG{n}{Environment}\PYG{p}{.}\PYG{n}{GetFolderPath}\PYG{p}{(}\PYG{n}{Environment}\PYG{p}{.}\PYG{n}{SpecialFolder}\PYG{p}{.}\PYG{n}{ApplicationData}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{var} \PYG{n}{savePathZipDolpin} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+            \PYG{k+kt}{var} \PYG{n}{savePathZipPCSX2} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+            \PYG{k+kt}{var} \PYG{n}{savePath} \PYG{p}{=} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{appDataPath}\PYG{p}{,} \PYG{l+s}{@\PYGZdq{}Caiman\PYGZbs{}users\PYGZbs{}\PYGZdq{}} \PYG{p}{+} \PYG{n}{emulatorsManager}\PYG{p}{.}\PYG{n}{user}\PYG{p}{.}\PYG{n}{username} \PYG{p}{+} \PYG{l+s}{@\PYGZdq{}\PYGZbs{}Save\PYGZbs{}\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+
+            \PYG{n}{savePathZipDolpin} \PYG{p}{=} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{appDataPath}\PYG{p}{,} \PYG{l+s}{@\PYGZdq{}Caiman\PYGZbs{}users\PYGZbs{}\PYGZdq{}} \PYG{p}{+}  \PYG{n}{emulatorsManager}\PYG{p}{.}\PYG{n}{user}\PYG{p}{.}\PYG{n}{username}\PYG{p}{+} \PYG{l+s}{@\PYGZdq{}\PYGZbs{}Save\PYGZbs{}GamecubeWii\PYGZbs{}\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{savePathZipPCSX2} \PYG{p}{=} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{appDataPath}\PYG{p}{,} \PYG{l+s}{@\PYGZdq{}Caiman\PYGZbs{}users\PYGZbs{}\PYGZdq{}} \PYG{p}{+} \PYG{n}{emulatorsManager}\PYG{p}{.}\PYG{n}{user}\PYG{p}{.}\PYG{n}{username} \PYG{p}{+} \PYG{l+s}{@\PYGZdq{}\PYGZbs{}Save\PYGZbs{}Playstation2\PYGZbs{}\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{c+c1}{//zip the save of the emulators}
+            \PYG{n}{ZipFile}\PYG{p}{.}\PYG{n}{CreateFromDirectory}\PYG{p}{(}\PYG{n}{savePathZipPCSX2}\PYG{p}{,} \PYG{n}{savePath} \PYG{p}{+} \PYG{l+s}{\PYGZdq{}tempPCSX2.zip\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{ZipFile}\PYG{p}{.}\PYG{n}{CreateFromDirectory}\PYG{p}{(}\PYG{n}{savePathZipDolpin}\PYG{p}{,} \PYG{n}{savePath} \PYG{p}{+} \PYG{l+s}{\PYGZdq{}tempDolphin.zip\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{c+c1}{//call the api to create a copy of the save to the Bunker}
+            \PYG{n}{callAPI}\PYG{p}{.}\PYG{n}{UploadSave}\PYG{p}{(}\PYG{l+m}{1}\PYG{p}{,} \PYG{n}{emulatorsManager}\PYG{p}{.}\PYG{n}{user}\PYG{p}{.}\PYG{n}{id}\PYG{p}{,} \PYG{n}{emulatorsManager}\PYG{p}{.}\PYG{n}{user}\PYG{p}{.}\PYG{n}{apitoken}\PYG{p}{,} \PYG{n}{savePath} \PYG{p}{+} \PYG{l+s}{\PYGZdq{}tempDolphin.zip\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{callAPI}\PYG{p}{.}\PYG{n}{UploadSave}\PYG{p}{(}\PYG{l+m}{2}\PYG{p}{,}\PYG{n}{emulatorsManager}\PYG{p}{.}\PYG{n}{user}\PYG{p}{.}\PYG{n}{id}\PYG{p}{,}\PYG{n}{emulatorsManager}\PYG{p}{.}\PYG{n}{user}\PYG{p}{.}\PYG{n}{apitoken}\PYG{p}{,} \PYG{n}{savePath} \PYG{p}{+} \PYG{l+s}{\PYGZdq{}tempPCSX2.zip\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{c+c1}{//delete the temporary zip file}
+            \PYG{n}{File}\PYG{p}{.}\PYG{n}{Delete}\PYG{p}{(}\PYG{n}{savePath} \PYG{p}{+} \PYG{l+s}{\PYGZdq{}tempPCSX2.zip\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{File}\PYG{p}{.}\PYG{n}{Delete}\PYG{p}{(}\PYG{n}{savePath} \PYG{p}{+} \PYG{l+s}{\PYGZdq{}tempDolphin.zip\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Download des sauvegardes présente sur le serveur de Caiman}
+\label{\detokenize{organique:download-des-sauvegardes-presente-sur-le-serveur-de-caiman}}
+\sphinxAtStartPar
+Le lancement du téléchargement des sauvegardes est lancé à la connexion de l’utilisateur. Un appel à l’API est fait pour les deux émulateurs:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+ \PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{CreateDownload}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{idEmulator}\PYG{p}{,} \PYG{k+kt}{string} \PYG{n}{apiKey}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{k+kt}{var} \PYG{n}{appDataPath} \PYG{p}{=} \PYG{n}{Environment}\PYG{p}{.}\PYG{n}{GetFolderPath}\PYG{p}{(}\PYG{n}{Environment}\PYG{p}{.}\PYG{n}{SpecialFolder}\PYG{p}{.}\PYG{n}{ApplicationData}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{var} \PYG{n}{savePath} \PYG{p}{=} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{appDataPath}\PYG{p}{,} \PYG{l+s}{@\PYGZdq{}Caiman\PYGZbs{}users\PYGZbs{}\PYGZdq{}} \PYG{p}{+} \PYG{n}{user}\PYG{p}{.}\PYG{n}{username} \PYG{p}{+} \PYG{l+s}{@\PYGZdq{}\PYGZbs{}Save\PYGZbs{}\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{lst\PYGZus{}download} \PYG{p}{=}\PYG{p}{=} \PYG{k}{null}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{lst\PYGZus{}download} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{DownloadSave}\PYG{p}{\PYGZgt{}}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{n}{lst\PYGZus{}download}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{k}{new} \PYG{n}{DownloadSave}\PYG{p}{(}\PYG{n}{savePath}\PYG{p}{,} \PYG{n}{idEmulator}\PYG{p}{,}\PYG{n}{user}\PYG{p}{.}\PYG{n}{id}\PYG{p}{,} \PYG{n}{apiKey}\PYG{p}{,}\PYG{n}{user}\PYG{p}{.}\PYG{n}{username}\PYG{p}{,}\PYG{k}{this}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Ces appels à l’API vont télécharger des fichiers .zip contenant les sauvegardes des différents émulateurs. Ces deux fichiers vont être décompressé dans le dossier spécifique de chaque émulateur. Avant de pouvoir décompresser le dossier, je dois au préalable supprimer le contenu des dossiers de destination (Si je dois supprimer le contenu des dossiers c’est parce que la classe Zipfile de C\# sous la version 5.0 ne peut pas “override” le contenu d’un dossier).
+
+\sphinxAtStartPar
+Quand les fichiers zip sont décompressés le contenu est envoyé dans les dossiers des différents émulateurs.
+
+
+\section{Description technique: Interface graphique}
+\label{\detokenize{organique:description-technique-interface-graphique}}
+\sphinxAtStartPar
+Diagramme de classe
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{DiagramVue}.png}
+
+
+\subsection{Organisation des boutons}
+\label{\detokenize{organique:organisation-des-boutons}}
+\sphinxAtStartPar
+Pour faire en sorte de pouvoir se déplacer de bouton en bouton, il m’a fallu trouver une stratégie pour organiser les boutons. Pour structurer la liste des boutons, j’ai finalement décidé de créer une liste de liste de boutons. La liste principale sert de rangé et la “sous liste” sert de colonne. Cela permet de connaître plus aisément l’emplacement des boutons qu’une simple liste à une seule dimension.
+
+
+\subsection{Gestion des inputs}
+\label{\detokenize{organique:gestion-des-inputs}}
+
+\subsubsection{Interaction avec les manettes}
+\label{\detokenize{organique:interaction-avec-les-manettes}}
+\sphinxAtStartPar
+L’application Caiman prend en charge les manettes reconnues nativement par windows (Xinput). Pour pouvoir communiquer avec la manette, j’ai utilisé le paquet NuGet “SharpDX”, il me permet de connaître les informations et les inputs des manette connectés au pc.
+
+\sphinxAtStartPar
+Pour simplifier l’interaction avec la manette de l’utilisateur, j’ai créé une classe “XboxController.cs”, Cette classe me permet de connaître les manettes connectées et de savoir à un instant T les inputs de chaque manette.
+
+
+\subsubsection{Transformation d’inputs en événement.}
+\label{\detokenize{organique:transformation-dinputs-en-evenement}}
+\sphinxAtStartPar
+Pour simplifier la navigation, seule la manette une a le droit de se déplacer dans l’application de Caiman. Pour connaître les inputs, je les rafraîchis toutes les 10ms, cela permet de ne pas avoir de latence ou de louper des inputs.
+
+
+\subsubsection{Gestion des boutons}
+\label{\detokenize{organique:gestion-des-boutons}}
+\sphinxAtStartPar
+Quand la fonction ScanInput reçoit un string contenant les inputs de la manette 1. Ce string est envoyé dans un switch qui va faire une comparaison entre l’input précédent de la manette et l’input actuel. Si l’input actuel est différent de l’ancien alors celaveut dire que l’utilisateur a pressé un bouton puis il l’a soit relâché soit fait une autre combinaison de touches.
+
+\sphinxAtStartPar
+Le code suivant n’est pas complet!
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{ScanInput}\PYG{p}{(}\PYG{k+kt}{object} \PYG{n}{sender}\PYG{p}{,} \PYG{n}{EventArgs} \PYG{n}{e}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{c+c1}{// if the user 1 controller is connected}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{xboxController}\PYG{p}{.}\PYG{n}{lstController}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{.}\PYG{n}{IsConnected}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k+kt}{string} \PYG{n}{input} \PYG{p}{=} \PYG{n}{xboxController}\PYG{p}{.}\PYG{n}{lstController}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{.}\PYG{n}{GetState}\PYG{p}{(}\PYG{p}{)}\PYG{p}{.}\PYG{n}{Gamepad}\PYG{p}{.}\PYG{n}{Buttons}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                \PYG{k+kt}{int} \PYG{n}{inputAnalogLeftX} \PYG{p}{=} \PYG{n}{xboxController}\PYG{p}{.}\PYG{n}{lstController}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{.}\PYG{n}{GetState}\PYG{p}{(}\PYG{p}{)}\PYG{p}{.}\PYG{n}{Gamepad}\PYG{p}{.}\PYG{n}{LeftThumbX}\PYG{p}{;}
+                \PYG{k+kt}{int} \PYG{n}{inputAnalogLeftY} \PYG{p}{=} \PYG{n}{xboxController}\PYG{p}{.}\PYG{n}{lstController}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{.}\PYG{n}{GetState}\PYG{p}{(}\PYG{p}{)}\PYG{p}{.}\PYG{n}{Gamepad}\PYG{p}{.}\PYG{n}{LeftThumbY}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{if} \PYG{p}{(}\PYG{n}{input} \PYG{p}{=}\PYG{p}{=} \PYG{l+s}{\PYGZdq{}A\PYGZdq{}} \PYG{p}{\PYGZam{}}\PYG{p}{\PYGZam{}} \PYG{n}{old\PYGZus{}input} \PYG{p}{!}\PYG{p}{=} \PYG{l+s}{\PYGZdq{}A\PYGZdq{}}\PYG{p}{)}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{n}{SendKeys}\PYG{p}{.}\PYG{n}{Send}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZob{}ENTER\PYGZcb{}\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Gestion du joystick gauche}
+\label{\detokenize{organique:gestion-du-joystick-gauche}}
+\sphinxAtStartPar
+La réception des inputs pour le joystick n’est pas comme pour les boutons, en sachant que les joysticks sont analogiques, je reçois une valeur entre \sphinxhyphen{}32000 et +32000. Je vais recevoir ces valeurs pour l’axe X et l’axe Y. Pour savoir si l’utilisateur a poussé le joystick dans une direction, j’ai défini une “deadzone” dans laquelle je considère qu” aucune direction n’est définie par l’utilisateur de la manette. J’ai défini cette zone à 20000, j’ai fait des tests pour savoir où je trouvais que la “deadzone” devait s’arrêter. Puis j’ai fait comme pour les boutons,  j’ai fait une comparaison avec la valeur précédente pour savoir si le joystick vient d’être poussé.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+                \PYG{k+kt}{bool} \PYG{n}{leftAnalogUp} \PYG{p}{=} \PYG{k}{false}\PYG{p}{;}
+                \PYG{k+kt}{bool} \PYG{n}{leftAnalogDown} \PYG{p}{=} \PYG{k}{false}\PYG{p}{;}
+                \PYG{k+kt}{bool} \PYG{n}{leftAnalogLeft} \PYG{p}{=} \PYG{k}{false}\PYG{p}{;}
+                \PYG{k+kt}{bool} \PYG{n}{leftAnalogRight} \PYG{p}{=} \PYG{k}{false}\PYG{p}{;}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{inputAnalogLeftX} \PYG{p}{\PYGZgt{}} \PYG{n}{DEAD\PYGZus{}ZONE\PYGZus{}JOYSTICK}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{leftAnalogRight} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{inputAnalogLeftX} \PYG{p}{\PYGZlt{}} \PYG{p}{\PYGZhy{}}\PYG{n}{DEAD\PYGZus{}ZONE\PYGZus{}JOYSTICK}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{leftAnalogLeft} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{inputAnalogLeftY} \PYG{p}{\PYGZgt{}} \PYG{n}{DEAD\PYGZus{}ZONE\PYGZus{}JOYSTICK}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{leftAnalogUp} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{inputAnalogLeftY} \PYG{p}{\PYGZlt{}} \PYG{p}{\PYGZhy{}}\PYG{n}{DEAD\PYGZus{}ZONE\PYGZus{}JOYSTICK}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{leftAnalogDown} \PYG{p}{=} \PYG{k}{true}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Découpage de l’interface}
+\label{\detokenize{organique:decoupage-de-linterface}}
+\sphinxAtStartPar
+L’interface de l’application Caiman est divisée en trois parties hormis pour la connexion.
+
+
+\subsubsection{Navbar}
+\label{\detokenize{organique:navbar}}
+\sphinxAtStartPar
+La première est la navbar qui contient les différents boutons de navigation et les informations sur le jeu en cours. Tous les boutons sont créés dynamiquement, le placement s’adapte à l’écran principal de l’utilisateur, mais s’il a un écran vraiment trop petit, les informations sur le jeu en cours et les boutons risquent de s’entremêler.
+
+\sphinxAtStartPar
+Pour afficher le jeu en cours, le navigateur est obligé de se rafraîchir et de se redessiner toutes les secondes pour afficher le temps de jeu. Pour savoir si un jeu est en cours,lal’a navbar regarde si le GameTimer est lancé. Si le GameTimer est lancé c’est qu’un jeu est en cours, dans ce cas il va afficher le nom et le temps de jeu.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{private} \PYG{k}{void} \PYG{n+nf}{UpdateData}\PYG{p}{(}\PYG{k+kt}{object} \PYG{n}{sender}\PYG{p}{,} \PYG{n}{EventArgs} \PYG{n}{e}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{xboxMainForm}\PYG{p}{.}\PYG{n}{emulatorsManager}\PYG{p}{.}\PYG{n}{gameTimer} \PYG{p}{!}\PYG{p}{=} \PYG{k}{null}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{actualGameName} \PYG{p}{!}\PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{lbl\PYGZus{}game\PYGZus{}actual}\PYG{p}{.}\PYG{n}{Text} \PYG{p}{=} \PYG{l+s}{\PYGZdq{} Now playing: \PYGZdq{}} \PYG{p}{+} \PYG{n}{actualGameName} \PYG{p}{+} \PYG{l+s}{\PYGZdq{}  \PYGZdq{}} \PYG{p}{+} \PYG{n}{xboxMainForm}\PYG{p}{.}\PYG{n}{emulatorsManager}\PYG{p}{.}\PYG{n}{gameTimer}\PYG{p}{.}\PYG{n}{ToString}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{lbl\PYGZus{}game\PYGZus{}actual}\PYG{p}{.}\PYG{n}{Text} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{lbl\PYGZus{}game\PYGZus{}actual}\PYG{p}{.}\PYG{n}{Text} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Sidebar}
+\label{\detokenize{organique:sidebar}}
+\sphinxAtStartPar
+La sidebar contient des boutons qui permettent d’afficher différentes listes de jeux. Ces boutons sont en partie créés dynamiquement et en partie reçus de l’API. Les premiers boutons sont ceux qui concernent l’utilisateur, on va les avoir dans l’ordre:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Downloaded games
+
+\item {} 
+\sphinxAtStartPar
+Favorites games
+
+\item {} 
+\sphinxAtStartPar
+All games
+
+\end{itemize}
+
+\sphinxAtStartPar
+Ces catégories ne sont pas créées dynamiquement.
+
+\sphinxAtStartPar
+Par contre, les suivants sont reçus de l’API, ils concernent les différentes catégories disponibles pour Caiman. À l’appui de ces boutons, la liste des jeux va être chargée et le main panel va afficher la liste des jeux reçus par l’API.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{CreateListNavButton}\PYG{p}{(}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}} \PYG{n}{lst\PYGZus{}navbar} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Category}\PYG{p}{\PYGZgt{}} \PYG{n}{lst\PYGZus{}category} \PYG{p}{=} \PYG{n}{xboxMainForm}\PYG{p}{.}\PYG{n}{callAPI}\PYG{p}{.}\PYG{n}{CallAllCategories}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{lst\PYGZus{}navbar}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Downloaded games\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{lst\PYGZus{}navbar}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Favorites games\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{lst\PYGZus{}navbar}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}All games\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{k+kt}{var} \PYG{n}{item} \PYG{k}{in} \PYG{n}{lst\PYGZus{}category}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{lst\PYGZus{}navbar}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{item}\PYG{p}{.}\PYG{n}{name}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{lst\PYGZus{}navbar}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{+}\PYG{p}{+}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{lstControls}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Control}\PYG{p}{\PYGZgt{}}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{k}{new} \PYG{n}{XboxButton}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{c+c1}{//update the buttons infos}
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{a\PYGZus{}row} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{a\PYGZus{}row} \PYG{p}{\PYGZlt{}}\PYG{p}{=} \PYG{p}{(}\PYG{n}{lst\PYGZus{}navbar}\PYG{p}{.}\PYG{n}{Count} \PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{)}\PYG{p}{;} \PYG{n}{a\PYGZus{}row}\PYG{p}{+}\PYG{p}{+}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+
+                \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}} \PYG{n}{lstString} \PYG{p}{=} \PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{k+kt}{string}\PYG{p}{\PYGZgt{}}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{XboxButton} \PYG{n}{tempButton} \PYG{p}{=} \PYG{k}{new} \PYG{n}{XboxButton}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}side\PYGZdq{}}\PYG{p}{,} \PYG{n}{a\PYGZus{}row}\PYG{p}{,} \PYG{n}{a\PYGZus{}row}\PYG{p}{,} \PYG{l+m}{0}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{a\PYGZus{}row}\PYG{p}{]}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]} \PYG{p}{=} \PYG{n}{tempButton}\PYG{p}{;}
+                \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{a\PYGZus{}row}\PYG{p}{]}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Text} \PYG{p}{=} \PYG{n}{lst\PYGZus{}navbar}\PYG{p}{[}\PYG{n}{a\PYGZus{}row}\PYG{p}{]}\PYG{p}{;}
+                \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{a\PYGZus{}row}\PYG{p}{]}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Location} \PYG{p}{=} \PYG{k}{new} \PYG{n}{System}\PYG{p}{.}\PYG{n}{Drawing}\PYG{p}{.}\PYG{n}{Point}\PYG{p}{(}\PYG{l+m}{0} \PYG{p}{*} \PYG{l+m}{1}\PYG{l+m}{0}\PYG{l+m}{0} \PYG{p}{+} \PYG{l+m}{2}\PYG{l+m}{0}\PYG{p}{,} \PYG{n}{a\PYGZus{}row} \PYG{p}{*} \PYG{l+m}{7}\PYG{l+m}{5} \PYG{p}{+} \PYG{l+m}{1}\PYG{l+m}{5}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{a\PYGZus{}row}\PYG{p}{]}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Width} \PYG{p}{=} \PYG{l+m}{2}\PYG{l+m}{0}\PYG{l+m}{0}\PYG{p}{;}
+                \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{a\PYGZus{}row}\PYG{p}{]}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Height} \PYG{p}{=} \PYG{l+m}{5}\PYG{l+m}{0}\PYG{p}{;}
+                \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{a\PYGZus{}row}\PYG{p}{]}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Name} \PYG{p}{=}  \PYG{l+s}{\PYGZdq{}btn\PYGZus{}\PYGZdq{}}\PYG{p}{+} \PYG{n}{lst\PYGZus{}navbar}\PYG{p}{[}\PYG{n}{a\PYGZus{}row}\PYG{p}{]}\PYG{p}{;}
+
+
+                \PYG{n}{Controls}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{a\PYGZus{}row}\PYG{p}{]}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{a\PYGZus{}row}\PYG{p}{]}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Click} \PYG{p}{+}\PYG{p}{=} \PYG{k}{new} \PYG{n}{System}\PYG{p}{.}\PYG{n}{EventHandler}\PYG{p}{(}\PYG{n}{bouton\PYGZus{}Click}\PYG{p}{)}\PYG{p}{;}
+
+            \PYG{p}{\PYGZcb{}}
+
+            \PYG{c+c1}{//set the action of button}
+            \PYG{n}{XboxButton} \PYG{n}{downloadedGames} \PYG{p}{=} \PYG{p}{(}\PYG{n}{XboxButton}\PYG{p}{)}\PYG{n}{lstControls}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{;}
+            \PYG{n}{downloadedGames}\PYG{p}{.}\PYG{n}{contextInfos}\PYG{p}{.}\PYG{n}{contexte} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}downloadedGames\PYGZdq{}}\PYG{p}{;}
+            \PYG{n}{XboxButton} \PYG{n}{userFavoritesGames} \PYG{p}{=} \PYG{p}{(}\PYG{n}{XboxButton}\PYG{p}{)}\PYG{n}{lstControls}\PYG{p}{[}\PYG{l+m}{1}\PYG{p}{]}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{;}
+            \PYG{n}{userFavoritesGames}\PYG{p}{.}\PYG{n}{contextInfos}\PYG{p}{.}\PYG{n}{contexte} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}favorite\PYGZdq{}}\PYG{p}{;}
+            \PYG{n}{XboxButton} \PYG{n}{allGames} \PYG{p}{=} \PYG{p}{(}\PYG{n}{XboxButton}\PYG{p}{)}\PYG{n}{lstControls}\PYG{p}{[}\PYG{l+m}{2}\PYG{p}{]}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{;}
+            \PYG{n}{allGames}\PYG{p}{.}\PYG{n}{contextInfos}\PYG{p}{.}\PYG{n}{contexte} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}home\PYGZdq{}}\PYG{p}{;}
+
+            \PYG{k}{for} \PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{i} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;} \PYG{n}{i} \PYG{p}{\PYGZlt{}} \PYG{n}{lst\PYGZus{}category}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{;} \PYG{n}{i}\PYG{p}{+}\PYG{p}{+}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{XboxButton} \PYG{n}{tempButton} \PYG{p}{=} \PYG{p}{(}\PYG{n}{XboxButton}\PYG{p}{)}\PYG{n}{lstControls}\PYG{p}{[}\PYG{p}{(}\PYG{n}{i}\PYG{p}{+}\PYG{l+m}{3}\PYG{p}{)}\PYG{p}{]}\PYG{p}{[}\PYG{l+m}{0}\PYG{p}{]}\PYG{p}{;}
+                \PYG{n}{tempButton}\PYG{p}{.}\PYG{n}{contextInfos}\PYG{p}{.}\PYG{n}{contexte} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}category\PYGZdq{}}\PYG{p}{;}
+                \PYG{n}{tempButton}\PYG{p}{.}\PYG{n}{contextInfos}\PYG{p}{.}\PYG{n}{id\PYGZus{}contexte} \PYG{p}{=} \PYG{p}{(}\PYG{n}{lst\PYGZus{}category}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{.}\PYG{n}{id}\PYG{p}{)}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+        \PYG{p}{\PYGZcb{}}
+
+
+    \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsubsection{Main panel}
+\label{\detokenize{organique:main-panel}}
+\sphinxAtStartPar
+Néanmoins,le main panel ne peut pas vraiment être décrit, c’est un panel contextuel qui va être défini par les besoins de l’utilisateur.
+
+
+\subsection{Affichage d’une liste de jeu}
+\label{\detokenize{organique:affichage-dune-liste-de-jeu}}
+\sphinxAtStartPar
+Pour l’affichage des listes des jeux, j’ai essayé de faire en sorte que le panel soit le plus flexible possible. le panel demande juste une liste de jeux, il n’y a pas de panel fait pour les jeux favoris ou les jeux déjà présents sur le disque.
+
+\sphinxAtStartPar
+Le panel utilise la fonction CreateListGames() pour dessiner les différents boutons de lien vers les détails des jeux. Pour que certaines images ne dépasse pas l’écran et qu’elles soient coupées, la fonction calcul le nombre d’images qu’elle peut afficher par ligne. Le calcul se fait selon la définition de l’écran de l’utilisateur. Les images affichées sont celles qui sont dans le dossier appdata de Caiman.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{CreateListGames}\PYG{p}{(}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+
+            \PYG{k+kt}{string} \PYG{n}{imgPath} \PYG{p}{=} \PYG{n}{Path}\PYG{p}{.}\PYG{n}{Combine}\PYG{p}{(}\PYG{n}{Environment}\PYG{p}{.}\PYG{n}{GetFolderPath}\PYG{p}{(}\PYG{n}{Environment}\PYG{p}{.}\PYG{n}{SpecialFolder}\PYG{p}{.}\PYG{n}{ApplicationData}\PYG{p}{)}\PYG{p}{,} \PYG{n}{PATH\PYGZus{}IMG\PYGZus{}CAIMAN}\PYG{p}{)}\PYG{p}{;}
+            \PYG{n}{XboxImage} \PYG{n}{tempXboxImage} \PYG{p}{=} \PYG{k}{new} \PYG{n}{XboxImage}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{int} \PYG{n}{max\PYGZus{}rank} \PYG{p}{=} \PYG{n}{Width} \PYG{p}{/} \PYG{p}{(}\PYG{l+m}{3}\PYG{l+m}{1}\PYG{l+m}{5}\PYG{p}{)}\PYG{p}{;}
+            \PYG{k+kt}{int} \PYG{n}{tempPos\PYGZus{}x} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
+            \PYG{k+kt}{int} \PYG{n}{tempPos\PYGZus{}y} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
+            \PYG{n}{lstControls}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Control}\PYG{p}{\PYGZgt{}}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+
+
+            \PYG{k}{foreach} \PYG{p}{(}\PYG{k+kt}{var} \PYG{n}{game} \PYG{k}{in} \PYG{n}{lst\PYGZus{}games}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{tempPos\PYGZus{}x} \PYG{p}{=}\PYG{p}{=} \PYG{n}{max\PYGZus{}rank}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{lstControls}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{k}{new} \PYG{n}{List}\PYG{p}{\PYGZlt{}}\PYG{n}{Control}\PYG{p}{\PYGZgt{}}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{tempPos\PYGZus{}y}\PYG{p}{+}\PYG{p}{+}\PYG{p}{;}
+                    \PYG{n}{tempPos\PYGZus{}x} \PYG{p}{=} \PYG{l+m}{0}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+
+                \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{tempPos\PYGZus{}y}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{k}{new} \PYG{n}{XboxImage}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{Image} \PYG{n}{img} \PYG{p}{=} \PYG{k}{new} \PYG{n}{Bitmap}\PYG{p}{(}\PYG{p}{(}\PYG{n}{imgPath}\PYG{p}{+} \PYG{n}{game}\PYG{p}{.}\PYG{n}{imageName}\PYG{p}{)}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{XboxImage} \PYG{n}{tempButton} \PYG{p}{=} \PYG{k}{new} \PYG{n}{XboxImage}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}game\PYGZdq{}}\PYG{p}{,} \PYG{n}{img}\PYG{p}{,} \PYG{n}{game}\PYG{p}{.}\PYG{n}{id}\PYG{p}{,} \PYG{n}{tempPos\PYGZus{}x}\PYG{p}{,} \PYG{n}{tempPos\PYGZus{}y}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{tempPos\PYGZus{}y}\PYG{p}{]}\PYG{p}{[}\PYG{n}{tempPos\PYGZus{}x}\PYG{p}{]} \PYG{p}{=} \PYG{n}{tempButton}\PYG{p}{;}
+                \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{tempPos\PYGZus{}y}\PYG{p}{]}\PYG{p}{[}\PYG{n}{tempPos\PYGZus{}x}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Location} \PYG{p}{=} \PYG{k}{new} \PYG{n}{System}\PYG{p}{.}\PYG{n}{Drawing}\PYG{p}{.}\PYG{n}{Point}\PYG{p}{(}\PYG{n}{tempPos\PYGZus{}x} \PYG{p}{*} \PYG{l+m}{3}\PYG{l+m}{0}\PYG{l+m}{0} \PYG{p}{+} \PYG{l+m}{1}\PYG{l+m}{5}\PYG{p}{,} \PYG{n}{tempPos\PYGZus{}y} \PYG{p}{*} \PYG{l+m}{4}\PYG{l+m}{3}\PYG{l+m}{0} \PYG{p}{+} \PYG{l+m}{1}\PYG{l+m}{5}\PYG{p}{)}\PYG{p}{;}
+
+                \PYG{n}{Controls}\PYG{p}{.}\PYG{n}{Add}\PYG{p}{(}\PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{tempPos\PYGZus{}y}\PYG{p}{]}\PYG{p}{[}\PYG{n}{tempPos\PYGZus{}x}\PYG{p}{]}\PYG{p}{)}\PYG{p}{;}
+                \PYG{n}{tempButton}\PYG{p}{.}\PYG{n}{Click} \PYG{p}{+}\PYG{p}{=} \PYG{k}{new} \PYG{n}{System}\PYG{p}{.}\PYG{n}{EventHandler}\PYG{p}{(}\PYG{n}{bouton\PYGZus{}Click}\PYG{p}{)}\PYG{p}{;}
+
+
+
+                \PYG{n}{tempPos\PYGZus{}x}\PYG{p}{+}\PYG{p}{+}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Gestion des erreurs de déplacement}
+\label{\detokenize{organique:gestion-des-erreurs-de-deplacement}}
+\sphinxAtStartPar
+Le déplacement à la manette se fait par déplacement haut,bas,gauche,droite. Donc, J’ai décidé de faire en sorte que si l’utilisateur se déplace dans une case qui n’existe pas, ils soient soit déplacés dans l’une des casses disponibles proche de la case demandée, autrement  rien ne se passe.
+
+\sphinxAtStartPar
+Pour cela, j’ai dû décider arbitrairement ce qui se passait. si un mouvement illégal était fait. J’ai essayé de reproduire les déplacements utilisés dans l’interface de la console Xbox. Il y a certains cas qui ne sont pas forcément bien gérés. Il serait possible de faire un déplacement en calculant la position actuelle et en se basant sur la position en pixel. Cette alternative pourrait être intéressante.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{public} \PYG{k}{void} \PYG{n+nf}{MoveActivateControl}\PYG{p}{(}\PYG{k+kt}{string} \PYG{n}{destination} \PYG{p}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{c+c1}{//top = 1}
+            \PYG{c+c1}{//right = 2}
+            \PYG{c+c1}{//down = 3}
+            \PYG{c+c1}{//left = 4}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{destination} \PYG{p}{=}\PYG{p}{=} \PYG{l+s}{\PYGZdq{}down\PYGZdq{}}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{position\PYGZus{}y}\PYG{p}{]}\PYG{p}{[}\PYG{n}{position\PYGZus{}x}\PYG{p}{]} \PYG{p}{=}\PYG{p}{=} \PYG{k}{null}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{k+kt}{int} \PYG{n}{x} \PYG{p}{=} \PYG{n}{position\PYGZus{}x}\PYG{p}{;}
+                    \PYG{k+kt}{int} \PYG{n}{y} \PYG{p}{=} \PYG{n}{position\PYGZus{}y}\PYG{p}{;}
+
+                    \PYG{k+kt}{int} \PYG{n}{y\PYGZus{}right\PYGZus{}not\PYGZus{}disponible}\PYG{p}{;}
+                    \PYG{k}{while} \PYG{p}{(}\PYG{n}{x} \PYG{p}{\PYGZlt{}} \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{position\PYGZus{}y}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{(}\PYG{p}{)} \PYG{p}{\PYGZam{}}\PYG{p}{\PYGZam{}} \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{position\PYGZus{}y}\PYG{p}{]}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{p}{=}\PYG{p}{=} \PYG{k}{null}\PYG{p}{)}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{k}{if} \PYG{p}{(}\PYG{n}{x} \PYG{p}{\PYGZgt{}} \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{position\PYGZus{}x}\PYG{p}{\PYGZhy{}}\PYG{l+m}{1}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+                        \PYG{p}{\PYGZob{}}
+                            \PYG{k}{break}\PYG{p}{;}
+                        \PYG{p}{\PYGZcb{}}
+                        \PYG{n}{x}\PYG{p}{+}\PYG{p}{+}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}
+                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{x} \PYG{p}{=}\PYG{p}{=} \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{position\PYGZus{}y}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{n}{y\PYGZus{}right\PYGZus{}not\PYGZus{}disponible} \PYG{p}{=} \PYG{n}{y}\PYG{p}{;}
+
+                        \PYG{k}{while} \PYG{p}{(}\PYG{n}{y\PYGZus{}right\PYGZus{}not\PYGZus{}disponible}\PYG{p}{\PYGZgt{}}\PYG{l+m}{0}\PYG{p}{)}
+                        \PYG{p}{\PYGZob{}}
+                            \PYG{n}{y\PYGZus{}right\PYGZus{}not\PYGZus{}disponible} \PYG{p}{\PYGZhy{}}\PYG{p}{\PYGZhy{}}\PYG{p}{;}
+                            \PYG{k}{if} \PYG{p}{(}\PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{y\PYGZus{}right\PYGZus{}not\PYGZus{}disponible}\PYG{p}{]}\PYG{p}{[}\PYG{n}{position\PYGZus{}x}\PYG{p}{]} \PYG{p}{!}\PYG{p}{=} \PYG{k}{null}\PYG{p}{)}
+                            \PYG{p}{\PYGZob{}}
+                                \PYG{n}{position\PYGZus{}y} \PYG{p}{=} \PYG{n}{y\PYGZus{}right\PYGZus{}not\PYGZus{}disponible}\PYG{p}{;}
+                                \PYG{n}{lstControls}\PYG{p}{[}\PYG{p}{(}\PYG{n}{position\PYGZus{}y}\PYG{p}{)}\PYG{p}{]}\PYG{p}{[}\PYG{n}{position\PYGZus{}x}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Focus}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                                \PYG{k}{return}\PYG{p}{;}
+                            \PYG{p}{\PYGZcb{}}
+                        \PYG{p}{\PYGZcb{}}
+                    \PYG{p}{\PYGZcb{}}
+                    \PYG{n}{lstControls}\PYG{p}{[}\PYG{p}{(}\PYG{n}{position\PYGZus{}y}\PYG{p}{)}\PYG{p}{]}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Focus}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{n}{Position\PYGZus{}x} \PYG{p}{=} \PYG{n}{x}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{n}{lstControls}\PYG{p}{[}\PYG{p}{(}\PYG{n}{position\PYGZus{}y}\PYG{p}{)}\PYG{p}{]}\PYG{p}{[}\PYG{n}{position\PYGZus{}x}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Focus}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+            \PYG{k}{else}
+            \PYG{p}{\PYGZob{}}
+                \PYG{k}{if} \PYG{p}{(}\PYG{n}{position\PYGZus{}x} \PYG{p}{\PYGZlt{}} \PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{position\PYGZus{}y}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Count}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+                \PYG{p}{\PYGZob{}}
+
+
+                    \PYG{k}{if} \PYG{p}{(}\PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{position\PYGZus{}y}\PYG{p}{]}\PYG{p}{[}\PYG{n}{position\PYGZus{}x}\PYG{p}{]} \PYG{p}{=}\PYG{p}{=} \PYG{k}{null}\PYG{p}{)}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{k+kt}{int} \PYG{n}{x} \PYG{p}{=} \PYG{n}{position\PYGZus{}x} \PYG{p}{\PYGZhy{}} \PYG{l+m}{1}\PYG{p}{;}
+                        \PYG{k+kt}{int} \PYG{n}{y} \PYG{p}{=} \PYG{n}{position\PYGZus{}y}\PYG{p}{;}
+                        \PYG{k}{while} \PYG{p}{(}\PYG{n}{lstControls}\PYG{p}{[}\PYG{n}{position\PYGZus{}y}\PYG{p}{]}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]} \PYG{p}{=}\PYG{p}{=} \PYG{k}{null}\PYG{p}{)}
+                        \PYG{p}{\PYGZob{}}
+                            \PYG{k}{if} \PYG{p}{(}\PYG{n}{x} \PYG{p}{\PYGZlt{}} \PYG{l+m}{0}\PYG{p}{)}
+                            \PYG{p}{\PYGZob{}}
+
+                                \PYG{k}{break}\PYG{p}{;}
+                            \PYG{p}{\PYGZcb{}}
+                            \PYG{n}{x}\PYG{p}{\PYGZhy{}}\PYG{p}{\PYGZhy{}}\PYG{p}{;}
+                        \PYG{p}{\PYGZcb{}}
+                        \PYG{n}{lstControls}\PYG{p}{[}\PYG{p}{(}\PYG{n}{position\PYGZus{}y}\PYG{p}{)}\PYG{p}{]}\PYG{p}{[}\PYG{n}{x}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Focus}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                        \PYG{n}{Position\PYGZus{}x} \PYG{p}{=} \PYG{n}{x}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}
+                    \PYG{k}{else}
+                    \PYG{p}{\PYGZob{}}
+                        \PYG{n}{lstControls}\PYG{p}{[}\PYG{p}{(}\PYG{n}{position\PYGZus{}y}\PYG{p}{)}\PYG{p}{]}\PYG{p}{[}\PYG{n}{position\PYGZus{}x}\PYG{p}{]}\PYG{p}{.}\PYG{n}{Focus}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+                    \PYG{p}{\PYGZcb{}}
+                \PYG{p}{\PYGZcb{}}
+                \PYG{k}{else} \PYG{p}{\PYGZob{}}
+                    \PYG{n}{position\PYGZus{}y}\PYG{p}{\PYGZhy{}}\PYG{p}{\PYGZhy{}}\PYG{p}{;}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\subsection{Passage de la souris à la manette}
+\label{\detokenize{organique:passage-de-la-souris-a-la-manette}}
+\sphinxAtStartPar
+Durant mes tests de l’application, je me suis rendu compte que le fait de passer de la manette à la souris et inversement, posait un problème. Quand je passais de l’un à l’autre la position du curseur n’était pas sauvegardée. Quand je passais de la souris à la manette, le curseur se retrouvait à une position erronée. Pour pouvoir pallier au problème, chaque bouton a une position définie et quand l’utilisateur clique dessus ,un événement se déclenche et notifie la forme que le bouton actuel a changé.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{protected} \PYG{k}{override} \PYG{k}{void} \PYG{n+nf}{OnClick}\PYG{p}{(}\PYG{n}{EventArgs} \PYG{n}{e}\PYG{p}{)}
+        \PYG{p}{\PYGZob{}}
+            \PYG{k}{base}\PYG{p}{.}\PYG{n}{OnClick}\PYG{p}{(}\PYG{n}{e}\PYG{p}{)}\PYG{p}{;}
+
+            \PYG{c+c1}{//tell to the topMainForm which control is active}
+            \PYG{n}{XboxUserControl} \PYG{n}{xboxUserControl} \PYG{p}{=} \PYG{p}{(}\PYG{n}{XboxUserControl}\PYG{p}{)}\PYG{k}{this}\PYG{p}{.}\PYG{n}{Parent}\PYG{p}{;}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{xboxUserControl} \PYG{p}{!}\PYG{p}{=} \PYG{k}{null}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+            \PYG{n}{xboxUserControl}\PYG{p}{.}\PYG{n}{position\PYGZus{}x} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{contextInfos}\PYG{p}{.}\PYG{n}{position\PYGZus{}x}\PYG{p}{;}
+            \PYG{n}{xboxUserControl}\PYG{p}{.}\PYG{n}{position\PYGZus{}y} \PYG{p}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n}{contextInfos}\PYG{p}{.}\PYG{n}{position\PYGZus{}y}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+
+
+            \PYG{k}{if} \PYG{p}{(}\PYG{p}{(}\PYG{n}{XboxMainForm}\PYG{p}{)}\PYG{k}{this}\PYG{p}{.}\PYG{n}{TopLevelControl} \PYG{p}{!}\PYG{p}{=} \PYG{k}{null}\PYG{p}{)}
+            \PYG{p}{\PYGZob{}}
+                \PYG{n}{XboxMainForm} \PYG{n}{topMainForm} \PYG{p}{=} \PYG{p}{(}\PYG{n}{XboxMainForm}\PYG{p}{)}\PYG{k}{this}\PYG{p}{.}\PYG{n}{TopLevelControl}\PYG{p}{;}
+                \PYG{n}{topMainForm}\PYG{p}{.}\PYG{n}{ActiveControl1} \PYG{p}{=} \PYG{n}{xboxUserControl}\PYG{p}{;}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+\end{sphinxVerbatim}
+
+
+\chapter{Tests}
+\label{\detokenize{test:tests}}\label{\detokenize{test::doc}}
+
+\section{Test de l’interface graphique}
+\label{\detokenize{test:test-de-linterface-graphique}}
+\sphinxAtStartPar
+Pour pouvoir tester mon interface graphique, j’ai créé un projet contenant des différentes vues pour pouvoir essayer le déplacement et le changement de vue.
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{caiman_interface_1}.png}
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{caiman_interface_2}.png}
+
+\sphinxAtStartPar
+Ce programme de test m’a permis de me rendre compte des différentes difficultés que j’ai pu avoir, ainsi que de pouvoir les corriger avant de passer à la partie développement de l’application.
+
+\sphinxAtStartPar
+Le but de ces tests étaient de ne pas avoir à me soucier de l’interface pendant que je devais développer la gestion des jeux et des émulateurs.
+
+
+\section{Test de Caiman}
+\label{\detokenize{test:test-de-caiman}}
+
+\subsection{Test globaux}
+\label{\detokenize{test:test-globaux}}
+\sphinxAtStartPar
+Pour pouvoir faire des tests, j’ai d’abord pensé à utiliser les tests de Visual Studio, malheureusement cela n’est pas vraiment applicable à Caiman. Alors, je n’ai donc testé que quelques classes de cette manière. Pour quand même essayer de trouver le plus de bogues possibles, j’ai demandé à plusieurs personnes de mon entourage d’essayer mon application pour me faire remonter les différents soucis qu’ils ont pu avoir.
+
+\sphinxAtStartPar
+Grâce aux différents retours, j’ai pu connaître un bon nombre de bogues liés à l’interface utilisable à la manettes et aux différents soucis d’ergonomie de Caiman. J’ai pu fournir à différents moments du développement des versions Alpha de Caiman, cela me permettait d’avoir des retours le plus régulièrement possible pour éviter d’avoir trop de contraintes à régler à la fin du développement.
+
+
+\subsection{Test synchronisation des sauvegardes}
+\label{\detokenize{test:test-synchronisation-des-sauvegardes}}
+\sphinxAtStartPar
+Pour tester la synchronisation des sauvegardes, j’ai créé un “protocole”. Ce protocole consiste à utiliser les sauvegardes du jeu “Metroid Prime” pour tester les sauvegardes des jeux de gamecube. Metroid Prime nous laisse créer un plusieurs fichiers de sauvegarde directement au lancement du jeu, je me sers donc de ces fichiers pour savoir si la sauvegarde est bien présente.
+
+\sphinxAtStartPar
+Pour tester les sauvegardes des jeux de Playstation 2, j’ai utilisé le jeu Dragon Quest: VIII, il a l’avantage de pouvoir créer un fichier de sauvegarde avec un nom spécifique. Donc, J’ai créé un fichier de sauvegarde avec mon prénom et un autre avec un nom complètement étrange. Si je ne trouve pas les sauvegardes quand je lance le jeu, alors je sais que la synchronisation n’a pas marché.
+
+
+\chapter{Planning}
+\label{\detokenize{planning:planning}}\label{\detokenize{planning::doc}}
+
+\section{Planning prévisionnel}
+\label{\detokenize{planning:planning-previsionnel}}
+\sphinxAtStartPar
+\sphinxincludegraphics{{planning_previsionnel-2}.png}
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{planning_previsionnel-1}.png}
+
+
+\section{Planning effectif}
+\label{\detokenize{planning:planning-effectif}}
+\sphinxAtStartPar
+\sphinxincludegraphics{{planning_effectif_2}.png}
+
+\sphinxAtStartPar
+\sphinxincludegraphics{{planning_effectif_1}.png}
+
+
+\chapter{Conclusion et perspectives}
+\label{\detokenize{conclusion:conclusion-et-perspectives}}\label{\detokenize{conclusion::doc}}
+
+\section{Problème rencontrés}
+\label{\detokenize{conclusion:probleme-rencontres}}
+\sphinxAtStartPar
+Durant ce travail, j’ai dû surmonter plusieurs difficultés, que ce soit des choses que je ne connaissais pas, ou bien des inconnues techniques.
+
+\sphinxAtStartPar
+Je pense que la plus grosse contrainte que j’ai eu, est que j’ai dû créer une API que je n’avais pas prévu à la base. Quand j’ai commencé l’application Caiman, j’ai discuté avec M.Maréchal et M.Schmid, les deux m’ont conseillé de créer une API pour accéder à la base de données depuis Caiman. Donc, J’ai pris une semaine complète pour créer mon API.Originellement, ce temps passé sur l’API n’était pas prévu mais je pense que cela m’a fait gagner du temps finalement.
+
+\sphinxAtStartPar
+Au niveau du code tout s’est relativement bien passé. L’un des seuls points où j’ai eu des difficultés est le téléchargement de jeux. Que ce soit du côté serveur ou client, je n’avais jamais fais de l’upload / téléchargement de fichiers. J’ai été conseillé par M.Schmid, ce qui m’a bien aidé.
+
+\sphinxAtStartPar
+Un autre point qui a été compliqué c’est la façon dont j’allais distribuer mon application. L’outil inclus dans Visual Studio n’étant pas vraiment mis à jour par Microsoft, j’ai du chercher de mon côté comment créer un programme d’installation, mais je n’ai pas vraiment trouvé. Finalement, M.Schmid m’a aidé mais tout n’était pas réglé pour autant. Le problème était que quand j’installais Caiman, certains fichiers des émulateurs n’étaient plus là donc je ne pouvais plus exécuter de jeu.
+
+\sphinxAtStartPar
+Le plus gros défi a été de créer une interface graphique. Durant notre formation nous ne sommes pas formés pour cela. Alors, j’ai dû beaucoup me documenter pour le projet. Finalement, je pense avoir une interface agréable et de surcroît utilisable avec une manette.
+
+
+\section{Expérience acquise durant le travail}
+\label{\detokenize{conclusion:experience-acquise-durant-le-travail}}
+\sphinxAtStartPar
+J’ai énormément appris de choses durant ce travail, en particulier sur le développement en C\#, et sur le fonctionnement des émulateurs. Je n’avais jamais créé d’application aussi complexe. Pour faire fonctionner mon application, j’ai dû faire énormément de choses différentes. J’ai apprécié mettre toutes ces choses en relation du développement C\#, du développement de site web, la création d’une API et la configuration d’un serveur Debian. J’ai donc pu créer une application de A à Z (sans compter les émulateurs bien sur) qui au final fonctionnent bien.
+
+
+\section{Améliorations envisageables}
+\label{\detokenize{conclusion:ameliorations-envisageables}}
+
+\subsection{Caiman C\#}
+\label{\detokenize{conclusion:caiman-c}}
+\sphinxAtStartPar
+J’ai eu une grande frustration durant ce travail, le fait de ne pas avoir 2 mois de plus. Chaque jour sur lequel j’ai travaillé sur l’application Caiman, j’avais énormément d’idées qui me venaient en tête. Les principales étaient.:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Ajouter d’autres émulateurs
+
+\item {} 
+\sphinxAtStartPar
+Synchroniser les paramètres de caiman entre les différents pc de l’utilisateur
+
+\item {} 
+\sphinxAtStartPar
+Améliorer l’interface
+
+\item {} 
+\sphinxAtStartPar
+Ajouter un système d’amis pour voir plus facilement ce à quoi jouent les autres joueurs
+
+\item {} 
+\sphinxAtStartPar
+Créer un meilleur tri dans les jeux
+
+\item {} 
+\sphinxAtStartPar
+Faire la liste des jeux les plus téléchargés
+
+\item {} 
+\sphinxAtStartPar
+Avoir une meilleur gestion des téléchargements
+
+\item {} 
+\sphinxAtStartPar
+Prendre en compte plus de manettes (PS4,Switch,etc)
+
+\end{itemize}
+
+\sphinxAtStartPar
+Vous l’avez compris, cette liste est sans fin. Mais je savais pertinemment avant même de commencer ce travail que je ne pourrais pas être vraiment satisfait du résultat final.
+
+\sphinxAtStartPar
+J’aurais aussi aimé pouvoir créer un installateur pour Caiman, mais quand j’ai essayé j’ai eu des soucis avec les fichiers des émulateurs. J’ai donc finalement dû y renoncer à cause d’un manque de temps.
+
+
+\subsection{API}
+\label{\detokenize{conclusion:api}}
+\sphinxAtStartPar
+L’API n’étant pas prévu à la base, elle a été une charge de travail supplémentaire mais qui finalement m’a fait gagner du temps. Des améliorations sont possibles, par exemple je pense que mes endpoints pourraient être améliorés et surtout plus nombreux. Par exemple, je pourrais créer un endpoint pour les téléchargements des jeux et des fichiers de sauvegarde.
+
+
+\section{Conclusion Globale}
+\label{\detokenize{conclusion:conclusion-globale}}
+\sphinxAtStartPar
+J’ai eu un réel plaisir à créer Caiman. Ce fut une expérience vraiment intéressante pour moi. Durant ma formation, je n’avais jamais pu créer de “vrai” projet en C\#, alors quand j’ai dû choisir le sujet de mon travail, j’ai tout de suite sauté sur l’occasion d’en faire.
+
+\sphinxAtStartPar
+J’ai eu la chance de pouvoir travailler sur ce projet en sachant qu’il était atypique. Je voulais vraiment pour mon diplôme travailler sur un sujet qui me plait.
+
+\sphinxAtStartPar
+Pour conclure, je pense que Caiman est une réussite. Mon but principal était qu’une personne qui ne connaisse rien aux jeux vidéo et en particulier aux émulateurs puisse jouer à un jeu en moins de 5 minutes, ce qui est le cas. Voilà pourquoi je pense que mon projet est réussi.
+
+
+\chapter{Remerciement}
+\label{\detokenize{remerciment:remerciement}}\label{\detokenize{remerciment::doc}}
+\sphinxAtStartPar
+Pour commencer, je tenais en particulier à remercier les personnes qui ont pris le temps de me faire des retours sur Caiman. Sans les retours que j’ai reçus de leur part, Caiman ne serait pas aussi bien peaufiné qu’il l’est actuellement. Ensuite, j’aimerais remercier M.Maréchal et M.Schmid pour leurs conseils et leurs retours tout le long de mon travail de diplôme. Pour finir, j’aimerais remercier les autres élèves de ma classe avec qui j’ai passé de très bon moment et qui m’ont aussi donné des conseils pertinents. Je tiens en particulier à remercier M.Borel\sphinxhyphen{}Jaquet qui m’a énormément aidé avec la structure de l’API.
+
+
+\chapter{Sources}
+\label{\detokenize{sources:sources}}\label{\detokenize{sources::doc}}
+\sphinxAtStartPar
+\sphinxurl{https://stackoverflow.com/questions/30013448/c-sharp-create-dir-in-appdata/30013494}
+
+\sphinxAtStartPar
+\sphinxurl{https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-debian-10}
+
+\sphinxAtStartPar
+\sphinxurl{https://linuxize.com/post/how-to-install-php-on-debian-10/}
+
+\sphinxAtStartPar
+\sphinxurl{https://stackoverflow.com/questions/307688/how-to-download-a-file-from-a-url-in-c}
+
+\sphinxAtStartPar
+\sphinxurl{https://www.tutorialspoint.com/check-if-a-file-exists-in-chash}
+
+\sphinxAtStartPar
+\sphinxurl{https://stackoverflow.com/questions/29728829/cannot-download-file-using-fpassthru}
+
+\sphinxAtStartPar
+\sphinxurl{https://stackoverflow.com/questions/26010606/how-to-make-winform-scrollable-in-c-sharp}
+
+\sphinxAtStartPar
+\sphinxurl{https://stackoverflow.com/questions/8255533/how-to-add-new-line-into-txt-file}
+
+\sphinxAtStartPar
+\sphinxurl{https://stackoverflow.com/questions/837488/how-can-i-get-the-applications-path-in-a-net-console-application}
+
+\sphinxAtStartPar
+\sphinxurl{https://stackoverflow.com/questions/2104099/c-sharp-if-then-directives-for-debug-vs-release}
+
+\sphinxAtStartPar
+\sphinxurl{https://www.reddit.com/r/DolphinEmulator/comments/gtj0es/dolphin\_for\_windows\_no\_gui/}
+
+\sphinxAtStartPar
+(pour les images des jeux)
+
+\sphinxAtStartPar
+\sphinxurl{https://ggapp.io/}
+
+\sphinxAtStartPar
+\sphinxurl{https://stackoverflow.com/questions/8103860/move-uploaded-file-gives-failed-to-open-stream-permission-denied-error}
+
+\sphinxAtStartPar
+\sphinxurl{https://www.c-sharpcorner.com/UploadFile/dbeniwal321/how-to-delete-a-file-in-C-Sharp/}
+
+\sphinxAtStartPar
+\sphinxurl{https://stackoverflow.com/questions/1288718/how-to-delete-all-files-and-folders-in-a-directory}
+
+\sphinxAtStartPar
+\sphinxurl{https://www.c-sharpcorner.com/UploadFile/mahesh/create-a-text-file-in-C-Sharp/}
+
+\sphinxAtStartPar
+\sphinxurl{https://stackoverflow.com/questions/4580263/how-to-open-in-default-browser-in-c-sharp}
+
+\sphinxAtStartPar
+\sphinxurl{https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-copy-delete-and-move-files-and-folders}
+
+\sphinxAtStartPar
+\sphinxurl{https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-compress-and-extract-files}
+
+\sphinxAtStartPar
+\sphinxurl{https://www.reddit.com/r/DolphinEmulator/comments/gtj0es/dolphin\_for\_windows\_no\_gui/}
+
+\sphinxAtStartPar
+\sphinxurl{http://institutions.ville-geneve.ch/fr/bm/interroge/archives-questions-reponses/detail/question/est-il-legal-de-telecharger-des-films-sur-internet-br/}
+
+\sphinxAtStartPar
+\sphinxurl{https://css.comonsoft.com/tutoriels/installation-certificat-lets-encrypt-ssl-debian.htm}
 
 
 \chapter{Logbook}
@@ -3152,6 +5477,45 @@ Je n’arrive pas a installer certbot donc je laisse ca en attente
 \label{\detokenize{logbook:id195}}
 \sphinxAtStartPar
 Documentation
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{08.06.2021}
+\label{\detokenize{logbook:id196}}
+
+\subsection{8h10}
+\label{\detokenize{logbook:id197}}
+\sphinxAtStartPar
+Documentation
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{09.06.2021}
+\label{\detokenize{logbook:id198}}
+
+\subsection{8h10}
+\label{\detokenize{logbook:id199}}
+\sphinxAtStartPar
+Documentation
+
+
+\bigskip\hrule\bigskip
+
+
+
+\section{10.06.2021}
+\label{\detokenize{logbook:id200}}
+
+\subsection{8h10}
+\label{\detokenize{logbook:id201}}
+\sphinxAtStartPar
+Export des fichiers sources en pdf et vérification global
 
 
 
