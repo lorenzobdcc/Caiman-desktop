@@ -2,26 +2,27 @@ PCSX2 1.6.0-20200506140834- compiled on May  6 2020
 Savestate version: 0x9a0e0000
 
 Host Machine Init:
-	Operating System =  Microsoft Windows 10 Education (build 19042), 64-bit
-	Physical RAM     =  32711 MB
-	CPU name         =  Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
-	Vendor/Model     =  GenuineIntel (stepping 09)
-	CPU speed        =  3.599 ghz (8 logical threads)
+	Operating System =  Microsoft Windows 10 Pro (build 22000), 64-bit
+	Physical RAM     =  16314 MB
+	CPU name         =  AMD Ryzen 7 2700X Eight-Core Processor
+	Vendor/Model     =  AuthenticAMD (stepping 02)
+	CPU speed        =  3.692 ghz (16 logical threads)
 	x86PType         =  Standard OEM
-	x86Flags         =  bfebfbff 7ffafbff
-	x86EFlags        =  2c100000
+	x86Flags         =  178bfbff 7ed8320b
+	x86EFlags        =  2fd3fbff
 
 x86 Features Detected:
 	SSE2.. SSE3.. SSSE3.. SSE4.1.. SSE4.2.. AVX.. AVX2.. FMA
+	SSE4a 
 
 Reserving memory for recompilers...
 
-Loading plugins from C:\Users\BDCC\Desktop\Caiman-desktop\Caiman\Caiman\Emulators\PCSX2\plugins...
+Loading plugins from D:\Caiman-desktop\Caiman\Caiman\emulators\PCSX2\plugins...
 	Bound   GS: GSdx32-SSE2.dll [GSdx 20200506140834 (MSVC 19.25 SSE2/AVX) 1.2.0]
 	Bound  PAD: LilyPad.dll [LilyPad (20200506140834) 0.12.1]
+(GameDB) 9858 games on record (loaded in 111ms)
 	Bound SPU2: Spu2-X.dll [SPU2-X 20200506140834 2.0.0]
 	Bound CDVD: cdvdGigaherz.dll [cdvdGigaherz 20200506140834 0.11.0]
-(GameDB) 9858 games on record (loaded in 137ms)
 	Bound  USB: USBnull.dll [USBnull Driver 20200506140834 0.7.0]
 	Bound   FW: FWnull.dll [FWnull Driver 20200506140834 0.7.0]
 	Bound DEV9: DEV9null.dll [DEV9null Driver 20200506140834 0.5.0]
@@ -45,6 +46,8 @@ Opening plugins...
 	Opening PAD
 	Opening SPU2
 Current Renderer: Direct3D 11 (Hardware renderer)
+GSdx Lookup CRC:0
+GSdx Lookup CRC:0
 	Opening CDVD
 isoFile open ok: C:\Caiman\Playstation2\KINGDOM_HEARTS_II_FMX.iso
 	Image type  = DVD
@@ -53,10 +56,8 @@ isoFile open ok: C:\Caiman\Playstation2\KINGDOM_HEARTS_II_FMX.iso
 	Opening USB
 	Opening FW
 	Opening DEV9
-McdSlot 0 [File]: C:\Users\BDCC\Desktop\Caiman-desktop\Caiman\Caiman\Emulators\PCSX2\memcards\Mcd001.ps2
-GSdx Lookup CRC:0
-McdSlot 1 [File]: C:\Users\BDCC\Desktop\Caiman-desktop\Caiman\Caiman\Emulators\PCSX2\memcards\Mcd002.ps2
-GSdx Lookup CRC:0
+McdSlot 0 [File]: D:\Caiman-desktop\Caiman\Caiman\emulators\PCSX2\memcards\Mcd001.ps2
+McdSlot 1 [File]: D:\Caiman-desktop\Caiman\Caiman\emulators\PCSX2\memcards\Mcd002.ps2
 Plugins opened successfully.
 EE/iR5900-32 Recompiler Reset
 	Bios Found: USA     v01.60(07/02/2002)  Console
@@ -64,13 +65,13 @@ EE/iR5900-32 Recompiler Reset
 	BIOS rom2 module not found, skipping...
 	BIOS erom module not found, skipping...
 # Initialize memory (rev:3.63, ctm:196Mhz, cpuclk:147Mhz detected)
+Frame buffer size set to  512x512 (4096x4096)
 
 PlayStation 2 ======== Hard reset boot
  ROMGEN=2002-0207, IOP info (CPUID=1f, CACH_CONFIG=0, 2MB, IOP mode)
  <20020207-164243,ROMconf,PS20160AC20020207.bin:11552>
 # Total accessable memory size: 32 MB (B:2:8:0) (363:2:7c30)
 # TLB spad=0 kernel=1:12 default=13:30 extended=31:38
-Frame buffer size set to  512x512 (2048x2048)
 # Initialize Start.
 # Initialize GS ...
 # Initialize INTC ...
@@ -186,3 +187,1854 @@ NO. ID  BANK     NO     ADRS   SIZE SPU
 002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
 003 WAV    3      1   1d0ce0    300 100000-104FFF
 System(017400:017400) SE(030ab8/038fd8: 85%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+System(017400:017400) SE(02f730/038fd8: 83%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1024   1cf750    200 092000-0A675F
+System(017400:017400) SE(02f528/038fd8: 83%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1024   1cf750    200 092000-0A675F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+System(017400:017400) SE(02e9a0/038fd8: 81%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1024   1cf750    200 092000-0A675F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+System(017400:017400) SE(02cb18/038fd8: 78%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1024   1cf750    200 092000-0A675F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+System(017400:017400) SE(02b190/038fd8: 75%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1024   1cf750    200 092000-0A675F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+System(017400:017400) SE(029188/038fd8: 72%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1024   1cf750    200 092000-0A675F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+System(017400:017400) SE(028c00/038fd8: 71%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+System(017400:017400) SE(028e08/038fd8: 71%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1024   1cf750    200 092000-0A675F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+System(017400:017400) SE(028c00/038fd8: 71%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1024   1cf750    200 092000-0A675F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2815   1c8a20    400
+System(017400:017400) SE(0287f8/038fd8: 71%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1024   1cf750    200 092000-0A675F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2815   1c8a20    400
+012 WAV   30   2823   1c8718    300 036000-05935F
+System(017400:017400) SE(0284f0/038fd8: 70%) BGM(0: -1:  0%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1024   1cf750    200 092000-0A675F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2815   1c8a20    400
+012 WAV   30   2823   1c8718    300 036000-05935F
+System(017400:017400) SE(0284f0/038fd8: 70%) BGM(0:118: 27%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1024   1cf750    200 092000-0A675F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2815   1c8a20    400
+012 WAV   30   2823   1c8718    300 036000-05935F
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+System(017400:017400) SE(027ae8/038fd8: 69%) BGM(0:118: 27%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2815   1c8a20    400
+012 WAV   30   2823   1c8718    300 036000-05935F
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+System(017400:017400) SE(027cf0/038fd8: 69%) BGM(0:118: 27%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1025   1cf850    100 092000-0A042F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2815   1c8a20    400
+012 WAV   30   2823   1c8718    300 036000-05935F
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+System(017400:017400) SE(027be8/038fd8: 69%) BGM(0:118: 27%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1025   1cf850    100 092000-0A042F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2815   1c8a20    400
+012 WAV   30   2823   1c8718    300 036000-05935F
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+System(017400:017400) SE(026ee0/038fd8: 68%) BGM(0:118: 27%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1025   1cf850    100 092000-0A042F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2815   1c8a20    400
+012 WAV   30   2823   1c8718    300 036000-05935F
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(026dd8/038fd8: 68%) BGM(0:118: 27%,1: -1:  0%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1025   1cf850    100 092000-0A042F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2815   1c8a20    400
+012 WAV   30   2823   1c8718    300 036000-05935F
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(026dd8/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1025   1cf850    100 092000-0A042F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2818   1c8d20    100
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(0273e0/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1025   1cf850    100 092000-0A042F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2818   1c8d20    100
+012 WAV   30   2801   1c8798    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(026e58/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+(FrameLimiter) DISABLED.
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1025   1cf850    100 092000-0A042F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30    334   1c6af8    400
+012 WAV   30   2801   1c8798    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(026b58/038fd8: 67%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1025   1cf850    100 092000-0A042F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30    334   1c6af8    400
+012 WAV   30    334   1c69f0    100 036000-03BBBF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(026fd8/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1025   1cf850    100 092000-0A042F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2820   1c8da0     80
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(027460/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1025   1cf850    100 092000-0A042F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2820   1c8da0     80
+012 WAV   30   2801   1c8818    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(026ed8/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2820   1c8da0     80
+012 WAV   30   2801   1c8818    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(026fe0/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2820   1c8da0     80
+012 WAV   30   2801   1c8818    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(026ed8/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2822   1d0a58    280
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(027260/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    624   1cebc8    b80 060000-08ED0F
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2822   1d0a58    280
+012 WAV   30   2801   1d04d0    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(026cd8/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    688   1ccd40   1e80
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2822   1d0a58    280
+012 WAV   30   2801   1d04d0    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(0268d8/038fd8: 67%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    689   1cb3b8   1980
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2822   1d0a58    280
+012 WAV   30   2801   1d04d0    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(0270d8/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    690   1c93b0   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2822   1d0a58    280
+012 WAV   30   2801   1d04d0    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(0271d8/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2822   1d0a58    280
+012 WAV   30   2801   1d04d0    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(027958/038fd8: 69%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2823   1d08d8    400
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(027d60/038fd8: 69%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2823   1d08d8    400
+012 WAV   30   2801   1c54e8    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(0277d8/038fd8: 69%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2823   1d08d8    400
+012 WAV   30   2801   1c54e8    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(0278e0/038fd8: 69%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2823   1d08d8    400
+012 WAV   30   2801   1c54e8    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(0277d8/038fd8: 69%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2823   1d08d8    400
+012 WAV   30   2801   1c54e8    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(0277d8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2824   1c8d20    100
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(028060/038fd8: 70%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2824   1c8d20    100
+012 WAV   30   2801   1c8798    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    500   1c7008    d00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(027ad8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2824   1c8d20    100
+012 WAV   30   2801   1c8798    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    500   1c6f00    100 00E000-0135AF
+System(017400:017400) SE(027cd8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2824   1c8d20    100
+012 WAV   30   2801   1c8798    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027c58/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30    310   1cab28    280
+012 WAV   30   2801   1c8798    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027ad8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30    310   1cab28    280
+012 WAV   30    310   1caa20    100 036000-03B25F
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027f58/038fd8: 70%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2825   1d0c58     80
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(028260/038fd8: 70%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5b78   1380
+005 WAV   20   1025   1c5a70    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2825   1d0c58     80
+012 WAV   30   2801   1d06d0    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027cd8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c9a28   1380
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2825   1d0c58     80
+012 WAV   30   2801   1d06d0    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027de0/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c9a28   1380
+005 WAV   20   1025   1c9920    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2825   1d0c58     80
+012 WAV   30   2801   1d06d0    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027cd8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c9a28   1380
+005 WAV   20   1025   1c9920    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30    310   1c6df8    280
+012 WAV   30   2801   1d06d0    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027ad8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c9a28   1380
+005 WAV   20   1025   1c9920    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30    310   1c6df8    280
+012 WAV   30    310   1c6cf0    100 036000-03B25F
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027f58/038fd8: 70%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c9a28   1380
+005 WAV   20   1025   1c9920    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2826   1c8aa0    380
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027f60/038fd8: 70%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c9a28   1380
+005 WAV   20   1025   1c9920    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2826   1c8aa0    380
+012 WAV   30   2801   1d0758    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(0279d8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c9a28   1380
+005 WAV   20   1025   1c9920    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2826   1c8aa0    380
+012 WAV   30   2801   1d0758    580 036000-05F1EF
+013 WAV    0    118   1c7d10    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(0279d8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c9a28   1380
+005 WAV   20   1025   1c9920    100 092000-0A042F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2826   1c8aa0    380
+012 WAV   30   2801   1d0758    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(0279d8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2826   1c8aa0    380
+012 WAV   30   2801   1d0758    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027ae0/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+005 WAV   20   1024   1c5af0    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2826   1c8aa0    380
+012 WAV   30   2801   1d0758    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(0278d8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+005 WAV   20   1024   1c5af0    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2828   1c5868    280
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027f60/038fd8: 70%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+005 WAV   20   1024   1c5af0    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2828   1c5868    280
+012 WAV   30   2826   1c5660    200 036000-057DBF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027d58/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2828   1c5868    280
+012 WAV   30   2826   1c5660    200 036000-057DBF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027f60/038fd8: 70%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+005 WAV   20   1024   1c5af0    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2828   1c5868    280
+012 WAV   30   2826   1c5660    200 036000-057DBF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027d58/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+005 WAV   20   1024   1c5af0    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30    214   1ca8a8    500
+012 WAV   30   2826   1c5660    200 036000-057DBF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027ad8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+005 WAV   20   1024   1c5af0    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30    214   1ca8a8    500
+012 WAV   30    214   1c7f90    100 036000-03B4BF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027bd8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+005 WAV   20   1024   1c5af0    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2829   1ca928    480
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027d60/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+005 WAV   20   1024   1c5af0    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2829   1ca928    480
+012 WAV   30   2801   1ca3a0    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(0277d8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2829   1ca928    480
+012 WAV   30   2801   1ca3a0    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(0279e0/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+005 WAV   20   1024   1c5af0    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2829   1ca928    480
+012 WAV   30   2801   1ca3a0    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(0277d8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+005 WAV   20   1024   1c5af0    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30    214   1d07d8    500
+012 WAV   30   2801   1ca3a0    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027758/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+005 WAV   20   1024   1c5af0    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30    214   1d07d8    500
+012 WAV   30    214   1d06d0    100 036000-03B4BF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7208    b00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(027bd8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+005 WAV   20   1024   1c5af0    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30    214   1d07d8    500
+012 WAV   30    214   1d06d0    100 036000-03B4BF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    504   1c7080    180 00E000-01448F
+System(017400:017400) SE(0279d8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+005 WAV   20   1024   1c5af0    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30    214   1d07d8    500
+012 WAV   30    214   1d06d0    100 036000-03B4BF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(027a58/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+005 WAV   20   1024   1c5af0    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2830   1c5868    280
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(027de0/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5cf8   1380
+005 WAV   20   1024   1c5af0    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2830   1c5868    280
+012 WAV   30   2801   1c52e0    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(027858/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5f00   1380
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2830   1c5868    280
+012 WAV   30   2801   1c52e0    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(027a60/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5f00   1380
+005 WAV   20   1024   1c5cf8    200 092000-0A675F
+006 WAV   10    627   1cf548    f80 060000-0908EF
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2830   1c5868    280
+012 WAV   30   2801   1c52e0    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(027858/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5f00   1380
+005 WAV   20   1024   1c5cf8    200 092000-0A675F
+006 WAV   10    624   1d0158    b80 060000-08ED0F
+007 SEB   10    697   1cdec0   1680
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2830   1c5868    280
+012 WAV   30   2801   1c52e0    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(027c58/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5f00   1380
+005 WAV   20   1024   1c5cf8    200 092000-0A675F
+006 WAV   10    624   1d0158    b80 060000-08ED0F
+007 SEB   10    688   1ce2d0   1e80
+008 SEB   11    698   1cc638   1880
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2830   1c5868    280
+012 WAV   30   2801   1c52e0    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(027458/038fd8: 68%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5f00   1380
+005 WAV   20   1024   1c5cf8    200 092000-0A675F
+006 WAV   10    624   1d0158    b80 060000-08ED0F
+007 SEB   10    688   1ce2d0   1e80
+008 SEB   11    689   1cc948   1980
+009 SEB   12    699   1cadb0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2830   1c5868    280
+012 WAV   30   2801   1c52e0    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(027358/038fd8: 68%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c5f00   1380
+005 WAV   20   1024   1c5cf8    200 092000-0A675F
+006 WAV   10    624   1d0158    b80 060000-08ED0F
+007 SEB   10    688   1ce2d0   1e80
+008 SEB   11    689   1cc948   1980
+009 SEB   12    690   1c32d8   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2830   1c5868    280
+012 WAV   30   2801   1c52e0    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(026bd8/038fd8: 67%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cb5c0   1380
+006 WAV   10    624   1d0158    b80 060000-08ED0F
+007 SEB   10    688   1ce2d0   1e80
+008 SEB   11    689   1cc948   1980
+009 SEB   12    690   1c32d8   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2830   1c5868    280
+012 WAV   30   2801   1c52e0    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(026de0/038fd8: 68%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cb5c0   1380
+005 WAV   20   1024   1cb3b8    200 092000-0A675F
+006 WAV   10    624   1d0158    b80 060000-08ED0F
+007 SEB   10    688   1ce2d0   1e80
+008 SEB   11    689   1cc948   1980
+009 SEB   12    690   1c32d8   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2830   1c5868    280
+012 WAV   30   2801   1c52e0    580 036000-05F1EF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(026bd8/038fd8: 67%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cb5c0   1380
+005 WAV   20   1024   1cb3b8    200 092000-0A675F
+006 WAV   10    624   1d0158    b80 060000-08ED0F
+007 SEB   10    688   1ce2d0   1e80
+008 SEB   11    689   1cc948   1980
+009 SEB   12    690   1c32d8   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2836   1c7200     80
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(027360/038fd8: 68%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cb5c0   1380
+005 WAV   20   1024   1cb3b8    200 092000-0A675F
+006 WAV   10    624   1d0158    b80 060000-08ED0F
+007 SEB   10    688   1ce2d0   1e80
+008 SEB   11    689   1cc948   1980
+009 SEB   12    690   1c32d8   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2836   1c7200     80
+012 WAV   30   2802   1c6d78    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(026ed8/038fd8: 68%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+006 WAV   10    624   1d0158    b80 060000-08ED0F
+007 SEB   10    688   1ce2d0   1e80
+008 SEB   11    689   1cc948   1980
+009 SEB   12    690   1c32d8   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2836   1c7200     80
+012 WAV   30   2802   1c6d78    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(0270e0/038fd8: 68%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    624   1d0158    b80 060000-08ED0F
+007 SEB   10    688   1ce2d0   1e80
+008 SEB   11    689   1cc948   1980
+009 SEB   12    690   1c32d8   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2836   1c7200     80
+012 WAV   30   2802   1c6d78    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(026fd8/038fd8: 68%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    627   1c0ec0    f80 060000-0908EF
+007 SEB   10    688   1ce2d0   1e80
+008 SEB   11    689   1cc948   1980
+009 SEB   12    690   1c32d8   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2836   1c7200     80
+012 WAV   30   2802   1c6d78    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(026bd8/038fd8: 67%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    627   1c0ec0    f80 060000-0908EF
+007 SEB   10    697   1cf658   1680
+008 SEB   11    689   1cc948   1980
+009 SEB   12    690   1c32d8   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2836   1c7200     80
+012 WAV   30   2802   1c6d78    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(0273d8/038fd8: 68%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    627   1c0ec0    f80 060000-0908EF
+007 SEB   10    697   1cf658   1680
+008 SEB   11    698   1bf638   1880
+009 SEB   12    690   1c32d8   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2836   1c7200     80
+012 WAV   30   2802   1c6d78    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(0274d8/038fd8: 68%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    627   1c0ec0    f80 060000-0908EF
+007 SEB   10    697   1cf658   1680
+008 SEB   11    698   1bf638   1880
+009 SEB   12    699   1c54f0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2836   1c7200     80
+012 WAV   30   2802   1c6d78    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    500   1c7390    d00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(027c58/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    627   1c0ec0    f80 060000-0908EF
+007 SEB   10    697   1cf658   1680
+008 SEB   11    698   1bf638   1880
+009 SEB   12    699   1c54f0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2836   1c7200     80
+012 WAV   30   2802   1c6d78    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    500   1c7288    100 00E000-0135AF
+System(017400:017400) SE(027e58/038fd8: 70%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    627   1c0ec0    f80 060000-0908EF
+007 SEB   10    697   1cf658   1680
+008 SEB   11    698   1bf638   1880
+009 SEB   12    699   1c54f0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2836   1c7200     80
+012 WAV   30   2802   1c6d78    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+System(017400:017400) SE(027dd8/038fd8: 69%) BGM(0:119: 61%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    627   1c0ec0    f80 060000-0908EF
+007 SEB   10    697   1cf658   1680
+008 SEB   11    698   1bf638   1880
+009 SEB   12    699   1c54f0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2836   1c7200     80
+012 WAV   30   2802   1c6d78    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+System(017400:017400) SE(027dd8/038fd8: 69%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    627   1c0ec0    f80 060000-0908EF
+007 SEB   10    697   1cf658   1680
+008 SEB   11    698   1bf638   1880
+009 SEB   12    699   1c54f0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2836   1c7200     80
+012 WAV   30   2802   1c6d78    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+System(017400:017400) SE(027dd8/038fd8: 69%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    627   1c0ec0    f80 060000-0908EF
+007 SEB   10    697   1cf658   1680
+008 SEB   11    698   1bf638   1880
+009 SEB   12    699   1c54f0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2839   1c6e80    580
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+System(017400:017400) SE(027d60/038fd8: 69%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    627   1c0ec0    f80 060000-0908EF
+007 SEB   10    697   1cf658   1680
+008 SEB   11    698   1bf638   1880
+009 SEB   12    699   1c54f0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2839   1c6e80    580
+012 WAV   30   2802   1cf1d0    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+System(017400:017400) SE(0278d8/038fd8: 69%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    627   1c0ec0    f80 060000-0908EF
+007 SEB   10    697   1cf658   1680
+008 SEB   11    698   1bf638   1880
+009 SEB   12    699   1c54f0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2839   1c6e80    580
+012 WAV   30   2802   1cf1d0    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+016 SEB   21      3   1cde48   1380
+System(017400:017400) SE(026550/038fd8: 67%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    627   1c0ec0    f80 060000-0908EF
+007 SEB   10    697   1cf658   1680
+008 SEB   11    698   1bf638   1880
+009 SEB   12    699   1c54f0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2839   1c6e80    580
+012 WAV   30   2802   1cf1d0    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+016 SEB   21      3   1cde48   1380
+017 WAV   21   1025   1cdd40    100 0A7000-0B542F
+System(017400:017400) SE(026448/038fd8: 67%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    624   1c12c0    b80 060000-08ED0F
+007 SEB   10    697   1cf658   1680
+008 SEB   11    698   1bf638   1880
+009 SEB   12    699   1c54f0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2839   1c6e80    580
+012 WAV   30   2802   1cf1d0    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+016 SEB   21      3   1cde48   1380
+017 WAV   21   1025   1cdd40    100 0A7000-0B542F
+System(017400:017400) SE(026848/038fd8: 67%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    624   1c12c0    b80 060000-08ED0F
+007 SEB   10    688   1bd7b0   1e80
+008 SEB   11    698   1bf638   1880
+009 SEB   12    699   1c54f0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2839   1c6e80    580
+012 WAV   30   2802   1cf1d0    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+016 SEB   21      3   1cde48   1380
+017 WAV   21   1025   1cdd40    100 0A7000-0B542F
+System(017400:017400) SE(026048/038fd8: 66%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    624   1c12c0    b80 060000-08ED0F
+007 SEB   10    688   1bd7b0   1e80
+008 SEB   11    689   1bf938   1980
+009 SEB   12    699   1c54f0   1880
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2839   1c6e80    580
+012 WAV   30   2802   1cf1d0    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+016 SEB   21      3   1cde48   1380
+017 WAV   21   1025   1cdd40    100 0A7000-0B542F
+System(017400:017400) SE(025f48/038fd8: 66%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    624   1c12c0    b80 060000-08ED0F
+007 SEB   10    688   1bd7b0   1e80
+008 SEB   11    689   1bf938   1980
+009 SEB   12    690   1cbd38   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2839   1c6e80    580
+012 WAV   30   2802   1cf1d0    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+016 SEB   21      3   1cde48   1380
+017 WAV   21   1025   1cdd40    100 0A7000-0B542F
+System(017400:017400) SE(0257c8/038fd8: 65%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    624   1c12c0    b80 060000-08ED0F
+007 SEB   10    688   1bd7b0   1e80
+008 SEB   11    689   1bf938   1980
+009 SEB   12    690   1cbd38   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30    334   1cb930    400
+012 WAV   30   2802   1cf1d0    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+016 SEB   21      3   1cde48   1380
+017 WAV   21   1025   1cdd40    100 0A7000-0B542F
+System(017400:017400) SE(025948/038fd8: 65%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    624   1c12c0    b80 060000-08ED0F
+007 SEB   10    688   1bd7b0   1e80
+008 SEB   11    689   1bf938   1980
+009 SEB   12    690   1cbd38   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30    334   1cb930    400
+012 WAV   30    334   1d0bd8    100 036000-03BBBF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+016 SEB   21      3   1cde48   1380
+017 WAV   21   1025   1cdd40    100 0A7000-0B542F
+System(017400:017400) SE(025cc8/038fd8: 66%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    624   1c12c0    b80 060000-08ED0F
+007 SEB   10    688   1bd7b0   1e80
+008 SEB   11    689   1bf938   1980
+009 SEB   12    690   1cbd38   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2840   1bd3a8    400
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+016 SEB   21      3   1cde48   1380
+017 WAV   21   1025   1cdd40    100 0A7000-0B542F
+System(017400:017400) SE(025dd0/038fd8: 66%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1c1f50   1380
+005 WAV   20   1028   1c1e48    100 092000-0A49AF
+006 WAV   10    624   1c12c0    b80 060000-08ED0F
+007 SEB   10    688   1bd7b0   1e80
+008 SEB   11    689   1bf938   1980
+009 SEB   12    690   1cbd38   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2840   1bd3a8    400
+012 WAV   30   2802   1bcf20    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+016 SEB   21      3   1cde48   1380
+017 WAV   21   1025   1cdd40    100 0A7000-0B542F
+System(017400:017400) SE(025948/038fd8: 65%) BGM(0:118: 27%,1:119: 61%)
+(FrameLimiter) ENABLED.
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+006 WAV   10    624   1c12c0    b80 060000-08ED0F
+007 SEB   10    688   1bd7b0   1e80
+008 SEB   11    689   1bf938   1980
+009 SEB   12    690   1cbd38   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2840   1bd3a8    400
+012 WAV   30   2802   1bcf20    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+System(017400:017400) SE(026ee0/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1025   1cf850    100 092000-0A042F
+006 WAV   10    624   1c12c0    b80 060000-08ED0F
+007 SEB   10    688   1bd7b0   1e80
+008 SEB   11    689   1bf938   1980
+009 SEB   12    690   1cbd38   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30   2840   1bd3a8    400
+012 WAV   30   2802   1bcf20    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+System(017400:017400) SE(026dd8/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1025   1cf850    100 092000-0A042F
+006 WAV   10    624   1c12c0    b80 060000-08ED0F
+007 SEB   10    688   1bd7b0   1e80
+008 SEB   11    689   1bf938   1980
+009 SEB   12    690   1cbd38   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30    334   1bd3a8    400
+012 WAV   30   2802   1bcf20    480 036000-05EC3F
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+System(017400:017400) SE(026dd8/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+NO. ID  BANK     NO     ADRS   SIZE SPU
+000 SEB    2      0   1d4578   4c80
+001 SEB    3    999   1d1770   2e00
+002 WAV    2      0   1d0fe8    780 0BC000-0F6B0F
+003 WAV    3      1   1d0ce0    300 100000-104FFF
+004 SEB   20      3   1cf958   1380
+005 WAV   20   1025   1cf850    100 092000-0A042F
+006 WAV   10    624   1c12c0    b80 060000-08ED0F
+007 SEB   10    688   1bd7b0   1e80
+008 SEB   11    689   1bf938   1980
+009 SEB   12    690   1cbd38   2000
+010 SEB   14    729   1c8e28    580
+011 SEB   30    334   1bd3a8    400
+012 WAV   30    334   1bf830    100 036000-03BBBF
+013 WAV    0    118   1c8098    a00 105000-1EB15F
+014 SEB    4    504   1c7590    b00
+015 WAV    4    504   1c7408    180 00E000-01448F
+System(017400:017400) SE(027158/038fd8: 68%) BGM(0:118: 27%,1:119: 61%)
+Closing plugins...
+	Closing DEV9
+	Closing FW
+	Closing USB
+	Closing CDVD
+	Closing SPU2
+	Closing PAD
+	Closing GS
+Plugins closed successfully.
+Shutting down plugins...
+Plugins shutdown successfully.
+(GameDB) Unloading...

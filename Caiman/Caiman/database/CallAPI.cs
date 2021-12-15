@@ -20,7 +20,7 @@ namespace Caiman.database
 {
     public class CallAPI
     {
-        private const string URL_STRING = "http://api.caiman.cfpt.info";
+        private const string URL_STRING = "https://api.caiman.bdcc.ch";
         Uri baseUrl = new Uri(URL_STRING);
 
         IRestClient client;
