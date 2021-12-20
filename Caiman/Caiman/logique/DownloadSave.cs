@@ -107,7 +107,7 @@ namespace Caiman.logique
                 {
                     file.Delete();
                 }
-                ZipFile.ExtractToDirectory(savePathZip, savePath);
+                //ZipFile.ExtractToDirectory(savePathZip, savePath);
 
             }
         }

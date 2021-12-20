@@ -21,7 +21,7 @@ Loading plugins from D:\Caiman-desktop\Caiman\Caiman\emulators\PCSX2\plugins...
 	Bound   GS: GSdx32-SSE2.dll [GSdx 20200506140834 (MSVC 19.25 SSE2/AVX) 1.2.0]
 	Bound  PAD: LilyPad.dll [LilyPad (20200506140834) 0.12.1]
 	Bound SPU2: Spu2-X.dll [SPU2-X 20200506140834 2.0.0]
-(GameDB) 9858 games on record (loaded in 104ms)
+(GameDB) 9858 games on record (loaded in 108ms)
 	Bound CDVD: cdvdGigaherz.dll [cdvdGigaherz 20200506140834 0.11.0]
 	Bound  USB: USBnull.dll [USBnull Driver 20200506140834 0.7.0]
 	Bound   FW: FWnull.dll [FWnull Driver 20200506140834 0.7.0]
@@ -57,7 +57,9 @@ isoFile open ok: C:\Caiman\Playstation2\DRAGON_QUEST_VIII.iso
 	Opening FW
 	Opening DEV9
 McdSlot 0 [File]: D:\Caiman-desktop\Caiman\Caiman\emulators\PCSX2\memcards\Mcd001.ps2
+(FileMcd) Creating new 8MB memory card: D:\Caiman-desktop\Caiman\Caiman\emulators\PCSX2\memcards\Mcd001.ps2
 McdSlot 1 [File]: D:\Caiman-desktop\Caiman\Caiman\emulators\PCSX2\memcards\Mcd002.ps2
+(FileMcd) Creating new 8MB memory card: D:\Caiman-desktop\Caiman\Caiman\emulators\PCSX2\memcards\Mcd002.ps2
 Plugins opened successfully.
 EE/iR5900-32 Recompiler Reset
 	Bios Found: USA     v01.60(07/02/2002)  Console
@@ -194,3 +196,17 @@ pcm allocate = 20480
 start pcm thread
 (UpdateVSyncRate) Mode Changed to PAL.
 (UpdateVSyncRate) FPS Limit Changed : 50,00 fps
+(FileMcd) Warning: checksum sector overwritten. (0)
+(FileMcd) Warning: checksum sector overwritten. (0)
+Closing plugins...
+	Closing DEV9
+	Closing FW
+	Closing USB
+	Closing CDVD
+	Closing SPU2
+	Closing PAD
+	Closing GS
+Plugins closed successfully.
+Shutting down plugins...
+Plugins shutdown successfully.
+(GameDB) Unloading...
