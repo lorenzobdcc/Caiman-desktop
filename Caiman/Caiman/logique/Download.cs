@@ -20,7 +20,7 @@ namespace Caiman.logique
 {
     public class Download
     {
-        private const string URL_TO_GAMES = "http://api.caiman.cfpt.info/games/";
+        private const string URL_TO_GAMES = "https://api.caiman.bdcc.ch/games/";
         string pathToFolder;
         public int idGame;
         string apiKey;
