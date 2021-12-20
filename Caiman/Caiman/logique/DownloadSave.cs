@@ -21,7 +21,7 @@ namespace Caiman.logique
 {
     public class DownloadSave
     {
-        private const string URL_TO_API_GAMES_ENDPOINT = "https://api.caiman.bdccch/games/";
+        private const string URL_TO_API_GAMES_ENDPOINT = "https://api.caiman.bdcc.ch/games/";
         string pathToFolder;
         public int idEmulator;
         public int idUser;
